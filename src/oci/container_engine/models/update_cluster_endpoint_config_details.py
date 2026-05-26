@@ -28,17 +28,24 @@ class UpdateClusterEndpointConfigDetails(object):
             The value to assign to the is_public_ip_enabled property of this UpdateClusterEndpointConfigDetails.
         :type is_public_ip_enabled: bool
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateClusterEndpointConfigDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'nsg_ids': 'list[str]',
-            'is_public_ip_enabled': 'bool'
+            'is_public_ip_enabled': 'bool',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'nsg_ids': 'nsgIds',
-            'is_public_ip_enabled': 'isPublicIpEnabled'
+            'is_public_ip_enabled': 'isPublicIpEnabled',
+            'security_attributes': 'securityAttributes'
         }
         self._nsg_ids = None
         self._is_public_ip_enabled = None
+        self._security_attributes = None
 
     @property
     def nsg_ids(self):
@@ -87,6 +94,40 @@ class UpdateClusterEndpointConfigDetails(object):
         :type: bool
         """
         self._is_public_ip_enabled = is_public_ip_enabled
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateClusterEndpointConfigDetails.
+        `Security attributes`__ are labels
+                for a resource that can be referenced in a `Zero Trust Packet Routing`__
+                (ZPR) policy to control access to ZPR-supported resources.
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this UpdateClusterEndpointConfigDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateClusterEndpointConfigDetails.
+        `Security attributes`__ are labels
+                for a resource that can be referenced in a `Zero Trust Packet Routing`__
+                (ZPR) policy to control access to ZPR-supported resources.
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateClusterEndpointConfigDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

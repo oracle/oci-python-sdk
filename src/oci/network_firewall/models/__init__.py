@@ -66,6 +66,7 @@ from .nat_v4_nat_rule import NatV4NatRule
 from .nat_v4_nat_summary import NatV4NatSummary
 from .network_firewall import NetworkFirewall
 from .network_firewall_collection import NetworkFirewallCollection
+from .network_firewall_health_status import NetworkFirewallHealthStatus
 from .network_firewall_policy import NetworkFirewallPolicy
 from .network_firewall_policy_summary import NetworkFirewallPolicySummary
 from .network_firewall_policy_summary_collection import NetworkFirewallPolicySummaryCollection
@@ -195,6 +196,7 @@ network_firewall_type_mapping = {
     "NatV4NatSummary": NatV4NatSummary,
     "NetworkFirewall": NetworkFirewall,
     "NetworkFirewallCollection": NetworkFirewallCollection,
+    "NetworkFirewallHealthStatus": NetworkFirewallHealthStatus,
     "NetworkFirewallPolicy": NetworkFirewallPolicy,
     "NetworkFirewallPolicySummary": NetworkFirewallPolicySummary,
     "NetworkFirewallPolicySummaryCollection": NetworkFirewallPolicySummaryCollection,

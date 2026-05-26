@@ -115,6 +115,10 @@ class Deployment(object):
     #: This constant has a value of "DATA_TRANSFORMS"
     CATEGORY_DATA_TRANSFORMS = "DATA_TRANSFORMS"
 
+    #: A constant which can be used with the category property of a Deployment.
+    #: This constant has a value of "DATA_VERIFICATION"
+    CATEGORY_DATA_VERIFICATION = "DATA_VERIFICATION"
+
     #: A constant which can be used with the deployment_type property of a Deployment.
     #: This constant has a value of "OGG"
     DEPLOYMENT_TYPE_OGG = "OGG"
@@ -155,9 +159,25 @@ class Deployment(object):
     #: This constant has a value of "DATA_TRANSFORMS"
     DEPLOYMENT_TYPE_DATA_TRANSFORMS = "DATA_TRANSFORMS"
 
+    #: A constant which can be used with the deployment_type property of a Deployment.
+    #: This constant has a value of "VERIDATA_SERVER"
+    DEPLOYMENT_TYPE_VERIDATA_SERVER = "VERIDATA_SERVER"
+
+    #: A constant which can be used with the deployment_type property of a Deployment.
+    #: This constant has a value of "VERIDATA_AGENT"
+    DEPLOYMENT_TYPE_VERIDATA_AGENT = "VERIDATA_AGENT"
+
     #: A constant which can be used with the next_maintenance_action_type property of a Deployment.
     #: This constant has a value of "UPGRADE"
     NEXT_MAINTENANCE_ACTION_TYPE_UPGRADE = "UPGRADE"
+
+    #: A constant which can be used with the disaster_recovery_status property of a Deployment.
+    #: This constant has a value of "ENABLED"
+    DISASTER_RECOVERY_STATUS_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the disaster_recovery_status property of a Deployment.
+    #: This constant has a value of "DISABLED"
+    DISASTER_RECOVERY_STATUS_DISABLED = "DISABLED"
 
     def __init__(self, **kwargs):
         """
@@ -288,7 +308,7 @@ class Deployment(object):
 
         :param category:
             The value to assign to the category property of this Deployment.
-            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type category: str
 
@@ -338,7 +358,7 @@ class Deployment(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this Deployment.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
@@ -404,6 +424,12 @@ class Deployment(object):
             The value to assign to the security_attributes property of this Deployment.
         :type security_attributes: dict(str, dict(str, object))
 
+        :param disaster_recovery_status:
+            The value to assign to the disaster_recovery_status property of this Deployment.
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type disaster_recovery_status: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -461,7 +487,8 @@ class Deployment(object):
             'ingress_ips': 'list[IngressIpDetails]',
             'subscription_id': 'str',
             'cluster_placement_group_id': 'str',
-            'security_attributes': 'dict(str, dict(str, object))'
+            'security_attributes': 'dict(str, dict(str, object))',
+            'disaster_recovery_status': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -519,7 +546,8 @@ class Deployment(object):
             'ingress_ips': 'ingressIps',
             'subscription_id': 'subscriptionId',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
-            'security_attributes': 'securityAttributes'
+            'security_attributes': 'securityAttributes',
+            'disaster_recovery_status': 'disasterRecoveryStatus'
         }
         self._id = None
         self._display_name = None
@@ -577,6 +605,7 @@ class Deployment(object):
         self._subscription_id = None
         self._cluster_placement_group_id = None
         self._security_attributes = None
+        self._disaster_recovery_status = None
 
     @property
     def id(self):
@@ -1374,10 +1403,10 @@ class Deployment(object):
     def category(self):
         """
         **[Required]** Gets the category of this Deployment.
-        The deployment category defines the broad separation of the deployment type into three categories.
-        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        The deployment category defines the broad separation of the deployment type into four categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 
-        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1390,14 +1419,14 @@ class Deployment(object):
     def category(self, category):
         """
         Sets the category of this Deployment.
-        The deployment category defines the broad separation of the deployment type into three categories.
-        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        The deployment category defines the broad separation of the deployment type into four categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 
 
         :param category: The category of this Deployment.
         :type: str
         """
-        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS"]
+        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION"]
         if not value_allowed_none_or_none_sentinel(category, allowed_values):
             category = 'UNKNOWN_ENUM_VALUE'
         self._category = category
@@ -1690,7 +1719,7 @@ class Deployment(object):
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
             Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1711,7 +1740,7 @@ class Deployment(object):
         :param deployment_type: The deployment_type of this Deployment.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type
@@ -2105,6 +2134,38 @@ class Deployment(object):
         :type: dict(str, dict(str, object))
         """
         self._security_attributes = security_attributes
+
+    @property
+    def disaster_recovery_status(self):
+        """
+        Gets the disaster_recovery_status of this Deployment.
+        Indicates if disaster recovery is enabled for a deployment.
+        If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The disaster_recovery_status of this Deployment.
+        :rtype: str
+        """
+        return self._disaster_recovery_status
+
+    @disaster_recovery_status.setter
+    def disaster_recovery_status(self, disaster_recovery_status):
+        """
+        Sets the disaster_recovery_status of this Deployment.
+        Indicates if disaster recovery is enabled for a deployment.
+        If not specified, disaster recovery is ENABLED when no clusterPlacementGroupId is provided, and DISABLED when a clusterPlacementGroupId is provided.
+
+
+        :param disaster_recovery_status: The disaster_recovery_status of this Deployment.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(disaster_recovery_status, allowed_values):
+            disaster_recovery_status = 'UNKNOWN_ENUM_VALUE'
+        self._disaster_recovery_status = disaster_recovery_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

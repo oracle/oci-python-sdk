@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExadataInfrastructureUnAllocatedResources(object):
     """
-    Un allocated resources details of the Exadata Cloud@Customer infrastructure. Applies to Exadata Cloud@Customer instances only.
+    Displays details of unallocated resources for the Exadata Cloud@Customer infrastructure.
+    Applies to Exadata Cloud@Customer instances only.
     """
 
     def __init__(self, **kwargs):

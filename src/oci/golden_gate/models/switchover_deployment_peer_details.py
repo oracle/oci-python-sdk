@@ -15,6 +15,14 @@ class SwitchoverDeploymentPeerDetails(object):
     The information about switching to deployment peer.
     """
 
+    #: A constant which can be used with the mode property of a SwitchoverDeploymentPeerDetails.
+    #: This constant has a value of "SWITCHOVER"
+    MODE_SWITCHOVER = "SWITCHOVER"
+
+    #: A constant which can be used with the mode property of a SwitchoverDeploymentPeerDetails.
+    #: This constant has a value of "FAILOVER"
+    MODE_FAILOVER = "FAILOVER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SwitchoverDeploymentPeerDetails object with values from keyword arguments.
@@ -28,17 +36,25 @@ class SwitchoverDeploymentPeerDetails(object):
             The value to assign to the fault_domain property of this SwitchoverDeploymentPeerDetails.
         :type fault_domain: str
 
+        :param mode:
+            The value to assign to the mode property of this SwitchoverDeploymentPeerDetails.
+            Allowed values for this property are: "SWITCHOVER", "FAILOVER"
+        :type mode: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
-            'fault_domain': 'str'
+            'fault_domain': 'str',
+            'mode': 'str'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
-            'fault_domain': 'faultDomain'
+            'fault_domain': 'faultDomain',
+            'mode': 'mode'
         }
         self._availability_domain = None
         self._fault_domain = None
+        self._mode = None
 
     @property
     def availability_domain(self):
@@ -87,6 +103,37 @@ class SwitchoverDeploymentPeerDetails(object):
         :type: str
         """
         self._fault_domain = fault_domain
+
+    @property
+    def mode(self):
+        """
+        Gets the mode of this SwitchoverDeploymentPeerDetails.
+        Specifies the switchover mode. SWITCHOVER performs a planned role transition to the standby; FAILOVER performs a forced promotion when the primary is not available.
+
+        Allowed values for this property are: "SWITCHOVER", "FAILOVER"
+
+
+        :return: The mode of this SwitchoverDeploymentPeerDetails.
+        :rtype: str
+        """
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode):
+        """
+        Sets the mode of this SwitchoverDeploymentPeerDetails.
+        Specifies the switchover mode. SWITCHOVER performs a planned role transition to the standby; FAILOVER performs a forced promotion when the primary is not available.
+
+
+        :param mode: The mode of this SwitchoverDeploymentPeerDetails.
+        :type: str
+        """
+        allowed_values = ["SWITCHOVER", "FAILOVER"]
+        if not value_allowed_none_or_none_sentinel(mode, allowed_values):
+            raise ValueError(
+                f"Invalid value for `mode`, must be None or one of {allowed_values}"
+            )
+        self._mode = mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

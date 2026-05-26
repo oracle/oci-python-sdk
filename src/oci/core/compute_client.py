@@ -12872,6 +12872,9 @@ class ComputeClient(object):
         :param float remaining_ocpus_greater_than_or_equal_to: (optional)
             The available OCPUs of the dedicated VM host.
 
+        :param float remaining_local_volume_in_gbs_greater_than_or_equal_to: (optional)
+            The remaining local volume of the dedicated VM host, in GBs.
+
         :param bool is_memory_encryption_enabled: (optional)
             A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
 
@@ -12920,6 +12923,7 @@ class ComputeClient(object):
             "sort_order",
             "remaining_memory_in_gbs_greater_than_or_equal_to",
             "remaining_ocpus_greater_than_or_equal_to",
+            "remaining_local_volume_in_gbs_greater_than_or_equal_to",
             "is_memory_encryption_enabled"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12960,6 +12964,7 @@ class ComputeClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "remainingMemoryInGBsGreaterThanOrEqualTo": kwargs.get("remaining_memory_in_gbs_greater_than_or_equal_to", missing),
             "remainingOcpusGreaterThanOrEqualTo": kwargs.get("remaining_ocpus_greater_than_or_equal_to", missing),
+            "remainingLocalVolumeInGBsGreaterThanOrEqualTo": kwargs.get("remaining_local_volume_in_gbs_greater_than_or_equal_to", missing),
             "isMemoryEncryptionEnabled": kwargs.get("is_memory_encryption_enabled", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}

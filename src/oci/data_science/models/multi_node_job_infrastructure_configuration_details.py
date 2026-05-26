@@ -23,7 +23,7 @@ class MultiNodeJobInfrastructureConfigurationDetails(JobInfrastructureConfigurat
 
         :param job_infrastructure_type:
             The value to assign to the job_infrastructure_type property of this MultiNodeJobInfrastructureConfigurationDetails.
-            Allowed values for this property are: "STANDALONE", "ME_STANDALONE", "MULTI_NODE", "EMPTY"
+            Allowed values for this property are: "STANDALONE", "ME_STANDALONE", "MULTI_NODE", "EMPTY", "MANAGED_COMPUTE_CLUSTER"
         :type job_infrastructure_type: str
 
         :param shape_name:

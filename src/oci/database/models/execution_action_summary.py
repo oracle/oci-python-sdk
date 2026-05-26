@@ -79,6 +79,10 @@ class ExecutionActionSummary(object):
     #: This constant has a value of "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE"
     ACTION_TYPE_NETWORK_SWITCH_FULL_SOFTWARE_UPDATE = "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE"
 
+    #: A constant which can be used with the action_type property of a ExecutionActionSummary.
+    #: This constant has a value of "DB_SERVER_ONLINE_SOFTWARE_UPDATE"
+    ACTION_TYPE_DB_SERVER_ONLINE_SOFTWARE_UPDATE = "DB_SERVER_ONLINE_SOFTWARE_UPDATE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExecutionActionSummary object with values from keyword arguments.
@@ -142,7 +146,7 @@ class ExecutionActionSummary(object):
 
         :param action_type:
             The value to assign to the action_type property of this ExecutionActionSummary.
-            Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "DB_SERVER_ONLINE_SOFTWARE_UPDATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action_type: str
 
@@ -573,7 +577,7 @@ class ExecutionActionSummary(object):
         **[Required]** Gets the action_type of this ExecutionActionSummary.
         The action type of the execution action being performed
 
-        Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "DB_SERVER_ONLINE_SOFTWARE_UPDATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -592,7 +596,7 @@ class ExecutionActionSummary(object):
         :param action_type: The action_type of this ExecutionActionSummary.
         :type: str
         """
-        allowed_values = ["DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE"]
+        allowed_values = ["DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "DB_SERVER_ONLINE_SOFTWARE_UPDATE"]
         if not value_allowed_none_or_none_sentinel(action_type, allowed_values):
             action_type = 'UNKNOWN_ENUM_VALUE'
         self._action_type = action_type

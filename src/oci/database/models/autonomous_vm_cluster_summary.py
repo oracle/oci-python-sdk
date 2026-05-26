@@ -43,6 +43,14 @@ class AutonomousVmClusterSummary(object):
     #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
     LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
 
+    #: A constant which can be used with the distribution_algorithm property of a AutonomousVmClusterSummary.
+    #: This constant has a value of "RESOURCE_OPTIMIZED"
+    DISTRIBUTION_ALGORITHM_RESOURCE_OPTIMIZED = "RESOURCE_OPTIMIZED"
+
+    #: A constant which can be used with the distribution_algorithm property of a AutonomousVmClusterSummary.
+    #: This constant has a value of "DISTRIBUTION_OPTIMIZED"
+    DISTRIBUTION_ALGORITHM_DISTRIBUTION_OPTIMIZED = "DISTRIBUTION_OPTIMIZED"
+
     #: A constant which can be used with the compute_model property of a AutonomousVmClusterSummary.
     #: This constant has a value of "ECPU"
     COMPUTE_MODEL_ECPU = "ECPU"
@@ -93,6 +101,16 @@ class AutonomousVmClusterSummary(object):
         :param time_zone:
             The value to assign to the time_zone property of this AutonomousVmClusterSummary.
         :type time_zone: str
+
+        :param distribution_algorithm:
+            The value to assign to the distribution_algorithm property of this AutonomousVmClusterSummary.
+            Allowed values for this property are: "RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type distribution_algorithm: str
+
+        :param sga_percentage:
+            The value to assign to the sga_percentage property of this AutonomousVmClusterSummary.
+        :type sga_percentage: float
 
         :param exadata_infrastructure_id:
             The value to assign to the exadata_infrastructure_id property of this AutonomousVmClusterSummary.
@@ -287,6 +305,8 @@ class AutonomousVmClusterSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_zone': 'str',
+            'distribution_algorithm': 'str',
+            'sga_percentage': 'float',
             'exadata_infrastructure_id': 'str',
             'vm_cluster_network_id': 'str',
             'is_local_backup_enabled': 'bool',
@@ -341,6 +361,8 @@ class AutonomousVmClusterSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_zone': 'timeZone',
+            'distribution_algorithm': 'distributionAlgorithm',
+            'sga_percentage': 'sgaPercentage',
             'exadata_infrastructure_id': 'exadataInfrastructureId',
             'vm_cluster_network_id': 'vmClusterNetworkId',
             'is_local_backup_enabled': 'isLocalBackupEnabled',
@@ -394,6 +416,8 @@ class AutonomousVmClusterSummary(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_zone = None
+        self._distribution_algorithm = None
+        self._sga_percentage = None
         self._exadata_infrastructure_id = None
         self._vm_cluster_network_id = None
         self._is_local_backup_enabled = None
@@ -625,6 +649,60 @@ class AutonomousVmClusterSummary(object):
         :type: str
         """
         self._time_zone = time_zone
+
+    @property
+    def distribution_algorithm(self):
+        """
+        Gets the distribution_algorithm of this AutonomousVmClusterSummary.
+        The distribution algorithm used for the Autonomous VM cluster.
+
+        Allowed values for this property are: "RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The distribution_algorithm of this AutonomousVmClusterSummary.
+        :rtype: str
+        """
+        return self._distribution_algorithm
+
+    @distribution_algorithm.setter
+    def distribution_algorithm(self, distribution_algorithm):
+        """
+        Sets the distribution_algorithm of this AutonomousVmClusterSummary.
+        The distribution algorithm used for the Autonomous VM cluster.
+
+
+        :param distribution_algorithm: The distribution_algorithm of this AutonomousVmClusterSummary.
+        :type: str
+        """
+        allowed_values = ["RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED"]
+        if not value_allowed_none_or_none_sentinel(distribution_algorithm, allowed_values):
+            distribution_algorithm = 'UNKNOWN_ENUM_VALUE'
+        self._distribution_algorithm = distribution_algorithm
+
+    @property
+    def sga_percentage(self):
+        """
+        Gets the sga_percentage of this AutonomousVmClusterSummary.
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+
+
+        :return: The sga_percentage of this AutonomousVmClusterSummary.
+        :rtype: float
+        """
+        return self._sga_percentage
+
+    @sga_percentage.setter
+    def sga_percentage(self, sga_percentage):
+        """
+        Sets the sga_percentage of this AutonomousVmClusterSummary.
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+
+
+        :param sga_percentage: The sga_percentage of this AutonomousVmClusterSummary.
+        :type: float
+        """
+        self._sga_percentage = sga_percentage
 
     @property
     def exadata_infrastructure_id(self):

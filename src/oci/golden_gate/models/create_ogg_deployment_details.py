@@ -61,6 +61,10 @@ class CreateOggDeploymentDetails(object):
             The value to assign to the key property of this CreateOggDeploymentDetails.
         :type key: str
 
+        :param key_secret_id:
+            The value to assign to the key_secret_id property of this CreateOggDeploymentDetails.
+        :type key_secret_id: str
+
         :param ogg_version:
             The value to assign to the ogg_version property of this CreateOggDeploymentDetails.
         :type ogg_version: str
@@ -79,6 +83,7 @@ class CreateOggDeploymentDetails(object):
             'admin_password': 'str',
             'certificate': 'str',
             'key': 'str',
+            'key_secret_id': 'str',
             'ogg_version': 'str',
             'group_to_roles_mapping': 'GroupToRolesMappingDetails'
         }
@@ -91,6 +96,7 @@ class CreateOggDeploymentDetails(object):
             'admin_password': 'adminPassword',
             'certificate': 'certificate',
             'key': 'key',
+            'key_secret_id': 'keySecretId',
             'ogg_version': 'oggVersion',
             'group_to_roles_mapping': 'groupToRolesMapping'
         }
@@ -102,15 +108,17 @@ class CreateOggDeploymentDetails(object):
         self._admin_password = None
         self._certificate = None
         self._key = None
+        self._key_secret_id = None
         self._ogg_version = None
         self._group_to_roles_mapping = None
 
     @property
     def deployment_name(self):
         """
-        **[Required]** Gets the deployment_name of this CreateOggDeploymentDetails.
+        Gets the deployment_name of this CreateOggDeploymentDetails.
         The name given to the GoldenGate service deployment.
-        The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        The name must contain only alphanumeric characters and must start with a letter.
+        For standby deployment the deployment name is inherited from primary.
 
 
         :return: The deployment_name of this CreateOggDeploymentDetails.
@@ -123,7 +131,8 @@ class CreateOggDeploymentDetails(object):
         """
         Sets the deployment_name of this CreateOggDeploymentDetails.
         The name given to the GoldenGate service deployment.
-        The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        The name must contain only alphanumeric characters and must start with a letter.
+        For standby deployment the deployment name is inherited from primary.
 
 
         :param deployment_name: The deployment_name of this CreateOggDeploymentDetails.
@@ -319,6 +328,34 @@ class CreateOggDeploymentDetails(object):
         :type: str
         """
         self._key = key
+
+    @property
+    def key_secret_id(self):
+        """
+        Gets the key_secret_id of this CreateOggDeploymentDetails.
+        The `OCID`__ of the Secret where the deployment ssl private key is stored in PEM format.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_secret_id of this CreateOggDeploymentDetails.
+        :rtype: str
+        """
+        return self._key_secret_id
+
+    @key_secret_id.setter
+    def key_secret_id(self, key_secret_id):
+        """
+        Sets the key_secret_id of this CreateOggDeploymentDetails.
+        The `OCID`__ of the Secret where the deployment ssl private key is stored in PEM format.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param key_secret_id: The key_secret_id of this CreateOggDeploymentDetails.
+        :type: str
+        """
+        self._key_secret_id = key_secret_id
 
     @property
     def ogg_version(self):

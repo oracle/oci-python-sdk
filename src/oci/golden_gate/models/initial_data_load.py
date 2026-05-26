@@ -39,6 +39,14 @@ class InitialDataLoad(object):
     #: This constant has a value of "SKIP"
     ACTION_ON_EXISTING_TABLE_SKIP = "SKIP"
 
+    #: A constant which can be used with the initial_load_type property of a InitialDataLoad.
+    #: This constant has a value of "DB_LINK"
+    INITIAL_LOAD_TYPE_DB_LINK = "DB_LINK"
+
+    #: A constant which can be used with the initial_load_type property of a InitialDataLoad.
+    #: This constant has a value of "OBJECT_STORAGE"
+    INITIAL_LOAD_TYPE_OBJECT_STORAGE = "OBJECT_STORAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InitialDataLoad object with values from keyword arguments.
@@ -56,17 +64,61 @@ class InitialDataLoad(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action_on_existing_table: str
 
+        :param initial_load_type:
+            The value to assign to the initial_load_type property of this InitialDataLoad.
+            Allowed values for this property are: "DB_LINK", "OBJECT_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type initial_load_type: str
+
+        :param adb_wallet_path:
+            The value to assign to the adb_wallet_path property of this InitialDataLoad.
+        :type adb_wallet_path: str
+
+        :param source_wallet_path:
+            The value to assign to the source_wallet_path property of this InitialDataLoad.
+        :type source_wallet_path: str
+
+        :param target_wallet_path:
+            The value to assign to the target_wallet_path property of this InitialDataLoad.
+        :type target_wallet_path: str
+
+        :param namespace_name:
+            The value to assign to the namespace_name property of this InitialDataLoad.
+        :type namespace_name: str
+
+        :param bucket_name:
+            The value to assign to the bucket_name property of this InitialDataLoad.
+        :type bucket_name: str
+
         """
         self.swagger_types = {
             'is_initial_load': 'str',
-            'action_on_existing_table': 'str'
+            'action_on_existing_table': 'str',
+            'initial_load_type': 'str',
+            'adb_wallet_path': 'str',
+            'source_wallet_path': 'str',
+            'target_wallet_path': 'str',
+            'namespace_name': 'str',
+            'bucket_name': 'str'
         }
         self.attribute_map = {
             'is_initial_load': 'isInitialLoad',
-            'action_on_existing_table': 'actionOnExistingTable'
+            'action_on_existing_table': 'actionOnExistingTable',
+            'initial_load_type': 'initialLoadType',
+            'adb_wallet_path': 'adbWalletPath',
+            'source_wallet_path': 'sourceWalletPath',
+            'target_wallet_path': 'targetWalletPath',
+            'namespace_name': 'namespaceName',
+            'bucket_name': 'bucketName'
         }
         self._is_initial_load = None
         self._action_on_existing_table = None
+        self._initial_load_type = None
+        self._adb_wallet_path = None
+        self._source_wallet_path = None
+        self._target_wallet_path = None
+        self._namespace_name = None
+        self._bucket_name = None
 
     @property
     def is_initial_load(self):
@@ -127,6 +179,156 @@ class InitialDataLoad(object):
         if not value_allowed_none_or_none_sentinel(action_on_existing_table, allowed_values):
             action_on_existing_table = 'UNKNOWN_ENUM_VALUE'
         self._action_on_existing_table = action_on_existing_table
+
+    @property
+    def initial_load_type(self):
+        """
+        Gets the initial_load_type of this InitialDataLoad.
+        Type of Initial load, which can be objectStorage or dbLink.
+
+        Allowed values for this property are: "DB_LINK", "OBJECT_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The initial_load_type of this InitialDataLoad.
+        :rtype: str
+        """
+        return self._initial_load_type
+
+    @initial_load_type.setter
+    def initial_load_type(self, initial_load_type):
+        """
+        Sets the initial_load_type of this InitialDataLoad.
+        Type of Initial load, which can be objectStorage or dbLink.
+
+
+        :param initial_load_type: The initial_load_type of this InitialDataLoad.
+        :type: str
+        """
+        allowed_values = ["DB_LINK", "OBJECT_STORAGE"]
+        if not value_allowed_none_or_none_sentinel(initial_load_type, allowed_values):
+            initial_load_type = 'UNKNOWN_ENUM_VALUE'
+        self._initial_load_type = initial_load_type
+
+    @property
+    def adb_wallet_path(self):
+        """
+        Gets the adb_wallet_path of this InitialDataLoad.
+        Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path \"/u01/targetwallet\" will be used.
+
+
+        :return: The adb_wallet_path of this InitialDataLoad.
+        :rtype: str
+        """
+        return self._adb_wallet_path
+
+    @adb_wallet_path.setter
+    def adb_wallet_path(self, adb_wallet_path):
+        """
+        Sets the adb_wallet_path of this InitialDataLoad.
+        Directory path of ADB wallet locally available in Non-ADB target DB. Required for ADB to non-ADB DBLink type initial load only. If not provided the default wallet path \"/u01/targetwallet\" will be used.
+
+
+        :param adb_wallet_path: The adb_wallet_path of this InitialDataLoad.
+        :type: str
+        """
+        self._adb_wallet_path = adb_wallet_path
+
+    @property
+    def source_wallet_path(self):
+        """
+        Gets the source_wallet_path of this InitialDataLoad.
+        Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+
+
+        :return: The source_wallet_path of this InitialDataLoad.
+        :rtype: str
+        """
+        return self._source_wallet_path
+
+    @source_wallet_path.setter
+    def source_wallet_path(self, source_wallet_path):
+        """
+        Sets the source_wallet_path of this InitialDataLoad.
+        Directory path of ObjectStorage wallet locally available in Non-ADB source DB. Required for Object Storage type initial load only if source DB is Non-ADB type.
+
+
+        :param source_wallet_path: The source_wallet_path of this InitialDataLoad.
+        :type: str
+        """
+        self._source_wallet_path = source_wallet_path
+
+    @property
+    def target_wallet_path(self):
+        """
+        Gets the target_wallet_path of this InitialDataLoad.
+        Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+
+
+        :return: The target_wallet_path of this InitialDataLoad.
+        :rtype: str
+        """
+        return self._target_wallet_path
+
+    @target_wallet_path.setter
+    def target_wallet_path(self, target_wallet_path):
+        """
+        Sets the target_wallet_path of this InitialDataLoad.
+        Directory path of ObjectStorage wallet locally available in Non-ADB target DB. Required for Object Storage type initial load only if target DB is Non-ADB type.
+
+
+        :param target_wallet_path: The target_wallet_path of this InitialDataLoad.
+        :type: str
+        """
+        self._target_wallet_path = target_wallet_path
+
+    @property
+    def namespace_name(self):
+        """
+        Gets the namespace_name of this InitialDataLoad.
+        Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+
+
+        :return: The namespace_name of this InitialDataLoad.
+        :rtype: str
+        """
+        return self._namespace_name
+
+    @namespace_name.setter
+    def namespace_name(self, namespace_name):
+        """
+        Sets the namespace_name of this InitialDataLoad.
+        Namespace that serves as a container of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+
+
+        :param namespace_name: The namespace_name of this InitialDataLoad.
+        :type: str
+        """
+        self._namespace_name = namespace_name
+
+    @property
+    def bucket_name(self):
+        """
+        Gets the bucket_name of this InitialDataLoad.
+        Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+
+
+        :return: The bucket_name of this InitialDataLoad.
+        :rtype: str
+        """
+        return self._bucket_name
+
+    @bucket_name.setter
+    def bucket_name(self, bucket_name):
+        """
+        Sets the bucket_name of this InitialDataLoad.
+        Name of the ObjectStorage bucket. Required only for Objectstorage Initial load.
+
+
+        :param bucket_name: The bucket_name of this InitialDataLoad.
+        :type: str
+        """
+        self._bucket_name = bucket_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

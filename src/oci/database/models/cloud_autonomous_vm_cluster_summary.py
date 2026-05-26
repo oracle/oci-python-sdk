@@ -75,6 +75,14 @@ class CloudAutonomousVmClusterSummary(object):
     #: This constant has a value of "AWS"
     TDE_KEY_STORE_TYPE_AWS = "AWS"
 
+    #: A constant which can be used with the distribution_algorithm property of a CloudAutonomousVmClusterSummary.
+    #: This constant has a value of "RESOURCE_OPTIMIZED"
+    DISTRIBUTION_ALGORITHM_RESOURCE_OPTIMIZED = "RESOURCE_OPTIMIZED"
+
+    #: A constant which can be used with the distribution_algorithm property of a CloudAutonomousVmClusterSummary.
+    #: This constant has a value of "DISTRIBUTION_OPTIMIZED"
+    DISTRIBUTION_ALGORITHM_DISTRIBUTION_OPTIMIZED = "DISTRIBUTION_OPTIMIZED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CloudAutonomousVmClusterSummary object with values from keyword arguments.
@@ -340,6 +348,16 @@ class CloudAutonomousVmClusterSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type tde_key_store_type: str
 
+        :param distribution_algorithm:
+            The value to assign to the distribution_algorithm property of this CloudAutonomousVmClusterSummary.
+            Allowed values for this property are: "RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type distribution_algorithm: str
+
+        :param sga_percentage:
+            The value to assign to the sga_percentage property of this CloudAutonomousVmClusterSummary.
+        :type sga_percentage: float
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -404,7 +422,9 @@ class CloudAutonomousVmClusterSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'subscription_id': 'str',
             'multi_cloud_identity_connector_configs': 'list[IdentityConnectorDetails]',
-            'tde_key_store_type': 'str'
+            'tde_key_store_type': 'str',
+            'distribution_algorithm': 'str',
+            'sga_percentage': 'float'
         }
         self.attribute_map = {
             'id': 'id',
@@ -469,7 +489,9 @@ class CloudAutonomousVmClusterSummary(object):
             'system_tags': 'systemTags',
             'subscription_id': 'subscriptionId',
             'multi_cloud_identity_connector_configs': 'multiCloudIdentityConnectorConfigs',
-            'tde_key_store_type': 'tdeKeyStoreType'
+            'tde_key_store_type': 'tdeKeyStoreType',
+            'distribution_algorithm': 'distributionAlgorithm',
+            'sga_percentage': 'sgaPercentage'
         }
         self._id = None
         self._compartment_id = None
@@ -534,6 +556,8 @@ class CloudAutonomousVmClusterSummary(object):
         self._subscription_id = None
         self._multi_cloud_identity_connector_configs = None
         self._tde_key_store_type = None
+        self._distribution_algorithm = None
+        self._sga_percentage = None
 
     @property
     def id(self):
@@ -2176,6 +2200,60 @@ class CloudAutonomousVmClusterSummary(object):
         if not value_allowed_none_or_none_sentinel(tde_key_store_type, allowed_values):
             tde_key_store_type = 'UNKNOWN_ENUM_VALUE'
         self._tde_key_store_type = tde_key_store_type
+
+    @property
+    def distribution_algorithm(self):
+        """
+        Gets the distribution_algorithm of this CloudAutonomousVmClusterSummary.
+        The distribution algorithm used for the Autonomous VM cluster.
+
+        Allowed values for this property are: "RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The distribution_algorithm of this CloudAutonomousVmClusterSummary.
+        :rtype: str
+        """
+        return self._distribution_algorithm
+
+    @distribution_algorithm.setter
+    def distribution_algorithm(self, distribution_algorithm):
+        """
+        Sets the distribution_algorithm of this CloudAutonomousVmClusterSummary.
+        The distribution algorithm used for the Autonomous VM cluster.
+
+
+        :param distribution_algorithm: The distribution_algorithm of this CloudAutonomousVmClusterSummary.
+        :type: str
+        """
+        allowed_values = ["RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED"]
+        if not value_allowed_none_or_none_sentinel(distribution_algorithm, allowed_values):
+            distribution_algorithm = 'UNKNOWN_ENUM_VALUE'
+        self._distribution_algorithm = distribution_algorithm
+
+    @property
+    def sga_percentage(self):
+        """
+        Gets the sga_percentage of this CloudAutonomousVmClusterSummary.
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+
+
+        :return: The sga_percentage of this CloudAutonomousVmClusterSummary.
+        :rtype: float
+        """
+        return self._sga_percentage
+
+    @sga_percentage.setter
+    def sga_percentage(self, sga_percentage):
+        """
+        Sets the sga_percentage of this CloudAutonomousVmClusterSummary.
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+
+
+        :param sga_percentage: The sga_percentage of this CloudAutonomousVmClusterSummary.
+        :type: float
+        """
+        self._sga_percentage = sga_percentage
 
     def __repr__(self):
         return formatted_flat_dict(self)

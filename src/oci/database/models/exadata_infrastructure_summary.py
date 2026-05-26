@@ -267,6 +267,10 @@ class ExadataInfrastructureSummary(object):
             The value to assign to the maintenance_window property of this ExadataInfrastructureSummary.
         :type maintenance_window: oci.database.models.MaintenanceWindow
 
+        :param maintenance_version_preferences:
+            The value to assign to the maintenance_version_preferences property of this ExadataInfrastructureSummary.
+        :type maintenance_version_preferences: oci.database.models.MaintenanceVersionPreferenceDetails
+
         :param storage_server_version:
             The value to assign to the storage_server_version property of this ExadataInfrastructureSummary.
         :type storage_server_version: str
@@ -377,6 +381,7 @@ class ExadataInfrastructureSummary(object):
             'contacts': 'list[ExadataInfrastructureContact]',
             'maintenance_slo_status': 'str',
             'maintenance_window': 'MaintenanceWindow',
+            'maintenance_version_preferences': 'MaintenanceVersionPreferenceDetails',
             'storage_server_version': 'str',
             'db_server_version': 'str',
             'monthly_db_server_version': 'str',
@@ -434,6 +439,7 @@ class ExadataInfrastructureSummary(object):
             'contacts': 'contacts',
             'maintenance_slo_status': 'maintenanceSLOStatus',
             'maintenance_window': 'maintenanceWindow',
+            'maintenance_version_preferences': 'maintenanceVersionPreferences',
             'storage_server_version': 'storageServerVersion',
             'db_server_version': 'dbServerVersion',
             'monthly_db_server_version': 'monthlyDbServerVersion',
@@ -490,6 +496,7 @@ class ExadataInfrastructureSummary(object):
         self._contacts = None
         self._maintenance_slo_status = None
         self._maintenance_window = None
+        self._maintenance_version_preferences = None
         self._storage_server_version = None
         self._db_server_version = None
         self._monthly_db_server_version = None
@@ -1449,6 +1456,26 @@ class ExadataInfrastructureSummary(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def maintenance_version_preferences(self):
+        """
+        Gets the maintenance_version_preferences of this ExadataInfrastructureSummary.
+
+        :return: The maintenance_version_preferences of this ExadataInfrastructureSummary.
+        :rtype: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        return self._maintenance_version_preferences
+
+    @maintenance_version_preferences.setter
+    def maintenance_version_preferences(self, maintenance_version_preferences):
+        """
+        Sets the maintenance_version_preferences of this ExadataInfrastructureSummary.
+
+        :param maintenance_version_preferences: The maintenance_version_preferences of this ExadataInfrastructureSummary.
+        :type: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        self._maintenance_version_preferences = maintenance_version_preferences
 
     @property
     def storage_server_version(self):

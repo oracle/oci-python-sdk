@@ -394,6 +394,7 @@ from .maintenance_run import MaintenanceRun
 from .maintenance_run_history import MaintenanceRunHistory
 from .maintenance_run_history_summary import MaintenanceRunHistorySummary
 from .maintenance_run_summary import MaintenanceRunSummary
+from .maintenance_version_preference_details import MaintenanceVersionPreferenceDetails
 from .maintenance_window import MaintenanceWindow
 from .migrate_vault_key_details import MigrateVaultKeyDetails
 from .modify_database_management_details import ModifyDatabaseManagementDetails
@@ -556,6 +557,7 @@ from .vm_cluster_update_summary import VmClusterUpdateSummary
 from .vm_network_details import VmNetworkDetails
 from .volume_details import VolumeDetails
 from .window_preference_detail import WindowPreferenceDetail
+from .window_type_description import WindowTypeDescription
 from .workload_type import WorkloadType
 
 # Maps type names to classes for database services.
@@ -948,6 +950,7 @@ database_type_mapping = {
     "MaintenanceRunHistory": MaintenanceRunHistory,
     "MaintenanceRunHistorySummary": MaintenanceRunHistorySummary,
     "MaintenanceRunSummary": MaintenanceRunSummary,
+    "MaintenanceVersionPreferenceDetails": MaintenanceVersionPreferenceDetails,
     "MaintenanceWindow": MaintenanceWindow,
     "MigrateVaultKeyDetails": MigrateVaultKeyDetails,
     "ModifyDatabaseManagementDetails": ModifyDatabaseManagementDetails,
@@ -1110,5 +1113,6 @@ database_type_mapping = {
     "VmNetworkDetails": VmNetworkDetails,
     "VolumeDetails": VolumeDetails,
     "WindowPreferenceDetail": WindowPreferenceDetail,
+    "WindowTypeDescription": WindowTypeDescription,
     "WorkloadType": WorkloadType
 }

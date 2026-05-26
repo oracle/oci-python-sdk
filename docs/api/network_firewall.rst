@@ -78,6 +78,7 @@ Network Firewall
     oci.network_firewall.models.NatV4NatSummary
     oci.network_firewall.models.NetworkFirewall
     oci.network_firewall.models.NetworkFirewallCollection
+    oci.network_firewall.models.NetworkFirewallHealthStatus
     oci.network_firewall.models.NetworkFirewallPolicy
     oci.network_firewall.models.NetworkFirewallPolicySummary
     oci.network_firewall.models.NetworkFirewallPolicySummaryCollection

@@ -185,7 +185,7 @@ class CreateAutonomousContainerDatabaseDetails(CreateAutonomousContainerDatabase
 
         :param net_services_architecture:
             The value to assign to the net_services_architecture property of this CreateAutonomousContainerDatabaseDetails.
-            Allowed values for this property are: "DEDICATED", "SHARED"
+            Allowed values for this property are: "DEDICATED", "SHARED", "DRCP"
         :type net_services_architecture: str
 
         """

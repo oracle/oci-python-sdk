@@ -66,6 +66,14 @@ class UpdatePipelineDetails(object):
             The value to assign to the subnet_id property of this UpdatePipelineDetails.
         :type subnet_id: str
 
+        :param cpu_core_count:
+            The value to assign to the cpu_core_count property of this UpdatePipelineDetails.
+        :type cpu_core_count: int
+
+        :param is_auto_scaling_enabled:
+            The value to assign to the is_auto_scaling_enabled property of this UpdatePipelineDetails.
+        :type is_auto_scaling_enabled: bool
+
         """
         self.swagger_types = {
             'recipe_type': 'str',
@@ -74,7 +82,9 @@ class UpdatePipelineDetails(object):
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'cpu_core_count': 'int',
+            'is_auto_scaling_enabled': 'bool'
         }
         self.attribute_map = {
             'recipe_type': 'recipeType',
@@ -83,7 +93,9 @@ class UpdatePipelineDetails(object):
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'cpu_core_count': 'cpuCoreCount',
+            'is_auto_scaling_enabled': 'isAutoScalingEnabled'
         }
         self._recipe_type = None
         self._display_name = None
@@ -92,6 +104,8 @@ class UpdatePipelineDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._subnet_id = None
+        self._cpu_core_count = None
+        self._is_auto_scaling_enabled = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -303,6 +317,54 @@ class UpdatePipelineDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def cpu_core_count(self):
+        """
+        Gets the cpu_core_count of this UpdatePipelineDetails.
+        The Minimum number of OCPUs to be made available for this Deployment.
+
+
+        :return: The cpu_core_count of this UpdatePipelineDetails.
+        :rtype: int
+        """
+        return self._cpu_core_count
+
+    @cpu_core_count.setter
+    def cpu_core_count(self, cpu_core_count):
+        """
+        Sets the cpu_core_count of this UpdatePipelineDetails.
+        The Minimum number of OCPUs to be made available for this Deployment.
+
+
+        :param cpu_core_count: The cpu_core_count of this UpdatePipelineDetails.
+        :type: int
+        """
+        self._cpu_core_count = cpu_core_count
+
+    @property
+    def is_auto_scaling_enabled(self):
+        """
+        Gets the is_auto_scaling_enabled of this UpdatePipelineDetails.
+        Indicates if auto scaling is enabled for the Deployment's CPU core count.
+
+
+        :return: The is_auto_scaling_enabled of this UpdatePipelineDetails.
+        :rtype: bool
+        """
+        return self._is_auto_scaling_enabled
+
+    @is_auto_scaling_enabled.setter
+    def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
+        """
+        Sets the is_auto_scaling_enabled of this UpdatePipelineDetails.
+        Indicates if auto scaling is enabled for the Deployment's CPU core count.
+
+
+        :param is_auto_scaling_enabled: The is_auto_scaling_enabled of this UpdatePipelineDetails.
+        :type: bool
+        """
+        self._is_auto_scaling_enabled = is_auto_scaling_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

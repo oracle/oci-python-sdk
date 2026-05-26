@@ -171,7 +171,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -290,7 +290,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials"
         method = "POST"
         operation_name = "create_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsConnection/CreateCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -416,7 +416,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials/{credentialKey}/executeGrantees"
         method = "POST"
         operation_name = "create_credential_execute_grantee"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGrantee/CreateCredentialExecuteGrantee"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -543,7 +543,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials/{credentialKey}/publicSynonyms"
         method = "POST"
         operation_name = "create_credential_public_synonym"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonym/CreateCredentialPublicSynonym"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -667,7 +667,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools"
         method = "POST"
         operation_name = "create_database_tools_database_api_gateway_config_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPool/CreateDatabaseToolsDatabaseApiGatewayConfigPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -794,7 +794,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}/apiSpecs"
         method = "POST"
         operation_name = "create_database_tools_database_api_gateway_config_pool_api_spec"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolApiSpec/CreateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -922,7 +922,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}/autoApiSpecs"
         method = "POST"
         operation_name = "create_database_tools_database_api_gateway_config_pool_auto_api_spec"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec/CreateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1047,7 +1047,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials/{credentialKey}"
         method = "DELETE"
         operation_name = "delete_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/Credential/DeleteCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1170,7 +1170,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials/{credentialKey}/executeGrantees/{executeGranteeKey}"
         method = "DELETE"
         operation_name = "delete_credential_execute_grantee"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGrantee/DeleteCredentialExecuteGrantee"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1294,7 +1294,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials/{credentialKey}/publicSynonyms/{publicSynonymKey}"
         method = "DELETE"
         operation_name = "delete_credential_public_synonym"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonym/DeleteCredentialPublicSynonym"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1415,7 +1415,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}"
         method = "DELETE"
         operation_name = "delete_database_tools_database_api_gateway_config_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfigPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1538,7 +1538,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}/apiSpecs/{apiSpecKey}"
         method = "DELETE"
         operation_name = "delete_database_tools_database_api_gateway_config_pool_api_spec"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1662,7 +1662,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}/autoApiSpecs/{autoApiSpecKey}"
         method = "DELETE"
         operation_name = "delete_database_tools_database_api_gateway_config_pool_auto_api_spec"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/DeleteDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1783,7 +1783,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/actions/executeSql"
         method = "POST"
         operation_name = "execute_sql_database_tools_connection"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsConnection/ExecuteSqlDatabaseToolsConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1906,7 +1906,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials/{credentialKey}"
         method = "GET"
         operation_name = "get_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/Credential/GetCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2031,7 +2031,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials/{credentialKey}/executeGrantees/{executeGranteeKey}"
         method = "GET"
         operation_name = "get_credential_execute_grantee"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGrantee/GetCredentialExecuteGrantee"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2157,7 +2157,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials/{credentialKey}/publicSynonyms/{publicSynonymKey}"
         method = "GET"
         operation_name = "get_credential_public_synonym"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonym/GetCredentialPublicSynonym"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2284,7 +2284,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/content"
         method = "GET"
         operation_name = "get_database_tools_database_api_gateway_config_content"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/GetDatabaseToolsDatabaseApiGatewayConfigContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2409,7 +2409,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/globals/{globalKey}"
         method = "GET"
         operation_name = "get_database_tools_database_api_gateway_config_global"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigGlobal/GetDatabaseToolsDatabaseApiGatewayConfigGlobal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2531,7 +2531,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}"
         method = "GET"
         operation_name = "get_database_tools_database_api_gateway_config_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPool/GetDatabaseToolsDatabaseApiGatewayConfigPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2656,7 +2656,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}/apiSpecs/{apiSpecKey}"
         method = "GET"
         operation_name = "get_database_tools_database_api_gateway_config_pool_api_spec"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolApiSpec/GetDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2782,7 +2782,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}/autoApiSpecs/{autoApiSpecKey}"
         method = "GET"
         operation_name = "get_database_tools_database_api_gateway_config_pool_auto_api_spec"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec/GetDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2907,7 +2907,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/propertySets/{propertySetKey}"
         method = "GET"
         operation_name = "get_property_set"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/PropertySet/GetPropertySet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3032,7 +3032,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/users/{userKey}/credentials/{credentialKey}"
         method = "GET"
         operation_name = "get_user_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/UserCredential/GetUserCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3141,7 +3141,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3271,7 +3271,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials/{credentialKey}/executeGrantees"
         method = "GET"
         operation_name = "list_credential_execute_grantees"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialExecuteGranteeCollection/ListCredentialExecuteGrantees"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3423,7 +3423,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials/{credentialKey}/publicSynonyms"
         method = "GET"
         operation_name = "list_credential_public_synonyms"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialPublicSynonymCollection/ListCredentialPublicSynonyms"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3572,7 +3572,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials"
         method = "GET"
         operation_name = "list_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/CredentialCollection/ListCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3695,7 +3695,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigAdvancedProperties"
         method = "GET"
         operation_name = "list_database_tools_database_api_gateway_config_advanced_properties"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigAdvancedPropertySummary/ListDatabaseToolsDatabaseApiGatewayConfigAdvancedProperties"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3812,7 +3812,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}/apiSpecs"
         method = "GET"
         operation_name = "list_database_tools_database_api_gateway_config_pool_api_specs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3972,7 +3972,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}/autoApiSpecs"
         method = "GET"
         operation_name = "list_database_tools_database_api_gateway_config_pool_auto_api_specs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4129,7 +4129,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools"
         method = "GET"
         operation_name = "list_database_tools_database_api_gateway_config_pools"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfig/ListDatabaseToolsDatabaseApiGatewayConfigPools"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4289,7 +4289,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/users/{userKey}/credentials"
         method = "GET"
         operation_name = "list_user_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/UserCredentialCollection/ListUserCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4432,7 +4432,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4581,7 +4581,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4748,7 +4748,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4911,7 +4911,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/credentials/{credentialKey}"
         method = "PUT"
         operation_name = "update_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/Credential/UpdateCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5040,7 +5040,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/globals/{globalKey}"
         method = "PUT"
         operation_name = "update_database_tools_database_api_gateway_config_global"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigGlobal/UpdateDatabaseToolsDatabaseApiGatewayConfigGlobal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5167,7 +5167,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}"
         method = "PUT"
         operation_name = "update_database_tools_database_api_gateway_config_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPool/UpdateDatabaseToolsDatabaseApiGatewayConfigPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5297,7 +5297,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}/apiSpecs/{apiSpecKey}"
         method = "PUT"
         operation_name = "update_database_tools_database_api_gateway_config_pool_api_spec"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolApiSpec/UpdateDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5428,7 +5428,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsDatabaseApiGatewayConfigs/{databaseToolsDatabaseApiGatewayConfigId}/pools/{poolKey}/autoApiSpecs/{autoApiSpecKey}"
         method = "PUT"
         operation_name = "update_database_tools_database_api_gateway_config_pool_auto_api_spec"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec/UpdateDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5558,7 +5558,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/propertySets/{propertySetKey}"
         method = "PUT"
         operation_name = "update_property_set"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/PropertySet/UpdatePropertySet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5682,7 +5682,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/actions/validateConnection"
         method = "POST"
         operation_name = "validate_database_tools_connection"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsConnection/ValidateDatabaseToolsConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5806,7 +5806,7 @@ class DatabaseToolsRuntimeClient(object):
         resource_path = "/databaseToolsIdentities/{databaseToolsIdentityId}/actions/validateCredential"
         method = "POST"
         operation_name = "validate_database_tools_identity_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools-runtime/20230222/DatabaseToolsIdentity/ValidateDatabaseToolsIdentityCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

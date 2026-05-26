@@ -50,7 +50,7 @@ class PlacementConfiguration(object):
     @property
     def availability_domain(self):
         """
-        Gets the availability_domain of this PlacementConfiguration.
+        **[Required]** Gets the availability_domain of this PlacementConfiguration.
         The availability domain in which to place virtual nodes.
         Example: `Uocm:PHX-AD-1`
 
@@ -100,7 +100,7 @@ class PlacementConfiguration(object):
     @property
     def subnet_id(self):
         """
-        Gets the subnet_id of this PlacementConfiguration.
+        **[Required]** Gets the subnet_id of this PlacementConfiguration.
         The OCID of the subnet in which to place virtual nodes.
 
 

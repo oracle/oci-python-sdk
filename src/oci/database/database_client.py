@@ -35288,7 +35288,7 @@ class DatabaseClient(object):
 
     def list_db_system_compute_performances(self, **kwargs):
         """
-        Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+        Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration. Adding compartmentId does not affect results.
 
 
         :param str db_system_shape: (optional)
@@ -35296,6 +35296,11 @@ class DatabaseClient(object):
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
+
+        :param str compartment_id: (optional)
+            The compartment `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -35332,7 +35337,8 @@ class DatabaseClient(object):
             "enable_strict_url_encoding",
             "retry_strategy",
             "db_system_shape",
-            "opc_request_id"
+            "opc_request_id",
+            "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -35340,7 +35346,8 @@ class DatabaseClient(object):
                 f"list_db_system_compute_performances got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
-            "dbSystemShape": kwargs.get("db_system_shape", missing)
+            "dbSystemShape": kwargs.get("db_system_shape", missing),
+            "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -39866,7 +39873,12 @@ class DatabaseClient(object):
         :param str type: (required)
             The type of the scheduled action
 
-            Allowed values are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE"
+            Allowed values are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE", "DB_SERVER_ONLINE_SOFTWARE_UPDATE"
+
+        :param str plan_intent: (optional)
+            The plan intent the action will be used for. Relevant to action type that can be used in multiple plans
+
+            Allowed values are: "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -39911,6 +39923,7 @@ class DatabaseClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "plan_intent",
             "limit",
             "page",
             "opc_request_id"
@@ -39920,14 +39933,22 @@ class DatabaseClient(object):
             raise ValueError(
                 f"list_params_for_action_type got unknown kwargs: {extra_kwargs!r}")
 
-        type_allowed_values = ["DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE"]
+        type_allowed_values = ["DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_OS_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_SOFTWARE_UPDATE", "FSU_VM_CLUSTER_GI_OS_SOFTWARE_UPDATE", "DB_SERVER_ONLINE_SOFTWARE_UPDATE"]
         if type not in type_allowed_values:
             raise ValueError(
                 f"Invalid value for `type`, must be one of { type_allowed_values }"
             )
 
+        if 'plan_intent' in kwargs:
+            plan_intent_allowed_values = ["EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"]
+            if kwargs['plan_intent'] not in plan_intent_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `plan_intent`, must be one of { plan_intent_allowed_values }"
+                )
+
         query_params = {
             "type": type,
+            "planIntent": kwargs.get("plan_intent", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
@@ -40498,7 +40519,7 @@ class DatabaseClient(object):
         :param str plan_intent: (required)
             The scheduling plan intent the scheduled actions will be for.
 
-            Allowed values are: "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"
+            Allowed values are: "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -40562,7 +40583,7 @@ class DatabaseClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
-        plan_intent_allowed_values = ["EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"]
+        plan_intent_allowed_values = ["EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"]
         if plan_intent not in plan_intent_allowed_values:
             raise ValueError(
                 f"Invalid value for `plan_intent`, must be one of { plan_intent_allowed_values }"
@@ -40958,6 +40979,11 @@ class DatabaseClient(object):
         :param str id: (optional)
             A filter to return only resources that match the given Schedule Plan id exactly.
 
+        :param str plan_intent: (optional)
+            A filter to return only resources that match the given plan intent exactly.
+
+            Allowed values are: "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -41001,7 +41027,8 @@ class DatabaseClient(object):
             "scheduling_policy_id",
             "display_name",
             "resource_id",
-            "id"
+            "id",
+            "plan_intent"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -41029,6 +41056,13 @@ class DatabaseClient(object):
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
+        if 'plan_intent' in kwargs:
+            plan_intent_allowed_values = ["EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"]
+            if kwargs['plan_intent'] not in plan_intent_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `plan_intent`, must be one of { plan_intent_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
@@ -41039,7 +41073,8 @@ class DatabaseClient(object):
             "schedulingPolicyId": kwargs.get("scheduling_policy_id", missing),
             "displayName": kwargs.get("display_name", missing),
             "resourceId": kwargs.get("resource_id", missing),
-            "id": kwargs.get("id", missing)
+            "id": kwargs.get("id", missing),
+            "planIntent": kwargs.get("plan_intent", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -41121,6 +41156,11 @@ class DatabaseClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str cadence: (optional)
+            A filter to return only resources that match the given cadence period exactly.
+
+            Allowed values are: "HALFYEARLY", "QUARTERLY", "MONTHLY"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -41161,7 +41201,8 @@ class DatabaseClient(object):
             "sort_by",
             "sort_order",
             "lifecycle_state",
-            "display_name"
+            "display_name",
+            "cadence"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -41189,6 +41230,13 @@ class DatabaseClient(object):
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
+        if 'cadence' in kwargs:
+            cadence_allowed_values = ["HALFYEARLY", "QUARTERLY", "MONTHLY"]
+            if kwargs['cadence'] not in cadence_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `cadence`, must be one of { cadence_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
@@ -41196,7 +41244,8 @@ class DatabaseClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "displayName": kwargs.get("display_name", missing),
+            "cadence": kwargs.get("cadence", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

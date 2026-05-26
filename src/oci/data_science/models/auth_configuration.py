@@ -16,31 +16,21 @@ class AuthConfiguration(object):
     """
 
     #: A constant which can be used with the type property of a AuthConfiguration.
-    #: This constant has a value of "IDCS"
-    TYPE_IDCS = "IDCS"
-
-    #: A constant which can be used with the type property of a AuthConfiguration.
     #: This constant has a value of "IAM"
     TYPE_IAM = "IAM"
-
-    #: A constant which can be used with the type property of a AuthConfiguration.
-    #: This constant has a value of "IDCS_CUSTOM_SERVICE"
-    TYPE_IDCS_CUSTOM_SERVICE = "IDCS_CUSTOM_SERVICE"
 
     def __init__(self, **kwargs):
         """
         Initializes a new AuthConfiguration object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
-        * :class:`~oci.data_science.models.IdcsAuthConfiguration`
-        * :class:`~oci.data_science.models.IdcsCustomServiceAuthConfiguration`
         * :class:`~oci.data_science.models.IamAuthConfiguration`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this AuthConfiguration.
-            Allowed values for this property are: "IDCS", "IAM", "IDCS_CUSTOM_SERVICE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -61,12 +51,6 @@ class AuthConfiguration(object):
         """
         type = object_dictionary['type']
 
-        if type == 'IDCS':
-            return 'IdcsAuthConfiguration'
-
-        if type == 'IDCS_CUSTOM_SERVICE':
-            return 'IdcsCustomServiceAuthConfiguration'
-
         if type == 'IAM':
             return 'IamAuthConfiguration'
         else:
@@ -78,7 +62,7 @@ class AuthConfiguration(object):
         **[Required]** Gets the type of this AuthConfiguration.
         Type of AuthN/Z
 
-        Allowed values for this property are: "IDCS", "IAM", "IDCS_CUSTOM_SERVICE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -97,7 +81,7 @@ class AuthConfiguration(object):
         :param type: The type of this AuthConfiguration.
         :type: str
         """
-        allowed_values = ["IDCS", "IAM", "IDCS_CUSTOM_SERVICE"]
+        allowed_values = ["IAM"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

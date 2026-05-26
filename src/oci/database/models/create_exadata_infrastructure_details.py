@@ -73,6 +73,10 @@ class CreateExadataInfrastructureDetails(object):
             The value to assign to the maintenance_window property of this CreateExadataInfrastructureDetails.
         :type maintenance_window: oci.database.models.MaintenanceWindow
 
+        :param maintenance_version_preferences:
+            The value to assign to the maintenance_version_preferences property of this CreateExadataInfrastructureDetails.
+        :type maintenance_version_preferences: oci.database.models.MaintenanceVersionPreferenceDetails
+
         :param storage_count:
             The value to assign to the storage_count property of this CreateExadataInfrastructureDetails.
         :type storage_count: int
@@ -136,6 +140,7 @@ class CreateExadataInfrastructureDetails(object):
             'corporate_proxy': 'str',
             'contacts': 'list[ExadataInfrastructureContact]',
             'maintenance_window': 'MaintenanceWindow',
+            'maintenance_version_preferences': 'MaintenanceVersionPreferenceDetails',
             'storage_count': 'int',
             'compute_count': 'int',
             'is_multi_rack_deployment': 'bool',
@@ -163,6 +168,7 @@ class CreateExadataInfrastructureDetails(object):
             'corporate_proxy': 'corporateProxy',
             'contacts': 'contacts',
             'maintenance_window': 'maintenanceWindow',
+            'maintenance_version_preferences': 'maintenanceVersionPreferences',
             'storage_count': 'storageCount',
             'compute_count': 'computeCount',
             'is_multi_rack_deployment': 'isMultiRackDeployment',
@@ -189,6 +195,7 @@ class CreateExadataInfrastructureDetails(object):
         self._corporate_proxy = None
         self._contacts = None
         self._maintenance_window = None
+        self._maintenance_version_preferences = None
         self._storage_count = None
         self._compute_count = None
         self._is_multi_rack_deployment = None
@@ -519,6 +526,26 @@ class CreateExadataInfrastructureDetails(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def maintenance_version_preferences(self):
+        """
+        Gets the maintenance_version_preferences of this CreateExadataInfrastructureDetails.
+
+        :return: The maintenance_version_preferences of this CreateExadataInfrastructureDetails.
+        :rtype: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        return self._maintenance_version_preferences
+
+    @maintenance_version_preferences.setter
+    def maintenance_version_preferences(self, maintenance_version_preferences):
+        """
+        Sets the maintenance_version_preferences of this CreateExadataInfrastructureDetails.
+
+        :param maintenance_version_preferences: The maintenance_version_preferences of this CreateExadataInfrastructureDetails.
+        :type: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        self._maintenance_version_preferences = maintenance_version_preferences
 
     @property
     def storage_count(self):

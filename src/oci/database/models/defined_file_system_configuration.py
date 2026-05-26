@@ -28,6 +28,10 @@ class DefinedFileSystemConfiguration(object):
             The value to assign to the min_size_gb property of this DefinedFileSystemConfiguration.
         :type min_size_gb: int
 
+        :param max_size_gb:
+            The value to assign to the max_size_gb property of this DefinedFileSystemConfiguration.
+        :type max_size_gb: int
+
         :param is_resizable:
             The value to assign to the is_resizable property of this DefinedFileSystemConfiguration.
         :type is_resizable: bool
@@ -40,17 +44,20 @@ class DefinedFileSystemConfiguration(object):
         self.swagger_types = {
             'mount_point': 'str',
             'min_size_gb': 'int',
+            'max_size_gb': 'int',
             'is_resizable': 'bool',
             'is_backup_partition': 'bool'
         }
         self.attribute_map = {
             'mount_point': 'mountPoint',
             'min_size_gb': 'minSizeGb',
+            'max_size_gb': 'maxSizeGb',
             'is_resizable': 'isResizable',
             'is_backup_partition': 'isBackupPartition'
         }
         self._mount_point = None
         self._min_size_gb = None
+        self._max_size_gb = None
         self._is_resizable = None
         self._is_backup_partition = None
 
@@ -101,6 +108,30 @@ class DefinedFileSystemConfiguration(object):
         :type: int
         """
         self._min_size_gb = min_size_gb
+
+    @property
+    def max_size_gb(self):
+        """
+        Gets the max_size_gb of this DefinedFileSystemConfiguration.
+        The maximum size of file system.
+
+
+        :return: The max_size_gb of this DefinedFileSystemConfiguration.
+        :rtype: int
+        """
+        return self._max_size_gb
+
+    @max_size_gb.setter
+    def max_size_gb(self, max_size_gb):
+        """
+        Sets the max_size_gb of this DefinedFileSystemConfiguration.
+        The maximum size of file system.
+
+
+        :param max_size_gb: The max_size_gb of this DefinedFileSystemConfiguration.
+        :type: int
+        """
+        self._max_size_gb = max_size_gb
 
     @property
     def is_resizable(self):

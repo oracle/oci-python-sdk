@@ -151,6 +151,10 @@ class AutonomousContainerDatabaseSummary(object):
     #: This constant has a value of "SHARED"
     NET_SERVICES_ARCHITECTURE_SHARED = "SHARED"
 
+    #: A constant which can be used with the net_services_architecture property of a AutonomousContainerDatabaseSummary.
+    #: This constant has a value of "DRCP"
+    NET_SERVICES_ARCHITECTURE_DRCP = "DRCP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousContainerDatabaseSummary object with values from keyword arguments.
@@ -402,7 +406,7 @@ class AutonomousContainerDatabaseSummary(object):
 
         :param net_services_architecture:
             The value to assign to the net_services_architecture property of this AutonomousContainerDatabaseSummary.
-            Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DEDICATED", "SHARED", "DRCP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type net_services_architecture: str
 
@@ -2018,7 +2022,7 @@ class AutonomousContainerDatabaseSummary(object):
     def vm_failover_reservation(self):
         """
         Gets the vm_failover_reservation of this AutonomousContainerDatabaseSummary.
-        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
 
 
         :return: The vm_failover_reservation of this AutonomousContainerDatabaseSummary.
@@ -2030,7 +2034,7 @@ class AutonomousContainerDatabaseSummary(object):
     def vm_failover_reservation(self, vm_failover_reservation):
         """
         Sets the vm_failover_reservation of this AutonomousContainerDatabaseSummary.
-        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
 
 
         :param vm_failover_reservation: The vm_failover_reservation of this AutonomousContainerDatabaseSummary.
@@ -2074,7 +2078,7 @@ class AutonomousContainerDatabaseSummary(object):
         Gets the net_services_architecture of this AutonomousContainerDatabaseSummary.
         Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
 
-        Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DEDICATED", "SHARED", "DRCP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -2093,7 +2097,7 @@ class AutonomousContainerDatabaseSummary(object):
         :param net_services_architecture: The net_services_architecture of this AutonomousContainerDatabaseSummary.
         :type: str
         """
-        allowed_values = ["DEDICATED", "SHARED"]
+        allowed_values = ["DEDICATED", "SHARED", "DRCP"]
         if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
             net_services_architecture = 'UNKNOWN_ENUM_VALUE'
         self._net_services_architecture = net_services_architecture

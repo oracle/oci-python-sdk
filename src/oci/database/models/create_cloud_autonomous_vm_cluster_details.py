@@ -23,6 +23,14 @@ class CreateCloudAutonomousVmClusterDetails(object):
     #: This constant has a value of "OCPU"
     COMPUTE_MODEL_OCPU = "OCPU"
 
+    #: A constant which can be used with the distribution_algorithm property of a CreateCloudAutonomousVmClusterDetails.
+    #: This constant has a value of "RESOURCE_OPTIMIZED"
+    DISTRIBUTION_ALGORITHM_RESOURCE_OPTIMIZED = "RESOURCE_OPTIMIZED"
+
+    #: A constant which can be used with the distribution_algorithm property of a CreateCloudAutonomousVmClusterDetails.
+    #: This constant has a value of "DISTRIBUTION_OPTIMIZED"
+    DISTRIBUTION_ALGORITHM_DISTRIBUTION_OPTIMIZED = "DISTRIBUTION_OPTIMIZED"
+
     #: A constant which can be used with the license_model property of a CreateCloudAutonomousVmClusterDetails.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -85,6 +93,15 @@ class CreateCloudAutonomousVmClusterDetails(object):
             The value to assign to the is_mtls_enabled_vm_cluster property of this CreateCloudAutonomousVmClusterDetails.
         :type is_mtls_enabled_vm_cluster: bool
 
+        :param distribution_algorithm:
+            The value to assign to the distribution_algorithm property of this CreateCloudAutonomousVmClusterDetails.
+            Allowed values for this property are: "RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED"
+        :type distribution_algorithm: str
+
+        :param sga_percentage:
+            The value to assign to the sga_percentage property of this CreateCloudAutonomousVmClusterDetails.
+        :type sga_percentage: float
+
         :param db_servers:
             The value to assign to the db_servers property of this CreateCloudAutonomousVmClusterDetails.
         :type db_servers: list[str]
@@ -140,6 +157,8 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'cluster_time_zone': 'str',
             'compute_model': 'str',
             'is_mtls_enabled_vm_cluster': 'bool',
+            'distribution_algorithm': 'str',
+            'sga_percentage': 'float',
             'db_servers': 'list[str]',
             'maintenance_window_details': 'MaintenanceWindow',
             'scan_listener_port_tls': 'int',
@@ -164,6 +183,8 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'cluster_time_zone': 'clusterTimeZone',
             'compute_model': 'computeModel',
             'is_mtls_enabled_vm_cluster': 'isMtlsEnabledVmCluster',
+            'distribution_algorithm': 'distributionAlgorithm',
+            'sga_percentage': 'sgaPercentage',
             'db_servers': 'dbServers',
             'maintenance_window_details': 'maintenanceWindowDetails',
             'scan_listener_port_tls': 'scanListenerPortTls',
@@ -187,6 +208,8 @@ class CreateCloudAutonomousVmClusterDetails(object):
         self._cluster_time_zone = None
         self._compute_model = None
         self._is_mtls_enabled_vm_cluster = None
+        self._distribution_algorithm = None
+        self._sga_percentage = None
         self._db_servers = None
         self._maintenance_window_details = None
         self._scan_listener_port_tls = None
@@ -508,6 +531,61 @@ class CreateCloudAutonomousVmClusterDetails(object):
         :type: bool
         """
         self._is_mtls_enabled_vm_cluster = is_mtls_enabled_vm_cluster
+
+    @property
+    def distribution_algorithm(self):
+        """
+        Gets the distribution_algorithm of this CreateCloudAutonomousVmClusterDetails.
+        The distribution algorithm used for the Autonomous VM cluster.
+
+        Allowed values for this property are: "RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED"
+
+
+        :return: The distribution_algorithm of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: str
+        """
+        return self._distribution_algorithm
+
+    @distribution_algorithm.setter
+    def distribution_algorithm(self, distribution_algorithm):
+        """
+        Sets the distribution_algorithm of this CreateCloudAutonomousVmClusterDetails.
+        The distribution algorithm used for the Autonomous VM cluster.
+
+
+        :param distribution_algorithm: The distribution_algorithm of this CreateCloudAutonomousVmClusterDetails.
+        :type: str
+        """
+        allowed_values = ["RESOURCE_OPTIMIZED", "DISTRIBUTION_OPTIMIZED"]
+        if not value_allowed_none_or_none_sentinel(distribution_algorithm, allowed_values):
+            raise ValueError(
+                f"Invalid value for `distribution_algorithm`, must be None or one of {allowed_values}"
+            )
+        self._distribution_algorithm = distribution_algorithm
+
+    @property
+    def sga_percentage(self):
+        """
+        Gets the sga_percentage of this CreateCloudAutonomousVmClusterDetails.
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+
+
+        :return: The sga_percentage of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: float
+        """
+        return self._sga_percentage
+
+    @sga_percentage.setter
+    def sga_percentage(self, sga_percentage):
+        """
+        Sets the sga_percentage of this CreateCloudAutonomousVmClusterDetails.
+        Percentage of ECPU memory allocated for SGA(System Global Area).
+
+
+        :param sga_percentage: The sga_percentage of this CreateCloudAutonomousVmClusterDetails.
+        :type: float
+        """
+        self._sga_percentage = sga_percentage
 
     @property
     def db_servers(self):

@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.176.0 - 2026-05-26
+====================
+
+Added 
+----- - Support for calling Oracle Cloud Infrastructure services in the me-alrayyan-1 region - Support for Veridata deployment types in the GoldenGate service - Support for cloning ZeroETL pipelines in the GoldenGate service - Support for Object Storage initial load in ZeroETL pipelines in the GoldenGate service - Support for specifying CPU core count and autoscaling in ZeroETL pipelines in the GoldenGate service - Support for setting disaster recovery status during deployment creation in the GoldenGate service - Support for switchover and failover mode selection in disaster recovery peer switchovers in the GoldenGate service - Support for generating and retrieving disaster recovery precheck reports for standby peers in the GoldenGate service - Support for scheduling policies and scheduling windows as part of granular maintenance scheduling of Exadata Infrastructure components in the Database service - Support for specifying SGA memory percentage and distributed algorithm configuration in Autonomous VM Clusters and Cloud Autonomous VM Clusters in the Database service - Support for DRCP in Autonomous Container Databases in the Database service - Support for creating additional VMs in Exadata Cloud Service and Exadata Cloud@Customer in the Database service - Support for selecting specific compute shapes during cluster placement group creation in the Cluster Placement Groups service - Support for compute target resource when creating and managing reusable managed compute capacity for workload deployments in the Data Science service - Support for managed compute cluster as a compute target type in the Data Science service - Support for creating model deployments and jobs that use a compute target as the deployment infrastructure in the Data Science service - Support for multi-inference endpoints in model deployments in the Data Science service - Support for flexible dense virtual machine shapes in the Compute service - Support for network firewall health status APIs in the Network Firewall service - Support for security attributes on network firewall create and update operations in the Network Firewall service - Support for mapped secrets on decryption rule create and update operations in the Network Firewall service - Support for Zero Trust Packet Routing (ZPR) security attributes in the Kubernetes Engine service  
+
+Breaking 
+-------- - The fields `availability_domain` and `subnet_id` were made required in `PlacementConfiguration` in the Kubernetes Engine service. - The models `CreateIdcsAuthConfigurationDetails`, `CreateIdcsCustomServiceAuthConfigurationDetails`, `IdcsAuthConfiguration`, and `IdcsCustomServiceAuthConfiguration` were removed in the Data Science service. - The enum values `IDCS` and `IDCS_CUSTOM_SERVICE` were removed from `AuthConfiguration.type` in the Data Science service.  
+
+====================
 2.175.0 - 2026-05-19
 ====================
 

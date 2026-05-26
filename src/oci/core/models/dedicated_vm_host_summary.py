@@ -98,6 +98,14 @@ class DedicatedVmHostSummary(object):
             The value to assign to the remaining_memory_in_gbs property of this DedicatedVmHostSummary.
         :type remaining_memory_in_gbs: float
 
+        :param total_local_volume_in_gbs:
+            The value to assign to the total_local_volume_in_gbs property of this DedicatedVmHostSummary.
+        :type total_local_volume_in_gbs: float
+
+        :param remaining_local_volume_in_gbs:
+            The value to assign to the remaining_local_volume_in_gbs property of this DedicatedVmHostSummary.
+        :type remaining_local_volume_in_gbs: float
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -112,7 +120,9 @@ class DedicatedVmHostSummary(object):
             'remaining_ocpus': 'float',
             'total_ocpus': 'float',
             'total_memory_in_gbs': 'float',
-            'remaining_memory_in_gbs': 'float'
+            'remaining_memory_in_gbs': 'float',
+            'total_local_volume_in_gbs': 'float',
+            'remaining_local_volume_in_gbs': 'float'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -127,7 +137,9 @@ class DedicatedVmHostSummary(object):
             'remaining_ocpus': 'remainingOcpus',
             'total_ocpus': 'totalOcpus',
             'total_memory_in_gbs': 'totalMemoryInGBs',
-            'remaining_memory_in_gbs': 'remainingMemoryInGBs'
+            'remaining_memory_in_gbs': 'remainingMemoryInGBs',
+            'total_local_volume_in_gbs': 'totalLocalVolumeInGBs',
+            'remaining_local_volume_in_gbs': 'remainingLocalVolumeInGBs'
         }
         self._availability_domain = None
         self._compartment_id = None
@@ -142,6 +154,8 @@ class DedicatedVmHostSummary(object):
         self._total_ocpus = None
         self._total_memory_in_gbs = None
         self._remaining_memory_in_gbs = None
+        self._total_local_volume_in_gbs = None
+        self._remaining_local_volume_in_gbs = None
 
     @property
     def availability_domain(self):
@@ -494,6 +508,54 @@ class DedicatedVmHostSummary(object):
         :type: float
         """
         self._remaining_memory_in_gbs = remaining_memory_in_gbs
+
+    @property
+    def total_local_volume_in_gbs(self):
+        """
+        Gets the total_local_volume_in_gbs of this DedicatedVmHostSummary.
+        The current total local volume of the dedicated VM host, in GBs.
+
+
+        :return: The total_local_volume_in_gbs of this DedicatedVmHostSummary.
+        :rtype: float
+        """
+        return self._total_local_volume_in_gbs
+
+    @total_local_volume_in_gbs.setter
+    def total_local_volume_in_gbs(self, total_local_volume_in_gbs):
+        """
+        Sets the total_local_volume_in_gbs of this DedicatedVmHostSummary.
+        The current total local volume of the dedicated VM host, in GBs.
+
+
+        :param total_local_volume_in_gbs: The total_local_volume_in_gbs of this DedicatedVmHostSummary.
+        :type: float
+        """
+        self._total_local_volume_in_gbs = total_local_volume_in_gbs
+
+    @property
+    def remaining_local_volume_in_gbs(self):
+        """
+        Gets the remaining_local_volume_in_gbs of this DedicatedVmHostSummary.
+        The current available local volume of the dedicated VM host, in GBs.
+
+
+        :return: The remaining_local_volume_in_gbs of this DedicatedVmHostSummary.
+        :rtype: float
+        """
+        return self._remaining_local_volume_in_gbs
+
+    @remaining_local_volume_in_gbs.setter
+    def remaining_local_volume_in_gbs(self, remaining_local_volume_in_gbs):
+        """
+        Sets the remaining_local_volume_in_gbs of this DedicatedVmHostSummary.
+        The current available local volume of the dedicated VM host, in GBs.
+
+
+        :param remaining_local_volume_in_gbs: The remaining_local_volume_in_gbs of this DedicatedVmHostSummary.
+        :type: float
+        """
+        self._remaining_local_volume_in_gbs = remaining_local_volume_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -307,6 +307,10 @@ class AutonomousDatabase(object):
     #: This constant has a value of "SHARED"
     NET_SERVICES_ARCHITECTURE_SHARED = "SHARED"
 
+    #: A constant which can be used with the net_services_architecture property of a AutonomousDatabase.
+    #: This constant has a value of "DRCP"
+    NET_SERVICES_ARCHITECTURE_DRCP = "DRCP"
+
     #: A constant which can be used with the clone_type property of a AutonomousDatabase.
     #: This constant has a value of "FULL"
     CLONE_TYPE_FULL = "FULL"
@@ -884,7 +888,7 @@ class AutonomousDatabase(object):
 
         :param net_services_architecture:
             The value to assign to the net_services_architecture property of this AutonomousDatabase.
-            Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DEDICATED", "SHARED", "DRCP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type net_services_architecture: str
 
@@ -3132,6 +3136,7 @@ class AutonomousDatabase(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -3157,6 +3162,7 @@ class AutonomousDatabase(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -4878,7 +4884,7 @@ class AutonomousDatabase(object):
         Gets the net_services_architecture of this AutonomousDatabase.
         Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
 
-        Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DEDICATED", "SHARED", "DRCP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -4897,7 +4903,7 @@ class AutonomousDatabase(object):
         :param net_services_architecture: The net_services_architecture of this AutonomousDatabase.
         :type: str
         """
-        allowed_values = ["DEDICATED", "SHARED"]
+        allowed_values = ["DEDICATED", "SHARED", "DRCP"]
         if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
             net_services_architecture = 'UNKNOWN_ENUM_VALUE'
         self._net_services_architecture = net_services_architecture

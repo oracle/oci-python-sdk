@@ -48,6 +48,10 @@ class CreateCloudExadataInfrastructureDetails(object):
             The value to assign to the maintenance_window property of this CreateCloudExadataInfrastructureDetails.
         :type maintenance_window: oci.database.models.MaintenanceWindow
 
+        :param maintenance_version_preferences:
+            The value to assign to the maintenance_version_preferences property of this CreateCloudExadataInfrastructureDetails.
+        :type maintenance_version_preferences: oci.database.models.MaintenanceVersionPreferenceDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateCloudExadataInfrastructureDetails.
         :type freeform_tags: dict(str, str)
@@ -85,6 +89,7 @@ class CreateCloudExadataInfrastructureDetails(object):
             'compute_count': 'int',
             'storage_count': 'int',
             'maintenance_window': 'MaintenanceWindow',
+            'maintenance_version_preferences': 'MaintenanceVersionPreferenceDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'cluster_placement_group_id': 'str',
@@ -101,6 +106,7 @@ class CreateCloudExadataInfrastructureDetails(object):
             'compute_count': 'computeCount',
             'storage_count': 'storageCount',
             'maintenance_window': 'maintenanceWindow',
+            'maintenance_version_preferences': 'maintenanceVersionPreferences',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
@@ -116,6 +122,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         self._compute_count = None
         self._storage_count = None
         self._maintenance_window = None
+        self._maintenance_version_preferences = None
         self._freeform_tags = None
         self._defined_tags = None
         self._cluster_placement_group_id = None
@@ -291,6 +298,26 @@ class CreateCloudExadataInfrastructureDetails(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def maintenance_version_preferences(self):
+        """
+        Gets the maintenance_version_preferences of this CreateCloudExadataInfrastructureDetails.
+
+        :return: The maintenance_version_preferences of this CreateCloudExadataInfrastructureDetails.
+        :rtype: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        return self._maintenance_version_preferences
+
+    @maintenance_version_preferences.setter
+    def maintenance_version_preferences(self, maintenance_version_preferences):
+        """
+        Sets the maintenance_version_preferences of this CreateCloudExadataInfrastructureDetails.
+
+        :param maintenance_version_preferences: The maintenance_version_preferences of this CreateCloudExadataInfrastructureDetails.
+        :type: oci.database.models.MaintenanceVersionPreferenceDetails
+        """
+        self._maintenance_version_preferences = maintenance_version_preferences
 
     @property
     def freeform_tags(self):

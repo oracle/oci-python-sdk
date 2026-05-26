@@ -1096,6 +1096,7 @@ class UpdateAutonomousDatabaseDetails(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1120,6 +1121,7 @@ class UpdateAutonomousDatabaseDetails(object):
         - LH - indicates an Oracle Autonomous AI Lakehouse database
 
         **Note** Starting December 2026, DW will not be supported as a valid value for this parameter.
+        When creating an Autonomous AI Database, if this parameter is not specified, the default value is `OLTP`.
 
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1557,6 +1559,8 @@ class UpdateAutonomousDatabaseDetails(object):
 
         To create or delete a local (in-region) standby, see the `isDataGuardEnabled` parameter.
 
+        When disconnecting a cross-region standby, specify the standby database OCID in this parameter together with `isDisconnectPeer=true`.
+
 
         :return: The peer_db_id of this UpdateAutonomousDatabaseDetails.
         :rtype: str
@@ -1570,6 +1574,8 @@ class UpdateAutonomousDatabaseDetails(object):
         The database OCID(/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
 
         To create or delete a local (in-region) standby, see the `isDataGuardEnabled` parameter.
+
+        When disconnecting a cross-region standby, specify the standby database OCID in this parameter together with `isDisconnectPeer=true`.
 
 
         :param peer_db_id: The peer_db_id of this UpdateAutonomousDatabaseDetails.
@@ -2384,9 +2390,11 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_disconnect_peer(self):
         """
         Gets the is_disconnect_peer of this UpdateAutonomousDatabaseDetails.
-        If true, this will disconnect the Autonomous AI Database from its peer and the Autonomous AI Database can work permanently as a standalone database.
+        If true, this disconnects the Autonomous AI Database from its peer. After the disconnect completes, the Autonomous AI Database works permanently as a standalone database.
 
-        To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+        **Warning:** A disconnected standby is no longer part of the disaster recovery configuration. Operations and restrictions that apply to a connected standby do not apply in the same way after the database has been disconnected.
+
+        To disconnect a cross region standby, also provide the OCID of the standby database in the `peerDbId` parameter.
 
 
         :return: The is_disconnect_peer of this UpdateAutonomousDatabaseDetails.
@@ -2398,9 +2406,11 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_disconnect_peer(self, is_disconnect_peer):
         """
         Sets the is_disconnect_peer of this UpdateAutonomousDatabaseDetails.
-        If true, this will disconnect the Autonomous AI Database from its peer and the Autonomous AI Database can work permanently as a standalone database.
+        If true, this disconnects the Autonomous AI Database from its peer. After the disconnect completes, the Autonomous AI Database works permanently as a standalone database.
 
-        To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+        **Warning:** A disconnected standby is no longer part of the disaster recovery configuration. Operations and restrictions that apply to a connected standby do not apply in the same way after the database has been disconnected.
+
+        To disconnect a cross region standby, also provide the OCID of the standby database in the `peerDbId` parameter.
 
 
         :param is_disconnect_peer: The is_disconnect_peer of this UpdateAutonomousDatabaseDetails.

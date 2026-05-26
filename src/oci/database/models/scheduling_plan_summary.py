@@ -47,6 +47,10 @@ class SchedulingPlanSummary(object):
     #: This constant has a value of "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"
     PLAN_INTENT_EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE = "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"
 
+    #: A constant which can be used with the plan_intent property of a SchedulingPlanSummary.
+    #: This constant has a value of "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"
+    PLAN_INTENT_EXADATA_INFRASTRUCTURE_SECURITY_UPDATE = "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"
+
     #: A constant which can be used with the service_type property of a SchedulingPlanSummary.
     #: This constant has a value of "EXACC"
     SERVICE_TYPE_EXACC = "EXACC"
@@ -100,7 +104,7 @@ class SchedulingPlanSummary(object):
 
         :param plan_intent:
             The value to assign to the plan_intent property of this SchedulingPlanSummary.
-            Allowed values for this property are: "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type plan_intent: str
 
@@ -406,9 +410,9 @@ class SchedulingPlanSummary(object):
     def plan_intent(self):
         """
         Gets the plan_intent of this SchedulingPlanSummary.
-        The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
+        The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
 
-        Allowed values for this property are: "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -421,13 +425,13 @@ class SchedulingPlanSummary(object):
     def plan_intent(self, plan_intent):
         """
         Sets the plan_intent of this SchedulingPlanSummary.
-        The current intent the Scheduling Plan. Valid states is EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE.
+        The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
 
 
         :param plan_intent: The plan_intent of this SchedulingPlanSummary.
         :type: str
         """
-        allowed_values = ["EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"]
+        allowed_values = ["EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"]
         if not value_allowed_none_or_none_sentinel(plan_intent, allowed_values):
             plan_intent = 'UNKNOWN_ENUM_VALUE'
         self._plan_intent = plan_intent

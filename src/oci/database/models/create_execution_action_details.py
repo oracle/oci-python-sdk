@@ -27,6 +27,10 @@ class CreateExecutionActionDetails(object):
     #: This constant has a value of "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE"
     ACTION_TYPE_NETWORK_SWITCH_FULL_SOFTWARE_UPDATE = "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE"
 
+    #: A constant which can be used with the action_type property of a CreateExecutionActionDetails.
+    #: This constant has a value of "DB_SERVER_ONLINE_SOFTWARE_UPDATE"
+    ACTION_TYPE_DB_SERVER_ONLINE_SOFTWARE_UPDATE = "DB_SERVER_ONLINE_SOFTWARE_UPDATE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateExecutionActionDetails object with values from keyword arguments.
@@ -42,7 +46,7 @@ class CreateExecutionActionDetails(object):
 
         :param action_type:
             The value to assign to the action_type property of this CreateExecutionActionDetails.
-            Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE"
+            Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "DB_SERVER_ONLINE_SOFTWARE_UPDATE"
         :type action_type: str
 
         :param action_params:
@@ -150,7 +154,7 @@ class CreateExecutionActionDetails(object):
         **[Required]** Gets the action_type of this CreateExecutionActionDetails.
         The action type of the execution action being performed
 
-        Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE"
+        Allowed values for this property are: "DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "DB_SERVER_ONLINE_SOFTWARE_UPDATE"
 
 
         :return: The action_type of this CreateExecutionActionDetails.
@@ -168,7 +172,7 @@ class CreateExecutionActionDetails(object):
         :param action_type: The action_type of this CreateExecutionActionDetails.
         :type: str
         """
-        allowed_values = ["DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE"]
+        allowed_values = ["DB_SERVER_FULL_SOFTWARE_UPDATE", "STORAGE_SERVER_FULL_SOFTWARE_UPDATE", "NETWORK_SWITCH_FULL_SOFTWARE_UPDATE", "DB_SERVER_ONLINE_SOFTWARE_UPDATE"]
         if not value_allowed_none_or_none_sentinel(action_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `action_type`, must be None or one of {allowed_values}"

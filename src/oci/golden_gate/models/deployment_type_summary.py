@@ -30,6 +30,10 @@ class DeploymentTypeSummary(object):
     #: This constant has a value of "DATA_TRANSFORMS"
     CATEGORY_DATA_TRANSFORMS = "DATA_TRANSFORMS"
 
+    #: A constant which can be used with the category property of a DeploymentTypeSummary.
+    #: This constant has a value of "DATA_VERIFICATION"
+    CATEGORY_DATA_VERIFICATION = "DATA_VERIFICATION"
+
     #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
     #: This constant has a value of "OGG"
     DEPLOYMENT_TYPE_OGG = "OGG"
@@ -69,6 +73,14 @@ class DeploymentTypeSummary(object):
     #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
     #: This constant has a value of "DATA_TRANSFORMS"
     DEPLOYMENT_TYPE_DATA_TRANSFORMS = "DATA_TRANSFORMS"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
+    #: This constant has a value of "VERIDATA_SERVER"
+    DEPLOYMENT_TYPE_VERIDATA_SERVER = "VERIDATA_SERVER"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
+    #: This constant has a value of "VERIDATA_AGENT"
+    DEPLOYMENT_TYPE_VERIDATA_AGENT = "VERIDATA_AGENT"
 
     #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
     #: This constant has a value of "GOLDENGATE"
@@ -218,6 +230,34 @@ class DeploymentTypeSummary(object):
     #: This constant has a value of "MULTICLOUD"
     SUPPORTED_CAPABILITIES_MULTICLOUD = "MULTICLOUD"
 
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "TRAIL_FILES"
+    SUPPORTED_CAPABILITIES_TRAIL_FILES = "TRAIL_FILES"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "MASTER_KEY_OPERATIONS"
+    SUPPORTED_CAPABILITIES_MASTER_KEY_OPERATIONS = "MASTER_KEY_OPERATIONS"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "TRUSTSTORE_CERTIFICATES"
+    SUPPORTED_CAPABILITIES_TRUSTSTORE_CERTIFICATES = "TRUSTSTORE_CERTIFICATES"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "DEPLOYMENT_DIAGNOSTICS"
+    SUPPORTED_CAPABILITIES_DEPLOYMENT_DIAGNOSTICS = "DEPLOYMENT_DIAGNOSTICS"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "CREDENTIALS"
+    SUPPORTED_CAPABILITIES_CREDENTIALS = "CREDENTIALS"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "CONSOLE_ACCESS"
+    SUPPORTED_CAPABILITIES_CONSOLE_ACCESS = "CONSOLE_ACCESS"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "NETWORK_CONFIGURATION"
+    SUPPORTED_CAPABILITIES_NETWORK_CONFIGURATION = "NETWORK_CONFIGURATION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DeploymentTypeSummary object with values from keyword arguments.
@@ -225,7 +265,7 @@ class DeploymentTypeSummary(object):
 
         :param category:
             The value to assign to the category property of this DeploymentTypeSummary.
-            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type category: str
 
@@ -235,7 +275,7 @@ class DeploymentTypeSummary(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this DeploymentTypeSummary.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
@@ -267,9 +307,13 @@ class DeploymentTypeSummary(object):
 
         :param supported_capabilities:
             The value to assign to the supported_capabilities property of this DeploymentTypeSummary.
-            Allowed values for items in this list are: "GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD", "TRAIL_FILES", "MASTER_KEY_OPERATIONS", "TRUSTSTORE_CERTIFICATES", "DEPLOYMENT_DIAGNOSTICS", "CREDENTIALS", "CONSOLE_ACCESS", "NETWORK_CONFIGURATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type supported_capabilities: list[str]
+
+        :param supported_license_types:
+            The value to assign to the supported_license_types property of this DeploymentTypeSummary.
+        :type supported_license_types: list[oci.golden_gate.models.LicenseModel]
 
         """
         self.swagger_types = {
@@ -282,7 +326,8 @@ class DeploymentTypeSummary(object):
             'ogg_version': 'str',
             'supported_technologies_url': 'str',
             'default_username': 'str',
-            'supported_capabilities': 'list[str]'
+            'supported_capabilities': 'list[str]',
+            'supported_license_types': 'list[LicenseModel]'
         }
         self.attribute_map = {
             'category': 'category',
@@ -294,7 +339,8 @@ class DeploymentTypeSummary(object):
             'ogg_version': 'oggVersion',
             'supported_technologies_url': 'supportedTechnologiesUrl',
             'default_username': 'defaultUsername',
-            'supported_capabilities': 'supportedCapabilities'
+            'supported_capabilities': 'supportedCapabilities',
+            'supported_license_types': 'supportedLicenseTypes'
         }
         self._category = None
         self._display_name = None
@@ -306,15 +352,16 @@ class DeploymentTypeSummary(object):
         self._supported_technologies_url = None
         self._default_username = None
         self._supported_capabilities = None
+        self._supported_license_types = None
 
     @property
     def category(self):
         """
         **[Required]** Gets the category of this DeploymentTypeSummary.
-        The deployment category defines the broad separation of the deployment type into three categories.
-        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        The deployment category defines the broad separation of the deployment type into four categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 
-        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -327,14 +374,14 @@ class DeploymentTypeSummary(object):
     def category(self, category):
         """
         Sets the category of this DeploymentTypeSummary.
-        The deployment category defines the broad separation of the deployment type into three categories.
-        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        The deployment category defines the broad separation of the deployment type into four categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
 
 
         :param category: The category of this DeploymentTypeSummary.
         :type: str
         """
-        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS"]
+        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION"]
         if not value_allowed_none_or_none_sentinel(category, allowed_values):
             category = 'UNKNOWN_ENUM_VALUE'
         self._category = category
@@ -371,7 +418,7 @@ class DeploymentTypeSummary(object):
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
             Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -392,7 +439,7 @@ class DeploymentTypeSummary(object):
         :param deployment_type: The deployment_type of this DeploymentTypeSummary.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type
@@ -561,7 +608,7 @@ class DeploymentTypeSummary(object):
         Gets the supported_capabilities of this DeploymentTypeSummary.
         Specifies supported capabilities or features by a deployment type .
 
-        Allowed values for items in this list are: "GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD", "TRAIL_FILES", "MASTER_KEY_OPERATIONS", "TRUSTSTORE_CERTIFICATES", "DEPLOYMENT_DIAGNOSTICS", "CREDENTIALS", "CONSOLE_ACCESS", "NETWORK_CONFIGURATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -580,10 +627,34 @@ class DeploymentTypeSummary(object):
         :param supported_capabilities: The supported_capabilities of this DeploymentTypeSummary.
         :type: list[str]
         """
-        allowed_values = ["GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD"]
+        allowed_values = ["GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD", "TRAIL_FILES", "MASTER_KEY_OPERATIONS", "TRUSTSTORE_CERTIFICATES", "DEPLOYMENT_DIAGNOSTICS", "CREDENTIALS", "CONSOLE_ACCESS", "NETWORK_CONFIGURATION"]
         if supported_capabilities:
             supported_capabilities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_capabilities]
         self._supported_capabilities = supported_capabilities
+
+    @property
+    def supported_license_types(self):
+        """
+        Gets the supported_license_types of this DeploymentTypeSummary.
+        The list of Oracle license models supported by the deployment type.
+
+
+        :return: The supported_license_types of this DeploymentTypeSummary.
+        :rtype: list[oci.golden_gate.models.LicenseModel]
+        """
+        return self._supported_license_types
+
+    @supported_license_types.setter
+    def supported_license_types(self, supported_license_types):
+        """
+        Sets the supported_license_types of this DeploymentTypeSummary.
+        The list of Oracle license models supported by the deployment type.
+
+
+        :param supported_license_types: The supported_license_types of this DeploymentTypeSummary.
+        :type: list[oci.golden_gate.models.LicenseModel]
+        """
+        self._supported_license_types = supported_license_types
 
     def __repr__(self):
         return formatted_flat_dict(self)

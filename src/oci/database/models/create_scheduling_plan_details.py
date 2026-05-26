@@ -27,6 +27,14 @@ class CreateSchedulingPlanDetails(object):
     #: This constant has a value of "FPPPCS"
     SERVICE_TYPE_FPPPCS = "FPPPCS"
 
+    #: A constant which can be used with the plan_intent property of a CreateSchedulingPlanDetails.
+    #: This constant has a value of "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"
+    PLAN_INTENT_EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE = "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE"
+
+    #: A constant which can be used with the plan_intent property of a CreateSchedulingPlanDetails.
+    #: This constant has a value of "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"
+    PLAN_INTENT_EXADATA_INFRASTRUCTURE_SECURITY_UPDATE = "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateSchedulingPlanDetails object with values from keyword arguments.
@@ -61,6 +69,11 @@ class CreateSchedulingPlanDetails(object):
             The value to assign to the defined_tags property of this CreateSchedulingPlanDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param plan_intent:
+            The value to assign to the plan_intent property of this CreateSchedulingPlanDetails.
+            Allowed values for this property are: "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"
+        :type plan_intent: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -69,7 +82,8 @@ class CreateSchedulingPlanDetails(object):
             'service_type': 'str',
             'is_using_recommended_scheduled_actions': 'bool',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'plan_intent': 'str'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -78,7 +92,8 @@ class CreateSchedulingPlanDetails(object):
             'service_type': 'serviceType',
             'is_using_recommended_scheduled_actions': 'isUsingRecommendedScheduledActions',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'plan_intent': 'planIntent'
         }
         self._compartment_id = None
         self._scheduling_policy_id = None
@@ -87,6 +102,7 @@ class CreateSchedulingPlanDetails(object):
         self._is_using_recommended_scheduled_actions = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._plan_intent = None
 
     @property
     def compartment_id(self):
@@ -290,6 +306,37 @@ class CreateSchedulingPlanDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def plan_intent(self):
+        """
+        Gets the plan_intent of this CreateSchedulingPlanDetails.
+        The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
+
+        Allowed values for this property are: "EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"
+
+
+        :return: The plan_intent of this CreateSchedulingPlanDetails.
+        :rtype: str
+        """
+        return self._plan_intent
+
+    @plan_intent.setter
+    def plan_intent(self, plan_intent):
+        """
+        Sets the plan_intent of this CreateSchedulingPlanDetails.
+        The current intent of the Scheduling Plan. Valid states are EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE and EXADATA_INFRASTRUCTURE_SECURITY_UPDATE.
+
+
+        :param plan_intent: The plan_intent of this CreateSchedulingPlanDetails.
+        :type: str
+        """
+        allowed_values = ["EXADATA_INFRASTRUCTURE_FULL_SOFTWARE_UPDATE", "EXADATA_INFRASTRUCTURE_SECURITY_UPDATE"]
+        if not value_allowed_none_or_none_sentinel(plan_intent, allowed_values):
+            raise ValueError(
+                f"Invalid value for `plan_intent`, must be None or one of {allowed_values}"
+            )
+        self._plan_intent = plan_intent
 
     def __repr__(self):
         return formatted_flat_dict(self)

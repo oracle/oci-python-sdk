@@ -88,7 +88,7 @@ class ApplicationGroup(object):
     @property
     def apps(self):
         """
-        **[Required]** Gets the apps of this ApplicationGroup.
+        Gets the apps of this ApplicationGroup.
         List of apps in the group.
 
 
