@@ -9,10 +9,13 @@ from .internal.multipart_object_assembler import MultipartObjectAssembler, DEFAU
 from .constants import DEFAULT_PART_SIZE, STREAMING_DEFAULT_PART_SIZE
 from .internal.file_read_callback_stream import FileReadCallbackStream
 from ...exceptions import MultipartUploadError
+from .internal.additional_checksum import Checksum
+from oci.util import back_up_body_calculate_stream_content_length
 
 
 class UploadManager:
     REQUESTS_POOL_SIZE_FACTOR = 4
+    OPC_CHECKSUM_ALGORITHM = "opc_checksum_algorithm"
 
     def __init__(self, object_storage_client, **kwargs):
         """
@@ -212,6 +215,45 @@ class UploadManager:
         :param str content_md5: (optional)
             The base-64 encoded MD5 hash of the body. This parameter is only used if the object is uploaded in a single part.
 
+        :param str opc_checksum_algorithm: (optional)
+            The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+            in addition to the default MD5 checksum.
+
+            Allowed values are: "CRC32C", "SHA256", "SHA384"
+
+        :param str opc_content_crc32c: (optional)
+            Applicable only if CRC32C is specified in the opc-checksum-algorithm request header.
+
+            If opc-checksum-algorithm is CRC32C, it is set either by user supplied value or computed by client SDK.
+            The optional header that defines the base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the body. If the optional opc-content-crc32c header
+            is present, Object Storage performs an integrity check on the body of the HTTP request by computing the CRC32C checksum for the body and comparing
+            it to the CRC32C checksum supplied in the header. If the two checksums do not match, the object is rejected and an HTTP-400 Unmatched Content CRC32C error
+            is returned with the message:
+
+            \"The computed CRC32C of the request body (ACTUAL_CRC32C) does not match the opc-content-crc32c header (HEADER_CRC32C)\"
+
+        :param str opc_content_sha256: (optional)
+            Applicable only if SHA256 is specified in the opc-checksum-algorithm request header.
+
+            If opc-checksum-algorithm is SHA256, it is set either by user supplied value or computed by client SDK.
+            The optional header that defines the base64-encoded SHA256 hash of the body. If the optional opc-content-sha256 header is present, Object
+            Storage performs an integrity check on the body of the HTTP request by computing the SHA256 hash for the body and comparing it to the
+            SHA256 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content SHA256 error
+            is returned with the message:
+
+            \"The computed SHA256 of the request body (ACTUAL_SHA256) does not match the opc-content-sha256 header (HEADER_SHA256)\"
+
+        :param str opc_content_sha384: (optional)
+            Applicable only if SHA384 is specified in the opc-checksum-algorithm request header.
+
+            If opc-checksum-algorithm is SHA384 , it is set either by user supplied value or computed by client SDK.
+            The optional header that defines the base64-encoded SHA384 hash of the body. If the optional opc-content-sha384 header is present, Object
+            Storage performs an integrity check on the body of the HTTP request by computing the SHA384 hash for the body and comparing it to the
+            SHA384 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content SHA384 error
+            is returned with the message:
+
+            \"The computed SHA384 of the request body (ACTUAL_SHA384) does not match the opc-content-sha384 header (HEADER_SHA384)\"
+
         :param str content_type (optional):
             The content type of the object to upload.
 
@@ -357,6 +399,13 @@ class UploadManager:
             progress_callback = kwargs['progress_callback']
             kwargs.pop('progress_callback')
 
+        cksm = None
+        if self.OPC_CHECKSUM_ALGORITHM in kwargs.keys():
+            cksm = Checksum(kwargs[self.OPC_CHECKSUM_ALGORITHM])
+            for user_param in kwargs.keys():
+                if user_param in Checksum.LIST_CONTENT_ALGO:
+                    cksm.is_computation_required = False
+
         with open(file_path, 'rb') as file_object:
             # progress_callback is not supported for files of zero bytes
             # FileReadCallbackStream will not be handled properly by requests in this case
@@ -364,6 +413,10 @@ class UploadManager:
             if file_size != 0 and progress_callback:
                 wrapped_file = FileReadCallbackStream(file_object,
                                                       lambda bytes_read: progress_callback(bytes_read))
+                if cksm and cksm.is_computation_required:
+                    data = back_up_body_calculate_stream_content_length(wrapped_file)
+                    wrapped_file.file.seek(0)
+                    kwargs[cksm.get_opc_content_param()] = cksm.calculate_checksum(data['byte_content'])
 
                 response = self.object_storage_client.put_object(namespace_name,
                                                                  bucket_name,
@@ -371,6 +424,9 @@ class UploadManager:
                                                                  wrapped_file,
                                                                  **kwargs)
             else:
+                if cksm and cksm.is_computation_required:
+                    kwargs[cksm.get_opc_content_param()] = cksm.calculate_checksum(file_object.read())
+                    file_object.seek(0)
                 response = self.object_storage_client.put_object(namespace_name,
                                                                  bucket_name,
                                                                  object_name,

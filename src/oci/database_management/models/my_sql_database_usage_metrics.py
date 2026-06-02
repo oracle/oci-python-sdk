@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlDatabaseUsageMetrics(object):
     """
-    The list of aggregated metrics for Managed MySQL Databases in the fleet.
+    The list of aggregated metrics for Managed MySQL Databases in the fleet. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     #: A constant which can be used with the database_status property of a MySqlDatabaseUsageMetrics.
@@ -335,7 +335,7 @@ class MySqlDatabaseUsageMetrics(object):
     def heat_wave_management_type(self):
         """
         Gets the heat_wave_management_type of this MySqlDatabaseUsageMetrics.
-        The customer's selected type for HeatWave management.
+        The selected management type for a HeatWave MySQL DB system.
 
 
         :return: The heat_wave_management_type of this MySqlDatabaseUsageMetrics.
@@ -347,7 +347,7 @@ class MySqlDatabaseUsageMetrics(object):
     def heat_wave_management_type(self, heat_wave_management_type):
         """
         Sets the heat_wave_management_type of this MySqlDatabaseUsageMetrics.
-        The customer's selected type for HeatWave management.
+        The selected management type for a HeatWave MySQL DB system.
 
 
         :param heat_wave_management_type: The heat_wave_management_type of this MySqlDatabaseUsageMetrics.

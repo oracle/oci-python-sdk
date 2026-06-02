@@ -29,6 +29,8 @@ class GenerativeAiInferenceClient(object):
     To use a Generative AI custom model for inference, you must first create an endpoint for that model. Use the [Generative AI service management API](#/EN/generative-ai/latest/) to [create a custom model](#/EN/generative-ai/latest/Model/) by fine-tuning an out-of-the-box model, or a previous version of a custom model, using your own data. Fine-tune the custom model on a [fine-tuning dedicated AI cluster](#/EN/generative-ai/latest/DedicatedAiCluster/). Then, create a [hosting dedicated AI cluster](#/EN/generative-ai/latest/DedicatedAiCluster/) with an [endpoint](#/en/generative-ai/latest/Endpoint/) to host your custom model. For resource management in the Generative AI service, use the [Generative AI service management API](#/EN/generative-ai/latest/).
 
     To learn more about the service, see the [Generative AI documentation](/iaas/Content/generative-ai/home.htm).
+
+    **Important:** The IP addresses behind each DNS endpoint might change over time. Always use the DNS hostname listed under the following **API Endpoints** section and avoid using hard-coded fixed IP addresses.
     """
 
     def __init__(self, config, **kwargs):
@@ -133,11 +135,20 @@ class GenerativeAiInferenceClient(object):
 
     def apply_guardrails(self, apply_guardrails_details, **kwargs):
         """
-        Applies guardrails to the input text, including content moderation, PII detection, and prompt injection protection.
+        Applies guardrails to the input content, including content moderation, PII detection, and prompt injection protection.
+        Case 1: Use `input` when the customer wants simple single-text moderation. Existing
+        customers can continue to use this field without changing their current integration.
+        Case 2: Use `multimodalInput` when the customer wants moderation over text, image, or a
+        combination of both.
+        `multimodalInput` supports a single text item, an array of text items only, an array of
+        images only, or a mixed ordered combination of text and image items.
+        Clients may provide `input`, `multimodalInput`, or both. At least one of these fields must
+        be provided. If both `input` and `multimodalInput` are provided, the service will process
+        `input` and discard `multimodalInput`.
 
 
         :param oci.generative_ai_inference.models.ApplyGuardrailsDetails apply_guardrails_details: (required)
-            Details for applying guardrails to the input text.
+            Details for applying guardrails to the input content.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or

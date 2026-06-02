@@ -129,7 +129,8 @@ class ManagedMySqlDatabasesClient(object):
     def change_mysql_database_management_type(self, managed_my_sql_database_id, change_mysql_database_management_type_details, **kwargs):
         """
         Changes the management type for a HeatWave MySQL instance, from BASIC to FULL and vice versa.
-        It can also be used to enable or disable database management.
+        It can also be used to enable or disable Database Management.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -257,6 +258,7 @@ class ManagedMySqlDatabasesClient(object):
     def get_binary_log_information(self, managed_my_sql_database_id, **kwargs):
         """
         Retrieves information pertaining to the binary log of a specific MySQL server.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -362,6 +364,7 @@ class ManagedMySqlDatabasesClient(object):
     def get_general_replication_information(self, managed_my_sql_database_id, **kwargs):
         """
         Retrieves general information regarding the replication of a specific MySQL server.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -467,6 +470,7 @@ class ManagedMySqlDatabasesClient(object):
     def get_heat_wave_fleet_metric(self, compartment_id, start_time, end_time, **kwargs):
         """
         Gets the health metrics for a fleet of HeatWave clusters in a compartment.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str compartment_id: (required)
@@ -606,6 +610,7 @@ class ManagedMySqlDatabasesClient(object):
     def get_managed_my_sql_database(self, managed_my_sql_database_id, **kwargs):
         """
         Retrieves the general information for a specific MySQL Database.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -709,6 +714,7 @@ class ManagedMySqlDatabasesClient(object):
     def get_my_sql_fleet_metric(self, compartment_id, start_time, end_time, **kwargs):
         """
         Gets the health metrics for a fleet of MySQL Databases in a compartment.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str compartment_id: (required)
@@ -889,7 +895,8 @@ class ManagedMySqlDatabasesClient(object):
 
     def get_my_sql_query_details(self, managed_my_sql_database_id, digest, **kwargs):
         """
-        Retrieves query sample details, explain plan and potential warnings for a given digest.
+        Retrieves query sample details, explain plan, and potential warnings for a given digest.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -1005,6 +1012,7 @@ class ManagedMySqlDatabasesClient(object):
     def list_high_availability_members(self, managed_my_sql_database_id, **kwargs):
         """
         Retrieves information about the high availability members of a specific MySQL server's replication group.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -1158,6 +1166,7 @@ class ManagedMySqlDatabasesClient(object):
     def list_inbound_replications(self, managed_my_sql_database_id, **kwargs):
         """
         Retrieves information about the inbound replications of a specific MySQL server.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -1311,6 +1320,7 @@ class ManagedMySqlDatabasesClient(object):
     def list_managed_my_sql_database_configuration_data(self, managed_my_sql_database_id, **kwargs):
         """
         Retrieves configuration data for a specific MySQL database.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -1463,6 +1473,7 @@ class ManagedMySqlDatabasesClient(object):
     def list_managed_my_sql_database_sql_data(self, managed_my_sql_database_id, start_time, end_time, **kwargs):
         """
         Retrieves the SQL performance data for a specific MySQL database.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -1644,6 +1655,7 @@ class ManagedMySqlDatabasesClient(object):
     def list_managed_my_sql_databases(self, compartment_id, **kwargs):
         """
         Gets the list of Managed MySQL Databases in a specific compartment.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str compartment_id: (required)
@@ -1799,6 +1811,7 @@ class ManagedMySqlDatabasesClient(object):
     def list_my_sql_digest_errors(self, managed_my_sql_database_id, digest, **kwargs):
         """
         Retrieves any potential errors for a given digest.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -1955,6 +1968,7 @@ class ManagedMySqlDatabasesClient(object):
     def list_outbound_replications(self, managed_my_sql_database_id, **kwargs):
         """
         Retrieves information pertaining to the outbound replications of a specific MySQL server.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)
@@ -2108,6 +2122,7 @@ class ManagedMySqlDatabasesClient(object):
     def summarize_managed_my_sql_database_availability_metrics(self, managed_my_sql_database_id, start_time, end_time, **kwargs):
         """
         Gets the availability metrics for the MySQL Database specified by managedMySqlDatabaseId.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str managed_my_sql_database_id: (required)

@@ -166,7 +166,7 @@ class CloudServicedDatabase(object):
     def dbaas_id(self):
         """
         **[Required]** Gets the dbaas_id of this CloudServicedDatabase.
-        The `OCID`__ of the existing Dbaas OCI resource matching the discovered DB system component.
+        The `OCID`__ of the existing DBaas OCI resource matching the discovered DB system component.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -180,7 +180,7 @@ class CloudServicedDatabase(object):
     def dbaas_id(self, dbaas_id):
         """
         Sets the dbaas_id of this CloudServicedDatabase.
-        The `OCID`__ of the existing Dbaas OCI resource matching the discovered DB system component.
+        The `OCID`__ of the existing DBaas OCI resource matching the discovered DB system component.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

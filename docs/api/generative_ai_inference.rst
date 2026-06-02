@@ -104,6 +104,8 @@ Generative Ai Inference
     oci.generative_ai_inference.models.GuardrailVersionConfig
     oci.generative_ai_inference.models.GuardrailVersionResponse
     oci.generative_ai_inference.models.GuardrailVersionSummary
+    oci.generative_ai_inference.models.GuardrailsImageInput
+    oci.generative_ai_inference.models.GuardrailsImageUrl
     oci.generative_ai_inference.models.GuardrailsInput
     oci.generative_ai_inference.models.GuardrailsResults
     oci.generative_ai_inference.models.GuardrailsTextInput

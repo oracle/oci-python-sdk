@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedMySqlDatabaseHighAvailabilityMemberSummary(object):
     """
-    Information about a member of a MySQL server group replication for high availability.
+    Information about a member of a MySQL server group replication for high availability. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     def __init__(self, **kwargs):

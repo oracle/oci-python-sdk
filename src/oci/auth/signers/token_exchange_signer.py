@@ -85,6 +85,10 @@ class TokenExchangeSigner(SecurityTokenSigner):
             self._refresh_security_token_inner()
             return self.security_token_container.security_token
 
+    def refresh_security_token(self):
+        self._refresh_security_token_inner()
+        return self.security_token_container.security_token
+
     def _refresh_security_token_inner(self):
         with self._reset_signers_lock:
             self.logger.debug("Refreshing session key supplier and security token.")

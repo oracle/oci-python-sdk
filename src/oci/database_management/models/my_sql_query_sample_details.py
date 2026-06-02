@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlQuerySampleDetails(object):
     """
-    The details of a query sample including the query text, execution time and other details.
+    The details of a query sample including the query text, execution time, and other details. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     def __init__(self, **kwargs):
@@ -151,7 +151,7 @@ class MySqlQuerySampleDetails(object):
     def thread_id(self):
         """
         **[Required]** Gets the thread_id of this MySqlQuerySampleDetails.
-        The thread id of the connection.
+        The thread ID of the connection.
 
 
         :return: The thread_id of this MySqlQuerySampleDetails.
@@ -163,7 +163,7 @@ class MySqlQuerySampleDetails(object):
     def thread_id(self, thread_id):
         """
         Sets the thread_id of this MySqlQuerySampleDetails.
-        The thread id of the connection.
+        The thread ID of the connection.
 
 
         :param thread_id: The thread_id of this MySqlQuerySampleDetails.

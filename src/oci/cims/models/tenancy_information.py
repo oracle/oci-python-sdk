@@ -20,49 +20,18 @@ class TenancyInformation(object):
         Initializes a new TenancyInformation object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param customer_support_key:
-            The value to assign to the customer_support_key property of this TenancyInformation.
-        :type customer_support_key: str
-
         :param tenancy_id:
             The value to assign to the tenancy_id property of this TenancyInformation.
         :type tenancy_id: str
 
         """
         self.swagger_types = {
-            'customer_support_key': 'str',
             'tenancy_id': 'str'
         }
         self.attribute_map = {
-            'customer_support_key': 'customerSupportKey',
             'tenancy_id': 'tenancyId'
         }
-        self._customer_support_key = None
         self._tenancy_id = None
-
-    @property
-    def customer_support_key(self):
-        """
-        **[Required]** Gets the customer_support_key of this TenancyInformation.
-        The Customer Support Identifier (CSI) number associated with the tenancy.
-
-
-        :return: The customer_support_key of this TenancyInformation.
-        :rtype: str
-        """
-        return self._customer_support_key
-
-    @customer_support_key.setter
-    def customer_support_key(self, customer_support_key):
-        """
-        Sets the customer_support_key of this TenancyInformation.
-        The Customer Support Identifier (CSI) number associated with the tenancy.
-
-
-        :param customer_support_key: The customer_support_key of this TenancyInformation.
-        :type: str
-        """
-        self._customer_support_key = customer_support_key
 
     @property
     def tenancy_id(self):

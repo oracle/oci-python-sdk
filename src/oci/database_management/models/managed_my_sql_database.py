@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedMySqlDatabase(object):
     """
-    The details of the Managed MySQL Database.
+    The details of the Managed MySQL Database. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     #: A constant which can be used with the heat_wave_management_type property of a ManagedMySqlDatabase.
@@ -363,7 +363,7 @@ class ManagedMySqlDatabase(object):
     def heat_wave_management_type(self):
         """
         Gets the heat_wave_management_type of this ManagedMySqlDatabase.
-        The customer's selected type for HeatWave management.
+        The selected management type for a HeatWave MySQL DB system.
 
         Allowed values for this property are: "BASIC", "FULL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -378,7 +378,7 @@ class ManagedMySqlDatabase(object):
     def heat_wave_management_type(self, heat_wave_management_type):
         """
         Sets the heat_wave_management_type of this ManagedMySqlDatabase.
-        The customer's selected type for HeatWave management.
+        The selected management type for a HeatWave MySQL DB system.
 
 
         :param heat_wave_management_type: The heat_wave_management_type of this ManagedMySqlDatabase.

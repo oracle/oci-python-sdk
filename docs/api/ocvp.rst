@@ -82,6 +82,7 @@ Ocvp
     oci.ocvp.models.HcxLicenseSummary
     oci.ocvp.models.InitialClusterConfiguration
     oci.ocvp.models.InitialConfiguration
+    oci.ocvp.models.InplaceUpgradeDetails
     oci.ocvp.models.ManagementAppliance
     oci.ocvp.models.ManagementApplianceCollection
     oci.ocvp.models.ManagementApplianceConfiguration

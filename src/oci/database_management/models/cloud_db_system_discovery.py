@@ -300,8 +300,8 @@ class CloudDbSystemDiscovery(object):
     def dbaas_parent_infrastructure_id(self):
         """
         **[Required]** Gets the dbaas_parent_infrastructure_id of this CloudDbSystemDiscovery.
-        The `OCID`__ of the parent cloud DB Infrastructure. For VM Dbsystems ,
-        it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+        The `OCID`__ of the parent cloud DB Infrastructure. For VM DB systems ,
+        it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -315,8 +315,8 @@ class CloudDbSystemDiscovery(object):
     def dbaas_parent_infrastructure_id(self, dbaas_parent_infrastructure_id):
         """
         Sets the dbaas_parent_infrastructure_id of this CloudDbSystemDiscovery.
-        The `OCID`__ of the parent cloud DB Infrastructure. For VM Dbsystems ,
-        it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+        The `OCID`__ of the parent cloud DB Infrastructure. For VM DB systems ,
+        it will be the DBSystem ID. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -330,7 +330,7 @@ class CloudDbSystemDiscovery(object):
     def deployment_type(self):
         """
         **[Required]** Gets the deployment_type of this CloudDbSystemDiscovery.
-        The deployment type of cloud dbsystem.
+        The deployment type of cloud DB system.
 
         Allowed values for this property are: "VM", "EXADATA", "EXADATA_CC", "EXADATA_XS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -345,7 +345,7 @@ class CloudDbSystemDiscovery(object):
     def deployment_type(self, deployment_type):
         """
         Sets the deployment_type of this CloudDbSystemDiscovery.
-        The deployment type of cloud dbsystem.
+        The deployment type of cloud DB system.
 
 
         :param deployment_type: The deployment_type of this CloudDbSystemDiscovery.

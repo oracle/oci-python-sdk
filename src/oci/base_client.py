@@ -374,7 +374,6 @@ class OCIHTTPAdapter(requests.adapters.HTTPAdapter):
             num_pools=connections,
             maxsize=maxsize,
             block=block,
-            strict=True,
             **pool_kwargs
         )
 
@@ -608,7 +607,8 @@ class BaseClient(object):
             self._endpoint = endpoint
 
     def get_endpoint(self):
-        return extract_service_endpoint(self._endpoint)
+        resolved_endpoint = self.update_endpoint_template_for_options()
+        return extract_service_endpoint(resolved_endpoint)
 
     def set_region(self, region):
         if self.regional_client:
@@ -767,6 +767,7 @@ class BaseClient(object):
 
         # Here is where we will change our endpoint with the path / query params if a {serviceParam} exists on the endpoint
         endpoint = self.handle_service_params_in_endpoint(path_params, query_params, required_arguments)
+        self._validate_endpoint_host_components(endpoint)
         url = endpoint + resource_path
 
         request = Request(
@@ -796,6 +797,33 @@ class BaseClient(object):
             end = timer()
             self.logger.debug('time elapsed for request: {}'.format(str(end - start)))
             return response
+
+    def _validate_endpoint_host_components(self, endpoint):
+        parsed_endpoint = six.moves.urllib.parse.urlparse(endpoint)
+
+        if parsed_endpoint.scheme not in ('http', 'https'):
+            raise ValueError('host is invalid. endpoint scheme must be http or https')
+
+        if parsed_endpoint.username is not None or parsed_endpoint.password is not None:
+            raise ValueError('host is invalid. endpoint must not contain user info, path, query, or fragment')
+
+        has_disallowed_endpoint_components = any([
+            not self._is_valid_endpoint_path(parsed_endpoint.path),
+            parsed_endpoint.query != '',
+            parsed_endpoint.fragment != ''
+        ])
+
+        if has_disallowed_endpoint_components:
+            raise ValueError('host is invalid. endpoint must not contain user info, path, query, or fragment')
+
+    def _is_valid_endpoint_path(self, endpoint_path):
+        if self._base_path == '/':
+            return endpoint_path in ('', '/')
+
+        if self._base_path:
+            return endpoint_path in (self._base_path, f'{self._base_path}/')
+
+        return endpoint_path == ''
 
     def get_bool_env_var(envVar: str, default=False) -> bool:
         if envVar is None:

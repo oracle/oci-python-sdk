@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateExternalMySqlDatabaseConnectorDetails(object):
     """
-    Details for creating an external database connector.
+    Details for creating an external database connector. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     def __init__(self, **kwargs):

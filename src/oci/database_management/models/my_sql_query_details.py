@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlQueryDetails(object):
     """
-    The details of a given MySQL query, it consists of the query sample details, the explain plan and potential warnings.
+    The details of a given MySQL query, which consists of the query sample details, the explain plan, and potential warnings. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     def __init__(self, **kwargs):
@@ -91,7 +91,7 @@ class MySqlQueryDetails(object):
     def query_messages(self):
         """
         Gets the query_messages of this MySqlQueryDetails.
-        The errors, warnings and notes that could be raised by the execution of the query.
+        The errors, warnings, and notes that could be raised by the execution of the query.
 
 
         :return: The query_messages of this MySqlQueryDetails.
@@ -103,7 +103,7 @@ class MySqlQueryDetails(object):
     def query_messages(self, query_messages):
         """
         Sets the query_messages of this MySqlQueryDetails.
-        The errors, warnings and notes that could be raised by the execution of the query.
+        The errors, warnings, and notes that could be raised by the execution of the query.
 
 
         :param query_messages: The query_messages of this MySqlQueryDetails.

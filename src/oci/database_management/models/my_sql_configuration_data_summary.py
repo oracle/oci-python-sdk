@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlConfigurationDataSummary(object):
     """
-    The configuration variables for a MySQL Database.
+    The configuration variables for a MySQL Database. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     #: A constant which can be used with the source property of a MySqlConfigurationDataSummary.

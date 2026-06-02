@@ -56,10 +56,6 @@ class User(object):
             The value to assign to the country property of this User.
         :type country: str
 
-        :param csi:
-            The value to assign to the csi property of this User.
-        :type csi: str
-
         :param phone:
             The value to assign to the phone property of this User.
         :type phone: str
@@ -91,7 +87,6 @@ class User(object):
             'first_name': 'str',
             'last_name': 'str',
             'country': 'str',
-            'csi': 'str',
             'phone': 'str',
             'timezone': 'str',
             'organization_name': 'str',
@@ -104,7 +99,6 @@ class User(object):
             'first_name': 'firstName',
             'last_name': 'lastName',
             'country': 'country',
-            'csi': 'csi',
             'phone': 'phone',
             'timezone': 'timezone',
             'organization_name': 'organizationName',
@@ -116,7 +110,6 @@ class User(object):
         self._first_name = None
         self._last_name = None
         self._country = None
-        self._csi = None
         self._phone = None
         self._timezone = None
         self._organization_name = None
@@ -219,30 +212,6 @@ class User(object):
         :type: str
         """
         self._country = country
-
-    @property
-    def csi(self):
-        """
-        Gets the csi of this User.
-        The CSI associated with the user.
-
-
-        :return: The csi of this User.
-        :rtype: str
-        """
-        return self._csi
-
-    @csi.setter
-    def csi(self, csi):
-        """
-        Sets the csi of this User.
-        The CSI associated with the user.
-
-
-        :param csi: The csi of this User.
-        :type: str
-        """
-        self._csi = csi
 
     @property
     def phone(self):

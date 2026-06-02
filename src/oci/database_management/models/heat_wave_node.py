@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class HeatWaveNode(object):
     """
-    The information about an individual HeatWave node.
+    The information about an individual HeatWave node. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     #: A constant which can be used with the status property of a HeatWaveNode.

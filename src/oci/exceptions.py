@@ -203,11 +203,13 @@ class ResumableDownloadException(Exception):
                  namespace_name,
                  bucket_name,
                  object_name,
-                 failed_parts):
+                 failed_parts,
+                 checksum_verifier=None):
         self.namespace_name = namespace_name
         self.bucket_name = bucket_name
         self.object_name = object_name
         self.failed_parts = failed_parts
+        self.checksum_verifier = checksum_verifier
 
 
 class DownloadFailedIncorrectDownloadSize(Exception):
@@ -223,3 +225,13 @@ class DownloadFailedIncorrectDownloadSize(Exception):
         self.object_size = object_size
         self.message = (f"The downloaded file didn't match the object size in bytes: expected {object_size}, "
                         f"got {actual_bytes_downloaded}")
+
+
+class ChecksumVerificationError(Exception):
+    """
+    This exception is raised when a checksum verification fails.
+    """
+    def __init__(self, expected_checksum, calculated_checksum):
+        self.expected_checksum = expected_checksum
+        self.calculated_checksum = calculated_checksum
+        self.message = (f"Checksum mismatch: expected {expected_checksum}, but calculated {calculated_checksum}")

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeMysqlDatabaseManagementTypeDetails(object):
     """
-    Details to change managed MySQL database management type.
+    Details required to change the management type for a HeatWave MySQL instance, from BASIC to FULL and vice versa. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     #: A constant which can be used with the operation property of a ChangeMysqlDatabaseManagementTypeDetails.
@@ -81,7 +81,7 @@ class ChangeMysqlDatabaseManagementTypeDetails(object):
     def operation(self):
         """
         Gets the operation of this ChangeMysqlDatabaseManagementTypeDetails.
-        The type of operation to perform: update managementType, enable or disable database management.
+        The type of operation to perform: Update managementType, enable, or disable Database Management.
 
         Allowed values for this property are: "ENABLE_DBMGMT", "UPDATE_DBMGMT_TYPE", "DISABLE_DBMGMT"
 
@@ -95,7 +95,7 @@ class ChangeMysqlDatabaseManagementTypeDetails(object):
     def operation(self, operation):
         """
         Sets the operation of this ChangeMysqlDatabaseManagementTypeDetails.
-        The type of operation to perform: update managementType, enable or disable database management.
+        The type of operation to perform: Update managementType, enable, or disable Database Management.
 
 
         :param operation: The operation of this ChangeMysqlDatabaseManagementTypeDetails.

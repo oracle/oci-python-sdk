@@ -23,6 +23,7 @@ from threading import Semaphore
 from oci._vendor import six
 from oci.fips import is_fips_mode
 from ....version import __version__
+from ..internal.additional_checksum import Checksum
 
 READ_BUFFER_SIZE = 8 * 1024
 DEFAULT_PARALLEL_PROCESS_COUNT = 3
@@ -466,6 +467,11 @@ class MultipartObjectAssembler:
 
         if self.opc_checksum_algorithm:
             new_kwargs['opc_checksum_algorithm'] = self.opc_checksum_algorithm
+            ck = Checksum(self.opc_checksum_algorithm)
+            checksum_content_param = ck.get_opc_content_param()
+            ck_content = ck.read_file_and_calculate_checksum(part["file_path"], part["offset"],
+                                                             part["size"])
+            new_kwargs[checksum_content_param] = ck_content
 
         # TODO: Calculate the hash without needing to read the file chunk twice.
         # Calculate the hash before uploading.  The hash will be used

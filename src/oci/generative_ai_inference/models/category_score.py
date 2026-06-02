@@ -15,6 +15,14 @@ class CategoryScore(object):
     A category with its score.
     """
 
+    #: A constant which can be used with the flagged_modalities property of a CategoryScore.
+    #: This constant has a value of "TEXT"
+    FLAGGED_MODALITIES_TEXT = "TEXT"
+
+    #: A constant which can be used with the flagged_modalities property of a CategoryScore.
+    #: This constant has a value of "IMAGE"
+    FLAGGED_MODALITIES_IMAGE = "IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CategoryScore object with values from keyword arguments.
@@ -28,17 +36,26 @@ class CategoryScore(object):
             The value to assign to the score property of this CategoryScore.
         :type score: float
 
+        :param flagged_modalities:
+            The value to assign to the flagged_modalities property of this CategoryScore.
+            Allowed values for items in this list are: "TEXT", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type flagged_modalities: list[str]
+
         """
         self.swagger_types = {
             'name': 'str',
-            'score': 'float'
+            'score': 'float',
+            'flagged_modalities': 'list[str]'
         }
         self.attribute_map = {
             'name': 'name',
-            'score': 'score'
+            'score': 'score',
+            'flagged_modalities': 'flaggedModalities'
         }
         self._name = None
         self._score = None
+        self._flagged_modalities = None
 
     @property
     def name(self):
@@ -87,6 +104,38 @@ class CategoryScore(object):
         :type: float
         """
         self._score = score
+
+    @property
+    def flagged_modalities(self):
+        """
+        Gets the flagged_modalities of this CategoryScore.
+        The input modalities flagged by this category score. Present only when the request is
+        processed using a non-empty `multimodalInput`.
+
+        Allowed values for items in this list are: "TEXT", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The flagged_modalities of this CategoryScore.
+        :rtype: list[str]
+        """
+        return self._flagged_modalities
+
+    @flagged_modalities.setter
+    def flagged_modalities(self, flagged_modalities):
+        """
+        Sets the flagged_modalities of this CategoryScore.
+        The input modalities flagged by this category score. Present only when the request is
+        processed using a non-empty `multimodalInput`.
+
+
+        :param flagged_modalities: The flagged_modalities of this CategoryScore.
+        :type: list[str]
+        """
+        allowed_values = ["TEXT", "IMAGE"]
+        if flagged_modalities:
+            flagged_modalities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in flagged_modalities]
+        self._flagged_modalities = flagged_modalities
 
     def __repr__(self):
         return formatted_flat_dict(self)

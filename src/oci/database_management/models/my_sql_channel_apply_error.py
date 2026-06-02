@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlChannelApplyError(object):
     """
-    MySQL server replication channel name and error from its apply operation.
+    MySQL server replication channel name and error from its apply operation. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     def __init__(self, **kwargs):

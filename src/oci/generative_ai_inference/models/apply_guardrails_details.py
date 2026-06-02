@@ -12,7 +12,15 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ApplyGuardrailsDetails(object):
     """
-    Details for applying guardrails to the input text.
+    Details for applying guardrails to the input content.
+    Case 1: Use `input` for simple single-text moderation. Existing customers can continue to
+    use this field for the current text-only flow.
+    Case 2: Use `multimodalInput` for moderation over text, image, or a combination of both.
+    `multimodalInput` supports a single text item, an array of text items only, an array of
+    images only, or a mixed ordered combination of text and image items.
+    Clients may provide `input`, `multimodalInput`, or both. At least one of these fields must
+    be provided. If both `input` and `multimodalInput` are provided, the service will process
+    `input` and discard `multimodalInput`.
     """
 
     def __init__(self, **kwargs):
@@ -23,6 +31,10 @@ class ApplyGuardrailsDetails(object):
         :param input:
             The value to assign to the input property of this ApplyGuardrailsDetails.
         :type input: oci.generative_ai_inference.models.GuardrailsInput
+
+        :param multimodal_input:
+            The value to assign to the multimodal_input property of this ApplyGuardrailsDetails.
+        :type multimodal_input: list[oci.generative_ai_inference.models.GuardrailsInput]
 
         :param guardrail_configs:
             The value to assign to the guardrail_configs property of this ApplyGuardrailsDetails.
@@ -39,17 +51,20 @@ class ApplyGuardrailsDetails(object):
         """
         self.swagger_types = {
             'input': 'GuardrailsInput',
+            'multimodal_input': 'list[GuardrailsInput]',
             'guardrail_configs': 'GuardrailConfigs',
             'guardrail_version_config': 'GuardrailVersionConfig',
             'compartment_id': 'str'
         }
         self.attribute_map = {
             'input': 'input',
+            'multimodal_input': 'multimodalInput',
             'guardrail_configs': 'guardrailConfigs',
             'guardrail_version_config': 'guardrailVersionConfig',
             'compartment_id': 'compartmentId'
         }
         self._input = None
+        self._multimodal_input = None
         self._guardrail_configs = None
         self._guardrail_version_config = None
         self._compartment_id = None
@@ -57,7 +72,7 @@ class ApplyGuardrailsDetails(object):
     @property
     def input(self):
         """
-        **[Required]** Gets the input of this ApplyGuardrailsDetails.
+        Gets the input of this ApplyGuardrailsDetails.
 
         :return: The input of this ApplyGuardrailsDetails.
         :rtype: oci.generative_ai_inference.models.GuardrailsInput
@@ -73,6 +88,30 @@ class ApplyGuardrailsDetails(object):
         :type: oci.generative_ai_inference.models.GuardrailsInput
         """
         self._input = input
+
+    @property
+    def multimodal_input(self):
+        """
+        Gets the multimodal_input of this ApplyGuardrailsDetails.
+        An ordered list of text and image inputs for multimodal guardrail evaluation. This field supports a single text item, an array of text items only, an array of images only, or a mixed ordered combination of text and image items. If both `input` and `multimodalInput` are provided, this field is ignored.
+
+
+        :return: The multimodal_input of this ApplyGuardrailsDetails.
+        :rtype: list[oci.generative_ai_inference.models.GuardrailsInput]
+        """
+        return self._multimodal_input
+
+    @multimodal_input.setter
+    def multimodal_input(self, multimodal_input):
+        """
+        Sets the multimodal_input of this ApplyGuardrailsDetails.
+        An ordered list of text and image inputs for multimodal guardrail evaluation. This field supports a single text item, an array of text items only, an array of images only, or a mixed ordered combination of text and image items. If both `input` and `multimodalInput` are provided, this field is ignored.
+
+
+        :param multimodal_input: The multimodal_input of this ApplyGuardrailsDetails.
+        :type: list[oci.generative_ai_inference.models.GuardrailsInput]
+        """
+        self._multimodal_input = multimodal_input
 
     @property
     def guardrail_configs(self):

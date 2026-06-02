@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class HeatWaveFleetByCategory(object):
     """
-    The number of HeatWave clusters in the fleet, grouped by shape and Lakehouse-enabled status.
+    The number of HeatWave clusters in the fleet, grouped by shape and Lakehouse-enabled status. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     def __init__(self, **kwargs):

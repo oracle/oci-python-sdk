@@ -56,6 +56,11 @@ class DownloadConfiguration(object):
         If no value is specified then the value ``BACKOFF_DECORRELATED_JITTER_VALUE`` will be used. This will use exponential backoff and a
         random de-correlated jitter.
 
+    :param bool is_enforce_data_integrity_for_download: (optional)
+        is_enforce_data_integrity_for_download is a boolean flag to indicate whether download integrity
+        verification should be enabled. By default, the download will not verify integrity. i.e. this parameter will
+        take the value of ``False``.
+
     """
 
     def __init__(self,
@@ -69,6 +74,7 @@ class DownloadConfiguration(object):
                  retry_exponential_growth_factor=2,
                  decorrelated_jitter=1,
                  backoff_type=BACKOFF_DECORRELATED_JITTER_VALUE,
+                 is_enforce_data_integrity_for_download=False,
                  ):
 
         self.allow_multipart = allow_multipart
@@ -91,6 +97,8 @@ class DownloadConfiguration(object):
         self.set_decorrelated_jitter(decorrelated_jitter)
         self.backoff_type = backoff_type
         self.set_backoff_type(backoff_type)
+        self.is_enforce_data_integrity_for_download = is_enforce_data_integrity_for_download
+        self.set_is_enforce_data_integrity_for_download(is_enforce_data_integrity_for_download)
 
     def set_allow_multipart(self, allow_multipart):
         if not isinstance(allow_multipart, bool):
@@ -109,8 +117,8 @@ class DownloadConfiguration(object):
         if not isinstance(num_download_threads, int):
             raise TypeError(
                 f"Invalid type for num_download_threads: expected int, got {type(num_download_threads).__name__}")
-        if num_download_threads <= 1:
-            raise ValueError(f"Invalid value for num_download_threads: expected > 1, got {num_download_threads}")
+        if num_download_threads < 1:
+            raise ValueError(f"Invalid value for num_download_threads: expected >= 1, got {num_download_threads}")
 
         self.num_download_threads = num_download_threads
 
@@ -179,6 +187,14 @@ class DownloadConfiguration(object):
 
         self.backoff_type = backoff_type
 
+    def set_is_enforce_data_integrity_for_download(self, is_enforce_data_integrity_for_download):
+        if not isinstance(is_enforce_data_integrity_for_download, bool):
+            raise TypeError(
+                F"Invalid type for is_enforce_data_integrity_for_download: expected bool, got {type(is_enforce_data_integrity_for_download).__name__}"
+            )
+
+        self.is_enforce_data_integrity_for_download = is_enforce_data_integrity_for_download
+
     def get_allow_multipart(self):
         return self.allow_multipart
 
@@ -208,6 +224,9 @@ class DownloadConfiguration(object):
 
     def get_backoff_type(self):
         return self.backoff_type
+
+    def get_is_enforce_data_integrity_for_download(self):
+        return self.is_enforce_data_integrity_for_download
 
     def make_retry_strategy(self):
         """

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class HeatWaveClusterUsageMetrics(object):
     """
-    The list of aggregated metrics for a HeatWave cluster in the fleet.
+    The list of aggregated metrics for a HeatWave cluster in the fleet. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     #: A constant which can be used with the status property of a HeatWaveClusterUsageMetrics.
