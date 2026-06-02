@@ -23,7 +23,7 @@ class GuardrailsTextInput(GuardrailsInput):
 
         :param type:
             The value to assign to the type property of this GuardrailsTextInput.
-            Allowed values for this property are: "TEXT"
+            Allowed values for this property are: "TEXT", "IMAGE"
         :type type: str
 
         :param content:

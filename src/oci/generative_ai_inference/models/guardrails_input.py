@@ -19,18 +19,23 @@ class GuardrailsInput(object):
     #: This constant has a value of "TEXT"
     TYPE_TEXT = "TEXT"
 
+    #: A constant which can be used with the type property of a GuardrailsInput.
+    #: This constant has a value of "IMAGE"
+    TYPE_IMAGE = "IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new GuardrailsInput object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.generative_ai_inference.models.GuardrailsTextInput`
+        * :class:`~oci.generative_ai_inference.models.GuardrailsImageInput`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this GuardrailsInput.
-            Allowed values for this property are: "TEXT"
+            Allowed values for this property are: "TEXT", "IMAGE"
         :type type: str
 
         """
@@ -52,6 +57,9 @@ class GuardrailsInput(object):
 
         if type == 'TEXT':
             return 'GuardrailsTextInput'
+
+        if type == 'IMAGE':
+            return 'GuardrailsImageInput'
         else:
             return 'GuardrailsInput'
 
@@ -61,7 +69,7 @@ class GuardrailsInput(object):
         **[Required]** Gets the type of this GuardrailsInput.
         The type of the input data.
 
-        Allowed values for this property are: "TEXT"
+        Allowed values for this property are: "TEXT", "IMAGE"
 
 
         :return: The type of this GuardrailsInput.
@@ -79,7 +87,7 @@ class GuardrailsInput(object):
         :param type: The type of this GuardrailsInput.
         :type: str
         """
-        allowed_values = ["TEXT"]
+        allowed_values = ["TEXT", "IMAGE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

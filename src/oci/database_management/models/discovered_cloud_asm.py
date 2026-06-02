@@ -204,7 +204,7 @@ class DiscoveredCloudAsm(DiscoveredCloudDbSystemComponent):
     def asm_instances(self):
         """
         Gets the asm_instances of this DiscoveredCloudAsm.
-        The list of asm instances for the cloud Asm.
+        The list of ASM instances for the cloud Asm.
 
 
         :return: The asm_instances of this DiscoveredCloudAsm.
@@ -216,7 +216,7 @@ class DiscoveredCloudAsm(DiscoveredCloudDbSystemComponent):
     def asm_instances(self, asm_instances):
         """
         Sets the asm_instances of this DiscoveredCloudAsm.
-        The list of asm instances for the cloud Asm.
+        The list of ASM instances for the cloud Asm.
 
 
         :param asm_instances: The asm_instances of this DiscoveredCloudAsm.

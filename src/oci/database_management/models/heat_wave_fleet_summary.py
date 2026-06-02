@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class HeatWaveFleetSummary(object):
     """
-    The inventory count of HeatWave clusters in the fleet and a summary of the metrics that provide the aggregated usage of CPU, storage, and so on of all the clusters.
+    The inventory count of HeatWave clusters in the fleet and a summary of the metrics that provide the aggregated usage of CPU, storage, and so on of all the clusters. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     def __init__(self, **kwargs):

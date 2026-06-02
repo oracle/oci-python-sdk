@@ -245,7 +245,7 @@ class CloudDatabaseSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this CloudDatabaseSummary.
-        The `OCID`__ of the external DB system.
+        The `OCID`__ of the cloud DB system.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -259,7 +259,7 @@ class CloudDatabaseSummary(object):
     def id(self, id):
         """
         Sets the id of this CloudDatabaseSummary.
-        The `OCID`__ of the external DB system.
+        The `OCID`__ of the cloud DB system.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -325,7 +325,7 @@ class CloudDatabaseSummary(object):
     def db_unique_name(self):
         """
         Gets the db_unique_name of this CloudDatabaseSummary.
-        The `DB_UNIQUE_NAME` of the external database.
+        The `DB_UNIQUE_NAME` of the cloud database.
 
 
         :return: The db_unique_name of this CloudDatabaseSummary.
@@ -337,7 +337,7 @@ class CloudDatabaseSummary(object):
     def db_unique_name(self, db_unique_name):
         """
         Sets the db_unique_name of this CloudDatabaseSummary.
-        The `DB_UNIQUE_NAME` of the external database.
+        The `DB_UNIQUE_NAME` of the cloud database.
 
 
         :param db_unique_name: The db_unique_name of this CloudDatabaseSummary.
@@ -441,7 +441,7 @@ class CloudDatabaseSummary(object):
     def cloud_db_home_id(self):
         """
         Gets the cloud_db_home_id of this CloudDatabaseSummary.
-        The `OCID`__ of the external DB home.
+        The `OCID`__ of the cloud DB home.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -455,7 +455,7 @@ class CloudDatabaseSummary(object):
     def cloud_db_home_id(self, cloud_db_home_id):
         """
         Sets the cloud_db_home_id of this CloudDatabaseSummary.
-        The `OCID`__ of the external DB home.
+        The `OCID`__ of the cloud DB home.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -533,7 +533,7 @@ class CloudDatabaseSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this CloudDatabaseSummary.
-        The current lifecycle state of the external database resource.
+        The current lifecycle state of the cloud database resource.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -548,7 +548,7 @@ class CloudDatabaseSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this CloudDatabaseSummary.
-        The current lifecycle state of the external database resource.
+        The current lifecycle state of the cloud database resource.
 
 
         :param lifecycle_state: The lifecycle_state of this CloudDatabaseSummary.
@@ -563,7 +563,7 @@ class CloudDatabaseSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this CloudDatabaseSummary.
-        The date and time the external DB system was created.
+        The date and time the cloud DB system was created.
 
 
         :return: The time_created of this CloudDatabaseSummary.
@@ -575,7 +575,7 @@ class CloudDatabaseSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this CloudDatabaseSummary.
-        The date and time the external DB system was created.
+        The date and time the cloud DB system was created.
 
 
         :param time_created: The time_created of this CloudDatabaseSummary.

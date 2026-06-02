@@ -110,14 +110,15 @@ if __name__ == '__main__':
     start_time = time.time()
     upload_manager = UploadManager(object_storage, allow_parallel_uploads=True, parallel_process_count=num_connections)
     response = upload_manager.upload_file(
-        namespace, bucket_name, object_name, upload_filename, part_size=part_size)
+        namespace, bucket_name, object_name, upload_filename, part_size=part_size, opc_checksum_algorithm="CRC32C")
 
     end_time = time.time()
     print("Time taken to upload file: ", end_time - start_time)
 
     download_configuration = DownloadConfiguration(allow_multipart=True, num_download_threads=num_connections,
                                                    part_size_in_bytes=part_size, max_retries=1,
-                                                   backoff_type=BACKOFF_FULL_JITTER_VALUE)
+                                                   backoff_type=BACKOFF_FULL_JITTER_VALUE,
+                                                   is_enforce_data_integrity_for_download=True)
 
     download_manager = DownloadManager(download_configuration, object_storage, DownloadState.DOWNLOADING)
 

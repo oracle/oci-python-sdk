@@ -2410,6 +2410,7 @@ class DbManagementClient(object):
         """
         Check the status of the external database connection specified in this connector.
         This operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str external_my_sql_database_connector_id: (required)
@@ -2754,7 +2755,7 @@ class DbManagementClient(object):
 
 
         :param oci.database_management.models.CreateCloudDbSystemDetails create_cloud_db_system_details: (required)
-            The details required to create an cloud DB system.
+            The details required to create a cloud DB system.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2859,7 +2860,7 @@ class DbManagementClient(object):
 
 
         :param oci.database_management.models.CreateCloudDbSystemConnectorDetails create_cloud_db_system_connector_details: (required)
-            The details required to create an cloud connector.
+            The details required to create a cloud connector.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2964,7 +2965,7 @@ class DbManagementClient(object):
 
 
         :param oci.database_management.models.CreateCloudDbSystemDiscoveryDetails create_cloud_db_system_discovery_details: (required)
-            The details required to create an cloud DB system discovery.
+            The details required to create a cloud DB system discovery.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3914,6 +3915,7 @@ class DbManagementClient(object):
     def create_external_my_sql_database(self, create_external_my_sql_database_details, **kwargs):
         """
         Creates an external MySQL database.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param oci.database_management.models.CreateExternalMySqlDatabaseDetails create_external_my_sql_database_details: (required)
@@ -4019,6 +4021,7 @@ class DbManagementClient(object):
     def create_external_my_sql_database_connector(self, create_external_my_sql_database_connector_details, is_test_connection_param, **kwargs):
         """
         Creates an external MySQL connector resource.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param oci.database_management.models.CreateExternalMySqlDatabaseConnectorDetails create_external_my_sql_database_connector_details: (required)
@@ -5798,6 +5801,7 @@ class DbManagementClient(object):
     def delete_external_my_sql_database(self, external_my_sql_database_id, **kwargs):
         """
         Deletes the Oracle Cloud Infrastructure resource representing an external MySQL database.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str external_my_sql_database_id: (required)
@@ -5908,6 +5912,7 @@ class DbManagementClient(object):
     def delete_external_my_sql_database_connector(self, external_my_sql_database_connector_id, **kwargs):
         """
         Deletes the Oracle Cloud Infrastructure resource representing an external MySQL database connector.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str external_my_sql_database_connector_id: (required)
@@ -6361,7 +6366,10 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str credential_name: (required)
-            The name of the preferred credential.
+            The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:
+              Basic Monitoring(MONITORING)
+              Advanced diagnostics(PC_READ)
+              Administrator(PC_WRITE)
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -7828,6 +7836,7 @@ class DbManagementClient(object):
     def disable_external_my_sql_database_management(self, external_my_sql_database_id, **kwargs):
         """
         Disables Database Management for an external MySQL Database.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str external_my_sql_database_id: (required)
@@ -9415,7 +9424,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableCloudDbSystemDatabaseManagementDetails enable_cloud_db_system_database_management_details: (required)
-            The details required to enable Stack Monitoring for an cloud DB system.
+            The details required to enable Stack Monitoring for a cloud DB system.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -9545,7 +9554,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableCloudDbSystemStackMonitoringDetails enable_cloud_db_system_stack_monitoring_details: (required)
-            The details required to enable Stack Monitoring for an cloud DB system.
+            The details required to enable Stack Monitoring for a cloud DB system.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -10452,6 +10461,7 @@ class DbManagementClient(object):
     def enable_external_my_sql_database_management(self, external_my_sql_database_id, enable_external_database_management_details, **kwargs):
         """
         Enables Database Management for an external MySQL Database.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str external_my_sql_database_id: (required)
@@ -16711,6 +16721,7 @@ class DbManagementClient(object):
     def get_external_my_sql_database(self, external_my_sql_database_id, **kwargs):
         """
         Retrieves the external MySQL database information.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str external_my_sql_database_id: (required)
@@ -16816,6 +16827,7 @@ class DbManagementClient(object):
     def get_external_my_sql_database_connector(self, external_my_sql_database_connector_id, **kwargs):
         """
         Retrieves the MySQL database connector.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str external_my_sql_database_connector_id: (required)
@@ -18432,7 +18444,10 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str credential_name: (required)
-            The name of the preferred credential.
+            The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:
+              Basic Monitoring(MONITORING)
+              Advanced diagnostics(PC_READ)
+              Administrator(PC_WRITE)
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -26172,6 +26187,7 @@ class DbManagementClient(object):
     def list_external_my_sql_databases(self, compartment_id, **kwargs):
         """
         Gets the list of External MySQL Databases.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str compartment_id: (required)
@@ -27220,6 +27236,7 @@ class DbManagementClient(object):
     def list_my_sql_database_connectors(self, compartment_id, **kwargs):
         """
         Gets the list of External MySQL Database connectors.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str compartment_id: (required)
@@ -31037,7 +31054,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.PatchCloudDbSystemDiscoveryDetails patch_cloud_db_system_discovery_details: (required)
-            The details required to update an cloud DB system discovery.
+            The details required to update a cloud DB system discovery.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -35881,7 +35898,10 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str credential_name: (required)
-            The name of the preferred credential.
+            The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:
+              Basic Monitoring(MONITORING)
+              Advanced diagnostics(PC_READ)
+              Administrator(PC_WRITE)
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -35996,7 +36016,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudAsmDetails update_cloud_asm_details: (required)
-            The details required to update an cloud ASM.
+            The details required to update a cloud ASM.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -36113,7 +36133,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudAsmInstanceDetails update_cloud_asm_instance_details: (required)
-            The details required to update an cloud ASM instance.
+            The details required to update a cloud ASM instance.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -36232,7 +36252,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudClusterDetails update_cloud_cluster_details: (required)
-            The details required to update an cloud cluster.
+            The details required to update a cloud cluster.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -36349,7 +36369,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudClusterInstanceDetails update_cloud_cluster_instance_details: (required)
-            The details required to update an cloud cluster instance.
+            The details required to update a cloud cluster instance.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -36466,7 +36486,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbHomeDetails update_cloud_db_home_details: (required)
-            The details required to update an cloud DB home.
+            The details required to update a cloud DB home.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -36585,7 +36605,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbNodeDetails update_cloud_db_node_details: (required)
-            The details required to update an cloud DB node.
+            The details required to update a cloud DB node.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -36702,7 +36722,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemDetails update_cloud_db_system_details: (required)
-            The details required to update an cloud DB system.
+            The details required to update a cloud DB system.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -36821,7 +36841,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemConnectorDetails update_cloud_db_system_connector_details: (required)
-            The details required to update an cloud connector.
+            The details required to update a cloud connector.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -36938,7 +36958,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemDiscoveryDetails update_cloud_db_system_discovery_details: (required)
-            The details required to update an cloud DB system discovery.
+            The details required to update a cloud DB system discovery.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -37545,7 +37565,7 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudListenerDetails update_cloud_listener_details: (required)
-            The details required to update an cloud listener.
+            The details required to update a cloud listener.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -39439,6 +39459,7 @@ class DbManagementClient(object):
     def update_external_mysql_database(self, external_my_sql_database_id, update_external_my_sql_database_details, **kwargs):
         """
         Updates the External Mysql Database.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str external_my_sql_database_id: (required)
@@ -39556,6 +39577,7 @@ class DbManagementClient(object):
     def update_external_mysql_database_connector(self, external_my_sql_database_connector_id, update_external_my_sql_database_connector_details, **kwargs):
         """
         Updates the External Mysql Database Connector.
+        MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
 
 
         :param str external_my_sql_database_connector_id: (required)
@@ -40155,7 +40177,10 @@ class DbManagementClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str credential_name: (required)
-            The name of the preferred credential.
+            The name of the preferred credential. There are 3 built-in preferred credentials with display names and names as below:
+              Basic Monitoring(MONITORING)
+              Advanced diagnostics(PC_READ)
+              Administrator(PC_WRITE)
 
         :param oci.database_management.models.UpdatePreferredCredentialDetails update_preferred_credential_details: (required)
             The details required to update preferred credential.

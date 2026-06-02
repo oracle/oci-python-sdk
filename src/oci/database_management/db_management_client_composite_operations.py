@@ -292,7 +292,7 @@ class DbManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database_management.models.CreateCloudDbSystemDetails create_cloud_db_system_details: (required)
-            The details required to create an cloud DB system.
+            The details required to create a cloud DB system.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -331,7 +331,7 @@ class DbManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database_management.models.CreateCloudDbSystemConnectorDetails create_cloud_db_system_connector_details: (required)
-            The details required to create an cloud connector.
+            The details required to create a cloud connector.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.CloudDbSystemConnector.lifecycle_state`
@@ -373,7 +373,7 @@ class DbManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database_management.models.CreateCloudDbSystemDiscoveryDetails create_cloud_db_system_discovery_details: (required)
-            The details required to create an cloud DB system discovery.
+            The details required to create a cloud DB system discovery.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -2394,7 +2394,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableCloudDbSystemDatabaseManagementDetails enable_cloud_db_system_database_management_details: (required)
-            The details required to enable Stack Monitoring for an cloud DB system.
+            The details required to enable Stack Monitoring for a cloud DB system.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -2438,7 +2438,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.EnableCloudDbSystemStackMonitoringDetails enable_cloud_db_system_stack_monitoring_details: (required)
-            The details required to enable Stack Monitoring for an cloud DB system.
+            The details required to enable Stack Monitoring for a cloud DB system.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -3096,7 +3096,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudAsmDetails update_cloud_asm_details: (required)
-            The details required to update an cloud ASM.
+            The details required to update a cloud ASM.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -3140,7 +3140,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudAsmInstanceDetails update_cloud_asm_instance_details: (required)
-            The details required to update an cloud ASM instance.
+            The details required to update a cloud ASM instance.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.CloudAsmInstance.lifecycle_state`
@@ -3187,7 +3187,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudClusterDetails update_cloud_cluster_details: (required)
-            The details required to update an cloud cluster.
+            The details required to update a cloud cluster.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -3231,7 +3231,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudClusterInstanceDetails update_cloud_cluster_instance_details: (required)
-            The details required to update an cloud cluster instance.
+            The details required to update a cloud cluster instance.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -3275,7 +3275,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbHomeDetails update_cloud_db_home_details: (required)
-            The details required to update an cloud DB home.
+            The details required to update a cloud DB home.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.CloudDbHome.lifecycle_state`
@@ -3322,7 +3322,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbNodeDetails update_cloud_db_node_details: (required)
-            The details required to update an cloud DB node.
+            The details required to update a cloud DB node.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -3366,7 +3366,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemDetails update_cloud_db_system_details: (required)
-            The details required to update an cloud DB system.
+            The details required to update a cloud DB system.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.CloudDbSystem.lifecycle_state`
@@ -3413,7 +3413,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemConnectorDetails update_cloud_db_system_connector_details: (required)
-            The details required to update an cloud connector.
+            The details required to update a cloud connector.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
@@ -3457,7 +3457,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudDbSystemDiscoveryDetails update_cloud_db_system_discovery_details: (required)
-            The details required to update an cloud DB system discovery.
+            The details required to update a cloud DB system discovery.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.CloudDbSystemDiscovery.lifecycle_state`
@@ -3692,7 +3692,7 @@ class DbManagementClientCompositeOperations(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.UpdateCloudListenerDetails update_cloud_listener_details: (required)
-            The details required to update an cloud listener.
+            The details required to update a cloud listener.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`

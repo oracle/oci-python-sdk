@@ -480,6 +480,9 @@ class EsxiHostClient(object):
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param oci.ocvp.models.InplaceUpgradeDetails inplace_upgrade_details: (optional)
+            The details for upgrading ESXi host.
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
@@ -532,6 +535,7 @@ class EsxiHostClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "inplace_upgrade_details",
             "opc_retry_token",
             "if_match",
             "opc_request_id"
@@ -578,6 +582,7 @@ class EsxiHostClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('inplace_upgrade_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -589,6 +594,7 @@ class EsxiHostClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('inplace_upgrade_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,

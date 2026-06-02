@@ -49,6 +49,14 @@ class DownloadThread(object):
         object.
         Note: Both the start_byte and end_byte are included in the download.
 
+    :param bool should_checksum_be_verified: (optional)
+        True if download integrity is required. The default value is False. So if
+        no value provided or the value is False, no checksum update and verification is performed.
+
+    :param :class:`oci.object_storage.transfer.internal.download.DownloadChecksumVerifier` checksum_verifier: (optional)
+        If should_checksum_be_verified is True, the checksum verifier should be provided. This will be used to update
+        the digest during the download.
+
     :param: bool did_some_parts_fail: True if some parts fail to download.
 
     :param: dict failed_parts: A dictionary filled with all the failed parts. Key: Failed part, Value: Error
@@ -144,6 +152,8 @@ class DownloadThread(object):
                  progress_callback=None,
                  start_byte=0,
                  end_byte=None,
+                 should_checksum_be_verified=False,
+                 checksum_verifier=None,
                  **kwargs
                  ):
         self.download_manager = download_manager
@@ -161,6 +171,8 @@ class DownloadThread(object):
         self.end_byte = end_byte
         self.did_some_parts_fail = False
         self.failed_parts = {}
+        self.should_checksum_be_verified = should_checksum_be_verified
+        self.checksum_verifier = checksum_verifier
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -201,6 +213,10 @@ class DownloadThread(object):
 
         return self.bytes_downloaded
 
+    def update_checksum(self, part_content, part_start_byte):
+        if self.should_checksum_be_verified:
+            self.checksum_verifier.update(part_content, part_start_byte)
+
     def get_part_with_start_byte(self, part_start_byte):
         # This is overwritten by the SequentialDownloader and ParallelDownloader.
         # This performs the get operation for the specific part.
@@ -227,12 +243,14 @@ class SequentialDownloader(DownloadThread):
                  progress_callback=None,
                  start_byte=0,
                  end_byte=None,
+                 should_checksum_be_verified=False,
+                 checksum_verifier=None,
                  **kwargs
                  ):
         super(SequentialDownloader, self).__init__(download_manager, download_config, object_storage_client,
                                                    namespace_name, bucket_name, object_name, stream, bytes_downloaded,
                                                    object_size, progress_callback, start_byte,
-                                                   end_byte, **kwargs)
+                                                   end_byte, should_checksum_be_verified, checksum_verifier, **kwargs)
 
     def write_part_to_stream(self, part_content, part_start_byte):
         stream_start = self.stream_original_start + part_start_byte - self.start_byte
@@ -272,11 +290,11 @@ class SequentialDownloader(DownloadThread):
         if 'retry_strategy' not in self.header_args:
             self.header_args['retry_strategy'] = self.download_config.make_retry_strategy()
 
+        response = None
         try:
             response = object_storage_client.get_object(self.namespace_name, self.bucket_name, self.object_name,
                                                         range=range_header, **self.header_args)
             part_content = response.data.content
-            response.data.close()
             part_size_in_bytes = part_end_byte - part_start_byte + 1
             if part_size_in_bytes > 0:
                 bytes_written = self.write_part_to_stream(part_content, part_start_byte)
@@ -285,10 +303,16 @@ class SequentialDownloader(DownloadThread):
                     self.failed_parts[(part_start_byte, part_end_byte)] = DownloadFailedIncorrectDownloadSize(
                         bytes_written, part_size_in_bytes
                     )
+                else:
+                    self.update_checksum(part_content, part_start_byte)
 
         except Exception as e:
             self.did_some_parts_fail = True
             self.failed_parts[(part_start_byte, part_end_byte)] = e
+        finally:
+            if response is not None and response.data is not None:
+                response.data.close()
+                response.data = None
 
 
 class ParallelDownloader(DownloadThread):
@@ -305,16 +329,19 @@ class ParallelDownloader(DownloadThread):
                  progress_callback=None,
                  start_byte=0,
                  end_byte=None,
+                 should_checksum_be_verified=False,
+                 checksum_verifier=None,
                  **kwargs
                  ):
         super(ParallelDownloader, self).__init__(download_manager, download_config, object_storage_client,
                                                  namespace_name, bucket_name, object_name, stream, bytes_downloaded,
                                                  object_size, progress_callback,
-                                                 start_byte, end_byte, **kwargs)
+                                                 start_byte, end_byte, should_checksum_be_verified, checksum_verifier, **kwargs)
 
         self.stream_lock = multiprocessing.Lock()
         self.callback_lock = multiprocessing.Lock()
         self.failed_parts_lock = multiprocessing.Lock()
+        self.checksum_lock = multiprocessing.Lock()
 
     def write_part_to_stream(self, part_content, part_start_byte):
         with self.stream_lock:
@@ -323,7 +350,12 @@ class ParallelDownloader(DownloadThread):
             self.stream.write(part_content)
             stream_end = self.stream.tell()
             self.callback(stream_end - stream_start)
-            return stream_end - stream_start
+        return stream_end - stream_start
+
+    def update_checksum(self, part_content, part_start_byte):
+        if self.should_checksum_be_verified:
+            with self.checksum_lock:
+                self.checksum_verifier.update(part_content, part_start_byte)
 
     def callback(self, downloaded_bytes):
         with self.callback_lock:
@@ -353,11 +385,11 @@ class ParallelDownloader(DownloadThread):
         if 'retry_strategy' not in self.header_args:
             self.header_args['retry_strategy'] = self.download_config.make_retry_strategy()
 
+        response = None
         try:
             response = object_storage_client.get_object(self.namespace_name, self.bucket_name, self.object_name,
                                                         range=range_header, **self.header_args)
             part_content = response.data.content
-            response.data.close()
             part_size_in_bytes = part_end_byte - part_start_byte + 1
             if part_size_in_bytes > 0:
                 bytes_written = self.write_part_to_stream(part_content, part_start_byte)
@@ -367,9 +399,15 @@ class ParallelDownloader(DownloadThread):
                         self.failed_parts[(part_start_byte, part_end_byte)] = DownloadFailedIncorrectDownloadSize(
                             bytes_written, part_size_in_bytes
                         )
+                else:
+                    self.update_checksum(part_content, part_start_byte)
 
         except Exception as e:
 
             with self.failed_parts_lock:
                 self.did_some_parts_fail = True
                 self.failed_parts[(part_start_byte, part_end_byte)] = e
+        finally:
+            if response is not None and response.data is not None:
+                response.data.close()
+                response.data = None

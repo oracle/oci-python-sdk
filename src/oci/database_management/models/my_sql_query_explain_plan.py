@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlQueryExplainPlan(object):
     """
-    The explain plan for a given MySQL query.
+    The explain plan for a given MySQL query. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     #: A constant which can be used with the json_explain_version property of a MySqlQueryExplainPlan.
@@ -54,7 +54,7 @@ class MySqlQueryExplainPlan(object):
     def json_explain(self):
         """
         **[Required]** Gets the json_explain of this MySqlQueryExplainPlan.
-        The json format of the explain plan.
+        The JSON format of the explain plan.
 
 
         :return: The json_explain of this MySqlQueryExplainPlan.
@@ -66,7 +66,7 @@ class MySqlQueryExplainPlan(object):
     def json_explain(self, json_explain):
         """
         Sets the json_explain of this MySqlQueryExplainPlan.
-        The json format of the explain plan.
+        The JSON format of the explain plan.
 
 
         :param json_explain: The json_explain of this MySqlQueryExplainPlan.
@@ -78,7 +78,7 @@ class MySqlQueryExplainPlan(object):
     def json_explain_version(self):
         """
         **[Required]** Gets the json_explain_version of this MySqlQueryExplainPlan.
-        The version of the Json format of MySQL Explain.
+        The version of the JSON format of the MySQL explain plan.
 
         Allowed values for this property are: "V1", "V2", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -93,7 +93,7 @@ class MySqlQueryExplainPlan(object):
     def json_explain_version(self, json_explain_version):
         """
         Sets the json_explain_version of this MySqlQueryExplainPlan.
-        The version of the Json format of MySQL Explain.
+        The version of the JSON format of the MySQL explain plan.
 
 
         :param json_explain_version: The json_explain_version of this MySqlQueryExplainPlan.

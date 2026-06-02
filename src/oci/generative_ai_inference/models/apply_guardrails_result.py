@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ApplyGuardrailsResult(object):
     """
-    The result of applying guardrails to the input text.
+    The result of applying guardrails to the input content.
     """
 
     def __init__(self, **kwargs):

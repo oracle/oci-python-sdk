@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CloudDbNode(object):
     """
-    The details of a cloud database node.
+    The details of a cloud DB node.
     """
 
     #: A constant which can be used with the lifecycle_state property of a CloudDbNode.
@@ -537,7 +537,7 @@ class CloudDbNode(object):
     def domain_name(self):
         """
         Gets the domain_name of this CloudDbNode.
-        Name of the domain.
+        The name of the domain.
 
 
         :return: The domain_name of this CloudDbNode.
@@ -549,7 +549,7 @@ class CloudDbNode(object):
     def domain_name(self, domain_name):
         """
         Sets the domain_name of this CloudDbNode.
-        Name of the domain.
+        The name of the domain.
 
 
         :param domain_name: The domain_name of this CloudDbNode.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlApplyErrorWorker(object):
     """
-    If the replica is multi-threaded, error from worker threads. Otherwise, error from the applier thread.
+    If the replica is multi-threaded, error from worker threads. Otherwise, error from the applier thread. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     def __init__(self, **kwargs):

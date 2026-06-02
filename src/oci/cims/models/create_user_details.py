@@ -52,10 +52,6 @@ class CreateUserDetails(object):
             The value to assign to the last_name property of this CreateUserDetails.
         :type last_name: str
 
-        :param csi:
-            The value to assign to the csi property of this CreateUserDetails.
-        :type csi: str
-
         :param phone:
             The value to assign to the phone property of this CreateUserDetails.
         :type phone: str
@@ -78,7 +74,6 @@ class CreateUserDetails(object):
             'compartment_id': 'str',
             'first_name': 'str',
             'last_name': 'str',
-            'csi': 'str',
             'phone': 'str',
             'timezone': 'str',
             'organization_name': 'str',
@@ -88,7 +83,6 @@ class CreateUserDetails(object):
             'compartment_id': 'compartmentId',
             'first_name': 'firstName',
             'last_name': 'lastName',
-            'csi': 'csi',
             'phone': 'phone',
             'timezone': 'timezone',
             'organization_name': 'organizationName',
@@ -97,7 +91,6 @@ class CreateUserDetails(object):
         self._compartment_id = None
         self._first_name = None
         self._last_name = None
-        self._csi = None
         self._phone = None
         self._timezone = None
         self._organization_name = None
@@ -174,30 +167,6 @@ class CreateUserDetails(object):
         :type: str
         """
         self._last_name = last_name
-
-    @property
-    def csi(self):
-        """
-        Gets the csi of this CreateUserDetails.
-        CSI associated with the user.
-
-
-        :return: The csi of this CreateUserDetails.
-        :rtype: str
-        """
-        return self._csi
-
-    @csi.setter
-    def csi(self, csi):
-        """
-        Sets the csi of this CreateUserDetails.
-        CSI associated with the user.
-
-
-        :param csi: The csi of this CreateUserDetails.
-        :type: str
-        """
-        self._csi = csi
 
     @property
     def phone(self):

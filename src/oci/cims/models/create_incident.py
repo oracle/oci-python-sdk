@@ -48,10 +48,6 @@ class CreateIncident(object):
             The value to assign to the ticket property of this CreateIncident.
         :type ticket: oci.cims.models.CreateTicketDetails
 
-        :param csi:
-            The value to assign to the csi property of this CreateIncident.
-        :type csi: str
-
         :param user_group_id:
             The value to assign to the user_group_id property of this CreateIncident.
         :type user_group_id: str
@@ -73,7 +69,6 @@ class CreateIncident(object):
         self.swagger_types = {
             'compartment_id': 'str',
             'ticket': 'CreateTicketDetails',
-            'csi': 'str',
             'user_group_id': 'str',
             'problem_type': 'str',
             'contacts': 'list[Contact]',
@@ -82,7 +77,6 @@ class CreateIncident(object):
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'ticket': 'ticket',
-            'csi': 'csi',
             'user_group_id': 'userGroupId',
             'problem_type': 'problemType',
             'contacts': 'contacts',
@@ -90,7 +84,6 @@ class CreateIncident(object):
         }
         self._compartment_id = None
         self._ticket = None
-        self._csi = None
         self._user_group_id = None
         self._problem_type = None
         self._contacts = None
@@ -139,32 +132,6 @@ class CreateIncident(object):
         :type: oci.cims.models.CreateTicketDetails
         """
         self._ticket = ticket
-
-    @property
-    def csi(self):
-        """
-        Gets the csi of this CreateIncident.
-        Deprecated. The Customer Support Identifier (CSI) number associated with the support account.
-        The CSI is optional for all support request types.
-
-
-        :return: The csi of this CreateIncident.
-        :rtype: str
-        """
-        return self._csi
-
-    @csi.setter
-    def csi(self, csi):
-        """
-        Sets the csi of this CreateIncident.
-        Deprecated. The Customer Support Identifier (CSI) number associated with the support account.
-        The CSI is optional for all support request types.
-
-
-        :param csi: The csi of this CreateIncident.
-        :type: str
-        """
-        self._csi = csi
 
     @property
     def user_group_id(self):

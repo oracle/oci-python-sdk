@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EnableExternalDatabaseManagementDetails(object):
     """
-    Detail to enable or disable database management.
+    Detail to enable or disable database management. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     def __init__(self, **kwargs):

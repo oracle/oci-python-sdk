@@ -48,6 +48,10 @@ class UpdateByolDetails(object):
             The value to assign to the entitlement_key property of this UpdateByolDetails.
         :type entitlement_key: str
 
+        :param site_id:
+            The value to assign to the site_id property of this UpdateByolDetails.
+        :type site_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateByolDetails.
         :type freeform_tags: dict(str, str)
@@ -65,6 +69,7 @@ class UpdateByolDetails(object):
             'time_term_start': 'datetime',
             'time_term_end': 'datetime',
             'entitlement_key': 'str',
+            'site_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -76,6 +81,7 @@ class UpdateByolDetails(object):
             'time_term_start': 'timeTermStart',
             'time_term_end': 'timeTermEnd',
             'entitlement_key': 'entitlementKey',
+            'site_id': 'siteId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -86,6 +92,7 @@ class UpdateByolDetails(object):
         self._time_term_start = None
         self._time_term_end = None
         self._entitlement_key = None
+        self._site_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -288,6 +295,30 @@ class UpdateByolDetails(object):
         :type: str
         """
         self._entitlement_key = entitlement_key
+
+    @property
+    def site_id(self):
+        """
+        Gets the site_id of this UpdateByolDetails.
+        The hyperscaler identifier in Broadcom systems.
+
+
+        :return: The site_id of this UpdateByolDetails.
+        :rtype: str
+        """
+        return self._site_id
+
+    @site_id.setter
+    def site_id(self, site_id):
+        """
+        Sets the site_id of this UpdateByolDetails.
+        The hyperscaler identifier in Broadcom systems.
+
+
+        :param site_id: The site_id of this UpdateByolDetails.
+        :type: str
+        """
+        self._site_id = site_id
 
     @property
     def freeform_tags(self):

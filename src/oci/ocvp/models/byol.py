@@ -115,6 +115,10 @@ class Byol(object):
             The value to assign to the entitlement_key property of this Byol.
         :type entitlement_key: str
 
+        :param site_id:
+            The value to assign to the site_id property of this Byol.
+        :type site_id: str
+
         :param time_created:
             The value to assign to the time_created property of this Byol.
         :type time_created: datetime
@@ -148,6 +152,7 @@ class Byol(object):
             'time_term_start': 'datetime',
             'time_term_end': 'datetime',
             'entitlement_key': 'str',
+            'site_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
@@ -166,6 +171,7 @@ class Byol(object):
             'time_term_start': 'timeTermStart',
             'time_term_end': 'timeTermEnd',
             'entitlement_key': 'entitlementKey',
+            'site_id': 'siteId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
@@ -183,6 +189,7 @@ class Byol(object):
         self._time_term_start = None
         self._time_term_end = None
         self._entitlement_key = None
+        self._site_id = None
         self._time_created = None
         self._time_updated = None
         self._freeform_tags = None
@@ -506,6 +513,30 @@ class Byol(object):
         :type: str
         """
         self._entitlement_key = entitlement_key
+
+    @property
+    def site_id(self):
+        """
+        Gets the site_id of this Byol.
+        The hyperscaler identifier in Broadcom systems.
+
+
+        :return: The site_id of this Byol.
+        :rtype: str
+        """
+        return self._site_id
+
+    @site_id.setter
+    def site_id(self, site_id):
+        """
+        Sets the site_id of this Byol.
+        The hyperscaler identifier in Broadcom systems.
+
+
+        :param site_id: The site_id of this Byol.
+        :type: str
+        """
+        self._site_id = site_id
 
     @property
     def time_created(self):

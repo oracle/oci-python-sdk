@@ -274,10 +274,6 @@ class IncidentClient(object):
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
-        :param str csi: (optional)
-            The Customer Support Identifier (CSI) number associated with the support account.
-            The CSI is optional for all support request types.
-
         :param str ocid: (optional)
             User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
             User OCID is mandatory for OCI Users and optional for Multicloud users.
@@ -336,7 +332,6 @@ class IncidentClient(object):
             "enable_strict_url_encoding",
             "retry_strategy",
             "opc_request_id",
-            "csi",
             "ocid",
             "homeregion",
             "problemtype",
@@ -369,7 +364,6 @@ class IncidentClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "csi": kwargs.get("csi", missing),
             "ocid": kwargs.get("ocid", missing),
             "homeregion": kwargs.get("homeregion", missing),
             "problemtype": kwargs.get("problemtype", missing),
@@ -463,10 +457,6 @@ class IncidentClient(object):
         :param str name: (optional)
             The user-friendly name of the support request type.
 
-        :param str csi: (optional)
-            The Customer Support Identifier (CSI) number associated with the support account.
-            The CSI is optional for all support request types.
-
         :param str ocid: (optional)
             User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
             User OCID is mandatory for OCI Users and optional for Multicloud users.
@@ -518,7 +508,6 @@ class IncidentClient(object):
             "sort_by",
             "sort_order",
             "name",
-            "csi",
             "ocid",
             "homeregion",
             "domainid"
@@ -557,7 +546,6 @@ class IncidentClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "csi": kwargs.get("csi", missing),
             "ocid": kwargs.get("ocid", missing),
             "homeregion": kwargs.get("homeregion", missing),
             "domainid": kwargs.get("domainid", missing)
@@ -609,10 +597,6 @@ class IncidentClient(object):
         :param str compartment_id: (required)
             The OCID of the tenancy.
 
-        :param str csi: (optional)
-            The Customer Support Identifier (CSI) number associated with the support account.
-            The CSI is optional for all support request types.
-
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
 
@@ -627,6 +611,9 @@ class IncidentClient(object):
             The order to sort the results in.
 
             Allowed values are: "ASC", "DESC"
+
+        :param datetime time_updated_greater_than_or_equal_to: (optional)
+            Filter to return results updated only after the specified timestamp. Must be an RFC 3339 timestamp (e.g. 2025-12-07T17:42:54Z).
 
         :param str lifecycle_state: (optional)
             The current state of the ticket.
@@ -698,10 +685,10 @@ class IncidentClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
-            "csi",
             "limit",
             "sort_by",
             "sort_order",
+            "time_updated_greater_than_or_equal_to",
             "lifecycle_state",
             "page",
             "opc_request_id",
@@ -744,6 +731,7 @@ class IncidentClient(object):
             "compartmentId": compartment_id,
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
+            "timeUpdatedGreaterThanOrEqualTo": kwargs.get("time_updated_greater_than_or_equal_to", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "page": kwargs.get("page", missing),
             "problemType": kwargs.get("problem_type", missing)
@@ -753,7 +741,6 @@ class IncidentClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "csi": kwargs.get("csi", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "ocid": kwargs.get("ocid", missing),
             "homeregion": kwargs.get("homeregion", missing),
@@ -818,10 +805,6 @@ class IncidentClient(object):
         :param bool is_restricted_flag: (required)
             Set to `true` when the attachment contains personal information (PI)
             or protected health information (PHI).
-
-        :param str csi: (optional)
-            The Customer Support Identifier (CSI) number associated with the support account.
-            The CSI is optional for all support request types.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -895,7 +878,6 @@ class IncidentClient(object):
             "enable_strict_url_encoding",
             "retry_strategy",
             "buffer_limit",
-            "csi",
             "opc_request_id",
             "ocid",
             "if_match",
@@ -930,7 +912,6 @@ class IncidentClient(object):
 
         header_params = {
             "accept": "application/json",
-            "csi": kwargs.get("csi", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "ocid": kwargs.get("ocid", missing),
             "if-match": kwargs.get("if_match", missing),
@@ -1019,10 +1000,6 @@ class IncidentClient(object):
         :param str compartment_id: (required)
             The OCID of the tenancy.
 
-        :param str csi: (optional)
-            The Customer Support Identifier (CSI) number associated with the support account.
-            The CSI is optional for all support request types.
-
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
@@ -1083,7 +1060,6 @@ class IncidentClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
-            "csi",
             "opc_request_id",
             "if_match",
             "ocid",
@@ -1116,7 +1092,6 @@ class IncidentClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "csi": kwargs.get("csi", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing),
             "ocid": kwargs.get("ocid", missing),
@@ -1173,10 +1148,6 @@ class IncidentClient(object):
 
         __ https://docs.oracle.com/iaas/Content/GSG/support/validate-user.htm
 
-
-        :param str csi: (optional)
-            The Customer Support Identifier (CSI) number associated with the support account.
-            The CSI is optional for all support request types.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1240,7 +1211,6 @@ class IncidentClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
-            "csi",
             "opc_request_id",
             "problem_type",
             "ocid",
@@ -1270,7 +1240,6 @@ class IncidentClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "csi": kwargs.get("csi", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "ocid": kwargs.get("ocid", missing),
             "homeregion": kwargs.get("homeregion", missing),

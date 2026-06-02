@@ -6,11 +6,14 @@ import io
 import six
 import math
 import time
+import base64
 import warnings
 from multiprocessing.dummy import Pool
 from oci.object_storage.transfer.internal.download.DownloadThread import (ParallelDownloader, SequentialDownloader,
                                                                           DownloadState)
-from oci.exceptions import (ResumableDownloadException, DownloadTerminated, DownloadFailedIncorrectDownloadSize)
+from oci.exceptions import (ResumableDownloadException, DownloadTerminated, DownloadFailedIncorrectDownloadSize,
+                            ChecksumVerificationError)
+from oci.object_storage.transfer.internal.download.DownloadChecksumVerifier import DownloadChecksumVerifier
 
 
 class DownloadManager(object):
@@ -33,6 +36,54 @@ class DownloadManager(object):
         self.object_storage_client = object_storage_client
         self.state = state
 
+    def __is_object_uploaded_in_parts(self, response_headers):
+        """
+        Identifies if an object has been uploaded in parts using the key name of the md5 hash.
+
+        :param :class:`requests.structures.CaseInsensitiveDict` response_headers: The response headers
+        :return: True if the object has been uploaded in parts (has opc-multipart-md5 in the header).
+        False if not (has content-md5 in the header).
+        :rtype: bool
+        """
+        if response_headers.get("opc-multipart-md5", None) is not None:
+            return True
+        elif response_headers.get("content-md5", None) is not None:
+            return False
+        else:
+            raise Exception("Unable to determine if the object is uploaded in parts.")
+
+    def __getExpectedChecksumAndAlgorithm(self, response_headers, is_uploaded_in_parts):
+        """
+        Extracts the additional checksum algorithm used to upload the object and the corresponding checksum from the
+        response headers. The values that the additional algorithm can be one of "CRC32C", "SHA256", "SHA384", "MD5".
+        Note: MD5 is present in the response headers always. It is returned only when no additional checksum is not
+        present.
+
+        :param :class:`requests.structures.CaseInsensitiveDict` response_headers: The response headers
+        :param bool is_uploaded_in_parts: True if the object has been uploaded in parts.
+        :return: A tuple additional algorithm used to upload the object anfrom the response headers.
+        :rtype: tuple(str, str)
+        """
+        CONTENT_CRC32C_header_key = "opc-content-crc32c"
+        CONTENT_SHA256_header_key = "opc-multipart-sha256" if is_uploaded_in_parts else "opc-content-sha256"
+        CONTENT_SHA384_header_key = "opc-multipart-sha384" if is_uploaded_in_parts else "opc-content-sha384"
+        CONTENT_MD5_header_key = "opc-multipart-md5" if is_uploaded_in_parts else "content-md5"
+
+        if response_headers.get(CONTENT_CRC32C_header_key, None) is not None:
+            digest_bytes = base64.b64decode(response_headers.get(CONTENT_CRC32C_header_key))
+            checksum_algorithm = "crc32c"
+        elif response_headers.get(CONTENT_SHA256_header_key, None) is not None:
+            digest_bytes = base64.b64decode(response_headers.get(CONTENT_SHA256_header_key))
+            checksum_algorithm = "sha256"
+        elif response_headers.get(CONTENT_SHA384_header_key, None) is not None:
+            digest_bytes = base64.b64decode(response_headers.get(CONTENT_SHA384_header_key))
+            checksum_algorithm = "sha384"
+        else:
+            digest_bytes = base64.b64decode(response_headers.get(CONTENT_MD5_header_key))
+            checksum_algorithm = "md5"
+
+        return checksum_algorithm, digest_bytes
+
     def get_object(self,
                    namespace_name,
                    bucket_name,
@@ -46,7 +97,8 @@ class DownloadManager(object):
                 given, then the end_byte is taken as the last byte of the object being downloaded. If only end_byte is
                 given, then the start_byte is the first byte of the object. A ~oci.exceptions.ServiceError is raised if
                 the object is unavailable or the range is wrong. If some unexpected keyword arguments are encountered,
-                then a ValueError exception is raised.
+                then a ValueError exception is raised. No checksum verification is performed regardless of the value of
+                is_enforce_data_integrity_for_download in the download configuration.
 
                 :param str namespace_name: (required)
                     The Object Storage namespace used for the request.
@@ -261,8 +313,8 @@ class DownloadManager(object):
                 f"get_object got unknown kwargs: {extra_kwargs!r}")
 
         stream = io.BytesIO()
-        response = self.get_object_to_stream(namespace_name, bucket_name, object_name, stream, progress_callback,
-                                             start_byte, end_byte, **kwargs)
+        _, response = self.get_object_to_stream(namespace_name, bucket_name, object_name, stream, progress_callback,
+                                                start_byte, end_byte, **kwargs)
         response.data = stream.getvalue()
         return response
 
@@ -357,9 +409,12 @@ class DownloadManager(object):
                 created even if the download failed or was cancelled. If the destination path is not specified then a
                 file name "download_"+object_name is created in the directory the program was executed in.
                 A ~oci.exceptions.ServiceError is raised if the object is unavailable or the range is wrong.
-                The integrity of the download is verified by checking if the downloaded bytes (i.e. the number of bytes
-                written into the file) is the same as the object size. If this fails, then an
-                ~oci.exceptions.DownloadFailedIncorrectDownloadSize exception is raised. If some unexpected keyword
+                The integrity of the download is verified in two ways. First, the number of bytes written to the file is
+                compared with the object size. If they do not match, an ~oci.exceptions.DownloadFailedIncorrectDownloadSize
+                exception is raised. Second, if checksum verification is enabled in the configuration and is possible
+                (otherwise a warning is logged), the checksum is verified. If this verification fails, an
+                ~oci.exceptions.ChecksumVerificationError exception is raised. If checksum verification occurs, there,
+                will be an additional overhead of calculating the checksum and verification. If some unexpected keyword
                 arguments are encountered, then a ValueError exception is raised.
 
                 :param str namespace_name: (required)
@@ -544,20 +599,49 @@ class DownloadManager(object):
         download_config = self.download_config
         do_multithread = download_config.get_allow_multipart()
 
-        if download_config.get_num_download_threads() > 1:
-            if not stream.seekable():  # Check if the stream is seekable or not
-                warnings.warn("The stream provided is not seekable. Performing single threaded download")
-                do_multithread = False
+        if do_multithread and not stream.seekable():
+            warnings.warn("The stream provided is not seekable. Performing single threaded download")
+            do_multithread = False
 
         if (start_byte is not None) and (end_byte is not None):
             if download_config.get_part_size_in_bytes() > (end_byte - start_byte + 1):
                 do_multithread = False
 
+        # Full-object checksum verification is only possible when the object storage server returns checksum headers
+        # for the complete object. Ranged GETs do not provide these headers so a warning is logged for them.
+        should_checksum_be_verified = False
+        if download_config.get_is_enforce_data_integrity_for_download():
+            if (start_byte is None or start_byte == 0) and (end_byte is None):
+                should_checksum_be_verified = True
+            else:
+                raise ValueError(
+                    "Checksum verification is required but cannot be performed when for ranged requests."
+                )
+
+        # The necessary response headers with the checksums are only returned for non range requests. Since we set
+        # should_checksum_be_verified to True only for non range requests, we don't need to worry.
         response = self.get_object(namespace_name, bucket_name, object_name, start_byte, end_byte, **kwargs)
 
         object_size_in_bytes = int(response.headers['Content-Length'])
 
+        checksum_verifier = None
+        expected_checksum = None
+        algorithm = None
+        if should_checksum_be_verified:
+            is_uploaded_in_parts = self.__is_object_uploaded_in_parts(response.headers)
+            algorithm, expected_checksum = self.__getExpectedChecksumAndAlgorithm(response.headers, is_uploaded_in_parts)
+            if is_uploaded_in_parts and algorithm != "crc32c":
+                if response.data is not None:
+                    response.data.close()
+                    response.data = None
+                raise ValueError(
+                    f"Checksum verification is required but cannot be performed for objects uploaded in parts with "
+                    f"{algorithm.upper()}. Only CRC32C is supported for verifying checksums of objects uploaded in parts."
+                )
+            checksum_verifier = DownloadChecksumVerifier(algorithm, expected_checksum, object_size_in_bytes)
+
         if object_size_in_bytes == 0:
+            response.data.close()
             return 0, response
 
         if not do_multithread:
@@ -568,27 +652,37 @@ class DownloadManager(object):
                     while self.state == DownloadState.PAUSED:
                         time.sleep(self.download_config.get_pause_wait_in_seconds())
                     if self.state == DownloadState.TERMINATED:
-                        stream.seek(0)
+                        if stream.seekable():
+                            stream.seek(0)
                         stream.truncate()
                         raise DownloadTerminated("Download canceled, Thread Stopped")
 
-                    start = stream.tell()
                     stream.write(chunk)
-                    end = stream.tell()
-                    bytes_downloaded += (end - start)
+                    if should_checksum_be_verified:
+                        # update the checksum digest every time we write into the provided stream.
+                        if algorithm == "crc32c":
+                            checksum_verifier.update(chunk, bytes_downloaded)
+                        else:
+                            checksum_verifier.update(chunk)
+                    bytes_downloaded += len(chunk)
                     if progress_callback:
                         progress_callback(bytes_downloaded,
                                           object_size_in_bytes)
-                response.data = None
 
                 # Perform a simple integrity check by seeing if the total bytes downloaded are what we need.
                 if bytes_downloaded != object_size_in_bytes:
                     raise DownloadFailedIncorrectDownloadSize(bytes_downloaded,
                                                               object_size_in_bytes)
+                if should_checksum_be_verified:
+                    if not checksum_verifier.verify():
+                        raise ChecksumVerificationError(expected_checksum, checksum_verifier.digest())
+
                 return bytes_downloaded, response
 
-            except Exception as e:
-                raise e
+            finally:
+                if response.data is not None:
+                    response.data.close()
+                    response.data = None
 
         else:
             # Now we need to identify the right start and end offset values for the first part. We need it to find the
@@ -632,34 +726,75 @@ class DownloadManager(object):
 
             kwargs["if_match"] = response.headers['ETag']
 
-            stream_start = stream.tell()
-            stream.write(next(response.data.iter_content(chunk_size=bytes_to_download)))
-            stream_end = stream.tell()
+            if first_part_end_offset < end_byte and should_checksum_be_verified:
+                num_parts = math.ceil((end_byte - (first_part_end_offset + 1) + 1) / download_config.part_size_in_bytes)
+                num_download_threads = min(num_parts, download_config.get_num_download_threads())
+                if num_download_threads > 1 and algorithm != "crc32c":
+                    if response.data is not None:
+                        response.data.close()
+                        response.data = None
+                    raise ValueError(
+                        f"Checksum verification is required but cannot be performed with the current download "
+                        f"configuration for {algorithm.upper()} downloads that need concurrent part downloads. "
+                        f"Only CRC32C is supported for multipart downloads. Reduce num_download_threads to 1 or "
+                        f"increase part_size_in_bytes to avoid multipart download."
+                    )
 
-            bytes_downloaded = stream_end - stream_start
+            bytes_downloaded = 0
+            remaining_bytes_of_first_part = bytes_to_download
+            try:
+                content_iter_obj = response.data.iter_content(chunk_size=bytes_to_download)
+                # iter_content() can yield less than the requested chunk size, so keep reading
+                # until the full first-part is read before switching to per-part GETs.
+                while remaining_bytes_of_first_part > 0:
+                    chunk = next(content_iter_obj, b"")
+                    if not chunk:
+                        break
+                    if len(chunk) > remaining_bytes_of_first_part:
+                        chunk = chunk[:remaining_bytes_of_first_part]
+                    stream.write(chunk)
+                    if should_checksum_be_verified:
+                        if algorithm == "crc32c":
+                            checksum_verifier.update(chunk, bytes_downloaded)
+                        else:
+                            checksum_verifier.update(chunk)
+                    bytes_downloaded += len(chunk)
+                    remaining_bytes_of_first_part -= len(chunk)
 
-            if progress_callback:
-                progress_callback(bytes_downloaded, object_size_in_bytes)
-            response.data = None
+                if progress_callback:
+                    progress_callback(bytes_downloaded, object_size_in_bytes)
+            finally:
+                if response.data is not None:
+                    response.data.close()
+                    response.data = None
 
             if first_part_end_offset >= end_byte:
 
                 # Perform a simple integrity check by seeing if the total bytes downloaded are what we need.
+                # Only check possible for ranged queries.
                 if bytes_downloaded != object_size_in_bytes:
                     raise DownloadFailedIncorrectDownloadSize(bytes_downloaded,
                                                               object_size_in_bytes)
+
+                if should_checksum_be_verified:
+                    if not checksum_verifier.verify():
+                        raise ChecksumVerificationError(expected_checksum, checksum_verifier.digest())
 
                 return bytes_downloaded, response
             else:
                 total_bytes_downloaded = self.__get_in_parts_to_stream(namespace_name, bucket_name, object_name, stream,
                                                                        bytes_downloaded, object_size_in_bytes,
                                                                        progress_callback, first_part_end_offset + 1,
-                                                                       end_byte, **kwargs)
+                                                                       end_byte, should_checksum_be_verified, checksum_verifier, **kwargs)
 
                 # Perform a simple integrity check by seeing if the total bytes downloaded are what we need.
+                # Only check possible for ranged queries.
                 if total_bytes_downloaded != object_size_in_bytes:
                     raise DownloadFailedIncorrectDownloadSize(total_bytes_downloaded,
                                                               object_size_in_bytes)
+                if should_checksum_be_verified:
+                    if not checksum_verifier.verify():
+                        raise ChecksumVerificationError(expected_checksum, checksum_verifier.digest())
 
                 return total_bytes_downloaded, response
 
@@ -673,6 +808,8 @@ class DownloadManager(object):
                                  progress_callback=None,
                                  start_byte=0,
                                  end_byte=None,
+                                 should_checksum_be_verified=False,
+                                 checksum_verifier=None,
                                  **kwargs
                                  ):
 
@@ -718,7 +855,7 @@ class DownloadManager(object):
             parallel_downloader = ParallelDownloader(self, download_config, self.object_storage_client, namespace_name,
                                                      bucket_name, object_name, stream, bytes_downloaded, object_size,
                                                      progress_callback,
-                                                     start_byte, end_byte, **kwargs)
+                                                     start_byte, end_byte, should_checksum_be_verified, checksum_verifier, **kwargs)
 
             with Pool(processes=num_actual_threads) as pool:
                 pool.map(parallel_downloader.get_part_with_start_byte, parallel_downloader.get_start_bytes())
@@ -729,8 +866,9 @@ class DownloadManager(object):
                 raise ResumableDownloadException(namespace_name,
                                                  bucket_name,
                                                  object_name,
-                                                 parallel_downloader.failed_parts  # Failed parts has the failed and the
-                                                                                   # exception raised.
+                                                 parallel_downloader.failed_parts,  # Failed parts has the failed and the
+                                                 # exception raised.
+                                                 checksum_verifier
                                                  )
             else:
                 return total_bytes_downloaded
@@ -739,7 +877,7 @@ class DownloadManager(object):
             sequential_downloader = SequentialDownloader(self, download_config, self.object_storage_client,
                                                          namespace_name, bucket_name, object_name, stream,
                                                          bytes_downloaded, object_size,
-                                                         progress_callback, start_byte, end_byte, **kwargs)
+                                                         progress_callback, start_byte, end_byte, should_checksum_be_verified, checksum_verifier, **kwargs)
 
             for part in sequential_downloader.get_start_bytes():
                 sequential_downloader.get_part_with_start_byte(part)
@@ -750,15 +888,14 @@ class DownloadManager(object):
                 raise ResumableDownloadException(namespace_name,
                                                  bucket_name,
                                                  object_name,
-                                                 sequential_downloader.failed_parts
-                                                 # Failed parts has the failed and the
+                                                 sequential_downloader.failed_parts,  # Failed parts has the failed and the
                                                  # exception raised.
+                                                 checksum_verifier
                                                  )
             else:
                 return total_bytes_downloaded
 
-    def resume_parts_to_path_multithread(self, namespace_name, bucket_name, object_name, parts, destination_path,
-                                         **kwargs):
+    def resume_parts_to_path_multithread(self, namespace_name, bucket_name, object_name, parts, destination_path, checksum_verifier=None, **kwargs):
         """
         This method used to download a set of parts into the same offset into the file at `destination_path`. For
         example part (100,600) will be written into the file from the 100th byte. This is usually used to download the
@@ -809,10 +946,9 @@ class DownloadManager(object):
                 f"get_object got unknown kwargs: {extra_kwargs!r}")
 
         with io.open(destination_path, "r+b") as out_stream:
-            return self.resume_parts_to_stream_multithread(namespace_name, bucket_name, object_name, parts, out_stream,
-                                                           **kwargs)
+            return self.resume_parts_to_stream_multithread(namespace_name, bucket_name, object_name, parts, out_stream, checksum_verifier, **kwargs)
 
-    def resume_parts_to_stream_multithread(self, namespace_name, bucket_name, object_name, parts, stream, **kwargs):
+    def resume_parts_to_stream_multithread(self, namespace_name, bucket_name, object_name, parts, stream, checksum_verifier=None, **kwargs):
         """
         This method used to download a set of parts into the same offset into the stream. For example
         part (100,600) will be written into the file from the 100th byte. This is usually used to download the failed
@@ -864,13 +1000,14 @@ class DownloadManager(object):
 
         total_size = sum([part[1] - part[0] + 1 for part in parts])
         num_threads = min(self.download_config.get_num_download_threads(), len(parts))
+        should_checksum_be_verified = True if checksum_verifier is not None else False
 
         if num_threads == 0:
             return 0
 
         parallel_downloader = ParallelDownloader(
             self, self.download_config, self.object_storage_client,
-            namespace_name, bucket_name, object_name, stream, 0, total_size, **kwargs
+            namespace_name, bucket_name, object_name, stream, 0, total_size, should_checksum_be_verified=should_checksum_be_verified, checksum_verifier=checksum_verifier, **kwargs
         )
 
         with Pool(processes=num_threads) as pool:
@@ -882,14 +1019,18 @@ class DownloadManager(object):
             raise ResumableDownloadException(namespace_name,
                                              bucket_name,
                                              object_name,
-                                             parallel_downloader.failed_parts
+                                             parallel_downloader.failed_parts,
+                                             checksum_verifier
                                              )
 
         if total_bytes_downloaded != total_size:
             raise DownloadFailedIncorrectDownloadSize(total_bytes_downloaded,
                                                       total_size)
-        else:
-            return total_bytes_downloaded
+        if should_checksum_be_verified:
+            if not checksum_verifier.verify():
+                raise ChecksumVerificationError(checksum_verifier.get_expected_checksum(), checksum_verifier.digest())
+
+        return total_bytes_downloaded
 
     def __get_start_byte_from_parts(self, parts):
         """

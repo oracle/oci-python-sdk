@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedMySqlDatabaseOutboundReplicationCollection(object):
     """
-    The collection of outbound replication records of a MySQL server.
+    The collection of outbound replication records of a MySQL server. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     def __init__(self, **kwargs):

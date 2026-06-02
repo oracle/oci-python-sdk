@@ -15,6 +15,14 @@ class PromptInjectionProtectionResult(object):
     The result of prompt injection protection.
     """
 
+    #: A constant which can be used with the flagged_modalities property of a PromptInjectionProtectionResult.
+    #: This constant has a value of "TEXT"
+    FLAGGED_MODALITIES_TEXT = "TEXT"
+
+    #: A constant which can be used with the flagged_modalities property of a PromptInjectionProtectionResult.
+    #: This constant has a value of "IMAGE"
+    FLAGGED_MODALITIES_IMAGE = "IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PromptInjectionProtectionResult object with values from keyword arguments.
@@ -24,14 +32,23 @@ class PromptInjectionProtectionResult(object):
             The value to assign to the score property of this PromptInjectionProtectionResult.
         :type score: float
 
+        :param flagged_modalities:
+            The value to assign to the flagged_modalities property of this PromptInjectionProtectionResult.
+            Allowed values for items in this list are: "TEXT", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type flagged_modalities: list[str]
+
         """
         self.swagger_types = {
-            'score': 'float'
+            'score': 'float',
+            'flagged_modalities': 'list[str]'
         }
         self.attribute_map = {
-            'score': 'score'
+            'score': 'score',
+            'flagged_modalities': 'flaggedModalities'
         }
         self._score = None
+        self._flagged_modalities = None
 
     @property
     def score(self):
@@ -56,6 +73,38 @@ class PromptInjectionProtectionResult(object):
         :type: float
         """
         self._score = score
+
+    @property
+    def flagged_modalities(self):
+        """
+        Gets the flagged_modalities of this PromptInjectionProtectionResult.
+        The input modalities flagged by the prompt injection result. Present only when the request
+        is processed using a non-empty `multimodalInput`.
+
+        Allowed values for items in this list are: "TEXT", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The flagged_modalities of this PromptInjectionProtectionResult.
+        :rtype: list[str]
+        """
+        return self._flagged_modalities
+
+    @flagged_modalities.setter
+    def flagged_modalities(self, flagged_modalities):
+        """
+        Sets the flagged_modalities of this PromptInjectionProtectionResult.
+        The input modalities flagged by the prompt injection result. Present only when the request
+        is processed using a non-empty `multimodalInput`.
+
+
+        :param flagged_modalities: The flagged_modalities of this PromptInjectionProtectionResult.
+        :type: list[str]
+        """
+        allowed_values = ["TEXT", "IMAGE"]
+        if flagged_modalities:
+            flagged_modalities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in flagged_modalities]
+        self._flagged_modalities = flagged_modalities
 
     def __repr__(self):
         return formatted_flat_dict(self)

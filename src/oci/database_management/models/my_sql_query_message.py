@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MySqlQueryMessage(object):
     """
-    The MySQL error, warning or note raised when a query is run, if any.
+    The MySQL error, warning, or note raised when a query is run, if any. MySQL support within OCI Database Management service has been deprecated as of January 29, 2026.
     """
 
     #: A constant which can be used with the level property of a MySqlQueryMessage.
@@ -95,7 +95,7 @@ class MySqlQueryMessage(object):
     def code(self):
         """
         **[Required]** Gets the code of this MySqlQueryMessage.
-        The MySQL code of the raised error, warning or note.
+        The MySQL code of the raised error, warning, or note.
 
 
         :return: The code of this MySqlQueryMessage.
@@ -107,7 +107,7 @@ class MySqlQueryMessage(object):
     def code(self, code):
         """
         Sets the code of this MySqlQueryMessage.
-        The MySQL code of the raised error, warning or note.
+        The MySQL code of the raised error, warning, or note.
 
 
         :param code: The code of this MySqlQueryMessage.
@@ -119,7 +119,7 @@ class MySqlQueryMessage(object):
     def message_text(self):
         """
         **[Required]** Gets the message_text of this MySqlQueryMessage.
-        The MySQL message text of the raised error, warning or note.
+        The MySQL message text of the raised error, warning, or note.
 
 
         :return: The message_text of this MySqlQueryMessage.
@@ -131,7 +131,7 @@ class MySqlQueryMessage(object):
     def message_text(self, message_text):
         """
         Sets the message_text of this MySqlQueryMessage.
-        The MySQL message text of the raised error, warning or note.
+        The MySQL message text of the raised error, warning, or note.
 
 
         :param message_text: The message_text of this MySqlQueryMessage.

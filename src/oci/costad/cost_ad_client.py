@@ -169,7 +169,7 @@ class CostAdClient(object):
         resource_path = "/costAlertSubscriptions"
         method = "POST"
         operation_name = "create_cost_alert_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/CreateCostAlertSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -274,7 +274,7 @@ class CostAdClient(object):
         resource_path = "/costAnomalyMonitors"
         method = "POST"
         operation_name = "create_cost_anomaly_monitor"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/CreateCostAnomalyMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -379,7 +379,7 @@ class CostAdClient(object):
         resource_path = "/costAlertSubscriptions/{costAlertSubscriptionId}"
         method = "DELETE"
         operation_name = "delete_cost_alert_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/DeleteCostAlertSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -491,7 +491,7 @@ class CostAdClient(object):
         resource_path = "/costAnomalyMonitors/{costAnomalyMonitorId}"
         method = "DELETE"
         operation_name = "delete_cost_anomaly_monitor"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/DeleteCostAnomalyMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -610,7 +610,7 @@ class CostAdClient(object):
         resource_path = "/costAnomalyMonitors/{costAnomalyMonitorId}/actions/disable"
         method = "POST"
         operation_name = "disable_cost_anomaly_monitor"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/DisableCostAnomalyMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -734,7 +734,7 @@ class CostAdClient(object):
         resource_path = "/costAnomalyMonitors/{costAnomalyMonitorId}/actions/enable"
         method = "POST"
         operation_name = "enable_cost_anomaly_monitor"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/EnableCostAnomalyMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -844,7 +844,7 @@ class CostAdClient(object):
         resource_path = "/costAlertSubscriptions/{costAlertSubscriptionId}"
         method = "GET"
         operation_name = "get_cost_alert_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/GetCostAlertSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -949,7 +949,7 @@ class CostAdClient(object):
         resource_path = "/costAnomalyEvents/{costAnomalyEventId}"
         method = "GET"
         operation_name = "get_cost_anomaly_event"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEvent/GetCostAnomalyEvent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1054,7 +1054,7 @@ class CostAdClient(object):
         resource_path = "/costAnomalyMonitors/{costAnomalyMonitorId}"
         method = "GET"
         operation_name = "get_cost_anomaly_monitor"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/GetCostAnomalyMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1185,7 +1185,7 @@ class CostAdClient(object):
         resource_path = "/costAlertSubscriptions"
         method = "GET"
         operation_name = "list_cost_alert_subscriptions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscriptionCollection/ListCostAlertSubscriptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1360,7 +1360,7 @@ class CostAdClient(object):
         resource_path = "/costAnomalyEvents"
         method = "GET"
         operation_name = "list_cost_anomaly_events"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEventCollection/ListCostAnomalyEvents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1530,7 +1530,7 @@ class CostAdClient(object):
         resource_path = "/costAnomalyMonitors"
         method = "GET"
         operation_name = "list_cost_anomaly_monitors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitorCollection/ListCostAnomalyMonitors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1709,7 +1709,7 @@ class CostAdClient(object):
         resource_path = "/costAnomalyEventAnalytics"
         method = "GET"
         operation_name = "summarize_cost_anomaly_event_analytics"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEvent/SummarizeCostAnomalyEventAnalytics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1857,7 +1857,7 @@ class CostAdClient(object):
         resource_path = "/costAlertSubscriptions/{costAlertSubscriptionId}"
         method = "PUT"
         operation_name = "update_cost_alert_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAlertSubscription/UpdateCostAlertSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1976,7 +1976,7 @@ class CostAdClient(object):
         resource_path = "/costAnomalyEvents/{costAnomalyEventId}"
         method = "PUT"
         operation_name = "update_cost_anomaly_event"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyEvent/UpdateCostAnomalyEvent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2095,7 +2095,7 @@ class CostAdClient(object):
         resource_path = "/costAnomalyMonitors/{costAnomalyMonitorId}"
         method = "PUT"
         operation_name = "update_cost_anomaly_monitor"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cost-anomaly/20190111/CostAnomalyMonitor/UpdateCostAnomalyMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
