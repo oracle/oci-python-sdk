@@ -40,7 +40,8 @@ requires = [
     "circuitbreaker>=1.3.1,<3.0.0; python_version >= '3.7'",
     "urllib3==1.26.20; python_version < '3.10.0'",
     "urllib3>=2.6.3; python_version >= '3.10.0'",
-    "crc32c"
+    "crc32c==2.5; python_version == '3.6'",
+    "crc32c==2.7.1; python_version >= '3.7'",
 ]
 
 extras_require = {
@@ -59,7 +60,7 @@ setup(
     description="Oracle Cloud Infrastructure Python SDK",
     long_description=readme,
     author="Oracle",
-    author_email="joe.levy@oracle.com",
+    author_email="jyoti.s.saini@oracle.com",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     include_package_data=True,
@@ -74,6 +75,10 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
     ],
     extras_require = extras_require
 )

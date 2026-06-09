@@ -269,6 +269,15 @@ class CreateDedicatedAiClusterDetails(object):
         - OAI_A100_80G_X2
         - OAI_A100_40G_X1
         - OAI_A100_40G_X4
+        - B200_X1
+        - B200_X2
+        - B200_X4
+        - B200_X8
+        - OAI_B200_X1
+        - OAI_B200_X2
+        - OAI_B200_X4
+        - OAI_B200_X8
+        - SB_B200_X1
 
 
         :return: The unit_shape of this CreateDedicatedAiClusterDetails.
@@ -335,6 +344,15 @@ class CreateDedicatedAiClusterDetails(object):
         - OAI_A100_80G_X2
         - OAI_A100_40G_X1
         - OAI_A100_40G_X4
+        - B200_X1
+        - B200_X2
+        - B200_X4
+        - B200_X8
+        - OAI_B200_X1
+        - OAI_B200_X2
+        - OAI_B200_X4
+        - OAI_B200_X8
+        - SB_B200_X1
 
 
         :param unit_shape: The unit_shape of this CreateDedicatedAiClusterDetails.

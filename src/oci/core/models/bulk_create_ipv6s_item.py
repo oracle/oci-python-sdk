@@ -57,6 +57,10 @@ class BulkCreateIpv6sItem(object):
             The value to assign to the ipv6_subnet_cidr property of this BulkCreateIpv6sItem.
         :type ipv6_subnet_cidr: str
 
+        :param hostname:
+            The value to assign to the hostname property of this BulkCreateIpv6sItem.
+        :type hostname: str
+
         :param cidr_prefix_length:
             The value to assign to the cidr_prefix_length property of this BulkCreateIpv6sItem.
         :type cidr_prefix_length: int
@@ -70,6 +74,7 @@ class BulkCreateIpv6sItem(object):
             'lifetime': 'str',
             'route_table_id': 'str',
             'ipv6_subnet_cidr': 'str',
+            'hostname': 'str',
             'cidr_prefix_length': 'int'
         }
         self.attribute_map = {
@@ -80,6 +85,7 @@ class BulkCreateIpv6sItem(object):
             'lifetime': 'lifetime',
             'route_table_id': 'routeTableId',
             'ipv6_subnet_cidr': 'ipv6SubnetCidr',
+            'hostname': 'hostname',
             'cidr_prefix_length': 'cidrPrefixLength'
         }
         self._defined_tags = None
@@ -89,6 +95,7 @@ class BulkCreateIpv6sItem(object):
         self._lifetime = None
         self._route_table_id = None
         self._ipv6_subnet_cidr = None
+        self._hostname = None
         self._cidr_prefix_length = None
 
     @property
@@ -311,6 +318,30 @@ class BulkCreateIpv6sItem(object):
         :type: str
         """
         self._ipv6_subnet_cidr = ipv6_subnet_cidr
+
+    @property
+    def hostname(self):
+        """
+        Gets the hostname of this BulkCreateIpv6sItem.
+        The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+
+
+        :return: The hostname of this BulkCreateIpv6sItem.
+        :rtype: str
+        """
+        return self._hostname
+
+    @hostname.setter
+    def hostname(self, hostname):
+        """
+        Sets the hostname of this BulkCreateIpv6sItem.
+        The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+
+
+        :param hostname: The hostname of this BulkCreateIpv6sItem.
+        :type: str
+        """
+        self._hostname = hostname
 
     @property
     def cidr_prefix_length(self):

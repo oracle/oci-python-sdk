@@ -15,6 +15,14 @@ class DbSystemEndpoint(object):
     A particular functional endpoint for access to a DB System, and the properties that apply to it.
     """
 
+    #: A constant which can be used with the ip_address_version property of a DbSystemEndpoint.
+    #: This constant has a value of "IPV4"
+    IP_ADDRESS_VERSION_IPV4 = "IPV4"
+
+    #: A constant which can be used with the ip_address_version property of a DbSystemEndpoint.
+    #: This constant has a value of "IPV6"
+    IP_ADDRESS_VERSION_IPV6 = "IPV6"
+
     #: A constant which can be used with the modes property of a DbSystemEndpoint.
     #: This constant has a value of "READ"
     MODES_READ = "READ"
@@ -64,6 +72,12 @@ class DbSystemEndpoint(object):
             The value to assign to the ip_address property of this DbSystemEndpoint.
         :type ip_address: str
 
+        :param ip_address_version:
+            The value to assign to the ip_address_version property of this DbSystemEndpoint.
+            Allowed values for this property are: "IPV4", "IPV6", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type ip_address_version: str
+
         :param port:
             The value to assign to the port property of this DbSystemEndpoint.
         :type port: int
@@ -102,6 +116,7 @@ class DbSystemEndpoint(object):
         self.swagger_types = {
             'hostname': 'str',
             'ip_address': 'str',
+            'ip_address_version': 'str',
             'port': 'int',
             'port_x': 'int',
             'modes': 'list[str]',
@@ -113,6 +128,7 @@ class DbSystemEndpoint(object):
         self.attribute_map = {
             'hostname': 'hostname',
             'ip_address': 'ipAddress',
+            'ip_address_version': 'ipAddressVersion',
             'port': 'port',
             'port_x': 'portX',
             'modes': 'modes',
@@ -123,6 +139,7 @@ class DbSystemEndpoint(object):
         }
         self._hostname = None
         self._ip_address = None
+        self._ip_address_version = None
         self._port = None
         self._port_x = None
         self._modes = None
@@ -178,6 +195,36 @@ class DbSystemEndpoint(object):
         :type: str
         """
         self._ip_address = ip_address
+
+    @property
+    def ip_address_version(self):
+        """
+        Gets the ip_address_version of this DbSystemEndpoint.
+        The internet protocol (IP) version of the IP address.
+
+        Allowed values for this property are: "IPV4", "IPV6", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The ip_address_version of this DbSystemEndpoint.
+        :rtype: str
+        """
+        return self._ip_address_version
+
+    @ip_address_version.setter
+    def ip_address_version(self, ip_address_version):
+        """
+        Sets the ip_address_version of this DbSystemEndpoint.
+        The internet protocol (IP) version of the IP address.
+
+
+        :param ip_address_version: The ip_address_version of this DbSystemEndpoint.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV6"]
+        if not value_allowed_none_or_none_sentinel(ip_address_version, allowed_values):
+            ip_address_version = 'UNKNOWN_ENUM_VALUE'
+        self._ip_address_version = ip_address_version
 
     @property
     def port(self):

@@ -23,6 +23,10 @@ class CreateDelegationSubscriptionDetails(object):
     #: This constant has a value of "ASSISTED_PATCHING"
     SUBSCRIBED_SERVICE_TYPE_ASSISTED_PATCHING = "ASSISTED_PATCHING"
 
+    #: A constant which can be used with the subscribed_service_type property of a CreateDelegationSubscriptionDetails.
+    #: This constant has a value of "MANAGED_SOFTWARE_UPDATES"
+    SUBSCRIBED_SERVICE_TYPE_MANAGED_SOFTWARE_UPDATES = "MANAGED_SOFTWARE_UPDATES"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDelegationSubscriptionDetails object with values from keyword arguments.
@@ -42,7 +46,7 @@ class CreateDelegationSubscriptionDetails(object):
 
         :param subscribed_service_type:
             The value to assign to the subscribed_service_type property of this CreateDelegationSubscriptionDetails.
-            Allowed values for this property are: "TROUBLESHOOTING", "ASSISTED_PATCHING"
+            Allowed values for this property are: "TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES"
         :type subscribed_service_type: str
 
         :param freeform_tags:
@@ -81,7 +85,7 @@ class CreateDelegationSubscriptionDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateDelegationSubscriptionDetails.
-        The OCID of the compartment that contains the Delegation Control.
+        The OCID of the compartment that contains the Delegation Subscription.
 
 
         :return: The compartment_id of this CreateDelegationSubscriptionDetails.
@@ -93,7 +97,7 @@ class CreateDelegationSubscriptionDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDelegationSubscriptionDetails.
-        The OCID of the compartment that contains the Delegation Control.
+        The OCID of the compartment that contains the Delegation Subscription.
 
 
         :param compartment_id: The compartment_id of this CreateDelegationSubscriptionDetails.
@@ -155,7 +159,7 @@ class CreateDelegationSubscriptionDetails(object):
         **[Required]** Gets the subscribed_service_type of this CreateDelegationSubscriptionDetails.
         Subscribed Service Provider Service Type.
 
-        Allowed values for this property are: "TROUBLESHOOTING", "ASSISTED_PATCHING"
+        Allowed values for this property are: "TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES"
 
 
         :return: The subscribed_service_type of this CreateDelegationSubscriptionDetails.
@@ -173,7 +177,7 @@ class CreateDelegationSubscriptionDetails(object):
         :param subscribed_service_type: The subscribed_service_type of this CreateDelegationSubscriptionDetails.
         :type: str
         """
-        allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING"]
+        allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES"]
         if not value_allowed_none_or_none_sentinel(subscribed_service_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `subscribed_service_type`, must be None or one of {allowed_values}"

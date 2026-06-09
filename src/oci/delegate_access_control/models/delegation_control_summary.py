@@ -23,6 +23,10 @@ class DelegationControlSummary(object):
     #: This constant has a value of "CLOUDVMCLUSTER"
     RESOURCE_TYPE_CLOUDVMCLUSTER = "CLOUDVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a DelegationControlSummary.
+    #: This constant has a value of "EXADBVMCLUSTER"
+    RESOURCE_TYPE_EXADBVMCLUSTER = "EXADBVMCLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DelegationControlSummary object with values from keyword arguments.
@@ -42,7 +46,7 @@ class DelegationControlSummary(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this DelegationControlSummary.
-            Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -198,7 +202,7 @@ class DelegationControlSummary(object):
         **[Required]** Gets the resource_type of this DelegationControlSummary.
         resourceType for which the Delegation Control is applicable
 
-        Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -217,7 +221,7 @@ class DelegationControlSummary(object):
         :param resource_type: The resource_type of this DelegationControlSummary.
         :type: str
         """
-        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER"]
+        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type

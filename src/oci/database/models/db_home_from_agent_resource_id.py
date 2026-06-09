@@ -39,6 +39,14 @@ class DbHomeFromAgentResourceId(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the home_type property of a DbHomeFromAgentResourceId.
+    #: This constant has a value of "ORACLE_MANAGED"
+    HOME_TYPE_ORACLE_MANAGED = "ORACLE_MANAGED"
+
+    #: A constant which can be used with the home_type property of a DbHomeFromAgentResourceId.
+    #: This constant has a value of "CUSTOMER_MANAGED"
+    HOME_TYPE_CUSTOMER_MANAGED = "CUSTOMER_MANAGED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbHomeFromAgentResourceId object with values from keyword arguments.
@@ -117,6 +125,11 @@ class DbHomeFromAgentResourceId(object):
             The value to assign to the is_unified_auditing_enabled property of this DbHomeFromAgentResourceId.
         :type is_unified_auditing_enabled: bool
 
+        :param home_type:
+            The value to assign to the home_type property of this DbHomeFromAgentResourceId.
+            Allowed values for this property are: "ORACLE_MANAGED", "CUSTOMER_MANAGED"
+        :type home_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -136,7 +149,8 @@ class DbHomeFromAgentResourceId(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'database_software_image_id': 'str',
-            'is_unified_auditing_enabled': 'bool'
+            'is_unified_auditing_enabled': 'bool',
+            'home_type': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -156,7 +170,8 @@ class DbHomeFromAgentResourceId(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'database_software_image_id': 'databaseSoftwareImageId',
-            'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled'
+            'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled',
+            'home_type': 'homeType'
         }
         self._id = None
         self._compartment_id = None
@@ -176,6 +191,7 @@ class DbHomeFromAgentResourceId(object):
         self._system_tags = None
         self._database_software_image_id = None
         self._is_unified_auditing_enabled = None
+        self._home_type = None
 
     @property
     def id(self):
@@ -661,6 +677,37 @@ class DbHomeFromAgentResourceId(object):
         :type: bool
         """
         self._is_unified_auditing_enabled = is_unified_auditing_enabled
+
+    @property
+    def home_type(self):
+        """
+        Gets the home_type of this DbHomeFromAgentResourceId.
+        Represents database home will be managed by oracle or customer
+
+        Allowed values for this property are: "ORACLE_MANAGED", "CUSTOMER_MANAGED"
+
+
+        :return: The home_type of this DbHomeFromAgentResourceId.
+        :rtype: str
+        """
+        return self._home_type
+
+    @home_type.setter
+    def home_type(self, home_type):
+        """
+        Sets the home_type of this DbHomeFromAgentResourceId.
+        Represents database home will be managed by oracle or customer
+
+
+        :param home_type: The home_type of this DbHomeFromAgentResourceId.
+        :type: str
+        """
+        allowed_values = ["ORACLE_MANAGED", "CUSTOMER_MANAGED"]
+        if not value_allowed_none_or_none_sentinel(home_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `home_type`, must be None or one of {allowed_values}"
+            )
+        self._home_type = home_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

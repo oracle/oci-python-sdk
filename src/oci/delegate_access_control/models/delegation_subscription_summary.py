@@ -23,6 +23,10 @@ class DelegationSubscriptionSummary(object):
     #: This constant has a value of "ASSISTED_PATCHING"
     SUBSCRIBED_SERVICE_TYPE_ASSISTED_PATCHING = "ASSISTED_PATCHING"
 
+    #: A constant which can be used with the subscribed_service_type property of a DelegationSubscriptionSummary.
+    #: This constant has a value of "MANAGED_SOFTWARE_UPDATES"
+    SUBSCRIBED_SERVICE_TYPE_MANAGED_SOFTWARE_UPDATES = "MANAGED_SOFTWARE_UPDATES"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DelegationSubscriptionSummary object with values from keyword arguments.
@@ -46,7 +50,7 @@ class DelegationSubscriptionSummary(object):
 
         :param subscribed_service_type:
             The value to assign to the subscribed_service_type property of this DelegationSubscriptionSummary.
-            Allowed values for this property are: "TROUBLESHOOTING", "ASSISTED_PATCHING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type subscribed_service_type: str
 
@@ -222,7 +226,7 @@ class DelegationSubscriptionSummary(object):
         **[Required]** Gets the subscribed_service_type of this DelegationSubscriptionSummary.
         Subscribed Service Provider Service Type.
 
-        Allowed values for this property are: "TROUBLESHOOTING", "ASSISTED_PATCHING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -241,7 +245,7 @@ class DelegationSubscriptionSummary(object):
         :param subscribed_service_type: The subscribed_service_type of this DelegationSubscriptionSummary.
         :type: str
         """
-        allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING"]
+        allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES"]
         if not value_allowed_none_or_none_sentinel(subscribed_service_type, allowed_values):
             subscribed_service_type = 'UNKNOWN_ENUM_VALUE'
         self._subscribed_service_type = subscribed_service_type

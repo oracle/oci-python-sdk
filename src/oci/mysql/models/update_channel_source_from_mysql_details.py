@@ -54,6 +54,10 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
             The value to assign to the anonymous_transactions_handling property of this UpdateChannelSourceFromMysqlDetails.
         :type anonymous_transactions_handling: oci.mysql.models.AnonymousTransactionsHandling
 
+        :param must_use_ipv6_on_dual_stack:
+            The value to assign to the must_use_ipv6_on_dual_stack property of this UpdateChannelSourceFromMysqlDetails.
+        :type must_use_ipv6_on_dual_stack: bool
+
         """
         self.swagger_types = {
             'source_type': 'str',
@@ -63,7 +67,8 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
             'password': 'str',
             'ssl_mode': 'str',
             'ssl_ca_certificate': 'CaCertificate',
-            'anonymous_transactions_handling': 'AnonymousTransactionsHandling'
+            'anonymous_transactions_handling': 'AnonymousTransactionsHandling',
+            'must_use_ipv6_on_dual_stack': 'bool'
         }
         self.attribute_map = {
             'source_type': 'sourceType',
@@ -73,7 +78,8 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
             'password': 'password',
             'ssl_mode': 'sslMode',
             'ssl_ca_certificate': 'sslCaCertificate',
-            'anonymous_transactions_handling': 'anonymousTransactionsHandling'
+            'anonymous_transactions_handling': 'anonymousTransactionsHandling',
+            'must_use_ipv6_on_dual_stack': 'mustUseIpv6OnDualStack'
         }
         self._source_type = None
         self._hostname = None
@@ -83,6 +89,7 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
         self._ssl_mode = None
         self._ssl_ca_certificate = None
         self._anonymous_transactions_handling = None
+        self._must_use_ipv6_on_dual_stack = None
         self._source_type = 'MYSQL'
 
     @property
@@ -258,6 +265,32 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
         :type: oci.mysql.models.AnonymousTransactionsHandling
         """
         self._anonymous_transactions_handling = anonymous_transactions_handling
+
+    @property
+    def must_use_ipv6_on_dual_stack(self):
+        """
+        Gets the must_use_ipv6_on_dual_stack of this UpdateChannelSourceFromMysqlDetails.
+        Whether the connection of the channel will be requested using the IPv6 address of
+        the dual stack DB system or not. Default: False.
+
+
+        :return: The must_use_ipv6_on_dual_stack of this UpdateChannelSourceFromMysqlDetails.
+        :rtype: bool
+        """
+        return self._must_use_ipv6_on_dual_stack
+
+    @must_use_ipv6_on_dual_stack.setter
+    def must_use_ipv6_on_dual_stack(self, must_use_ipv6_on_dual_stack):
+        """
+        Sets the must_use_ipv6_on_dual_stack of this UpdateChannelSourceFromMysqlDetails.
+        Whether the connection of the channel will be requested using the IPv6 address of
+        the dual stack DB system or not. Default: False.
+
+
+        :param must_use_ipv6_on_dual_stack: The must_use_ipv6_on_dual_stack of this UpdateChannelSourceFromMysqlDetails.
+        :type: bool
+        """
+        self._must_use_ipv6_on_dual_stack = must_use_ipv6_on_dual_stack
 
     def __repr__(self):
         return formatted_flat_dict(self)

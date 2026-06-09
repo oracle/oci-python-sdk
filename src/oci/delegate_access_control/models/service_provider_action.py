@@ -24,6 +24,10 @@ class ServiceProviderAction(object):
     #: This constant has a value of "CLOUDVMCLUSTER"
     RESOURCE_TYPE_CLOUDVMCLUSTER = "CLOUDVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a ServiceProviderAction.
+    #: This constant has a value of "EXADBVMCLUSTER"
+    RESOURCE_TYPE_EXADBVMCLUSTER = "EXADBVMCLUSTER"
+
     #: A constant which can be used with the service_provider_service_types property of a ServiceProviderAction.
     #: This constant has a value of "TROUBLESHOOTING"
     SERVICE_PROVIDER_SERVICE_TYPES_TROUBLESHOOTING = "TROUBLESHOOTING"
@@ -31,6 +35,10 @@ class ServiceProviderAction(object):
     #: A constant which can be used with the service_provider_service_types property of a ServiceProviderAction.
     #: This constant has a value of "ASSISTED_PATCHING"
     SERVICE_PROVIDER_SERVICE_TYPES_ASSISTED_PATCHING = "ASSISTED_PATCHING"
+
+    #: A constant which can be used with the service_provider_service_types property of a ServiceProviderAction.
+    #: This constant has a value of "MANAGED_SOFTWARE_UPDATES"
+    SERVICE_PROVIDER_SERVICE_TYPES_MANAGED_SOFTWARE_UPDATES = "MANAGED_SOFTWARE_UPDATES"
 
     #: A constant which can be used with the lifecycle_state property of a ServiceProviderAction.
     #: This constant has a value of "ACTIVE"
@@ -49,6 +57,10 @@ class ServiceProviderAction(object):
             The value to assign to the id property of this ServiceProviderAction.
         :type id: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this ServiceProviderAction.
+        :type compartment_id: str
+
         :param name:
             The value to assign to the name property of this ServiceProviderAction.
         :type name: str
@@ -63,13 +75,17 @@ class ServiceProviderAction(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this ServiceProviderAction.
-            Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
+        :param is_ssh_access_allowed:
+            The value to assign to the is_ssh_access_allowed property of this ServiceProviderAction.
+        :type is_ssh_access_allowed: bool
+
         :param service_provider_service_types:
             The value to assign to the service_provider_service_types property of this ServiceProviderAction.
-            Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type service_provider_service_types: list[str]
 
@@ -90,10 +106,12 @@ class ServiceProviderAction(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'compartment_id': 'str',
             'name': 'str',
             'customer_display_name': 'str',
             'component': 'str',
             'resource_type': 'str',
+            'is_ssh_access_allowed': 'bool',
             'service_provider_service_types': 'list[str]',
             'lifecycle_state': 'str',
             'description': 'str',
@@ -101,20 +119,24 @@ class ServiceProviderAction(object):
         }
         self.attribute_map = {
             'id': 'id',
+            'compartment_id': 'compartmentId',
             'name': 'name',
             'customer_display_name': 'customerDisplayName',
             'component': 'component',
             'resource_type': 'resourceType',
+            'is_ssh_access_allowed': 'isSshAccessAllowed',
             'service_provider_service_types': 'serviceProviderServiceTypes',
             'lifecycle_state': 'lifecycleState',
             'description': 'description',
             'properties': 'properties'
         }
         self._id = None
+        self._compartment_id = None
         self._name = None
         self._customer_display_name = None
         self._component = None
         self._resource_type = None
+        self._is_ssh_access_allowed = None
         self._service_provider_service_types = None
         self._lifecycle_state = None
         self._description = None
@@ -143,6 +165,30 @@ class ServiceProviderAction(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this ServiceProviderAction.
+        The OCID of the compartment that contains the Service Provider Action.
+
+
+        :return: The compartment_id of this ServiceProviderAction.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this ServiceProviderAction.
+        The OCID of the compartment that contains the Service Provider Action.
+
+
+        :param compartment_id: The compartment_id of this ServiceProviderAction.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def name(self):
@@ -222,7 +268,7 @@ class ServiceProviderAction(object):
         Gets the resource_type of this ServiceProviderAction.
         resourceType for which the ServiceProviderAction is applicable
 
-        Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -241,10 +287,34 @@ class ServiceProviderAction(object):
         :param resource_type: The resource_type of this ServiceProviderAction.
         :type: str
         """
-        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER"]
+        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
+
+    @property
+    def is_ssh_access_allowed(self):
+        """
+        Gets the is_ssh_access_allowed of this ServiceProviderAction.
+        Indicates whether the service provider action allows SSH access.
+
+
+        :return: The is_ssh_access_allowed of this ServiceProviderAction.
+        :rtype: bool
+        """
+        return self._is_ssh_access_allowed
+
+    @is_ssh_access_allowed.setter
+    def is_ssh_access_allowed(self, is_ssh_access_allowed):
+        """
+        Sets the is_ssh_access_allowed of this ServiceProviderAction.
+        Indicates whether the service provider action allows SSH access.
+
+
+        :param is_ssh_access_allowed: The is_ssh_access_allowed of this ServiceProviderAction.
+        :type: bool
+        """
+        self._is_ssh_access_allowed = is_ssh_access_allowed
 
     @property
     def service_provider_service_types(self):
@@ -252,7 +322,7 @@ class ServiceProviderAction(object):
         Gets the service_provider_service_types of this ServiceProviderAction.
         List of Service Provider Service Types that this Service Provider Action is applicable to.
 
-        Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -271,7 +341,7 @@ class ServiceProviderAction(object):
         :param service_provider_service_types: The service_provider_service_types of this ServiceProviderAction.
         :type: list[str]
         """
-        allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING"]
+        allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES"]
         if service_provider_service_types:
             service_provider_service_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in service_provider_service_types]
         self._service_provider_service_types = service_provider_service_types

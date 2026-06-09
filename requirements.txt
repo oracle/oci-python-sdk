@@ -5,25 +5,29 @@ cryptography>=3.2.1,<47.0.0; python_full_version != '3.9.0' and python_full_vers
 flake8>=3.6.0,<6
 mock==2.0.0
 pyOpenSSL>=17.5.0,<27.0.0
-pytest==4.1.0
+pytest==4.6.10; python_version <= '3.9'
+pytest==7.1.2; python_version >= '3.10'
 pytest-cov==2.6.1
-attrs==19.1.0
+attrs==19.2.0
 python-dateutil>=2.5.3,<=2.7.3
 pytz>=2016.10
-tox==3.14.3
+tox==3.14.3; python_version < '3.12'
+tox==4.0.0; python_version >= '3.12'
 virtualenv==20.0.6; python_version < '3.8'
 virtualenv==20.17.1; python_version == '3.8'
 virtualenv==20.36.1; python_version >= '3.9'
-vcrpy==2.0.1
+vcrpy==2.0.1; python_version < '3.9'
+vcrpy==7.0.0; python_version >= '3.9'
 wheel<=0.39.0
 setuptools==59.6.0; python_version == '3.6'
 setuptools==68.0.0; python_version == '3.7'
 setuptools==75.3.2; python_version == '3.8'
-setuptools==78.1.1; python_version >= '3.9'
+setuptools>=78.1.1,<81; python_version >= '3.9'
 circuitbreaker>=1.3.1,<2.0.0; python_version <= '3.6'
 circuitbreaker>=1.3.1,<3.0.0; python_version >= '3.7'
 urllib3==1.26.20; python_version < '3.10.0'
 urllib3>=2.6.3; python_version >= '3.10.0'
 Jinja2<3.0.0; python_version == '3.6'
 Jinja2>=3.1.5,<4.0.0; python_version >= '3.7'
-crc32c
+crc32c==2.5; python_version == '3.6'
+crc32c==2.7.1; python_version >= '3.7'

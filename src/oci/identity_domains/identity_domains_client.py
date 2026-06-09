@@ -23019,7 +23019,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityPropagationTrusts"
         method = "GET"
         operation_name = "list_identity_propagation_trusts"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrusts/ListIdentityPropagationTrusts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrust/ListIdentityPropagationTrusts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

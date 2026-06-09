@@ -28,6 +28,10 @@ class ReadEndpointDetails(object):
             The value to assign to the read_endpoint_ip_address property of this ReadEndpointDetails.
         :type read_endpoint_ip_address: str
 
+        :param read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details:
+            The value to assign to the read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details property of this ReadEndpointDetails.
+        :type read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details: oci.mysql.models.Ipv6AddressIpv6SubnetCidrPairDetails
+
         :param read_endpoint_hostname_label:
             The value to assign to the read_endpoint_hostname_label property of this ReadEndpointDetails.
         :type read_endpoint_hostname_label: str
@@ -40,17 +44,20 @@ class ReadEndpointDetails(object):
         self.swagger_types = {
             'is_enabled': 'bool',
             'read_endpoint_ip_address': 'str',
+            'read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details': 'Ipv6AddressIpv6SubnetCidrPairDetails',
             'read_endpoint_hostname_label': 'str',
             'exclude_ips': 'list[str]'
         }
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'read_endpoint_ip_address': 'readEndpointIpAddress',
+            'read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details': 'readEndpointIpv6AddressIpv6SubnetCidrPairDetails',
             'read_endpoint_hostname_label': 'readEndpointHostnameLabel',
             'exclude_ips': 'excludeIps'
         }
         self._is_enabled = None
         self._read_endpoint_ip_address = None
+        self._read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details = None
         self._read_endpoint_hostname_label = None
         self._exclude_ips = None
 
@@ -109,6 +116,26 @@ class ReadEndpointDetails(object):
         :type: str
         """
         self._read_endpoint_ip_address = read_endpoint_ip_address
+
+    @property
+    def read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details(self):
+        """
+        Gets the read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details of this ReadEndpointDetails.
+
+        :return: The read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details of this ReadEndpointDetails.
+        :rtype: oci.mysql.models.Ipv6AddressIpv6SubnetCidrPairDetails
+        """
+        return self._read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details
+
+    @read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details.setter
+    def read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details(self, read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details):
+        """
+        Sets the read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details of this ReadEndpointDetails.
+
+        :param read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details: The read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details of this ReadEndpointDetails.
+        :type: oci.mysql.models.Ipv6AddressIpv6SubnetCidrPairDetails
+        """
+        self._read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details = read_endpoint_ipv6_address_ipv6_subnet_cidr_pair_details
 
     @property
     def read_endpoint_hostname_label(self):

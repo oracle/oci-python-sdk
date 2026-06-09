@@ -112,7 +112,7 @@ class CreateDatabaseBase(object):
     @property
     def db_home_id(self):
         """
-        **[Required]** Gets the db_home_id of this CreateDatabaseBase.
+        Gets the db_home_id of this CreateDatabaseBase.
         The `OCID`__ of the Database Home.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm

@@ -108,6 +108,10 @@ class DbSystemSnapshot(object):
             The value to assign to the ip_address property of this DbSystemSnapshot.
         :type ip_address: str
 
+        :param ipv6_address:
+            The value to assign to the ipv6_address property of this DbSystemSnapshot.
+        :type ipv6_address: str
+
         :param port:
             The value to assign to the port property of this DbSystemSnapshot.
         :type port: int
@@ -200,6 +204,7 @@ class DbSystemSnapshot(object):
             'data_storage': 'DataStorage',
             'hostname_label': 'str',
             'ip_address': 'str',
+            'ipv6_address': 'str',
             'port': 'int',
             'port_x': 'int',
             'rest': 'RestDetails',
@@ -237,6 +242,7 @@ class DbSystemSnapshot(object):
             'data_storage': 'dataStorage',
             'hostname_label': 'hostnameLabel',
             'ip_address': 'ipAddress',
+            'ipv6_address': 'ipv6Address',
             'port': 'port',
             'port_x': 'portX',
             'rest': 'rest',
@@ -273,6 +279,7 @@ class DbSystemSnapshot(object):
         self._data_storage = None
         self._hostname_label = None
         self._ip_address = None
+        self._ipv6_address = None
         self._port = None
         self._port_x = None
         self._rest = None
@@ -744,6 +751,30 @@ class DbSystemSnapshot(object):
         :type: str
         """
         self._ip_address = ip_address
+
+    @property
+    def ipv6_address(self):
+        """
+        Gets the ipv6_address of this DbSystemSnapshot.
+        The IPv6 address the DB System is configured to listen on.
+
+
+        :return: The ipv6_address of this DbSystemSnapshot.
+        :rtype: str
+        """
+        return self._ipv6_address
+
+    @ipv6_address.setter
+    def ipv6_address(self, ipv6_address):
+        """
+        Sets the ipv6_address of this DbSystemSnapshot.
+        The IPv6 address the DB System is configured to listen on.
+
+
+        :param ipv6_address: The ipv6_address of this DbSystemSnapshot.
+        :type: str
+        """
+        self._ipv6_address = ipv6_address
 
     @property
     def port(self):

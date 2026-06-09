@@ -234,6 +234,8 @@ Identity Domains
     oci.identity_domains.models.IdentityProofingProviderTemplates
     oci.identity_domains.models.IdentityProofingProviders
     oci.identity_domains.models.IdentityPropagationTrust
+    oci.identity_domains.models.IdentityPropagationTrustCaCertChain
+    oci.identity_domains.models.IdentityPropagationTrustClaimValidations
     oci.identity_domains.models.IdentityPropagationTrustImpersonationServiceUsers
     oci.identity_domains.models.IdentityPropagationTrustKeytab
     oci.identity_domains.models.IdentityPropagationTrusts

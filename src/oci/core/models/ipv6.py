@@ -123,6 +123,10 @@ class Ipv6(object):
             The value to assign to the route_table_id property of this Ipv6.
         :type route_table_id: str
 
+        :param hostname:
+            The value to assign to the hostname property of this Ipv6.
+        :type hostname: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -138,7 +142,8 @@ class Ipv6(object):
             'vnic_id': 'str',
             'ip_state': 'str',
             'lifetime': 'str',
-            'route_table_id': 'str'
+            'route_table_id': 'str',
+            'hostname': 'str'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -154,7 +159,8 @@ class Ipv6(object):
             'vnic_id': 'vnicId',
             'ip_state': 'ipState',
             'lifetime': 'lifetime',
-            'route_table_id': 'routeTableId'
+            'route_table_id': 'routeTableId',
+            'hostname': 'hostname'
         }
         self._compartment_id = None
         self._defined_tags = None
@@ -170,6 +176,7 @@ class Ipv6(object):
         self._ip_state = None
         self._lifetime = None
         self._route_table_id = None
+        self._hostname = None
 
     @property
     def compartment_id(self):
@@ -594,6 +601,30 @@ class Ipv6(object):
         :type: str
         """
         self._route_table_id = route_table_id
+
+    @property
+    def hostname(self):
+        """
+        Gets the hostname of this Ipv6.
+        The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+
+
+        :return: The hostname of this Ipv6.
+        :rtype: str
+        """
+        return self._hostname
+
+    @hostname.setter
+    def hostname(self, hostname):
+        """
+        Sets the hostname of this Ipv6.
+        The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+
+
+        :param hostname: The hostname of this Ipv6.
+        :type: str
+        """
+        self._hostname = hostname
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -44,6 +44,10 @@ class UpdateIpv6Details(object):
             The value to assign to the vnic_id property of this UpdateIpv6Details.
         :type vnic_id: str
 
+        :param hostname:
+            The value to assign to the hostname property of this UpdateIpv6Details.
+        :type hostname: str
+
         :param route_table_id:
             The value to assign to the route_table_id property of this UpdateIpv6Details.
         :type route_table_id: str
@@ -59,6 +63,7 @@ class UpdateIpv6Details(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'vnic_id': 'str',
+            'hostname': 'str',
             'route_table_id': 'str',
             'lifetime': 'str'
         }
@@ -67,6 +72,7 @@ class UpdateIpv6Details(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'vnic_id': 'vnicId',
+            'hostname': 'hostname',
             'route_table_id': 'routeTableId',
             'lifetime': 'lifetime'
         }
@@ -74,6 +80,7 @@ class UpdateIpv6Details(object):
         self._display_name = None
         self._freeform_tags = None
         self._vnic_id = None
+        self._hostname = None
         self._route_table_id = None
         self._lifetime = None
 
@@ -200,6 +207,30 @@ class UpdateIpv6Details(object):
         :type: str
         """
         self._vnic_id = vnic_id
+
+    @property
+    def hostname(self):
+        """
+        Gets the hostname of this UpdateIpv6Details.
+        The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+
+
+        :return: The hostname of this UpdateIpv6Details.
+        :rtype: str
+        """
+        return self._hostname
+
+    @hostname.setter
+    def hostname(self, hostname):
+        """
+        Sets the hostname of this UpdateIpv6Details.
+        The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+
+
+        :param hostname: The hostname of this UpdateIpv6Details.
+        :type: str
+        """
+        self._hostname = hostname
 
     @property
     def route_table_id(self):

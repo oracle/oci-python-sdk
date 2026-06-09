@@ -53,6 +53,10 @@ class BulkUpdateIpv6sItem(object):
             The value to assign to the route_table_id property of this BulkUpdateIpv6sItem.
         :type route_table_id: str
 
+        :param hostname:
+            The value to assign to the hostname property of this BulkUpdateIpv6sItem.
+        :type hostname: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -60,7 +64,8 @@ class BulkUpdateIpv6sItem(object):
             'freeform_tags': 'dict(str, str)',
             'ipv6_id': 'str',
             'lifetime': 'str',
-            'route_table_id': 'str'
+            'route_table_id': 'str',
+            'hostname': 'str'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
@@ -68,7 +73,8 @@ class BulkUpdateIpv6sItem(object):
             'freeform_tags': 'freeformTags',
             'ipv6_id': 'ipv6Id',
             'lifetime': 'lifetime',
-            'route_table_id': 'routeTableId'
+            'route_table_id': 'routeTableId',
+            'hostname': 'hostname'
         }
         self._defined_tags = None
         self._display_name = None
@@ -76,6 +82,7 @@ class BulkUpdateIpv6sItem(object):
         self._ipv6_id = None
         self._lifetime = None
         self._route_table_id = None
+        self._hostname = None
 
     @property
     def defined_tags(self):
@@ -267,6 +274,30 @@ class BulkUpdateIpv6sItem(object):
         :type: str
         """
         self._route_table_id = route_table_id
+
+    @property
+    def hostname(self):
+        """
+        Gets the hostname of this BulkUpdateIpv6sItem.
+        The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+
+
+        :return: The hostname of this BulkUpdateIpv6sItem.
+        :rtype: str
+        """
+        return self._hostname
+
+    @hostname.setter
+    def hostname(self, hostname):
+        """
+        Sets the hostname of this BulkUpdateIpv6sItem.
+        The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+
+
+        :param hostname: The hostname of this BulkUpdateIpv6sItem.
+        :type: str
+        """
+        self._hostname = hostname
 
     def __repr__(self):
         return formatted_flat_dict(self)

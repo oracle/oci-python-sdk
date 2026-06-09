@@ -114,6 +114,10 @@ class ReplicaSummary(object):
             The value to assign to the ip_address property of this ReplicaSummary.
         :type ip_address: str
 
+        :param ipv6_address:
+            The value to assign to the ipv6_address property of this ReplicaSummary.
+        :type ipv6_address: str
+
         :param port:
             The value to assign to the port property of this ReplicaSummary.
         :type port: int
@@ -167,6 +171,7 @@ class ReplicaSummary(object):
             'nsg_ids': 'list[str]',
             'security_attributes': 'dict(str, dict(str, object))',
             'ip_address': 'str',
+            'ipv6_address': 'str',
             'port': 'int',
             'port_x': 'int',
             'freeform_tags': 'dict(str, str)',
@@ -193,6 +198,7 @@ class ReplicaSummary(object):
             'nsg_ids': 'nsgIds',
             'security_attributes': 'securityAttributes',
             'ip_address': 'ipAddress',
+            'ipv6_address': 'ipv6Address',
             'port': 'port',
             'port_x': 'portX',
             'freeform_tags': 'freeformTags',
@@ -218,6 +224,7 @@ class ReplicaSummary(object):
         self._nsg_ids = None
         self._security_attributes = None
         self._ip_address = None
+        self._ipv6_address = None
         self._port = None
         self._port_x = None
         self._freeform_tags = None
@@ -609,6 +616,30 @@ class ReplicaSummary(object):
         :type: str
         """
         self._ip_address = ip_address
+
+    @property
+    def ipv6_address(self):
+        """
+        Gets the ipv6_address of this ReplicaSummary.
+        The IPv6 address the read replica is configured to listen on.
+
+
+        :return: The ipv6_address of this ReplicaSummary.
+        :rtype: str
+        """
+        return self._ipv6_address
+
+    @ipv6_address.setter
+    def ipv6_address(self, ipv6_address):
+        """
+        Sets the ipv6_address of this ReplicaSummary.
+        The IPv6 address the read replica is configured to listen on.
+
+
+        :param ipv6_address: The ipv6_address of this ReplicaSummary.
+        :type: str
+        """
+        self._ipv6_address = ipv6_address
 
     @property
     def port(self):

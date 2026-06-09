@@ -69,6 +69,10 @@ class CreateIpv6Details(object):
             The value to assign to the ipv6_subnet_cidr property of this CreateIpv6Details.
         :type ipv6_subnet_cidr: str
 
+        :param hostname:
+            The value to assign to the hostname property of this CreateIpv6Details.
+        :type hostname: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -80,7 +84,8 @@ class CreateIpv6Details(object):
             'subnet_id': 'str',
             'lifetime': 'str',
             'route_table_id': 'str',
-            'ipv6_subnet_cidr': 'str'
+            'ipv6_subnet_cidr': 'str',
+            'hostname': 'str'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
@@ -92,7 +97,8 @@ class CreateIpv6Details(object):
             'subnet_id': 'subnetId',
             'lifetime': 'lifetime',
             'route_table_id': 'routeTableId',
-            'ipv6_subnet_cidr': 'ipv6SubnetCidr'
+            'ipv6_subnet_cidr': 'ipv6SubnetCidr',
+            'hostname': 'hostname'
         }
         self._defined_tags = None
         self._display_name = None
@@ -104,6 +110,7 @@ class CreateIpv6Details(object):
         self._lifetime = None
         self._route_table_id = None
         self._ipv6_subnet_cidr = None
+        self._hostname = None
 
     @property
     def defined_tags(self):
@@ -409,6 +416,30 @@ class CreateIpv6Details(object):
         :type: str
         """
         self._ipv6_subnet_cidr = ipv6_subnet_cidr
+
+    @property
+    def hostname(self):
+        """
+        Gets the hostname of this CreateIpv6Details.
+        The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+
+
+        :return: The hostname of this CreateIpv6Details.
+        :rtype: str
+        """
+        return self._hostname
+
+    @hostname.setter
+    def hostname(self, hostname):
+        """
+        Sets the hostname of this CreateIpv6Details.
+        The hostname associated with the IPv6 address. Only the hostname label, not the FQDN.
+
+
+        :param hostname: The hostname of this CreateIpv6Details.
+        :type: str
+        """
+        self._hostname = hostname
 
     def __repr__(self):
         return formatted_flat_dict(self)

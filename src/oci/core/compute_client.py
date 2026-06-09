@@ -110,7 +110,8 @@ class ComputeClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
-            'service_endpoint_template': 'https://iaas.{region}.{secondLevelDomain}',
+            'service_endpoint_template': 'https://iaas.{region}.{dualStack?ds.oci.:}{secondLevelDomain}',
+            'endpoint_service_name': 'iaas',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),
@@ -11293,6 +11294,9 @@ class ComputeClient(object):
         :param str compute_gpu_memory_cluster_id: (optional)
             A filter to return only the listings that matches the given GPU memory cluster id.
 
+        :param str compute_gpu_memory_fabric_id: (optional)
+            A filter to return only the listings that matches the given GPU memory fabric id.
+
         :param str availability_domain: (optional)
             The name of the availability domain.
 
@@ -11379,6 +11383,7 @@ class ComputeClient(object):
             "retry_strategy",
             "opc_request_id",
             "compute_gpu_memory_cluster_id",
+            "compute_gpu_memory_fabric_id",
             "availability_domain",
             "display_name",
             "compute_cluster_id",
@@ -11408,6 +11413,7 @@ class ComputeClient(object):
 
         query_params = {
             "computeGpuMemoryClusterId": kwargs.get("compute_gpu_memory_cluster_id", missing),
+            "computeGpuMemoryFabricId": kwargs.get("compute_gpu_memory_fabric_id", missing),
             "availabilityDomain": kwargs.get("availability_domain", missing),
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),

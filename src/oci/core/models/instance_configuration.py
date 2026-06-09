@@ -13,10 +13,6 @@ from oci.decorators import init_model_state_from_kwargs
 class InstanceConfiguration(object):
     """
     An instance configuration is a template that defines the settings to use when creating Compute instances.
-    For more information about instance configurations, see
-    `Managing Compute Instances`__.
-
-    __ https://docs.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm
     """
 
     def __init__(self, **kwargs):
