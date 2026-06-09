@@ -43,6 +43,10 @@ class IdentityPropagationTrust(object):
     #: This constant has a value of "AWS"
     TYPE_AWS = "AWS"
 
+    #: A constant which can be used with the type property of a IdentityPropagationTrust.
+    #: This constant has a value of "X509"
+    TYPE_X509 = "X509"
+
     #: A constant which can be used with the subject_type property of a IdentityPropagationTrust.
     #: This constant has a value of "User"
     SUBJECT_TYPE_USER = "User"
@@ -50,6 +54,10 @@ class IdentityPropagationTrust(object):
     #: A constant which can be used with the subject_type property of a IdentityPropagationTrust.
     #: This constant has a value of "App"
     SUBJECT_TYPE_APP = "App"
+
+    #: A constant which can be used with the subject_type property of a IdentityPropagationTrust.
+    #: This constant has a value of "Resource"
+    SUBJECT_TYPE_RESOURCE = "Resource"
 
     def __init__(self, **kwargs):
         """
@@ -120,7 +128,7 @@ class IdentityPropagationTrust(object):
 
         :param type:
             The value to assign to the type property of this IdentityPropagationTrust.
-            Allowed values for this property are: "JWT", "SAML", "SPNEGO", "AWS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "JWT", "SAML", "SPNEGO", "AWS", "X509", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -142,7 +150,7 @@ class IdentityPropagationTrust(object):
 
         :param subject_type:
             The value to assign to the subject_type property of this IdentityPropagationTrust.
-            Allowed values for this property are: "User", "App", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "User", "App", "Resource", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type subject_type: str
 
@@ -177,6 +185,22 @@ class IdentityPropagationTrust(object):
         :param clock_skew_seconds:
             The value to assign to the clock_skew_seconds property of this IdentityPropagationTrust.
         :type clock_skew_seconds: int
+
+        :param impersonating_resource:
+            The value to assign to the impersonating_resource property of this IdentityPropagationTrust.
+        :type impersonating_resource: str
+
+        :param claim_validations:
+            The value to assign to the claim_validations property of this IdentityPropagationTrust.
+        :type claim_validations: list[oci.identity_domains.models.IdentityPropagationTrustClaimValidations]
+
+        :param claim_propagations:
+            The value to assign to the claim_propagations property of this IdentityPropagationTrust.
+        :type claim_propagations: list[str]
+
+        :param ca_cert_chain:
+            The value to assign to the ca_cert_chain property of this IdentityPropagationTrust.
+        :type ca_cert_chain: oci.identity_domains.models.IdentityPropagationTrustCaCertChain
 
         :param impersonation_service_users:
             The value to assign to the impersonation_service_users property of this IdentityPropagationTrust.
@@ -217,6 +241,10 @@ class IdentityPropagationTrust(object):
             'oauth_clients': 'list[str]',
             'allow_impersonation': 'bool',
             'clock_skew_seconds': 'int',
+            'impersonating_resource': 'str',
+            'claim_validations': 'list[IdentityPropagationTrustClaimValidations]',
+            'claim_propagations': 'list[str]',
+            'ca_cert_chain': 'IdentityPropagationTrustCaCertChain',
             'impersonation_service_users': 'list[IdentityPropagationTrustImpersonationServiceUsers]',
             'keytab': 'IdentityPropagationTrustKeytab'
         }
@@ -250,6 +278,10 @@ class IdentityPropagationTrust(object):
             'oauth_clients': 'oauthClients',
             'allow_impersonation': 'allowImpersonation',
             'clock_skew_seconds': 'clockSkewSeconds',
+            'impersonating_resource': 'impersonatingResource',
+            'claim_validations': 'claimValidations',
+            'claim_propagations': 'claimPropagations',
+            'ca_cert_chain': 'CACertChain',
             'impersonation_service_users': 'impersonationServiceUsers',
             'keytab': 'keytab'
         }
@@ -282,6 +314,10 @@ class IdentityPropagationTrust(object):
         self._oauth_clients = None
         self._allow_impersonation = None
         self._clock_skew_seconds = None
+        self._impersonating_resource = None
+        self._claim_validations = None
+        self._claim_propagations = None
+        self._ca_cert_chain = None
         self._impersonation_service_users = None
         self._keytab = None
 
@@ -893,7 +929,7 @@ class IdentityPropagationTrust(object):
          - multiValued: false
          - uniqueness: none
 
-        Allowed values for this property are: "JWT", "SAML", "SPNEGO", "AWS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "JWT", "SAML", "SPNEGO", "AWS", "X509", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -922,7 +958,7 @@ class IdentityPropagationTrust(object):
         :param type: The type of this IdentityPropagationTrust.
         :type: str
         """
-        allowed_values = ["JWT", "SAML", "SPNEGO", "AWS"]
+        allowed_values = ["JWT", "SAML", "SPNEGO", "AWS", "X509"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -1116,7 +1152,7 @@ class IdentityPropagationTrust(object):
          - type: string
          - uniqueness: none
 
-        Allowed values for this property are: "User", "App", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "User", "App", "Resource", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1144,7 +1180,7 @@ class IdentityPropagationTrust(object):
         :param subject_type: The subject_type of this IdentityPropagationTrust.
         :type: str
         """
-        allowed_values = ["User", "App"]
+        allowed_values = ["User", "App", "Resource"]
         if not value_allowed_none_or_none_sentinel(subject_type, allowed_values):
             subject_type = 'UNKNOWN_ENUM_VALUE'
         self._subject_type = subject_type
@@ -1494,6 +1530,168 @@ class IdentityPropagationTrust(object):
         :type: int
         """
         self._clock_skew_seconds = clock_skew_seconds
+
+    @property
+    def impersonating_resource(self):
+        """
+        Gets the impersonating_resource of this IdentityPropagationTrust.
+        Defines the external workload that acts as impersonating resource principal.
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+         - type: string
+         - multiValued: false
+         - required: false
+         - mutability: readWrite
+         - returned: default
+         - uniqueness: none
+         - caseExact: true
+         - idcsSearchable: false
+
+
+        :return: The impersonating_resource of this IdentityPropagationTrust.
+        :rtype: str
+        """
+        return self._impersonating_resource
+
+    @impersonating_resource.setter
+    def impersonating_resource(self, impersonating_resource):
+        """
+        Sets the impersonating_resource of this IdentityPropagationTrust.
+        Defines the external workload that acts as impersonating resource principal.
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+         - type: string
+         - multiValued: false
+         - required: false
+         - mutability: readWrite
+         - returned: default
+         - uniqueness: none
+         - caseExact: true
+         - idcsSearchable: false
+
+
+        :param impersonating_resource: The impersonating_resource of this IdentityPropagationTrust.
+        :type: str
+        """
+        self._impersonating_resource = impersonating_resource
+
+    @property
+    def claim_validations(self):
+        """
+        Gets the claim_validations of this IdentityPropagationTrust.
+        A list of claim validations
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+         - idcsCompositeKey: [name]
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: complex
+         - uniqueness: none
+
+
+        :return: The claim_validations of this IdentityPropagationTrust.
+        :rtype: list[oci.identity_domains.models.IdentityPropagationTrustClaimValidations]
+        """
+        return self._claim_validations
+
+    @claim_validations.setter
+    def claim_validations(self, claim_validations):
+        """
+        Sets the claim_validations of this IdentityPropagationTrust.
+        A list of claim validations
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+         - idcsCompositeKey: [name]
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: complex
+         - uniqueness: none
+
+
+        :param claim_validations: The claim_validations of this IdentityPropagationTrust.
+        :type: list[oci.identity_domains.models.IdentityPropagationTrustClaimValidations]
+        """
+        self._claim_validations = claim_validations
+
+    @property
+    def claim_propagations(self):
+        """
+        Gets the claim_propagations of this IdentityPropagationTrust.
+        A list of claims to propagate in RPST
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :return: The claim_propagations of this IdentityPropagationTrust.
+        :rtype: list[str]
+        """
+        return self._claim_propagations
+
+    @claim_propagations.setter
+    def claim_propagations(self, claim_propagations):
+        """
+        Sets the claim_propagations of this IdentityPropagationTrust.
+        A list of claims to propagate in RPST
+
+        **Added In:** 2509172316
+
+        **SCIM++ Properties:**
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :param claim_propagations: The claim_propagations of this IdentityPropagationTrust.
+        :type: list[str]
+        """
+        self._claim_propagations = claim_propagations
+
+    @property
+    def ca_cert_chain(self):
+        """
+        Gets the ca_cert_chain of this IdentityPropagationTrust.
+
+        :return: The ca_cert_chain of this IdentityPropagationTrust.
+        :rtype: oci.identity_domains.models.IdentityPropagationTrustCaCertChain
+        """
+        return self._ca_cert_chain
+
+    @ca_cert_chain.setter
+    def ca_cert_chain(self, ca_cert_chain):
+        """
+        Sets the ca_cert_chain of this IdentityPropagationTrust.
+
+        :param ca_cert_chain: The ca_cert_chain of this IdentityPropagationTrust.
+        :type: oci.identity_domains.models.IdentityPropagationTrustCaCertChain
+        """
+        self._ca_cert_chain = ca_cert_chain
 
     @property
     def impersonation_service_users(self):

@@ -28,7 +28,7 @@ class UpdateInstanceWindowsLicensingConfig(UpdateInstanceLicensingConfig):
 
         :param license_type:
             The value to assign to the license_type property of this UpdateInstanceWindowsLicensingConfig.
-            Allowed values for this property are: "OCI_PROVIDED", "BRING_YOUR_OWN_LICENSE"
+            Allowed values for this property are: "OCI_PROVIDED", "BRING_YOUR_OWN_LICENSE", "PARTNER_PROVIDED"
         :type license_type: str
 
         """

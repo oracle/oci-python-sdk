@@ -37,6 +37,8 @@ class SchemaItem(object):
     def name(self):
         """
         **[Required]** Gets the name of this SchemaItem.
+        Specifies the name.
+
 
         :return: The name of this SchemaItem.
         :rtype: str
@@ -47,6 +49,8 @@ class SchemaItem(object):
     def name(self, name):
         """
         Sets the name of this SchemaItem.
+        Specifies the name.
+
 
         :param name: The name of this SchemaItem.
         :type: str

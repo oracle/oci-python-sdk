@@ -222,6 +222,8 @@ from .identity_proofing_provider_template_idcs_locked_by import IdentityProofing
 from .identity_proofing_provider_templates import IdentityProofingProviderTemplates
 from .identity_proofing_providers import IdentityProofingProviders
 from .identity_propagation_trust import IdentityPropagationTrust
+from .identity_propagation_trust_ca_cert_chain import IdentityPropagationTrustCaCertChain
+from .identity_propagation_trust_claim_validations import IdentityPropagationTrustClaimValidations
 from .identity_propagation_trust_impersonation_service_users import IdentityPropagationTrustImpersonationServiceUsers
 from .identity_propagation_trust_keytab import IdentityPropagationTrustKeytab
 from .identity_propagation_trusts import IdentityPropagationTrusts
@@ -706,6 +708,8 @@ identity_domains_type_mapping = {
     "IdentityProofingProviderTemplates": IdentityProofingProviderTemplates,
     "IdentityProofingProviders": IdentityProofingProviders,
     "IdentityPropagationTrust": IdentityPropagationTrust,
+    "IdentityPropagationTrustCaCertChain": IdentityPropagationTrustCaCertChain,
+    "IdentityPropagationTrustClaimValidations": IdentityPropagationTrustClaimValidations,
     "IdentityPropagationTrustImpersonationServiceUsers": IdentityPropagationTrustImpersonationServiceUsers,
     "IdentityPropagationTrustKeytab": IdentityPropagationTrustKeytab,
     "IdentityPropagationTrusts": IdentityPropagationTrusts,

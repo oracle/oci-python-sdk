@@ -110,7 +110,8 @@ class ComputeManagementClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
-            'service_endpoint_template': 'https://iaas.{region}.{secondLevelDomain}',
+            'service_endpoint_template': 'https://iaas.{region}.{dualStack?ds.oci.:}{secondLevelDomain}',
+            'endpoint_service_name': 'iaas',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),

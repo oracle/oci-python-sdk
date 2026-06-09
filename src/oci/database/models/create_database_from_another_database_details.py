@@ -68,6 +68,10 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
             The value to assign to the storage_size_details property of this CreateDatabaseFromAnotherDatabaseDetails.
         :type storage_size_details: oci.database.models.DatabaseStorageSizeDetails
 
+        :param managed_software_update_details:
+            The value to assign to the managed_software_update_details property of this CreateDatabaseFromAnotherDatabaseDetails.
+        :type managed_software_update_details: oci.database.models.ManagedSoftwareUpdateInputDetails
+
         :param vm_cluster_id:
             The value to assign to the vm_cluster_id property of this CreateDatabaseFromAnotherDatabaseDetails.
         :type vm_cluster_id: str
@@ -86,6 +90,7 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
             'sid_prefix': 'str',
             'source_encryption_key_location_details': 'EncryptionKeyLocationDetails',
             'storage_size_details': 'DatabaseStorageSizeDetails',
+            'managed_software_update_details': 'ManagedSoftwareUpdateInputDetails',
             'vm_cluster_id': 'str'
         }
         self.attribute_map = {
@@ -101,6 +106,7 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
             'sid_prefix': 'sidPrefix',
             'source_encryption_key_location_details': 'sourceEncryptionKeyLocationDetails',
             'storage_size_details': 'storageSizeDetails',
+            'managed_software_update_details': 'managedSoftwareUpdateDetails',
             'vm_cluster_id': 'vmClusterId'
         }
         self._database_id = None
@@ -115,6 +121,7 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
         self._sid_prefix = None
         self._source_encryption_key_location_details = None
         self._storage_size_details = None
+        self._managed_software_update_details = None
         self._vm_cluster_id = None
 
     @property
@@ -416,6 +423,26 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
         :type: oci.database.models.DatabaseStorageSizeDetails
         """
         self._storage_size_details = storage_size_details
+
+    @property
+    def managed_software_update_details(self):
+        """
+        Gets the managed_software_update_details of this CreateDatabaseFromAnotherDatabaseDetails.
+
+        :return: The managed_software_update_details of this CreateDatabaseFromAnotherDatabaseDetails.
+        :rtype: oci.database.models.ManagedSoftwareUpdateInputDetails
+        """
+        return self._managed_software_update_details
+
+    @managed_software_update_details.setter
+    def managed_software_update_details(self, managed_software_update_details):
+        """
+        Sets the managed_software_update_details of this CreateDatabaseFromAnotherDatabaseDetails.
+
+        :param managed_software_update_details: The managed_software_update_details of this CreateDatabaseFromAnotherDatabaseDetails.
+        :type: oci.database.models.ManagedSoftwareUpdateInputDetails
+        """
+        self._managed_software_update_details = managed_software_update_details
 
     @property
     def vm_cluster_id(self):

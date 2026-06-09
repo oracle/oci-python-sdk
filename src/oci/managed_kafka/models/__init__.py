@@ -6,6 +6,10 @@
 
 from __future__ import absolute_import
 
+from .addon_collection import AddonCollection
+from .addon_option_collection import AddonOptionCollection
+from .addon_option_summary import AddonOptionSummary
+from .addon_summary import AddonSummary
 from .bootstrap_url import BootstrapUrl
 from .broker_shape import BrokerShape
 from .change_kafka_cluster_compartment_details import ChangeKafkaClusterCompartmentDetails
@@ -13,7 +17,10 @@ from .change_kafka_cluster_config_compartment_details import ChangeKafkaClusterC
 from .create_kafka_cluster_config_details import CreateKafkaClusterConfigDetails
 from .create_kafka_cluster_details import CreateKafkaClusterDetails
 from .enable_superuser_details import EnableSuperuserDetails
+from .install_addon_details import InstallAddonDetails
+from .install_public_connectivity_addon_details import InstallPublicConnectivityAddonDetails
 from .kafka_cluster import KafkaCluster
+from .kafka_cluster_addon import KafkaClusterAddon
 from .kafka_cluster_collection import KafkaClusterCollection
 from .kafka_cluster_config import KafkaClusterConfig
 from .kafka_cluster_config_collection import KafkaClusterConfigCollection
@@ -24,9 +31,12 @@ from .kafka_cluster_config_version_summary import KafkaClusterConfigVersionSumma
 from .kafka_cluster_summary import KafkaClusterSummary
 from .node_shape_collection import NodeShapeCollection
 from .node_shape_summary import NodeShapeSummary
+from .public_connectivity_addon import PublicConnectivityAddon
 from .subnet_set import SubnetSet
+from .update_addon_details import UpdateAddonDetails
 from .update_kafka_cluster_config_details import UpdateKafkaClusterConfigDetails
 from .update_kafka_cluster_details import UpdateKafkaClusterDetails
+from .update_public_connectivity_addon_details import UpdatePublicConnectivityAddonDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -38,6 +48,10 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for managed_kafka services.
 managed_kafka_type_mapping = {
+    "AddonCollection": AddonCollection,
+    "AddonOptionCollection": AddonOptionCollection,
+    "AddonOptionSummary": AddonOptionSummary,
+    "AddonSummary": AddonSummary,
     "BootstrapUrl": BootstrapUrl,
     "BrokerShape": BrokerShape,
     "ChangeKafkaClusterCompartmentDetails": ChangeKafkaClusterCompartmentDetails,
@@ -45,7 +59,10 @@ managed_kafka_type_mapping = {
     "CreateKafkaClusterConfigDetails": CreateKafkaClusterConfigDetails,
     "CreateKafkaClusterDetails": CreateKafkaClusterDetails,
     "EnableSuperuserDetails": EnableSuperuserDetails,
+    "InstallAddonDetails": InstallAddonDetails,
+    "InstallPublicConnectivityAddonDetails": InstallPublicConnectivityAddonDetails,
     "KafkaCluster": KafkaCluster,
+    "KafkaClusterAddon": KafkaClusterAddon,
     "KafkaClusterCollection": KafkaClusterCollection,
     "KafkaClusterConfig": KafkaClusterConfig,
     "KafkaClusterConfigCollection": KafkaClusterConfigCollection,
@@ -56,9 +73,12 @@ managed_kafka_type_mapping = {
     "KafkaClusterSummary": KafkaClusterSummary,
     "NodeShapeCollection": NodeShapeCollection,
     "NodeShapeSummary": NodeShapeSummary,
+    "PublicConnectivityAddon": PublicConnectivityAddon,
     "SubnetSet": SubnetSet,
+    "UpdateAddonDetails": UpdateAddonDetails,
     "UpdateKafkaClusterConfigDetails": UpdateKafkaClusterConfigDetails,
     "UpdateKafkaClusterDetails": UpdateKafkaClusterDetails,
+    "UpdatePublicConnectivityAddonDetails": UpdatePublicConnectivityAddonDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

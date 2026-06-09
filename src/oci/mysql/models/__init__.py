@@ -88,6 +88,7 @@ from .heat_wave_cluster_summary import HeatWaveClusterSummary
 from .heat_wave_cluster_table_memory_estimate import HeatWaveClusterTableMemoryEstimate
 from .heat_wave_node import HeatWaveNode
 from .initialization_variables import InitializationVariables
+from .ipv6_address_ipv6_subnet_cidr_pair_details import Ipv6AddressIpv6SubnetCidrPairDetails
 from .logging_destination_configuration import LoggingDestinationConfiguration
 from .maintenance_details import MaintenanceDetails
 from .maintenance_disabled_window import MaintenanceDisabledWindow
@@ -217,6 +218,7 @@ mysql_type_mapping = {
     "HeatWaveClusterTableMemoryEstimate": HeatWaveClusterTableMemoryEstimate,
     "HeatWaveNode": HeatWaveNode,
     "InitializationVariables": InitializationVariables,
+    "Ipv6AddressIpv6SubnetCidrPairDetails": Ipv6AddressIpv6SubnetCidrPairDetails,
     "LoggingDestinationConfiguration": LoggingDestinationConfiguration,
     "MaintenanceDetails": MaintenanceDetails,
     "MaintenanceDisabledWindow": MaintenanceDisabledWindow,

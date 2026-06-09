@@ -265,6 +265,42 @@ class DedicatedAiCluster(object):
     #: This constant has a value of "OAI_A100_40G_X4"
     UNIT_SHAPE_OAI_A100_40_G_X4 = "OAI_A100_40G_X4"
 
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "B200_X1"
+    UNIT_SHAPE_B200_X1 = "B200_X1"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "B200_X2"
+    UNIT_SHAPE_B200_X2 = "B200_X2"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "B200_X4"
+    UNIT_SHAPE_B200_X4 = "B200_X4"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "B200_X8"
+    UNIT_SHAPE_B200_X8 = "B200_X8"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "OAI_B200_X1"
+    UNIT_SHAPE_OAI_B200_X1 = "OAI_B200_X1"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "OAI_B200_X2"
+    UNIT_SHAPE_OAI_B200_X2 = "OAI_B200_X2"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "OAI_B200_X4"
+    UNIT_SHAPE_OAI_B200_X4 = "OAI_B200_X4"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "OAI_B200_X8"
+    UNIT_SHAPE_OAI_B200_X8 = "OAI_B200_X8"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "SB_B200_X1"
+    UNIT_SHAPE_SB_B200_X1 = "SB_B200_X1"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DedicatedAiCluster object with values from keyword arguments.
@@ -316,7 +352,7 @@ class DedicatedAiCluster(object):
 
         :param unit_shape:
             The value to assign to the unit_shape property of this DedicatedAiCluster.
-            Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4", "B200_X1", "B200_X2", "B200_X4", "B200_X8", "OAI_B200_X1", "OAI_B200_X2", "OAI_B200_X4", "OAI_B200_X8", "SB_B200_X1", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type unit_shape: str
 
@@ -656,7 +692,7 @@ class DedicatedAiCluster(object):
         **[Required]** Gets the unit_shape of this DedicatedAiCluster.
         The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
 
-        Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4", "B200_X1", "B200_X2", "B200_X4", "B200_X8", "OAI_B200_X1", "OAI_B200_X2", "OAI_B200_X4", "OAI_B200_X8", "SB_B200_X1", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -675,7 +711,7 @@ class DedicatedAiCluster(object):
         :param unit_shape: The unit_shape of this DedicatedAiCluster.
         :type: str
         """
-        allowed_values = ["LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4"]
+        allowed_values = ["LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4", "B200_X1", "B200_X2", "B200_X4", "B200_X8", "OAI_B200_X1", "OAI_B200_X2", "OAI_B200_X4", "OAI_B200_X8", "SB_B200_X1"]
         if not value_allowed_none_or_none_sentinel(unit_shape, allowed_values):
             unit_shape = 'UNKNOWN_ENUM_VALUE'
         self._unit_shape = unit_shape

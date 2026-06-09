@@ -254,7 +254,7 @@ class Subnet(object):
     @property
     def cidr_block(self):
         """
-        **[Required]** Gets the cidr_block of this Subnet.
+        Gets the cidr_block of this Subnet.
         The subnet's CIDR block.
 
         Example: `10.0.1.0/24`
@@ -906,7 +906,7 @@ class Subnet(object):
     @property
     def virtual_router_ip(self):
         """
-        **[Required]** Gets the virtual_router_ip of this Subnet.
+        Gets the virtual_router_ip of this Subnet.
         The IP address of the virtual router.
 
         Example: `10.0.14.1`

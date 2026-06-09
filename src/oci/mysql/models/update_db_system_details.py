@@ -120,6 +120,14 @@ class UpdateDbSystemDetails(object):
             The value to assign to the ip_address property of this UpdateDbSystemDetails.
         :type ip_address: str
 
+        :param is_ipv6_enabled:
+            The value to assign to the is_ipv6_enabled property of this UpdateDbSystemDetails.
+        :type is_ipv6_enabled: bool
+
+        :param ipv6_address_ipv6_subnet_cidr_pair_details:
+            The value to assign to the ipv6_address_ipv6_subnet_cidr_pair_details property of this UpdateDbSystemDetails.
+        :type ipv6_address_ipv6_subnet_cidr_pair_details: oci.mysql.models.Ipv6AddressIpv6SubnetCidrPairDetails
+
         :param port:
             The value to assign to the port property of this UpdateDbSystemDetails.
         :type port: int
@@ -201,6 +209,8 @@ class UpdateDbSystemDetails(object):
             'data_storage': 'DataStorageDetails',
             'hostname_label': 'str',
             'ip_address': 'str',
+            'is_ipv6_enabled': 'bool',
+            'ipv6_address_ipv6_subnet_cidr_pair_details': 'Ipv6AddressIpv6SubnetCidrPairDetails',
             'port': 'int',
             'port_x': 'int',
             'backup_policy': 'UpdateBackupPolicyDetails',
@@ -238,6 +248,8 @@ class UpdateDbSystemDetails(object):
             'data_storage': 'dataStorage',
             'hostname_label': 'hostnameLabel',
             'ip_address': 'ipAddress',
+            'is_ipv6_enabled': 'isIpv6Enabled',
+            'ipv6_address_ipv6_subnet_cidr_pair_details': 'ipv6AddressIpv6SubnetCidrPairDetails',
             'port': 'port',
             'port_x': 'portX',
             'backup_policy': 'backupPolicy',
@@ -274,6 +286,8 @@ class UpdateDbSystemDetails(object):
         self._data_storage = None
         self._hostname_label = None
         self._ip_address = None
+        self._is_ipv6_enabled = None
+        self._ipv6_address_ipv6_subnet_cidr_pair_details = None
         self._port = None
         self._port_x = None
         self._backup_policy = None
@@ -892,6 +906,58 @@ class UpdateDbSystemDetails(object):
         :type: str
         """
         self._ip_address = ip_address
+
+    @property
+    def is_ipv6_enabled(self):
+        """
+        Gets the is_ipv6_enabled of this UpdateDbSystemDetails.
+        Whether to allocate an IPv6 address for the DB system in an IPv6 enabled subnet.
+        When provided you may optionally
+        provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6
+        address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is
+        chosen for you.
+
+
+        :return: The is_ipv6_enabled of this UpdateDbSystemDetails.
+        :rtype: bool
+        """
+        return self._is_ipv6_enabled
+
+    @is_ipv6_enabled.setter
+    def is_ipv6_enabled(self, is_ipv6_enabled):
+        """
+        Sets the is_ipv6_enabled of this UpdateDbSystemDetails.
+        Whether to allocate an IPv6 address for the DB system in an IPv6 enabled subnet.
+        When provided you may optionally
+        provide an IPv6 prefix (ipv6AddressIpv6SubnetCidrPairDetails) of your choice to assign the IPv6
+        address from. If ipv6AddressIpv6SubnetCidrPairDetails is not provided then an IPv6 prefix is
+        chosen for you.
+
+
+        :param is_ipv6_enabled: The is_ipv6_enabled of this UpdateDbSystemDetails.
+        :type: bool
+        """
+        self._is_ipv6_enabled = is_ipv6_enabled
+
+    @property
+    def ipv6_address_ipv6_subnet_cidr_pair_details(self):
+        """
+        Gets the ipv6_address_ipv6_subnet_cidr_pair_details of this UpdateDbSystemDetails.
+
+        :return: The ipv6_address_ipv6_subnet_cidr_pair_details of this UpdateDbSystemDetails.
+        :rtype: oci.mysql.models.Ipv6AddressIpv6SubnetCidrPairDetails
+        """
+        return self._ipv6_address_ipv6_subnet_cidr_pair_details
+
+    @ipv6_address_ipv6_subnet_cidr_pair_details.setter
+    def ipv6_address_ipv6_subnet_cidr_pair_details(self, ipv6_address_ipv6_subnet_cidr_pair_details):
+        """
+        Sets the ipv6_address_ipv6_subnet_cidr_pair_details of this UpdateDbSystemDetails.
+
+        :param ipv6_address_ipv6_subnet_cidr_pair_details: The ipv6_address_ipv6_subnet_cidr_pair_details of this UpdateDbSystemDetails.
+        :type: oci.mysql.models.Ipv6AddressIpv6SubnetCidrPairDetails
+        """
+        self._ipv6_address_ipv6_subnet_cidr_pair_details = ipv6_address_ipv6_subnet_cidr_pair_details
 
     @property
     def port(self):

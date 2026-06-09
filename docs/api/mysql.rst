@@ -110,6 +110,7 @@ Mysql
     oci.mysql.models.HeatWaveClusterTableMemoryEstimate
     oci.mysql.models.HeatWaveNode
     oci.mysql.models.InitializationVariables
+    oci.mysql.models.Ipv6AddressIpv6SubnetCidrPairDetails
     oci.mysql.models.LoggingDestinationConfiguration
     oci.mysql.models.MaintenanceDetails
     oci.mysql.models.MaintenanceDisabledWindow

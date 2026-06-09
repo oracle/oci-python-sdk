@@ -55,6 +55,14 @@ class Database(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the home_type property of a Database.
+    #: This constant has a value of "ORACLE_MANAGED"
+    HOME_TYPE_ORACLE_MANAGED = "ORACLE_MANAGED"
+
+    #: A constant which can be used with the home_type property of a Database.
+    #: This constant has a value of "CUSTOMER_MANAGED"
+    HOME_TYPE_CUSTOMER_MANAGED = "CUSTOMER_MANAGED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Database object with values from keyword arguments.
@@ -202,6 +210,16 @@ class Database(object):
             The value to assign to the storage_size_details property of this Database.
         :type storage_size_details: oci.database.models.DatabaseStorageSizeResponseDetails
 
+        :param managed_software_update_details:
+            The value to assign to the managed_software_update_details property of this Database.
+        :type managed_software_update_details: oci.database.models.ManagedSoftwareUpdateDetails
+
+        :param home_type:
+            The value to assign to the home_type property of this Database.
+            Allowed values for this property are: "ORACLE_MANAGED", "CUSTOMER_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type home_type: str
+
         :param patch_version:
             The value to assign to the patch_version property of this Database.
         :type patch_version: str
@@ -243,6 +261,8 @@ class Database(object):
             'data_guard_group': 'DataGuardGroup',
             'encryption_key_location_details': 'EncryptionKeyLocationDetails',
             'storage_size_details': 'DatabaseStorageSizeResponseDetails',
+            'managed_software_update_details': 'ManagedSoftwareUpdateDetails',
+            'home_type': 'str',
             'patch_version': 'str'
         }
         self.attribute_map = {
@@ -281,6 +301,8 @@ class Database(object):
             'data_guard_group': 'dataGuardGroup',
             'encryption_key_location_details': 'encryptionKeyLocationDetails',
             'storage_size_details': 'storageSizeDetails',
+            'managed_software_update_details': 'managedSoftwareUpdateDetails',
+            'home_type': 'homeType',
             'patch_version': 'patchVersion'
         }
         self._id = None
@@ -318,6 +340,8 @@ class Database(object):
         self._data_guard_group = None
         self._encryption_key_location_details = None
         self._storage_size_details = None
+        self._managed_software_update_details = None
+        self._home_type = None
         self._patch_version = None
 
     @property
@@ -1211,6 +1235,56 @@ class Database(object):
         :type: oci.database.models.DatabaseStorageSizeResponseDetails
         """
         self._storage_size_details = storage_size_details
+
+    @property
+    def managed_software_update_details(self):
+        """
+        Gets the managed_software_update_details of this Database.
+
+        :return: The managed_software_update_details of this Database.
+        :rtype: oci.database.models.ManagedSoftwareUpdateDetails
+        """
+        return self._managed_software_update_details
+
+    @managed_software_update_details.setter
+    def managed_software_update_details(self, managed_software_update_details):
+        """
+        Sets the managed_software_update_details of this Database.
+
+        :param managed_software_update_details: The managed_software_update_details of this Database.
+        :type: oci.database.models.ManagedSoftwareUpdateDetails
+        """
+        self._managed_software_update_details = managed_software_update_details
+
+    @property
+    def home_type(self):
+        """
+        Gets the home_type of this Database.
+        Represents database will be under oracle managed home or customer managed home
+
+        Allowed values for this property are: "ORACLE_MANAGED", "CUSTOMER_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The home_type of this Database.
+        :rtype: str
+        """
+        return self._home_type
+
+    @home_type.setter
+    def home_type(self, home_type):
+        """
+        Sets the home_type of this Database.
+        Represents database will be under oracle managed home or customer managed home
+
+
+        :param home_type: The home_type of this Database.
+        :type: str
+        """
+        allowed_values = ["ORACLE_MANAGED", "CUSTOMER_MANAGED"]
+        if not value_allowed_none_or_none_sentinel(home_type, allowed_values):
+            home_type = 'UNKNOWN_ENUM_VALUE'
+        self._home_type = home_type
 
     @property
     def patch_version(self):

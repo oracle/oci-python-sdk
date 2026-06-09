@@ -408,6 +408,11 @@ Database
     oci.database.models.MaintenanceRunSummary
     oci.database.models.MaintenanceVersionPreferenceDetails
     oci.database.models.MaintenanceWindow
+    oci.database.models.ManagedSoftwareUpdateDayOfWeek
+    oci.database.models.ManagedSoftwareUpdateDetails
+    oci.database.models.ManagedSoftwareUpdateInputDetails
+    oci.database.models.ManagedSoftwareUpdateMaintenanceDetails
+    oci.database.models.ManagedSoftwareUpdatePreferenceDetails
     oci.database.models.MigrateVaultKeyDetails
     oci.database.models.ModifyDatabaseManagementDetails
     oci.database.models.ModifyPluggableDatabaseManagementDetails
@@ -556,6 +561,8 @@ Database
     oci.database.models.UpgradeDatabaseDetails
     oci.database.models.UpgradeDbSystemDetails
     oci.database.models.VanityUrlDetails
+    oci.database.models.VersionSchemeDetails
+    oci.database.models.VersionSchemeFromVersionSeriesDetails
     oci.database.models.VmCluster
     oci.database.models.VmClusterNetwork
     oci.database.models.VmClusterNetworkDetails

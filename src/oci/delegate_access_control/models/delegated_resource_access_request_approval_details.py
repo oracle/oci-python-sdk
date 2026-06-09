@@ -64,6 +64,10 @@ class DelegatedResourceAccessRequestApprovalDetails(object):
             The value to assign to the approver_additional_message property of this DelegatedResourceAccessRequestApprovalDetails.
         :type approver_additional_message: str
 
+        :param time_of_action:
+            The value to assign to the time_of_action property of this DelegatedResourceAccessRequestApprovalDetails.
+        :type time_of_action: datetime
+
         """
         self.swagger_types = {
             'approval_action': 'str',
@@ -71,7 +75,8 @@ class DelegatedResourceAccessRequestApprovalDetails(object):
             'approval_type': 'str',
             'approver_comment': 'str',
             'approver_id': 'str',
-            'approver_additional_message': 'str'
+            'approver_additional_message': 'str',
+            'time_of_action': 'datetime'
         }
         self.attribute_map = {
             'approval_action': 'approvalAction',
@@ -79,7 +84,8 @@ class DelegatedResourceAccessRequestApprovalDetails(object):
             'approval_type': 'approvalType',
             'approver_comment': 'approverComment',
             'approver_id': 'approverId',
-            'approver_additional_message': 'approverAdditionalMessage'
+            'approver_additional_message': 'approverAdditionalMessage',
+            'time_of_action': 'timeOfAction'
         }
         self._approval_action = None
         self._time_approved_for_access = None
@@ -87,6 +93,7 @@ class DelegatedResourceAccessRequestApprovalDetails(object):
         self._approver_comment = None
         self._approver_id = None
         self._approver_additional_message = None
+        self._time_of_action = None
 
     @property
     def approval_action(self):
@@ -247,6 +254,34 @@ class DelegatedResourceAccessRequestApprovalDetails(object):
         :type: str
         """
         self._approver_additional_message = approver_additional_message
+
+    @property
+    def time_of_action(self):
+        """
+        Gets the time_of_action of this DelegatedResourceAccessRequestApprovalDetails.
+        Time when the access request was approved or rejected by the customer in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_of_action of this DelegatedResourceAccessRequestApprovalDetails.
+        :rtype: datetime
+        """
+        return self._time_of_action
+
+    @time_of_action.setter
+    def time_of_action(self, time_of_action):
+        """
+        Sets the time_of_action of this DelegatedResourceAccessRequestApprovalDetails.
+        Time when the access request was approved or rejected by the customer in `RFC 3339`__ timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_of_action: The time_of_action of this DelegatedResourceAccessRequestApprovalDetails.
+        :type: datetime
+        """
+        self._time_of_action = time_of_action
 
     def __repr__(self):
         return formatted_flat_dict(self)

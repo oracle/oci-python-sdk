@@ -54,6 +54,10 @@ class UpdateDatabaseDetails(object):
             The value to assign to the defined_tags property of this UpdateDatabaseDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param managed_software_update_details:
+            The value to assign to the managed_software_update_details property of this UpdateDatabaseDetails.
+        :type managed_software_update_details: oci.database.models.ManagedSoftwareUpdateInputDetails
+
         :param patch_options:
             The value to assign to the patch_options property of this UpdateDatabaseDetails.
         :type patch_options: oci.database.models.PatchOptions
@@ -68,6 +72,7 @@ class UpdateDatabaseDetails(object):
             'storage_size_details': 'DatabaseStorageSizeDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'managed_software_update_details': 'ManagedSoftwareUpdateInputDetails',
             'patch_options': 'PatchOptions'
         }
         self.attribute_map = {
@@ -79,6 +84,7 @@ class UpdateDatabaseDetails(object):
             'storage_size_details': 'storageSizeDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'managed_software_update_details': 'managedSoftwareUpdateDetails',
             'patch_options': 'patchOptions'
         }
         self._db_backup_config = None
@@ -89,6 +95,7 @@ class UpdateDatabaseDetails(object):
         self._storage_size_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._managed_software_update_details = None
         self._patch_options = None
 
     @property
@@ -294,6 +301,26 @@ class UpdateDatabaseDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def managed_software_update_details(self):
+        """
+        Gets the managed_software_update_details of this UpdateDatabaseDetails.
+
+        :return: The managed_software_update_details of this UpdateDatabaseDetails.
+        :rtype: oci.database.models.ManagedSoftwareUpdateInputDetails
+        """
+        return self._managed_software_update_details
+
+    @managed_software_update_details.setter
+    def managed_software_update_details(self, managed_software_update_details):
+        """
+        Sets the managed_software_update_details of this UpdateDatabaseDetails.
+
+        :param managed_software_update_details: The managed_software_update_details of this UpdateDatabaseDetails.
+        :type: oci.database.models.ManagedSoftwareUpdateInputDetails
+        """
+        self._managed_software_update_details = managed_software_update_details
 
     @property
     def patch_options(self):

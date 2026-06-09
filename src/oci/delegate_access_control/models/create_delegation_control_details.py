@@ -27,6 +27,10 @@ class CreateDelegationControlDetails(object):
     #: This constant has a value of "CLOUDVMCLUSTER"
     RESOURCE_TYPE_CLOUDVMCLUSTER = "CLOUDVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a CreateDelegationControlDetails.
+    #: This constant has a value of "EXADBVMCLUSTER"
+    RESOURCE_TYPE_EXADBVMCLUSTER = "EXADBVMCLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDelegationControlDetails object with values from keyword arguments.
@@ -66,7 +70,7 @@ class CreateDelegationControlDetails(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this CreateDelegationControlDetails.
-            Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER"
+            Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"
         :type resource_type: str
 
         :param notification_topic_id:
@@ -344,7 +348,7 @@ class CreateDelegationControlDetails(object):
         **[Required]** Gets the resource_type of this CreateDelegationControlDetails.
         Resource type for which the Delegation Control is applicable to.
 
-        Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER"
+        Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"
 
 
         :return: The resource_type of this CreateDelegationControlDetails.
@@ -362,7 +366,7 @@ class CreateDelegationControlDetails(object):
         :param resource_type: The resource_type of this CreateDelegationControlDetails.
         :type: str
         """
-        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER"]
+        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `resource_type`, must be None or one of {allowed_values}"
@@ -421,7 +425,7 @@ class CreateDelegationControlDetails(object):
     def vault_id(self):
         """
         Gets the vault_id of this CreateDelegationControlDetails.
-        The OCID of the OCI Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the OCI Vault.
+        The OCID of the OCI Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the OCI Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 
 
         :return: The vault_id of this CreateDelegationControlDetails.
@@ -433,7 +437,7 @@ class CreateDelegationControlDetails(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this CreateDelegationControlDetails.
-        The OCID of the OCI Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the OCI Vault.
+        The OCID of the OCI Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. Delegate Access Control Service will generate the SSH keys and store them as secrets in the OCI Vault. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 
 
         :param vault_id: The vault_id of this CreateDelegationControlDetails.
@@ -445,7 +449,7 @@ class CreateDelegationControlDetails(object):
     def vault_key_id(self):
         """
         Gets the vault_key_id of this CreateDelegationControlDetails.
-        The OCID of the Master Encryption Key in the OCI Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+        The OCID of the Master Encryption Key in the OCI Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 
 
         :return: The vault_key_id of this CreateDelegationControlDetails.
@@ -457,7 +461,7 @@ class CreateDelegationControlDetails(object):
     def vault_key_id(self, vault_key_id):
         """
         Sets the vault_key_id of this CreateDelegationControlDetails.
-        The OCID of the Master Encryption Key in the OCI Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
+        The OCID of the Master Encryption Key in the OCI Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is optional when the Delegation Control is created for Oracle Managed Software Updates. Otherwise, it is required when resourceType is CLOUDVMCLUSTER or EXADBVMCLUSTER.
 
 
         :param vault_key_id: The vault_key_id of this CreateDelegationControlDetails.

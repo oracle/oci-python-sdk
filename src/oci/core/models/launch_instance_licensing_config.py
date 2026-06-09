@@ -27,6 +27,10 @@ class LaunchInstanceLicensingConfig(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_TYPE_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the license_type property of a LaunchInstanceLicensingConfig.
+    #: This constant has a value of "PARTNER_PROVIDED"
+    LICENSE_TYPE_PARTNER_PROVIDED = "PARTNER_PROVIDED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LaunchInstanceLicensingConfig object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -44,7 +48,7 @@ class LaunchInstanceLicensingConfig(object):
 
         :param license_type:
             The value to assign to the license_type property of this LaunchInstanceLicensingConfig.
-            Allowed values for this property are: "OCI_PROVIDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OCI_PROVIDED", "BRING_YOUR_OWN_LICENSE", "PARTNER_PROVIDED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license_type: str
 
@@ -110,8 +114,9 @@ class LaunchInstanceLicensingConfig(object):
         License Type for the OS license.
         * `OCI_PROVIDED` - OCI provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
 
-        Allowed values for this property are: "OCI_PROVIDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OCI_PROVIDED", "BRING_YOUR_OWN_LICENSE", "PARTNER_PROVIDED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -127,12 +132,13 @@ class LaunchInstanceLicensingConfig(object):
         License Type for the OS license.
         * `OCI_PROVIDED` - OCI provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
 
 
         :param license_type: The license_type of this LaunchInstanceLicensingConfig.
         :type: str
         """
-        allowed_values = ["OCI_PROVIDED", "BRING_YOUR_OWN_LICENSE"]
+        allowed_values = ["OCI_PROVIDED", "BRING_YOUR_OWN_LICENSE", "PARTNER_PROVIDED"]
         if not value_allowed_none_or_none_sentinel(license_type, allowed_values):
             license_type = 'UNKNOWN_ENUM_VALUE'
         self._license_type = license_type

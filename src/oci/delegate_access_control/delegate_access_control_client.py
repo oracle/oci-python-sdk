@@ -22,8 +22,8 @@ missing = Sentinel("Missing")
 
 class DelegateAccessControlClient(object):
     """
-    Oracle Delegate Access Control allows ExaCC and ExaCS customers to delegate management of their Exadata resources operators outside their tenancies.
-    With Delegate Access Control, Support Providers can deliver managed services using comprehensive and robust tooling built on the OCI platform.
+    Oracle Delegate Access Control allows customers of Oracle Exadata Database Service on Cloud@Customer (ExaDB-C@C), Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D), and Oracle Exadata Database Service on Exascale Infrastructure (ExaDB-XS) to delegate management of their Exadata resources operators outside their tenancies.
+    With Delegate Access Control, Service Providers can deliver managed services using comprehensive and robust tooling built on the OCI platform.
     Customers maintain control over who has access to the delegated resources in their tenancy and what actions can be taken.
     Enterprises managing resources across multiple tenants can use Delegate Access Control to streamline management tasks.
     Using logging service, customers can view a near real-time audit report of all actions performed by a Service Provider operator.
@@ -848,7 +848,7 @@ class DelegateAccessControlClient(object):
 
     def delete_delegation_subscription(self, delegation_subscription_id, **kwargs):
         """
-        eletes an Delegation Subscription in Delegation Control.
+        Deletes an Delegation Subscription in Delegation Control.
 
 
         :param str delegation_subscription_id: (required)
@@ -2082,7 +2082,7 @@ class DelegateAccessControlClient(object):
         :param str resource_type: (optional)
             A filter to return only resources that match the given resource type.
 
-            Allowed values are: "VMCLUSTER", "CLOUDVMCLUSTER"
+            Allowed values are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"
 
         :param str resource_id: (optional)
             A filter to return Delegation Control resources that match the given resource ID.
@@ -2163,7 +2163,7 @@ class DelegateAccessControlClient(object):
                 )
 
         if 'resource_type' in kwargs:
-            resource_type_allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER"]
+            resource_type_allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"]
             if kwargs['resource_type'] not in resource_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `resource_type`, must be one of { resource_type_allowed_values }"
@@ -2414,12 +2414,12 @@ class DelegateAccessControlClient(object):
         :param str resource_type: (optional)
             A filter to return only resources that match the given resource type.
 
-            Allowed values are: "VMCLUSTER", "CLOUDVMCLUSTER"
+            Allowed values are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"
 
         :param list[str] service_provider_service_type: (optional)
             A filter to return only resources that match the given Service Provider service type.
 
-            Allowed values are: "TROUBLESHOOTING", "ASSISTED_PATCHING"
+            Allowed values are: "TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES"
 
         :param str lifecycle_state: (optional)
             A filter to return only resources whose lifecycleState matches the given Service Provider Action lifecycleState.
@@ -2495,14 +2495,14 @@ class DelegateAccessControlClient(object):
                 f"list_service_provider_actions got unknown kwargs: {extra_kwargs!r}")
 
         if 'resource_type' in kwargs:
-            resource_type_allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER"]
+            resource_type_allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"]
             if kwargs['resource_type'] not in resource_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `resource_type`, must be one of { resource_type_allowed_values }"
                 )
 
         if 'service_provider_service_type' in kwargs:
-            service_provider_service_type_allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING"]
+            service_provider_service_type_allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES"]
             for service_provider_service_type_item in kwargs['service_provider_service_type']:
                 if service_provider_service_type_item not in service_provider_service_type_allowed_values:
                     raise ValueError(
@@ -2728,7 +2728,7 @@ class DelegateAccessControlClient(object):
         :param str supported_resource_type: (optional)
             A filter to return only Service Provider resources whose supported resource type matches the given resource type.
 
-            Allowed values are: "VMCLUSTER", "CLOUDVMCLUSTER"
+            Allowed values are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"
 
         :param str service_provider_type: (optional)
             A filter to return only Service Provider resources whose provider type matches the given provider type.
@@ -2811,7 +2811,7 @@ class DelegateAccessControlClient(object):
                 )
 
         if 'supported_resource_type' in kwargs:
-            supported_resource_type_allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER"]
+            supported_resource_type_allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"]
             if kwargs['supported_resource_type'] not in supported_resource_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `supported_resource_type`, must be one of { supported_resource_type_allowed_values }"

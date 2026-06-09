@@ -24,7 +24,8 @@ def create_vcr(**kwargs):
     vcr_to_use = vcr.VCR(
         serializer='yaml',
         cassette_library_dir='tests/fixtures/cassettes',
-        record_mode=vcr_mode
+        record_mode=vcr_mode,
+        decode_compressed_response=True
     )
 
     if 'match_on' in kwargs:

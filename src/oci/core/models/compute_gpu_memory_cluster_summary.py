@@ -32,6 +32,14 @@ class ComputeGpuMemoryClusterSummary(object):
             The value to assign to the availability_domain property of this ComputeGpuMemoryClusterSummary.
         :type availability_domain: str
 
+        :param gpu_memory_fabric_id:
+            The value to assign to the gpu_memory_fabric_id property of this ComputeGpuMemoryClusterSummary.
+        :type gpu_memory_fabric_id: str
+
+        :param size:
+            The value to assign to the size property of this ComputeGpuMemoryClusterSummary.
+        :type size: int
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ComputeGpuMemoryClusterSummary.
         :type lifecycle_state: str
@@ -61,6 +69,8 @@ class ComputeGpuMemoryClusterSummary(object):
             'id': 'str',
             'compartment_id': 'str',
             'availability_domain': 'str',
+            'gpu_memory_fabric_id': 'str',
+            'size': 'int',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -72,6 +82,8 @@ class ComputeGpuMemoryClusterSummary(object):
             'id': 'id',
             'compartment_id': 'compartmentId',
             'availability_domain': 'availabilityDomain',
+            'gpu_memory_fabric_id': 'gpuMemoryFabricId',
+            'size': 'size',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'defined_tags': 'definedTags',
@@ -82,6 +94,8 @@ class ComputeGpuMemoryClusterSummary(object):
         self._id = None
         self._compartment_id = None
         self._availability_domain = None
+        self._gpu_memory_fabric_id = None
+        self._size = None
         self._lifecycle_state = None
         self._time_created = None
         self._defined_tags = None
@@ -174,6 +188,58 @@ class ComputeGpuMemoryClusterSummary(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def gpu_memory_fabric_id(self):
+        """
+        Gets the gpu_memory_fabric_id of this ComputeGpuMemoryClusterSummary.
+        The `OCID`__ of the GPU memory fabric.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The gpu_memory_fabric_id of this ComputeGpuMemoryClusterSummary.
+        :rtype: str
+        """
+        return self._gpu_memory_fabric_id
+
+    @gpu_memory_fabric_id.setter
+    def gpu_memory_fabric_id(self, gpu_memory_fabric_id):
+        """
+        Sets the gpu_memory_fabric_id of this ComputeGpuMemoryClusterSummary.
+        The `OCID`__ of the GPU memory fabric.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param gpu_memory_fabric_id: The gpu_memory_fabric_id of this ComputeGpuMemoryClusterSummary.
+        :type: str
+        """
+        self._gpu_memory_fabric_id = gpu_memory_fabric_id
+
+    @property
+    def size(self):
+        """
+        Gets the size of this ComputeGpuMemoryClusterSummary.
+        The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
+
+
+        :return: The size of this ComputeGpuMemoryClusterSummary.
+        :rtype: int
+        """
+        return self._size
+
+    @size.setter
+    def size(self, size):
+        """
+        Sets the size of this ComputeGpuMemoryClusterSummary.
+        The size represents the total number of instances in the GPU Memory Cluster, including both running instances and those still in the process of launching.
+
+
+        :param size: The size of this ComputeGpuMemoryClusterSummary.
+        :type: int
+        """
+        self._size = size
 
     @property
     def lifecycle_state(self):

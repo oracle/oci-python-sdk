@@ -396,6 +396,11 @@ from .maintenance_run_history_summary import MaintenanceRunHistorySummary
 from .maintenance_run_summary import MaintenanceRunSummary
 from .maintenance_version_preference_details import MaintenanceVersionPreferenceDetails
 from .maintenance_window import MaintenanceWindow
+from .managed_software_update_day_of_week import ManagedSoftwareUpdateDayOfWeek
+from .managed_software_update_details import ManagedSoftwareUpdateDetails
+from .managed_software_update_input_details import ManagedSoftwareUpdateInputDetails
+from .managed_software_update_maintenance_details import ManagedSoftwareUpdateMaintenanceDetails
+from .managed_software_update_preference_details import ManagedSoftwareUpdatePreferenceDetails
 from .migrate_vault_key_details import MigrateVaultKeyDetails
 from .modify_database_management_details import ModifyDatabaseManagementDetails
 from .modify_pluggable_database_management_details import ModifyPluggableDatabaseManagementDetails
@@ -544,6 +549,8 @@ from .update_vm_cluster_network_details import UpdateVmClusterNetworkDetails
 from .upgrade_database_details import UpgradeDatabaseDetails
 from .upgrade_db_system_details import UpgradeDbSystemDetails
 from .vanity_url_details import VanityUrlDetails
+from .version_scheme_details import VersionSchemeDetails
+from .version_scheme_from_version_series_details import VersionSchemeFromVersionSeriesDetails
 from .vm_cluster import VmCluster
 from .vm_cluster_network import VmClusterNetwork
 from .vm_cluster_network_details import VmClusterNetworkDetails
@@ -952,6 +959,11 @@ database_type_mapping = {
     "MaintenanceRunSummary": MaintenanceRunSummary,
     "MaintenanceVersionPreferenceDetails": MaintenanceVersionPreferenceDetails,
     "MaintenanceWindow": MaintenanceWindow,
+    "ManagedSoftwareUpdateDayOfWeek": ManagedSoftwareUpdateDayOfWeek,
+    "ManagedSoftwareUpdateDetails": ManagedSoftwareUpdateDetails,
+    "ManagedSoftwareUpdateInputDetails": ManagedSoftwareUpdateInputDetails,
+    "ManagedSoftwareUpdateMaintenanceDetails": ManagedSoftwareUpdateMaintenanceDetails,
+    "ManagedSoftwareUpdatePreferenceDetails": ManagedSoftwareUpdatePreferenceDetails,
     "MigrateVaultKeyDetails": MigrateVaultKeyDetails,
     "ModifyDatabaseManagementDetails": ModifyDatabaseManagementDetails,
     "ModifyPluggableDatabaseManagementDetails": ModifyPluggableDatabaseManagementDetails,
@@ -1100,6 +1112,8 @@ database_type_mapping = {
     "UpgradeDatabaseDetails": UpgradeDatabaseDetails,
     "UpgradeDbSystemDetails": UpgradeDbSystemDetails,
     "VanityUrlDetails": VanityUrlDetails,
+    "VersionSchemeDetails": VersionSchemeDetails,
+    "VersionSchemeFromVersionSeriesDetails": VersionSchemeFromVersionSeriesDetails,
     "VmCluster": VmCluster,
     "VmClusterNetwork": VmClusterNetwork,
     "VmClusterNetworkDetails": VmClusterNetworkDetails,

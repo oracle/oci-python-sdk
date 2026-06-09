@@ -1,0 +1,11 @@
+IdentityPropagationTrustClaimValidations
+========================================
+
+.. currentmodule:: oci.identity_domains.models
+
+.. autoclass:: IdentityPropagationTrustClaimValidations
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

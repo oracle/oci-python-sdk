@@ -287,6 +287,42 @@ class ComputeClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def attach_volume_and_wait_for_work_request(self, attach_volume_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.ComputeClient.attach_volume` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param oci.core.models.AttachVolumeDetails attach_volume_details: (required)
+            Attach volume request
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.ComputeClient.attach_volume`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.attach_volume(attach_volume_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        work_request_id = operation_result.headers['opc-work-request-id']
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def attach_volume_and_wait_for_state(self, attach_volume_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.core.ComputeClient.attach_volume` and waits for the :py:class:`~oci.core.models.VolumeAttachment` acted upon
@@ -1937,16 +1973,17 @@ class ComputeClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
-    def detach_volume_and_wait_for_state(self, volume_attachment_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+    def detach_volume_and_wait_for_work_request(self, volume_attachment_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.core.ComputeClient.detach_volume` and waits for the :py:class:`~oci.core.models.VolumeAttachment` acted upon
+        Calls :py:func:`~oci.core.ComputeClient.detach_volume` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
         :param str volume_attachment_id: (required)
             The OCID of the volume attachment.
 
-        :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.VolumeAttachment.lifecycle_state`
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.core.ComputeClient.detach_volume`
@@ -1955,44 +1992,20 @@ class ComputeClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        initial_get_result = self.client.get_volume_attachment(volume_attachment_id)
-        operation_result = None
-        try:
-            operation_result = self.client.detach_volume(volume_attachment_id, **operation_kwargs)
-        except oci.exceptions.ServiceError as e:
-            if e.status == 404:
-                return WAIT_RESOURCE_NOT_FOUND
-            else:
-                raise e
-
-        if not wait_for_states:
+        operation_result = self.client.detach_volume(volume_attachment_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
             return operation_result
-        lowered_wait_for_states = [w.lower() for w in wait_for_states]
-
+        work_request_id = operation_result.headers['opc-work-request-id']
         try:
-            if ("succeed_on_not_found" in waiter_kwargs) and (waiter_kwargs["succeed_on_not_found"] is False):
-                self.client.base_client.logger.warning("The waiter kwarg succeed_on_not_found was passed as False for the delete composite operation detach_volume, this would result in the operation to fail if the resource is not found! Please, do not pass this kwarg if this was not intended")
-            else:
-                """
-                If the user does not send in this value, we set it to True by default.
-                We are doing this because during a delete resource scenario and waiting on its state, the service can
-                return a 404 NOT FOUND exception as the resource was deleted and a get on its state would fail
-                """
-                waiter_kwargs["succeed_on_not_found"] = True
             waiter_result = oci.wait_until(
-                self.client,
-                initial_get_result,  # noqa: F821
-                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
                 **waiter_kwargs
             )
-            result_to_return = waiter_result
-
-            return result_to_return
-        except (NameError, TypeError) as e:
-            if not e.args:
-                e.args = ('',)
-            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
-            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+            return waiter_result
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -2211,9 +2224,9 @@ class ComputeClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
-    def terminate_instance_and_wait_for_state(self, instance_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+    def terminate_instance_and_wait_for_work_request(self, instance_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.core.ComputeClient.terminate_instance` and waits for the :py:class:`~oci.core.models.Instance` acted upon
+        Calls :py:func:`~oci.core.ComputeClient.terminate_instance` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
         :param str instance_id: (required)
@@ -2221,8 +2234,9 @@ class ComputeClientCompositeOperations(object):
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.Instance.lifecycle_state`
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.core.ComputeClient.terminate_instance`
@@ -2231,44 +2245,20 @@ class ComputeClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        initial_get_result = self.client.get_instance(instance_id)
-        operation_result = None
-        try:
-            operation_result = self.client.terminate_instance(instance_id, **operation_kwargs)
-        except oci.exceptions.ServiceError as e:
-            if e.status == 404:
-                return WAIT_RESOURCE_NOT_FOUND
-            else:
-                raise e
-
-        if not wait_for_states:
+        operation_result = self.client.terminate_instance(instance_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
             return operation_result
-        lowered_wait_for_states = [w.lower() for w in wait_for_states]
-
+        work_request_id = operation_result.headers['opc-work-request-id']
         try:
-            if ("succeed_on_not_found" in waiter_kwargs) and (waiter_kwargs["succeed_on_not_found"] is False):
-                self.client.base_client.logger.warning("The waiter kwarg succeed_on_not_found was passed as False for the delete composite operation terminate_instance, this would result in the operation to fail if the resource is not found! Please, do not pass this kwarg if this was not intended")
-            else:
-                """
-                If the user does not send in this value, we set it to True by default.
-                We are doing this because during a delete resource scenario and waiting on its state, the service can
-                return a 404 NOT FOUND exception as the resource was deleted and a get on its state would fail
-                """
-                waiter_kwargs["succeed_on_not_found"] = True
             waiter_result = oci.wait_until(
-                self.client,
-                initial_get_result,  # noqa: F821
-                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
                 **waiter_kwargs
             )
-            result_to_return = waiter_result
-
-            return result_to_return
-        except (NameError, TypeError) as e:
-            if not e.args:
-                e.args = ('',)
-            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
-            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+            return waiter_result
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 

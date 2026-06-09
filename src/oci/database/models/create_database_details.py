@@ -107,6 +107,14 @@ class CreateDatabaseDetails(object):
             The value to assign to the storage_size_details property of this CreateDatabaseDetails.
         :type storage_size_details: oci.database.models.DatabaseStorageSizeDetails
 
+        :param managed_software_update_details:
+            The value to assign to the managed_software_update_details property of this CreateDatabaseDetails.
+        :type managed_software_update_details: oci.database.models.ManagedSoftwareUpdateInputDetails
+
+        :param vm_cluster_id:
+            The value to assign to the vm_cluster_id property of this CreateDatabaseDetails.
+        :type vm_cluster_id: str
+
         """
         self.swagger_types = {
             'db_name': 'str',
@@ -127,7 +135,9 @@ class CreateDatabaseDetails(object):
             'sid_prefix': 'str',
             'key_store_id': 'str',
             'encryption_key_location_details': 'EncryptionKeyLocationDetails',
-            'storage_size_details': 'DatabaseStorageSizeDetails'
+            'storage_size_details': 'DatabaseStorageSizeDetails',
+            'managed_software_update_details': 'ManagedSoftwareUpdateInputDetails',
+            'vm_cluster_id': 'str'
         }
         self.attribute_map = {
             'db_name': 'dbName',
@@ -148,7 +158,9 @@ class CreateDatabaseDetails(object):
             'sid_prefix': 'sidPrefix',
             'key_store_id': 'keyStoreId',
             'encryption_key_location_details': 'encryptionKeyLocationDetails',
-            'storage_size_details': 'storageSizeDetails'
+            'storage_size_details': 'storageSizeDetails',
+            'managed_software_update_details': 'managedSoftwareUpdateDetails',
+            'vm_cluster_id': 'vmClusterId'
         }
         self._db_name = None
         self._db_unique_name = None
@@ -169,6 +181,8 @@ class CreateDatabaseDetails(object):
         self._key_store_id = None
         self._encryption_key_location_details = None
         self._storage_size_details = None
+        self._managed_software_update_details = None
+        self._vm_cluster_id = None
 
     @property
     def db_name(self):
@@ -662,6 +676,54 @@ class CreateDatabaseDetails(object):
         :type: oci.database.models.DatabaseStorageSizeDetails
         """
         self._storage_size_details = storage_size_details
+
+    @property
+    def managed_software_update_details(self):
+        """
+        Gets the managed_software_update_details of this CreateDatabaseDetails.
+
+        :return: The managed_software_update_details of this CreateDatabaseDetails.
+        :rtype: oci.database.models.ManagedSoftwareUpdateInputDetails
+        """
+        return self._managed_software_update_details
+
+    @managed_software_update_details.setter
+    def managed_software_update_details(self, managed_software_update_details):
+        """
+        Sets the managed_software_update_details of this CreateDatabaseDetails.
+
+        :param managed_software_update_details: The managed_software_update_details of this CreateDatabaseDetails.
+        :type: oci.database.models.ManagedSoftwareUpdateInputDetails
+        """
+        self._managed_software_update_details = managed_software_update_details
+
+    @property
+    def vm_cluster_id(self):
+        """
+        Gets the vm_cluster_id of this CreateDatabaseDetails.
+        The `OCID`__ of the VM cluster.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vm_cluster_id of this CreateDatabaseDetails.
+        :rtype: str
+        """
+        return self._vm_cluster_id
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, vm_cluster_id):
+        """
+        Sets the vm_cluster_id of this CreateDatabaseDetails.
+        The `OCID`__ of the VM cluster.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param vm_cluster_id: The vm_cluster_id of this CreateDatabaseDetails.
+        :type: str
+        """
+        self._vm_cluster_id = vm_cluster_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

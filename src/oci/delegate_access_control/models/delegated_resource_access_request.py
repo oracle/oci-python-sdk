@@ -31,6 +31,10 @@ class DelegatedResourceAccessRequest(object):
     #: This constant has a value of "CLOUDVMCLUSTER"
     RESOURCE_TYPE_CLOUDVMCLUSTER = "CLOUDVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a DelegatedResourceAccessRequest.
+    #: This constant has a value of "EXADBVMCLUSTER"
+    RESOURCE_TYPE_EXADBVMCLUSTER = "EXADBVMCLUSTER"
+
     #: A constant which can be used with the requester_type property of a DelegatedResourceAccessRequest.
     #: This constant has a value of "OPERATOR"
     REQUESTER_TYPE_OPERATOR = "OPERATOR"
@@ -50,6 +54,10 @@ class DelegatedResourceAccessRequest(object):
     #: A constant which can be used with the provided_service_types property of a DelegatedResourceAccessRequest.
     #: This constant has a value of "ASSISTED_PATCHING"
     PROVIDED_SERVICE_TYPES_ASSISTED_PATCHING = "ASSISTED_PATCHING"
+
+    #: A constant which can be used with the provided_service_types property of a DelegatedResourceAccessRequest.
+    #: This constant has a value of "MANAGED_SOFTWARE_UPDATES"
+    PROVIDED_SERVICE_TYPES_MANAGED_SOFTWARE_UPDATES = "MANAGED_SOFTWARE_UPDATES"
 
     #: A constant which can be used with the severity property of a DelegatedResourceAccessRequest.
     #: This constant has a value of "S1"
@@ -242,7 +250,7 @@ class DelegatedResourceAccessRequest(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this DelegatedResourceAccessRequest.
-            Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -260,9 +268,13 @@ class DelegatedResourceAccessRequest(object):
             The value to assign to the database_name_list property of this DelegatedResourceAccessRequest.
         :type database_name_list: list[str]
 
+        :param database_id_list:
+            The value to assign to the database_id_list property of this DelegatedResourceAccessRequest.
+        :type database_id_list: list[str]
+
         :param provided_service_types:
             The value to assign to the provided_service_types property of this DelegatedResourceAccessRequest.
-            Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type provided_service_types: list[str]
 
@@ -369,6 +381,7 @@ class DelegatedResourceAccessRequest(object):
             'requester_type': 'str',
             'requested_action_names': 'list[str]',
             'database_name_list': 'list[str]',
+            'database_id_list': 'list[str]',
             'provided_service_types': 'list[str]',
             'delegation_subscription_ids': 'list[str]',
             'severity': 'str',
@@ -405,6 +418,7 @@ class DelegatedResourceAccessRequest(object):
             'requester_type': 'requesterType',
             'requested_action_names': 'requestedActionNames',
             'database_name_list': 'databaseNameList',
+            'database_id_list': 'databaseIdList',
             'provided_service_types': 'providedServiceTypes',
             'delegation_subscription_ids': 'delegationSubscriptionIds',
             'severity': 'severity',
@@ -440,6 +454,7 @@ class DelegatedResourceAccessRequest(object):
         self._requester_type = None
         self._requested_action_names = None
         self._database_name_list = None
+        self._database_id_list = None
         self._provided_service_types = None
         self._delegation_subscription_ids = None
         self._severity = None
@@ -688,7 +703,7 @@ class DelegatedResourceAccessRequest(object):
         Gets the resource_type of this DelegatedResourceAccessRequest.
         Resource type for which the associated Delegation Control is applicable to.
 
-        Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -707,7 +722,7 @@ class DelegatedResourceAccessRequest(object):
         :param resource_type: The resource_type of this DelegatedResourceAccessRequest.
         :type: str
         """
-        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER"]
+        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
@@ -770,7 +785,7 @@ class DelegatedResourceAccessRequest(object):
     def database_name_list(self):
         """
         Gets the database_name_list of this DelegatedResourceAccessRequest.
-        List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+        List of Database unique names for which access is requested. This parameter is required when database access in needed.
 
 
         :return: The database_name_list of this DelegatedResourceAccessRequest.
@@ -782,7 +797,7 @@ class DelegatedResourceAccessRequest(object):
     def database_name_list(self, database_name_list):
         """
         Sets the database_name_list of this DelegatedResourceAccessRequest.
-        List of Database unique names for which access is requested. This parameter is required for DLGT_MGMT_SYS_MAINT_ACCESS cage when database access in needed.
+        List of Database unique names for which access is requested. This parameter is required when database access in needed.
 
 
         :param database_name_list: The database_name_list of this DelegatedResourceAccessRequest.
@@ -791,12 +806,36 @@ class DelegatedResourceAccessRequest(object):
         self._database_name_list = database_name_list
 
     @property
+    def database_id_list(self):
+        """
+        Gets the database_id_list of this DelegatedResourceAccessRequest.
+        List of Database ID for which access is requested. This parameter is required when database access is needed.
+
+
+        :return: The database_id_list of this DelegatedResourceAccessRequest.
+        :rtype: list[str]
+        """
+        return self._database_id_list
+
+    @database_id_list.setter
+    def database_id_list(self, database_id_list):
+        """
+        Sets the database_id_list of this DelegatedResourceAccessRequest.
+        List of Database ID for which access is requested. This parameter is required when database access is needed.
+
+
+        :param database_id_list: The database_id_list of this DelegatedResourceAccessRequest.
+        :type: list[str]
+        """
+        self._database_id_list = database_id_list
+
+    @property
     def provided_service_types(self):
         """
         Gets the provided_service_types of this DelegatedResourceAccessRequest.
         List of Service Provider Service Types being provided by the support operator user.
 
-        Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -815,7 +854,7 @@ class DelegatedResourceAccessRequest(object):
         :param provided_service_types: The provided_service_types of this DelegatedResourceAccessRequest.
         :type: list[str]
         """
-        allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING"]
+        allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES"]
         if provided_service_types:
             provided_service_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in provided_service_types]
         self._provided_service_types = provided_service_types

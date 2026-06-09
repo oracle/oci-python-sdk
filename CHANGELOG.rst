@@ -5,6 +5,42 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.178.0 - 2026-06-08
+====================
+
+Added
+-----
+* Support for B200 shapes in dedicated AI clusters in the Generative AI service
+* Support for Oracle Managed Database Software Updates in the Database service
+* Support for scheduling preferences, version series selection, and readiness details in Oracle Managed Database Software Updates in the Database service
+* Support for rescheduling Oracle Managed Database Software Updates in the Database service
+* Support for Oracle-managed and customer-managed database home types in the Database service
+* Support for specifying VM cluster IDs when creating databases in the Database service
+* Support for Oracle Managed Software Updates delegation controls in the Delegate Access Control service
+* Support for Exadata Database VM Clusters in delegation controls in the Delegate Access Control service
+* Support for database IDs in delegated resource access requests in the Delegate Access Control service
+* Support for approval action timestamps and SSH access indicators in the Delegate Access Control service
+* Support for public connectivity add-ons in the OCI Streaming with Apache Kafka service
+* Support for listing, installing, updating, getting, and uninstalling Kafka cluster add-ons in the OCI Streaming with Apache Kafka service
+* Support for SASL and mTLS authentication mechanisms in public connectivity add-ons in the OCI Streaming with Apache Kafka service
+* Support for GPU memory fabric IDs and size details in GPU memory cluster summaries in the Compute service
+* Support for filtering GPU memory clusters by GPU memory fabric in the Compute service
+* Support for associated GPU memory cluster IDs in GPU memory fabric resources in the Compute service
+* Support for partner-provided OS licenses when launching and updating instances in the Compute service
+* Support for work request IDs and waiters when attaching volumes, detaching volumes, and terminating instances in the Compute service
+* Support for single-stack IPv6 in the Virtual Cloud Network service
+* Support for hostnames on IPv6 addresses during create, update, and bulk operations in the Virtual Cloud Network service
+* Support for IPv6 addresses on DB systems, read endpoints, read replicas, and snapshots in the MySQL HeatWave service
+* Support for IPv6 selection in replication channels on dual-stack DB systems in the MySQL HeatWave service
+* Support for X.509 identity propagation trusts and CA certificate chains in the Identity Domains service
+* Support for resource subject type, impersonating resources, claim validations, and claim propagation in identity propagation trusts in the Identity Domains service
+
+Breaking
+--------
+* Method `detach_volume_and_wait_for_state` was renamed to `detach_volume_and_wait_for_work_request` in the Compute service
+* Method `terminate_instance_and_wait_for_state` was renamed to `terminate_instance_and_wait_for_work_request` in the Compute service
+
+====================
 2.177.0 - 2026-06-02
 ====================
 

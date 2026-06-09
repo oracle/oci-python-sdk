@@ -27,6 +27,10 @@ class ServiceProvider(object):
     #: This constant has a value of "ASSISTED_PATCHING"
     SERVICE_TYPES_ASSISTED_PATCHING = "ASSISTED_PATCHING"
 
+    #: A constant which can be used with the service_types property of a ServiceProvider.
+    #: This constant has a value of "MANAGED_SOFTWARE_UPDATES"
+    SERVICE_TYPES_MANAGED_SOFTWARE_UPDATES = "MANAGED_SOFTWARE_UPDATES"
+
     #: A constant which can be used with the supported_resource_types property of a ServiceProvider.
     #: This constant has a value of "VMCLUSTER"
     SUPPORTED_RESOURCE_TYPES_VMCLUSTER = "VMCLUSTER"
@@ -34,6 +38,10 @@ class ServiceProvider(object):
     #: A constant which can be used with the supported_resource_types property of a ServiceProvider.
     #: This constant has a value of "CLOUDVMCLUSTER"
     SUPPORTED_RESOURCE_TYPES_CLOUDVMCLUSTER = "CLOUDVMCLUSTER"
+
+    #: A constant which can be used with the supported_resource_types property of a ServiceProvider.
+    #: This constant has a value of "EXADBVMCLUSTER"
+    SUPPORTED_RESOURCE_TYPES_EXADBVMCLUSTER = "EXADBVMCLUSTER"
 
     #: A constant which can be used with the lifecycle_state property of a ServiceProvider.
     #: This constant has a value of "CREATING"
@@ -88,13 +96,13 @@ class ServiceProvider(object):
 
         :param service_types:
             The value to assign to the service_types property of this ServiceProvider.
-            Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type service_types: list[str]
 
         :param supported_resource_types:
             The value to assign to the supported_resource_types property of this ServiceProvider.
-            Allowed values for items in this list are: "VMCLUSTER", "CLOUDVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type supported_resource_types: list[str]
 
@@ -204,7 +212,7 @@ class ServiceProvider(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this ServiceProvider.
-        The OCID of the compartment that contains the Delegation Control.
+        The OCID of the compartment that contains the Service Provider.
 
 
         :return: The compartment_id of this ServiceProvider.
@@ -216,7 +224,7 @@ class ServiceProvider(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ServiceProvider.
-        The OCID of the compartment that contains the Delegation Control.
+        The OCID of the compartment that contains the Service Provider.
 
 
         :param compartment_id: The compartment_id of this ServiceProvider.
@@ -308,7 +316,7 @@ class ServiceProvider(object):
         **[Required]** Gets the service_types of this ServiceProvider.
         Types of services offered by this provider.
 
-        Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -327,7 +335,7 @@ class ServiceProvider(object):
         :param service_types: The service_types of this ServiceProvider.
         :type: list[str]
         """
-        allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING"]
+        allowed_values = ["TROUBLESHOOTING", "ASSISTED_PATCHING", "MANAGED_SOFTWARE_UPDATES"]
         if service_types:
             service_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in service_types]
         self._service_types = service_types
@@ -338,7 +346,7 @@ class ServiceProvider(object):
         **[Required]** Gets the supported_resource_types of this ServiceProvider.
         Resource types for which this provider will provide service. Default to all if not specified.
 
-        Allowed values for items in this list are: "VMCLUSTER", "CLOUDVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -357,7 +365,7 @@ class ServiceProvider(object):
         :param supported_resource_types: The supported_resource_types of this ServiceProvider.
         :type: list[str]
         """
-        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER"]
+        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"]
         if supported_resource_types:
             supported_resource_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_resource_types]
         self._supported_resource_types = supported_resource_types

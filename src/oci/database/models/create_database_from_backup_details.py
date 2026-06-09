@@ -56,6 +56,14 @@ class CreateDatabaseFromBackupDetails(object):
             The value to assign to the storage_size_details property of this CreateDatabaseFromBackupDetails.
         :type storage_size_details: oci.database.models.DatabaseStorageSizeDetails
 
+        :param managed_software_update_details:
+            The value to assign to the managed_software_update_details property of this CreateDatabaseFromBackupDetails.
+        :type managed_software_update_details: oci.database.models.ManagedSoftwareUpdateInputDetails
+
+        :param vm_cluster_id:
+            The value to assign to the vm_cluster_id property of this CreateDatabaseFromBackupDetails.
+        :type vm_cluster_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDatabaseFromBackupDetails.
         :type freeform_tags: dict(str, str)
@@ -75,6 +83,8 @@ class CreateDatabaseFromBackupDetails(object):
             'sid_prefix': 'str',
             'pluggable_databases': 'list[str]',
             'storage_size_details': 'DatabaseStorageSizeDetails',
+            'managed_software_update_details': 'ManagedSoftwareUpdateInputDetails',
+            'vm_cluster_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -88,6 +98,8 @@ class CreateDatabaseFromBackupDetails(object):
             'sid_prefix': 'sidPrefix',
             'pluggable_databases': 'pluggableDatabases',
             'storage_size_details': 'storageSizeDetails',
+            'managed_software_update_details': 'managedSoftwareUpdateDetails',
+            'vm_cluster_id': 'vmClusterId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -100,6 +112,8 @@ class CreateDatabaseFromBackupDetails(object):
         self._sid_prefix = None
         self._pluggable_databases = None
         self._storage_size_details = None
+        self._managed_software_update_details = None
+        self._vm_cluster_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -314,6 +328,54 @@ class CreateDatabaseFromBackupDetails(object):
         :type: oci.database.models.DatabaseStorageSizeDetails
         """
         self._storage_size_details = storage_size_details
+
+    @property
+    def managed_software_update_details(self):
+        """
+        Gets the managed_software_update_details of this CreateDatabaseFromBackupDetails.
+
+        :return: The managed_software_update_details of this CreateDatabaseFromBackupDetails.
+        :rtype: oci.database.models.ManagedSoftwareUpdateInputDetails
+        """
+        return self._managed_software_update_details
+
+    @managed_software_update_details.setter
+    def managed_software_update_details(self, managed_software_update_details):
+        """
+        Sets the managed_software_update_details of this CreateDatabaseFromBackupDetails.
+
+        :param managed_software_update_details: The managed_software_update_details of this CreateDatabaseFromBackupDetails.
+        :type: oci.database.models.ManagedSoftwareUpdateInputDetails
+        """
+        self._managed_software_update_details = managed_software_update_details
+
+    @property
+    def vm_cluster_id(self):
+        """
+        Gets the vm_cluster_id of this CreateDatabaseFromBackupDetails.
+        The `OCID`__ of the VM cluster.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vm_cluster_id of this CreateDatabaseFromBackupDetails.
+        :rtype: str
+        """
+        return self._vm_cluster_id
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, vm_cluster_id):
+        """
+        Sets the vm_cluster_id of this CreateDatabaseFromBackupDetails.
+        The `OCID`__ of the VM cluster.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param vm_cluster_id: The vm_cluster_id of this CreateDatabaseFromBackupDetails.
+        :type: str
+        """
+        self._vm_cluster_id = vm_cluster_id
 
     @property
     def freeform_tags(self):

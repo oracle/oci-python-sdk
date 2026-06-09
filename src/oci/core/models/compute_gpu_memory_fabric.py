@@ -92,6 +92,10 @@ class ComputeGpuMemoryFabric(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type fabric_health: str
 
+        :param compute_gpu_memory_clusters:
+            The value to assign to the compute_gpu_memory_clusters property of this ComputeGpuMemoryFabric.
+        :type compute_gpu_memory_clusters: list[str]
+
         :param additional_data:
             The value to assign to the additional_data property of this ComputeGpuMemoryFabric.
         :type additional_data: dict(str, object)
@@ -167,6 +171,7 @@ class ComputeGpuMemoryFabric(object):
             'compute_local_block_id': 'str',
             'lifecycle_state': 'str',
             'fabric_health': 'str',
+            'compute_gpu_memory_clusters': 'list[str]',
             'additional_data': 'dict(str, object)',
             'healthy_host_count': 'int',
             'available_host_count': 'int',
@@ -192,6 +197,7 @@ class ComputeGpuMemoryFabric(object):
             'compute_local_block_id': 'computeLocalBlockId',
             'lifecycle_state': 'lifecycleState',
             'fabric_health': 'fabricHealth',
+            'compute_gpu_memory_clusters': 'computeGpuMemoryClusters',
             'additional_data': 'additionalData',
             'healthy_host_count': 'healthyHostCount',
             'available_host_count': 'availableHostCount',
@@ -216,6 +222,7 @@ class ComputeGpuMemoryFabric(object):
         self._compute_local_block_id = None
         self._lifecycle_state = None
         self._fabric_health = None
+        self._compute_gpu_memory_clusters = None
         self._additional_data = None
         self._healthy_host_count = None
         self._available_host_count = None
@@ -434,6 +441,30 @@ class ComputeGpuMemoryFabric(object):
         if not value_allowed_none_or_none_sentinel(fabric_health, allowed_values):
             fabric_health = 'UNKNOWN_ENUM_VALUE'
         self._fabric_health = fabric_health
+
+    @property
+    def compute_gpu_memory_clusters(self):
+        """
+        Gets the compute_gpu_memory_clusters of this ComputeGpuMemoryFabric.
+        List of GPU memory clusters within this GPU memory fabric.
+
+
+        :return: The compute_gpu_memory_clusters of this ComputeGpuMemoryFabric.
+        :rtype: list[str]
+        """
+        return self._compute_gpu_memory_clusters
+
+    @compute_gpu_memory_clusters.setter
+    def compute_gpu_memory_clusters(self, compute_gpu_memory_clusters):
+        """
+        Sets the compute_gpu_memory_clusters of this ComputeGpuMemoryFabric.
+        List of GPU memory clusters within this GPU memory fabric.
+
+
+        :param compute_gpu_memory_clusters: The compute_gpu_memory_clusters of this ComputeGpuMemoryFabric.
+        :type: list[str]
+        """
+        self._compute_gpu_memory_clusters = compute_gpu_memory_clusters
 
     @property
     def additional_data(self):

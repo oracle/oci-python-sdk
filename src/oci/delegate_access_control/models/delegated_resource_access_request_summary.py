@@ -23,6 +23,10 @@ class DelegatedResourceAccessRequestSummary(object):
     #: This constant has a value of "CLOUDVMCLUSTER"
     RESOURCE_TYPE_CLOUDVMCLUSTER = "CLOUDVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a DelegatedResourceAccessRequestSummary.
+    #: This constant has a value of "EXADBVMCLUSTER"
+    RESOURCE_TYPE_EXADBVMCLUSTER = "EXADBVMCLUSTER"
+
     #: A constant which can be used with the requester_type property of a DelegatedResourceAccessRequestSummary.
     #: This constant has a value of "OPERATOR"
     REQUESTER_TYPE_OPERATOR = "OPERATOR"
@@ -182,7 +186,7 @@ class DelegatedResourceAccessRequestSummary(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this DelegatedResourceAccessRequestSummary.
-            Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -532,7 +536,7 @@ class DelegatedResourceAccessRequestSummary(object):
         Gets the resource_type of this DelegatedResourceAccessRequestSummary.
         Resource type for which the associated Delegation Control is applicable to.
 
-        Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -551,7 +555,7 @@ class DelegatedResourceAccessRequestSummary(object):
         :param resource_type: The resource_type of this DelegatedResourceAccessRequestSummary.
         :type: str
         """
-        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER"]
+        allowed_values = ["VMCLUSTER", "CLOUDVMCLUSTER", "EXADBVMCLUSTER"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
