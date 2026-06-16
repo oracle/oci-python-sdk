@@ -133,6 +133,10 @@ class CreateDesktopPoolDetails(object):
             The value to assign to the private_access_details property of this CreateDesktopPoolDetails.
         :type private_access_details: oci.desktops.models.CreateDesktopPoolPrivateAccessDetails
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateDesktopPoolDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param boot_volume_size_in_gbs:
             The value to assign to the boot_volume_size_in_gbs property of this CreateDesktopPoolDetails.
         :type boot_volume_size_in_gbs: int
@@ -164,6 +168,7 @@ class CreateDesktopPoolDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'nsg_ids': 'list[str]',
             'private_access_details': 'CreateDesktopPoolPrivateAccessDetails',
+            'security_attributes': 'dict(str, dict(str, object))',
             'boot_volume_size_in_gbs': 'int'
         }
         self.attribute_map = {
@@ -192,6 +197,7 @@ class CreateDesktopPoolDetails(object):
             'defined_tags': 'definedTags',
             'nsg_ids': 'nsgIds',
             'private_access_details': 'privateAccessDetails',
+            'security_attributes': 'securityAttributes',
             'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs'
         }
         self._compartment_id = None
@@ -219,6 +225,7 @@ class CreateDesktopPoolDetails(object):
         self._defined_tags = None
         self._nsg_ids = None
         self._private_access_details = None
+        self._security_attributes = None
         self._boot_volume_size_in_gbs = None
 
     @property
@@ -817,6 +824,44 @@ class CreateDesktopPoolDetails(object):
         :type: oci.desktops.models.CreateDesktopPoolPrivateAccessDetails
         """
         self._private_access_details = private_access_details
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateDesktopPoolDetails.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this CreateDesktopPoolDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateDesktopPoolDetails.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this CreateDesktopPoolDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def boot_volume_size_in_gbs(self):

@@ -159,6 +159,7 @@ API Reference
 * :doc:`Limits <limits/client/oci.limits.LimitsClient>`
 * :doc:`Limits Increase <limits_increase/client/oci.limits_increase.LimitsIncreaseClient>`
 * :doc:`Link <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkClient>`
+* :doc:`Link Features <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkFeaturesClient>`
 * :doc:`List Enrichment Jobs <generative_ai_data/client/oci.generative_ai_data.ListEnrichmentJobsClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Lockbox <lockbox/client/oci.lockbox.LockboxClient>`

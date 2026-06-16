@@ -84,6 +84,14 @@ class CreateDbSystemDetails(object):
             The value to assign to the source property of this CreateDbSystemDetails.
         :type source: oci.psql.models.SourceDetails
 
+        :param replication_config:
+            The value to assign to the replication_config property of this CreateDbSystemDetails.
+        :type replication_config: oci.psql.models.CreateReplicationConfigDetails
+
+        :param odsp_insight_details:
+            The value to assign to the odsp_insight_details property of this CreateDbSystemDetails.
+        :type odsp_insight_details: oci.psql.models.OdspInsightDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDbSystemDetails.
         :type freeform_tags: dict(str, str)
@@ -110,6 +118,8 @@ class CreateDbSystemDetails(object):
             'network_details': 'NetworkDetails',
             'management_policy': 'ManagementPolicyDetails',
             'source': 'SourceDetails',
+            'replication_config': 'CreateReplicationConfigDetails',
+            'odsp_insight_details': 'OdspInsightDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -130,6 +140,8 @@ class CreateDbSystemDetails(object):
             'network_details': 'networkDetails',
             'management_policy': 'managementPolicy',
             'source': 'source',
+            'replication_config': 'replicationConfig',
+            'odsp_insight_details': 'odspInsightDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -149,6 +161,8 @@ class CreateDbSystemDetails(object):
         self._network_details = None
         self._management_policy = None
         self._source = None
+        self._replication_config = None
+        self._odsp_insight_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -451,7 +465,7 @@ class CreateDbSystemDetails(object):
     @property
     def credentials(self):
         """
-        **[Required]** Gets the credentials of this CreateDbSystemDetails.
+        Gets the credentials of this CreateDbSystemDetails.
 
         :return: The credentials of this CreateDbSystemDetails.
         :rtype: oci.psql.models.Credentials
@@ -527,6 +541,46 @@ class CreateDbSystemDetails(object):
         :type: oci.psql.models.SourceDetails
         """
         self._source = source
+
+    @property
+    def replication_config(self):
+        """
+        Gets the replication_config of this CreateDbSystemDetails.
+
+        :return: The replication_config of this CreateDbSystemDetails.
+        :rtype: oci.psql.models.CreateReplicationConfigDetails
+        """
+        return self._replication_config
+
+    @replication_config.setter
+    def replication_config(self, replication_config):
+        """
+        Sets the replication_config of this CreateDbSystemDetails.
+
+        :param replication_config: The replication_config of this CreateDbSystemDetails.
+        :type: oci.psql.models.CreateReplicationConfigDetails
+        """
+        self._replication_config = replication_config
+
+    @property
+    def odsp_insight_details(self):
+        """
+        Gets the odsp_insight_details of this CreateDbSystemDetails.
+
+        :return: The odsp_insight_details of this CreateDbSystemDetails.
+        :rtype: oci.psql.models.OdspInsightDetails
+        """
+        return self._odsp_insight_details
+
+    @odsp_insight_details.setter
+    def odsp_insight_details(self, odsp_insight_details):
+        """
+        Sets the odsp_insight_details of this CreateDbSystemDetails.
+
+        :param odsp_insight_details: The odsp_insight_details of this CreateDbSystemDetails.
+        :type: oci.psql.models.OdspInsightDetails
+        """
+        self._odsp_insight_details = odsp_insight_details
 
     @property
     def freeform_tags(self):

@@ -51,6 +51,22 @@ class DbSystem(object):
     #: This constant has a value of "OCI_OPTIMIZED_STORAGE"
     SYSTEM_TYPE_OCI_OPTIMIZED_STORAGE = "OCI_OPTIMIZED_STORAGE"
 
+    #: A constant which can be used with the system_role property of a DbSystem.
+    #: This constant has a value of "STANDALONE_DB_SYSTEM"
+    SYSTEM_ROLE_STANDALONE_DB_SYSTEM = "STANDALONE_DB_SYSTEM"
+
+    #: A constant which can be used with the system_role property of a DbSystem.
+    #: This constant has a value of "PRIMARY_DB_SYSTEM"
+    SYSTEM_ROLE_PRIMARY_DB_SYSTEM = "PRIMARY_DB_SYSTEM"
+
+    #: A constant which can be used with the system_role property of a DbSystem.
+    #: This constant has a value of "WARM_STANDBY_DB_SYSTEM"
+    SYSTEM_ROLE_WARM_STANDBY_DB_SYSTEM = "WARM_STANDBY_DB_SYSTEM"
+
+    #: A constant which can be used with the system_role property of a DbSystem.
+    #: This constant has a value of "PILOT_LIGHT_DB_SYSTEM"
+    SYSTEM_ROLE_PILOT_LIGHT_DB_SYSTEM = "PILOT_LIGHT_DB_SYSTEM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystem object with values from keyword arguments.
@@ -112,6 +128,16 @@ class DbSystem(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type system_type: str
 
+        :param system_role:
+            The value to assign to the system_role property of this DbSystem.
+            Allowed values for this property are: "STANDALONE_DB_SYSTEM", "PRIMARY_DB_SYSTEM", "WARM_STANDBY_DB_SYSTEM", "PILOT_LIGHT_DB_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type system_role: str
+
+        :param replication_config:
+            The value to assign to the replication_config property of this DbSystem.
+        :type replication_config: oci.psql.models.ReplicationConfig
+
         :param db_version:
             The value to assign to the db_version property of this DbSystem.
         :type db_version: str
@@ -156,6 +182,14 @@ class DbSystem(object):
             The value to assign to the source property of this DbSystem.
         :type source: oci.psql.models.SourceDetails
 
+        :param kerberos_auth_details:
+            The value to assign to the kerberos_auth_details property of this DbSystem.
+        :type kerberos_auth_details: oci.psql.models.KerberosAuthDetails
+
+        :param odsp_insight_details:
+            The value to assign to the odsp_insight_details property of this DbSystem.
+        :type odsp_insight_details: oci.psql.models.OdspInsightDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -171,6 +205,8 @@ class DbSystem(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'system_type': 'str',
+            'system_role': 'str',
+            'replication_config': 'ReplicationConfig',
             'db_version': 'str',
             'config_id': 'str',
             'shape': 'str',
@@ -181,7 +217,9 @@ class DbSystem(object):
             'storage_details': 'StorageDetails',
             'network_details': 'NetworkDetails',
             'management_policy': 'ManagementPolicy',
-            'source': 'SourceDetails'
+            'source': 'SourceDetails',
+            'kerberos_auth_details': 'KerberosAuthDetails',
+            'odsp_insight_details': 'OdspInsightDetails'
         }
         self.attribute_map = {
             'id': 'id',
@@ -197,6 +235,8 @@ class DbSystem(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'system_type': 'systemType',
+            'system_role': 'systemRole',
+            'replication_config': 'replicationConfig',
             'db_version': 'dbVersion',
             'config_id': 'configId',
             'shape': 'shape',
@@ -207,7 +247,9 @@ class DbSystem(object):
             'storage_details': 'storageDetails',
             'network_details': 'networkDetails',
             'management_policy': 'managementPolicy',
-            'source': 'source'
+            'source': 'source',
+            'kerberos_auth_details': 'kerberosAuthDetails',
+            'odsp_insight_details': 'odspInsightDetails'
         }
         self._id = None
         self._display_name = None
@@ -222,6 +264,8 @@ class DbSystem(object):
         self._defined_tags = None
         self._system_tags = None
         self._system_type = None
+        self._system_role = None
+        self._replication_config = None
         self._db_version = None
         self._config_id = None
         self._shape = None
@@ -233,6 +277,8 @@ class DbSystem(object):
         self._network_details = None
         self._management_policy = None
         self._source = None
+        self._kerberos_auth_details = None
+        self._odsp_insight_details = None
 
     @property
     def id(self):
@@ -589,6 +635,56 @@ class DbSystem(object):
         self._system_type = system_type
 
     @property
+    def system_role(self):
+        """
+        **[Required]** Gets the system_role of this DbSystem.
+        Type of the database system.
+
+        Allowed values for this property are: "STANDALONE_DB_SYSTEM", "PRIMARY_DB_SYSTEM", "WARM_STANDBY_DB_SYSTEM", "PILOT_LIGHT_DB_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The system_role of this DbSystem.
+        :rtype: str
+        """
+        return self._system_role
+
+    @system_role.setter
+    def system_role(self, system_role):
+        """
+        Sets the system_role of this DbSystem.
+        Type of the database system.
+
+
+        :param system_role: The system_role of this DbSystem.
+        :type: str
+        """
+        allowed_values = ["STANDALONE_DB_SYSTEM", "PRIMARY_DB_SYSTEM", "WARM_STANDBY_DB_SYSTEM", "PILOT_LIGHT_DB_SYSTEM"]
+        if not value_allowed_none_or_none_sentinel(system_role, allowed_values):
+            system_role = 'UNKNOWN_ENUM_VALUE'
+        self._system_role = system_role
+
+    @property
+    def replication_config(self):
+        """
+        Gets the replication_config of this DbSystem.
+
+        :return: The replication_config of this DbSystem.
+        :rtype: oci.psql.models.ReplicationConfig
+        """
+        return self._replication_config
+
+    @replication_config.setter
+    def replication_config(self, replication_config):
+        """
+        Sets the replication_config of this DbSystem.
+
+        :param replication_config: The replication_config of this DbSystem.
+        :type: oci.psql.models.ReplicationConfig
+        """
+        self._replication_config = replication_config
+
+    @property
     def db_version(self):
         """
         **[Required]** Gets the db_version of this DbSystem.
@@ -841,6 +937,46 @@ class DbSystem(object):
         :type: oci.psql.models.SourceDetails
         """
         self._source = source
+
+    @property
+    def kerberos_auth_details(self):
+        """
+        Gets the kerberos_auth_details of this DbSystem.
+
+        :return: The kerberos_auth_details of this DbSystem.
+        :rtype: oci.psql.models.KerberosAuthDetails
+        """
+        return self._kerberos_auth_details
+
+    @kerberos_auth_details.setter
+    def kerberos_auth_details(self, kerberos_auth_details):
+        """
+        Sets the kerberos_auth_details of this DbSystem.
+
+        :param kerberos_auth_details: The kerberos_auth_details of this DbSystem.
+        :type: oci.psql.models.KerberosAuthDetails
+        """
+        self._kerberos_auth_details = kerberos_auth_details
+
+    @property
+    def odsp_insight_details(self):
+        """
+        Gets the odsp_insight_details of this DbSystem.
+
+        :return: The odsp_insight_details of this DbSystem.
+        :rtype: oci.psql.models.OdspInsightDetails
+        """
+        return self._odsp_insight_details
+
+    @odsp_insight_details.setter
+    def odsp_insight_details(self, odsp_insight_details):
+        """
+        Sets the odsp_insight_details of this DbSystem.
+
+        :param odsp_insight_details: The odsp_insight_details of this DbSystem.
+        :type: oci.psql.models.OdspInsightDetails
+        """
+        self._odsp_insight_details = odsp_insight_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -76,6 +76,10 @@ class MigrationSummary(object):
             The value to assign to the system_tags property of this MigrationSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this MigrationSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -91,7 +95,8 @@ class MigrationSummary(object):
             'migration_config': 'MigrationConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -107,7 +112,8 @@ class MigrationSummary(object):
             'migration_config': 'migrationConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'security_attributes': 'securityAttributes'
         }
         self._id = None
         self._display_name = None
@@ -123,6 +129,7 @@ class MigrationSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._security_attributes = None
 
     @property
     def id(self):
@@ -461,6 +468,40 @@ class MigrationSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this MigrationSummary.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this MigrationSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this MigrationSummary.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this MigrationSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

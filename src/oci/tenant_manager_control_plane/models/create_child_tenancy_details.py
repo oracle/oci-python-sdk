@@ -57,6 +57,10 @@ class CreateChildTenancyDetails(object):
             The value to assign to the subscription_id property of this CreateChildTenancyDetails.
         :type subscription_id: str
 
+        :param features:
+            The value to assign to the features property of this CreateChildTenancyDetails.
+        :type features: list[str]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -65,7 +69,8 @@ class CreateChildTenancyDetails(object):
             'admin_email': 'str',
             'policy_name': 'str',
             'governance_status': 'str',
-            'subscription_id': 'str'
+            'subscription_id': 'str',
+            'features': 'list[str]'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -74,7 +79,8 @@ class CreateChildTenancyDetails(object):
             'admin_email': 'adminEmail',
             'policy_name': 'policyName',
             'governance_status': 'governanceStatus',
-            'subscription_id': 'subscriptionId'
+            'subscription_id': 'subscriptionId',
+            'features': 'features'
         }
         self._compartment_id = None
         self._tenancy_name = None
@@ -83,6 +89,7 @@ class CreateChildTenancyDetails(object):
         self._policy_name = None
         self._governance_status = None
         self._subscription_id = None
+        self._features = None
 
     @property
     def compartment_id(self):
@@ -258,6 +265,30 @@ class CreateChildTenancyDetails(object):
         :type: str
         """
         self._subscription_id = subscription_id
+
+    @property
+    def features(self):
+        """
+        Gets the features of this CreateChildTenancyDetails.
+        List of features that the child and parent tenancies will have links for. Link with feature CORE will always be created.
+
+
+        :return: The features of this CreateChildTenancyDetails.
+        :rtype: list[str]
+        """
+        return self._features
+
+    @features.setter
+    def features(self, features):
+        """
+        Sets the features of this CreateChildTenancyDetails.
+        List of features that the child and parent tenancies will have links for. Link with feature CORE will always be created.
+
+
+        :param features: The features of this CreateChildTenancyDetails.
+        :type: list[str]
+        """
+        self._features = features
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -32,6 +32,10 @@ class NodePoolNodeConfigDetails(object):
             The value to assign to the kms_key_id property of this NodePoolNodeConfigDetails.
         :type kms_key_id: str
 
+        :param compute_cluster_id:
+            The value to assign to the compute_cluster_id property of this NodePoolNodeConfigDetails.
+        :type compute_cluster_id: str
+
         :param is_pv_encryption_in_transit_enabled:
             The value to assign to the is_pv_encryption_in_transit_enabled property of this NodePoolNodeConfigDetails.
         :type is_pv_encryption_in_transit_enabled: bool
@@ -57,6 +61,7 @@ class NodePoolNodeConfigDetails(object):
             'size': 'int',
             'nsg_ids': 'list[str]',
             'kms_key_id': 'str',
+            'compute_cluster_id': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -67,6 +72,7 @@ class NodePoolNodeConfigDetails(object):
             'size': 'size',
             'nsg_ids': 'nsgIds',
             'kms_key_id': 'kmsKeyId',
+            'compute_cluster_id': 'computeClusterId',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -76,6 +82,7 @@ class NodePoolNodeConfigDetails(object):
         self._size = None
         self._nsg_ids = None
         self._kms_key_id = None
+        self._compute_cluster_id = None
         self._is_pv_encryption_in_transit_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -153,6 +160,30 @@ class NodePoolNodeConfigDetails(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def compute_cluster_id(self):
+        """
+        Gets the compute_cluster_id of this NodePoolNodeConfigDetails.
+        The OCID of the Compute Cluster to be associated with the worker node instance.
+
+
+        :return: The compute_cluster_id of this NodePoolNodeConfigDetails.
+        :rtype: str
+        """
+        return self._compute_cluster_id
+
+    @compute_cluster_id.setter
+    def compute_cluster_id(self, compute_cluster_id):
+        """
+        Sets the compute_cluster_id of this NodePoolNodeConfigDetails.
+        The OCID of the Compute Cluster to be associated with the worker node instance.
+
+
+        :param compute_cluster_id: The compute_cluster_id of this NodePoolNodeConfigDetails.
+        :type: str
+        """
+        self._compute_cluster_id = compute_cluster_id
 
     @property
     def is_pv_encryption_in_transit_enabled(self):

@@ -40,6 +40,10 @@ class CreateSenderInvitationDetails(object):
             The value to assign to the subjects property of this CreateSenderInvitationDetails.
         :type subjects: list[oci.tenant_manager_control_plane.models.InvitationSubject]
 
+        :param features:
+            The value to assign to the features property of this CreateSenderInvitationDetails.
+        :type features: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSenderInvitationDetails.
         :type freeform_tags: dict(str, str)
@@ -55,6 +59,7 @@ class CreateSenderInvitationDetails(object):
             'recipient_email_address': 'str',
             'display_name': 'str',
             'subjects': 'list[InvitationSubject]',
+            'features': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -64,6 +69,7 @@ class CreateSenderInvitationDetails(object):
             'recipient_email_address': 'recipientEmailAddress',
             'display_name': 'displayName',
             'subjects': 'subjects',
+            'features': 'features',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -72,6 +78,7 @@ class CreateSenderInvitationDetails(object):
         self._recipient_email_address = None
         self._display_name = None
         self._subjects = None
+        self._features = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -194,6 +201,30 @@ class CreateSenderInvitationDetails(object):
         :type: list[oci.tenant_manager_control_plane.models.InvitationSubject]
         """
         self._subjects = subjects
+
+    @property
+    def features(self):
+        """
+        Gets the features of this CreateSenderInvitationDetails.
+        List of features that the invitation is being sent for. Each feature would create one link, of that type.
+
+
+        :return: The features of this CreateSenderInvitationDetails.
+        :rtype: list[str]
+        """
+        return self._features
+
+    @features.setter
+    def features(self, features):
+        """
+        Sets the features of this CreateSenderInvitationDetails.
+        List of features that the invitation is being sent for. Each feature would create one link, of that type.
+
+
+        :param features: The features of this CreateSenderInvitationDetails.
+        :type: list[str]
+        """
+        self._features = features
 
     @property
     def freeform_tags(self):

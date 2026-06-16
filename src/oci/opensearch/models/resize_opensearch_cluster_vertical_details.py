@@ -78,6 +78,18 @@ class ResizeOpensearchClusterVerticalDetails(object):
             The value to assign to the search_node_storage_gb property of this ResizeOpensearchClusterVerticalDetails.
         :type search_node_storage_gb: int
 
+        :param coordinator_node_host_shape:
+            The value to assign to the coordinator_node_host_shape property of this ResizeOpensearchClusterVerticalDetails.
+        :type coordinator_node_host_shape: str
+
+        :param coordinator_node_host_ocpu_count:
+            The value to assign to the coordinator_node_host_ocpu_count property of this ResizeOpensearchClusterVerticalDetails.
+        :type coordinator_node_host_ocpu_count: int
+
+        :param coordinator_node_host_memory_gb:
+            The value to assign to the coordinator_node_host_memory_gb property of this ResizeOpensearchClusterVerticalDetails.
+        :type coordinator_node_host_memory_gb: int
+
         :param ml_node_host_shape:
             The value to assign to the ml_node_host_shape property of this ResizeOpensearchClusterVerticalDetails.
         :type ml_node_host_shape: str
@@ -118,6 +130,9 @@ class ResizeOpensearchClusterVerticalDetails(object):
             'search_node_host_ocpu_count': 'int',
             'search_node_host_memory_gb': 'int',
             'search_node_storage_gb': 'int',
+            'coordinator_node_host_shape': 'str',
+            'coordinator_node_host_ocpu_count': 'int',
+            'coordinator_node_host_memory_gb': 'int',
             'ml_node_host_shape': 'str',
             'ml_node_host_ocpu_count': 'int',
             'ml_node_host_memory_gb': 'int',
@@ -140,6 +155,9 @@ class ResizeOpensearchClusterVerticalDetails(object):
             'search_node_host_ocpu_count': 'searchNodeHostOcpuCount',
             'search_node_host_memory_gb': 'searchNodeHostMemoryGB',
             'search_node_storage_gb': 'searchNodeStorageGB',
+            'coordinator_node_host_shape': 'coordinatorNodeHostShape',
+            'coordinator_node_host_ocpu_count': 'coordinatorNodeHostOcpuCount',
+            'coordinator_node_host_memory_gb': 'coordinatorNodeHostMemoryGB',
             'ml_node_host_shape': 'mlNodeHostShape',
             'ml_node_host_ocpu_count': 'mlNodeHostOcpuCount',
             'ml_node_host_memory_gb': 'mlNodeHostMemoryGB',
@@ -161,6 +179,9 @@ class ResizeOpensearchClusterVerticalDetails(object):
         self._search_node_host_ocpu_count = None
         self._search_node_host_memory_gb = None
         self._search_node_storage_gb = None
+        self._coordinator_node_host_shape = None
+        self._coordinator_node_host_ocpu_count = None
+        self._coordinator_node_host_memory_gb = None
         self._ml_node_host_shape = None
         self._ml_node_host_ocpu_count = None
         self._ml_node_host_memory_gb = None
@@ -503,6 +524,78 @@ class ResizeOpensearchClusterVerticalDetails(object):
         :type: int
         """
         self._search_node_storage_gb = search_node_storage_gb
+
+    @property
+    def coordinator_node_host_shape(self):
+        """
+        Gets the coordinator_node_host_shape of this ResizeOpensearchClusterVerticalDetails.
+        The node shape for the cluster's coordinator nodes.
+
+
+        :return: The coordinator_node_host_shape of this ResizeOpensearchClusterVerticalDetails.
+        :rtype: str
+        """
+        return self._coordinator_node_host_shape
+
+    @coordinator_node_host_shape.setter
+    def coordinator_node_host_shape(self, coordinator_node_host_shape):
+        """
+        Sets the coordinator_node_host_shape of this ResizeOpensearchClusterVerticalDetails.
+        The node shape for the cluster's coordinator nodes.
+
+
+        :param coordinator_node_host_shape: The coordinator_node_host_shape of this ResizeOpensearchClusterVerticalDetails.
+        :type: str
+        """
+        self._coordinator_node_host_shape = coordinator_node_host_shape
+
+    @property
+    def coordinator_node_host_ocpu_count(self):
+        """
+        Gets the coordinator_node_host_ocpu_count of this ResizeOpensearchClusterVerticalDetails.
+        The number of OCPUs configured for the cluster's coordinator nodes.
+
+
+        :return: The coordinator_node_host_ocpu_count of this ResizeOpensearchClusterVerticalDetails.
+        :rtype: int
+        """
+        return self._coordinator_node_host_ocpu_count
+
+    @coordinator_node_host_ocpu_count.setter
+    def coordinator_node_host_ocpu_count(self, coordinator_node_host_ocpu_count):
+        """
+        Sets the coordinator_node_host_ocpu_count of this ResizeOpensearchClusterVerticalDetails.
+        The number of OCPUs configured for the cluster's coordinator nodes.
+
+
+        :param coordinator_node_host_ocpu_count: The coordinator_node_host_ocpu_count of this ResizeOpensearchClusterVerticalDetails.
+        :type: int
+        """
+        self._coordinator_node_host_ocpu_count = coordinator_node_host_ocpu_count
+
+    @property
+    def coordinator_node_host_memory_gb(self):
+        """
+        Gets the coordinator_node_host_memory_gb of this ResizeOpensearchClusterVerticalDetails.
+        The amount of memory in GB, for the cluster's coordinator nodes.
+
+
+        :return: The coordinator_node_host_memory_gb of this ResizeOpensearchClusterVerticalDetails.
+        :rtype: int
+        """
+        return self._coordinator_node_host_memory_gb
+
+    @coordinator_node_host_memory_gb.setter
+    def coordinator_node_host_memory_gb(self, coordinator_node_host_memory_gb):
+        """
+        Sets the coordinator_node_host_memory_gb of this ResizeOpensearchClusterVerticalDetails.
+        The amount of memory in GB, for the cluster's coordinator nodes.
+
+
+        :param coordinator_node_host_memory_gb: The coordinator_node_host_memory_gb of this ResizeOpensearchClusterVerticalDetails.
+        :type: int
+        """
+        self._coordinator_node_host_memory_gb = coordinator_node_host_memory_gb
 
     @property
     def ml_node_host_shape(self):

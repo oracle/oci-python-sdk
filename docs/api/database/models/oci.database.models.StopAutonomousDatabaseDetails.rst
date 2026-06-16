@@ -1,9 +1,9 @@
-ReviveWorkflowInstanceDetails
+StopAutonomousDatabaseDetails
 =============================
 
-.. currentmodule:: oci.tenant_manager_control_plane.models
+.. currentmodule:: oci.database.models
 
-.. autoclass:: ReviveWorkflowInstanceDetails
+.. autoclass:: StopAutonomousDatabaseDetails
     :show-inheritance:
     :special-members: __init__
     :members:

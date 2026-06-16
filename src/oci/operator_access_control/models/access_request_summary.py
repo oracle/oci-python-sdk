@@ -35,6 +35,10 @@ class AccessRequestSummary(object):
     #: This constant has a value of "CCCINFRASTRUCTURE"
     RESOURCE_TYPE_CCCINFRASTRUCTURE = "CCCINFRASTRUCTURE"
 
+    #: A constant which can be used with the resource_type property of a AccessRequestSummary.
+    #: This constant has a value of "CLOUDEXADATAINFRASTRUCTURE"
+    RESOURCE_TYPE_CLOUDEXADATAINFRASTRUCTURE = "CLOUDEXADATAINFRASTRUCTURE"
+
     #: A constant which can be used with the lifecycle_state property of a AccessRequestSummary.
     #: This constant has a value of "CREATED"
     LIFECYCLE_STATE_CREATED = "CREATED"
@@ -178,9 +182,13 @@ class AccessRequestSummary(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this AccessRequestSummary.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
+
+        :param action_requests_list:
+            The value to assign to the action_requests_list property of this AccessRequestSummary.
+        :type action_requests_list: list[str]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AccessRequestSummary.
@@ -244,6 +252,7 @@ class AccessRequestSummary(object):
             'resource_name': 'str',
             'sub_resource_list': 'list[str]',
             'resource_type': 'str',
+            'action_requests_list': 'list[str]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_of_creation': 'datetime',
@@ -266,6 +275,7 @@ class AccessRequestSummary(object):
             'resource_name': 'resourceName',
             'sub_resource_list': 'subResourceList',
             'resource_type': 'resourceType',
+            'action_requests_list': 'actionRequestsList',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_of_creation': 'timeOfCreation',
@@ -287,6 +297,7 @@ class AccessRequestSummary(object):
         self._resource_name = None
         self._sub_resource_list = None
         self._resource_type = None
+        self._action_requests_list = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_of_creation = None
@@ -476,7 +487,7 @@ class AccessRequestSummary(object):
         Gets the resource_type of this AccessRequestSummary.
         resourceType for which the AccessRequest is applicable
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -495,10 +506,34 @@ class AccessRequestSummary(object):
         :param resource_type: The resource_type of this AccessRequestSummary.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
+
+    @property
+    def action_requests_list(self):
+        """
+        Gets the action_requests_list of this AccessRequestSummary.
+        List of operator actions for which approval is sought by the operator user.
+
+
+        :return: The action_requests_list of this AccessRequestSummary.
+        :rtype: list[str]
+        """
+        return self._action_requests_list
+
+    @action_requests_list.setter
+    def action_requests_list(self, action_requests_list):
+        """
+        Sets the action_requests_list of this AccessRequestSummary.
+        List of operator actions for which approval is sought by the operator user.
+
+
+        :param action_requests_list: The action_requests_list of this AccessRequestSummary.
+        :type: list[str]
+        """
+        self._action_requests_list = action_requests_list
 
     @property
     def lifecycle_state(self):

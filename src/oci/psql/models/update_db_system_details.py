@@ -52,9 +52,21 @@ class UpdateDbSystemDetails(object):
             The value to assign to the storage_details property of this UpdateDbSystemDetails.
         :type storage_details: oci.psql.models.UpdateStorageDetailsParams
 
+        :param replication_config:
+            The value to assign to the replication_config property of this UpdateDbSystemDetails.
+        :type replication_config: oci.psql.models.UpdateReplicationConfigDetails
+
         :param network_details:
             The value to assign to the network_details property of this UpdateDbSystemDetails.
         :type network_details: oci.psql.models.UpdateNetworkDetails
+
+        :param kerberos_auth_details:
+            The value to assign to the kerberos_auth_details property of this UpdateDbSystemDetails.
+        :type kerberos_auth_details: oci.psql.models.KerberosAuthDetails
+
+        :param odsp_insight_details:
+            The value to assign to the odsp_insight_details property of this UpdateDbSystemDetails.
+        :type odsp_insight_details: oci.psql.models.OdspInsightDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateDbSystemDetails.
@@ -74,7 +86,10 @@ class UpdateDbSystemDetails(object):
             'db_configuration_params': 'UpdateDbConfigParams',
             'management_policy': 'ManagementPolicyDetails',
             'storage_details': 'UpdateStorageDetailsParams',
+            'replication_config': 'UpdateReplicationConfigDetails',
             'network_details': 'UpdateNetworkDetails',
+            'kerberos_auth_details': 'KerberosAuthDetails',
+            'odsp_insight_details': 'OdspInsightDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -87,7 +102,10 @@ class UpdateDbSystemDetails(object):
             'db_configuration_params': 'dbConfigurationParams',
             'management_policy': 'managementPolicy',
             'storage_details': 'storageDetails',
+            'replication_config': 'replicationConfig',
             'network_details': 'networkDetails',
+            'kerberos_auth_details': 'kerberosAuthDetails',
+            'odsp_insight_details': 'odspInsightDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -99,7 +117,10 @@ class UpdateDbSystemDetails(object):
         self._db_configuration_params = None
         self._management_policy = None
         self._storage_details = None
+        self._replication_config = None
         self._network_details = None
+        self._kerberos_auth_details = None
+        self._odsp_insight_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -286,6 +307,26 @@ class UpdateDbSystemDetails(object):
         self._storage_details = storage_details
 
     @property
+    def replication_config(self):
+        """
+        Gets the replication_config of this UpdateDbSystemDetails.
+
+        :return: The replication_config of this UpdateDbSystemDetails.
+        :rtype: oci.psql.models.UpdateReplicationConfigDetails
+        """
+        return self._replication_config
+
+    @replication_config.setter
+    def replication_config(self, replication_config):
+        """
+        Sets the replication_config of this UpdateDbSystemDetails.
+
+        :param replication_config: The replication_config of this UpdateDbSystemDetails.
+        :type: oci.psql.models.UpdateReplicationConfigDetails
+        """
+        self._replication_config = replication_config
+
+    @property
     def network_details(self):
         """
         Gets the network_details of this UpdateDbSystemDetails.
@@ -304,6 +345,46 @@ class UpdateDbSystemDetails(object):
         :type: oci.psql.models.UpdateNetworkDetails
         """
         self._network_details = network_details
+
+    @property
+    def kerberos_auth_details(self):
+        """
+        Gets the kerberos_auth_details of this UpdateDbSystemDetails.
+
+        :return: The kerberos_auth_details of this UpdateDbSystemDetails.
+        :rtype: oci.psql.models.KerberosAuthDetails
+        """
+        return self._kerberos_auth_details
+
+    @kerberos_auth_details.setter
+    def kerberos_auth_details(self, kerberos_auth_details):
+        """
+        Sets the kerberos_auth_details of this UpdateDbSystemDetails.
+
+        :param kerberos_auth_details: The kerberos_auth_details of this UpdateDbSystemDetails.
+        :type: oci.psql.models.KerberosAuthDetails
+        """
+        self._kerberos_auth_details = kerberos_auth_details
+
+    @property
+    def odsp_insight_details(self):
+        """
+        Gets the odsp_insight_details of this UpdateDbSystemDetails.
+
+        :return: The odsp_insight_details of this UpdateDbSystemDetails.
+        :rtype: oci.psql.models.OdspInsightDetails
+        """
+        return self._odsp_insight_details
+
+    @odsp_insight_details.setter
+    def odsp_insight_details(self, odsp_insight_details):
+        """
+        Sets the odsp_insight_details of this UpdateDbSystemDetails.
+
+        :param odsp_insight_details: The odsp_insight_details of this UpdateDbSystemDetails.
+        :type: oci.psql.models.OdspInsightDetails
+        """
+        self._odsp_insight_details = odsp_insight_details
 
     @property
     def freeform_tags(self):

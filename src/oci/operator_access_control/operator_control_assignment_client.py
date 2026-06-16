@@ -24,8 +24,6 @@ class OperatorControlAssignmentClient(object):
     """
     Operator Access Control enables you to control the time duration and the actions an Oracle operator can perform on your Exadata Cloud@Customer infrastructure.
     Using logging service, you can view a near real-time audit report of all actions performed by an Oracle operator.
-
-    Use the table of contents and search tool to explore the OperatorAccessControl API.
     """
 
     def __init__(self, config, **kwargs):
@@ -182,7 +180,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_operator_control_assignment_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ChangeOperatorControlAssignmentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -299,7 +297,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments"
         method = "POST"
         operation_name = "create_operator_control_assignment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/CreateOperatorControlAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -407,7 +405,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}"
         method = "DELETE"
         operation_name = "delete_operator_control_assignment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/DeleteOperatorControlAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -520,7 +518,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}/actions/getAssignmentValidationStatus"
         method = "GET"
         operation_name = "get_assignment_validation_status"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetAssignmentValidationStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -625,7 +623,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}"
         method = "GET"
         operation_name = "get_operator_control_assignment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetOperatorControlAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -712,7 +710,7 @@ class OperatorControlAssignmentClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
 
-            Allowed values are: "CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "UPDATEFAILED", "DELETING", "DELETED", "DELETIONFAILED"
+            Allowed values are: "CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "UPDATEFAILED", "DELETING", "DELETED", "DELETIONFAILED", "CUSTOMERASSIGNED"
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -760,7 +758,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments"
         method = "GET"
         operation_name = "list_operator_control_assignments"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ListOperatorControlAssignments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -783,7 +781,7 @@ class OperatorControlAssignmentClient(object):
                 f"list_operator_control_assignments got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "UPDATEFAILED", "DELETING", "DELETED", "DELETIONFAILED"]
+            lifecycle_state_allowed_values = ["CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "UPDATEFAILED", "DELETING", "DELETED", "DELETIONFAILED", "CUSTOMERASSIGNED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
@@ -907,7 +905,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}"
         method = "PUT"
         operation_name = "update_operator_control_assignment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/UpdateOperatorControlAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1033,7 +1031,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}/actions/validateAssignment"
         method = "POST"
         operation_name = "validate_operator_assignment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ValidateOperatorAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

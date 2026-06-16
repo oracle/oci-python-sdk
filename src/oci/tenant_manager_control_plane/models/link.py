@@ -74,6 +74,10 @@ class Link(object):
             The value to assign to the time_terminated property of this Link.
         :type time_terminated: datetime
 
+        :param feature:
+            The value to assign to the feature property of this Link.
+        :type feature: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -82,7 +86,8 @@ class Link(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'time_terminated': 'datetime'
+            'time_terminated': 'datetime',
+            'feature': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -91,7 +96,8 @@ class Link(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'time_terminated': 'timeTerminated'
+            'time_terminated': 'timeTerminated',
+            'feature': 'feature'
         }
         self._id = None
         self._parent_tenancy_id = None
@@ -100,6 +106,7 @@ class Link(object):
         self._time_created = None
         self._time_updated = None
         self._time_terminated = None
+        self._feature = None
 
     @property
     def id(self):
@@ -274,6 +281,30 @@ class Link(object):
         :type: datetime
         """
         self._time_terminated = time_terminated
+
+    @property
+    def feature(self):
+        """
+        Gets the feature of this Link.
+        The feature associated with this link. Default value is CORE.
+
+
+        :return: The feature of this Link.
+        :rtype: str
+        """
+        return self._feature
+
+    @feature.setter
+    def feature(self, feature):
+        """
+        Sets the feature of this Link.
+        The feature associated with this link. Default value is CORE.
+
+
+        :param feature: The feature of this Link.
+        :type: str
+        """
+        self._feature = feature
 
     def __repr__(self):
         return formatted_flat_dict(self)

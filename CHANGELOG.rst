@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.179.0 - 2026-06-16
+====================
+
+Added 
+----- 
+* Support for ExaDB-D Public Cloud in the Operator Access Control service 
+* Support for cross region replication with hot standby in the PostgreSQL service 
+* Support for starting and stopping DB systems in the PostgreSQL service 
+* Support for Kerberos authentication in the PostgreSQL service 
+* Support for performance insights in the PostgreSQL service 
+* Support for log analytics integration in the Application Performance Monitoring Control Plane service 
+* Support for storing large data files in Application Performance Monitoring configurations in the Application Performance Monitoring service 
+* Support for compute clusters and host groups in the Kubernetes Engine service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes on private endpoints in the Object Storage service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the Cloud Migrations service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes in the Secure Desktops service 
+* Support for forcefully restarting and stopping Autonomous Databases and Autonomous Container Databases in the Database service 
+* Support for restarting Oracle Rest Data Services (ORDS) services on Autonomous VM Clusters and Cloud Autonomous VM Clusters in the Database service 
+* Support for triggering forced reboot and stop of DB nodes in ExaDB-D, ExaDB-XS and ExaDB-C@C in the Database service 
+* Support for additional coordinator node pools for OCI Search in the OpenSearch service 
+* Support for multi-link organizations in the Organization Management service  
+
+Breaking 
+-------- 
+* The model `CustomerLoggingDetails` has been removed from the OpenSearch service  
+* The model `ReviveWorkflowInstanceDetails` has been removed from the Organization Management service  
+
+====================
 2.178.0 - 2026-06-08
 ====================
 

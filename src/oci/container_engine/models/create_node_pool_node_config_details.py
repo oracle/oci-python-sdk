@@ -36,6 +36,10 @@ class CreateNodePoolNodeConfigDetails(object):
             The value to assign to the is_pv_encryption_in_transit_enabled property of this CreateNodePoolNodeConfigDetails.
         :type is_pv_encryption_in_transit_enabled: bool
 
+        :param compute_cluster_id:
+            The value to assign to the compute_cluster_id property of this CreateNodePoolNodeConfigDetails.
+        :type compute_cluster_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateNodePoolNodeConfigDetails.
         :type freeform_tags: dict(str, str)
@@ -58,6 +62,7 @@ class CreateNodePoolNodeConfigDetails(object):
             'nsg_ids': 'list[str]',
             'kms_key_id': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool',
+            'compute_cluster_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'placement_configs': 'list[NodePoolPlacementConfigDetails]',
@@ -68,6 +73,7 @@ class CreateNodePoolNodeConfigDetails(object):
             'nsg_ids': 'nsgIds',
             'kms_key_id': 'kmsKeyId',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'compute_cluster_id': 'computeClusterId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'placement_configs': 'placementConfigs',
@@ -77,6 +83,7 @@ class CreateNodePoolNodeConfigDetails(object):
         self._nsg_ids = None
         self._kms_key_id = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._compute_cluster_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._placement_configs = None
@@ -177,6 +184,30 @@ class CreateNodePoolNodeConfigDetails(object):
         :type: bool
         """
         self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
+
+    @property
+    def compute_cluster_id(self):
+        """
+        Gets the compute_cluster_id of this CreateNodePoolNodeConfigDetails.
+        The OCID of the Compute Cluster to be associated with the worker node instance.
+
+
+        :return: The compute_cluster_id of this CreateNodePoolNodeConfigDetails.
+        :rtype: str
+        """
+        return self._compute_cluster_id
+
+    @compute_cluster_id.setter
+    def compute_cluster_id(self, compute_cluster_id):
+        """
+        Sets the compute_cluster_id of this CreateNodePoolNodeConfigDetails.
+        The OCID of the Compute Cluster to be associated with the worker node instance.
+
+
+        :param compute_cluster_id: The compute_cluster_id of this CreateNodePoolNodeConfigDetails.
+        :type: str
+        """
+        self._compute_cluster_id = compute_cluster_id
 
     @property
     def freeform_tags(self):

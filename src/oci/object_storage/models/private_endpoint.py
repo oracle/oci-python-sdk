@@ -118,6 +118,10 @@ class PrivateEndpoint(object):
             The value to assign to the defined_tags property of this PrivateEndpoint.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this PrivateEndpoint.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param id:
             The value to assign to the id property of this PrivateEndpoint.
         :type id: str
@@ -141,6 +145,7 @@ class PrivateEndpoint(object):
             'access_targets': 'list[AccessTargetDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'id': 'str'
         }
         self.attribute_map = {
@@ -161,6 +166,7 @@ class PrivateEndpoint(object):
             'access_targets': 'accessTargets',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'id': 'id'
         }
         self._name = None
@@ -180,6 +186,7 @@ class PrivateEndpoint(object):
         self._access_targets = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._id = None
 
     @property
@@ -641,6 +648,40 @@ class PrivateEndpoint(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this PrivateEndpoint.
+        Security attributes for Private Endpoint resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this PrivateEndpoint.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this PrivateEndpoint.
+        Security attributes for Private Endpoint resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this PrivateEndpoint.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def id(self):

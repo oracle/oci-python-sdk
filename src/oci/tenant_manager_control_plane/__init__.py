@@ -15,6 +15,8 @@ from .governance_client import GovernanceClient
 from .governance_client_composite_operations import GovernanceClientCompositeOperations
 from .link_client import LinkClient
 from .link_client_composite_operations import LinkClientCompositeOperations
+from .link_features_client import LinkFeaturesClient
+from .link_features_client_composite_operations import LinkFeaturesClientCompositeOperations
 from .orders_client import OrdersClient
 from .orders_client_composite_operations import OrdersClientCompositeOperations
 from .organization_client import OrganizationClient
@@ -29,4 +31,4 @@ from .work_request_client import WorkRequestClient
 from .work_request_client_composite_operations import WorkRequestClientCompositeOperations
 from . import models
 
-__all__ = ["DomainClient", "DomainClientCompositeOperations", "DomainGovernanceClient", "DomainGovernanceClientCompositeOperations", "GovernanceClient", "GovernanceClientCompositeOperations", "LinkClient", "LinkClientCompositeOperations", "OrdersClient", "OrdersClientCompositeOperations", "OrganizationClient", "OrganizationClientCompositeOperations", "RecipientInvitationClient", "RecipientInvitationClientCompositeOperations", "SenderInvitationClient", "SenderInvitationClientCompositeOperations", "SubscriptionClient", "SubscriptionClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]
+__all__ = ["DomainClient", "DomainClientCompositeOperations", "DomainGovernanceClient", "DomainGovernanceClientCompositeOperations", "GovernanceClient", "GovernanceClientCompositeOperations", "LinkClient", "LinkClientCompositeOperations", "LinkFeaturesClient", "LinkFeaturesClientCompositeOperations", "OrdersClient", "OrdersClientCompositeOperations", "OrganizationClient", "OrganizationClientCompositeOperations", "RecipientInvitationClient", "RecipientInvitationClientCompositeOperations", "SenderInvitationClient", "SenderInvitationClientCompositeOperations", "SubscriptionClient", "SubscriptionClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]

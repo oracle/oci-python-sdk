@@ -28,17 +28,24 @@ class DesktopNetworkConfiguration(object):
             The value to assign to the subnet_id property of this DesktopNetworkConfiguration.
         :type subnet_id: str
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this DesktopNetworkConfiguration.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'vcn_id': 'str',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'vcn_id': 'vcnId',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'security_attributes': 'securityAttributes'
         }
         self._vcn_id = None
         self._subnet_id = None
+        self._security_attributes = None
 
     @property
     def vcn_id(self):
@@ -97,6 +104,44 @@ class DesktopNetworkConfiguration(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this DesktopNetworkConfiguration.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this DesktopNetworkConfiguration.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this DesktopNetworkConfiguration.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this DesktopNetworkConfiguration.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

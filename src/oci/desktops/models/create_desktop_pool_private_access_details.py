@@ -32,20 +32,27 @@ class CreateDesktopPoolPrivateAccessDetails(object):
             The value to assign to the private_ip property of this CreateDesktopPoolPrivateAccessDetails.
         :type private_ip: str
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateDesktopPoolPrivateAccessDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
-            'private_ip': 'str'
+            'private_ip': 'str',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
-            'private_ip': 'privateIp'
+            'private_ip': 'privateIp',
+            'security_attributes': 'securityAttributes'
         }
         self._subnet_id = None
         self._nsg_ids = None
         self._private_ip = None
+        self._security_attributes = None
 
     @property
     def subnet_id(self):
@@ -126,6 +133,44 @@ class CreateDesktopPoolPrivateAccessDetails(object):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateDesktopPoolPrivateAccessDetails.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this CreateDesktopPoolPrivateAccessDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateDesktopPoolPrivateAccessDetails.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this CreateDesktopPoolPrivateAccessDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

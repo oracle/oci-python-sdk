@@ -1,0 +1,11 @@
+OdspInsight
+===========
+
+.. currentmodule:: oci.psql.models
+
+.. autoclass:: OdspInsight
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

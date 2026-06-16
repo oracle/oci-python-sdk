@@ -35,6 +35,10 @@ class OperatorControl(object):
     #: This constant has a value of "CCCINFRASTRUCTURE"
     RESOURCE_TYPE_CCCINFRASTRUCTURE = "CCCINFRASTRUCTURE"
 
+    #: A constant which can be used with the resource_type property of a OperatorControl.
+    #: This constant has a value of "CLOUDEXADATAINFRASTRUCTURE"
+    RESOURCE_TYPE_CLOUDEXADATAINFRASTRUCTURE = "CLOUDEXADATAINFRASTRUCTURE"
+
     #: A constant which can be used with the lifecycle_state property of a OperatorControl.
     #: This constant has a value of "CREATED"
     LIFECYCLE_STATE_CREATED = "CREATED"
@@ -88,13 +92,17 @@ class OperatorControl(object):
             The value to assign to the is_fully_pre_approved property of this OperatorControl.
         :type is_fully_pre_approved: bool
 
+        :param notification_topic_id:
+            The value to assign to the notification_topic_id property of this OperatorControl.
+        :type notification_topic_id: str
+
         :param email_id_list:
             The value to assign to the email_id_list property of this OperatorControl.
         :type email_id_list: list[str]
 
         :param resource_type:
             The value to assign to the resource_type property of this OperatorControl.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -154,6 +162,7 @@ class OperatorControl(object):
             'pre_approved_op_action_list': 'list[str]',
             'approval_required_op_action_list': 'list[str]',
             'is_fully_pre_approved': 'bool',
+            'notification_topic_id': 'str',
             'email_id_list': 'list[str]',
             'resource_type': 'str',
             'system_message': 'str',
@@ -177,6 +186,7 @@ class OperatorControl(object):
             'pre_approved_op_action_list': 'preApprovedOpActionList',
             'approval_required_op_action_list': 'approvalRequiredOpActionList',
             'is_fully_pre_approved': 'isFullyPreApproved',
+            'notification_topic_id': 'notificationTopicId',
             'email_id_list': 'emailIdList',
             'resource_type': 'resourceType',
             'system_message': 'systemMessage',
@@ -199,6 +209,7 @@ class OperatorControl(object):
         self._pre_approved_op_action_list = None
         self._approval_required_op_action_list = None
         self._is_fully_pre_approved = None
+        self._notification_topic_id = None
         self._email_id_list = None
         self._resource_type = None
         self._system_message = None
@@ -414,6 +425,30 @@ class OperatorControl(object):
         self._is_fully_pre_approved = is_fully_pre_approved
 
     @property
+    def notification_topic_id(self):
+        """
+        Gets the notification_topic_id of this OperatorControl.
+        The OCID of the OCI Notification topic to publish messages related to this operator control.
+
+
+        :return: The notification_topic_id of this OperatorControl.
+        :rtype: str
+        """
+        return self._notification_topic_id
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, notification_topic_id):
+        """
+        Sets the notification_topic_id of this OperatorControl.
+        The OCID of the OCI Notification topic to publish messages related to this operator control.
+
+
+        :param notification_topic_id: The notification_topic_id of this OperatorControl.
+        :type: str
+        """
+        self._notification_topic_id = notification_topic_id
+
+    @property
     def email_id_list(self):
         """
         Gets the email_id_list of this OperatorControl.
@@ -443,7 +478,7 @@ class OperatorControl(object):
         Gets the resource_type of this OperatorControl.
         resourceType for which the OperatorControl is applicable
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -462,7 +497,7 @@ class OperatorControl(object):
         :param resource_type: The resource_type of this OperatorControl.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type

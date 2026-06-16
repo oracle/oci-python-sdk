@@ -78,6 +78,10 @@ class DesktopPoolSummary(object):
             The value to assign to the defined_tags property of this DesktopPoolSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this DesktopPoolSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param contact_details:
             The value to assign to the contact_details property of this DesktopPoolSummary.
         :type contact_details: str
@@ -99,6 +103,7 @@ class DesktopPoolSummary(object):
             'active_desktops': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'contact_details': 'str',
             'compartment_id': 'str',
             'time_created': 'datetime'
@@ -111,6 +116,7 @@ class DesktopPoolSummary(object):
             'active_desktops': 'activeDesktops',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'contact_details': 'contactDetails',
             'compartment_id': 'compartmentId',
             'time_created': 'timeCreated'
@@ -122,6 +128,7 @@ class DesktopPoolSummary(object):
         self._active_desktops = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._contact_details = None
         self._compartment_id = None
         self._time_created = None
@@ -313,6 +320,44 @@ class DesktopPoolSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this DesktopPoolSummary.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this DesktopPoolSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this DesktopPoolSummary.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this DesktopPoolSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def contact_details(self):

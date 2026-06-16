@@ -32,6 +32,10 @@ class NodePoolPlacementConfigDetails(object):
             The value to assign to the capacity_reservation_id property of this NodePoolPlacementConfigDetails.
         :type capacity_reservation_id: str
 
+        :param host_group_id:
+            The value to assign to the host_group_id property of this NodePoolPlacementConfigDetails.
+        :type host_group_id: str
+
         :param preemptible_node_config:
             The value to assign to the preemptible_node_config property of this NodePoolPlacementConfigDetails.
         :type preemptible_node_config: oci.container_engine.models.PreemptibleNodeConfigDetails
@@ -45,6 +49,7 @@ class NodePoolPlacementConfigDetails(object):
             'availability_domain': 'str',
             'subnet_id': 'str',
             'capacity_reservation_id': 'str',
+            'host_group_id': 'str',
             'preemptible_node_config': 'PreemptibleNodeConfigDetails',
             'fault_domains': 'list[str]'
         }
@@ -52,12 +57,14 @@ class NodePoolPlacementConfigDetails(object):
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
             'capacity_reservation_id': 'capacityReservationId',
+            'host_group_id': 'hostGroupId',
             'preemptible_node_config': 'preemptibleNodeConfig',
             'fault_domains': 'faultDomains'
         }
         self._availability_domain = None
         self._subnet_id = None
         self._capacity_reservation_id = None
+        self._host_group_id = None
         self._preemptible_node_config = None
         self._fault_domains = None
 
@@ -134,6 +141,30 @@ class NodePoolPlacementConfigDetails(object):
         :type: str
         """
         self._capacity_reservation_id = capacity_reservation_id
+
+    @property
+    def host_group_id(self):
+        """
+        Gets the host_group_id of this NodePoolPlacementConfigDetails.
+        The OCID of the Host Group to be associated with the worker node instance.
+
+
+        :return: The host_group_id of this NodePoolPlacementConfigDetails.
+        :rtype: str
+        """
+        return self._host_group_id
+
+    @host_group_id.setter
+    def host_group_id(self, host_group_id):
+        """
+        Sets the host_group_id of this NodePoolPlacementConfigDetails.
+        The OCID of the Host Group to be associated with the worker node instance.
+
+
+        :param host_group_id: The host_group_id of this NodePoolPlacementConfigDetails.
+        :type: str
+        """
+        self._host_group_id = host_group_id
 
     @property
     def preemptible_node_config(self):

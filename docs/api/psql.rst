@@ -29,6 +29,8 @@ Psql
     oci.psql.models.ChangeBackupCompartmentDetails
     oci.psql.models.ChangeConfigurationCompartmentDetails
     oci.psql.models.ChangeDbSystemCompartmentDetails
+    oci.psql.models.ChangeRoleToReplicaDetails
+    oci.psql.models.ChangeRoleToStandaloneDetails
     oci.psql.models.ConfigOverrides
     oci.psql.models.ConfigParams
     oci.psql.models.Configuration
@@ -40,22 +42,39 @@ Psql
     oci.psql.models.CreateConfigurationDetails
     oci.psql.models.CreateDbInstanceDetails
     oci.psql.models.CreateDbSystemDetails
+    oci.psql.models.CreateReplicationConfigDetails
     oci.psql.models.Credentials
     oci.psql.models.DailyBackupPolicy
+    oci.psql.models.DateTimeRangeCapability
     oci.psql.models.DbConfigurationOverrideCollection
     oci.psql.models.DbInstance
     oci.psql.models.DbInstanceEndpoint
     oci.psql.models.DbSystem
     oci.psql.models.DbSystemCollection
     oci.psql.models.DbSystemDetails
+    oci.psql.models.DbSystemReplicaCollection
+    oci.psql.models.DbSystemReplicaSummary
     oci.psql.models.DbSystemSummary
     oci.psql.models.DefaultConfigParams
     oci.psql.models.DefaultConfiguration
     oci.psql.models.DefaultConfigurationCollection
     oci.psql.models.DefaultConfigurationDetails
     oci.psql.models.DefaultConfigurationSummary
+    oci.psql.models.DisabledInsightDetails
+    oci.psql.models.DisabledKerberosAuthDetails
+    oci.psql.models.EnabledInsightDetails
+    oci.psql.models.EnabledKerberosAuthDetails
     oci.psql.models.Endpoint
     oci.psql.models.FailoverDbSystemDetails
+    oci.psql.models.GranularityCapability
+    oci.psql.models.InsightCapabilityCollection
+    oci.psql.models.InsightCapabilitySummary
+    oci.psql.models.InsightDataContract
+    oci.psql.models.InsightDataTypeCapability
+    oci.psql.models.InsightFilterCapability
+    oci.psql.models.InsightLimits
+    oci.psql.models.KerberosAuthDetails
+    oci.psql.models.KerberosCredential
     oci.psql.models.ManagementPolicy
     oci.psql.models.ManagementPolicyDetails
     oci.psql.models.MonthlyBackupPolicy
@@ -63,6 +82,9 @@ Psql
     oci.psql.models.NoneBackupPolicy
     oci.psql.models.NoneSourceDetails
     oci.psql.models.OciOptimizedStorageDetails
+    oci.psql.models.OdspInsight
+    oci.psql.models.OdspInsightDetails
+    oci.psql.models.PaginationCapability
     oci.psql.models.PasswordDetails
     oci.psql.models.PatchDbSystemDetails
     oci.psql.models.PatchInsertInstruction
@@ -75,6 +97,8 @@ Psql
     oci.psql.models.PatchRequireInstruction
     oci.psql.models.PlainTextPasswordDetails
     oci.psql.models.PrimaryDbInstanceDetails
+    oci.psql.models.PrimaryDbSystemSourceDetails
+    oci.psql.models.ReplicationConfig
     oci.psql.models.ResetMasterUserPasswordDetails
     oci.psql.models.RestartDbInstanceInDbSystemDetails
     oci.psql.models.RestoreDbSystemDetails
@@ -82,15 +106,20 @@ Psql
     oci.psql.models.ShapeMemoryOptions
     oci.psql.models.ShapeOcpuOptions
     oci.psql.models.ShapeSummary
+    oci.psql.models.SortingCapability
+    oci.psql.models.SortingDefault
     oci.psql.models.SourceBackupDetails
     oci.psql.models.SourceDetails
+    oci.psql.models.StartDbSystemDetails
     oci.psql.models.StorageDetails
+    oci.psql.models.SwitchOverDetails
     oci.psql.models.UpdateBackupDetails
     oci.psql.models.UpdateConfigurationDetails
     oci.psql.models.UpdateDbConfigParams
     oci.psql.models.UpdateDbSystemDbInstanceDetails
     oci.psql.models.UpdateDbSystemDetails
     oci.psql.models.UpdateNetworkDetails
+    oci.psql.models.UpdateReplicationConfigDetails
     oci.psql.models.UpdateStorageDetailsParams
     oci.psql.models.VaultSecretPasswordDetails
     oci.psql.models.WeeklyBackupPolicy

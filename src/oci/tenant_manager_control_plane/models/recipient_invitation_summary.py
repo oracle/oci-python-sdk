@@ -116,6 +116,10 @@ class RecipientInvitationSummary(object):
             The value to assign to the recipient_email_address property of this RecipientInvitationSummary.
         :type recipient_email_address: str
 
+        :param features:
+            The value to assign to the features property of this RecipientInvitationSummary.
+        :type features: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this RecipientInvitationSummary.
         :type freeform_tags: dict(str, str)
@@ -141,6 +145,7 @@ class RecipientInvitationSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'recipient_email_address': 'str',
+            'features': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -157,6 +162,7 @@ class RecipientInvitationSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'recipient_email_address': 'recipientEmailAddress',
+            'features': 'features',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -172,6 +178,7 @@ class RecipientInvitationSummary(object):
         self._time_created = None
         self._time_updated = None
         self._recipient_email_address = None
+        self._features = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -451,6 +458,30 @@ class RecipientInvitationSummary(object):
         :type: str
         """
         self._recipient_email_address = recipient_email_address
+
+    @property
+    def features(self):
+        """
+        Gets the features of this RecipientInvitationSummary.
+        List of features that the invitation is being sent for. Each feature would create one link, of that type.
+
+
+        :return: The features of this RecipientInvitationSummary.
+        :rtype: list[str]
+        """
+        return self._features
+
+    @features.setter
+    def features(self, features):
+        """
+        Sets the features of this RecipientInvitationSummary.
+        List of features that the invitation is being sent for. Each feature would create one link, of that type.
+
+
+        :param features: The features of this RecipientInvitationSummary.
+        :type: list[str]
+        """
+        self._features = features
 
     @property
     def freeform_tags(self):

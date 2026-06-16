@@ -62,6 +62,10 @@ class OpensearchCluster(object):
     #: This constant has a value of "FLEX"
     SEARCH_NODE_HOST_TYPE_FLEX = "FLEX"
 
+    #: A constant which can be used with the coordinator_node_host_type property of a OpensearchCluster.
+    #: This constant has a value of "FLEX"
+    COORDINATOR_NODE_HOST_TYPE_FLEX = "FLEX"
+
     #: A constant which can be used with the ml_node_host_type property of a OpensearchCluster.
     #: This constant has a value of "FLEX"
     ML_NODE_HOST_TYPE_FLEX = "FLEX"
@@ -239,6 +243,28 @@ class OpensearchCluster(object):
             The value to assign to the search_node_storage_gb property of this OpensearchCluster.
         :type search_node_storage_gb: int
 
+        :param coordinator_node_count:
+            The value to assign to the coordinator_node_count property of this OpensearchCluster.
+        :type coordinator_node_count: int
+
+        :param coordinator_node_host_type:
+            The value to assign to the coordinator_node_host_type property of this OpensearchCluster.
+            Allowed values for this property are: "FLEX", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type coordinator_node_host_type: str
+
+        :param coordinator_node_host_shape:
+            The value to assign to the coordinator_node_host_shape property of this OpensearchCluster.
+        :type coordinator_node_host_shape: str
+
+        :param coordinator_node_host_ocpu_count:
+            The value to assign to the coordinator_node_host_ocpu_count property of this OpensearchCluster.
+        :type coordinator_node_host_ocpu_count: int
+
+        :param coordinator_node_host_memory_gb:
+            The value to assign to the coordinator_node_host_memory_gb property of this OpensearchCluster.
+        :type coordinator_node_host_memory_gb: int
+
         :param ml_node_count:
             The value to assign to the ml_node_count property of this OpensearchCluster.
         :type ml_node_count: int
@@ -398,6 +424,11 @@ class OpensearchCluster(object):
             'search_node_host_ocpu_count': 'int',
             'search_node_host_memory_gb': 'int',
             'search_node_storage_gb': 'int',
+            'coordinator_node_count': 'int',
+            'coordinator_node_host_type': 'str',
+            'coordinator_node_host_shape': 'str',
+            'coordinator_node_host_ocpu_count': 'int',
+            'coordinator_node_host_memory_gb': 'int',
             'ml_node_count': 'int',
             'ml_node_host_type': 'str',
             'ml_node_host_shape': 'str',
@@ -466,6 +497,11 @@ class OpensearchCluster(object):
             'search_node_host_ocpu_count': 'searchNodeHostOcpuCount',
             'search_node_host_memory_gb': 'searchNodeHostMemoryGB',
             'search_node_storage_gb': 'searchNodeStorageGB',
+            'coordinator_node_count': 'coordinatorNodeCount',
+            'coordinator_node_host_type': 'coordinatorNodeHostType',
+            'coordinator_node_host_shape': 'coordinatorNodeHostShape',
+            'coordinator_node_host_ocpu_count': 'coordinatorNodeHostOcpuCount',
+            'coordinator_node_host_memory_gb': 'coordinatorNodeHostMemoryGB',
             'ml_node_count': 'mlNodeCount',
             'ml_node_host_type': 'mlNodeHostType',
             'ml_node_host_shape': 'mlNodeHostShape',
@@ -533,6 +569,11 @@ class OpensearchCluster(object):
         self._search_node_host_ocpu_count = None
         self._search_node_host_memory_gb = None
         self._search_node_storage_gb = None
+        self._coordinator_node_count = None
+        self._coordinator_node_host_type = None
+        self._coordinator_node_host_shape = None
+        self._coordinator_node_host_ocpu_count = None
+        self._coordinator_node_host_memory_gb = None
         self._ml_node_count = None
         self._ml_node_host_type = None
         self._ml_node_host_shape = None
@@ -1490,6 +1531,132 @@ class OpensearchCluster(object):
         :type: int
         """
         self._search_node_storage_gb = search_node_storage_gb
+
+    @property
+    def coordinator_node_count(self):
+        """
+        Gets the coordinator_node_count of this OpensearchCluster.
+        The number of coordinator nodes configured for the cluster.
+
+
+        :return: The coordinator_node_count of this OpensearchCluster.
+        :rtype: int
+        """
+        return self._coordinator_node_count
+
+    @coordinator_node_count.setter
+    def coordinator_node_count(self, coordinator_node_count):
+        """
+        Sets the coordinator_node_count of this OpensearchCluster.
+        The number of coordinator nodes configured for the cluster.
+
+
+        :param coordinator_node_count: The coordinator_node_count of this OpensearchCluster.
+        :type: int
+        """
+        self._coordinator_node_count = coordinator_node_count
+
+    @property
+    def coordinator_node_host_type(self):
+        """
+        Gets the coordinator_node_host_type of this OpensearchCluster.
+        The instance type for the cluster's coordinator nodes.
+
+        Allowed values for this property are: "FLEX", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The coordinator_node_host_type of this OpensearchCluster.
+        :rtype: str
+        """
+        return self._coordinator_node_host_type
+
+    @coordinator_node_host_type.setter
+    def coordinator_node_host_type(self, coordinator_node_host_type):
+        """
+        Sets the coordinator_node_host_type of this OpensearchCluster.
+        The instance type for the cluster's coordinator nodes.
+
+
+        :param coordinator_node_host_type: The coordinator_node_host_type of this OpensearchCluster.
+        :type: str
+        """
+        allowed_values = ["FLEX"]
+        if not value_allowed_none_or_none_sentinel(coordinator_node_host_type, allowed_values):
+            coordinator_node_host_type = 'UNKNOWN_ENUM_VALUE'
+        self._coordinator_node_host_type = coordinator_node_host_type
+
+    @property
+    def coordinator_node_host_shape(self):
+        """
+        Gets the coordinator_node_host_shape of this OpensearchCluster.
+        The node shape for the cluster's coordinator nodes.
+
+
+        :return: The coordinator_node_host_shape of this OpensearchCluster.
+        :rtype: str
+        """
+        return self._coordinator_node_host_shape
+
+    @coordinator_node_host_shape.setter
+    def coordinator_node_host_shape(self, coordinator_node_host_shape):
+        """
+        Sets the coordinator_node_host_shape of this OpensearchCluster.
+        The node shape for the cluster's coordinator nodes.
+
+
+        :param coordinator_node_host_shape: The coordinator_node_host_shape of this OpensearchCluster.
+        :type: str
+        """
+        self._coordinator_node_host_shape = coordinator_node_host_shape
+
+    @property
+    def coordinator_node_host_ocpu_count(self):
+        """
+        Gets the coordinator_node_host_ocpu_count of this OpensearchCluster.
+        The number of OCPUs configured for the cluster's coordinator nodes.
+
+
+        :return: The coordinator_node_host_ocpu_count of this OpensearchCluster.
+        :rtype: int
+        """
+        return self._coordinator_node_host_ocpu_count
+
+    @coordinator_node_host_ocpu_count.setter
+    def coordinator_node_host_ocpu_count(self, coordinator_node_host_ocpu_count):
+        """
+        Sets the coordinator_node_host_ocpu_count of this OpensearchCluster.
+        The number of OCPUs configured for the cluster's coordinator nodes.
+
+
+        :param coordinator_node_host_ocpu_count: The coordinator_node_host_ocpu_count of this OpensearchCluster.
+        :type: int
+        """
+        self._coordinator_node_host_ocpu_count = coordinator_node_host_ocpu_count
+
+    @property
+    def coordinator_node_host_memory_gb(self):
+        """
+        Gets the coordinator_node_host_memory_gb of this OpensearchCluster.
+        The amount of memory in GB, for the cluster's coordinator nodes.
+
+
+        :return: The coordinator_node_host_memory_gb of this OpensearchCluster.
+        :rtype: int
+        """
+        return self._coordinator_node_host_memory_gb
+
+    @coordinator_node_host_memory_gb.setter
+    def coordinator_node_host_memory_gb(self, coordinator_node_host_memory_gb):
+        """
+        Sets the coordinator_node_host_memory_gb of this OpensearchCluster.
+        The amount of memory in GB, for the cluster's coordinator nodes.
+
+
+        :param coordinator_node_host_memory_gb: The coordinator_node_host_memory_gb of this OpensearchCluster.
+        :type: int
+        """
+        self._coordinator_node_host_memory_gb = coordinator_node_host_memory_gb
 
     @property
     def ml_node_count(self):

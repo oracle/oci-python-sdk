@@ -99,7 +99,7 @@ class BackupCopyDetails(object):
     def regions(self):
         """
         **[Required]** Gets the regions of this BackupCopyDetails.
-        List of region names of the remote region
+        List of region names of the remote regions
 
 
         :return: The regions of this BackupCopyDetails.
@@ -111,7 +111,7 @@ class BackupCopyDetails(object):
     def regions(self, regions):
         """
         Sets the regions of this BackupCopyDetails.
-        List of region names of the remote region
+        List of region names of the remote regions
 
 
         :param regions: The regions of this BackupCopyDetails.

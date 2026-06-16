@@ -32,6 +32,10 @@ class CreateApmDomainDetails(object):
             The value to assign to the compartment_id property of this CreateApmDomainDetails.
         :type compartment_id: str
 
+        :param log_group_id:
+            The value to assign to the log_group_id property of this CreateApmDomainDetails.
+        :type log_group_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateApmDomainDetails.
         :type freeform_tags: dict(str, str)
@@ -49,6 +53,7 @@ class CreateApmDomainDetails(object):
             'display_name': 'str',
             'description': 'str',
             'compartment_id': 'str',
+            'log_group_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'is_free_tier': 'bool'
@@ -57,6 +62,7 @@ class CreateApmDomainDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'compartment_id': 'compartmentId',
+            'log_group_id': 'logGroupId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'is_free_tier': 'isFreeTier'
@@ -64,6 +70,7 @@ class CreateApmDomainDetails(object):
         self._display_name = None
         self._description = None
         self._compartment_id = None
+        self._log_group_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._is_free_tier = None
@@ -139,6 +146,30 @@ class CreateApmDomainDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def log_group_id(self):
+        """
+        Gets the log_group_id of this CreateApmDomainDetails.
+        The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+
+
+        :return: The log_group_id of this CreateApmDomainDetails.
+        :rtype: str
+        """
+        return self._log_group_id
+
+    @log_group_id.setter
+    def log_group_id(self, log_group_id):
+        """
+        Sets the log_group_id of this CreateApmDomainDetails.
+        The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+
+
+        :param log_group_id: The log_group_id of this CreateApmDomainDetails.
+        :type: str
+        """
+        self._log_group_id = log_group_id
 
     @property
     def freeform_tags(self):

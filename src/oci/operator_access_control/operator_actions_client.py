@@ -24,8 +24,6 @@ class OperatorActionsClient(object):
     """
     Operator Access Control enables you to control the time duration and the actions an Oracle operator can perform on your Exadata Cloud@Customer infrastructure.
     Using logging service, you can view a near real-time audit report of all actions performed by an Oracle operator.
-
-    Use the table of contents and search tool to explore the OperatorAccessControl API.
     """
 
     def __init__(self, config, **kwargs):
@@ -165,7 +163,7 @@ class OperatorActionsClient(object):
         resource_path = "/operatorActions/{operatorActionId}"
         method = "GET"
         operation_name = "get_operator_action"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/GetOperatorAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -297,7 +295,7 @@ class OperatorActionsClient(object):
         resource_path = "/operatorActions"
         method = "GET"
         operation_name = "list_operator_actions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/ListOperatorActions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

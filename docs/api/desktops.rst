@@ -48,8 +48,10 @@ Desktops
     oci.desktops.models.InactivityConfig
     oci.desktops.models.UpdateDesktopDetails
     oci.desktops.models.UpdateDesktopImage
+    oci.desktops.models.UpdateDesktopNetworkConfiguration
     oci.desktops.models.UpdateDesktopPoolDesktopSessionLifecycleActions
     oci.desktops.models.UpdateDesktopPoolDetails
+    oci.desktops.models.UpdateDesktopPoolPrivateAccessDetails
     oci.desktops.models.WorkRequest
     oci.desktops.models.WorkRequestError
     oci.desktops.models.WorkRequestErrorCollection

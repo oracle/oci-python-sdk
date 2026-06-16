@@ -14,6 +14,7 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.util import back_up_body_calculate_stream_content_length, is_content_length_calculable_by_req_util
 from oci.exceptions import InvalidDeveloperToolConfiguration
 from oci.developer_tool_configuration import OCI_SDK_ENABLED_SERVICES_SET
 from .models import apm_config_type_mapping
@@ -492,6 +493,142 @@ class ConfigClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def delete_data_file(self, data_file_name, apm_domain_id, apm_type, **kwargs):
+        """
+        Removes the data file.
+
+
+        :param str data_file_name: (required)
+            The name of the data file.
+
+        :param str apm_domain_id: (required)
+            The APM Domain ID the request is intended for.
+
+        :param str apm_type: (required)
+            The type of the data file.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/delete_data_file.py.html>`__ to see an example of how to use delete_data_file API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataFileName', 'apmDomainId', 'apmType']
+        resource_path = "/dataFiles/{dataFileName}"
+        method = "DELETE"
+        operation_name = "delete_data_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/DeleteDataFile"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_data_file got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "dataFileName": data_file_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "apmDomainId": apm_domain_id,
+            "apmType": apm_type
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def export_configuration(self, export_configuration_details, apm_domain_id, **kwargs):
         """
         Exports configurations for the whole domain by domainId.
@@ -726,6 +863,135 @@ class ConfigClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_data_file(self, data_file_name, apm_domain_id, apm_type, **kwargs):
+        """
+        Retrieves the Data file with the specified name and type.
+
+
+        :param str data_file_name: (required)
+            The name of the data file.
+
+        :param str apm_domain_id: (required)
+            The APM Domain ID the request is intended for.
+
+        :param str apm_type: (required)
+            The type of the data file.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type stream
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/get_data_file.py.html>`__ to see an example of how to use get_data_file API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataFileName', 'apmDomainId', 'apmType']
+        resource_path = "/dataFiles/{dataFileName}"
+        method = "GET"
+        operation_name = "get_data_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/GetDataFile"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_data_file got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "dataFileName": data_file_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "apmDomainId": apm_domain_id,
+            "apmType": apm_type
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_match_agents_with_attribute_key(self, apm_domain_id, **kwargs):
         """
         The domain-wide agents matching attribute key.
@@ -821,6 +1087,133 @@ class ConfigClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="MatchAgentsWithAttributeKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def head_data_file(self, data_file_name, apm_domain_id, apm_type, **kwargs):
+        """
+        Returns metadata about the datafile.
+
+
+        :param str data_file_name: (required)
+            The name of the data file.
+
+        :param str apm_domain_id: (required)
+            The APM Domain ID the request is intended for.
+
+        :param str apm_type: (required)
+            The type of the data file.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/head_data_file.py.html>`__ to see an example of how to use head_data_file API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataFileName', 'apmDomainId', 'apmType']
+        resource_path = "/dataFiles/{dataFileName}"
+        method = "HEAD"
+        operation_name = "head_data_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/HeadDataFile"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"head_data_file got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "dataFileName": data_file_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "apmDomainId": apm_domain_id,
+            "apmType": apm_type
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -1131,6 +1524,404 @@ class ConfigClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="ConfigCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_data_files(self, apm_domain_id, **kwargs):
+        """
+        Fetches a list of Data files using some parameters.
+
+
+        :param str apm_domain_id: (required)
+            The APM Domain ID the request is intended for.
+
+        :param str apm_type: (optional)
+            The type of the data file.
+
+        :param str name: (optional)
+            A filter to return resources that match the specified name. Supports regular expressions to filter data files.
+
+        :param datetime time_last_modified_before: (optional)
+            Return data files with time 'timeLastModified' before the specified time, expressed in `RFC 3339`__
+            timestamp format.
+            Example: `2020-02-19T22:47:12.613Z`
+
+            __ https://tools.ietf.org/html/rfc3339
+
+        :param datetime time_last_modified_after: (optional)
+            Return data files with the 'timeLastModified' after the specified time, expressed in `RFC 3339`__
+            timestamp format.
+            Example: `2020-02-19T22:47:12.613Z`
+
+            __ https://tools.ietf.org/html/rfc3339
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The maximum number of results per page, or items to return in a paginated \"List\" call. For information on
+            how pagination works, see `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The displayName sort order
+            is case-sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one \"sortBy\" value. The default order for displayName, timeCreated
+            and timeUpdated is ascending. The displayName sort by is case-sensitive.
+
+            Allowed values are: "displayName", "timeCreated", "timeUpdated"
+
+        :param str metadata: (optional)
+            A string containing a JSON-encoded object with metadata related to the uploaded file or resource.
+            Example:
+              {\"fileName\":\"report.pdf\",\"uploader\":\"jane.doe\",\"category\":\"financial\"}
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apm_config.models.DataFileSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/list_data_files.py.html>`__ to see an example of how to use list_data_files API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
+        resource_path = "/dataFiles"
+        method = "GET"
+        operation_name = "list_data_files"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFileSummaryCollection/ListDataFiles"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "apm_type",
+            "name",
+            "time_last_modified_before",
+            "time_last_modified_after",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "metadata",
+            "opc_retry_token",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_data_files got unknown kwargs: {extra_kwargs!r}")
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["displayName", "timeCreated", "timeUpdated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "apmDomainId": apm_domain_id,
+            "apmType": kwargs.get("apm_type", missing),
+            "name": kwargs.get("name", missing),
+            "timeLastModifiedBefore": kwargs.get("time_last_modified_before", missing),
+            "timeLastModifiedAfter": kwargs.get("time_last_modified_after", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "metadata": kwargs.get("metadata", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DataFileSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DataFileSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def put_data_file(self, put_data_file_body, data_file_name, apm_domain_id, apm_type, **kwargs):
+        """
+        Creates a new data file or replaces an existing one with the same name and type.
+
+
+        :param stream put_data_file_body: (required)
+            The data file to be uploaded.
+
+        :param str data_file_name: (required)
+            The name of the data file.
+
+        :param str apm_domain_id: (required)
+            The APM Domain ID the request is intended for.
+
+        :param str apm_type: (required)
+            The type of the data file.
+
+        :param str content_md5: (optional)
+            Optional base64-encoded MD5 hash of the request body. If provided, the server will perform
+            a data integrity check by computing the MD5 of the received content and comparing it to the
+            supplied value.
+
+            If the values do not match, the request will be rejected with an HTTP 400 error and a message such as:
+
+            \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
+
+        :param str content_type: (optional)
+            Optional parameter specifying the media type (MIME type) of the request or response body.
+            If not specified, the default is `application/octet-stream`.
+
+            This value can be used by recipients to determine how to interpret or render the content.
+
+        :param str content_language: (optional)
+            Optional parameter that indicates the natural language of the content.
+            This value can be used by clients or intermediaries to select or display content based on language preferences.
+
+        :param str content_encoding: (optional)
+            Optional parameter indicating the content encodings applied to the request body (e.g., gzip, deflate).
+            This value can be used by recipients to determine how to decode the content.
+
+        :param str content_disposition: (optional)
+            Optional parameter that provides presentation information for how the content should be displayed or handled by the recipient.
+
+            For example, to prompt a file download with a custom filename:
+            `attachment; filename=\"example.txt\"`
+
+        :param str metadata: (optional)
+            A string containing a JSON-encoded object with metadata related to the uploaded file or resource.
+            Example:
+              {\"fileName\":\"report.pdf\",\"uploader\":\"jane.doe\",\"category\":\"financial\"}
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/put_data_file.py.html>`__ to see an example of how to use put_data_file API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataFileName', 'apmDomainId', 'apmType']
+        resource_path = "/dataFiles/{dataFileName}"
+        method = "PUT"
+        operation_name = "put_data_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/DataFile/PutDataFile"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "buffer_limit",
+            "content_md5",
+            "content_type",
+            "content_language",
+            "content_encoding",
+            "content_disposition",
+            "metadata",
+            "opc_retry_token",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"put_data_file got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "dataFileName": data_file_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "apmDomainId": apm_domain_id,
+            "apmType": apm_type
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "Content-MD5": kwargs.get("content_md5", missing),
+            "Content-Type": kwargs.get("content_type", missing),
+            "Content-Language": kwargs.get("content_language", missing),
+            "Content-Encoding": kwargs.get("content_encoding", missing),
+            "Content-Disposition": kwargs.get("content_disposition", missing),
+            "metadata": kwargs.get("metadata", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
+        try:
+            put_data_file_body
+        except NameError:
+            put_data_file_body = kwargs.get("put_data_file_body", missing)
+
+        if put_data_file_body is not missing and put_data_file_body is not None:
+            if (not isinstance(put_data_file_body, (six.binary_type, six.string_types)) and
+                    not hasattr(put_data_file_body, "read")):
+                raise TypeError('The body must be a string, bytes, or provide a read() method.')
+
+            if hasattr(put_data_file_body, 'fileno') and hasattr(put_data_file_body, 'name') and put_data_file_body.name != '<stdin>':
+                if requests.utils.super_len(put_data_file_body) == 0:
+                    header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(put_data_file_body):
+                calculated_obj = back_up_body_calculate_stream_content_length(put_data_file_body, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                put_data_file_body = calculated_obj["byte_content"]
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=put_data_file_body,
+                enforce_content_headers=False,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=put_data_file_body,
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,

@@ -33,7 +33,6 @@ Opensearch
     oci.opensearch.models.CreateMaintenanceDetails
     oci.opensearch.models.CreateOpensearchClusterDetails
     oci.opensearch.models.CreateOpensearchClusterPipelineDetails
-    oci.opensearch.models.CustomerLoggingDetails
     oci.opensearch.models.DeleteBlockVolumesForNamespaceDetails
     oci.opensearch.models.ExportOpensearchClusterBackupDetails
     oci.opensearch.models.ForcePatchClusterDetails

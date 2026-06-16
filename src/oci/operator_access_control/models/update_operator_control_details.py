@@ -44,6 +44,10 @@ class UpdateOperatorControlDetails(object):
             The value to assign to the is_fully_pre_approved property of this UpdateOperatorControlDetails.
         :type is_fully_pre_approved: bool
 
+        :param notification_topic_id:
+            The value to assign to the notification_topic_id property of this UpdateOperatorControlDetails.
+        :type notification_topic_id: str
+
         :param email_id_list:
             The value to assign to the email_id_list property of this UpdateOperatorControlDetails.
         :type email_id_list: list[str]
@@ -72,6 +76,7 @@ class UpdateOperatorControlDetails(object):
             'approver_groups_list': 'list[str]',
             'pre_approved_op_action_list': 'list[str]',
             'is_fully_pre_approved': 'bool',
+            'notification_topic_id': 'str',
             'email_id_list': 'list[str]',
             'number_of_approvers': 'int',
             'system_message': 'str',
@@ -85,6 +90,7 @@ class UpdateOperatorControlDetails(object):
             'approver_groups_list': 'approverGroupsList',
             'pre_approved_op_action_list': 'preApprovedOpActionList',
             'is_fully_pre_approved': 'isFullyPreApproved',
+            'notification_topic_id': 'notificationTopicId',
             'email_id_list': 'emailIdList',
             'number_of_approvers': 'numberOfApprovers',
             'system_message': 'systemMessage',
@@ -97,6 +103,7 @@ class UpdateOperatorControlDetails(object):
         self._approver_groups_list = None
         self._pre_approved_op_action_list = None
         self._is_fully_pre_approved = None
+        self._notification_topic_id = None
         self._email_id_list = None
         self._number_of_approvers = None
         self._system_message = None
@@ -250,6 +257,30 @@ class UpdateOperatorControlDetails(object):
         :type: bool
         """
         self._is_fully_pre_approved = is_fully_pre_approved
+
+    @property
+    def notification_topic_id(self):
+        """
+        Gets the notification_topic_id of this UpdateOperatorControlDetails.
+        The OCID of the OCI Notification topic to publish messages related to this operator control.
+
+
+        :return: The notification_topic_id of this UpdateOperatorControlDetails.
+        :rtype: str
+        """
+        return self._notification_topic_id
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, notification_topic_id):
+        """
+        Sets the notification_topic_id of this UpdateOperatorControlDetails.
+        The OCID of the OCI Notification topic to publish messages related to this operator control.
+
+
+        :param notification_topic_id: The notification_topic_id of this UpdateOperatorControlDetails.
+        :type: str
+        """
+        self._notification_topic_id = notification_topic_id
 
     @property
     def email_id_list(self):

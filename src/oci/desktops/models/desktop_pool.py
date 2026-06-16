@@ -168,6 +168,10 @@ class DesktopPool(object):
             The value to assign to the defined_tags property of this DesktopPool.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this DesktopPool.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this DesktopPool.
         :type nsg_ids: list[str]
@@ -208,6 +212,7 @@ class DesktopPool(object):
             'availability_domain': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'nsg_ids': 'list[str]',
             'private_access_details': 'DesktopPoolPrivateAccessDetails',
             'boot_volume_size_in_gbs': 'int'
@@ -239,6 +244,7 @@ class DesktopPool(object):
             'availability_domain': 'availabilityDomain',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'nsg_ids': 'nsgIds',
             'private_access_details': 'privateAccessDetails',
             'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs'
@@ -269,6 +275,7 @@ class DesktopPool(object):
         self._availability_domain = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._nsg_ids = None
         self._private_access_details = None
         self._boot_volume_size_in_gbs = None
@@ -902,6 +909,44 @@ class DesktopPool(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this DesktopPool.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this DesktopPool.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this DesktopPool.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this DesktopPool.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def nsg_ids(self):

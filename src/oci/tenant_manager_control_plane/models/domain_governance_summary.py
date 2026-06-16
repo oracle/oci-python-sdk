@@ -28,6 +28,10 @@ class DomainGovernanceSummary(object):
             The value to assign to the owner_id property of this DomainGovernanceSummary.
         :type owner_id: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this DomainGovernanceSummary.
+        :type compartment_id: str
+
         :param domain_id:
             The value to assign to the domain_id property of this DomainGovernanceSummary.
         :type domain_id: str
@@ -76,6 +80,7 @@ class DomainGovernanceSummary(object):
         self.swagger_types = {
             'id': 'str',
             'owner_id': 'str',
+            'compartment_id': 'str',
             'domain_id': 'str',
             'lifecycle_state': 'str',
             'is_governance_enabled': 'bool',
@@ -91,6 +96,7 @@ class DomainGovernanceSummary(object):
         self.attribute_map = {
             'id': 'id',
             'owner_id': 'ownerId',
+            'compartment_id': 'compartmentId',
             'domain_id': 'domainId',
             'lifecycle_state': 'lifecycleState',
             'is_governance_enabled': 'isGovernanceEnabled',
@@ -105,6 +111,7 @@ class DomainGovernanceSummary(object):
         }
         self._id = None
         self._owner_id = None
+        self._compartment_id = None
         self._domain_id = None
         self._lifecycle_state = None
         self._is_governance_enabled = None
@@ -164,6 +171,30 @@ class DomainGovernanceSummary(object):
         :type: str
         """
         self._owner_id = owner_id
+
+    @property
+    def compartment_id(self):
+        """
+        **[Required]** Gets the compartment_id of this DomainGovernanceSummary.
+        The OCID of the tenancy that has started the registration process for this domain.
+
+
+        :return: The compartment_id of this DomainGovernanceSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this DomainGovernanceSummary.
+        The OCID of the tenancy that has started the registration process for this domain.
+
+
+        :param compartment_id: The compartment_id of this DomainGovernanceSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def domain_id(self):

@@ -38,6 +38,9 @@ Apm Config
     oci.apm_config.models.CreateMetricGroupDetails
     oci.apm_config.models.CreateOptionsDetails
     oci.apm_config.models.CreateSpanFilterDetails
+    oci.apm_config.models.DataFile
+    oci.apm_config.models.DataFileSummary
+    oci.apm_config.models.DataFileSummaryCollection
     oci.apm_config.models.Dimension
     oci.apm_config.models.ExportConfigurationDetails
     oci.apm_config.models.ExportConfigurationResponseDetails
