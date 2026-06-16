@@ -471,6 +471,8 @@ Database
     oci.database.models.ResourcePoolShapeCollection
     oci.database.models.ResourcePoolShapeSummary
     oci.database.models.ResourcePoolSummary
+    oci.database.models.RestartAutonomousContainerDatabaseDetails
+    oci.database.models.RestartAutonomousDatabaseDetails
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
     oci.database.models.RotateAutonomousContainerDatabaseEncryptionKeyDetails
@@ -498,6 +500,7 @@ Database
     oci.database.models.SetKeyVersionDetails
     oci.database.models.SourceDatabaseDetails
     oci.database.models.StackMonitoringConfig
+    oci.database.models.StopAutonomousDatabaseDetails
     oci.database.models.StoragePerformanceDetails
     oci.database.models.SwitchOverDataGuardDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails

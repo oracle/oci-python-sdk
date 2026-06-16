@@ -24,8 +24,6 @@ class AccessRequestsClient(object):
     """
     Operator Access Control enables you to control the time duration and the actions an Oracle operator can perform on your Exadata Cloud@Customer infrastructure.
     Using logging service, you can view a near real-time audit report of all actions performed by an Oracle operator.
-
-    Use the table of contents and search tool to explore the OperatorAccessControl API.
     """
 
     def __init__(self, config, **kwargs):
@@ -182,7 +180,7 @@ class AccessRequestsClient(object):
         resource_path = "/accessRequests/{accessRequestId}/action/approve"
         method = "POST"
         operation_name = "approve_access_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ApproveAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -292,7 +290,7 @@ class AccessRequestsClient(object):
         resource_path = "/accessRequests/{accessRequestId}"
         method = "GET"
         operation_name = "get_access_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/GetAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -400,7 +398,7 @@ class AccessRequestsClient(object):
         resource_path = "/accessRequests/{accessRequestId}/auditLogReport"
         method = "GET"
         operation_name = "get_audit_log_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AuditLogReport/GetAuditLogReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -530,7 +528,7 @@ class AccessRequestsClient(object):
         resource_path = "/accessRequests/{accessRequestId}/action/interactionRequest"
         method = "POST"
         operation_name = "interaction_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/InteractionRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -648,7 +646,7 @@ class AccessRequestsClient(object):
         resource_path = "/accessRequests/{accessRequestId}/history"
         method = "GET"
         operation_name = "list_access_request_histories"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequestHistories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -744,6 +742,9 @@ class AccessRequestsClient(object):
 
             Allowed values are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "MOREINFO", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW"
 
+        :param int num_days: (optional)
+            The number of days since when the user wants to search .
+
         :param datetime time_start: (optional)
             Query start time in UTC in ISO 8601 format(inclusive).
             Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
@@ -800,7 +801,7 @@ class AccessRequestsClient(object):
         resource_path = "/accessRequests"
         method = "GET"
         operation_name = "list_access_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -810,6 +811,7 @@ class AccessRequestsClient(object):
             "resource_name",
             "resource_type",
             "lifecycle_state",
+            "num_days",
             "time_start",
             "time_end",
             "limit",
@@ -849,6 +851,7 @@ class AccessRequestsClient(object):
             "resourceName": kwargs.get("resource_name", missing),
             "resourceType": kwargs.get("resource_type", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "numDays": kwargs.get("num_days", missing),
             "timeStart": kwargs.get("time_start", missing),
             "timeEnd": kwargs.get("time_end", missing),
             "limit": kwargs.get("limit", missing),
@@ -945,7 +948,7 @@ class AccessRequestsClient(object):
         resource_path = "/accessRequests/{accessRequestId}/interactions"
         method = "GET"
         operation_name = "list_interactions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListInteractions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1077,7 +1080,7 @@ class AccessRequestsClient(object):
         resource_path = "/accessRequests/{accessRequestId}/action/reject"
         method = "POST"
         operation_name = "reject_access_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RejectAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1204,7 +1207,7 @@ class AccessRequestsClient(object):
         resource_path = "/accessRequests/{accessRequestId}/action/review"
         method = "POST"
         operation_name = "review_access_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ReviewAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1333,7 +1336,7 @@ class AccessRequestsClient(object):
         resource_path = "/accessRequests/{accessRequestId}/action/revoke"
         method = "POST"
         operation_name = "revoke_access_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RevokeAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

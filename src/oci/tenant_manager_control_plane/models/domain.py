@@ -76,6 +76,10 @@ class Domain(object):
             The value to assign to the owner_id property of this Domain.
         :type owner_id: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Domain.
+        :type compartment_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Domain.
             Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -117,6 +121,7 @@ class Domain(object):
             'id': 'str',
             'domain_name': 'str',
             'owner_id': 'str',
+            'compartment_id': 'str',
             'lifecycle_state': 'str',
             'status': 'str',
             'txt_record': 'str',
@@ -130,6 +135,7 @@ class Domain(object):
             'id': 'id',
             'domain_name': 'domainName',
             'owner_id': 'ownerId',
+            'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
             'status': 'status',
             'txt_record': 'txtRecord',
@@ -142,6 +148,7 @@ class Domain(object):
         self._id = None
         self._domain_name = None
         self._owner_id = None
+        self._compartment_id = None
         self._lifecycle_state = None
         self._status = None
         self._txt_record = None
@@ -222,6 +229,30 @@ class Domain(object):
         :type: str
         """
         self._owner_id = owner_id
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this Domain.
+        The OCID of the tenancy that has started the registration process for this domain.
+
+
+        :return: The compartment_id of this Domain.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this Domain.
+        The OCID of the tenancy that has started the registration process for this domain.
+
+
+        :param compartment_id: The compartment_id of this Domain.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def lifecycle_state(self):

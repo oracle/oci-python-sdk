@@ -10,6 +10,7 @@ Tenant Manager Control Plane
     oci.tenant_manager_control_plane.DomainGovernanceClient
     oci.tenant_manager_control_plane.GovernanceClient
     oci.tenant_manager_control_plane.LinkClient
+    oci.tenant_manager_control_plane.LinkFeaturesClient
     oci.tenant_manager_control_plane.OrdersClient
     oci.tenant_manager_control_plane.OrganizationClient
     oci.tenant_manager_control_plane.RecipientInvitationClient
@@ -20,6 +21,7 @@ Tenant Manager Control Plane
     oci.tenant_manager_control_plane.DomainGovernanceClientCompositeOperations
     oci.tenant_manager_control_plane.GovernanceClientCompositeOperations
     oci.tenant_manager_control_plane.LinkClientCompositeOperations
+    oci.tenant_manager_control_plane.LinkFeaturesClientCompositeOperations
     oci.tenant_manager_control_plane.OrdersClientCompositeOperations
     oci.tenant_manager_control_plane.OrganizationClientCompositeOperations
     oci.tenant_manager_control_plane.RecipientInvitationClientCompositeOperations
@@ -64,9 +66,13 @@ Tenant Manager Control Plane
     oci.tenant_manager_control_plane.models.DomainGovernanceCollection
     oci.tenant_manager_control_plane.models.DomainGovernanceSummary
     oci.tenant_manager_control_plane.models.DomainSummary
+    oci.tenant_manager_control_plane.models.InvitationFeature
     oci.tenant_manager_control_plane.models.Link
     oci.tenant_manager_control_plane.models.LinkCollection
+    oci.tenant_manager_control_plane.models.LinkFeatureSummary
+    oci.tenant_manager_control_plane.models.LinkFeaturesCollection
     oci.tenant_manager_control_plane.models.LinkSummary
+    oci.tenant_manager_control_plane.models.LinkWithTenancyNames
     oci.tenant_manager_control_plane.models.Order
     oci.tenant_manager_control_plane.models.Organization
     oci.tenant_manager_control_plane.models.OrganizationCollection
@@ -78,7 +84,6 @@ Tenant Manager Control Plane
     oci.tenant_manager_control_plane.models.RecipientInvitation
     oci.tenant_manager_control_plane.models.RecipientInvitationCollection
     oci.tenant_manager_control_plane.models.RecipientInvitationSummary
-    oci.tenant_manager_control_plane.models.ReviveWorkflowInstanceDetails
     oci.tenant_manager_control_plane.models.SenderInvitation
     oci.tenant_manager_control_plane.models.SenderInvitationCollection
     oci.tenant_manager_control_plane.models.SenderInvitationSummary

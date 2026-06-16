@@ -38,6 +38,10 @@ class ResizeOpensearchClusterHorizontalDetails(object):
             The value to assign to the search_node_count property of this ResizeOpensearchClusterHorizontalDetails.
         :type search_node_count: int
 
+        :param coordinator_node_count:
+            The value to assign to the coordinator_node_count property of this ResizeOpensearchClusterHorizontalDetails.
+        :type coordinator_node_count: int
+
         :param ml_node_count:
             The value to assign to the ml_node_count property of this ResizeOpensearchClusterHorizontalDetails.
         :type ml_node_count: int
@@ -56,6 +60,7 @@ class ResizeOpensearchClusterHorizontalDetails(object):
             'data_node_count': 'int',
             'opendashboard_node_count': 'int',
             'search_node_count': 'int',
+            'coordinator_node_count': 'int',
             'ml_node_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -65,6 +70,7 @@ class ResizeOpensearchClusterHorizontalDetails(object):
             'data_node_count': 'dataNodeCount',
             'opendashboard_node_count': 'opendashboardNodeCount',
             'search_node_count': 'searchNodeCount',
+            'coordinator_node_count': 'coordinatorNodeCount',
             'ml_node_count': 'mlNodeCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -73,6 +79,7 @@ class ResizeOpensearchClusterHorizontalDetails(object):
         self._data_node_count = None
         self._opendashboard_node_count = None
         self._search_node_count = None
+        self._coordinator_node_count = None
         self._ml_node_count = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -172,6 +179,30 @@ class ResizeOpensearchClusterHorizontalDetails(object):
         :type: int
         """
         self._search_node_count = search_node_count
+
+    @property
+    def coordinator_node_count(self):
+        """
+        Gets the coordinator_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        The number of coordinator nodes configured for the cluster.
+
+
+        :return: The coordinator_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        :rtype: int
+        """
+        return self._coordinator_node_count
+
+    @coordinator_node_count.setter
+    def coordinator_node_count(self, coordinator_node_count):
+        """
+        Sets the coordinator_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        The number of coordinator nodes configured for the cluster.
+
+
+        :param coordinator_node_count: The coordinator_node_count of this ResizeOpensearchClusterHorizontalDetails.
+        :type: int
+        """
+        self._coordinator_node_count = coordinator_node_count
 
     @property
     def ml_node_count(self):

@@ -36,6 +36,10 @@ class CreateOperatorControlAssignmentDetails(object):
     #: This constant has a value of "CCCINFRASTRUCTURE"
     RESOURCE_TYPE_CCCINFRASTRUCTURE = "CCCINFRASTRUCTURE"
 
+    #: A constant which can be used with the resource_type property of a CreateOperatorControlAssignmentDetails.
+    #: This constant has a value of "CLOUDEXADATAINFRASTRUCTURE"
+    RESOURCE_TYPE_CLOUDEXADATAINFRASTRUCTURE = "CLOUDEXADATAINFRASTRUCTURE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateOperatorControlAssignmentDetails object with values from keyword arguments.
@@ -55,7 +59,7 @@ class CreateOperatorControlAssignmentDetails(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this CreateOperatorControlAssignmentDetails.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE"
         :type resource_type: str
 
         :param resource_compartment_id:
@@ -252,7 +256,7 @@ class CreateOperatorControlAssignmentDetails(object):
         **[Required]** Gets the resource_type of this CreateOperatorControlAssignmentDetails.
         Type of the target resource.
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE"
 
 
         :return: The resource_type of this CreateOperatorControlAssignmentDetails.
@@ -270,7 +274,7 @@ class CreateOperatorControlAssignmentDetails(object):
         :param resource_type: The resource_type of this CreateOperatorControlAssignmentDetails.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `resource_type`, must be None or one of {allowed_values}"

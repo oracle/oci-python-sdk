@@ -459,6 +459,8 @@ from .resource_pool_member_summary import ResourcePoolMemberSummary
 from .resource_pool_shape_collection import ResourcePoolShapeCollection
 from .resource_pool_shape_summary import ResourcePoolShapeSummary
 from .resource_pool_summary import ResourcePoolSummary
+from .restart_autonomous_container_database_details import RestartAutonomousContainerDatabaseDetails
+from .restart_autonomous_database_details import RestartAutonomousDatabaseDetails
 from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetails
 from .restore_database_details import RestoreDatabaseDetails
 from .rotate_autonomous_container_database_encryption_key_details import RotateAutonomousContainerDatabaseEncryptionKeyDetails
@@ -486,6 +488,7 @@ from .self_mount_details import SelfMountDetails
 from .set_key_version_details import SetKeyVersionDetails
 from .source_database_details import SourceDatabaseDetails
 from .stack_monitoring_config import StackMonitoringConfig
+from .stop_autonomous_database_details import StopAutonomousDatabaseDetails
 from .storage_performance_details import StoragePerformanceDetails
 from .switch_over_data_guard_details import SwitchOverDataGuardDetails
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
@@ -1022,6 +1025,8 @@ database_type_mapping = {
     "ResourcePoolShapeCollection": ResourcePoolShapeCollection,
     "ResourcePoolShapeSummary": ResourcePoolShapeSummary,
     "ResourcePoolSummary": ResourcePoolSummary,
+    "RestartAutonomousContainerDatabaseDetails": RestartAutonomousContainerDatabaseDetails,
+    "RestartAutonomousDatabaseDetails": RestartAutonomousDatabaseDetails,
     "RestoreAutonomousDatabaseDetails": RestoreAutonomousDatabaseDetails,
     "RestoreDatabaseDetails": RestoreDatabaseDetails,
     "RotateAutonomousContainerDatabaseEncryptionKeyDetails": RotateAutonomousContainerDatabaseEncryptionKeyDetails,
@@ -1049,6 +1054,7 @@ database_type_mapping = {
     "SetKeyVersionDetails": SetKeyVersionDetails,
     "SourceDatabaseDetails": SourceDatabaseDetails,
     "StackMonitoringConfig": StackMonitoringConfig,
+    "StopAutonomousDatabaseDetails": StopAutonomousDatabaseDetails,
     "StoragePerformanceDetails": StoragePerformanceDetails,
     "SwitchOverDataGuardDetails": SwitchOverDataGuardDetails,
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,

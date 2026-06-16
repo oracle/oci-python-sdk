@@ -17,7 +17,6 @@ from .configure_outbound_cluster_details import ConfigureOutboundClusterDetails
 from .create_maintenance_details import CreateMaintenanceDetails
 from .create_opensearch_cluster_details import CreateOpensearchClusterDetails
 from .create_opensearch_cluster_pipeline_details import CreateOpensearchClusterPipelineDetails
-from .customer_logging_details import CustomerLoggingDetails
 from .delete_block_volumes_for_namespace_details import DeleteBlockVolumesForNamespaceDetails
 from .export_opensearch_cluster_backup_details import ExportOpensearchClusterBackupDetails
 from .force_patch_cluster_details import ForcePatchClusterDetails
@@ -82,7 +81,6 @@ opensearch_type_mapping = {
     "CreateMaintenanceDetails": CreateMaintenanceDetails,
     "CreateOpensearchClusterDetails": CreateOpensearchClusterDetails,
     "CreateOpensearchClusterPipelineDetails": CreateOpensearchClusterPipelineDetails,
-    "CustomerLoggingDetails": CustomerLoggingDetails,
     "DeleteBlockVolumesForNamespaceDetails": DeleteBlockVolumesForNamespaceDetails,
     "ExportOpensearchClusterBackupDetails": ExportOpensearchClusterBackupDetails,
     "ForcePatchClusterDetails": ForcePatchClusterDetails,

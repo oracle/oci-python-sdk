@@ -17,6 +17,8 @@ from .backup_summary import BackupSummary
 from .change_backup_compartment_details import ChangeBackupCompartmentDetails
 from .change_configuration_compartment_details import ChangeConfigurationCompartmentDetails
 from .change_db_system_compartment_details import ChangeDbSystemCompartmentDetails
+from .change_role_to_replica_details import ChangeRoleToReplicaDetails
+from .change_role_to_standalone_details import ChangeRoleToStandaloneDetails
 from .config_overrides import ConfigOverrides
 from .config_params import ConfigParams
 from .configuration import Configuration
@@ -28,22 +30,39 @@ from .create_backup_details import CreateBackupDetails
 from .create_configuration_details import CreateConfigurationDetails
 from .create_db_instance_details import CreateDbInstanceDetails
 from .create_db_system_details import CreateDbSystemDetails
+from .create_replication_config_details import CreateReplicationConfigDetails
 from .credentials import Credentials
 from .daily_backup_policy import DailyBackupPolicy
+from .date_time_range_capability import DateTimeRangeCapability
 from .db_configuration_override_collection import DbConfigurationOverrideCollection
 from .db_instance import DbInstance
 from .db_instance_endpoint import DbInstanceEndpoint
 from .db_system import DbSystem
 from .db_system_collection import DbSystemCollection
 from .db_system_details import DbSystemDetails
+from .db_system_replica_collection import DbSystemReplicaCollection
+from .db_system_replica_summary import DbSystemReplicaSummary
 from .db_system_summary import DbSystemSummary
 from .default_config_params import DefaultConfigParams
 from .default_configuration import DefaultConfiguration
 from .default_configuration_collection import DefaultConfigurationCollection
 from .default_configuration_details import DefaultConfigurationDetails
 from .default_configuration_summary import DefaultConfigurationSummary
+from .disabled_insight_details import DisabledInsightDetails
+from .disabled_kerberos_auth_details import DisabledKerberosAuthDetails
+from .enabled_insight_details import EnabledInsightDetails
+from .enabled_kerberos_auth_details import EnabledKerberosAuthDetails
 from .endpoint import Endpoint
 from .failover_db_system_details import FailoverDbSystemDetails
+from .granularity_capability import GranularityCapability
+from .insight_capability_collection import InsightCapabilityCollection
+from .insight_capability_summary import InsightCapabilitySummary
+from .insight_data_contract import InsightDataContract
+from .insight_data_type_capability import InsightDataTypeCapability
+from .insight_filter_capability import InsightFilterCapability
+from .insight_limits import InsightLimits
+from .kerberos_auth_details import KerberosAuthDetails
+from .kerberos_credential import KerberosCredential
 from .management_policy import ManagementPolicy
 from .management_policy_details import ManagementPolicyDetails
 from .monthly_backup_policy import MonthlyBackupPolicy
@@ -51,6 +70,9 @@ from .network_details import NetworkDetails
 from .none_backup_policy import NoneBackupPolicy
 from .none_source_details import NoneSourceDetails
 from .oci_optimized_storage_details import OciOptimizedStorageDetails
+from .odsp_insight import OdspInsight
+from .odsp_insight_details import OdspInsightDetails
+from .pagination_capability import PaginationCapability
 from .password_details import PasswordDetails
 from .patch_db_system_details import PatchDbSystemDetails
 from .patch_insert_instruction import PatchInsertInstruction
@@ -63,6 +85,8 @@ from .patch_replace_instruction import PatchReplaceInstruction
 from .patch_require_instruction import PatchRequireInstruction
 from .plain_text_password_details import PlainTextPasswordDetails
 from .primary_db_instance_details import PrimaryDbInstanceDetails
+from .primary_db_system_source_details import PrimaryDbSystemSourceDetails
+from .replication_config import ReplicationConfig
 from .reset_master_user_password_details import ResetMasterUserPasswordDetails
 from .restart_db_instance_in_db_system_details import RestartDbInstanceInDbSystemDetails
 from .restore_db_system_details import RestoreDbSystemDetails
@@ -70,15 +94,20 @@ from .shape_collection import ShapeCollection
 from .shape_memory_options import ShapeMemoryOptions
 from .shape_ocpu_options import ShapeOcpuOptions
 from .shape_summary import ShapeSummary
+from .sorting_capability import SortingCapability
+from .sorting_default import SortingDefault
 from .source_backup_details import SourceBackupDetails
 from .source_details import SourceDetails
+from .start_db_system_details import StartDbSystemDetails
 from .storage_details import StorageDetails
+from .switch_over_details import SwitchOverDetails
 from .update_backup_details import UpdateBackupDetails
 from .update_configuration_details import UpdateConfigurationDetails
 from .update_db_config_params import UpdateDbConfigParams
 from .update_db_system_db_instance_details import UpdateDbSystemDbInstanceDetails
 from .update_db_system_details import UpdateDbSystemDetails
 from .update_network_details import UpdateNetworkDetails
+from .update_replication_config_details import UpdateReplicationConfigDetails
 from .update_storage_details_params import UpdateStorageDetailsParams
 from .vault_secret_password_details import VaultSecretPasswordDetails
 from .weekly_backup_policy import WeeklyBackupPolicy
@@ -104,6 +133,8 @@ psql_type_mapping = {
     "ChangeBackupCompartmentDetails": ChangeBackupCompartmentDetails,
     "ChangeConfigurationCompartmentDetails": ChangeConfigurationCompartmentDetails,
     "ChangeDbSystemCompartmentDetails": ChangeDbSystemCompartmentDetails,
+    "ChangeRoleToReplicaDetails": ChangeRoleToReplicaDetails,
+    "ChangeRoleToStandaloneDetails": ChangeRoleToStandaloneDetails,
     "ConfigOverrides": ConfigOverrides,
     "ConfigParams": ConfigParams,
     "Configuration": Configuration,
@@ -115,22 +146,39 @@ psql_type_mapping = {
     "CreateConfigurationDetails": CreateConfigurationDetails,
     "CreateDbInstanceDetails": CreateDbInstanceDetails,
     "CreateDbSystemDetails": CreateDbSystemDetails,
+    "CreateReplicationConfigDetails": CreateReplicationConfigDetails,
     "Credentials": Credentials,
     "DailyBackupPolicy": DailyBackupPolicy,
+    "DateTimeRangeCapability": DateTimeRangeCapability,
     "DbConfigurationOverrideCollection": DbConfigurationOverrideCollection,
     "DbInstance": DbInstance,
     "DbInstanceEndpoint": DbInstanceEndpoint,
     "DbSystem": DbSystem,
     "DbSystemCollection": DbSystemCollection,
     "DbSystemDetails": DbSystemDetails,
+    "DbSystemReplicaCollection": DbSystemReplicaCollection,
+    "DbSystemReplicaSummary": DbSystemReplicaSummary,
     "DbSystemSummary": DbSystemSummary,
     "DefaultConfigParams": DefaultConfigParams,
     "DefaultConfiguration": DefaultConfiguration,
     "DefaultConfigurationCollection": DefaultConfigurationCollection,
     "DefaultConfigurationDetails": DefaultConfigurationDetails,
     "DefaultConfigurationSummary": DefaultConfigurationSummary,
+    "DisabledInsightDetails": DisabledInsightDetails,
+    "DisabledKerberosAuthDetails": DisabledKerberosAuthDetails,
+    "EnabledInsightDetails": EnabledInsightDetails,
+    "EnabledKerberosAuthDetails": EnabledKerberosAuthDetails,
     "Endpoint": Endpoint,
     "FailoverDbSystemDetails": FailoverDbSystemDetails,
+    "GranularityCapability": GranularityCapability,
+    "InsightCapabilityCollection": InsightCapabilityCollection,
+    "InsightCapabilitySummary": InsightCapabilitySummary,
+    "InsightDataContract": InsightDataContract,
+    "InsightDataTypeCapability": InsightDataTypeCapability,
+    "InsightFilterCapability": InsightFilterCapability,
+    "InsightLimits": InsightLimits,
+    "KerberosAuthDetails": KerberosAuthDetails,
+    "KerberosCredential": KerberosCredential,
     "ManagementPolicy": ManagementPolicy,
     "ManagementPolicyDetails": ManagementPolicyDetails,
     "MonthlyBackupPolicy": MonthlyBackupPolicy,
@@ -138,6 +186,9 @@ psql_type_mapping = {
     "NoneBackupPolicy": NoneBackupPolicy,
     "NoneSourceDetails": NoneSourceDetails,
     "OciOptimizedStorageDetails": OciOptimizedStorageDetails,
+    "OdspInsight": OdspInsight,
+    "OdspInsightDetails": OdspInsightDetails,
+    "PaginationCapability": PaginationCapability,
     "PasswordDetails": PasswordDetails,
     "PatchDbSystemDetails": PatchDbSystemDetails,
     "PatchInsertInstruction": PatchInsertInstruction,
@@ -150,6 +201,8 @@ psql_type_mapping = {
     "PatchRequireInstruction": PatchRequireInstruction,
     "PlainTextPasswordDetails": PlainTextPasswordDetails,
     "PrimaryDbInstanceDetails": PrimaryDbInstanceDetails,
+    "PrimaryDbSystemSourceDetails": PrimaryDbSystemSourceDetails,
+    "ReplicationConfig": ReplicationConfig,
     "ResetMasterUserPasswordDetails": ResetMasterUserPasswordDetails,
     "RestartDbInstanceInDbSystemDetails": RestartDbInstanceInDbSystemDetails,
     "RestoreDbSystemDetails": RestoreDbSystemDetails,
@@ -157,15 +210,20 @@ psql_type_mapping = {
     "ShapeMemoryOptions": ShapeMemoryOptions,
     "ShapeOcpuOptions": ShapeOcpuOptions,
     "ShapeSummary": ShapeSummary,
+    "SortingCapability": SortingCapability,
+    "SortingDefault": SortingDefault,
     "SourceBackupDetails": SourceBackupDetails,
     "SourceDetails": SourceDetails,
+    "StartDbSystemDetails": StartDbSystemDetails,
     "StorageDetails": StorageDetails,
+    "SwitchOverDetails": SwitchOverDetails,
     "UpdateBackupDetails": UpdateBackupDetails,
     "UpdateConfigurationDetails": UpdateConfigurationDetails,
     "UpdateDbConfigParams": UpdateDbConfigParams,
     "UpdateDbSystemDbInstanceDetails": UpdateDbSystemDbInstanceDetails,
     "UpdateDbSystemDetails": UpdateDbSystemDetails,
     "UpdateNetworkDetails": UpdateNetworkDetails,
+    "UpdateReplicationConfigDetails": UpdateReplicationConfigDetails,
     "UpdateStorageDetailsParams": UpdateStorageDetailsParams,
     "VaultSecretPasswordDetails": VaultSecretPasswordDetails,
     "WeeklyBackupPolicy": WeeklyBackupPolicy,

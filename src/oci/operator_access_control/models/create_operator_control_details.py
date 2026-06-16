@@ -39,6 +39,10 @@ class CreateOperatorControlDetails(object):
     #: This constant has a value of "CCCINFRASTRUCTURE"
     RESOURCE_TYPE_CCCINFRASTRUCTURE = "CCCINFRASTRUCTURE"
 
+    #: A constant which can be used with the resource_type property of a CreateOperatorControlDetails.
+    #: This constant has a value of "CLOUDEXADATAINFRASTRUCTURE"
+    RESOURCE_TYPE_CLOUDEXADATAINFRASTRUCTURE = "CLOUDEXADATAINFRASTRUCTURE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateOperatorControlDetails object with values from keyword arguments.
@@ -70,12 +74,16 @@ class CreateOperatorControlDetails(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this CreateOperatorControlDetails.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE"
         :type resource_type: str
 
         :param number_of_approvers:
             The value to assign to the number_of_approvers property of this CreateOperatorControlDetails.
         :type number_of_approvers: int
+
+        :param notification_topic_id:
+            The value to assign to the notification_topic_id property of this CreateOperatorControlDetails.
+        :type notification_topic_id: str
 
         :param email_id_list:
             The value to assign to the email_id_list property of this CreateOperatorControlDetails.
@@ -107,6 +115,7 @@ class CreateOperatorControlDetails(object):
             'is_fully_pre_approved': 'bool',
             'resource_type': 'str',
             'number_of_approvers': 'int',
+            'notification_topic_id': 'str',
             'email_id_list': 'list[str]',
             'system_message': 'str',
             'compartment_id': 'str',
@@ -122,6 +131,7 @@ class CreateOperatorControlDetails(object):
             'is_fully_pre_approved': 'isFullyPreApproved',
             'resource_type': 'resourceType',
             'number_of_approvers': 'numberOfApprovers',
+            'notification_topic_id': 'notificationTopicId',
             'email_id_list': 'emailIdList',
             'system_message': 'systemMessage',
             'compartment_id': 'compartmentId',
@@ -136,6 +146,7 @@ class CreateOperatorControlDetails(object):
         self._is_fully_pre_approved = None
         self._resource_type = None
         self._number_of_approvers = None
+        self._notification_topic_id = None
         self._email_id_list = None
         self._system_message = None
         self._compartment_id = None
@@ -296,7 +307,7 @@ class CreateOperatorControlDetails(object):
         **[Required]** Gets the resource_type of this CreateOperatorControlDetails.
         resourceType for which the OperatorControl is applicable
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE"
 
 
         :return: The resource_type of this CreateOperatorControlDetails.
@@ -314,7 +325,7 @@ class CreateOperatorControlDetails(object):
         :param resource_type: The resource_type of this CreateOperatorControlDetails.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `resource_type`, must be None or one of {allowed_values}"
@@ -344,6 +355,30 @@ class CreateOperatorControlDetails(object):
         :type: int
         """
         self._number_of_approvers = number_of_approvers
+
+    @property
+    def notification_topic_id(self):
+        """
+        Gets the notification_topic_id of this CreateOperatorControlDetails.
+        The OCID of the OCI Notification topic to publish messages related to this operator control.
+
+
+        :return: The notification_topic_id of this CreateOperatorControlDetails.
+        :rtype: str
+        """
+        return self._notification_topic_id
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, notification_topic_id):
+        """
+        Sets the notification_topic_id of this CreateOperatorControlDetails.
+        The OCID of the OCI Notification topic to publish messages related to this operator control.
+
+
+        :param notification_topic_id: The notification_topic_id of this CreateOperatorControlDetails.
+        :type: str
+        """
+        self._notification_topic_id = notification_topic_id
 
     @property
     def email_id_list(self):

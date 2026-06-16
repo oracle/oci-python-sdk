@@ -34,9 +34,13 @@ from .domain_governance import DomainGovernance
 from .domain_governance_collection import DomainGovernanceCollection
 from .domain_governance_summary import DomainGovernanceSummary
 from .domain_summary import DomainSummary
+from .invitation_feature import InvitationFeature
 from .link import Link
 from .link_collection import LinkCollection
+from .link_feature_summary import LinkFeatureSummary
+from .link_features_collection import LinkFeaturesCollection
 from .link_summary import LinkSummary
+from .link_with_tenancy_names import LinkWithTenancyNames
 from .order import Order
 from .organization import Organization
 from .organization_collection import OrganizationCollection
@@ -48,7 +52,6 @@ from .promotion import Promotion
 from .recipient_invitation import RecipientInvitation
 from .recipient_invitation_collection import RecipientInvitationCollection
 from .recipient_invitation_summary import RecipientInvitationSummary
-from .revive_workflow_instance_details import ReviveWorkflowInstanceDetails
 from .sender_invitation import SenderInvitation
 from .sender_invitation_collection import SenderInvitationCollection
 from .sender_invitation_summary import SenderInvitationSummary
@@ -107,9 +110,13 @@ tenant_manager_control_plane_type_mapping = {
     "DomainGovernanceCollection": DomainGovernanceCollection,
     "DomainGovernanceSummary": DomainGovernanceSummary,
     "DomainSummary": DomainSummary,
+    "InvitationFeature": InvitationFeature,
     "Link": Link,
     "LinkCollection": LinkCollection,
+    "LinkFeatureSummary": LinkFeatureSummary,
+    "LinkFeaturesCollection": LinkFeaturesCollection,
     "LinkSummary": LinkSummary,
+    "LinkWithTenancyNames": LinkWithTenancyNames,
     "Order": Order,
     "Organization": Organization,
     "OrganizationCollection": OrganizationCollection,
@@ -121,7 +128,6 @@ tenant_manager_control_plane_type_mapping = {
     "RecipientInvitation": RecipientInvitation,
     "RecipientInvitationCollection": RecipientInvitationCollection,
     "RecipientInvitationSummary": RecipientInvitationSummary,
-    "ReviveWorkflowInstanceDetails": ReviveWorkflowInstanceDetails,
     "SenderInvitation": SenderInvitation,
     "SenderInvitationCollection": SenderInvitationCollection,
     "SenderInvitationSummary": SenderInvitationSummary,

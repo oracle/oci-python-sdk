@@ -469,7 +469,7 @@ class SenderInvitationClient(object):
         :param str status: (optional)
             The status of the sender invitation.
 
-            Allowed values are: "PENDING", "CANCELED", "ACCEPTED", "EXPIRED", "FAILED"
+            Allowed values are: "PENDING", "CANCELED", "ACCEPTED", "EXPIRED", "FAILED", "NOT_APPLICABLE"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
@@ -553,7 +553,7 @@ class SenderInvitationClient(object):
                 )
 
         if 'status' in kwargs:
-            status_allowed_values = ["PENDING", "CANCELED", "ACCEPTED", "EXPIRED", "FAILED"]
+            status_allowed_values = ["PENDING", "CANCELED", "ACCEPTED", "EXPIRED", "FAILED", "NOT_APPLICABLE"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
                     f"Invalid value for `status`, must be one of { status_allowed_values }"

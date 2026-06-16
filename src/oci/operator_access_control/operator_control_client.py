@@ -24,8 +24,6 @@ class OperatorControlClient(object):
     """
     Operator Access Control enables you to control the time duration and the actions an Oracle operator can perform on your Exadata Cloud@Customer infrastructure.
     Using logging service, you can view a near real-time audit report of all actions performed by an Oracle operator.
-
-    Use the table of contents and search tool to explore the OperatorAccessControl API.
     """
 
     def __init__(self, config, **kwargs):
@@ -182,7 +180,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls/{operatorControlId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_operator_control_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ChangeOperatorControlCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -299,7 +297,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls"
         method = "POST"
         operation_name = "create_operator_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/CreateOperatorControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -411,7 +409,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls/{operatorControlId}"
         method = "DELETE"
         operation_name = "delete_operator_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/DeleteOperatorControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -524,7 +522,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls/{operatorControlId}"
         method = "GET"
         operation_name = "get_operator_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/GetOperatorControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -656,7 +654,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls"
         method = "GET"
         operation_name = "list_operator_controls"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ListOperatorControls"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -801,7 +799,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls/{operatorControlId}"
         method = "PUT"
         operation_name = "update_operator_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/UpdateOperatorControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

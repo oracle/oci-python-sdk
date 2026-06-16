@@ -59,6 +59,10 @@ class SenderInvitation(object):
     #: This constant has a value of "FAILED"
     STATUS_FAILED = "FAILED"
 
+    #: A constant which can be used with the status property of a SenderInvitation.
+    #: This constant has a value of "NOT_APPLICABLE"
+    STATUS_NOT_APPLICABLE = "NOT_APPLICABLE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SenderInvitation object with values from keyword arguments.
@@ -92,7 +96,7 @@ class SenderInvitation(object):
 
         :param status:
             The value to assign to the status property of this SenderInvitation.
-            Allowed values for this property are: "PENDING", "CANCELED", "ACCEPTED", "EXPIRED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PENDING", "CANCELED", "ACCEPTED", "EXPIRED", "FAILED", "NOT_APPLICABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -111,6 +115,10 @@ class SenderInvitation(object):
         :param recipient_email_address:
             The value to assign to the recipient_email_address property of this SenderInvitation.
         :type recipient_email_address: str
+
+        :param invitation_features:
+            The value to assign to the invitation_features property of this SenderInvitation.
+        :type invitation_features: list[oci.tenant_manager_control_plane.models.InvitationFeature]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SenderInvitation.
@@ -137,6 +145,7 @@ class SenderInvitation(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'recipient_email_address': 'str',
+            'invitation_features': 'list[InvitationFeature]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -153,6 +162,7 @@ class SenderInvitation(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'recipient_email_address': 'recipientEmailAddress',
+            'invitation_features': 'invitationFeatures',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -168,6 +178,7 @@ class SenderInvitation(object):
         self._time_created = None
         self._time_updated = None
         self._recipient_email_address = None
+        self._invitation_features = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -328,7 +339,7 @@ class SenderInvitation(object):
         **[Required]** Gets the status of this SenderInvitation.
         Status of the sender invitation.
 
-        Allowed values for this property are: "PENDING", "CANCELED", "ACCEPTED", "EXPIRED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PENDING", "CANCELED", "ACCEPTED", "EXPIRED", "FAILED", "NOT_APPLICABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -347,7 +358,7 @@ class SenderInvitation(object):
         :param status: The status of this SenderInvitation.
         :type: str
         """
-        allowed_values = ["PENDING", "CANCELED", "ACCEPTED", "EXPIRED", "FAILED"]
+        allowed_values = ["PENDING", "CANCELED", "ACCEPTED", "EXPIRED", "FAILED", "NOT_APPLICABLE"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -447,6 +458,30 @@ class SenderInvitation(object):
         :type: str
         """
         self._recipient_email_address = recipient_email_address
+
+    @property
+    def invitation_features(self):
+        """
+        Gets the invitation_features of this SenderInvitation.
+        List of features that the invitation is being sent for. Each feature would create one link, of that type.
+
+
+        :return: The invitation_features of this SenderInvitation.
+        :rtype: list[oci.tenant_manager_control_plane.models.InvitationFeature]
+        """
+        return self._invitation_features
+
+    @invitation_features.setter
+    def invitation_features(self, invitation_features):
+        """
+        Sets the invitation_features of this SenderInvitation.
+        List of features that the invitation is being sent for. Each feature would create one link, of that type.
+
+
+        :param invitation_features: The invitation_features of this SenderInvitation.
+        :type: list[oci.tenant_manager_control_plane.models.InvitationFeature]
+        """
+        self._invitation_features = invitation_features
 
     @property
     def freeform_tags(self):

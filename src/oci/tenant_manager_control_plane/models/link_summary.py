@@ -78,6 +78,10 @@ class LinkSummary(object):
             The value to assign to the system_tags property of this LinkSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param feature:
+            The value to assign to the feature property of this LinkSummary.
+        :type feature: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -87,7 +91,8 @@ class LinkSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'time_terminated': 'datetime',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'feature': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -97,7 +102,8 @@ class LinkSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'time_terminated': 'timeTerminated',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'feature': 'feature'
         }
         self._id = None
         self._parent_tenancy_id = None
@@ -107,6 +113,7 @@ class LinkSummary(object):
         self._time_updated = None
         self._time_terminated = None
         self._system_tags = None
+        self._feature = None
 
     @property
     def id(self):
@@ -307,6 +314,30 @@ class LinkSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def feature(self):
+        """
+        Gets the feature of this LinkSummary.
+        The feature associated with this link. Default value is CORE.
+
+
+        :return: The feature of this LinkSummary.
+        :rtype: str
+        """
+        return self._feature
+
+    @feature.setter
+    def feature(self, feature):
+        """
+        Sets the feature of this LinkSummary.
+        The feature associated with this link. Default value is CORE.
+
+
+        :param feature: The feature of this LinkSummary.
+        :type: str
+        """
+        self._feature = feature
 
     def __repr__(self):
         return formatted_flat_dict(self)

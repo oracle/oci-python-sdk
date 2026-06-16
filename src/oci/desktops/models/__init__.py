@@ -36,8 +36,10 @@ from .hosting_options import HostingOptions
 from .inactivity_config import InactivityConfig
 from .update_desktop_details import UpdateDesktopDetails
 from .update_desktop_image import UpdateDesktopImage
+from .update_desktop_network_configuration import UpdateDesktopNetworkConfiguration
 from .update_desktop_pool_desktop_session_lifecycle_actions import UpdateDesktopPoolDesktopSessionLifecycleActions
 from .update_desktop_pool_details import UpdateDesktopPoolDetails
+from .update_desktop_pool_private_access_details import UpdateDesktopPoolPrivateAccessDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -79,8 +81,10 @@ desktops_type_mapping = {
     "InactivityConfig": InactivityConfig,
     "UpdateDesktopDetails": UpdateDesktopDetails,
     "UpdateDesktopImage": UpdateDesktopImage,
+    "UpdateDesktopNetworkConfiguration": UpdateDesktopNetworkConfiguration,
     "UpdateDesktopPoolDesktopSessionLifecycleActions": UpdateDesktopPoolDesktopSessionLifecycleActions,
     "UpdateDesktopPoolDetails": UpdateDesktopPoolDetails,
+    "UpdateDesktopPoolPrivateAccessDetails": UpdateDesktopPoolPrivateAccessDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

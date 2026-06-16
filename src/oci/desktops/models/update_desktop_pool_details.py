@@ -72,6 +72,18 @@ class UpdateDesktopPoolDetails(object):
             The value to assign to the image property of this UpdateDesktopPoolDetails.
         :type image: oci.desktops.models.UpdateDesktopImage
 
+        :param network_configuration:
+            The value to assign to the network_configuration property of this UpdateDesktopPoolDetails.
+        :type network_configuration: oci.desktops.models.UpdateDesktopNetworkConfiguration
+
+        :param private_access_details:
+            The value to assign to the private_access_details property of this UpdateDesktopPoolDetails.
+        :type private_access_details: oci.desktops.models.UpdateDesktopPoolPrivateAccessDetails
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateDesktopPoolDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param boot_volume_size_in_gbs:
             The value to assign to the boot_volume_size_in_gbs property of this UpdateDesktopPoolDetails.
         :type boot_volume_size_in_gbs: int
@@ -91,6 +103,9 @@ class UpdateDesktopPoolDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'session_lifecycle_actions': 'UpdateDesktopPoolDesktopSessionLifecycleActions',
             'image': 'UpdateDesktopImage',
+            'network_configuration': 'UpdateDesktopNetworkConfiguration',
+            'private_access_details': 'UpdateDesktopPoolPrivateAccessDetails',
+            'security_attributes': 'dict(str, dict(str, object))',
             'boot_volume_size_in_gbs': 'int'
         }
         self.attribute_map = {
@@ -107,6 +122,9 @@ class UpdateDesktopPoolDetails(object):
             'defined_tags': 'definedTags',
             'session_lifecycle_actions': 'sessionLifecycleActions',
             'image': 'image',
+            'network_configuration': 'networkConfiguration',
+            'private_access_details': 'privateAccessDetails',
+            'security_attributes': 'securityAttributes',
             'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs'
         }
         self._display_name = None
@@ -122,6 +140,9 @@ class UpdateDesktopPoolDetails(object):
         self._defined_tags = None
         self._session_lifecycle_actions = None
         self._image = None
+        self._network_configuration = None
+        self._private_access_details = None
+        self._security_attributes = None
         self._boot_volume_size_in_gbs = None
 
     @property
@@ -437,6 +458,84 @@ class UpdateDesktopPoolDetails(object):
         :type: oci.desktops.models.UpdateDesktopImage
         """
         self._image = image
+
+    @property
+    def network_configuration(self):
+        """
+        Gets the network_configuration of this UpdateDesktopPoolDetails.
+
+        :return: The network_configuration of this UpdateDesktopPoolDetails.
+        :rtype: oci.desktops.models.UpdateDesktopNetworkConfiguration
+        """
+        return self._network_configuration
+
+    @network_configuration.setter
+    def network_configuration(self, network_configuration):
+        """
+        Sets the network_configuration of this UpdateDesktopPoolDetails.
+
+        :param network_configuration: The network_configuration of this UpdateDesktopPoolDetails.
+        :type: oci.desktops.models.UpdateDesktopNetworkConfiguration
+        """
+        self._network_configuration = network_configuration
+
+    @property
+    def private_access_details(self):
+        """
+        Gets the private_access_details of this UpdateDesktopPoolDetails.
+
+        :return: The private_access_details of this UpdateDesktopPoolDetails.
+        :rtype: oci.desktops.models.UpdateDesktopPoolPrivateAccessDetails
+        """
+        return self._private_access_details
+
+    @private_access_details.setter
+    def private_access_details(self, private_access_details):
+        """
+        Sets the private_access_details of this UpdateDesktopPoolDetails.
+
+        :param private_access_details: The private_access_details of this UpdateDesktopPoolDetails.
+        :type: oci.desktops.models.UpdateDesktopPoolPrivateAccessDetails
+        """
+        self._private_access_details = private_access_details
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateDesktopPoolDetails.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :return: The security_attributes of this UpdateDesktopPoolDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateDesktopPoolDetails.
+        `Security attributes`__ for this resource.
+        Each attribute can be referenced in a `Zero Trust Packet Routing`__
+        (ZPR) policy to control access to ZPR-supported resources.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes
+        __ https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateDesktopPoolDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def boot_volume_size_in_gbs(self):

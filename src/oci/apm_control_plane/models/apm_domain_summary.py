@@ -70,6 +70,10 @@ class ApmDomainSummary(object):
             The value to assign to the is_free_tier property of this ApmDomainSummary.
         :type is_free_tier: bool
 
+        :param log_group_id:
+            The value to assign to the log_group_id property of this ApmDomainSummary.
+        :type log_group_id: str
+
         :param time_created:
             The value to assign to the time_created property of this ApmDomainSummary.
         :type time_created: datetime
@@ -94,6 +98,7 @@ class ApmDomainSummary(object):
             'compartment_id': 'str',
             'lifecycle_state': 'str',
             'is_free_tier': 'bool',
+            'log_group_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
@@ -106,6 +111,7 @@ class ApmDomainSummary(object):
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
             'is_free_tier': 'isFreeTier',
+            'log_group_id': 'logGroupId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
@@ -117,6 +123,7 @@ class ApmDomainSummary(object):
         self._compartment_id = None
         self._lifecycle_state = None
         self._is_free_tier = None
+        self._log_group_id = None
         self._time_created = None
         self._time_updated = None
         self._freeform_tags = None
@@ -271,6 +278,30 @@ class ApmDomainSummary(object):
         :type: bool
         """
         self._is_free_tier = is_free_tier
+
+    @property
+    def log_group_id(self):
+        """
+        Gets the log_group_id of this ApmDomainSummary.
+        The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+
+
+        :return: The log_group_id of this ApmDomainSummary.
+        :rtype: str
+        """
+        return self._log_group_id
+
+    @log_group_id.setter
+    def log_group_id(self, log_group_id):
+        """
+        Sets the log_group_id of this ApmDomainSummary.
+        The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
+
+
+        :param log_group_id: The log_group_id of this ApmDomainSummary.
+        :type: str
+        """
+        self._log_group_id = log_group_id
 
     @property
     def time_created(self):

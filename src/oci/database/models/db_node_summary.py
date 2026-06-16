@@ -57,6 +57,30 @@ class DbNodeSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the available_actions property of a DbNodeSummary.
+    #: This constant has a value of "STOP"
+    AVAILABLE_ACTIONS_STOP = "STOP"
+
+    #: A constant which can be used with the available_actions property of a DbNodeSummary.
+    #: This constant has a value of "FORCESTOP"
+    AVAILABLE_ACTIONS_FORCESTOP = "FORCESTOP"
+
+    #: A constant which can be used with the available_actions property of a DbNodeSummary.
+    #: This constant has a value of "FORCERESET"
+    AVAILABLE_ACTIONS_FORCERESET = "FORCERESET"
+
+    #: A constant which can be used with the available_actions property of a DbNodeSummary.
+    #: This constant has a value of "START"
+    AVAILABLE_ACTIONS_START = "START"
+
+    #: A constant which can be used with the available_actions property of a DbNodeSummary.
+    #: This constant has a value of "SOFTRESET"
+    AVAILABLE_ACTIONS_SOFTRESET = "SOFTRESET"
+
+    #: A constant which can be used with the available_actions property of a DbNodeSummary.
+    #: This constant has a value of "RESET"
+    AVAILABLE_ACTIONS_RESET = "RESET"
+
     #: A constant which can be used with the maintenance_type property of a DbNodeSummary.
     #: This constant has a value of "VMDB_REBOOT_MIGRATION"
     MAINTENANCE_TYPE_VMDB_REBOOT_MIGRATION = "VMDB_REBOOT_MIGRATION"
@@ -123,6 +147,12 @@ class DbNodeSummary(object):
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param available_actions:
+            The value to assign to the available_actions property of this DbNodeSummary.
+            Allowed values for items in this list are: "STOP", "FORCESTOP", "FORCERESET", "START", "SOFTRESET", "RESET", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type available_actions: list[str]
 
         :param hostname:
             The value to assign to the hostname property of this DbNodeSummary.
@@ -221,6 +251,7 @@ class DbNodeSummary(object):
             'vnic2_id': 'str',
             'backup_vnic2_id': 'str',
             'lifecycle_state': 'str',
+            'available_actions': 'list[str]',
             'hostname': 'str',
             'fault_domain': 'str',
             'time_created': 'datetime',
@@ -254,6 +285,7 @@ class DbNodeSummary(object):
             'vnic2_id': 'vnic2Id',
             'backup_vnic2_id': 'backupVnic2Id',
             'lifecycle_state': 'lifecycleState',
+            'available_actions': 'availableActions',
             'hostname': 'hostname',
             'fault_domain': 'faultDomain',
             'time_created': 'timeCreated',
@@ -286,6 +318,7 @@ class DbNodeSummary(object):
         self._vnic2_id = None
         self._backup_vnic2_id = None
         self._lifecycle_state = None
+        self._available_actions = None
         self._hostname = None
         self._fault_domain = None
         self._time_created = None
@@ -652,6 +685,36 @@ class DbNodeSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def available_actions(self):
+        """
+        Gets the available_actions of this DbNodeSummary.
+        Actions that can be performed on the database node, depending on its current lifecycle state.
+
+        Allowed values for items in this list are: "STOP", "FORCESTOP", "FORCERESET", "START", "SOFTRESET", "RESET", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The available_actions of this DbNodeSummary.
+        :rtype: list[str]
+        """
+        return self._available_actions
+
+    @available_actions.setter
+    def available_actions(self, available_actions):
+        """
+        Sets the available_actions of this DbNodeSummary.
+        Actions that can be performed on the database node, depending on its current lifecycle state.
+
+
+        :param available_actions: The available_actions of this DbNodeSummary.
+        :type: list[str]
+        """
+        allowed_values = ["STOP", "FORCESTOP", "FORCERESET", "START", "SOFTRESET", "RESET"]
+        if available_actions:
+            available_actions[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in available_actions]
+        self._available_actions = available_actions
 
     @property
     def hostname(self):

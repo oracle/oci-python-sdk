@@ -26,6 +26,9 @@ from .create_macs_apm_extension_details import CreateMacsApmExtensionDetails
 from .create_metric_group_details import CreateMetricGroupDetails
 from .create_options_details import CreateOptionsDetails
 from .create_span_filter_details import CreateSpanFilterDetails
+from .data_file import DataFile
+from .data_file_summary import DataFileSummary
+from .data_file_summary_collection import DataFileSummaryCollection
 from .dimension import Dimension
 from .export_configuration_details import ExportConfigurationDetails
 from .export_configuration_response_details import ExportConfigurationResponseDetails
@@ -90,6 +93,9 @@ apm_config_type_mapping = {
     "CreateMetricGroupDetails": CreateMetricGroupDetails,
     "CreateOptionsDetails": CreateOptionsDetails,
     "CreateSpanFilterDetails": CreateSpanFilterDetails,
+    "DataFile": DataFile,
+    "DataFileSummary": DataFileSummary,
+    "DataFileSummaryCollection": DataFileSummaryCollection,
     "Dimension": Dimension,
     "ExportConfigurationDetails": ExportConfigurationDetails,
     "ExportConfigurationResponseDetails": ExportConfigurationResponseDetails,
