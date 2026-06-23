@@ -28,21 +28,42 @@ class UpdateResolverVnicEndpointDetails(UpdateResolverEndpointDetails):
             Allowed values for this property are: "VNIC"
         :type endpoint_type: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this UpdateResolverVnicEndpointDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this UpdateResolverVnicEndpointDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this UpdateResolverVnicEndpointDetails.
         :type nsg_ids: list[str]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateResolverVnicEndpointDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'endpoint_type': 'str',
-            'nsg_ids': 'list[str]'
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'endpoint_type': 'endpointType',
-            'nsg_ids': 'nsgIds'
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
+            'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes'
         }
         self._endpoint_type = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._nsg_ids = None
+        self._security_attributes = None
         self._endpoint_type = 'VNIC'
 
     @property
@@ -70,6 +91,26 @@ class UpdateResolverVnicEndpointDetails(UpdateResolverEndpointDetails):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateResolverVnicEndpointDetails.
+
+        :return: The security_attributes of this UpdateResolverVnicEndpointDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateResolverVnicEndpointDetails.
+
+        :param security_attributes: The security_attributes of this UpdateResolverVnicEndpointDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

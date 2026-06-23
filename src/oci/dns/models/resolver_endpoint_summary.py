@@ -80,6 +80,14 @@ class ResolverEndpointSummary(object):
             The value to assign to the listening_address property of this ResolverEndpointSummary.
         :type listening_address: str
 
+        :param id:
+            The value to assign to the id property of this ResolverEndpointSummary.
+        :type id: str
+
+        :param resolver_id:
+            The value to assign to the resolver_id property of this ResolverEndpointSummary.
+        :type resolver_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this ResolverEndpointSummary.
         :type compartment_id: str
@@ -102,6 +110,14 @@ class ResolverEndpointSummary(object):
             The value to assign to the _self property of this ResolverEndpointSummary.
         :type _self: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this ResolverEndpointSummary.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this ResolverEndpointSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -110,11 +126,15 @@ class ResolverEndpointSummary(object):
             'is_forwarding': 'bool',
             'is_listening': 'bool',
             'listening_address': 'str',
+            'id': 'str',
+            'resolver_id': 'str',
             'compartment_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
-            '_self': 'str'
+            '_self': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'name': 'name',
@@ -123,11 +143,15 @@ class ResolverEndpointSummary(object):
             'is_forwarding': 'isForwarding',
             'is_listening': 'isListening',
             'listening_address': 'listeningAddress',
+            'id': 'id',
+            'resolver_id': 'resolverId',
             'compartment_id': 'compartmentId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
-            '_self': 'self'
+            '_self': 'self',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
         self._name = None
         self._endpoint_type = None
@@ -135,11 +159,15 @@ class ResolverEndpointSummary(object):
         self._is_forwarding = None
         self._is_listening = None
         self._listening_address = None
+        self._id = None
+        self._resolver_id = None
         self._compartment_id = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
         self.__self = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -309,6 +337,54 @@ class ResolverEndpointSummary(object):
         self._listening_address = listening_address
 
     @property
+    def id(self):
+        """
+        **[Required]** Gets the id of this ResolverEndpointSummary.
+        The OCID of the resolver endpoint.
+
+
+        :return: The id of this ResolverEndpointSummary.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this ResolverEndpointSummary.
+        The OCID of the resolver endpoint.
+
+
+        :param id: The id of this ResolverEndpointSummary.
+        :type: str
+        """
+        self._id = id
+
+    @property
+    def resolver_id(self):
+        """
+        **[Required]** Gets the resolver_id of this ResolverEndpointSummary.
+        The OCID of the resolver.
+
+
+        :return: The resolver_id of this ResolverEndpointSummary.
+        :rtype: str
+        """
+        return self._resolver_id
+
+    @resolver_id.setter
+    def resolver_id(self, resolver_id):
+        """
+        Sets the resolver_id of this ResolverEndpointSummary.
+        The OCID of the resolver.
+
+
+        :param resolver_id: The resolver_id of this ResolverEndpointSummary.
+        :type: str
+        """
+        self._resolver_id = resolver_id
+
+    @property
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ResolverEndpointSummary.
@@ -447,6 +523,46 @@ class ResolverEndpointSummary(object):
         :type: str
         """
         self.__self = _self
+
+    @property
+    def freeform_tags(self):
+        """
+        **[Required]** Gets the freeform_tags of this ResolverEndpointSummary.
+
+        :return: The freeform_tags of this ResolverEndpointSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this ResolverEndpointSummary.
+
+        :param freeform_tags: The freeform_tags of this ResolverEndpointSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        **[Required]** Gets the defined_tags of this ResolverEndpointSummary.
+
+        :return: The defined_tags of this ResolverEndpointSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this ResolverEndpointSummary.
+
+        :param defined_tags: The defined_tags of this ResolverEndpointSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

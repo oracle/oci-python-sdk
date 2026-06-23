@@ -299,7 +299,9 @@ class CreateZoneDetails(CreateZoneBaseDetails):
     def resolution_mode(self):
         """
         Gets the resolution_mode of this CreateZoneDetails.
-        The resolution mode of a zone defines behavior related to how query responses can be handled.
+        The resolution mode of a zone defines behavior related to how query responses can be handled. See `Private DNS Zone Transparency`__ for more information.
+
+        __ https://docs.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution
 
         Allowed values for this property are: "STATIC", "TRANSPARENT", "RTYPE_TRANSPARENT"
 
@@ -313,7 +315,9 @@ class CreateZoneDetails(CreateZoneBaseDetails):
     def resolution_mode(self, resolution_mode):
         """
         Sets the resolution_mode of this CreateZoneDetails.
-        The resolution mode of a zone defines behavior related to how query responses can be handled.
+        The resolution mode of a zone defines behavior related to how query responses can be handled. See `Private DNS Zone Transparency`__ for more information.
+
+        __ https://docs.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution
 
 
         :param resolution_mode: The resolution_mode of this CreateZoneDetails.

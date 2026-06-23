@@ -370,7 +370,7 @@ class ScheduleClient(object):
 
     def change_schedule_compartment(self, schedule_id, change_schedule_compartment_details, **kwargs):
         """
-        This API) moves a schedule into a different compartment within the same tenancy. For information about moving resources between
+        This API moves a schedule into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
         __ https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
@@ -382,7 +382,7 @@ class ScheduleClient(object):
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_scheduler.models.ChangeScheduleCompartmentDetails change_schedule_compartment_details: (required)
-            This is the change schedule compartment details that will be updated.
+            These are the change schedule compartment details that will be updated.
 
         :param str if_match: (optional)
             This is used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the
@@ -1084,6 +1084,9 @@ class ScheduleClient(object):
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param str action_type: (optional)
+            This describes the Action Type
+
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
             paginated \"List\" call. For important details about how pagination works, see
@@ -1139,6 +1142,7 @@ class ScheduleClient(object):
             "enable_strict_url_encoding",
             "retry_strategy",
             "compartment_id",
+            "action_type",
             "limit",
             "page",
             "opc_request_id"
@@ -1150,6 +1154,7 @@ class ScheduleClient(object):
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
+            "actionType": kwargs.get("action_type", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }

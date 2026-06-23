@@ -114,6 +114,7 @@ Apigateway
     oci.apigateway.models.MutualTlsDetails
     oci.apigateway.models.NoCache
     oci.apigateway.models.NoContentValidation
+    oci.apigateway.models.OAuth2LoginBackend
     oci.apigateway.models.OAuth2LogoutBackend
     oci.apigateway.models.OAuth2ResponseValidationFailurePolicy
     oci.apigateway.models.OracleFunctionBackend

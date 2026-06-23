@@ -50,6 +50,10 @@ class SteeringPolicy(object):
     LIFECYCLE_STATE_CREATING = "CREATING"
 
     #: A constant which can be used with the lifecycle_state property of a SteeringPolicy.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a SteeringPolicy.
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
@@ -114,7 +118,7 @@ class SteeringPolicy(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this SteeringPolicy.
-            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "CREATING", "UPDATING", "DELETED", "DELETING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -613,7 +617,7 @@ class SteeringPolicy(object):
         **[Required]** Gets the lifecycle_state of this SteeringPolicy.
         The current state of the resource.
 
-        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "CREATING", "UPDATING", "DELETED", "DELETING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -632,7 +636,7 @@ class SteeringPolicy(object):
         :param lifecycle_state: The lifecycle_state of this SteeringPolicy.
         :type: str
         """
-        allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING"]
+        allowed_values = ["ACTIVE", "CREATING", "UPDATING", "DELETED", "DELETING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

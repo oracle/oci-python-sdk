@@ -23,6 +23,10 @@ class UpdateScheduleDetails(object):
     #: This constant has a value of "STOP_RESOURCE"
     ACTION_STOP_RESOURCE = "STOP_RESOURCE"
 
+    #: A constant which can be used with the action property of a UpdateScheduleDetails.
+    #: This constant has a value of "BACKUP_RESOURCE"
+    ACTION_BACKUP_RESOURCE = "BACKUP_RESOURCE"
+
     #: A constant which can be used with the recurrence_type property of a UpdateScheduleDetails.
     #: This constant has a value of "CRON"
     RECURRENCE_TYPE_CRON = "CRON"
@@ -46,7 +50,7 @@ class UpdateScheduleDetails(object):
 
         :param action:
             The value to assign to the action property of this UpdateScheduleDetails.
-            Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE"
+            Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE", "BACKUP_RESOURCE"
         :type action: str
 
         :param recurrence_details:
@@ -175,7 +179,7 @@ class UpdateScheduleDetails(object):
         Gets the action of this UpdateScheduleDetails.
         This is the action that will be executed by the schedule.
 
-        Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE"
+        Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE", "BACKUP_RESOURCE"
 
 
         :return: The action of this UpdateScheduleDetails.
@@ -193,7 +197,7 @@ class UpdateScheduleDetails(object):
         :param action: The action of this UpdateScheduleDetails.
         :type: str
         """
-        allowed_values = ["START_RESOURCE", "STOP_RESOURCE"]
+        allowed_values = ["START_RESOURCE", "STOP_RESOURCE", "BACKUP_RESOURCE"]
         if not value_allowed_none_or_none_sentinel(action, allowed_values):
             raise ValueError(
                 f"Invalid value for `action`, must be None or one of {allowed_values}"

@@ -2329,12 +2329,15 @@ class IntegrationInstanceClient(object):
 
     def remove_log_analytics_log_group(self, integration_instance_id, **kwargs):
         """
-        Removes Log Analytics logGroup, if enabled for given integrationInstance. Since only single LogGroup can be enabled
-        for integration instance, no additional details are required to be includes in the request.
+        Removes Log Analytics logGroup, if enabled for given integrationInstance.
+        Also used for removing Log Analytics log Group for attached OPA instance.
 
 
         :param str integration_instance_id: (required)
             Unique Integration Instance identifier.
+
+        :param oci.integration.models.RemoveLogAnalyticsLogGroupDetails remove_log_analytics_log_group_details: (optional)
+            Details to remove Log Group for given integration instance or Process Automation attached to integration instance.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2388,6 +2391,7 @@ class IntegrationInstanceClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "remove_log_analytics_log_group_details",
             "if_match",
             "opc_request_id",
             "opc_retry_token"
@@ -2434,6 +2438,7 @@ class IntegrationInstanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('remove_log_analytics_log_group_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -2445,6 +2450,7 @@ class IntegrationInstanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('remove_log_analytics_log_group_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,

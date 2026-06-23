@@ -73,6 +73,10 @@ class OAuth2ResponseValidationFailurePolicy(ValidationFailurePolicy):
             The value to assign to the logout_path property of this OAuth2ResponseValidationFailurePolicy.
         :type logout_path: str
 
+        :param login_path:
+            The value to assign to the login_path property of this OAuth2ResponseValidationFailurePolicy.
+        :type login_path: str
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -85,7 +89,8 @@ class OAuth2ResponseValidationFailurePolicy(ValidationFailurePolicy):
             'use_pkce': 'bool',
             'response_type': 'str',
             'fallback_redirect_path': 'str',
-            'logout_path': 'str'
+            'logout_path': 'str',
+            'login_path': 'str'
         }
         self.attribute_map = {
             'type': 'type',
@@ -98,7 +103,8 @@ class OAuth2ResponseValidationFailurePolicy(ValidationFailurePolicy):
             'use_pkce': 'usePkce',
             'response_type': 'responseType',
             'fallback_redirect_path': 'fallbackRedirectPath',
-            'logout_path': 'logoutPath'
+            'logout_path': 'logoutPath',
+            'login_path': 'loginPath'
         }
         self._type = None
         self._client_details = None
@@ -111,6 +117,7 @@ class OAuth2ResponseValidationFailurePolicy(ValidationFailurePolicy):
         self._response_type = None
         self._fallback_redirect_path = None
         self._logout_path = None
+        self._login_path = None
         self._type = 'OAUTH2'
 
     @property
@@ -352,6 +359,34 @@ class OAuth2ResponseValidationFailurePolicy(ValidationFailurePolicy):
         :type: str
         """
         self._logout_path = logout_path
+
+    @property
+    def login_path(self):
+        """
+        Gets the login_path of this OAuth2ResponseValidationFailurePolicy.
+        The path (relative to the deployment) where the Identity Provider
+        will redirect the user after authentication. This path must match
+        a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+
+
+        :return: The login_path of this OAuth2ResponseValidationFailurePolicy.
+        :rtype: str
+        """
+        return self._login_path
+
+    @login_path.setter
+    def login_path(self, login_path):
+        """
+        Sets the login_path of this OAuth2ResponseValidationFailurePolicy.
+        The path (relative to the deployment) where the Identity Provider
+        will redirect the user after authentication. This path must match
+        a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+
+
+        :param login_path: The login_path of this OAuth2ResponseValidationFailurePolicy.
+        :type: str
+        """
+        self._login_path = login_path
 
     def __repr__(self):
         return formatted_flat_dict(self)

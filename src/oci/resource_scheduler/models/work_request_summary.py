@@ -24,6 +24,10 @@ class WorkRequestSummary(object):
     OPERATION_TYPE_STOP_RESOURCE = "STOP_RESOURCE"
 
     #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "BACKUP_RESOURCE"
+    OPERATION_TYPE_BACKUP_RESOURCE = "BACKUP_RESOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
     #: This constant has a value of "CHANGE_SCHEDULE_COMPARTMENT"
     OPERATION_TYPE_CHANGE_SCHEDULE_COMPARTMENT = "CHANGE_SCHEDULE_COMPARTMENT"
 
@@ -74,7 +78,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE", "CHANGE_SCHEDULE_COMPARTMENT", "CREATE_SCHEDULE", "UPDATE_SCHEDULE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE", "BACKUP_RESOURCE", "CHANGE_SCHEDULE_COMPARTMENT", "CREATE_SCHEDULE", "UPDATE_SCHEDULE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -158,7 +162,7 @@ class WorkRequestSummary(object):
         Gets the operation_type of this WorkRequestSummary.
         This is the asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE", "CHANGE_SCHEDULE_COMPARTMENT", "CREATE_SCHEDULE", "UPDATE_SCHEDULE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE", "BACKUP_RESOURCE", "CHANGE_SCHEDULE_COMPARTMENT", "CREATE_SCHEDULE", "UPDATE_SCHEDULE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -177,7 +181,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["START_RESOURCE", "STOP_RESOURCE", "CHANGE_SCHEDULE_COMPARTMENT", "CREATE_SCHEDULE", "UPDATE_SCHEDULE"]
+        allowed_values = ["START_RESOURCE", "STOP_RESOURCE", "BACKUP_RESOURCE", "CHANGE_SCHEDULE_COMPARTMENT", "CREATE_SCHEDULE", "UPDATE_SCHEDULE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

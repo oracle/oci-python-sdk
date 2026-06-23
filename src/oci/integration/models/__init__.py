@@ -28,6 +28,7 @@ from .none_outbound_connection import NoneOutboundConnection
 from .outbound_connection import OutboundConnection
 from .private_endpoint_outbound_connection import PrivateEndpointOutboundConnection
 from .public_endpoint_details import PublicEndpointDetails
+from .remove_log_analytics_log_group_details import RemoveLogAnalyticsLogGroupDetails
 from .update_custom_endpoint_details import UpdateCustomEndpointDetails
 from .update_integration_instance_details import UpdateIntegrationInstanceDetails
 from .virtual_cloud_network import VirtualCloudNetwork
@@ -61,6 +62,7 @@ integration_type_mapping = {
     "OutboundConnection": OutboundConnection,
     "PrivateEndpointOutboundConnection": PrivateEndpointOutboundConnection,
     "PublicEndpointDetails": PublicEndpointDetails,
+    "RemoveLogAnalyticsLogGroupDetails": RemoveLogAnalyticsLogGroupDetails,
     "UpdateCustomEndpointDetails": UpdateCustomEndpointDetails,
     "UpdateIntegrationInstanceDetails": UpdateIntegrationInstanceDetails,
     "VirtualCloudNetwork": VirtualCloudNetwork,
