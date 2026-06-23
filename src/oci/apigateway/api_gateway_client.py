@@ -3376,7 +3376,7 @@ class ApiGatewayClient(object):
             enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
             By default, strict url encoding for path params is disabled
 
-        :return: A :class:`~oci.response.Response` object with data of type None
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apigateway.models.Sdk`
         :rtype: :class:`~oci.response.Response`
 
         :example:
@@ -3443,6 +3443,7 @@ class ApiGatewayClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_sdk_details,
+                response_type="Sdk",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -3456,6 +3457,7 @@ class ApiGatewayClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_sdk_details,
+                response_type="Sdk",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,

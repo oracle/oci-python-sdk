@@ -112,6 +112,7 @@ Container Engine
     oci.container_engine.models.UpdateWorkloadMappingDetails
     oci.container_engine.models.VirtualNode
     oci.container_engine.models.VirtualNodePool
+    oci.container_engine.models.VirtualNodePoolCyclingDetails
     oci.container_engine.models.VirtualNodePoolSummary
     oci.container_engine.models.VirtualNodeSummary
     oci.container_engine.models.VirtualNodeTags

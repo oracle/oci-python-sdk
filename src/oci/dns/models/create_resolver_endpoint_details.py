@@ -55,6 +55,14 @@ class CreateResolverEndpointDetails(object):
             The value to assign to the listening_address property of this CreateResolverEndpointDetails.
         :type listening_address: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateResolverEndpointDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateResolverEndpointDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -62,7 +70,9 @@ class CreateResolverEndpointDetails(object):
             'forwarding_address': 'str',
             'is_forwarding': 'bool',
             'is_listening': 'bool',
-            'listening_address': 'str'
+            'listening_address': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'name': 'name',
@@ -70,7 +80,9 @@ class CreateResolverEndpointDetails(object):
             'forwarding_address': 'forwardingAddress',
             'is_forwarding': 'isForwarding',
             'is_listening': 'isListening',
-            'listening_address': 'listeningAddress'
+            'listening_address': 'listeningAddress',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
         self._name = None
         self._endpoint_type = None
@@ -78,6 +90,8 @@ class CreateResolverEndpointDetails(object):
         self._is_forwarding = None
         self._is_listening = None
         self._listening_address = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -246,6 +260,46 @@ class CreateResolverEndpointDetails(object):
         :type: str
         """
         self._listening_address = listening_address
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateResolverEndpointDetails.
+
+        :return: The freeform_tags of this CreateResolverEndpointDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateResolverEndpointDetails.
+
+        :param freeform_tags: The freeform_tags of this CreateResolverEndpointDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateResolverEndpointDetails.
+
+        :return: The defined_tags of this CreateResolverEndpointDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateResolverEndpointDetails.
+
+        :param defined_tags: The defined_tags of this CreateResolverEndpointDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

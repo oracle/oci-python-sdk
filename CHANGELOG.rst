@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.180.0 - 2026-06-23
+====================
+
+Added 
+----- 
+* Support for static redirect paths in OAuth2 and OpenID Connect authentication policies in the API Gateway service 
+* Support for returning SDK resources and etags during SDK updates in the API Gateway service 
+* Support for virtual node pool cycling in the Kubernetes Engine service 
+* Support for access types on Autonomous AI Database Serverless instances in the Database service 
+* Support for external logical zones on Autonomous AI Database Serverless instances and local Autonomous Data Guard standby databases in the Database service 
+* Support for scheduled backups of Autonomous Database Dedicated resources in the Resource Scheduler service 
+* Support for action-type filtering of resource types in the Resource Scheduler service 
+* Support for Log Analytics log groups on Oracle Process Automation (OPA) instances attached to Integration instances in the Integration service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes on DNS resolver endpoints in the DNS service 
+* Support for free-form and defined tags on DNS resolver endpoints in the DNS service 
+* Support for resolver, private endpoint, and VNIC identifiers in DNS resolver endpoint responses in the DNS service 
+* Support for the UPDATING  lifecycle state on DNS steering policies in the DNS service  
+
+Breaking 
+-------- 
+* Return type of method `update_sdk` changed from `None` to `oci.apigateway.models.Sdk` in the API Gateway service  
+
+====================
 2.179.0 - 2026-06-16
 ====================
 

@@ -197,7 +197,7 @@ class JsonWebKey(StaticPublicKey):
     @property
     def alg(self):
         """
-        **[Required]** Gets the alg of this JsonWebKey.
+        Gets the alg of this JsonWebKey.
         The algorithm intended for use with this key.
 
 

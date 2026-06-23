@@ -92,6 +92,7 @@ from .modify_response_validation_failure_policy import ModifyResponseValidationF
 from .mutual_tls_details import MutualTlsDetails
 from .no_cache import NoCache
 from .no_content_validation import NoContentValidation
+from .o_auth2_login_backend import OAuth2LoginBackend
 from .o_auth2_logout_backend import OAuth2LogoutBackend
 from .o_auth2_response_validation_failure_policy import OAuth2ResponseValidationFailurePolicy
 from .oracle_function_backend import OracleFunctionBackend
@@ -256,6 +257,7 @@ apigateway_type_mapping = {
     "MutualTlsDetails": MutualTlsDetails,
     "NoCache": NoCache,
     "NoContentValidation": NoContentValidation,
+    "OAuth2LoginBackend": OAuth2LoginBackend,
     "OAuth2LogoutBackend": OAuth2LogoutBackend,
     "OAuth2ResponseValidationFailurePolicy": OAuth2ResponseValidationFailurePolicy,
     "OracleFunctionBackend": OracleFunctionBackend,

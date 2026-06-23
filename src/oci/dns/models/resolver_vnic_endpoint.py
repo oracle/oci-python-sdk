@@ -49,6 +49,14 @@ class ResolverVnicEndpoint(ResolverEndpoint):
             The value to assign to the listening_address property of this ResolverVnicEndpoint.
         :type listening_address: str
 
+        :param id:
+            The value to assign to the id property of this ResolverVnicEndpoint.
+        :type id: str
+
+        :param resolver_id:
+            The value to assign to the resolver_id property of this ResolverVnicEndpoint.
+        :type resolver_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this ResolverVnicEndpoint.
         :type compartment_id: str
@@ -70,6 +78,14 @@ class ResolverVnicEndpoint(ResolverEndpoint):
             The value to assign to the _self property of this ResolverVnicEndpoint.
         :type _self: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this ResolverVnicEndpoint.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this ResolverVnicEndpoint.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param subnet_id:
             The value to assign to the subnet_id property of this ResolverVnicEndpoint.
         :type subnet_id: str
@@ -77,6 +93,18 @@ class ResolverVnicEndpoint(ResolverEndpoint):
         :param nsg_ids:
             The value to assign to the nsg_ids property of this ResolverVnicEndpoint.
         :type nsg_ids: list[str]
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this ResolverVnicEndpoint.
+        :type security_attributes: dict(str, dict(str, object))
+
+        :param pe_id:
+            The value to assign to the pe_id property of this ResolverVnicEndpoint.
+        :type pe_id: str
+
+        :param vnic_id:
+            The value to assign to the vnic_id property of this ResolverVnicEndpoint.
+        :type vnic_id: str
 
         """
         self.swagger_types = {
@@ -86,13 +114,20 @@ class ResolverVnicEndpoint(ResolverEndpoint):
             'is_forwarding': 'bool',
             'is_listening': 'bool',
             'listening_address': 'str',
+            'id': 'str',
+            'resolver_id': 'str',
             'compartment_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             '_self': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'subnet_id': 'str',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))',
+            'pe_id': 'str',
+            'vnic_id': 'str'
         }
         self.attribute_map = {
             'name': 'name',
@@ -101,13 +136,20 @@ class ResolverVnicEndpoint(ResolverEndpoint):
             'is_forwarding': 'isForwarding',
             'is_listening': 'isListening',
             'listening_address': 'listeningAddress',
+            'id': 'id',
+            'resolver_id': 'resolverId',
             'compartment_id': 'compartmentId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             '_self': 'self',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'subnet_id': 'subnetId',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes',
+            'pe_id': 'peId',
+            'vnic_id': 'vnicId'
         }
         self._name = None
         self._endpoint_type = None
@@ -115,13 +157,20 @@ class ResolverVnicEndpoint(ResolverEndpoint):
         self._is_forwarding = None
         self._is_listening = None
         self._listening_address = None
+        self._id = None
+        self._resolver_id = None
         self._compartment_id = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
         self.__self = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._subnet_id = None
         self._nsg_ids = None
+        self._security_attributes = None
+        self._pe_id = None
+        self._vnic_id = None
         self._endpoint_type = 'VNIC'
 
     @property
@@ -173,6 +222,82 @@ class ResolverVnicEndpoint(ResolverEndpoint):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this ResolverVnicEndpoint.
+
+        :return: The security_attributes of this ResolverVnicEndpoint.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this ResolverVnicEndpoint.
+
+        :param security_attributes: The security_attributes of this ResolverVnicEndpoint.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
+
+    @property
+    def pe_id(self):
+        """
+        Gets the pe_id of this ResolverVnicEndpoint.
+        The `OCID`__ of the private endpoint resource that this resolver endpoint corresponds to.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The pe_id of this ResolverVnicEndpoint.
+        :rtype: str
+        """
+        return self._pe_id
+
+    @pe_id.setter
+    def pe_id(self, pe_id):
+        """
+        Sets the pe_id of this ResolverVnicEndpoint.
+        The `OCID`__ of the private endpoint resource that this resolver endpoint corresponds to.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param pe_id: The pe_id of this ResolverVnicEndpoint.
+        :type: str
+        """
+        self._pe_id = pe_id
+
+    @property
+    def vnic_id(self):
+        """
+        Gets the vnic_id of this ResolverVnicEndpoint.
+        The `OCID`__ of the VNIC resource that this resolver endpoint corresponds to.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vnic_id of this ResolverVnicEndpoint.
+        :rtype: str
+        """
+        return self._vnic_id
+
+    @vnic_id.setter
+    def vnic_id(self, vnic_id):
+        """
+        Sets the vnic_id of this ResolverVnicEndpoint.
+        The `OCID`__ of the VNIC resource that this resolver endpoint corresponds to.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param vnic_id: The vnic_id of this ResolverVnicEndpoint.
+        :type: str
+        """
+        self._vnic_id = vnic_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

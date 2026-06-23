@@ -888,6 +888,10 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the remote_disaster_recovery_configuration property of this AutonomousDatabaseSummary.
         :type remote_disaster_recovery_configuration: oci.database.models.DisasterRecoveryConfiguration
 
+        :param access_types:
+            The value to assign to the access_types property of this AutonomousDatabaseSummary.
+        :type access_types: list[str]
+
         :param net_services_architecture:
             The value to assign to the net_services_architecture property of this AutonomousDatabaseSummary.
             Allowed values for this property are: "DEDICATED", "SHARED", "DRCP", 'UNKNOWN_ENUM_VALUE'.
@@ -1053,6 +1057,7 @@ class AutonomousDatabaseSummary(object):
             'disaster_recovery_region_type': 'str',
             'time_disaster_recovery_role_changed': 'datetime',
             'remote_disaster_recovery_configuration': 'DisasterRecoveryConfiguration',
+            'access_types': 'list[str]',
             'net_services_architecture': 'str',
             'availability_domain': 'str',
             'cluster_placement_group_id': 'str',
@@ -1193,6 +1198,7 @@ class AutonomousDatabaseSummary(object):
             'disaster_recovery_region_type': 'disasterRecoveryRegionType',
             'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged',
             'remote_disaster_recovery_configuration': 'remoteDisasterRecoveryConfiguration',
+            'access_types': 'accessTypes',
             'net_services_architecture': 'netServicesArchitecture',
             'availability_domain': 'availabilityDomain',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
@@ -1332,6 +1338,7 @@ class AutonomousDatabaseSummary(object):
         self._disaster_recovery_region_type = None
         self._time_disaster_recovery_role_changed = None
         self._remote_disaster_recovery_configuration = None
+        self._access_types = None
         self._net_services_architecture = None
         self._availability_domain = None
         self._cluster_placement_group_id = None
@@ -4879,6 +4886,30 @@ class AutonomousDatabaseSummary(object):
         :type: oci.database.models.DisasterRecoveryConfiguration
         """
         self._remote_disaster_recovery_configuration = remote_disaster_recovery_configuration
+
+    @property
+    def access_types(self):
+        """
+        Gets the access_types of this AutonomousDatabaseSummary.
+        List of access types for an Autonomous AI Database.
+
+
+        :return: The access_types of this AutonomousDatabaseSummary.
+        :rtype: list[str]
+        """
+        return self._access_types
+
+    @access_types.setter
+    def access_types(self, access_types):
+        """
+        Sets the access_types of this AutonomousDatabaseSummary.
+        List of access types for an Autonomous AI Database.
+
+
+        :param access_types: The access_types of this AutonomousDatabaseSummary.
+        :type: list[str]
+        """
+        self._access_types = access_types
 
     @property
     def net_services_architecture(self):

@@ -10,76 +10,45 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class AddLogAnalyticsLogGroupDetails(object):
+class RemoveLogAnalyticsLogGroupDetails(object):
     """
-    Input payload to ADD Log Analytics Log Group for given IntegrationInstance.
+    Input payload to remove Log Analytics Log Group for given IntegrationInstance or its supported attachments.
     Some actions may not be applicable to specific integration types.
     """
 
-    #: A constant which can be used with the attachment_type property of a AddLogAnalyticsLogGroupDetails.
+    #: A constant which can be used with the attachment_type property of a RemoveLogAnalyticsLogGroupDetails.
     #: This constant has a value of "PROCESS_AUTOMATION"
     ATTACHMENT_TYPE_PROCESS_AUTOMATION = "PROCESS_AUTOMATION"
 
     def __init__(self, **kwargs):
         """
-        Initializes a new AddLogAnalyticsLogGroupDetails object with values from keyword arguments.
+        Initializes a new RemoveLogAnalyticsLogGroupDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param log_group_id:
-            The value to assign to the log_group_id property of this AddLogAnalyticsLogGroupDetails.
-        :type log_group_id: str
-
         :param attachment_type:
-            The value to assign to the attachment_type property of this AddLogAnalyticsLogGroupDetails.
+            The value to assign to the attachment_type property of this RemoveLogAnalyticsLogGroupDetails.
             Allowed values for this property are: "PROCESS_AUTOMATION"
         :type attachment_type: str
 
         """
         self.swagger_types = {
-            'log_group_id': 'str',
             'attachment_type': 'str'
         }
         self.attribute_map = {
-            'log_group_id': 'logGroupId',
             'attachment_type': 'attachmentType'
         }
-        self._log_group_id = None
         self._attachment_type = None
-
-    @property
-    def log_group_id(self):
-        """
-        **[Required]** Gets the log_group_id of this AddLogAnalyticsLogGroupDetails.
-        Log Group ocid.
-
-
-        :return: The log_group_id of this AddLogAnalyticsLogGroupDetails.
-        :rtype: str
-        """
-        return self._log_group_id
-
-    @log_group_id.setter
-    def log_group_id(self, log_group_id):
-        """
-        Sets the log_group_id of this AddLogAnalyticsLogGroupDetails.
-        Log Group ocid.
-
-
-        :param log_group_id: The log_group_id of this AddLogAnalyticsLogGroupDetails.
-        :type: str
-        """
-        self._log_group_id = log_group_id
 
     @property
     def attachment_type(self):
         """
-        Gets the attachment_type of this AddLogAnalyticsLogGroupDetails.
+        Gets the attachment_type of this RemoveLogAnalyticsLogGroupDetails.
         Type of attachment. Supported at this include PROCESS_AUTOMATION
 
         Allowed values for this property are: "PROCESS_AUTOMATION"
 
 
-        :return: The attachment_type of this AddLogAnalyticsLogGroupDetails.
+        :return: The attachment_type of this RemoveLogAnalyticsLogGroupDetails.
         :rtype: str
         """
         return self._attachment_type
@@ -87,11 +56,11 @@ class AddLogAnalyticsLogGroupDetails(object):
     @attachment_type.setter
     def attachment_type(self, attachment_type):
         """
-        Sets the attachment_type of this AddLogAnalyticsLogGroupDetails.
+        Sets the attachment_type of this RemoveLogAnalyticsLogGroupDetails.
         Type of attachment. Supported at this include PROCESS_AUTOMATION
 
 
-        :param attachment_type: The attachment_type of this AddLogAnalyticsLogGroupDetails.
+        :param attachment_type: The attachment_type of this RemoveLogAnalyticsLogGroupDetails.
         :type: str
         """
         allowed_values = ["PROCESS_AUTOMATION"]

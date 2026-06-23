@@ -146,6 +146,10 @@ class AutonomousDatabaseStandbySummary(object):
             The value to assign to the availability_domain property of this AutonomousDatabaseStandbySummary.
         :type availability_domain: str
 
+        :param external_location_zone:
+            The value to assign to the external_location_zone property of this AutonomousDatabaseStandbySummary.
+        :type external_location_zone: str
+
         """
         self.swagger_types = {
             'lag_time_in_seconds': 'int',
@@ -156,7 +160,8 @@ class AutonomousDatabaseStandbySummary(object):
             'time_maintenance_begin': 'datetime',
             'time_maintenance_end': 'datetime',
             'maintenance_target_component': 'str',
-            'availability_domain': 'str'
+            'availability_domain': 'str',
+            'external_location_zone': 'str'
         }
         self.attribute_map = {
             'lag_time_in_seconds': 'lagTimeInSeconds',
@@ -167,7 +172,8 @@ class AutonomousDatabaseStandbySummary(object):
             'time_maintenance_begin': 'timeMaintenanceBegin',
             'time_maintenance_end': 'timeMaintenanceEnd',
             'maintenance_target_component': 'maintenanceTargetComponent',
-            'availability_domain': 'availabilityDomain'
+            'availability_domain': 'availabilityDomain',
+            'external_location_zone': 'externalLocationZone'
         }
         self._lag_time_in_seconds = None
         self._lifecycle_state = None
@@ -178,6 +184,7 @@ class AutonomousDatabaseStandbySummary(object):
         self._time_maintenance_end = None
         self._maintenance_target_component = None
         self._availability_domain = None
+        self._external_location_zone = None
 
     @property
     def lag_time_in_seconds(self):
@@ -400,6 +407,30 @@ class AutonomousDatabaseStandbySummary(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def external_location_zone(self):
+        """
+        Gets the external_location_zone of this AutonomousDatabaseStandbySummary.
+        The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+
+
+        :return: The external_location_zone of this AutonomousDatabaseStandbySummary.
+        :rtype: str
+        """
+        return self._external_location_zone
+
+    @external_location_zone.setter
+    def external_location_zone(self, external_location_zone):
+        """
+        Sets the external_location_zone of this AutonomousDatabaseStandbySummary.
+        The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+
+
+        :param external_location_zone: The external_location_zone of this AutonomousDatabaseStandbySummary.
+        :type: str
+        """
+        self._external_location_zone = external_location_zone
 
     def __repr__(self):
         return formatted_flat_dict(self)

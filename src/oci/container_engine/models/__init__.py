@@ -100,6 +100,7 @@ from .update_virtual_node_pool_details import UpdateVirtualNodePoolDetails
 from .update_workload_mapping_details import UpdateWorkloadMappingDetails
 from .virtual_node import VirtualNode
 from .virtual_node_pool import VirtualNodePool
+from .virtual_node_pool_cycling_details import VirtualNodePoolCyclingDetails
 from .virtual_node_pool_summary import VirtualNodePoolSummary
 from .virtual_node_summary import VirtualNodeSummary
 from .virtual_node_tags import VirtualNodeTags
@@ -207,6 +208,7 @@ container_engine_type_mapping = {
     "UpdateWorkloadMappingDetails": UpdateWorkloadMappingDetails,
     "VirtualNode": VirtualNode,
     "VirtualNodePool": VirtualNodePool,
+    "VirtualNodePoolCyclingDetails": VirtualNodePoolCyclingDetails,
     "VirtualNodePoolSummary": VirtualNodePoolSummary,
     "VirtualNodeSummary": VirtualNodeSummary,
     "VirtualNodeTags": VirtualNodeTags,

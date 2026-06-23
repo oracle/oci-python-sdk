@@ -222,6 +222,10 @@ class IntegrationInstanceSummary(object):
             The value to assign to the log_group_id property of this IntegrationInstanceSummary.
         :type log_group_id: str
 
+        :param process_automation_log_group_id:
+            The value to assign to the process_automation_log_group_id property of this IntegrationInstanceSummary.
+        :type process_automation_log_group_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -251,7 +255,8 @@ class IntegrationInstanceSummary(object):
             'private_endpoint_outbound_connection': 'OutboundConnection',
             'is_disaster_recovery_enabled': 'bool',
             'data_retention_period': 'str',
-            'log_group_id': 'str'
+            'log_group_id': 'str',
+            'process_automation_log_group_id': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -281,7 +286,8 @@ class IntegrationInstanceSummary(object):
             'private_endpoint_outbound_connection': 'privateEndpointOutboundConnection',
             'is_disaster_recovery_enabled': 'isDisasterRecoveryEnabled',
             'data_retention_period': 'dataRetentionPeriod',
-            'log_group_id': 'logGroupId'
+            'log_group_id': 'logGroupId',
+            'process_automation_log_group_id': 'processAutomationLogGroupId'
         }
         self._id = None
         self._display_name = None
@@ -311,6 +317,7 @@ class IntegrationInstanceSummary(object):
         self._is_disaster_recovery_enabled = None
         self._data_retention_period = None
         self._log_group_id = None
+        self._process_automation_log_group_id = None
 
     @property
     def id(self):
@@ -1025,6 +1032,30 @@ class IntegrationInstanceSummary(object):
         :type: str
         """
         self._log_group_id = log_group_id
+
+    @property
+    def process_automation_log_group_id(self):
+        """
+        Gets the process_automation_log_group_id of this IntegrationInstanceSummary.
+        OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+
+
+        :return: The process_automation_log_group_id of this IntegrationInstanceSummary.
+        :rtype: str
+        """
+        return self._process_automation_log_group_id
+
+    @process_automation_log_group_id.setter
+    def process_automation_log_group_id(self, process_automation_log_group_id):
+        """
+        Sets the process_automation_log_group_id of this IntegrationInstanceSummary.
+        OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+
+
+        :param process_automation_log_group_id: The process_automation_log_group_id of this IntegrationInstanceSummary.
+        :type: str
+        """
+        self._process_automation_log_group_id = process_automation_log_group_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

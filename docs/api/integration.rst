@@ -40,6 +40,7 @@ Integration
     oci.integration.models.OutboundConnection
     oci.integration.models.PrivateEndpointOutboundConnection
     oci.integration.models.PublicEndpointDetails
+    oci.integration.models.RemoveLogAnalyticsLogGroupDetails
     oci.integration.models.UpdateCustomEndpointDetails
     oci.integration.models.UpdateIntegrationInstanceDetails
     oci.integration.models.VirtualCloudNetwork

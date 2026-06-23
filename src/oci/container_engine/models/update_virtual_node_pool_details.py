@@ -60,6 +60,10 @@ class UpdateVirtualNodePoolDetails(object):
             The value to assign to the virtual_node_tags property of this UpdateVirtualNodePoolDetails.
         :type virtual_node_tags: oci.container_engine.models.VirtualNodeTags
 
+        :param virtual_node_pool_cycling_details:
+            The value to assign to the virtual_node_pool_cycling_details property of this UpdateVirtualNodePoolDetails.
+        :type virtual_node_pool_cycling_details: oci.container_engine.models.VirtualNodePoolCyclingDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -71,7 +75,8 @@ class UpdateVirtualNodePoolDetails(object):
             'pod_configuration': 'PodConfiguration',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'virtual_node_tags': 'VirtualNodeTags'
+            'virtual_node_tags': 'VirtualNodeTags',
+            'virtual_node_pool_cycling_details': 'VirtualNodePoolCyclingDetails'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -83,7 +88,8 @@ class UpdateVirtualNodePoolDetails(object):
             'pod_configuration': 'podConfiguration',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'virtual_node_tags': 'virtualNodeTags'
+            'virtual_node_tags': 'virtualNodeTags',
+            'virtual_node_pool_cycling_details': 'virtualNodePoolCyclingDetails'
         }
         self._display_name = None
         self._initial_virtual_node_labels = None
@@ -95,6 +101,7 @@ class UpdateVirtualNodePoolDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._virtual_node_tags = None
+        self._virtual_node_pool_cycling_details = None
 
     @property
     def display_name(self):
@@ -347,6 +354,26 @@ class UpdateVirtualNodePoolDetails(object):
         :type: oci.container_engine.models.VirtualNodeTags
         """
         self._virtual_node_tags = virtual_node_tags
+
+    @property
+    def virtual_node_pool_cycling_details(self):
+        """
+        Gets the virtual_node_pool_cycling_details of this UpdateVirtualNodePoolDetails.
+
+        :return: The virtual_node_pool_cycling_details of this UpdateVirtualNodePoolDetails.
+        :rtype: oci.container_engine.models.VirtualNodePoolCyclingDetails
+        """
+        return self._virtual_node_pool_cycling_details
+
+    @virtual_node_pool_cycling_details.setter
+    def virtual_node_pool_cycling_details(self, virtual_node_pool_cycling_details):
+        """
+        Sets the virtual_node_pool_cycling_details of this UpdateVirtualNodePoolDetails.
+
+        :param virtual_node_pool_cycling_details: The virtual_node_pool_cycling_details of this UpdateVirtualNodePoolDetails.
+        :type: oci.container_engine.models.VirtualNodePoolCyclingDetails
+        """
+        self._virtual_node_pool_cycling_details = virtual_node_pool_cycling_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

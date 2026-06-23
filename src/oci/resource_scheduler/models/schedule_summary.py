@@ -23,6 +23,10 @@ class ScheduleSummary(object):
     #: This constant has a value of "STOP_RESOURCE"
     ACTION_STOP_RESOURCE = "STOP_RESOURCE"
 
+    #: A constant which can be used with the action property of a ScheduleSummary.
+    #: This constant has a value of "BACKUP_RESOURCE"
+    ACTION_BACKUP_RESOURCE = "BACKUP_RESOURCE"
+
     #: A constant which can be used with the recurrence_type property of a ScheduleSummary.
     #: This constant has a value of "CRON"
     RECURRENCE_TYPE_CRON = "CRON"
@@ -82,7 +86,7 @@ class ScheduleSummary(object):
 
         :param action:
             The value to assign to the action property of this ScheduleSummary.
-            Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE", "BACKUP_RESOURCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action: str
 
@@ -306,7 +310,7 @@ class ScheduleSummary(object):
         **[Required]** Gets the action of this ScheduleSummary.
         This is the action that will be executed by the schedule.
 
-        Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "START_RESOURCE", "STOP_RESOURCE", "BACKUP_RESOURCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -325,7 +329,7 @@ class ScheduleSummary(object):
         :param action: The action of this ScheduleSummary.
         :type: str
         """
-        allowed_values = ["START_RESOURCE", "STOP_RESOURCE"]
+        allowed_values = ["START_RESOURCE", "STOP_RESOURCE", "BACKUP_RESOURCE"]
         if not value_allowed_none_or_none_sentinel(action, allowed_values):
             action = 'UNKNOWN_ENUM_VALUE'
         self._action = action

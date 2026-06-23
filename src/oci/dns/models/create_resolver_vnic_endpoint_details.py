@@ -50,6 +50,14 @@ class CreateResolverVnicEndpointDetails(CreateResolverEndpointDetails):
             The value to assign to the listening_address property of this CreateResolverVnicEndpointDetails.
         :type listening_address: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateResolverVnicEndpointDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateResolverVnicEndpointDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreateResolverVnicEndpointDetails.
         :type subnet_id: str
@@ -57,6 +65,10 @@ class CreateResolverVnicEndpointDetails(CreateResolverEndpointDetails):
         :param nsg_ids:
             The value to assign to the nsg_ids property of this CreateResolverVnicEndpointDetails.
         :type nsg_ids: list[str]
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateResolverVnicEndpointDetails.
+        :type security_attributes: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -66,8 +78,11 @@ class CreateResolverVnicEndpointDetails(CreateResolverEndpointDetails):
             'is_forwarding': 'bool',
             'is_listening': 'bool',
             'listening_address': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'subnet_id': 'str',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'name': 'name',
@@ -76,8 +91,11 @@ class CreateResolverVnicEndpointDetails(CreateResolverEndpointDetails):
             'is_forwarding': 'isForwarding',
             'is_listening': 'isListening',
             'listening_address': 'listeningAddress',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'subnet_id': 'subnetId',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes'
         }
         self._name = None
         self._endpoint_type = None
@@ -85,8 +103,11 @@ class CreateResolverVnicEndpointDetails(CreateResolverEndpointDetails):
         self._is_forwarding = None
         self._is_listening = None
         self._listening_address = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._subnet_id = None
         self._nsg_ids = None
+        self._security_attributes = None
         self._endpoint_type = 'VNIC'
 
     @property
@@ -138,6 +159,26 @@ class CreateResolverVnicEndpointDetails(CreateResolverEndpointDetails):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateResolverVnicEndpointDetails.
+
+        :return: The security_attributes of this CreateResolverVnicEndpointDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateResolverVnicEndpointDetails.
+
+        :param security_attributes: The security_attributes of this CreateResolverVnicEndpointDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)
