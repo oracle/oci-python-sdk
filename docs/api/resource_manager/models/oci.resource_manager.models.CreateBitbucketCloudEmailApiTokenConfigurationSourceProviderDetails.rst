@@ -1,9 +1,9 @@
-BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary
+CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails
 ===================================================================
 
 .. currentmodule:: oci.resource_manager.models
 
-.. autoclass:: BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary
+.. autoclass:: CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails
     :show-inheritance:
     :special-members: __init__
     :members:

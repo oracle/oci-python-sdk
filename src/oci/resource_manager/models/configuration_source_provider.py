@@ -24,8 +24,8 @@ class ConfigurationSourceProvider(object):
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
     #: A constant which can be used with the config_source_provider_type property of a ConfigurationSourceProvider.
-    #: This constant has a value of "BITBUCKET_CLOUD_USERNAME_APPPASSWORD"
-    CONFIG_SOURCE_PROVIDER_TYPE_BITBUCKET_CLOUD_USERNAME_APPPASSWORD = "BITBUCKET_CLOUD_USERNAME_APPPASSWORD"
+    #: This constant has a value of "BITBUCKET_CLOUD_ACCESS_TOKEN"
+    CONFIG_SOURCE_PROVIDER_TYPE_BITBUCKET_CLOUD_ACCESS_TOKEN = "BITBUCKET_CLOUD_ACCESS_TOKEN"
 
     #: A constant which can be used with the config_source_provider_type property of a ConfigurationSourceProvider.
     #: This constant has a value of "BITBUCKET_SERVER_ACCESS_TOKEN"
@@ -46,8 +46,8 @@ class ConfigurationSourceProvider(object):
 
         * :class:`~oci.resource_manager.models.GithubAccessTokenConfigurationSourceProvider`
         * :class:`~oci.resource_manager.models.GitlabAccessTokenConfigurationSourceProvider`
+        * :class:`~oci.resource_manager.models.BitbucketCloudEmailApiTokenConfigurationSourceProvider`
         * :class:`~oci.resource_manager.models.BitbucketServerAccessTokenConfigurationSourceProvider`
-        * :class:`~oci.resource_manager.models.BitbucketCloudUsernameAppPasswordConfigurationSourceProvider`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -79,7 +79,7 @@ class ConfigurationSourceProvider(object):
 
         :param config_source_provider_type:
             The value to assign to the config_source_provider_type property of this ConfigurationSourceProvider.
-            Allowed values for this property are: "BITBUCKET_CLOUD_USERNAME_APPPASSWORD", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BITBUCKET_CLOUD_ACCESS_TOKEN", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_source_provider_type: str
 
@@ -90,6 +90,14 @@ class ConfigurationSourceProvider(object):
         :param username:
             The value to assign to the username property of this ConfigurationSourceProvider.
         :type username: str
+
+        :param email:
+            The value to assign to the email property of this ConfigurationSourceProvider.
+        :type email: str
+
+        :param is_migration_required:
+            The value to assign to the is_migration_required property of this ConfigurationSourceProvider.
+        :type is_migration_required: bool
 
         :param secret_id:
             The value to assign to the secret_id property of this ConfigurationSourceProvider.
@@ -118,6 +126,8 @@ class ConfigurationSourceProvider(object):
             'config_source_provider_type': 'str',
             'private_server_config_details': 'PrivateServerConfigDetails',
             'username': 'str',
+            'email': 'str',
+            'is_migration_required': 'bool',
             'secret_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -133,6 +143,8 @@ class ConfigurationSourceProvider(object):
             'config_source_provider_type': 'configSourceProviderType',
             'private_server_config_details': 'privateServerConfigDetails',
             'username': 'username',
+            'email': 'email',
+            'is_migration_required': 'isMigrationRequired',
             'secret_id': 'secretId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -147,6 +159,8 @@ class ConfigurationSourceProvider(object):
         self._config_source_provider_type = None
         self._private_server_config_details = None
         self._username = None
+        self._email = None
+        self._is_migration_required = None
         self._secret_id = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -166,11 +180,11 @@ class ConfigurationSourceProvider(object):
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'GitlabAccessTokenConfigurationSourceProvider'
 
+        if type == 'BITBUCKET_CLOUD_ACCESS_TOKEN':
+            return 'BitbucketCloudEmailApiTokenConfigurationSourceProvider'
+
         if type == 'BITBUCKET_SERVER_ACCESS_TOKEN':
             return 'BitbucketServerAccessTokenConfigurationSourceProvider'
-
-        if type == 'BITBUCKET_CLOUD_USERNAME_APPPASSWORD':
-            return 'BitbucketCloudUsernameAppPasswordConfigurationSourceProvider'
         else:
             return 'ConfigurationSourceProvider'
 
@@ -349,12 +363,12 @@ class ConfigurationSourceProvider(object):
         """
         **[Required]** Gets the config_source_provider_type of this ConfigurationSourceProvider.
         The type of configuration source provider.
-        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_CLOUD_ACCESS_TOKEN` type corresponds to Bitbucket Cloud.
         The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
 
-        Allowed values for this property are: "BITBUCKET_CLOUD_USERNAME_APPPASSWORD", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BITBUCKET_CLOUD_ACCESS_TOKEN", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -368,7 +382,7 @@ class ConfigurationSourceProvider(object):
         """
         Sets the config_source_provider_type of this ConfigurationSourceProvider.
         The type of configuration source provider.
-        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_CLOUD_ACCESS_TOKEN` type corresponds to Bitbucket Cloud.
         The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
@@ -377,7 +391,7 @@ class ConfigurationSourceProvider(object):
         :param config_source_provider_type: The config_source_provider_type of this ConfigurationSourceProvider.
         :type: str
         """
-        allowed_values = ["BITBUCKET_CLOUD_USERNAME_APPPASSWORD", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN"]
+        allowed_values = ["BITBUCKET_CLOUD_ACCESS_TOKEN", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN"]
         if not value_allowed_none_or_none_sentinel(config_source_provider_type, allowed_values):
             config_source_provider_type = 'UNKNOWN_ENUM_VALUE'
         self._config_source_provider_type = config_source_provider_type
@@ -425,6 +439,54 @@ class ConfigurationSourceProvider(object):
         :type: str
         """
         self._username = username
+
+    @property
+    def email(self):
+        """
+        Gets the email of this ConfigurationSourceProvider.
+        Atlassian account email used for Bitbucket Cloud API token authentication.
+
+
+        :return: The email of this ConfigurationSourceProvider.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """
+        Sets the email of this ConfigurationSourceProvider.
+        Atlassian account email used for Bitbucket Cloud API token authentication.
+
+
+        :param email: The email of this ConfigurationSourceProvider.
+        :type: str
+        """
+        self._email = email
+
+    @property
+    def is_migration_required(self):
+        """
+        Gets the is_migration_required of this ConfigurationSourceProvider.
+        Indicates whether this configuration source provider uses legacy Bitbucket Cloud username/app-password credentials and must be migrated.
+
+
+        :return: The is_migration_required of this ConfigurationSourceProvider.
+        :rtype: bool
+        """
+        return self._is_migration_required
+
+    @is_migration_required.setter
+    def is_migration_required(self, is_migration_required):
+        """
+        Sets the is_migration_required of this ConfigurationSourceProvider.
+        Indicates whether this configuration source provider uses legacy Bitbucket Cloud username/app-password credentials and must be migrated.
+
+
+        :param is_migration_required: The is_migration_required of this ConfigurationSourceProvider.
+        :type: bool
+        """
+        self._is_migration_required = is_migration_required
 
     @property
     def secret_id(self):

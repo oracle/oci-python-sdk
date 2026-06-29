@@ -28,22 +28,29 @@ class RestoreDbSystemDetails(object):
             The value to assign to the ad property of this RestoreDbSystemDetails.
         :type ad: str
 
+        :param time_to_restore:
+            The value to assign to the time_to_restore property of this RestoreDbSystemDetails.
+        :type time_to_restore: datetime
+
         """
         self.swagger_types = {
             'backup_id': 'str',
-            'ad': 'str'
+            'ad': 'str',
+            'time_to_restore': 'datetime'
         }
         self.attribute_map = {
             'backup_id': 'backupId',
-            'ad': 'ad'
+            'ad': 'ad',
+            'time_to_restore': 'timeToRestore'
         }
         self._backup_id = None
         self._ad = None
+        self._time_to_restore = None
 
     @property
     def backup_id(self):
         """
-        **[Required]** Gets the backup_id of this RestoreDbSystemDetails.
+        Gets the backup_id of this RestoreDbSystemDetails.
         The `OCID`__ of the database system backup.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -93,6 +100,40 @@ class RestoreDbSystemDetails(object):
         :type: str
         """
         self._ad = ad
+
+    @property
+    def time_to_restore(self):
+        """
+        Gets the time_to_restore of this RestoreDbSystemDetails.
+        The target point-in-time that the database system restore can get started from, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The time_to_restore of this RestoreDbSystemDetails.
+        :rtype: datetime
+        """
+        return self._time_to_restore
+
+    @time_to_restore.setter
+    def time_to_restore(self, time_to_restore):
+        """
+        Sets the time_to_restore of this RestoreDbSystemDetails.
+        The target point-in-time that the database system restore can get started from, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param time_to_restore: The time_to_restore of this RestoreDbSystemDetails.
+        :type: datetime
+        """
+        self._time_to_restore = time_to_restore
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -24,6 +24,10 @@ class Backup(object):
     SOURCE_TYPE_MANUAL = "MANUAL"
 
     #: A constant which can be used with the source_type property of a Backup.
+    #: This constant has a value of "PITR"
+    SOURCE_TYPE_PITR = "PITR"
+
+    #: A constant which can be used with the source_type property of a Backup.
     #: This constant has a value of "COPIED"
     SOURCE_TYPE_COPIED = "COPIED"
 
@@ -70,7 +74,7 @@ class Backup(object):
 
         :param source_type:
             The value to assign to the source_type property of this Backup.
-            Allowed values for this property are: "SCHEDULED", "MANUAL", "COPIED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SCHEDULED", "MANUAL", "PITR", "COPIED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_type: str
 
@@ -319,7 +323,7 @@ class Backup(object):
         Gets the source_type of this Backup.
         Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 
-        Allowed values for this property are: "SCHEDULED", "MANUAL", "COPIED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SCHEDULED", "MANUAL", "PITR", "COPIED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -338,7 +342,7 @@ class Backup(object):
         :param source_type: The source_type of this Backup.
         :type: str
         """
-        allowed_values = ["SCHEDULED", "MANUAL", "COPIED"]
+        allowed_values = ["SCHEDULED", "MANUAL", "PITR", "COPIED"]
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
             source_type = 'UNKNOWN_ENUM_VALUE'
         self._source_type = source_type

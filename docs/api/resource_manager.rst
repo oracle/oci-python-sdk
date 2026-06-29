@@ -27,8 +27,8 @@ Resource Manager
     oci.resource_manager.models.AssociatedResourcesCollection
     oci.resource_manager.models.BitbucketCloudConfigSource
     oci.resource_manager.models.BitbucketCloudConfigSourceRecord
-    oci.resource_manager.models.BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
-    oci.resource_manager.models.BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary
+    oci.resource_manager.models.BitbucketCloudEmailApiTokenConfigurationSourceProvider
+    oci.resource_manager.models.BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary
     oci.resource_manager.models.BitbucketServerAccessTokenConfigurationSourceProvider
     oci.resource_manager.models.BitbucketServerAccessTokenConfigurationSourceProviderSummary
     oci.resource_manager.models.BitbucketServerConfigSource
@@ -47,7 +47,7 @@ Resource Manager
     oci.resource_manager.models.CreateApplyJobOperationDetails
     oci.resource_manager.models.CreateApplyRollbackJobOperationDetails
     oci.resource_manager.models.CreateBitbucketCloudConfigSourceDetails
-    oci.resource_manager.models.CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails
+    oci.resource_manager.models.CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.CreateBitbucketServerConfigSourceDetails
     oci.resource_manager.models.CreateCompartmentConfigSourceDetails
@@ -121,7 +121,7 @@ Resource Manager
     oci.resource_manager.models.TerraformVersionCollection
     oci.resource_manager.models.TerraformVersionSummary
     oci.resource_manager.models.UpdateBitbucketCloudConfigSourceDetails
-    oci.resource_manager.models.UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails
+    oci.resource_manager.models.UpdateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.UpdateBitbucketServerAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.UpdateBitbucketServerConfigSourceDetails
     oci.resource_manager.models.UpdateConfigSourceDetails

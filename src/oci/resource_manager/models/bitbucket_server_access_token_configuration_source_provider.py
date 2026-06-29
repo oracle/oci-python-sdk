@@ -49,7 +49,7 @@ class BitbucketServerAccessTokenConfigurationSourceProvider(ConfigurationSourceP
 
         :param config_source_provider_type:
             The value to assign to the config_source_provider_type property of this BitbucketServerAccessTokenConfigurationSourceProvider.
-            Allowed values for this property are: "BITBUCKET_CLOUD_USERNAME_APPPASSWORD", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN"
+            Allowed values for this property are: "BITBUCKET_CLOUD_ACCESS_TOKEN", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN"
         :type config_source_provider_type: str
 
         :param private_server_config_details:
@@ -59,6 +59,14 @@ class BitbucketServerAccessTokenConfigurationSourceProvider(ConfigurationSourceP
         :param username:
             The value to assign to the username property of this BitbucketServerAccessTokenConfigurationSourceProvider.
         :type username: str
+
+        :param email:
+            The value to assign to the email property of this BitbucketServerAccessTokenConfigurationSourceProvider.
+        :type email: str
+
+        :param is_migration_required:
+            The value to assign to the is_migration_required property of this BitbucketServerAccessTokenConfigurationSourceProvider.
+        :type is_migration_required: bool
 
         :param secret_id:
             The value to assign to the secret_id property of this BitbucketServerAccessTokenConfigurationSourceProvider.
@@ -91,6 +99,8 @@ class BitbucketServerAccessTokenConfigurationSourceProvider(ConfigurationSourceP
             'config_source_provider_type': 'str',
             'private_server_config_details': 'PrivateServerConfigDetails',
             'username': 'str',
+            'email': 'str',
+            'is_migration_required': 'bool',
             'secret_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -107,6 +117,8 @@ class BitbucketServerAccessTokenConfigurationSourceProvider(ConfigurationSourceP
             'config_source_provider_type': 'configSourceProviderType',
             'private_server_config_details': 'privateServerConfigDetails',
             'username': 'username',
+            'email': 'email',
+            'is_migration_required': 'isMigrationRequired',
             'secret_id': 'secretId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -122,6 +134,8 @@ class BitbucketServerAccessTokenConfigurationSourceProvider(ConfigurationSourceP
         self._config_source_provider_type = None
         self._private_server_config_details = None
         self._username = None
+        self._email = None
+        self._is_migration_required = None
         self._secret_id = None
         self._freeform_tags = None
         self._defined_tags = None

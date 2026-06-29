@@ -80,6 +80,7 @@ Psql
     oci.psql.models.MonthlyBackupPolicy
     oci.psql.models.NetworkDetails
     oci.psql.models.NoneBackupPolicy
+    oci.psql.models.NonePitrPolicy
     oci.psql.models.NoneSourceDetails
     oci.psql.models.OciOptimizedStorageDetails
     oci.psql.models.OdspInsight
@@ -95,7 +96,11 @@ Psql
     oci.psql.models.PatchRemoveInstruction
     oci.psql.models.PatchReplaceInstruction
     oci.psql.models.PatchRequireInstruction
+    oci.psql.models.PitrDetails
+    oci.psql.models.PitrPolicy
+    oci.psql.models.PitrTimeWindow
     oci.psql.models.PlainTextPasswordDetails
+    oci.psql.models.PointInTimeDbSystemSourceDetails
     oci.psql.models.PrimaryDbInstanceDetails
     oci.psql.models.PrimaryDbSystemSourceDetails
     oci.psql.models.ReplicationConfig
@@ -110,6 +115,7 @@ Psql
     oci.psql.models.SortingDefault
     oci.psql.models.SourceBackupDetails
     oci.psql.models.SourceDetails
+    oci.psql.models.StandardPitrPolicy
     oci.psql.models.StartDbSystemDetails
     oci.psql.models.StorageDetails
     oci.psql.models.SwitchOverDetails

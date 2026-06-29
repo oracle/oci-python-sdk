@@ -10,64 +10,68 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary(ConfigurationSourceProviderSummary):
+class BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary(ConfigurationSourceProviderSummary):
     """
-    Summary information for a configuration source provider of the type `BITBUCKET_CLOUD_USERNAME_APPPASSWORD`.
-    This type corresponds to a configuration source provider in Bitbucket cloud that is authenticated with a username and app password.
+    Summary information for a configuration source provider of the type `BITBUCKET_CLOUD_ACCESS_TOKEN`.
+    This type corresponds to a configuration source provider in Bitbucket Cloud that is authenticated with Atlassian account email and API token.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary object with values from keyword arguments. The default value of the :py:attr:`~oci.resource_manager.models.BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.config_source_provider_type` attribute
-        of this class is ``BITBUCKET_CLOUD_USERNAME_APPPASSWORD`` and it should not be changed.
+        Initializes a new BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary object with values from keyword arguments. The default value of the :py:attr:`~oci.resource_manager.models.BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.config_source_provider_type` attribute
+        of this class is ``BITBUCKET_CLOUD_ACCESS_TOKEN`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param id:
-            The value to assign to the id property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the id property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type id: str
 
         :param compartment_id:
-            The value to assign to the compartment_id property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the compartment_id property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type compartment_id: str
 
         :param display_name:
-            The value to assign to the display_name property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the display_name property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type display_name: str
 
         :param description:
-            The value to assign to the description property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the description property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type description: str
 
         :param time_created:
-            The value to assign to the time_created property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the time_created property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type time_created: datetime
 
         :param lifecycle_state:
-            The value to assign to the lifecycle_state property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the lifecycle_state property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type lifecycle_state: str
 
         :param config_source_provider_type:
-            The value to assign to the config_source_provider_type property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the config_source_provider_type property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type config_source_provider_type: str
 
         :param private_server_config_details:
-            The value to assign to the private_server_config_details property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the private_server_config_details property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type private_server_config_details: oci.resource_manager.models.PrivateServerConfigDetails
 
+        :param is_migration_required:
+            The value to assign to the is_migration_required property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
+        :type is_migration_required: bool
+
         :param freeform_tags:
-            The value to assign to the freeform_tags property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the freeform_tags property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type freeform_tags: dict(str, str)
 
         :param defined_tags:
-            The value to assign to the defined_tags property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the defined_tags property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type defined_tags: dict(str, dict(str, object))
 
         :param system_tags:
-            The value to assign to the system_tags property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the system_tags property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type system_tags: dict(str, dict(str, object))
 
         :param api_endpoint:
-            The value to assign to the api_endpoint property of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+            The value to assign to the api_endpoint property of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type api_endpoint: str
 
         """
@@ -80,6 +84,7 @@ class BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary(Config
             'lifecycle_state': 'str',
             'config_source_provider_type': 'str',
             'private_server_config_details': 'PrivateServerConfigDetails',
+            'is_migration_required': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -94,6 +99,7 @@ class BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary(Config
             'lifecycle_state': 'lifecycleState',
             'config_source_provider_type': 'configSourceProviderType',
             'private_server_config_details': 'privateServerConfigDetails',
+            'is_migration_required': 'isMigrationRequired',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -107,21 +113,22 @@ class BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary(Config
         self._lifecycle_state = None
         self._config_source_provider_type = None
         self._private_server_config_details = None
+        self._is_migration_required = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
         self._api_endpoint = None
-        self._config_source_provider_type = 'BITBUCKET_CLOUD_USERNAME_APPPASSWORD'
+        self._config_source_provider_type = 'BITBUCKET_CLOUD_ACCESS_TOKEN'
 
     @property
     def api_endpoint(self):
         """
-        Gets the api_endpoint of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+        Gets the api_endpoint of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         The Bitbucket cloud service endpoint.
         Example: `https://bitbucket.org/`
 
 
-        :return: The api_endpoint of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+        :return: The api_endpoint of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :rtype: str
         """
         return self._api_endpoint
@@ -129,12 +136,12 @@ class BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary(Config
     @api_endpoint.setter
     def api_endpoint(self, api_endpoint):
         """
-        Sets the api_endpoint of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+        Sets the api_endpoint of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         The Bitbucket cloud service endpoint.
         Example: `https://bitbucket.org/`
 
 
-        :param api_endpoint: The api_endpoint of this BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary.
+        :param api_endpoint: The api_endpoint of this BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary.
         :type: str
         """
         self._api_endpoint = api_endpoint

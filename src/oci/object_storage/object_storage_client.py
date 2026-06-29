@@ -6342,6 +6342,8 @@ class ObjectStorageClient(object):
         assigned key. Similarly, you might want to re-encrypt all data encryption keys if the assigned key has been rotated to
         a new key version since objects were last added to the bucket. If you call this API and there is no kmsKeyId associated
         with the bucket, the call will fail.
+        Also, if you set isBucketKeyEnabled, you might want to re-encrypt all data encryption keys
+        using the bucket key. This will help reduce calls to OCI Vault KMS when older objects are downloaded.
 
         Calling this API starts a work request task to re-encrypt the data encryption key of all objects in the bucket. Only
         objects created before the time of the API call will be re-encrypted. The call can take a long time, depending on how many
@@ -6356,6 +6358,9 @@ class ObjectStorageClient(object):
         :param str bucket_name: (required)
             The name of the bucket. Avoid entering confidential information.
             Example: `my-new-bucket1`
+
+        :param bool is_reencrypt_bucket_key_only: (optional)
+            If true, reencrypt only the intermediate bucket keys and skip everything else in the bucket.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -6394,6 +6399,7 @@ class ObjectStorageClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "is_reencrypt_bucket_key_only",
             "opc_client_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6411,6 +6417,11 @@ class ObjectStorageClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isReencryptBucketKeyOnly": kwargs.get("is_reencrypt_bucket_key_only", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -6435,6 +6446,7 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
@@ -6446,6 +6458,7 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),

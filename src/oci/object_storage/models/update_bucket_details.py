@@ -81,6 +81,10 @@ class UpdateBucketDetails(object):
             The value to assign to the kms_key_id property of this UpdateBucketDetails.
         :type kms_key_id: str
 
+        :param is_bucket_key_enabled:
+            The value to assign to the is_bucket_key_enabled property of this UpdateBucketDetails.
+        :type is_bucket_key_enabled: bool
+
         :param versioning:
             The value to assign to the versioning property of this UpdateBucketDetails.
             Allowed values for this property are: "Enabled", "Suspended"
@@ -105,6 +109,7 @@ class UpdateBucketDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
+            'is_bucket_key_enabled': 'bool',
             'versioning': 'str',
             'auto_tiering': 'str',
             'bucket_scope': 'str'
@@ -119,6 +124,7 @@ class UpdateBucketDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
+            'is_bucket_key_enabled': 'isBucketKeyEnabled',
             'versioning': 'versioning',
             'auto_tiering': 'autoTiering',
             'bucket_scope': 'bucketScope'
@@ -132,6 +138,7 @@ class UpdateBucketDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
+        self._is_bucket_key_enabled = None
         self._versioning = None
         self._auto_tiering = None
         self._bucket_scope = None
@@ -402,6 +409,34 @@ class UpdateBucketDetails(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def is_bucket_key_enabled(self):
+        """
+        Gets the is_bucket_key_enabled of this UpdateBucketDetails.
+        Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side
+        encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to OCI Vault Key Management
+        Service (KMS). Existing objects are not affected.
+
+
+        :return: The is_bucket_key_enabled of this UpdateBucketDetails.
+        :rtype: bool
+        """
+        return self._is_bucket_key_enabled
+
+    @is_bucket_key_enabled.setter
+    def is_bucket_key_enabled(self, is_bucket_key_enabled):
+        """
+        Sets the is_bucket_key_enabled of this UpdateBucketDetails.
+        Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side
+        encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to OCI Vault Key Management
+        Service (KMS). Existing objects are not affected.
+
+
+        :param is_bucket_key_enabled: The is_bucket_key_enabled of this UpdateBucketDetails.
+        :type: bool
+        """
+        self._is_bucket_key_enabled = is_bucket_key_enabled
 
     @property
     def versioning(self):

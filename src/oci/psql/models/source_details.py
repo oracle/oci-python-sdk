@@ -24,6 +24,10 @@ class SourceDetails(object):
     SOURCE_TYPE_NONE = "NONE"
 
     #: A constant which can be used with the source_type property of a SourceDetails.
+    #: This constant has a value of "POINT_IN_TIME_DB_SYSTEM"
+    SOURCE_TYPE_POINT_IN_TIME_DB_SYSTEM = "POINT_IN_TIME_DB_SYSTEM"
+
+    #: A constant which can be used with the source_type property of a SourceDetails.
     #: This constant has a value of "DB_SYSTEM"
     SOURCE_TYPE_DB_SYSTEM = "DB_SYSTEM"
 
@@ -35,12 +39,13 @@ class SourceDetails(object):
         * :class:`~oci.psql.models.BackupSourceDetails`
         * :class:`~oci.psql.models.PrimaryDbSystemSourceDetails`
         * :class:`~oci.psql.models.NoneSourceDetails`
+        * :class:`~oci.psql.models.PointInTimeDbSystemSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param source_type:
             The value to assign to the source_type property of this SourceDetails.
-            Allowed values for this property are: "BACKUP", "NONE", "DB_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BACKUP", "NONE", "POINT_IN_TIME_DB_SYSTEM", "DB_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_type: str
 
@@ -69,6 +74,9 @@ class SourceDetails(object):
 
         if type == 'NONE':
             return 'NoneSourceDetails'
+
+        if type == 'POINT_IN_TIME_DB_SYSTEM':
+            return 'PointInTimeDbSystemSourceDetails'
         else:
             return 'SourceDetails'
 
@@ -78,7 +86,7 @@ class SourceDetails(object):
         **[Required]** Gets the source_type of this SourceDetails.
         The source descriminator.
 
-        Allowed values for this property are: "BACKUP", "NONE", "DB_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BACKUP", "NONE", "POINT_IN_TIME_DB_SYSTEM", "DB_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -97,7 +105,7 @@ class SourceDetails(object):
         :param source_type: The source_type of this SourceDetails.
         :type: str
         """
-        allowed_values = ["BACKUP", "NONE", "DB_SYSTEM"]
+        allowed_values = ["BACKUP", "NONE", "POINT_IN_TIME_DB_SYSTEM", "DB_SYSTEM"]
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
             source_type = 'UNKNOWN_ENUM_VALUE'
         self._source_type = source_type

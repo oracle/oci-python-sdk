@@ -21,8 +21,8 @@ class ConfigurationSourceProviderSummary(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.resource_manager.models.GitlabAccessTokenConfigurationSourceProviderSummary`
-        * :class:`~oci.resource_manager.models.BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary`
         * :class:`~oci.resource_manager.models.BitbucketServerAccessTokenConfigurationSourceProviderSummary`
+        * :class:`~oci.resource_manager.models.BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary`
         * :class:`~oci.resource_manager.models.GithubAccessTokenConfigurationSourceProviderSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -59,6 +59,10 @@ class ConfigurationSourceProviderSummary(object):
             The value to assign to the private_server_config_details property of this ConfigurationSourceProviderSummary.
         :type private_server_config_details: oci.resource_manager.models.PrivateServerConfigDetails
 
+        :param is_migration_required:
+            The value to assign to the is_migration_required property of this ConfigurationSourceProviderSummary.
+        :type is_migration_required: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ConfigurationSourceProviderSummary.
         :type freeform_tags: dict(str, str)
@@ -81,6 +85,7 @@ class ConfigurationSourceProviderSummary(object):
             'lifecycle_state': 'str',
             'config_source_provider_type': 'str',
             'private_server_config_details': 'PrivateServerConfigDetails',
+            'is_migration_required': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -94,6 +99,7 @@ class ConfigurationSourceProviderSummary(object):
             'lifecycle_state': 'lifecycleState',
             'config_source_provider_type': 'configSourceProviderType',
             'private_server_config_details': 'privateServerConfigDetails',
+            'is_migration_required': 'isMigrationRequired',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -106,6 +112,7 @@ class ConfigurationSourceProviderSummary(object):
         self._lifecycle_state = None
         self._config_source_provider_type = None
         self._private_server_config_details = None
+        self._is_migration_required = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -121,11 +128,11 @@ class ConfigurationSourceProviderSummary(object):
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'GitlabAccessTokenConfigurationSourceProviderSummary'
 
-        if type == 'BITBUCKET_CLOUD_USERNAME_APPPASSWORD':
-            return 'BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary'
-
         if type == 'BITBUCKET_SERVER_ACCESS_TOKEN':
             return 'BitbucketServerAccessTokenConfigurationSourceProviderSummary'
+
+        if type == 'BITBUCKET_CLOUD_ACCESS_TOKEN':
+            return 'BitbucketCloudEmailApiTokenConfigurationSourceProviderSummary'
 
         if type == 'GITHUB_ACCESS_TOKEN':
             return 'GithubAccessTokenConfigurationSourceProviderSummary'
@@ -301,7 +308,7 @@ class ConfigurationSourceProviderSummary(object):
         """
         **[Required]** Gets the config_source_provider_type of this ConfigurationSourceProviderSummary.
         The type of configuration source provider.
-        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_CLOUD_ACCESS_TOKEN` type corresponds to Bitbucket Cloud.
         The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
@@ -317,7 +324,7 @@ class ConfigurationSourceProviderSummary(object):
         """
         Sets the config_source_provider_type of this ConfigurationSourceProviderSummary.
         The type of configuration source provider.
-        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_CLOUD_ACCESS_TOKEN` type corresponds to Bitbucket Cloud.
         The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
@@ -347,6 +354,30 @@ class ConfigurationSourceProviderSummary(object):
         :type: oci.resource_manager.models.PrivateServerConfigDetails
         """
         self._private_server_config_details = private_server_config_details
+
+    @property
+    def is_migration_required(self):
+        """
+        Gets the is_migration_required of this ConfigurationSourceProviderSummary.
+        Indicates whether this configuration source provider uses legacy Bitbucket Cloud username/app-password credentials and must be migrated.
+
+
+        :return: The is_migration_required of this ConfigurationSourceProviderSummary.
+        :rtype: bool
+        """
+        return self._is_migration_required
+
+    @is_migration_required.setter
+    def is_migration_required(self, is_migration_required):
+        """
+        Sets the is_migration_required of this ConfigurationSourceProviderSummary.
+        Indicates whether this configuration source provider uses legacy Bitbucket Cloud username/app-password credentials and must be migrated.
+
+
+        :param is_migration_required: The is_migration_required of this ConfigurationSourceProviderSummary.
+        :type: bool
+        """
+        self._is_migration_required = is_migration_required
 
     @property
     def freeform_tags(self):
