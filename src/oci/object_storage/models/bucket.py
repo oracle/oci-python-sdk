@@ -133,6 +133,10 @@ class Bucket(object):
             The value to assign to the kms_key_id property of this Bucket.
         :type kms_key_id: str
 
+        :param is_bucket_key_enabled:
+            The value to assign to the is_bucket_key_enabled property of this Bucket.
+        :type is_bucket_key_enabled: bool
+
         :param object_lifecycle_policy_etag:
             The value to assign to the object_lifecycle_policy_etag property of this Bucket.
         :type object_lifecycle_policy_etag: str
@@ -190,6 +194,7 @@ class Bucket(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
+            'is_bucket_key_enabled': 'bool',
             'object_lifecycle_policy_etag': 'str',
             'approximate_count': 'int',
             'approximate_size': 'int',
@@ -214,6 +219,7 @@ class Bucket(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
+            'is_bucket_key_enabled': 'isBucketKeyEnabled',
             'object_lifecycle_policy_etag': 'objectLifecyclePolicyEtag',
             'approximate_count': 'approximateCount',
             'approximate_size': 'approximateSize',
@@ -237,6 +243,7 @@ class Bucket(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
+        self._is_bucket_key_enabled = None
         self._object_lifecycle_policy_etag = None
         self._approximate_count = None
         self._approximate_size = None
@@ -624,6 +631,34 @@ class Bucket(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def is_bucket_key_enabled(self):
+        """
+        Gets the is_bucket_key_enabled of this Bucket.
+        Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side
+        encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to OCI Vault Key Management
+        Service (KMS). Existing objects are not affected.
+
+
+        :return: The is_bucket_key_enabled of this Bucket.
+        :rtype: bool
+        """
+        return self._is_bucket_key_enabled
+
+    @is_bucket_key_enabled.setter
+    def is_bucket_key_enabled(self, is_bucket_key_enabled):
+        """
+        Sets the is_bucket_key_enabled of this Bucket.
+        Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side
+        encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to OCI Vault Key Management
+        Service (KMS). Existing objects are not affected.
+
+
+        :param is_bucket_key_enabled: The is_bucket_key_enabled of this Bucket.
+        :type: bool
+        """
+        self._is_bucket_key_enabled = is_bucket_key_enabled
 
     @property
     def object_lifecycle_policy_etag(self):

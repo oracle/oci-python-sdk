@@ -68,6 +68,7 @@ from .management_policy_details import ManagementPolicyDetails
 from .monthly_backup_policy import MonthlyBackupPolicy
 from .network_details import NetworkDetails
 from .none_backup_policy import NoneBackupPolicy
+from .none_pitr_policy import NonePitrPolicy
 from .none_source_details import NoneSourceDetails
 from .oci_optimized_storage_details import OciOptimizedStorageDetails
 from .odsp_insight import OdspInsight
@@ -83,7 +84,11 @@ from .patch_prohibit_instruction import PatchProhibitInstruction
 from .patch_remove_instruction import PatchRemoveInstruction
 from .patch_replace_instruction import PatchReplaceInstruction
 from .patch_require_instruction import PatchRequireInstruction
+from .pitr_details import PitrDetails
+from .pitr_policy import PitrPolicy
+from .pitr_time_window import PitrTimeWindow
 from .plain_text_password_details import PlainTextPasswordDetails
+from .point_in_time_db_system_source_details import PointInTimeDbSystemSourceDetails
 from .primary_db_instance_details import PrimaryDbInstanceDetails
 from .primary_db_system_source_details import PrimaryDbSystemSourceDetails
 from .replication_config import ReplicationConfig
@@ -98,6 +103,7 @@ from .sorting_capability import SortingCapability
 from .sorting_default import SortingDefault
 from .source_backup_details import SourceBackupDetails
 from .source_details import SourceDetails
+from .standard_pitr_policy import StandardPitrPolicy
 from .start_db_system_details import StartDbSystemDetails
 from .storage_details import StorageDetails
 from .switch_over_details import SwitchOverDetails
@@ -184,6 +190,7 @@ psql_type_mapping = {
     "MonthlyBackupPolicy": MonthlyBackupPolicy,
     "NetworkDetails": NetworkDetails,
     "NoneBackupPolicy": NoneBackupPolicy,
+    "NonePitrPolicy": NonePitrPolicy,
     "NoneSourceDetails": NoneSourceDetails,
     "OciOptimizedStorageDetails": OciOptimizedStorageDetails,
     "OdspInsight": OdspInsight,
@@ -199,7 +206,11 @@ psql_type_mapping = {
     "PatchRemoveInstruction": PatchRemoveInstruction,
     "PatchReplaceInstruction": PatchReplaceInstruction,
     "PatchRequireInstruction": PatchRequireInstruction,
+    "PitrDetails": PitrDetails,
+    "PitrPolicy": PitrPolicy,
+    "PitrTimeWindow": PitrTimeWindow,
     "PlainTextPasswordDetails": PlainTextPasswordDetails,
+    "PointInTimeDbSystemSourceDetails": PointInTimeDbSystemSourceDetails,
     "PrimaryDbInstanceDetails": PrimaryDbInstanceDetails,
     "PrimaryDbSystemSourceDetails": PrimaryDbSystemSourceDetails,
     "ReplicationConfig": ReplicationConfig,
@@ -214,6 +225,7 @@ psql_type_mapping = {
     "SortingDefault": SortingDefault,
     "SourceBackupDetails": SourceBackupDetails,
     "SourceDetails": SourceDetails,
+    "StandardPitrPolicy": StandardPitrPolicy,
     "StartDbSystemDetails": StartDbSystemDetails,
     "StorageDetails": StorageDetails,
     "SwitchOverDetails": SwitchOverDetails,

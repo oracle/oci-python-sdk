@@ -54,6 +54,10 @@ class BitbucketServerAccessTokenConfigurationSourceProviderSummary(Configuration
             The value to assign to the private_server_config_details property of this BitbucketServerAccessTokenConfigurationSourceProviderSummary.
         :type private_server_config_details: oci.resource_manager.models.PrivateServerConfigDetails
 
+        :param is_migration_required:
+            The value to assign to the is_migration_required property of this BitbucketServerAccessTokenConfigurationSourceProviderSummary.
+        :type is_migration_required: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this BitbucketServerAccessTokenConfigurationSourceProviderSummary.
         :type freeform_tags: dict(str, str)
@@ -80,6 +84,7 @@ class BitbucketServerAccessTokenConfigurationSourceProviderSummary(Configuration
             'lifecycle_state': 'str',
             'config_source_provider_type': 'str',
             'private_server_config_details': 'PrivateServerConfigDetails',
+            'is_migration_required': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -94,6 +99,7 @@ class BitbucketServerAccessTokenConfigurationSourceProviderSummary(Configuration
             'lifecycle_state': 'lifecycleState',
             'config_source_provider_type': 'configSourceProviderType',
             'private_server_config_details': 'privateServerConfigDetails',
+            'is_migration_required': 'isMigrationRequired',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -107,6 +113,7 @@ class BitbucketServerAccessTokenConfigurationSourceProviderSummary(Configuration
         self._lifecycle_state = None
         self._config_source_provider_type = None
         self._private_server_config_details = None
+        self._is_migration_required = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None

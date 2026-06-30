@@ -53,6 +53,10 @@ class ScheduleIntervalTrigger(ScheduleTrigger):
             The value to assign to the interval property of this ScheduleIntervalTrigger.
         :type interval: int
 
+        :param initial_jitter_in_minutes:
+            The value to assign to the initial_jitter_in_minutes property of this ScheduleIntervalTrigger.
+        :type initial_jitter_in_minutes: int
+
         :param is_random_start_time:
             The value to assign to the is_random_start_time property of this ScheduleIntervalTrigger.
         :type is_random_start_time: bool
@@ -64,6 +68,7 @@ class ScheduleIntervalTrigger(ScheduleTrigger):
             'time_end': 'datetime',
             'frequency': 'str',
             'interval': 'int',
+            'initial_jitter_in_minutes': 'int',
             'is_random_start_time': 'bool'
         }
         self.attribute_map = {
@@ -72,6 +77,7 @@ class ScheduleIntervalTrigger(ScheduleTrigger):
             'time_end': 'timeEnd',
             'frequency': 'frequency',
             'interval': 'interval',
+            'initial_jitter_in_minutes': 'initialJitterInMinutes',
             'is_random_start_time': 'isRandomStartTime'
         }
         self._trigger_type = None
@@ -79,6 +85,7 @@ class ScheduleIntervalTrigger(ScheduleTrigger):
         self._time_end = None
         self._frequency = None
         self._interval = None
+        self._initial_jitter_in_minutes = None
         self._is_random_start_time = None
         self._trigger_type = 'INTERVAL'
 
@@ -137,11 +144,47 @@ class ScheduleIntervalTrigger(ScheduleTrigger):
         self._interval = interval
 
     @property
+    def initial_jitter_in_minutes(self):
+        """
+        Gets the initial_jitter_in_minutes of this ScheduleIntervalTrigger.
+        Maximum number of minutes after timeStart that the scheduler may use to randomly select the first execution time.
+        This value is considered only when isRandomStartTime is true.
+        This value applies only to the initial execution; subsequent executions remain deterministic based on the resolved first trigger time.
+        If timeStart is null, the service resolves the effective start time using the current time.
+        The initial jitter window is then applied once to that resolved start time to determine the first execution time.
+        If not provided and isRandomStartTime is true, the service defaults the jitter window to half of the configured interval duration.
+        The value must not exceed the configured interval duration.
+
+
+        :return: The initial_jitter_in_minutes of this ScheduleIntervalTrigger.
+        :rtype: int
+        """
+        return self._initial_jitter_in_minutes
+
+    @initial_jitter_in_minutes.setter
+    def initial_jitter_in_minutes(self, initial_jitter_in_minutes):
+        """
+        Sets the initial_jitter_in_minutes of this ScheduleIntervalTrigger.
+        Maximum number of minutes after timeStart that the scheduler may use to randomly select the first execution time.
+        This value is considered only when isRandomStartTime is true.
+        This value applies only to the initial execution; subsequent executions remain deterministic based on the resolved first trigger time.
+        If timeStart is null, the service resolves the effective start time using the current time.
+        The initial jitter window is then applied once to that resolved start time to determine the first execution time.
+        If not provided and isRandomStartTime is true, the service defaults the jitter window to half of the configured interval duration.
+        The value must not exceed the configured interval duration.
+
+
+        :param initial_jitter_in_minutes: The initial_jitter_in_minutes of this ScheduleIntervalTrigger.
+        :type: int
+        """
+        self._initial_jitter_in_minutes = initial_jitter_in_minutes
+
+    @property
     def is_random_start_time(self):
         """
         Gets the is_random_start_time of this ScheduleIntervalTrigger.
-        when true and timeStart is null, system generate a random start time between now and now + interval;
-        isRandomStartTime can be true if timeStart is null.
+        when true, system generates a randomized first start time between timeStart and timeStart + initialJitterInMinutes.
+        if timeStart is null, the current time is used as the base start time.
 
 
         :return: The is_random_start_time of this ScheduleIntervalTrigger.
@@ -153,8 +196,8 @@ class ScheduleIntervalTrigger(ScheduleTrigger):
     def is_random_start_time(self, is_random_start_time):
         """
         Sets the is_random_start_time of this ScheduleIntervalTrigger.
-        when true and timeStart is null, system generate a random start time between now and now + interval;
-        isRandomStartTime can be true if timeStart is null.
+        when true, system generates a randomized first start time between timeStart and timeStart + initialJitterInMinutes.
+        if timeStart is null, the current time is used as the base start time.
 
 
         :param is_random_start_time: The is_random_start_time of this ScheduleIntervalTrigger.

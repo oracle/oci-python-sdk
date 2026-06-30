@@ -28,17 +28,24 @@ class ManagementPolicy(object):
             The value to assign to the backup_policy property of this ManagementPolicy.
         :type backup_policy: oci.psql.models.BackupPolicy
 
+        :param pitr_policy:
+            The value to assign to the pitr_policy property of this ManagementPolicy.
+        :type pitr_policy: oci.psql.models.PitrPolicy
+
         """
         self.swagger_types = {
             'maintenance_window_start': 'str',
-            'backup_policy': 'BackupPolicy'
+            'backup_policy': 'BackupPolicy',
+            'pitr_policy': 'PitrPolicy'
         }
         self.attribute_map = {
             'maintenance_window_start': 'maintenanceWindowStart',
-            'backup_policy': 'backupPolicy'
+            'backup_policy': 'backupPolicy',
+            'pitr_policy': 'pitrPolicy'
         }
         self._maintenance_window_start = None
         self._backup_policy = None
+        self._pitr_policy = None
 
     @property
     def maintenance_window_start(self):
@@ -83,6 +90,26 @@ class ManagementPolicy(object):
         :type: oci.psql.models.BackupPolicy
         """
         self._backup_policy = backup_policy
+
+    @property
+    def pitr_policy(self):
+        """
+        Gets the pitr_policy of this ManagementPolicy.
+
+        :return: The pitr_policy of this ManagementPolicy.
+        :rtype: oci.psql.models.PitrPolicy
+        """
+        return self._pitr_policy
+
+    @pitr_policy.setter
+    def pitr_policy(self, pitr_policy):
+        """
+        Sets the pitr_policy of this ManagementPolicy.
+
+        :param pitr_policy: The pitr_policy of this ManagementPolicy.
+        :type: oci.psql.models.PitrPolicy
+        """
+        self._pitr_policy = pitr_policy
 
     def __repr__(self):
         return formatted_flat_dict(self)

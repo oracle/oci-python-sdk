@@ -21,7 +21,7 @@ class CreateConfigurationSourceProviderDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.resource_manager.models.CreateGitlabAccessTokenConfigurationSourceProviderDetails`
-        * :class:`~oci.resource_manager.models.CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails`
+        * :class:`~oci.resource_manager.models.CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails`
         * :class:`~oci.resource_manager.models.CreateGithubAccessTokenConfigurationSourceProviderDetails`
         * :class:`~oci.resource_manager.models.CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails`
 
@@ -93,8 +93,8 @@ class CreateConfigurationSourceProviderDetails(object):
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'CreateGitlabAccessTokenConfigurationSourceProviderDetails'
 
-        if type == 'BITBUCKET_CLOUD_USERNAME_APPPASSWORD':
-            return 'CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails'
+        if type == 'BITBUCKET_CLOUD_ACCESS_TOKEN':
+            return 'CreateBitbucketCloudEmailApiTokenConfigurationSourceProviderDetails'
 
         if type == 'GITHUB_ACCESS_TOKEN':
             return 'CreateGithubAccessTokenConfigurationSourceProviderDetails'
@@ -189,7 +189,8 @@ class CreateConfigurationSourceProviderDetails(object):
         The type of configuration source provider.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
-        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_CLOUD_ACCESS_TOKEN` type corresponds to Bitbucket Cloud.
+        For Bitbucket Cloud, create requests must provide Atlassian account `email` and `secretId` containing an API token.
         The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
 
 
@@ -205,7 +206,8 @@ class CreateConfigurationSourceProviderDetails(object):
         The type of configuration source provider.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
-        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_CLOUD_ACCESS_TOKEN` type corresponds to Bitbucket Cloud.
+        For Bitbucket Cloud, create requests must provide Atlassian account `email` and `secretId` containing an API token.
         The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
 
 
