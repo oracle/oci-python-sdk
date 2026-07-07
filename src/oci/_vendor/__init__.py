@@ -4,7 +4,6 @@
 
 from . import chardet  # noqa: F401
 from . import httpsig_cffi  # noqa: F401
-from . import jwt  # noqa: F401
 from . import idna  # noqa: F401
 from . import six  # noqa: F401
 from . import requests  # noqa: F401

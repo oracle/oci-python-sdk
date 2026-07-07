@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.181.1 - 2026-07-07
+====================
+
+Added 
+----- 
+* Support for DAC hardware shapes for self-hosted models in the Generative AI service  
+
+Changed   
+-------   
+* PyJWT is no longer vendored and is now managed as an external dependency   
+
+====================
 2.181.0 - 2026-06-30
 ====================
 

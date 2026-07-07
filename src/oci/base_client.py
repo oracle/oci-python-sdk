@@ -802,10 +802,18 @@ class BaseClient(object):
         parsed_endpoint = six.moves.urllib.parse.urlparse(endpoint)
 
         if parsed_endpoint.scheme not in ('http', 'https'):
-            raise ValueError('host is invalid. endpoint scheme must be http or https')
+            raise ValueError('Invalid endpoint host: endpoint scheme must be http or https.')
+
+        try:
+            parsed_endpoint.port
+        except ValueError:
+            raise ValueError('Invalid endpoint host: endpoint host must contain only letters, digits, underscores, hyphens, and periods.')
 
         if parsed_endpoint.username is not None or parsed_endpoint.password is not None:
-            raise ValueError('host is invalid. endpoint must not contain user info, path, query, or fragment')
+            raise ValueError('Invalid endpoint host: endpoint must not contain user info.')
+
+        if not self._is_valid_endpoint_hostname(parsed_endpoint.hostname):
+            raise ValueError('Invalid endpoint host: endpoint host must contain only letters, digits, underscores, hyphens, and periods.')
 
         has_disallowed_endpoint_components = any([
             not self._is_valid_endpoint_path(parsed_endpoint.path),
@@ -814,16 +822,38 @@ class BaseClient(object):
         ])
 
         if has_disallowed_endpoint_components:
-            raise ValueError('host is invalid. endpoint must not contain user info, path, query, or fragment')
+            raise ValueError('Invalid endpoint host: endpoint must not contain path, query, or fragment.')
 
     def _is_valid_endpoint_path(self, endpoint_path):
         if self._base_path == '/':
             return endpoint_path in ('', '/')
 
         if self._base_path:
-            return endpoint_path in (self._base_path, f'{self._base_path}/')
+            endpoint_host_and_path = self._endpoint.rstrip('/').split('://', 1)[-1]
+            configured_path_start_index = endpoint_host_and_path.find('/')
+            configured_path = '' if configured_path_start_index == -1 else endpoint_host_and_path[configured_path_start_index:]
+            configured_path_without_trailing_slash = configured_path.rstrip('/')
+
+            if configured_path_without_trailing_slash == '':
+                return endpoint_path in ('', '/')
+
+            return endpoint_path in (
+                configured_path_without_trailing_slash,
+                f'{configured_path_without_trailing_slash}/'
+            )
 
         return endpoint_path == ''
+
+    @staticmethod
+    def _is_valid_endpoint_hostname(hostname):
+        if not hostname:
+            return False
+
+        labels = hostname.split('.')
+        if any(label == '' for label in labels):
+            return False
+
+        return all(re.match(r'^[A-Za-z0-9_-]+$', label) for label in labels)
 
     def get_bool_env_var(envVar: str, default=False) -> bool:
         if envVar is None:
