@@ -21097,6 +21097,24 @@ class ShowOCIDomains(object):
                 retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
             ).data
 
+            # 2026-04-24, it seems groups was removed from the default attributes,
+            # therefore querying groups and id and merge the results
+            users_groups = self.__list_call_get_all_results(
+                identity_domain_client.list_users,
+                attribute_sets=["all"],
+                attributes="id,groups",
+                sort_by="UserName",
+                count=500,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # assign groups from users_group to users array
+            group_lookup = {ug.id: ug.groups for ug in users_groups}
+
+            # Assign groups to users
+            for user in users:
+                user.groups = group_lookup.get(user.id, [])
+
             # oci.identity_domains.models.User
             for var in users:
                 if var.delete_in_progress:

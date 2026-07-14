@@ -68,6 +68,10 @@ class InstancePoolSummary(object):
             The value to assign to the instance_configuration_id property of this InstancePoolSummary.
         :type instance_configuration_id: str
 
+        :param pool_type:
+            The value to assign to the pool_type property of this InstancePoolSummary.
+        :type pool_type: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this InstancePoolSummary.
             Allowed values for this property are: "PROVISIONING", "SCALING", "STARTING", "STOPPING", "TERMINATING", "STOPPED", "TERMINATED", "RUNNING", 'UNKNOWN_ENUM_VALUE'.
@@ -104,6 +108,7 @@ class InstancePoolSummary(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'instance_configuration_id': 'str',
+            'pool_type': 'str',
             'lifecycle_state': 'str',
             'availability_domains': 'list[str]',
             'size': 'int',
@@ -117,6 +122,7 @@ class InstancePoolSummary(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'instance_configuration_id': 'instanceConfigurationId',
+            'pool_type': 'poolType',
             'lifecycle_state': 'lifecycleState',
             'availability_domains': 'availabilityDomains',
             'size': 'size',
@@ -129,6 +135,7 @@ class InstancePoolSummary(object):
         self._compartment_id = None
         self._display_name = None
         self._instance_configuration_id = None
+        self._pool_type = None
         self._lifecycle_state = None
         self._availability_domains = None
         self._size = None
@@ -234,6 +241,30 @@ class InstancePoolSummary(object):
         :type: str
         """
         self._instance_configuration_id = instance_configuration_id
+
+    @property
+    def pool_type(self):
+        """
+        Gets the pool_type of this InstancePoolSummary.
+        The type of resources managed by the pool.
+
+
+        :return: The pool_type of this InstancePoolSummary.
+        :rtype: str
+        """
+        return self._pool_type
+
+    @pool_type.setter
+    def pool_type(self, pool_type):
+        """
+        Sets the pool_type of this InstancePoolSummary.
+        The type of resources managed by the pool.
+
+
+        :param pool_type: The pool_type of this InstancePoolSummary.
+        :type: str
+        """
+        self._pool_type = pool_type
 
     @property
     def lifecycle_state(self):

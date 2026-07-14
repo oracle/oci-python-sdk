@@ -21,6 +21,7 @@ class PlacementConstraintDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.core.models.HostGroupPlacementConstraintDetails`
+        * :class:`~oci.core.models.ComputeClusterPlacementConstraintDetails`
         * :class:`~oci.core.models.ComputeBareMetalHostPlacementConstraintDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -49,6 +50,9 @@ class PlacementConstraintDetails(object):
         if type == 'HOST_GROUP':
             return 'HostGroupPlacementConstraintDetails'
 
+        if type == 'COMPUTE_CLUSTER':
+            return 'ComputeClusterPlacementConstraintDetails'
+
         if type == 'COMPUTE_BARE_METAL_HOST':
             return 'ComputeBareMetalHostPlacementConstraintDetails'
         else:
@@ -61,6 +65,7 @@ class PlacementConstraintDetails(object):
         The type for the placement constraints.
         Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID.
         Use `HOST_GROUP` when specifying the compute host group OCID.
+        Use `COMPUTE_CLUSTER` when specifying compute cluster placement constraints.
 
 
         :return: The type of this PlacementConstraintDetails.
@@ -75,6 +80,7 @@ class PlacementConstraintDetails(object):
         The type for the placement constraints.
         Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID.
         Use `HOST_GROUP` when specifying the compute host group OCID.
+        Use `COMPUTE_CLUSTER` when specifying compute cluster placement constraints.
 
 
         :param type: The type of this PlacementConstraintDetails.

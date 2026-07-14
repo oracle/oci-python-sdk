@@ -90,6 +90,27 @@ The oci module has logging at the following levels:
 
 The raw response body is not logged.
 
+Sensitive Data Redaction
+========================
+When request logging and/or debug output is enabled, the SDK redacts common credential-bearing values before writing
+request/response details to logs. This includes common authorization and token fields (for example, ``Authorization``,
+``opc-obo-token``, ``subject_token``, ``client_secret``, and other token/key-like fields), as well as token-like values
+found in query-string style data.
+
+For consistency with cross-SDK redaction behavior, sensitive HTTP header values are replaced with ``REDACTED``.
+Header-name matching is normalization-aware (case-insensitive; treats ``_`` and ``-`` as equivalent delimiters), and
+includes:
+
+* Exact sensitive header names (for example ``authorization``, ``proxy-authorization``, ``opc-obo-token``, ``x-api-key``,
+  ``cookie``, ``set-cookie``, ``security-context``, ``password``, ``passphrase``)
+* Explicit auth/key families (for example ``x-token*``, ``x-authorization*``, ``x-key-*``)
+* Credential-bearing suffixes (for example ``access-token``, ``refresh-token``, ``id-token``, ``security-token``,
+  ``session-token``, ``delegation-token``, ``client-secret``, ``private-key``)
+
+Redaction applies to SDK-emitted logging paths, including diagnostic request/response dumps and related error messages.
+Application-specific logging, custom middleware, or direct printing of request/response payloads remain the
+responsibility of the application.
+
 Disable Logging
 ================
 To disable particular client's logging, just need to disable the corresponding logger

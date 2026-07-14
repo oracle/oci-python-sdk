@@ -497,7 +497,7 @@ class AuditTrailSummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this AuditTrailSummary.
-        Details about the current state of the audit trail in Data Safe.
+        Details about the current state of the audit trail in Data Safe. This attribute will be deprecated, but will still be available in GET audit trail response.
 
 
         :return: The lifecycle_details of this AuditTrailSummary.
@@ -509,7 +509,7 @@ class AuditTrailSummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this AuditTrailSummary.
-        Details about the current state of the audit trail in Data Safe.
+        Details about the current state of the audit trail in Data Safe. This attribute will be deprecated, but will still be available in GET audit trail response.
 
 
         :param lifecycle_details: The lifecycle_details of this AuditTrailSummary.

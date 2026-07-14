@@ -438,6 +438,8 @@ Data Safe
     oci.data_safe.models.TargetAlertPolicyAssociation
     oci.data_safe.models.TargetAlertPolicyAssociationCollection
     oci.data_safe.models.TargetAlertPolicyAssociationSummary
+    oci.data_safe.models.TargetAlertPolicyUnassociatedCollection
+    oci.data_safe.models.TargetAlertPolicyUnassociatedSummary
     oci.data_safe.models.TargetDatabase
     oci.data_safe.models.TargetDatabaseGroup
     oci.data_safe.models.TargetDatabaseGroupCollection

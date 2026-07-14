@@ -12,17 +12,13 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeCluster(object):
     """
-    The data for creating a `compute cluster`__. A compute cluster
-    is an empty remote direct memory access (RDMA) network group
+    The data for creating a `compute cluster`__.
 
-    After the compute cluster is created, you can use the compute cluster's OCID with the
-    :func:`launch_instance` operation to create instances in the compute cluster.
-    The instances must be created in the same compartment and availability domain as the cluster.
+    After the compute cluster is created, you can use the compute cluster's OCID to create Instance, GPU Memory
+    Cluster or Instance Pool resources within the compute cluster. These resources must be created in the same
+    compartment and availability domain as the cluster.
 
-    Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
-
-    For details about creating a cluster network that uses instance pools to manage groups of identical instances,
-    see :func:`create_cluster_network_details`.
+    Use `COMPUTE_CLUSTER` type when using placementConstraintDetails.
 
     __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
     """
@@ -60,6 +56,10 @@ class ComputeCluster(object):
             The value to assign to the freeform_tags property of this ComputeCluster.
         :type freeform_tags: dict(str, str)
 
+        :param placement_constraint_details:
+            The value to assign to the placement_constraint_details property of this ComputeCluster.
+        :type placement_constraint_details: oci.core.models.PlacementConstraintDetails
+
         :param id:
             The value to assign to the id property of this ComputeCluster.
         :type id: str
@@ -74,6 +74,10 @@ class ComputeCluster(object):
             The value to assign to the time_created property of this ComputeCluster.
         :type time_created: datetime
 
+        :param time_updated:
+            The value to assign to the time_updated property of this ComputeCluster.
+        :type time_updated: datetime
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -81,9 +85,11 @@ class ComputeCluster(object):
             'display_name': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'placement_constraint_details': 'PlacementConstraintDetails',
             'id': 'str',
             'lifecycle_state': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'time_updated': 'datetime'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -91,18 +97,22 @@ class ComputeCluster(object):
             'display_name': 'displayName',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'placement_constraint_details': 'placementConstraintDetails',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'time_updated': 'timeUpdated'
         }
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._placement_constraint_details = None
         self._id = None
         self._lifecycle_state = None
         self._time_created = None
+        self._time_updated = None
 
     @property
     def availability_domain(self):
@@ -255,6 +265,26 @@ class ComputeCluster(object):
         self._freeform_tags = freeform_tags
 
     @property
+    def placement_constraint_details(self):
+        """
+        Gets the placement_constraint_details of this ComputeCluster.
+
+        :return: The placement_constraint_details of this ComputeCluster.
+        :rtype: oci.core.models.PlacementConstraintDetails
+        """
+        return self._placement_constraint_details
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, placement_constraint_details):
+        """
+        Sets the placement_constraint_details of this ComputeCluster.
+
+        :param placement_constraint_details: The placement_constraint_details of this ComputeCluster.
+        :type: oci.core.models.PlacementConstraintDetails
+        """
+        self._placement_constraint_details = placement_constraint_details
+
+    @property
     def id(self):
         """
         **[Required]** Gets the id of this ComputeCluster.
@@ -345,6 +375,40 @@ class ComputeCluster(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this ComputeCluster.
+        The date and time the compute cluster was updated,
+        in the format defined by `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_updated of this ComputeCluster.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this ComputeCluster.
+        The date and time the compute cluster was updated,
+        in the format defined by `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_updated: The time_updated of this ComputeCluster.
+        :type: datetime
+        """
+        self._time_updated = time_updated
 
     def __repr__(self):
         return formatted_flat_dict(self)

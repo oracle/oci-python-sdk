@@ -171,6 +171,7 @@ from .compute_capacity_topology_collection import ComputeCapacityTopologyCollect
 from .compute_capacity_topology_summary import ComputeCapacityTopologySummary
 from .compute_cluster import ComputeCluster
 from .compute_cluster_collection import ComputeClusterCollection
+from .compute_cluster_placement_constraint_details import ComputeClusterPlacementConstraintDetails
 from .compute_cluster_summary import ComputeClusterSummary
 from .compute_global_image_capability_schema import ComputeGlobalImageCapabilitySchema
 from .compute_global_image_capability_schema_summary import ComputeGlobalImageCapabilitySchemaSummary
@@ -243,6 +244,7 @@ from .create_drg_attachment_details import CreateDrgAttachmentDetails
 from .create_drg_details import CreateDrgDetails
 from .create_drg_route_distribution_details import CreateDrgRouteDistributionDetails
 from .create_drg_route_table_details import CreateDrgRouteTableDetails
+from .create_gmc_configuration_details import CreateGmcConfigurationDetails
 from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
 from .create_ip_sec_connection_tunnel_details import CreateIPSecConnectionTunnelDetails
 from .create_ip_sec_tunnel_bgp_session_details import CreateIPSecTunnelBgpSessionDetails
@@ -388,6 +390,8 @@ from .instance_configuration_create_vnic_details import InstanceConfigurationCre
 from .instance_configuration_create_volume_details import InstanceConfigurationCreateVolumeDetails
 from .instance_configuration_detached_volume_autotune_policy import InstanceConfigurationDetachedVolumeAutotunePolicy
 from .instance_configuration_generic_bm_launch_instance_platform_config import InstanceConfigurationGenericBmLaunchInstancePlatformConfig
+from .instance_configuration_gmc_config_detail import InstanceConfigurationGmcConfigDetail
+from .instance_configuration_gpu_memory_cluster_scale_config import InstanceConfigurationGpuMemoryClusterScaleConfig
 from .instance_configuration_host_group_placement_constraint_details import InstanceConfigurationHostGroupPlacementConstraintDetails
 from .instance_configuration_instance_details import InstanceConfigurationInstanceDetails
 from .instance_configuration_instance_options import InstanceConfigurationInstanceOptions
@@ -876,6 +880,7 @@ core_type_mapping = {
     "ComputeCapacityTopologySummary": ComputeCapacityTopologySummary,
     "ComputeCluster": ComputeCluster,
     "ComputeClusterCollection": ComputeClusterCollection,
+    "ComputeClusterPlacementConstraintDetails": ComputeClusterPlacementConstraintDetails,
     "ComputeClusterSummary": ComputeClusterSummary,
     "ComputeGlobalImageCapabilitySchema": ComputeGlobalImageCapabilitySchema,
     "ComputeGlobalImageCapabilitySchemaSummary": ComputeGlobalImageCapabilitySchemaSummary,
@@ -948,6 +953,7 @@ core_type_mapping = {
     "CreateDrgDetails": CreateDrgDetails,
     "CreateDrgRouteDistributionDetails": CreateDrgRouteDistributionDetails,
     "CreateDrgRouteTableDetails": CreateDrgRouteTableDetails,
+    "CreateGmcConfigurationDetails": CreateGmcConfigurationDetails,
     "CreateIPSecConnectionDetails": CreateIPSecConnectionDetails,
     "CreateIPSecConnectionTunnelDetails": CreateIPSecConnectionTunnelDetails,
     "CreateIPSecTunnelBgpSessionDetails": CreateIPSecTunnelBgpSessionDetails,
@@ -1093,6 +1099,8 @@ core_type_mapping = {
     "InstanceConfigurationCreateVolumeDetails": InstanceConfigurationCreateVolumeDetails,
     "InstanceConfigurationDetachedVolumeAutotunePolicy": InstanceConfigurationDetachedVolumeAutotunePolicy,
     "InstanceConfigurationGenericBmLaunchInstancePlatformConfig": InstanceConfigurationGenericBmLaunchInstancePlatformConfig,
+    "InstanceConfigurationGmcConfigDetail": InstanceConfigurationGmcConfigDetail,
+    "InstanceConfigurationGpuMemoryClusterScaleConfig": InstanceConfigurationGpuMemoryClusterScaleConfig,
     "InstanceConfigurationHostGroupPlacementConstraintDetails": InstanceConfigurationHostGroupPlacementConstraintDetails,
     "InstanceConfigurationInstanceDetails": InstanceConfigurationInstanceDetails,
     "InstanceConfigurationInstanceOptions": InstanceConfigurationInstanceOptions,

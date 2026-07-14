@@ -11,6 +11,7 @@ from .ai_data_platform_collection import AiDataPlatformCollection
 from .ai_data_platform_summary import AiDataPlatformSummary
 from .change_ai_data_platform_compartment_details import ChangeAiDataPlatformCompartmentDetails
 from .create_ai_data_platform_details import CreateAiDataPlatformDetails
+from .enable_ai_feature_details import EnableAiFeatureDetails
 from .update_ai_data_platform_details import UpdateAiDataPlatformDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -28,6 +29,7 @@ ai_data_platform_type_mapping = {
     "AiDataPlatformSummary": AiDataPlatformSummary,
     "ChangeAiDataPlatformCompartmentDetails": ChangeAiDataPlatformCompartmentDetails,
     "CreateAiDataPlatformDetails": CreateAiDataPlatformDetails,
+    "EnableAiFeatureDetails": EnableAiFeatureDetails,
     "UpdateAiDataPlatformDetails": UpdateAiDataPlatformDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

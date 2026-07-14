@@ -39,7 +39,7 @@ class CreateInstanceConfigurationDetails(CreateInstanceConfigurationBase):
 
         :param source:
             The value to assign to the source property of this CreateInstanceConfigurationDetails.
-            Allowed values for this property are: "NONE", "INSTANCE"
+            Allowed values for this property are: "NONE", "INSTANCE", "GMC"
         :type source: str
 
         :param instance_details:

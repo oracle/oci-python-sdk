@@ -28,6 +28,22 @@ class CreateAiDataPlatformDetails(object):
             The value to assign to the ai_data_platform_type property of this CreateAiDataPlatformDetails.
         :type ai_data_platform_type: str
 
+        :param is_enable_ai_feature:
+            The value to assign to the is_enable_ai_feature property of this CreateAiDataPlatformDetails.
+        :type is_enable_ai_feature: bool
+
+        :param vector_db_id:
+            The value to assign to the vector_db_id property of this CreateAiDataPlatformDetails.
+        :type vector_db_id: str
+
+        :param vector_db_admin_cred:
+            The value to assign to the vector_db_admin_cred property of this CreateAiDataPlatformDetails.
+        :type vector_db_admin_cred: str
+
+        :param vector_db_admin_secret_id:
+            The value to assign to the vector_db_admin_secret_id property of this CreateAiDataPlatformDetails.
+        :type vector_db_admin_secret_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateAiDataPlatformDetails.
         :type compartment_id: str
@@ -52,6 +68,10 @@ class CreateAiDataPlatformDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'ai_data_platform_type': 'str',
+            'is_enable_ai_feature': 'bool',
+            'vector_db_id': 'str',
+            'vector_db_admin_cred': 'str',
+            'vector_db_admin_secret_id': 'str',
             'compartment_id': 'str',
             'default_workspace_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -61,6 +81,10 @@ class CreateAiDataPlatformDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'ai_data_platform_type': 'aiDataPlatformType',
+            'is_enable_ai_feature': 'isEnableAiFeature',
+            'vector_db_id': 'vectorDbId',
+            'vector_db_admin_cred': 'vectorDbAdminCred',
+            'vector_db_admin_secret_id': 'vectorDbAdminSecretId',
             'compartment_id': 'compartmentId',
             'default_workspace_name': 'defaultWorkspaceName',
             'freeform_tags': 'freeformTags',
@@ -69,6 +93,10 @@ class CreateAiDataPlatformDetails(object):
         }
         self._display_name = None
         self._ai_data_platform_type = None
+        self._is_enable_ai_feature = None
+        self._vector_db_id = None
+        self._vector_db_admin_cred = None
+        self._vector_db_admin_secret_id = None
         self._compartment_id = None
         self._default_workspace_name = None
         self._freeform_tags = None
@@ -122,6 +150,110 @@ class CreateAiDataPlatformDetails(object):
         :type: str
         """
         self._ai_data_platform_type = ai_data_platform_type
+
+    @property
+    def is_enable_ai_feature(self):
+        """
+        Gets the is_enable_ai_feature of this CreateAiDataPlatformDetails.
+        The flag to enable/disable AiFeatures for the instance.
+
+
+        :return: The is_enable_ai_feature of this CreateAiDataPlatformDetails.
+        :rtype: bool
+        """
+        return self._is_enable_ai_feature
+
+    @is_enable_ai_feature.setter
+    def is_enable_ai_feature(self, is_enable_ai_feature):
+        """
+        Sets the is_enable_ai_feature of this CreateAiDataPlatformDetails.
+        The flag to enable/disable AiFeatures for the instance.
+
+
+        :param is_enable_ai_feature: The is_enable_ai_feature of this CreateAiDataPlatformDetails.
+        :type: bool
+        """
+        self._is_enable_ai_feature = is_enable_ai_feature
+
+    @property
+    def vector_db_id(self):
+        """
+        Gets the vector_db_id of this CreateAiDataPlatformDetails.
+        The `OCID`__ of the vector db Lakehouse 26ai.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vector_db_id of this CreateAiDataPlatformDetails.
+        :rtype: str
+        """
+        return self._vector_db_id
+
+    @vector_db_id.setter
+    def vector_db_id(self, vector_db_id):
+        """
+        Sets the vector_db_id of this CreateAiDataPlatformDetails.
+        The `OCID`__ of the vector db Lakehouse 26ai.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param vector_db_id: The vector_db_id of this CreateAiDataPlatformDetails.
+        :type: str
+        """
+        self._vector_db_id = vector_db_id
+
+    @property
+    def vector_db_admin_cred(self):
+        """
+        Gets the vector_db_admin_cred of this CreateAiDataPlatformDetails.
+        The Vector DB Lakehouse 26ai ADMIN user password.
+
+
+        :return: The vector_db_admin_cred of this CreateAiDataPlatformDetails.
+        :rtype: str
+        """
+        return self._vector_db_admin_cred
+
+    @vector_db_admin_cred.setter
+    def vector_db_admin_cred(self, vector_db_admin_cred):
+        """
+        Sets the vector_db_admin_cred of this CreateAiDataPlatformDetails.
+        The Vector DB Lakehouse 26ai ADMIN user password.
+
+
+        :param vector_db_admin_cred: The vector_db_admin_cred of this CreateAiDataPlatformDetails.
+        :type: str
+        """
+        self._vector_db_admin_cred = vector_db_admin_cred
+
+    @property
+    def vector_db_admin_secret_id(self):
+        """
+        Gets the vector_db_admin_secret_id of this CreateAiDataPlatformDetails.
+        The `OCID`__ of the OCI Vault secret holding the vector db Lakehouse 26ai Admin user password.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vector_db_admin_secret_id of this CreateAiDataPlatformDetails.
+        :rtype: str
+        """
+        return self._vector_db_admin_secret_id
+
+    @vector_db_admin_secret_id.setter
+    def vector_db_admin_secret_id(self, vector_db_admin_secret_id):
+        """
+        Sets the vector_db_admin_secret_id of this CreateAiDataPlatformDetails.
+        The `OCID`__ of the OCI Vault secret holding the vector db Lakehouse 26ai Admin user password.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param vector_db_admin_secret_id: The vector_db_admin_secret_id of this CreateAiDataPlatformDetails.
+        :type: str
+        """
+        self._vector_db_admin_secret_id = vector_db_admin_secret_id
 
     @property
     def compartment_id(self):

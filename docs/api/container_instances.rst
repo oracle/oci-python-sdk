@@ -32,10 +32,12 @@ Container Instances
     oci.container_instances.models.ContainerInstance
     oci.container_instances.models.ContainerInstanceCollection
     oci.container_instances.models.ContainerInstanceContainer
+    oci.container_instances.models.ContainerInstanceSecurityContext
     oci.container_instances.models.ContainerInstanceShapeCollection
     oci.container_instances.models.ContainerInstanceShapeConfig
     oci.container_instances.models.ContainerInstanceShapeSummary
     oci.container_instances.models.ContainerInstanceSummary
+    oci.container_instances.models.ContainerOciFssVolume
     oci.container_instances.models.ContainerResourceConfig
     oci.container_instances.models.ContainerSummary
     oci.container_instances.models.ContainerTcpHealthCheck
@@ -49,19 +51,39 @@ Container Instances
     oci.container_instances.models.CreateContainerHealthCheckDetails
     oci.container_instances.models.CreateContainerHttpHealthCheckDetails
     oci.container_instances.models.CreateContainerInstanceDetails
+    oci.container_instances.models.CreateContainerInstanceSecurityContextDetails
     oci.container_instances.models.CreateContainerInstanceShapeConfigDetails
+    oci.container_instances.models.CreateContainerOciFssVolumeDetails
     oci.container_instances.models.CreateContainerResourceConfigDetails
     oci.container_instances.models.CreateContainerTcpHealthCheckDetails
     oci.container_instances.models.CreateContainerVnicDetails
     oci.container_instances.models.CreateContainerVolumeDetails
     oci.container_instances.models.CreateImagePullSecretDetails
+    oci.container_instances.models.CreateLinuxContainerInstanceSecurityContextDetails
     oci.container_instances.models.CreateLinuxSecurityContextDetails
+    oci.container_instances.models.CreateOciFssExportDetails
+    oci.container_instances.models.CreateOciFssExportIdDetails
+    oci.container_instances.models.CreateOciFssMountCommandDetails
+    oci.container_instances.models.CreateOciFssMountOptionDetails
+    oci.container_instances.models.CreateOciFssMountTargetDetails
+    oci.container_instances.models.CreateOciFssMountTargetIdDetails
+    oci.container_instances.models.CreateOciFssSecurityDetails
+    oci.container_instances.models.CreateOciFssSysSecurityDetails
     oci.container_instances.models.CreateSecurityContextDetails
     oci.container_instances.models.CreateVaultImagePullSecretDetails
     oci.container_instances.models.CreateVolumeMountDetails
     oci.container_instances.models.HealthCheckHttpHeader
     oci.container_instances.models.ImagePullSecret
+    oci.container_instances.models.LinuxContainerInstanceSecurityContext
     oci.container_instances.models.LinuxSecurityContext
+    oci.container_instances.models.OciFssExport
+    oci.container_instances.models.OciFssExportId
+    oci.container_instances.models.OciFssMountCommand
+    oci.container_instances.models.OciFssMountOption
+    oci.container_instances.models.OciFssMountTarget
+    oci.container_instances.models.OciFssMountTargetId
+    oci.container_instances.models.OciFssSecurity
+    oci.container_instances.models.OciFssSysSecurity
     oci.container_instances.models.SecurityContext
     oci.container_instances.models.ShapeMemoryOptions
     oci.container_instances.models.ShapeNetworkingBandwidthOptions

@@ -90,6 +90,10 @@ class TargetAlertPolicyAssociationSummary(object):
             The value to assign to the lifecycle_details property of this TargetAlertPolicyAssociationSummary.
         :type lifecycle_details: str
 
+        :param target_type:
+            The value to assign to the target_type property of this TargetAlertPolicyAssociationSummary.
+        :type target_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this TargetAlertPolicyAssociationSummary.
         :type freeform_tags: dict(str, str)
@@ -111,6 +115,7 @@ class TargetAlertPolicyAssociationSummary(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'target_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -126,6 +131,7 @@ class TargetAlertPolicyAssociationSummary(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'target_type': 'targetType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -140,6 +146,7 @@ class TargetAlertPolicyAssociationSummary(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._target_type = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -243,7 +250,7 @@ class TargetAlertPolicyAssociationSummary(object):
     def target_id(self):
         """
         Gets the target_id of this TargetAlertPolicyAssociationSummary.
-        The OCID of the target on which alert policy is to be applied.
+        The OCID of the target or target database group on which alert policy is to be applied.
 
 
         :return: The target_id of this TargetAlertPolicyAssociationSummary.
@@ -255,7 +262,7 @@ class TargetAlertPolicyAssociationSummary(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this TargetAlertPolicyAssociationSummary.
-        The OCID of the target on which alert policy is to be applied.
+        The OCID of the target or target database group on which alert policy is to be applied.
 
 
         :param target_id: The target_id of this TargetAlertPolicyAssociationSummary.
@@ -420,6 +427,30 @@ class TargetAlertPolicyAssociationSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this TargetAlertPolicyAssociationSummary.
+        The resource type that is represented by the target alert policy association.
+
+
+        :return: The target_type of this TargetAlertPolicyAssociationSummary.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this TargetAlertPolicyAssociationSummary.
+        The resource type that is represented by the target alert policy association.
+
+
+        :param target_type: The target_type of this TargetAlertPolicyAssociationSummary.
+        :type: str
+        """
+        self._target_type = target_type
 
     @property
     def freeform_tags(self):

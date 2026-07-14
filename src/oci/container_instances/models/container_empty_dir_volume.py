@@ -35,7 +35,7 @@ class ContainerEmptyDirVolume(ContainerVolume):
 
         :param volume_type:
             The value to assign to the volume_type property of this ContainerEmptyDirVolume.
-            Allowed values for this property are: "EMPTYDIR", "CONFIGFILE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EMPTYDIR", "CONFIGFILE", "OCI_FSS_FILE_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type volume_type: str
 

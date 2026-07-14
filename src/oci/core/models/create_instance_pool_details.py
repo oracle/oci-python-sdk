@@ -13,6 +13,8 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateInstancePoolDetails(object):
     """
     The data to create an instance pool.
+    For a GMC-enabled resource pool, the referenced instance configuration must be a GMC configuration and
+    the placement configuration must identify the availability domain and compute cluster for the pool.
     """
 
     def __init__(self, **kwargs):
@@ -296,6 +298,7 @@ class CreateInstancePoolDetails(object):
         """
         **[Required]** Gets the size of this CreateInstancePoolDetails.
         The number of instances that should be in the instance pool.
+        For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
 
 
         :return: The size of this CreateInstancePoolDetails.
@@ -308,6 +311,7 @@ class CreateInstancePoolDetails(object):
         """
         Sets the size of this CreateInstancePoolDetails.
         The number of instances that should be in the instance pool.
+        For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
 
 
         :param size: The size of this CreateInstancePoolDetails.

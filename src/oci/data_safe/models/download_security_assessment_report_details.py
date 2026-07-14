@@ -37,14 +37,21 @@ class DownloadSecurityAssessmentReportDetails(object):
             Allowed values for this property are: "PDF", "XLS", "STIGXLS"
         :type format: str
 
+        :param is_single_report:
+            The value to assign to the is_single_report property of this DownloadSecurityAssessmentReportDetails.
+        :type is_single_report: bool
+
         """
         self.swagger_types = {
-            'format': 'str'
+            'format': 'str',
+            'is_single_report': 'bool'
         }
         self.attribute_map = {
-            'format': 'format'
+            'format': 'format',
+            'is_single_report': 'isSingleReport'
         }
         self._format = None
+        self._is_single_report = None
 
     @property
     def format(self):
@@ -76,6 +83,44 @@ class DownloadSecurityAssessmentReportDetails(object):
                 f"Invalid value for `format`, must be None or one of {allowed_values}"
             )
         self._format = format
+
+    @property
+    def is_single_report(self):
+        """
+        Gets the is_single_report of this DownloadSecurityAssessmentReportDetails.
+        Optional flag controlling the output format of a target group report:
+        - true: Return a single consolidated report file for the entire target group.
+        - false/null (default): Return a ZIP archive containing one file per target in the group.
+
+        Important:
+        - This flag is only applicable when the security assessment OCID refers to a target group assessment (targetType TARGET_DATABASE_GROUP).
+        - If `isSingleReport` is set to true for an individual target (targetType TARGET_DATABASE), the request will return an error.
+        - If `isSingleReport` is null or false for an individual target, the value is ignored and the selected output format for the assessment type is returned.
+
+
+        :return: The is_single_report of this DownloadSecurityAssessmentReportDetails.
+        :rtype: bool
+        """
+        return self._is_single_report
+
+    @is_single_report.setter
+    def is_single_report(self, is_single_report):
+        """
+        Sets the is_single_report of this DownloadSecurityAssessmentReportDetails.
+        Optional flag controlling the output format of a target group report:
+        - true: Return a single consolidated report file for the entire target group.
+        - false/null (default): Return a ZIP archive containing one file per target in the group.
+
+        Important:
+        - This flag is only applicable when the security assessment OCID refers to a target group assessment (targetType TARGET_DATABASE_GROUP).
+        - If `isSingleReport` is set to true for an individual target (targetType TARGET_DATABASE), the request will return an error.
+        - If `isSingleReport` is null or false for an individual target, the value is ignored and the selected output format for the assessment type is returned.
+
+
+        :param is_single_report: The is_single_report of this DownloadSecurityAssessmentReportDetails.
+        :type: bool
+        """
+        self._is_single_report = is_single_report
 
     def __repr__(self):
         return formatted_flat_dict(self)

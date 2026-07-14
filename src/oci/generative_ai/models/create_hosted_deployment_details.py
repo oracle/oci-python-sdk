@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateHostedDeploymentDetails(object):
     """
-    The data to create a hosted deployment.
+    The data to create a hosted deployment. Exactly one of hostedApplicationId or hostedApplicationIamId must be provided.
     """
 
     def __init__(self, **kwargs):
@@ -119,8 +119,8 @@ class CreateHostedDeploymentDetails(object):
     @property
     def hosted_application_id(self):
         """
-        **[Required]** Gets the hosted_application_id of this CreateHostedDeploymentDetails.
-        The `OCID`__ of the application.
+        Gets the hosted_application_id of this CreateHostedDeploymentDetails.
+        The `OCID`__ of the HostedApplication parent.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -134,7 +134,7 @@ class CreateHostedDeploymentDetails(object):
     def hosted_application_id(self, hosted_application_id):
         """
         Sets the hosted_application_id of this CreateHostedDeploymentDetails.
-        The `OCID`__ of the application.
+        The `OCID`__ of the HostedApplication parent.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

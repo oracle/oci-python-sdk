@@ -44,6 +44,10 @@ class CreateTargetAlertPolicyAssociationDetails(object):
             The value to assign to the is_enabled property of this CreateTargetAlertPolicyAssociationDetails.
         :type is_enabled: bool
 
+        :param target_type:
+            The value to assign to the target_type property of this CreateTargetAlertPolicyAssociationDetails.
+        :type target_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateTargetAlertPolicyAssociationDetails.
         :type freeform_tags: dict(str, str)
@@ -60,6 +64,7 @@ class CreateTargetAlertPolicyAssociationDetails(object):
             'description': 'str',
             'compartment_id': 'str',
             'is_enabled': 'bool',
+            'target_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -70,6 +75,7 @@ class CreateTargetAlertPolicyAssociationDetails(object):
             'description': 'description',
             'compartment_id': 'compartmentId',
             'is_enabled': 'isEnabled',
+            'target_type': 'targetType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -79,6 +85,7 @@ class CreateTargetAlertPolicyAssociationDetails(object):
         self._description = None
         self._compartment_id = None
         self._is_enabled = None
+        self._target_type = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -110,7 +117,7 @@ class CreateTargetAlertPolicyAssociationDetails(object):
     def target_id(self):
         """
         **[Required]** Gets the target_id of this CreateTargetAlertPolicyAssociationDetails.
-        The OCID of the target.
+        The OCID of the target or target database group.
 
 
         :return: The target_id of this CreateTargetAlertPolicyAssociationDetails.
@@ -122,7 +129,7 @@ class CreateTargetAlertPolicyAssociationDetails(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this CreateTargetAlertPolicyAssociationDetails.
-        The OCID of the target.
+        The OCID of the target or target database group.
 
 
         :param target_id: The target_id of this CreateTargetAlertPolicyAssociationDetails.
@@ -225,6 +232,30 @@ class CreateTargetAlertPolicyAssociationDetails(object):
         :type: bool
         """
         self._is_enabled = is_enabled
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this CreateTargetAlertPolicyAssociationDetails.
+        The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+
+
+        :return: The target_type of this CreateTargetAlertPolicyAssociationDetails.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this CreateTargetAlertPolicyAssociationDetails.
+        The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+
+
+        :param target_type: The target_type of this CreateTargetAlertPolicyAssociationDetails.
+        :type: str
+        """
+        self._target_type = target_type
 
     @property
     def freeform_tags(self):

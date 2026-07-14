@@ -252,6 +252,7 @@ class UpdateInstancePoolDetails(object):
         """
         Gets the size of this UpdateInstancePoolDetails.
         The number of instances that should be in the instance pool.
+        For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
 
         To determine whether capacity is available for a specific shape before you resize an instance pool,
         use the :func:`create_compute_capacity_report`
@@ -268,6 +269,7 @@ class UpdateInstancePoolDetails(object):
         """
         Sets the size of this UpdateInstancePoolDetails.
         The number of instances that should be in the instance pool.
+        For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
 
         To determine whether capacity is available for a specific shape before you resize an instance pool,
         use the :func:`create_compute_capacity_report`

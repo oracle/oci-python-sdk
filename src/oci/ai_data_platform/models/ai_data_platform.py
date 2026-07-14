@@ -45,6 +45,22 @@ class AiDataPlatform(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the ai_feature_status property of a AiDataPlatform.
+    #: This constant has a value of "DISABLED"
+    AI_FEATURE_STATUS_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the ai_feature_status property of a AiDataPlatform.
+    #: This constant has a value of "ENABLING"
+    AI_FEATURE_STATUS_ENABLING = "ENABLING"
+
+    #: A constant which can be used with the ai_feature_status property of a AiDataPlatform.
+    #: This constant has a value of "READY"
+    AI_FEATURE_STATUS_READY = "READY"
+
+    #: A constant which can be used with the ai_feature_status property of a AiDataPlatform.
+    #: This constant has a value of "FAILED"
+    AI_FEATURE_STATUS_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AiDataPlatform object with values from keyword arguments.
@@ -92,6 +108,12 @@ class AiDataPlatform(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param ai_feature_status:
+            The value to assign to the ai_feature_status property of this AiDataPlatform.
+            Allowed values for this property are: "DISABLED", "ENABLING", "READY", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type ai_feature_status: str
+
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this AiDataPlatform.
         :type lifecycle_details: str
@@ -120,6 +142,7 @@ class AiDataPlatform(object):
             'alias_key': 'str',
             'web_socket_endpoint': 'str',
             'lifecycle_state': 'str',
+            'ai_feature_status': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -136,6 +159,7 @@ class AiDataPlatform(object):
             'alias_key': 'aliasKey',
             'web_socket_endpoint': 'webSocketEndpoint',
             'lifecycle_state': 'lifecycleState',
+            'ai_feature_status': 'aiFeatureStatus',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -151,6 +175,7 @@ class AiDataPlatform(object):
         self._alias_key = None
         self._web_socket_endpoint = None
         self._lifecycle_state = None
+        self._ai_feature_status = None
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -429,6 +454,36 @@ class AiDataPlatform(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def ai_feature_status(self):
+        """
+        Gets the ai_feature_status of this AiDataPlatform.
+        The current aiFeatureStatus of the AiDataPlatform.
+
+        Allowed values for this property are: "DISABLED", "ENABLING", "READY", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The ai_feature_status of this AiDataPlatform.
+        :rtype: str
+        """
+        return self._ai_feature_status
+
+    @ai_feature_status.setter
+    def ai_feature_status(self, ai_feature_status):
+        """
+        Sets the ai_feature_status of this AiDataPlatform.
+        The current aiFeatureStatus of the AiDataPlatform.
+
+
+        :param ai_feature_status: The ai_feature_status of this AiDataPlatform.
+        :type: str
+        """
+        allowed_values = ["DISABLED", "ENABLING", "READY", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(ai_feature_status, allowed_values):
+            ai_feature_status = 'UNKNOWN_ENUM_VALUE'
+        self._ai_feature_status = ai_feature_status
 
     @property
     def lifecycle_details(self):

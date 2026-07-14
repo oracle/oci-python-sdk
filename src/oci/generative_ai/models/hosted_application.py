@@ -50,6 +50,10 @@ class HostedApplication(object):
         Initializes a new HostedApplication object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param inbound_auth_config:
+            The value to assign to the inbound_auth_config property of this HostedApplication.
+        :type inbound_auth_config: oci.generative_ai.models.InboundAuthConfig
+
         :param id:
             The value to assign to the id property of this HostedApplication.
         :type id: str
@@ -92,10 +96,6 @@ class HostedApplication(object):
             The value to assign to the storage_configs property of this HostedApplication.
         :type storage_configs: list[oci.generative_ai.models.StorageConfig]
 
-        :param inbound_auth_config:
-            The value to assign to the inbound_auth_config property of this HostedApplication.
-        :type inbound_auth_config: oci.generative_ai.models.InboundAuthConfig
-
         :param networking_config:
             The value to assign to the networking_config property of this HostedApplication.
         :type networking_config: oci.generative_ai.models.NetworkingConfig
@@ -118,6 +118,7 @@ class HostedApplication(object):
 
         """
         self.swagger_types = {
+            'inbound_auth_config': 'InboundAuthConfig',
             'id': 'str',
             'display_name': 'str',
             'description': 'str',
@@ -128,7 +129,6 @@ class HostedApplication(object):
             'lifecycle_details': 'str',
             'scaling_config': 'ScalingConfig',
             'storage_configs': 'list[StorageConfig]',
-            'inbound_auth_config': 'InboundAuthConfig',
             'networking_config': 'NetworkingConfig',
             'environment_variables': 'list[EnvironmentVariable]',
             'freeform_tags': 'dict(str, str)',
@@ -136,6 +136,7 @@ class HostedApplication(object):
             'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
+            'inbound_auth_config': 'inboundAuthConfig',
             'id': 'id',
             'display_name': 'displayName',
             'description': 'description',
@@ -146,13 +147,13 @@ class HostedApplication(object):
             'lifecycle_details': 'lifecycleDetails',
             'scaling_config': 'scalingConfig',
             'storage_configs': 'storageConfigs',
-            'inbound_auth_config': 'inboundAuthConfig',
             'networking_config': 'networkingConfig',
             'environment_variables': 'environmentVariables',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
+        self._inbound_auth_config = None
         self._id = None
         self._display_name = None
         self._description = None
@@ -163,12 +164,31 @@ class HostedApplication(object):
         self._lifecycle_details = None
         self._scaling_config = None
         self._storage_configs = None
-        self._inbound_auth_config = None
         self._networking_config = None
         self._environment_variables = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+
+    @property
+    def inbound_auth_config(self):
+        """
+        Gets the inbound_auth_config of this HostedApplication.
+
+        :return: The inbound_auth_config of this HostedApplication.
+        :rtype: oci.generative_ai.models.InboundAuthConfig
+        """
+        return self._inbound_auth_config
+
+    @inbound_auth_config.setter
+    def inbound_auth_config(self, inbound_auth_config):
+        """
+        Sets the inbound_auth_config of this HostedApplication.
+
+        :param inbound_auth_config: The inbound_auth_config of this HostedApplication.
+        :type: oci.generative_ai.models.InboundAuthConfig
+        """
+        self._inbound_auth_config = inbound_auth_config
 
     @property
     def id(self):
@@ -415,26 +435,6 @@ class HostedApplication(object):
         :type: list[oci.generative_ai.models.StorageConfig]
         """
         self._storage_configs = storage_configs
-
-    @property
-    def inbound_auth_config(self):
-        """
-        Gets the inbound_auth_config of this HostedApplication.
-
-        :return: The inbound_auth_config of this HostedApplication.
-        :rtype: oci.generative_ai.models.InboundAuthConfig
-        """
-        return self._inbound_auth_config
-
-    @inbound_auth_config.setter
-    def inbound_auth_config(self, inbound_auth_config):
-        """
-        Sets the inbound_auth_config of this HostedApplication.
-
-        :param inbound_auth_config: The inbound_auth_config of this HostedApplication.
-        :type: oci.generative_ai.models.InboundAuthConfig
-        """
-        self._inbound_auth_config = inbound_auth_config
 
     @property
     def networking_config(self):

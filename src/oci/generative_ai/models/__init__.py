@@ -35,7 +35,9 @@ from .create_dedicated_ai_cluster_details import CreateDedicatedAiClusterDetails
 from .create_endpoint_details import CreateEndpointDetails
 from .create_generative_ai_private_endpoint_details import CreateGenerativeAiPrivateEndpointDetails
 from .create_generative_ai_project_details import CreateGenerativeAiProjectDetails
+from .create_hosted_application_base_details import CreateHostedApplicationBaseDetails
 from .create_hosted_application_details import CreateHostedApplicationDetails
+from .create_hosted_application_iam_details import CreateHostedApplicationIamDetails
 from .create_hosted_application_storage_details import CreateHostedApplicationStorageDetails
 from .create_hosted_deployment_details import CreateHostedDeploymentDetails
 from .create_imported_model_details import CreateImportedModelDetails
@@ -73,7 +75,9 @@ from .generative_ai_project import GenerativeAiProject
 from .generative_ai_project_collection import GenerativeAiProjectCollection
 from .generative_ai_project_summary import GenerativeAiProjectSummary
 from .hosted_application import HostedApplication
+from .hosted_application_base import HostedApplicationBase
 from .hosted_application_collection import HostedApplicationCollection
+from .hosted_application_iam import HostedApplicationIam
 from .hosted_application_storage import HostedApplicationStorage
 from .hosted_application_storage_collection import HostedApplicationStorageCollection
 from .hosted_application_storage_summary import HostedApplicationStorageSummary
@@ -134,7 +138,9 @@ from .update_dedicated_ai_cluster_details import UpdateDedicatedAiClusterDetails
 from .update_endpoint_details import UpdateEndpointDetails
 from .update_generative_ai_private_endpoint_details import UpdateGenerativeAiPrivateEndpointDetails
 from .update_generative_ai_project_details import UpdateGenerativeAiProjectDetails
+from .update_hosted_application_base_details import UpdateHostedApplicationBaseDetails
 from .update_hosted_application_details import UpdateHostedApplicationDetails
+from .update_hosted_application_iam_details import UpdateHostedApplicationIamDetails
 from .update_hosted_deployment_details import UpdateHostedDeploymentDetails
 from .update_imported_model_details import UpdateImportedModelDetails
 from .update_model_details import UpdateModelDetails
@@ -190,7 +196,9 @@ generative_ai_type_mapping = {
     "CreateEndpointDetails": CreateEndpointDetails,
     "CreateGenerativeAiPrivateEndpointDetails": CreateGenerativeAiPrivateEndpointDetails,
     "CreateGenerativeAiProjectDetails": CreateGenerativeAiProjectDetails,
+    "CreateHostedApplicationBaseDetails": CreateHostedApplicationBaseDetails,
     "CreateHostedApplicationDetails": CreateHostedApplicationDetails,
+    "CreateHostedApplicationIamDetails": CreateHostedApplicationIamDetails,
     "CreateHostedApplicationStorageDetails": CreateHostedApplicationStorageDetails,
     "CreateHostedDeploymentDetails": CreateHostedDeploymentDetails,
     "CreateImportedModelDetails": CreateImportedModelDetails,
@@ -228,7 +236,9 @@ generative_ai_type_mapping = {
     "GenerativeAiProjectCollection": GenerativeAiProjectCollection,
     "GenerativeAiProjectSummary": GenerativeAiProjectSummary,
     "HostedApplication": HostedApplication,
+    "HostedApplicationBase": HostedApplicationBase,
     "HostedApplicationCollection": HostedApplicationCollection,
+    "HostedApplicationIam": HostedApplicationIam,
     "HostedApplicationStorage": HostedApplicationStorage,
     "HostedApplicationStorageCollection": HostedApplicationStorageCollection,
     "HostedApplicationStorageSummary": HostedApplicationStorageSummary,
@@ -289,7 +299,9 @@ generative_ai_type_mapping = {
     "UpdateEndpointDetails": UpdateEndpointDetails,
     "UpdateGenerativeAiPrivateEndpointDetails": UpdateGenerativeAiPrivateEndpointDetails,
     "UpdateGenerativeAiProjectDetails": UpdateGenerativeAiProjectDetails,
+    "UpdateHostedApplicationBaseDetails": UpdateHostedApplicationBaseDetails,
     "UpdateHostedApplicationDetails": UpdateHostedApplicationDetails,
+    "UpdateHostedApplicationIamDetails": UpdateHostedApplicationIamDetails,
     "UpdateHostedDeploymentDetails": UpdateHostedDeploymentDetails,
     "UpdateImportedModelDetails": UpdateImportedModelDetails,
     "UpdateModelDetails": UpdateModelDetails,

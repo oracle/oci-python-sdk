@@ -47,7 +47,9 @@ Generative Ai
     oci.generative_ai.models.CreateEndpointDetails
     oci.generative_ai.models.CreateGenerativeAiPrivateEndpointDetails
     oci.generative_ai.models.CreateGenerativeAiProjectDetails
+    oci.generative_ai.models.CreateHostedApplicationBaseDetails
     oci.generative_ai.models.CreateHostedApplicationDetails
+    oci.generative_ai.models.CreateHostedApplicationIamDetails
     oci.generative_ai.models.CreateHostedApplicationStorageDetails
     oci.generative_ai.models.CreateHostedDeploymentDetails
     oci.generative_ai.models.CreateImportedModelDetails
@@ -85,7 +87,9 @@ Generative Ai
     oci.generative_ai.models.GenerativeAiProjectCollection
     oci.generative_ai.models.GenerativeAiProjectSummary
     oci.generative_ai.models.HostedApplication
+    oci.generative_ai.models.HostedApplicationBase
     oci.generative_ai.models.HostedApplicationCollection
+    oci.generative_ai.models.HostedApplicationIam
     oci.generative_ai.models.HostedApplicationStorage
     oci.generative_ai.models.HostedApplicationStorageCollection
     oci.generative_ai.models.HostedApplicationStorageSummary
@@ -146,7 +150,9 @@ Generative Ai
     oci.generative_ai.models.UpdateEndpointDetails
     oci.generative_ai.models.UpdateGenerativeAiPrivateEndpointDetails
     oci.generative_ai.models.UpdateGenerativeAiProjectDetails
+    oci.generative_ai.models.UpdateHostedApplicationBaseDetails
     oci.generative_ai.models.UpdateHostedApplicationDetails
+    oci.generative_ai.models.UpdateHostedApplicationIamDetails
     oci.generative_ai.models.UpdateHostedDeploymentDetails
     oci.generative_ai.models.UpdateImportedModelDetails
     oci.generative_ai.models.UpdateModelDetails

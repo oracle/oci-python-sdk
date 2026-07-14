@@ -19,6 +19,10 @@ class ColumnsInfo(object):
     #: This constant has a value of "TABLE"
     OBJECT_TYPE_TABLE = "TABLE"
 
+    #: A constant which can be used with the object_type property of a ColumnsInfo.
+    #: This constant has a value of "EDITIONING_VIEW"
+    OBJECT_TYPE_EDITIONING_VIEW = "EDITIONING_VIEW"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ColumnsInfo object with values from keyword arguments.
@@ -30,7 +34,7 @@ class ColumnsInfo(object):
 
         :param object_type:
             The value to assign to the object_type property of this ColumnsInfo.
-            Allowed values for this property are: "TABLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "TABLE", "EDITIONING_VIEW", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type object_type: str
 
@@ -104,7 +108,7 @@ class ColumnsInfo(object):
         **[Required]** Gets the object_type of this ColumnsInfo.
         The type of the database object that contains the sensitive column.
 
-        Allowed values for this property are: "TABLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "TABLE", "EDITIONING_VIEW", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -123,7 +127,7 @@ class ColumnsInfo(object):
         :param object_type: The object_type of this ColumnsInfo.
         :type: str
         """
-        allowed_values = ["TABLE"]
+        allowed_values = ["TABLE", "EDITIONING_VIEW"]
         if not value_allowed_none_or_none_sentinel(object_type, allowed_values):
             object_type = 'UNKNOWN_ENUM_VALUE'
         self._object_type = object_type

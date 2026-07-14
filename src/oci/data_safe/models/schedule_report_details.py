@@ -53,26 +53,33 @@ class ScheduleReportDetails(object):
             The value to assign to the report_details property of this ScheduleReportDetails.
         :type report_details: oci.data_safe.models.ReportDetails
 
+        :param is_pagination_enabled:
+            The value to assign to the is_pagination_enabled property of this ScheduleReportDetails.
+        :type is_pagination_enabled: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'schedule': 'str',
             'mime_type': 'str',
             'compartment_id': 'str',
-            'report_details': 'ReportDetails'
+            'report_details': 'ReportDetails',
+            'is_pagination_enabled': 'bool'
         }
         self.attribute_map = {
             'display_name': 'displayName',
             'schedule': 'schedule',
             'mime_type': 'mimeType',
             'compartment_id': 'compartmentId',
-            'report_details': 'reportDetails'
+            'report_details': 'reportDetails',
+            'is_pagination_enabled': 'isPaginationEnabled'
         }
         self._display_name = None
         self._schedule = None
         self._mime_type = None
         self._compartment_id = None
         self._report_details = None
+        self._is_pagination_enabled = None
 
     @property
     def display_name(self):
@@ -224,6 +231,34 @@ class ScheduleReportDetails(object):
         :type: oci.data_safe.models.ReportDetails
         """
         self._report_details = report_details
+
+    @property
+    def is_pagination_enabled(self):
+        """
+        Gets the is_pagination_enabled of this ScheduleReportDetails.
+        Indicates if the reports being generated should be paginated.
+        If set to true, multiple reports can be generated and the details of next and previous report are present in Report.
+        Values can either be 'true' or 'false'.
+
+
+        :return: The is_pagination_enabled of this ScheduleReportDetails.
+        :rtype: bool
+        """
+        return self._is_pagination_enabled
+
+    @is_pagination_enabled.setter
+    def is_pagination_enabled(self, is_pagination_enabled):
+        """
+        Sets the is_pagination_enabled of this ScheduleReportDetails.
+        Indicates if the reports being generated should be paginated.
+        If set to true, multiple reports can be generated and the details of next and previous report are present in Report.
+        Values can either be 'true' or 'false'.
+
+
+        :param is_pagination_enabled: The is_pagination_enabled of this ScheduleReportDetails.
+        :type: bool
+        """
+        self._is_pagination_enabled = is_pagination_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -34,6 +34,26 @@ class WorkRequest(object):
     OPERATION_TYPE_MOVE_DATA_LAKE = "MOVE_DATA_LAKE"
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_AI_DATA_PLATFORM"
+    OPERATION_TYPE_CREATE_AI_DATA_PLATFORM = "CREATE_AI_DATA_PLATFORM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_AI_DATA_PLATFORM"
+    OPERATION_TYPE_UPDATE_AI_DATA_PLATFORM = "UPDATE_AI_DATA_PLATFORM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_AI_DATA_PLATFORM"
+    OPERATION_TYPE_DELETE_AI_DATA_PLATFORM = "DELETE_AI_DATA_PLATFORM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MOVE_AI_DATA_PLATFORM"
+    OPERATION_TYPE_MOVE_AI_DATA_PLATFORM = "MOVE_AI_DATA_PLATFORM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ENABLE_AI_FEATURES"
+    OPERATION_TYPE_ENABLE_AI_FEATURES = "ENABLE_AI_FEATURES"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "CREATE_WORKSPACE"
     OPERATION_TYPE_CREATE_WORKSPACE = "CREATE_WORKSPACE"
 
@@ -88,7 +108,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_DATA_LAKE", "UPDATE_DATA_LAKE", "DELETE_DATA_LAKE", "MOVE_DATA_LAKE", "CREATE_WORKSPACE", "UPDATE_WORKSPACE", "DELETE_WORKSPACE", "EVALUATE_IAM_POLICIES", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_DATA_LAKE", "UPDATE_DATA_LAKE", "DELETE_DATA_LAKE", "MOVE_DATA_LAKE", "CREATE_AI_DATA_PLATFORM", "UPDATE_AI_DATA_PLATFORM", "DELETE_AI_DATA_PLATFORM", "MOVE_AI_DATA_PLATFORM", "ENABLE_AI_FEATURES", "CREATE_WORKSPACE", "UPDATE_WORKSPACE", "DELETE_WORKSPACE", "EVALUATE_IAM_POLICIES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -172,7 +192,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_DATA_LAKE", "UPDATE_DATA_LAKE", "DELETE_DATA_LAKE", "MOVE_DATA_LAKE", "CREATE_WORKSPACE", "UPDATE_WORKSPACE", "DELETE_WORKSPACE", "EVALUATE_IAM_POLICIES", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_DATA_LAKE", "UPDATE_DATA_LAKE", "DELETE_DATA_LAKE", "MOVE_DATA_LAKE", "CREATE_AI_DATA_PLATFORM", "UPDATE_AI_DATA_PLATFORM", "DELETE_AI_DATA_PLATFORM", "MOVE_AI_DATA_PLATFORM", "ENABLE_AI_FEATURES", "CREATE_WORKSPACE", "UPDATE_WORKSPACE", "DELETE_WORKSPACE", "EVALUATE_IAM_POLICIES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -191,7 +211,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_DATA_LAKE", "UPDATE_DATA_LAKE", "DELETE_DATA_LAKE", "MOVE_DATA_LAKE", "CREATE_WORKSPACE", "UPDATE_WORKSPACE", "DELETE_WORKSPACE", "EVALUATE_IAM_POLICIES"]
+        allowed_values = ["CREATE_DATA_LAKE", "UPDATE_DATA_LAKE", "DELETE_DATA_LAKE", "MOVE_DATA_LAKE", "CREATE_AI_DATA_PLATFORM", "UPDATE_AI_DATA_PLATFORM", "DELETE_AI_DATA_PLATFORM", "MOVE_AI_DATA_PLATFORM", "ENABLE_AI_FEATURES", "CREATE_WORKSPACE", "UPDATE_WORKSPACE", "DELETE_WORKSPACE", "EVALUATE_IAM_POLICIES"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

@@ -426,6 +426,8 @@ from .tables_for_discovery import TablesForDiscovery
 from .target_alert_policy_association import TargetAlertPolicyAssociation
 from .target_alert_policy_association_collection import TargetAlertPolicyAssociationCollection
 from .target_alert_policy_association_summary import TargetAlertPolicyAssociationSummary
+from .target_alert_policy_unassociated_collection import TargetAlertPolicyUnassociatedCollection
+from .target_alert_policy_unassociated_summary import TargetAlertPolicyUnassociatedSummary
 from .target_database import TargetDatabase
 from .target_database_group import TargetDatabaseGroup
 from .target_database_group_collection import TargetDatabaseGroupCollection
@@ -935,6 +937,8 @@ data_safe_type_mapping = {
     "TargetAlertPolicyAssociation": TargetAlertPolicyAssociation,
     "TargetAlertPolicyAssociationCollection": TargetAlertPolicyAssociationCollection,
     "TargetAlertPolicyAssociationSummary": TargetAlertPolicyAssociationSummary,
+    "TargetAlertPolicyUnassociatedCollection": TargetAlertPolicyUnassociatedCollection,
+    "TargetAlertPolicyUnassociatedSummary": TargetAlertPolicyUnassociatedSummary,
     "TargetDatabase": TargetDatabase,
     "TargetDatabaseGroup": TargetDatabaseGroup,
     "TargetDatabaseGroupCollection": TargetDatabaseGroupCollection,

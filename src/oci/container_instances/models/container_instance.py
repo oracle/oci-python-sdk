@@ -75,6 +75,10 @@ class ContainerInstance(object):
             The value to assign to the compartment_id property of this ContainerInstance.
         :type compartment_id: str
 
+        :param tenant_id:
+            The value to assign to the tenant_id property of this ContainerInstance.
+        :type tenant_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ContainerInstance.
         :type freeform_tags: dict(str, str)
@@ -159,11 +163,16 @@ class ContainerInstance(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type container_restart_policy: str
 
+        :param security_context:
+            The value to assign to the security_context property of this ContainerInstance.
+        :type security_context: oci.container_instances.models.ContainerInstanceSecurityContext
+
         """
         self.swagger_types = {
             'id': 'str',
             'display_name': 'str',
             'compartment_id': 'str',
+            'tenant_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -183,12 +192,14 @@ class ContainerInstance(object):
             'dns_config': 'ContainerDnsConfig',
             'graceful_shutdown_timeout_in_seconds': 'int',
             'image_pull_secrets': 'list[ImagePullSecret]',
-            'container_restart_policy': 'str'
+            'container_restart_policy': 'str',
+            'security_context': 'ContainerInstanceSecurityContext'
         }
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
+            'tenant_id': 'tenantId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -208,11 +219,13 @@ class ContainerInstance(object):
             'dns_config': 'dnsConfig',
             'graceful_shutdown_timeout_in_seconds': 'gracefulShutdownTimeoutInSeconds',
             'image_pull_secrets': 'imagePullSecrets',
-            'container_restart_policy': 'containerRestartPolicy'
+            'container_restart_policy': 'containerRestartPolicy',
+            'security_context': 'securityContext'
         }
         self._id = None
         self._display_name = None
         self._compartment_id = None
+        self._tenant_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -233,6 +246,7 @@ class ContainerInstance(object):
         self._graceful_shutdown_timeout_in_seconds = None
         self._image_pull_secrets = None
         self._container_restart_policy = None
+        self._security_context = None
 
     @property
     def id(self):
@@ -305,6 +319,30 @@ class ContainerInstance(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def tenant_id(self):
+        """
+        Gets the tenant_id of this ContainerInstance.
+        TenantId id of the container instance.
+
+
+        :return: The tenant_id of this ContainerInstance.
+        :rtype: str
+        """
+        return self._tenant_id
+
+    @tenant_id.setter
+    def tenant_id(self, tenant_id):
+        """
+        Sets the tenant_id of this ContainerInstance.
+        TenantId id of the container instance.
+
+
+        :param tenant_id: The tenant_id of this ContainerInstance.
+        :type: str
+        """
+        self._tenant_id = tenant_id
 
     @property
     def freeform_tags(self):
@@ -807,6 +845,26 @@ class ContainerInstance(object):
         if not value_allowed_none_or_none_sentinel(container_restart_policy, allowed_values):
             container_restart_policy = 'UNKNOWN_ENUM_VALUE'
         self._container_restart_policy = container_restart_policy
+
+    @property
+    def security_context(self):
+        """
+        Gets the security_context of this ContainerInstance.
+
+        :return: The security_context of this ContainerInstance.
+        :rtype: oci.container_instances.models.ContainerInstanceSecurityContext
+        """
+        return self._security_context
+
+    @security_context.setter
+    def security_context(self, security_context):
+        """
+        Sets the security_context of this ContainerInstance.
+
+        :param security_context: The security_context of this ContainerInstance.
+        :type: oci.container_instances.models.ContainerInstanceSecurityContext
+        """
+        self._security_context = security_context
 
     def __repr__(self):
         return formatted_flat_dict(self)

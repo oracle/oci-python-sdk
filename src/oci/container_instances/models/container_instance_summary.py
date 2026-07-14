@@ -92,6 +92,10 @@ class ContainerInstanceSummary(object):
             The value to assign to the container_restart_policy property of this ContainerInstanceSummary.
         :type container_restart_policy: str
 
+        :param security_context:
+            The value to assign to the security_context property of this ContainerInstanceSummary.
+        :type security_context: oci.container_instances.models.ContainerInstanceSecurityContext
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -111,7 +115,8 @@ class ContainerInstanceSummary(object):
             'container_count': 'int',
             'graceful_shutdown_timeout_in_seconds': 'int',
             'volume_count': 'int',
-            'container_restart_policy': 'str'
+            'container_restart_policy': 'str',
+            'security_context': 'ContainerInstanceSecurityContext'
         }
         self.attribute_map = {
             'id': 'id',
@@ -131,7 +136,8 @@ class ContainerInstanceSummary(object):
             'container_count': 'containerCount',
             'graceful_shutdown_timeout_in_seconds': 'gracefulShutdownTimeoutInSeconds',
             'volume_count': 'volumeCount',
-            'container_restart_policy': 'containerRestartPolicy'
+            'container_restart_policy': 'containerRestartPolicy',
+            'security_context': 'securityContext'
         }
         self._id = None
         self._display_name = None
@@ -151,6 +157,7 @@ class ContainerInstanceSummary(object):
         self._graceful_shutdown_timeout_in_seconds = None
         self._volume_count = None
         self._container_restart_policy = None
+        self._security_context = None
 
     @property
     def id(self):
@@ -587,6 +594,26 @@ class ContainerInstanceSummary(object):
         :type: str
         """
         self._container_restart_policy = container_restart_policy
+
+    @property
+    def security_context(self):
+        """
+        Gets the security_context of this ContainerInstanceSummary.
+
+        :return: The security_context of this ContainerInstanceSummary.
+        :rtype: oci.container_instances.models.ContainerInstanceSecurityContext
+        """
+        return self._security_context
+
+    @security_context.setter
+    def security_context(self, security_context):
+        """
+        Sets the security_context of this ContainerInstanceSummary.
+
+        :param security_context: The security_context of this ContainerInstanceSummary.
+        :type: oci.container_instances.models.ContainerInstanceSecurityContext
+        """
+        self._security_context = security_context
 
     def __repr__(self):
         return formatted_flat_dict(self)

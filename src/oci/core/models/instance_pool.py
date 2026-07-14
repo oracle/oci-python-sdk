@@ -19,6 +19,14 @@ class InstancePool(object):
     __ https://docs.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm
     """
 
+    #: A constant which can be used with the pool_type property of a InstancePool.
+    #: This constant has a value of "INSTANCE"
+    POOL_TYPE_INSTANCE = "INSTANCE"
+
+    #: A constant which can be used with the pool_type property of a InstancePool.
+    #: This constant has a value of "GMC"
+    POOL_TYPE_GMC = "GMC"
+
     #: A constant which can be used with the lifecycle_state property of a InstancePool.
     #: This constant has a value of "PROVISIONING"
     LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
@@ -80,6 +88,12 @@ class InstancePool(object):
             The value to assign to the instance_configuration_id property of this InstancePool.
         :type instance_configuration_id: str
 
+        :param pool_type:
+            The value to assign to the pool_type property of this InstancePool.
+            Allowed values for this property are: "INSTANCE", "GMC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type pool_type: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this InstancePool.
             Allowed values for this property are: "PROVISIONING", "SCALING", "STARTING", "STOPPING", "TERMINATING", "STOPPED", "TERMINATED", "RUNNING", 'UNKNOWN_ENUM_VALUE'.
@@ -126,6 +140,7 @@ class InstancePool(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'instance_configuration_id': 'str',
+            'pool_type': 'str',
             'lifecycle_state': 'str',
             'placement_configurations': 'list[InstancePoolPlacementConfiguration]',
             'size': 'int',
@@ -143,6 +158,7 @@ class InstancePool(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'instance_configuration_id': 'instanceConfigurationId',
+            'pool_type': 'poolType',
             'lifecycle_state': 'lifecycleState',
             'placement_configurations': 'placementConfigurations',
             'size': 'size',
@@ -159,6 +175,7 @@ class InstancePool(object):
         self._display_name = None
         self._freeform_tags = None
         self._instance_configuration_id = None
+        self._pool_type = None
         self._lifecycle_state = None
         self._placement_configurations = None
         self._size = None
@@ -350,6 +367,36 @@ class InstancePool(object):
         :type: str
         """
         self._instance_configuration_id = instance_configuration_id
+
+    @property
+    def pool_type(self):
+        """
+        Gets the pool_type of this InstancePool.
+        The type of resources managed by the pool.
+
+        Allowed values for this property are: "INSTANCE", "GMC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The pool_type of this InstancePool.
+        :rtype: str
+        """
+        return self._pool_type
+
+    @pool_type.setter
+    def pool_type(self, pool_type):
+        """
+        Sets the pool_type of this InstancePool.
+        The type of resources managed by the pool.
+
+
+        :param pool_type: The pool_type of this InstancePool.
+        :type: str
+        """
+        allowed_values = ["INSTANCE", "GMC"]
+        if not value_allowed_none_or_none_sentinel(pool_type, allowed_values):
+            pool_type = 'UNKNOWN_ENUM_VALUE'
+        self._pool_type = pool_type
 
     @property
     def lifecycle_state(self):

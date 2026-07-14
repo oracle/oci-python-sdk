@@ -23,11 +23,16 @@ class CreateInstanceConfigurationBase(object):
     #: This constant has a value of "INSTANCE"
     SOURCE_INSTANCE = "INSTANCE"
 
+    #: A constant which can be used with the source property of a CreateInstanceConfigurationBase.
+    #: This constant has a value of "GMC"
+    SOURCE_GMC = "GMC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateInstanceConfigurationBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.core.models.CreateGmcConfigurationDetails`
         * :class:`~oci.core.models.CreateInstanceConfigurationDetails`
         * :class:`~oci.core.models.CreateInstanceConfigurationFromInstanceDetails`
 
@@ -51,7 +56,7 @@ class CreateInstanceConfigurationBase(object):
 
         :param source:
             The value to assign to the source property of this CreateInstanceConfigurationBase.
-            Allowed values for this property are: "NONE", "INSTANCE"
+            Allowed values for this property are: "NONE", "INSTANCE", "GMC"
         :type source: str
 
         """
@@ -82,6 +87,9 @@ class CreateInstanceConfigurationBase(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['source']
+
+        if type == 'GMC':
+            return 'CreateGmcConfigurationDetails'
 
         if type == 'NONE':
             return 'CreateInstanceConfigurationDetails'
@@ -245,8 +253,9 @@ class CreateInstanceConfigurationBase(object):
 
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
         * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+        * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
 
-        Allowed values for this property are: "NONE", "INSTANCE"
+        Allowed values for this property are: "NONE", "INSTANCE", "GMC"
 
 
         :return: The source of this CreateInstanceConfigurationBase.
@@ -284,12 +293,13 @@ class CreateInstanceConfigurationBase(object):
 
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
         * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+        * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
 
 
         :param source: The source of this CreateInstanceConfigurationBase.
         :type: str
         """
-        allowed_values = ["NONE", "INSTANCE"]
+        allowed_values = ["NONE", "INSTANCE", "GMC"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 f"Invalid value for `source`, must be None or one of {allowed_values}"

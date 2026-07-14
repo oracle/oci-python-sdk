@@ -20,6 +20,10 @@ class UpdateHostedApplicationDetails(object):
         Initializes a new UpdateHostedApplicationDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param inbound_auth_config:
+            The value to assign to the inbound_auth_config property of this UpdateHostedApplicationDetails.
+        :type inbound_auth_config: oci.generative_ai.models.InboundAuthConfig
+
         :param display_name:
             The value to assign to the display_name property of this UpdateHostedApplicationDetails.
         :type display_name: str
@@ -31,10 +35,6 @@ class UpdateHostedApplicationDetails(object):
         :param scaling_config:
             The value to assign to the scaling_config property of this UpdateHostedApplicationDetails.
         :type scaling_config: oci.generative_ai.models.ScalingConfig
-
-        :param inbound_auth_config:
-            The value to assign to the inbound_auth_config property of this UpdateHostedApplicationDetails.
-        :type inbound_auth_config: oci.generative_ai.models.InboundAuthConfig
 
         :param environment_variables:
             The value to assign to the environment_variables property of this UpdateHostedApplicationDetails.
@@ -50,30 +50,50 @@ class UpdateHostedApplicationDetails(object):
 
         """
         self.swagger_types = {
+            'inbound_auth_config': 'InboundAuthConfig',
             'display_name': 'str',
             'description': 'str',
             'scaling_config': 'ScalingConfig',
-            'inbound_auth_config': 'InboundAuthConfig',
             'environment_variables': 'list[EnvironmentVariable]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
+            'inbound_auth_config': 'inboundAuthConfig',
             'display_name': 'displayName',
             'description': 'description',
             'scaling_config': 'scalingConfig',
-            'inbound_auth_config': 'inboundAuthConfig',
             'environment_variables': 'environmentVariables',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
+        self._inbound_auth_config = None
         self._display_name = None
         self._description = None
         self._scaling_config = None
-        self._inbound_auth_config = None
         self._environment_variables = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def inbound_auth_config(self):
+        """
+        Gets the inbound_auth_config of this UpdateHostedApplicationDetails.
+
+        :return: The inbound_auth_config of this UpdateHostedApplicationDetails.
+        :rtype: oci.generative_ai.models.InboundAuthConfig
+        """
+        return self._inbound_auth_config
+
+    @inbound_auth_config.setter
+    def inbound_auth_config(self, inbound_auth_config):
+        """
+        Sets the inbound_auth_config of this UpdateHostedApplicationDetails.
+
+        :param inbound_auth_config: The inbound_auth_config of this UpdateHostedApplicationDetails.
+        :type: oci.generative_ai.models.InboundAuthConfig
+        """
+        self._inbound_auth_config = inbound_auth_config
 
     @property
     def display_name(self):
@@ -142,26 +162,6 @@ class UpdateHostedApplicationDetails(object):
         :type: oci.generative_ai.models.ScalingConfig
         """
         self._scaling_config = scaling_config
-
-    @property
-    def inbound_auth_config(self):
-        """
-        Gets the inbound_auth_config of this UpdateHostedApplicationDetails.
-
-        :return: The inbound_auth_config of this UpdateHostedApplicationDetails.
-        :rtype: oci.generative_ai.models.InboundAuthConfig
-        """
-        return self._inbound_auth_config
-
-    @inbound_auth_config.setter
-    def inbound_auth_config(self, inbound_auth_config):
-        """
-        Sets the inbound_auth_config of this UpdateHostedApplicationDetails.
-
-        :param inbound_auth_config: The inbound_auth_config of this UpdateHostedApplicationDetails.
-        :type: oci.generative_ai.models.InboundAuthConfig
-        """
-        self._inbound_auth_config = inbound_auth_config
 
     @property
     def environment_variables(self):
