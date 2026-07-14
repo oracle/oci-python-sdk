@@ -31,6 +31,7 @@ from six.moves.http_client import HTTPResponse
 from . import constants, exceptions, regions, retry
 from .auth import signers
 from .config import get_config_value_or_default, validate_config
+from ._log_redaction import redact_sensitive_data_for_logs, redact_sensitive_string_for_logs
 from .request import Request
 from .response import Response
 from .circuit_breaker import CircuitBreakerStrategy, NoCircuitBreakerStrategy
@@ -1045,24 +1046,25 @@ class BaseClient(object):
         :param response: The response object (if available) to ensure it's fully consumed
         :param reason: Reason for resetting the session (for logging purposes)
         """
-        self.logger.warning(f"Resetting session due to {reason}")
+        self.logger.warning(f"Resetting session due to {redact_sensitive_string_for_logs(reason)}")
         if response is not None:
             try:
                 # Read the response content to ensure the socket is fully drained
                 _ = response.content
                 response.close()
             except Exception as e:
-                self.logger.warning(f"Error while closing response during session reset: {e}")
+                self.logger.warning(f"Error while closing response during session reset: {redact_sensitive_string_for_logs(e)}")
         # Create a new session and close the old one
         new_session = copy.copy(self.session)
         try:
             self.session.close()
         except Exception as e:
-            self.logger.error(f"Error while closing old session: {e}")
+            self.logger.error(f"Error while closing old session: {redact_sensitive_string_for_logs(e)}")
         self.session = new_session
 
     def request(self, request, allow_control_chars=None, operation_name=None, api_reference_link=None):
-        self.logger.info(utc_now() + "Request: %s %s" % (str(request.method), request.url))
+        redacted_request_url = redact_sensitive_string_for_logs(request.url)
+        self.logger.info(f"{utc_now()} Request: {str(request.method)} {redacted_request_url}")
 
         initial_circuit_breaker_state = None
         if self.circuit_breaker_name:
@@ -1087,6 +1089,7 @@ class BaseClient(object):
         max_header_error_retries = int(os.environ.get(OCI_HEADER_PARSING_ERROR_MAX_RETRIES, 2))
         if max_header_error_retries < 0:
             raise ValueError("max_header_error_retries must be a positive integer.")
+
         total_attempts = max_header_error_retries + 1
         response = None
         for attempt in range(total_attempts):
@@ -1112,16 +1115,18 @@ class BaseClient(object):
                     self.logger.debug(f"Response opc-request-id: {response.headers[constants.HEADER_REQUEST_ID]}")
                 break  # Request succeeded, exit retry loop
             except HeaderParsingError as e:
+                redacted_error = redact_sensitive_string_for_logs(e)
                 self.logger.warning(
-                    f"HeaderParsingError encountered on attempt {attempt + 1}/{total_attempts}: {str(e)}")
+                    f"HeaderParsingError encountered on attempt {attempt + 1}/{total_attempts}: {redacted_error}")
                 # Reset the session to clear the connection pool
-                self._reset_session(reason=f"HeaderParsingError ({str(e)[:100]})")
+                self._reset_session(reason=f"HeaderParsingError ({redacted_error[:100]})")
                 if attempt >= max_header_error_retries:
                     # Last attempt failed, re-raise as RequestException
                     if not e.args:
                         e.args = ('',)
+                    e.args = tuple(redact_sensitive_string_for_logs(arg) for arg in e.args)
                     e.args = e.args + (
-                        f"Request Endpoint: {request.method} {request.url}. "
+                        f"Request Endpoint: {request.method} {redacted_request_url}. "
                         f"HeaderParsingError indicates connection reuse issue. "
                         f"See {TROUBLESHOOT_URL} for help troubleshooting this error, or contact support and provide this full error message.",)
                     raise exceptions.RequestException(e)
@@ -1132,25 +1137,30 @@ class BaseClient(object):
             except requests.exceptions.ConnectTimeout as e:
                 if not e.args:
                     e.args = ('',)
-                e.args = e.args + ("Request Endpoint: " + request.method + " " + request.url + " See {} for help troubleshooting this error, or contact support and provide this full error message.".format(TROUBLESHOOT_URL),)
+                e.args = tuple(redact_sensitive_string_for_logs(arg) for arg in e.args)
+                e.args = e.args + (f"Request Endpoint: {request.method} {redacted_request_url} See {TROUBLESHOOT_URL} for help troubleshooting this error, or contact support and provide this full error message.",)
                 raise exceptions.ConnectTimeout(e)
             except requests.exceptions.RequestException as e:
                 if not e.args:
                     e.args = ('',)
-                e.args = e.args + ("Request Endpoint: " + request.method + " " + request.url + " See {} for help troubleshooting this error, or contact support and provide this full error message.".format(TROUBLESHOOT_URL),)
+                e.args = tuple(redact_sensitive_string_for_logs(arg) for arg in e.args)
+                e.args = e.args + (f"Request Endpoint: {request.method} {redacted_request_url} See {TROUBLESHOOT_URL} for help troubleshooting this error, or contact support and provide this full error message.",)
                 raise exceptions.RequestException(e)
 
         response_type = request.response_type
-        self.logger.debug(utc_now() + "Response status: %s" % str(response.status_code))
+        self.logger.debug(f"{utc_now()} Response status: {str(response.status_code)}")
 
         # Raise Service Error or Transient Service Error
         if not 200 <= response.status_code <= 299:
             target_service = self.service
-            request_endpoint = request.method + " " + request.url
+            request_endpoint = f"{request.method} {redacted_request_url}"
             client_version = USER_INFO
             timestamp = datetime.now(timezone.utc).isoformat()
 
             service_code, message, deserialized_data = self.get_deserialized_service_code_and_message(response, allow_control_chars)
+            if message is not None:
+                message = redact_sensitive_string_for_logs(message)
+            deserialized_data = redact_sensitive_data_for_logs(deserialized_data)
             if (response.status_code == 413 and service_code == 'RequestEntityTooLarge') or (response.status_code == 412 and service_code == 'IfNoneMatchFailed'):
                 self.logger.warning(
                     f"Received a {response.status_code}/{service_code} from {target_service}, resetting session")

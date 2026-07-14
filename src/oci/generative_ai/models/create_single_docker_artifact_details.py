@@ -26,6 +26,10 @@ class CreateSingleDockerArtifactDetails(CreateArtifactDetails):
             Allowed values for this property are: "SIMPLE_DOCKER_ARTIFACT"
         :type artifact_type: str
 
+        :param is_vulnerability_scan_required:
+            The value to assign to the is_vulnerability_scan_required property of this CreateSingleDockerArtifactDetails.
+        :type is_vulnerability_scan_required: bool
+
         :param container_uri:
             The value to assign to the container_uri property of this CreateSingleDockerArtifactDetails.
         :type container_uri: str
@@ -37,15 +41,18 @@ class CreateSingleDockerArtifactDetails(CreateArtifactDetails):
         """
         self.swagger_types = {
             'artifact_type': 'str',
+            'is_vulnerability_scan_required': 'bool',
             'container_uri': 'str',
             'tag': 'str'
         }
         self.attribute_map = {
             'artifact_type': 'artifactType',
+            'is_vulnerability_scan_required': 'isVulnerabilityScanRequired',
             'container_uri': 'containerUri',
             'tag': 'tag'
         }
         self._artifact_type = None
+        self._is_vulnerability_scan_required = None
         self._container_uri = None
         self._tag = None
         self._artifact_type = 'SIMPLE_DOCKER_ARTIFACT'

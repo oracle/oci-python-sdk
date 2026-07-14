@@ -52,6 +52,10 @@ class AiDataPlatformSummary(object):
             The value to assign to the alias_key property of this AiDataPlatformSummary.
         :type alias_key: str
 
+        :param ai_feature_status:
+            The value to assign to the ai_feature_status property of this AiDataPlatformSummary.
+        :type ai_feature_status: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AiDataPlatformSummary.
         :type lifecycle_state: str
@@ -82,6 +86,7 @@ class AiDataPlatformSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'alias_key': 'str',
+            'ai_feature_status': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -97,6 +102,7 @@ class AiDataPlatformSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'alias_key': 'aliasKey',
+            'ai_feature_status': 'aiFeatureStatus',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
@@ -111,6 +117,7 @@ class AiDataPlatformSummary(object):
         self._time_created = None
         self._time_updated = None
         self._alias_key = None
+        self._ai_feature_status = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
@@ -336,6 +343,30 @@ class AiDataPlatformSummary(object):
         :type: str
         """
         self._alias_key = alias_key
+
+    @property
+    def ai_feature_status(self):
+        """
+        Gets the ai_feature_status of this AiDataPlatformSummary.
+        The current aiFeatureStatus of the AiDataPlatform.
+
+
+        :return: The ai_feature_status of this AiDataPlatformSummary.
+        :rtype: str
+        """
+        return self._ai_feature_status
+
+    @ai_feature_status.setter
+    def ai_feature_status(self, ai_feature_status):
+        """
+        Sets the ai_feature_status of this AiDataPlatformSummary.
+        The current aiFeatureStatus of the AiDataPlatform.
+
+
+        :param ai_feature_status: The ai_feature_status of this AiDataPlatformSummary.
+        :type: str
+        """
+        self._ai_feature_status = ai_feature_status
 
     @property
     def lifecycle_state(self):

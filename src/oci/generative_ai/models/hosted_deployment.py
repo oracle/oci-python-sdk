@@ -26,6 +26,10 @@ class HostedDeployment(object):
     LIFECYCLE_STATE_CREATING = "CREATING"
 
     #: A constant which can be used with the lifecycle_state property of a HostedDeployment.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the lifecycle_state property of a HostedDeployment.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
@@ -76,7 +80,7 @@ class HostedDeployment(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this HostedDeployment.
-            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "NEEDS_ATTENTION", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -276,7 +280,7 @@ class HostedDeployment(object):
         **[Required]** Gets the lifecycle_state of this HostedDeployment.
         The current state of the hosted deployment.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "NEEDS_ATTENTION", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -295,7 +299,7 @@ class HostedDeployment(object):
         :param lifecycle_state: The lifecycle_state of this HostedDeployment.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "NEEDS_ATTENTION", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -303,8 +307,8 @@ class HostedDeployment(object):
     @property
     def hosted_application_id(self):
         """
-        **[Required]** Gets the hosted_application_id of this HostedDeployment.
-        The `OCID`__ of the application.
+        Gets the hosted_application_id of this HostedDeployment.
+        The `OCID`__ of the HostedApplication parent.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -318,7 +322,7 @@ class HostedDeployment(object):
     def hosted_application_id(self, hosted_application_id):
         """
         Sets the hosted_application_id of this HostedDeployment.
-        The `OCID`__ of the application.
+        The `OCID`__ of the HostedApplication parent.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

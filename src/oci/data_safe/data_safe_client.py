@@ -7883,8 +7883,8 @@ class DataSafeClient(object):
 
     def create_security_assessment(self, create_security_assessment_details, **kwargs):
         """
-        Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
-        it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
+        Creates a new saved security assessment for a target database or target database group in a compartment. When this operation is performed,
+        it will save the latest assessment in the specified compartment. If a schedule is passed, it will persist the latest assessment,
         at the defined date and time, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
@@ -9362,8 +9362,8 @@ class DataSafeClient(object):
 
     def create_user_assessment(self, create_user_assessment_details, **kwargs):
         """
-        Creates a new saved user assessment for one or multiple targets in a compartment. It saves the latest assessments in the
-        specified compartment. If a scheduled is passed in, this operation persists the latest assessments that exist at the defined
+        Creates a new saved user assessment for a target database or target database group in a compartment. It saves the latest assessment in the
+        specified compartment. If a schedule is passed in, this operation persists the latest assessment that exists at the defined
         date and time, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
@@ -23288,7 +23288,7 @@ class DataSafeClient(object):
         :param str associated_resource_type: (optional)
             A filter to return attribute set associated resources that matches the specified resource type query param.
 
-            Allowed values are: "AUDIT_POLICY"
+            Allowed values are: "AUDIT_POLICY", "AUDIT_REPORT"
 
         :param str associated_resource_id: (optional)
             A filter to return attribute set associated resource that matches the specified associated resource id query param.
@@ -23351,7 +23351,7 @@ class DataSafeClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'associated_resource_type' in kwargs:
-            associated_resource_type_allowed_values = ["AUDIT_POLICY"]
+            associated_resource_type_allowed_values = ["AUDIT_POLICY", "AUDIT_REPORT"]
             if kwargs['associated_resource_type'] not in associated_resource_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `associated_resource_type`, must be one of { associated_resource_type_allowed_values }"
@@ -25806,7 +25806,7 @@ class DataSafeClient(object):
         :param str sort_by: (optional)
             The field to sort by. You can specify only one sort order(sortOrder). The default order for title is ascending.
 
-            Allowed values are: "title", "category"
+            Allowed values are: "title", "category", "key"
 
         :param str suggested_severity: (optional)
             A filter to return only checks of a particular risk level.
@@ -25908,7 +25908,7 @@ class DataSafeClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["title", "category"]
+            sort_by_allowed_values = ["title", "category", "key"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
@@ -26971,6 +26971,7 @@ class DataSafeClient(object):
         Retrieves a list of all database view access entries in Data Safe.
 
         The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
+        If targetId is specified, it must match the target associated with the securityPolicyReportId path parameter; otherwise, the request is rejected.
 
 
         :param str security_policy_report_id: (required)
@@ -28255,6 +28256,11 @@ class DataSafeClient(object):
         :param str category: (optional)
             The category of the finding.
 
+        :param list[str] contains_oracle_defined_severity: (optional)
+            A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+
+            Allowed values are: "HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", "DEFERRED"
+
         :param str lifecycle_state: (optional)
             A filter to return only the findings that match the specified lifecycle states.
 
@@ -28386,6 +28392,7 @@ class DataSafeClient(object):
             "severity",
             "contains_severity",
             "category",
+            "contains_oracle_defined_severity",
             "lifecycle_state",
             "references",
             "contains_references",
@@ -28430,6 +28437,14 @@ class DataSafeClient(object):
                 if contains_severity_item not in contains_severity_allowed_values:
                     raise ValueError(
                         f"Invalid value for `contains_severity`, must be one of { contains_severity_allowed_values }"
+                    )
+
+        if 'contains_oracle_defined_severity' in kwargs:
+            contains_oracle_defined_severity_allowed_values = ["HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", "DEFERRED"]
+            for contains_oracle_defined_severity_item in kwargs['contains_oracle_defined_severity']:
+                if contains_oracle_defined_severity_item not in contains_oracle_defined_severity_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `contains_oracle_defined_severity`, must be one of { contains_oracle_defined_severity_allowed_values }"
                     )
 
         if 'lifecycle_state' in kwargs:
@@ -28488,6 +28503,7 @@ class DataSafeClient(object):
             "severity": kwargs.get("severity", missing),
             "containsSeverity": self.base_client.generate_collection_format_param(kwargs.get("contains_severity", missing), 'multi'),
             "category": kwargs.get("category", missing),
+            "containsOracleDefinedSeverity": self.base_client.generate_collection_format_param(kwargs.get("contains_oracle_defined_severity", missing), 'multi'),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "references": kwargs.get("references", missing),
             "containsReferences": self.base_client.generate_collection_format_param(kwargs.get("contains_references", missing), 'multi'),
@@ -39497,6 +39513,11 @@ class DataSafeClient(object):
 
             Allowed values are: "DISPLAYNAME", "TIMECREATED", "TIMEUPDATED"
 
+        :param str target_type: (optional)
+            A optional filter to return only resources that belong to the specified alert policy association type.
+
+            Allowed values are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP"
+
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
@@ -39571,6 +39592,7 @@ class DataSafeClient(object):
             "page",
             "sort_order",
             "sort_by",
+            "target_type",
             "opc_request_id",
             "time_created_greater_than_or_equal_to",
             "time_created_less_than",
@@ -39603,6 +39625,13 @@ class DataSafeClient(object):
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
+        if 'target_type' in kwargs:
+            target_type_allowed_values = ["TARGET_DATABASE", "TARGET_DATABASE_GROUP"]
+            if kwargs['target_type'] not in target_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `target_type`, must be one of { target_type_allowed_values }"
+                )
+
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
@@ -39620,6 +39649,7 @@ class DataSafeClient(object):
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
+            "targetType": kwargs.get("target_type", missing),
             "timeCreatedGreaterThanOrEqualTo": kwargs.get("time_created_greater_than_or_equal_to", missing),
             "timeCreatedLessThan": kwargs.get("time_created_less_than", missing),
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
@@ -39664,6 +39694,159 @@ class DataSafeClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="TargetAlertPolicyAssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_target_alert_policy_unassociated_members(self, target_alert_policy_association_id, **kwargs):
+        """
+        Gets the details of target-alert policy association and its unassociated members by its ID.
+
+
+        :param str target_alert_policy_association_id: (required)
+            The OCID of the target-alert policy association.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort parameter may be provided.
+
+            Allowed values are: "targetId", "notAppliedReason"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.TargetAlertPolicyUnassociatedCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_target_alert_policy_unassociated_members.py.html>`__ to see an example of how to use list_target_alert_policy_unassociated_members API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetAlertPolicyAssociationId']
+        resource_path = "/targetAlertPolicyAssociations/{targetAlertPolicyAssociationId}/unassociatedTargetMembers"
+        method = "GET"
+        operation_name = "list_target_alert_policy_unassociated_members"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/ListTargetAlertPolicyUnassociatedMembers"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_by",
+            "sort_order",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_target_alert_policy_unassociated_members got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "targetAlertPolicyAssociationId": target_alert_policy_association_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["targetId", "notAppliedReason"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TargetAlertPolicyUnassociatedCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TargetAlertPolicyUnassociatedCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -41943,6 +42126,9 @@ class DataSafeClient(object):
 
             __ https://docs.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
+        :param str compartment_id: (optional)
+            A filter to return only resources that match the specified compartment OCID.
+
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
 
@@ -42017,6 +42203,7 @@ class DataSafeClient(object):
             "time_password_expiry_greater_than_or_equal_to",
             "time_password_expiry_less_than",
             "page",
+            "compartment_id",
             "sort_order",
             "sort_by",
             "opc_request_id",
@@ -42081,6 +42268,7 @@ class DataSafeClient(object):
             "timePasswordExpiryGreaterThanOrEqualTo": kwargs.get("time_password_expiry_greater_than_or_equal_to", missing),
             "timePasswordExpiryLessThan": kwargs.get("time_password_expiry_less_than", missing),
             "page": kwargs.get("page", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "schemaList": self.base_client.generate_collection_format_param(kwargs.get("schema_list", missing), 'multi'),

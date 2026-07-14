@@ -20,10 +20,12 @@ from .container_http_health_check import ContainerHttpHealthCheck
 from .container_instance import ContainerInstance
 from .container_instance_collection import ContainerInstanceCollection
 from .container_instance_container import ContainerInstanceContainer
+from .container_instance_security_context import ContainerInstanceSecurityContext
 from .container_instance_shape_collection import ContainerInstanceShapeCollection
 from .container_instance_shape_config import ContainerInstanceShapeConfig
 from .container_instance_shape_summary import ContainerInstanceShapeSummary
 from .container_instance_summary import ContainerInstanceSummary
+from .container_oci_fss_volume import ContainerOciFssVolume
 from .container_resource_config import ContainerResourceConfig
 from .container_summary import ContainerSummary
 from .container_tcp_health_check import ContainerTcpHealthCheck
@@ -37,19 +39,39 @@ from .create_container_empty_dir_volume_details import CreateContainerEmptyDirVo
 from .create_container_health_check_details import CreateContainerHealthCheckDetails
 from .create_container_http_health_check_details import CreateContainerHttpHealthCheckDetails
 from .create_container_instance_details import CreateContainerInstanceDetails
+from .create_container_instance_security_context_details import CreateContainerInstanceSecurityContextDetails
 from .create_container_instance_shape_config_details import CreateContainerInstanceShapeConfigDetails
+from .create_container_oci_fss_volume_details import CreateContainerOciFssVolumeDetails
 from .create_container_resource_config_details import CreateContainerResourceConfigDetails
 from .create_container_tcp_health_check_details import CreateContainerTcpHealthCheckDetails
 from .create_container_vnic_details import CreateContainerVnicDetails
 from .create_container_volume_details import CreateContainerVolumeDetails
 from .create_image_pull_secret_details import CreateImagePullSecretDetails
+from .create_linux_container_instance_security_context_details import CreateLinuxContainerInstanceSecurityContextDetails
 from .create_linux_security_context_details import CreateLinuxSecurityContextDetails
+from .create_oci_fss_export_details import CreateOciFssExportDetails
+from .create_oci_fss_export_id_details import CreateOciFssExportIdDetails
+from .create_oci_fss_mount_command_details import CreateOciFssMountCommandDetails
+from .create_oci_fss_mount_option_details import CreateOciFssMountOptionDetails
+from .create_oci_fss_mount_target_details import CreateOciFssMountTargetDetails
+from .create_oci_fss_mount_target_id_details import CreateOciFssMountTargetIdDetails
+from .create_oci_fss_security_details import CreateOciFssSecurityDetails
+from .create_oci_fss_sys_security_details import CreateOciFssSysSecurityDetails
 from .create_security_context_details import CreateSecurityContextDetails
 from .create_vault_image_pull_secret_details import CreateVaultImagePullSecretDetails
 from .create_volume_mount_details import CreateVolumeMountDetails
 from .health_check_http_header import HealthCheckHttpHeader
 from .image_pull_secret import ImagePullSecret
+from .linux_container_instance_security_context import LinuxContainerInstanceSecurityContext
 from .linux_security_context import LinuxSecurityContext
+from .oci_fss_export import OciFssExport
+from .oci_fss_export_id import OciFssExportId
+from .oci_fss_mount_command import OciFssMountCommand
+from .oci_fss_mount_option import OciFssMountOption
+from .oci_fss_mount_target import OciFssMountTarget
+from .oci_fss_mount_target_id import OciFssMountTargetId
+from .oci_fss_security import OciFssSecurity
+from .oci_fss_sys_security import OciFssSysSecurity
 from .security_context import SecurityContext
 from .shape_memory_options import ShapeMemoryOptions
 from .shape_networking_bandwidth_options import ShapeNetworkingBandwidthOptions
@@ -83,10 +105,12 @@ container_instances_type_mapping = {
     "ContainerInstance": ContainerInstance,
     "ContainerInstanceCollection": ContainerInstanceCollection,
     "ContainerInstanceContainer": ContainerInstanceContainer,
+    "ContainerInstanceSecurityContext": ContainerInstanceSecurityContext,
     "ContainerInstanceShapeCollection": ContainerInstanceShapeCollection,
     "ContainerInstanceShapeConfig": ContainerInstanceShapeConfig,
     "ContainerInstanceShapeSummary": ContainerInstanceShapeSummary,
     "ContainerInstanceSummary": ContainerInstanceSummary,
+    "ContainerOciFssVolume": ContainerOciFssVolume,
     "ContainerResourceConfig": ContainerResourceConfig,
     "ContainerSummary": ContainerSummary,
     "ContainerTcpHealthCheck": ContainerTcpHealthCheck,
@@ -100,19 +124,39 @@ container_instances_type_mapping = {
     "CreateContainerHealthCheckDetails": CreateContainerHealthCheckDetails,
     "CreateContainerHttpHealthCheckDetails": CreateContainerHttpHealthCheckDetails,
     "CreateContainerInstanceDetails": CreateContainerInstanceDetails,
+    "CreateContainerInstanceSecurityContextDetails": CreateContainerInstanceSecurityContextDetails,
     "CreateContainerInstanceShapeConfigDetails": CreateContainerInstanceShapeConfigDetails,
+    "CreateContainerOciFssVolumeDetails": CreateContainerOciFssVolumeDetails,
     "CreateContainerResourceConfigDetails": CreateContainerResourceConfigDetails,
     "CreateContainerTcpHealthCheckDetails": CreateContainerTcpHealthCheckDetails,
     "CreateContainerVnicDetails": CreateContainerVnicDetails,
     "CreateContainerVolumeDetails": CreateContainerVolumeDetails,
     "CreateImagePullSecretDetails": CreateImagePullSecretDetails,
+    "CreateLinuxContainerInstanceSecurityContextDetails": CreateLinuxContainerInstanceSecurityContextDetails,
     "CreateLinuxSecurityContextDetails": CreateLinuxSecurityContextDetails,
+    "CreateOciFssExportDetails": CreateOciFssExportDetails,
+    "CreateOciFssExportIdDetails": CreateOciFssExportIdDetails,
+    "CreateOciFssMountCommandDetails": CreateOciFssMountCommandDetails,
+    "CreateOciFssMountOptionDetails": CreateOciFssMountOptionDetails,
+    "CreateOciFssMountTargetDetails": CreateOciFssMountTargetDetails,
+    "CreateOciFssMountTargetIdDetails": CreateOciFssMountTargetIdDetails,
+    "CreateOciFssSecurityDetails": CreateOciFssSecurityDetails,
+    "CreateOciFssSysSecurityDetails": CreateOciFssSysSecurityDetails,
     "CreateSecurityContextDetails": CreateSecurityContextDetails,
     "CreateVaultImagePullSecretDetails": CreateVaultImagePullSecretDetails,
     "CreateVolumeMountDetails": CreateVolumeMountDetails,
     "HealthCheckHttpHeader": HealthCheckHttpHeader,
     "ImagePullSecret": ImagePullSecret,
+    "LinuxContainerInstanceSecurityContext": LinuxContainerInstanceSecurityContext,
     "LinuxSecurityContext": LinuxSecurityContext,
+    "OciFssExport": OciFssExport,
+    "OciFssExportId": OciFssExportId,
+    "OciFssMountCommand": OciFssMountCommand,
+    "OciFssMountOption": OciFssMountOption,
+    "OciFssMountTarget": OciFssMountTarget,
+    "OciFssMountTargetId": OciFssMountTargetId,
+    "OciFssSecurity": OciFssSecurity,
+    "OciFssSysSecurity": OciFssSysSecurity,
     "SecurityContext": SecurityContext,
     "ShapeMemoryOptions": ShapeMemoryOptions,
     "ShapeNetworkingBandwidthOptions": ShapeNetworkingBandwidthOptions,

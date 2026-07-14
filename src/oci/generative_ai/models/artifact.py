@@ -27,6 +27,10 @@ class Artifact(object):
     #: This constant has a value of "UPDATING"
     STATUS_UPDATING = "UPDATING"
 
+    #: A constant which can be used with the status property of a Artifact.
+    #: This constant has a value of "FAILED"
+    STATUS_FAILED = "FAILED"
+
     #: A constant which can be used with the artifact_type property of a Artifact.
     #: This constant has a value of "SIMPLE_DOCKER_ARTIFACT"
     ARTIFACT_TYPE_SIMPLE_DOCKER_ARTIFACT = "SIMPLE_DOCKER_ARTIFACT"
@@ -52,9 +56,13 @@ class Artifact(object):
             The value to assign to the hosted_deployment_id property of this Artifact.
         :type hosted_deployment_id: str
 
+        :param is_vulnerability_scan_required:
+            The value to assign to the is_vulnerability_scan_required property of this Artifact.
+        :type is_vulnerability_scan_required: bool
+
         :param status:
             The value to assign to the status property of this Artifact.
-            Allowed values for this property are: "ACTIVE", "INACTIVE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "INACTIVE", "UPDATING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -69,6 +77,7 @@ class Artifact(object):
             'id': 'str',
             'time_created': 'datetime',
             'hosted_deployment_id': 'str',
+            'is_vulnerability_scan_required': 'bool',
             'status': 'str',
             'artifact_type': 'str'
         }
@@ -76,12 +85,14 @@ class Artifact(object):
             'id': 'id',
             'time_created': 'timeCreated',
             'hosted_deployment_id': 'hostedDeploymentId',
+            'is_vulnerability_scan_required': 'isVulnerabilityScanRequired',
             'status': 'status',
             'artifact_type': 'artifactType'
         }
         self._id = None
         self._time_created = None
         self._hosted_deployment_id = None
+        self._is_vulnerability_scan_required = None
         self._status = None
         self._artifact_type = None
 
@@ -175,12 +186,36 @@ class Artifact(object):
         self._hosted_deployment_id = hosted_deployment_id
 
     @property
+    def is_vulnerability_scan_required(self):
+        """
+        Gets the is_vulnerability_scan_required of this Artifact.
+        Optional flag that requires an OCI Vulnerability Scanning Service compliance report for this artifact before it can become active. When not provided, the value defaults to false and the artifact is not blocked on a scan result.
+
+
+        :return: The is_vulnerability_scan_required of this Artifact.
+        :rtype: bool
+        """
+        return self._is_vulnerability_scan_required
+
+    @is_vulnerability_scan_required.setter
+    def is_vulnerability_scan_required(self, is_vulnerability_scan_required):
+        """
+        Sets the is_vulnerability_scan_required of this Artifact.
+        Optional flag that requires an OCI Vulnerability Scanning Service compliance report for this artifact before it can become active. When not provided, the value defaults to false and the artifact is not blocked on a scan result.
+
+
+        :param is_vulnerability_scan_required: The is_vulnerability_scan_required of this Artifact.
+        :type: bool
+        """
+        self._is_vulnerability_scan_required = is_vulnerability_scan_required
+
+    @property
     def status(self):
         """
         Gets the status of this Artifact.
         The current status of the artifact.
 
-        Allowed values for this property are: "ACTIVE", "INACTIVE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "INACTIVE", "UPDATING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -199,7 +234,7 @@ class Artifact(object):
         :param status: The status of this Artifact.
         :type: str
         """
-        allowed_values = ["ACTIVE", "INACTIVE", "UPDATING"]
+        allowed_values = ["ACTIVE", "INACTIVE", "UPDATING", "FAILED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

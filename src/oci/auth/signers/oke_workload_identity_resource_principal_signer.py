@@ -11,6 +11,7 @@ import base64
 import json
 import oci
 from oci._vendor import requests
+from oci._log_redaction import redact_sensitive_data_for_logs, redact_sensitive_string_for_logs
 from .. import auth_utils
 from ..certificate_retriever import FileBasedCertificateRetriever
 from ..session_key_supplier import SessionKeySupplier
@@ -129,9 +130,14 @@ class OkeWorkloadIdentityResourcePrincipalSigner(SecurityTokenSigner):
 
         self.logger.debug("Requesting token from : {} ".format(self.proxymux_endpoint))
         response = self.requests_session.post(self.proxymux_endpoint, json=request_payload, headers=headers, verify=self.sa_cert_path, timeout=(10, 60))
+        debug_response_data = redact_sensitive_data_for_logs({
+            "status_code": response.status_code,
+            "url": response.url,
+            "header": dict(response.headers.items()),
+            "reason": response.reason
+        })
         self.logger.debug("Receiving token response......\n{}\n".format(pprint.pformat(
-            {"status_code": response.status_code, "url": response.url, "header": dict(response.headers.items()),
-             "reason": response.reason}, indent=2)))
+            debug_response_data, indent=2)))
 
         if not response.ok:
             if response.status_code == 403:
@@ -150,12 +156,14 @@ class OkeWorkloadIdentityResourcePrincipalSigner(SecurityTokenSigner):
         try:
             decoded_response = base64.b64decode(response.content).decode("UTF-8")
         except ValueError:
-            error_text = "Unable to decode the response from auth service ({}): {}. Please contact OKE team for help.".format(self.proxymux_endpoint, response.text)
+            redacted_response_text = redact_sensitive_string_for_logs(response.text)
+            error_text = "Unable to decode the response from auth service ({}): {}. Please contact OKE team for help.".format(self.proxymux_endpoint, redacted_response_text)
             raise RuntimeError(error_text)
 
         if 'token' in decoded_response:
             response_json = json.loads(decoded_response)
             self.security_token = SecurityTokenContainer(self.session_key_supplier, response_json['token'][3:])
         else:
-            error_text = "Could not find token in the decoded response from auth service ({}): {}.".format(self.proxymux_endpoint, decoded_response)
+            redacted_decoded_response = redact_sensitive_string_for_logs(decoded_response)
+            error_text = "Could not find token in the decoded response from auth service ({}): {}.".format(self.proxymux_endpoint, redacted_decoded_response)
             raise RuntimeError(error_text)

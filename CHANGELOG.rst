@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.182.0 - 2026-07-14
+====================
+
+Added 
+----- 
+* Support for the Oracle Data Infrastructure Cloud@Customer service 
+* Support for AI Agents features in the AI Data Platform service 
+* Support for Hosted Application IAM resources in the Generative AI service 
+* Support for File Storage Service (FSS) volumes in the Container Instances service 
+* Support for Linux file system group security contexts for volumes in the Container Instances service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes on private endpoints in the Digital Assistant service 
+* Support for placement constraints on compute clusters in the Compute service 
+* Support for GPU memory cluster configurations in instance pools in the Compute service 
+* Support for target database groups in target alert policy associations in the Data Safe service 
+* Support for pagination when generating and scheduling reports in the Data Safe service 
+* Support for refreshing audit policies in the Data Safe service 
+* Support for single report generation for target database group security assessments in the Data Safe service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes on private endpoints in the Data Safe service 
+* Support for IPv6 endpoints in the OS Management Hub service  
+
+Breaking 
+-------- 
+* Method `list_hosted_deployments` was renamed to `list_hosted_applications_iam` from the Generative AI service 
+* Property `inbound_auth_config` was made required in the model `CreateHostedApplicationDetails` in the Generative AI service  
+
+====================
 2.181.1 - 2026-07-07
 ====================
 

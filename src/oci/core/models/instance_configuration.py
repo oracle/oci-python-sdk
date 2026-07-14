@@ -13,7 +13,21 @@ from oci.decorators import init_model_state_from_kwargs
 class InstanceConfiguration(object):
     """
     An instance configuration is a template that defines the settings to use when creating Compute instances.
+    An instance configuration is a template that defines the settings to use when creating Compute instances
+    or GPU Memory Clusters.
+    For more information about instance configurations, see
+    `Managing Compute Instances`__.
+
+    __ https://docs.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm
     """
+
+    #: A constant which can be used with the source property of a InstanceConfiguration.
+    #: This constant has a value of "INSTANCE"
+    SOURCE_INSTANCE = "INSTANCE"
+
+    #: A constant which can be used with the source property of a InstanceConfiguration.
+    #: This constant has a value of "GMC"
+    SOURCE_GMC = "GMC"
 
     def __init__(self, **kwargs):
         """
@@ -44,6 +58,16 @@ class InstanceConfiguration(object):
             The value to assign to the instance_details property of this InstanceConfiguration.
         :type instance_details: oci.core.models.InstanceConfigurationInstanceDetails
 
+        :param gmc_configs:
+            The value to assign to the gmc_configs property of this InstanceConfiguration.
+        :type gmc_configs: list[oci.core.models.InstanceConfigurationGmcConfigDetail]
+
+        :param source:
+            The value to assign to the source property of this InstanceConfiguration.
+            Allowed values for this property are: "INSTANCE", "GMC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type source: str
+
         :param deferred_fields:
             The value to assign to the deferred_fields property of this InstanceConfiguration.
         :type deferred_fields: list[str]
@@ -60,6 +84,8 @@ class InstanceConfiguration(object):
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'instance_details': 'InstanceConfigurationInstanceDetails',
+            'gmc_configs': 'list[InstanceConfigurationGmcConfigDetail]',
+            'source': 'str',
             'deferred_fields': 'list[str]',
             'time_created': 'datetime'
         }
@@ -70,6 +96,8 @@ class InstanceConfiguration(object):
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'instance_details': 'instanceDetails',
+            'gmc_configs': 'gmcConfigs',
+            'source': 'source',
             'deferred_fields': 'deferredFields',
             'time_created': 'timeCreated'
         }
@@ -79,6 +107,8 @@ class InstanceConfiguration(object):
         self._freeform_tags = None
         self._id = None
         self._instance_details = None
+        self._gmc_configs = None
+        self._source = None
         self._deferred_fields = None
         self._time_created = None
 
@@ -253,6 +283,66 @@ class InstanceConfiguration(object):
         :type: oci.core.models.InstanceConfigurationInstanceDetails
         """
         self._instance_details = instance_details
+
+    @property
+    def gmc_configs(self):
+        """
+        Gets the gmc_configs of this InstanceConfiguration.
+        The GPU Memory Cluster configuration entries for.
+
+
+        :return: The gmc_configs of this InstanceConfiguration.
+        :rtype: list[oci.core.models.InstanceConfigurationGmcConfigDetail]
+        """
+        return self._gmc_configs
+
+    @gmc_configs.setter
+    def gmc_configs(self, gmc_configs):
+        """
+        Sets the gmc_configs of this InstanceConfiguration.
+        The GPU Memory Cluster configuration entries for.
+
+
+        :param gmc_configs: The gmc_configs of this InstanceConfiguration.
+        :type: list[oci.core.models.InstanceConfigurationGmcConfigDetail]
+        """
+        self._gmc_configs = gmc_configs
+
+    @property
+    def source(self):
+        """
+        Gets the source of this InstanceConfiguration.
+        Differentiator for instance configuration.
+        Following values are supported:
+        * INSTANCE : All details related to instance will be passed within instanceDetails.
+        * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+
+        Allowed values for this property are: "INSTANCE", "GMC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The source of this InstanceConfiguration.
+        :rtype: str
+        """
+        return self._source
+
+    @source.setter
+    def source(self, source):
+        """
+        Sets the source of this InstanceConfiguration.
+        Differentiator for instance configuration.
+        Following values are supported:
+        * INSTANCE : All details related to instance will be passed within instanceDetails.
+        * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+
+
+        :param source: The source of this InstanceConfiguration.
+        :type: str
+        """
+        allowed_values = ["INSTANCE", "GMC"]
+        if not value_allowed_none_or_none_sentinel(source, allowed_values):
+            source = 'UNKNOWN_ENUM_VALUE'
+        self._source = source
 
     @property
     def deferred_fields(self):

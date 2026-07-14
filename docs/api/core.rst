@@ -189,6 +189,7 @@ Core Services
     oci.core.models.ComputeCapacityTopologySummary
     oci.core.models.ComputeCluster
     oci.core.models.ComputeClusterCollection
+    oci.core.models.ComputeClusterPlacementConstraintDetails
     oci.core.models.ComputeClusterSummary
     oci.core.models.ComputeGlobalImageCapabilitySchema
     oci.core.models.ComputeGlobalImageCapabilitySchemaSummary
@@ -261,6 +262,7 @@ Core Services
     oci.core.models.CreateDrgDetails
     oci.core.models.CreateDrgRouteDistributionDetails
     oci.core.models.CreateDrgRouteTableDetails
+    oci.core.models.CreateGmcConfigurationDetails
     oci.core.models.CreateIPSecConnectionDetails
     oci.core.models.CreateIPSecConnectionTunnelDetails
     oci.core.models.CreateIPSecTunnelBgpSessionDetails
@@ -406,6 +408,8 @@ Core Services
     oci.core.models.InstanceConfigurationCreateVolumeDetails
     oci.core.models.InstanceConfigurationDetachedVolumeAutotunePolicy
     oci.core.models.InstanceConfigurationGenericBmLaunchInstancePlatformConfig
+    oci.core.models.InstanceConfigurationGmcConfigDetail
+    oci.core.models.InstanceConfigurationGpuMemoryClusterScaleConfig
     oci.core.models.InstanceConfigurationHostGroupPlacementConstraintDetails
     oci.core.models.InstanceConfigurationInstanceDetails
     oci.core.models.InstanceConfigurationInstanceOptions

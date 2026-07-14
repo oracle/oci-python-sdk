@@ -33,9 +33,13 @@ class SingleDockerArtifact(Artifact):
             The value to assign to the hosted_deployment_id property of this SingleDockerArtifact.
         :type hosted_deployment_id: str
 
+        :param is_vulnerability_scan_required:
+            The value to assign to the is_vulnerability_scan_required property of this SingleDockerArtifact.
+        :type is_vulnerability_scan_required: bool
+
         :param status:
             The value to assign to the status property of this SingleDockerArtifact.
-            Allowed values for this property are: "ACTIVE", "INACTIVE", "UPDATING"
+            Allowed values for this property are: "ACTIVE", "INACTIVE", "UPDATING", "FAILED"
         :type status: str
 
         :param artifact_type:
@@ -56,6 +60,7 @@ class SingleDockerArtifact(Artifact):
             'id': 'str',
             'time_created': 'datetime',
             'hosted_deployment_id': 'str',
+            'is_vulnerability_scan_required': 'bool',
             'status': 'str',
             'artifact_type': 'str',
             'container_uri': 'str',
@@ -65,6 +70,7 @@ class SingleDockerArtifact(Artifact):
             'id': 'id',
             'time_created': 'timeCreated',
             'hosted_deployment_id': 'hostedDeploymentId',
+            'is_vulnerability_scan_required': 'isVulnerabilityScanRequired',
             'status': 'status',
             'artifact_type': 'artifactType',
             'container_uri': 'containerUri',
@@ -73,6 +79,7 @@ class SingleDockerArtifact(Artifact):
         self._id = None
         self._time_created = None
         self._hosted_deployment_id = None
+        self._is_vulnerability_scan_required = None
         self._status = None
         self._artifact_type = None
         self._container_uri = None

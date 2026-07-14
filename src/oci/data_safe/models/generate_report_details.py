@@ -69,6 +69,10 @@ class GenerateReportDetails(object):
             The value to assign to the row_limit property of this GenerateReportDetails.
         :type row_limit: int
 
+        :param is_pagination_enabled:
+            The value to assign to the is_pagination_enabled property of this GenerateReportDetails.
+        :type is_pagination_enabled: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -79,7 +83,8 @@ class GenerateReportDetails(object):
             'mime_type': 'str',
             'time_less_than': 'datetime',
             'time_greater_than': 'datetime',
-            'row_limit': 'int'
+            'row_limit': 'int',
+            'is_pagination_enabled': 'bool'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -90,7 +95,8 @@ class GenerateReportDetails(object):
             'mime_type': 'mimeType',
             'time_less_than': 'timeLessThan',
             'time_greater_than': 'timeGreaterThan',
-            'row_limit': 'rowLimit'
+            'row_limit': 'rowLimit',
+            'is_pagination_enabled': 'isPaginationEnabled'
         }
         self._display_name = None
         self._target_ids = None
@@ -101,6 +107,7 @@ class GenerateReportDetails(object):
         self._time_less_than = None
         self._time_greater_than = None
         self._row_limit = None
+        self._is_pagination_enabled = None
 
     @property
     def display_name(self):
@@ -330,6 +337,34 @@ class GenerateReportDetails(object):
         :type: int
         """
         self._row_limit = row_limit
+
+    @property
+    def is_pagination_enabled(self):
+        """
+        Gets the is_pagination_enabled of this GenerateReportDetails.
+        Indicates if the reports being generated should be pagination enabled.
+        If set to true, multiple reports can be generated and the details of next and previous report are present in Report.
+        Values can either be 'true' or 'false'.
+
+
+        :return: The is_pagination_enabled of this GenerateReportDetails.
+        :rtype: bool
+        """
+        return self._is_pagination_enabled
+
+    @is_pagination_enabled.setter
+    def is_pagination_enabled(self, is_pagination_enabled):
+        """
+        Sets the is_pagination_enabled of this GenerateReportDetails.
+        Indicates if the reports being generated should be pagination enabled.
+        If set to true, multiple reports can be generated and the details of next and previous report are present in Report.
+        Values can either be 'true' or 'false'.
+
+
+        :param is_pagination_enabled: The is_pagination_enabled of this GenerateReportDetails.
+        :type: bool
+        """
+        self._is_pagination_enabled = is_pagination_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

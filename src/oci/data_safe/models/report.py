@@ -136,6 +136,14 @@ class Report(object):
             The value to assign to the lifecycle_details property of this Report.
         :type lifecycle_details: str
 
+        :param previous_report_id:
+            The value to assign to the previous_report_id property of this Report.
+        :type previous_report_id: str
+
+        :param next_report_id:
+            The value to assign to the next_report_id property of this Report.
+        :type next_report_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Report.
         :type freeform_tags: dict(str, str)
@@ -163,6 +171,8 @@ class Report(object):
             'type': 'str',
             'data_source': 'str',
             'lifecycle_details': 'str',
+            'previous_report_id': 'str',
+            'next_report_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -181,6 +191,8 @@ class Report(object):
             'type': 'type',
             'data_source': 'dataSource',
             'lifecycle_details': 'lifecycleDetails',
+            'previous_report_id': 'previousReportId',
+            'next_report_id': 'nextReportId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -198,6 +210,8 @@ class Report(object):
         self._type = None
         self._data_source = None
         self._lifecycle_details = None
+        self._previous_report_id = None
+        self._next_report_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -537,6 +551,54 @@ class Report(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def previous_report_id(self):
+        """
+        Gets the previous_report_id of this Report.
+        The OCID of the previous report generated.
+
+
+        :return: The previous_report_id of this Report.
+        :rtype: str
+        """
+        return self._previous_report_id
+
+    @previous_report_id.setter
+    def previous_report_id(self, previous_report_id):
+        """
+        Sets the previous_report_id of this Report.
+        The OCID of the previous report generated.
+
+
+        :param previous_report_id: The previous_report_id of this Report.
+        :type: str
+        """
+        self._previous_report_id = previous_report_id
+
+    @property
+    def next_report_id(self):
+        """
+        Gets the next_report_id of this Report.
+        The OCID of the next report generated.
+
+
+        :return: The next_report_id of this Report.
+        :rtype: str
+        """
+        return self._next_report_id
+
+    @next_report_id.setter
+    def next_report_id(self, next_report_id):
+        """
+        Sets the next_report_id of this Report.
+        The OCID of the next report generated.
+
+
+        :param next_report_id: The next_report_id of this Report.
+        :type: str
+        """
+        self._next_report_id = next_report_id
 
     @property
     def freeform_tags(self):

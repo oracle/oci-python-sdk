@@ -80,6 +80,10 @@ class CreateContainerInstanceDetails(object):
             The value to assign to the defined_tags property of this CreateContainerInstanceDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_context:
+            The value to assign to the security_context property of this CreateContainerInstanceDetails.
+        :type security_context: oci.container_instances.models.CreateContainerInstanceSecurityContextDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -96,7 +100,8 @@ class CreateContainerInstanceDetails(object):
             'image_pull_secrets': 'list[CreateImagePullSecretDetails]',
             'container_restart_policy': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'security_context': 'CreateContainerInstanceSecurityContextDetails'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -113,7 +118,8 @@ class CreateContainerInstanceDetails(object):
             'image_pull_secrets': 'imagePullSecrets',
             'container_restart_policy': 'containerRestartPolicy',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'security_context': 'securityContext'
         }
         self._display_name = None
         self._compartment_id = None
@@ -130,6 +136,7 @@ class CreateContainerInstanceDetails(object):
         self._container_restart_policy = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_context = None
 
     @property
     def display_name(self):
@@ -492,6 +499,26 @@ class CreateContainerInstanceDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_context(self):
+        """
+        Gets the security_context of this CreateContainerInstanceDetails.
+
+        :return: The security_context of this CreateContainerInstanceDetails.
+        :rtype: oci.container_instances.models.CreateContainerInstanceSecurityContextDetails
+        """
+        return self._security_context
+
+    @security_context.setter
+    def security_context(self, security_context):
+        """
+        Sets the security_context of this CreateContainerInstanceDetails.
+
+        :param security_context: The security_context of this CreateContainerInstanceDetails.
+        :type: oci.container_instances.models.CreateContainerInstanceSecurityContextDetails
+        """
+        self._security_context = security_context
 
     def __repr__(self):
         return formatted_flat_dict(self)

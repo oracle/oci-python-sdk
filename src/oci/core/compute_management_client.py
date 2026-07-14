@@ -898,7 +898,7 @@ class ComputeManagementClient(object):
     def create_instance_configuration(self, create_instance_configuration, **kwargs):
         """
         Creates an instance configuration. An instance configuration is a template that defines the
-        settings to use when creating Compute instances.
+        settings to use when creating Compute instances or GPU Memory Clusters.
 
 
         :param oci.core.models.CreateInstanceConfigurationBase create_instance_configuration: (required)

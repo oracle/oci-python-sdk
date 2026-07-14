@@ -27,7 +27,7 @@ class ContainerConfigFileVolume(ContainerVolume):
 
         :param volume_type:
             The value to assign to the volume_type property of this ContainerConfigFileVolume.
-            Allowed values for this property are: "EMPTYDIR", "CONFIGFILE"
+            Allowed values for this property are: "EMPTYDIR", "CONFIGFILE", "OCI_FSS_FILE_SYSTEM"
         :type volume_type: str
 
         :param configs:

@@ -250,14 +250,6 @@ class HostedApplicationSummary(object):
         **[Required]** Gets the lifecycle_state of this HostedApplicationSummary.
         The current state of the hosted application.
 
-        Allowed values are:
-        - CREATING
-        - ACTIVE
-        - UPDATING
-        - DELETING
-        - DELETED
-        - FAILED
-
 
         :return: The lifecycle_state of this HostedApplicationSummary.
         :rtype: str
@@ -269,14 +261,6 @@ class HostedApplicationSummary(object):
         """
         Sets the lifecycle_state of this HostedApplicationSummary.
         The current state of the hosted application.
-
-        Allowed values are:
-        - CREATING
-        - ACTIVE
-        - UPDATING
-        - DELETING
-        - DELETED
-        - FAILED
 
 
         :param lifecycle_state: The lifecycle_state of this HostedApplicationSummary.

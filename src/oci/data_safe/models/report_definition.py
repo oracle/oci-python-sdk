@@ -208,6 +208,10 @@ class ReportDefinition(object):
             The value to assign to the lifecycle_details property of this ReportDefinition.
         :type lifecycle_details: str
 
+        :param is_schedule_pagination_enabled:
+            The value to assign to the is_schedule_pagination_enabled property of this ReportDefinition.
+        :type is_schedule_pagination_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ReportDefinition.
         :type freeform_tags: dict(str, str)
@@ -247,6 +251,7 @@ class ReportDefinition(object):
             'record_time_span': 'str',
             'compliance_standards': 'list[str]',
             'lifecycle_details': 'str',
+            'is_schedule_pagination_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -277,6 +282,7 @@ class ReportDefinition(object):
             'record_time_span': 'recordTimeSpan',
             'compliance_standards': 'complianceStandards',
             'lifecycle_details': 'lifecycleDetails',
+            'is_schedule_pagination_enabled': 'isSchedulePaginationEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -306,6 +312,7 @@ class ReportDefinition(object):
         self._record_time_span = None
         self._compliance_standards = None
         self._lifecycle_details = None
+        self._is_schedule_pagination_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -975,6 +982,34 @@ class ReportDefinition(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def is_schedule_pagination_enabled(self):
+        """
+        Gets the is_schedule_pagination_enabled of this ReportDefinition.
+        Indicates if the reports being generated should be paginated.
+        If set to true, multiple reports can be generated and the details of next and previous report are present in Report.
+        Values can either be 'true' or 'false'.
+
+
+        :return: The is_schedule_pagination_enabled of this ReportDefinition.
+        :rtype: bool
+        """
+        return self._is_schedule_pagination_enabled
+
+    @is_schedule_pagination_enabled.setter
+    def is_schedule_pagination_enabled(self, is_schedule_pagination_enabled):
+        """
+        Sets the is_schedule_pagination_enabled of this ReportDefinition.
+        Indicates if the reports being generated should be paginated.
+        If set to true, multiple reports can be generated and the details of next and previous report are present in Report.
+        Values can either be 'true' or 'false'.
+
+
+        :param is_schedule_pagination_enabled: The is_schedule_pagination_enabled of this ReportDefinition.
+        :type: bool
+        """
+        self._is_schedule_pagination_enabled = is_schedule_pagination_enabled
 
     @property
     def freeform_tags(self):

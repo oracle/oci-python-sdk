@@ -66,9 +66,12 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         region, federation endpoint, and the response for receiving the token from the federation endpoint
     """
     METADATA_URL_BASE_ENV_VAR = 'OCI_METADATA_BASE_URL'
-    DEFAULT_METADATA_URL_BASE = 'http://169.254.169.254/opc/v2'
+    IMDS_IPV4_HOST = '169.254.169.254'
+    IMDS_IPV6_HOST = 'fd00:c1::a9fe:a9fe'
     # IPv6 literal hosts in URLs must be enclosed in square brackets (RFC 3986).
-    DEFAULT_METADATA_URL_BASE_IPV6 = 'http://[fd00:c1::a9fe:a9fe]/opc/v2'
+    IMDS_IPV6_HOST_BRACKETED = '[{}]'.format(IMDS_IPV6_HOST)
+    DEFAULT_METADATA_URL_BASE = 'http://{}/opc/v2'.format(IMDS_IPV4_HOST)
+    DEFAULT_METADATA_URL_BASE_IPV6 = 'http://{}/opc/v2'.format(IMDS_IPV6_HOST_BRACKETED)
     METADATA_URL_BASE = DEFAULT_METADATA_URL_BASE
     GET_REGION_URL = '{}/instance/region'.format(DEFAULT_METADATA_URL_BASE)
     LEAF_CERTIFICATE_URL = '{}/identity/cert.pem'.format(DEFAULT_METADATA_URL_BASE)
@@ -81,7 +84,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         "See https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm for more info."
     )
 
-    IMDS_IPV4_PROBE_HOST = '169.254.169.254'
+    IMDS_IPV4_PROBE_HOST = IMDS_IPV4_HOST
     IMDS_IPV4_PROBE_PORT = 80
     IMDS_IPV4_PROBE_TIMEOUT_SECONDS = 0.2
 
@@ -153,7 +156,9 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         env_override_metadata_base_url = env_override_metadata_base_url.strip()
         if not env_override_metadata_base_url:
             logger.debug("%s is whitespace-only and will be treated as unset", self.METADATA_URL_BASE_ENV_VAR)
-        return env_override_metadata_base_url if env_override_metadata_base_url else None
+            return None
+
+        return env_override_metadata_base_url
 
     def _has_ipv4_route_for_imds(self):
         logger = self._get_logger()
@@ -244,7 +249,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         raise RuntimeError("Unable to initialize IMDS certificate retrievers for all candidate endpoints")
 
     def __init__(self, **kwargs):
-        self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
+        self.logger = logging.getLogger(f"{__name__}.{id(self)}")
         self.logger.addHandler(logging.NullHandler())
         if kwargs.get('log_requests'):
             self.logger.disabled = False
@@ -269,7 +274,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         if 'federation_endpoint' in kwargs and kwargs['federation_endpoint']:
             federation_endpoint = kwargs['federation_endpoint']
         else:
-            federation_endpoint = '{}/v1/x509'.format(oci.regions.endpoint_for('auth', self.region))
+            federation_endpoint = f"{oci.regions.endpoint_for('auth', self.region)}/v1/x509"
 
         self.logger.debug("federation endpoint is set to : %s " % (federation_endpoint))
 
@@ -282,7 +287,8 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
             cert_bundle_verify=kwargs.get('federation_client_cert_bundle_verify', None),
             retry_strategy=kwargs.get('federation_client_retry_strategy', None),
             purpose=kwargs.get('purpose', None),
-            log_requests=kwargs.get('log_requests')
+            log_requests=kwargs.get('log_requests'),
+            circuit_breaker_strategy=kwargs.get('federation_client_circuit_breaker_strategy', None)
         )
         if 'generic_headers' in kwargs:
             generic_headers = kwargs['generic_headers']

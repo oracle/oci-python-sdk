@@ -40,10 +40,10 @@ requires = [
     "circuitbreaker>=1.3.1,<3.0.0; python_version >= '3.7'",
     "urllib3==1.26.20; python_version < '3.10.0'",
     "urllib3>=2.6.3; python_version >= '3.10.0'",
-    "crc32c==2.5; python_version == '3.6'",
-    "crc32c==2.7.1; python_version >= '3.7'",
     "PyJWT==2.4.0; python_version < '3.9'",
     "PyJWT>=2.12.0; python_version >= '3.9'",
+    "crc32c==2.5; python_version == '3.6'",
+    "crc32c==2.8.0; python_version >= '3.7'"
 ]
 
 extras_require = {

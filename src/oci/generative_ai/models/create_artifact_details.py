@@ -33,14 +33,21 @@ class CreateArtifactDetails(object):
             Allowed values for this property are: "SIMPLE_DOCKER_ARTIFACT"
         :type artifact_type: str
 
+        :param is_vulnerability_scan_required:
+            The value to assign to the is_vulnerability_scan_required property of this CreateArtifactDetails.
+        :type is_vulnerability_scan_required: bool
+
         """
         self.swagger_types = {
-            'artifact_type': 'str'
+            'artifact_type': 'str',
+            'is_vulnerability_scan_required': 'bool'
         }
         self.attribute_map = {
-            'artifact_type': 'artifactType'
+            'artifact_type': 'artifactType',
+            'is_vulnerability_scan_required': 'isVulnerabilityScanRequired'
         }
         self._artifact_type = None
+        self._is_vulnerability_scan_required = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -85,6 +92,30 @@ class CreateArtifactDetails(object):
                 f"Invalid value for `artifact_type`, must be None or one of {allowed_values}"
             )
         self._artifact_type = artifact_type
+
+    @property
+    def is_vulnerability_scan_required(self):
+        """
+        Gets the is_vulnerability_scan_required of this CreateArtifactDetails.
+        Optional flag that requires an OCI Vulnerability Scanning Service compliance report for this artifact before it can become active. When omitted, the value defaults to false.
+
+
+        :return: The is_vulnerability_scan_required of this CreateArtifactDetails.
+        :rtype: bool
+        """
+        return self._is_vulnerability_scan_required
+
+    @is_vulnerability_scan_required.setter
+    def is_vulnerability_scan_required(self, is_vulnerability_scan_required):
+        """
+        Sets the is_vulnerability_scan_required of this CreateArtifactDetails.
+        Optional flag that requires an OCI Vulnerability Scanning Service compliance report for this artifact before it can become active. When omitted, the value defaults to false.
+
+
+        :param is_vulnerability_scan_required: The is_vulnerability_scan_required of this CreateArtifactDetails.
+        :type: bool
+        """
+        self._is_vulnerability_scan_required = is_vulnerability_scan_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

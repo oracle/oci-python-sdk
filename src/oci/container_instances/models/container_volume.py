@@ -24,6 +24,10 @@ class ContainerVolume(object):
     #: This constant has a value of "CONFIGFILE"
     VOLUME_TYPE_CONFIGFILE = "CONFIGFILE"
 
+    #: A constant which can be used with the volume_type property of a ContainerVolume.
+    #: This constant has a value of "OCI_FSS_FILE_SYSTEM"
+    VOLUME_TYPE_OCI_FSS_FILE_SYSTEM = "OCI_FSS_FILE_SYSTEM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ContainerVolume object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -31,6 +35,7 @@ class ContainerVolume(object):
 
         * :class:`~oci.container_instances.models.ContainerEmptyDirVolume`
         * :class:`~oci.container_instances.models.ContainerConfigFileVolume`
+        * :class:`~oci.container_instances.models.ContainerOciFssVolume`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -40,7 +45,7 @@ class ContainerVolume(object):
 
         :param volume_type:
             The value to assign to the volume_type property of this ContainerVolume.
-            Allowed values for this property are: "EMPTYDIR", "CONFIGFILE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EMPTYDIR", "CONFIGFILE", "OCI_FSS_FILE_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type volume_type: str
 
@@ -69,6 +74,9 @@ class ContainerVolume(object):
 
         if type == 'CONFIGFILE':
             return 'ContainerConfigFileVolume'
+
+        if type == 'OCI_FSS_FILE_SYSTEM':
+            return 'ContainerOciFssVolume'
         else:
             return 'ContainerVolume'
 
@@ -102,7 +110,7 @@ class ContainerVolume(object):
         **[Required]** Gets the volume_type of this ContainerVolume.
         The type of volume.
 
-        Allowed values for this property are: "EMPTYDIR", "CONFIGFILE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EMPTYDIR", "CONFIGFILE", "OCI_FSS_FILE_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -121,7 +129,7 @@ class ContainerVolume(object):
         :param volume_type: The volume_type of this ContainerVolume.
         :type: str
         """
-        allowed_values = ["EMPTYDIR", "CONFIGFILE"]
+        allowed_values = ["EMPTYDIR", "CONFIGFILE", "OCI_FSS_FILE_SYSTEM"]
         if not value_allowed_none_or_none_sentinel(volume_type, allowed_values):
             volume_type = 'UNKNOWN_ENUM_VALUE'
         self._volume_type = volume_type

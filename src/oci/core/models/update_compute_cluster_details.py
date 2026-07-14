@@ -12,8 +12,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateComputeClusterDetails(object):
     """
-    The data to update a compute cluster. A `compute cluster`__
-    is a remote direct memory access (RDMA) network group.
+    The data to update a `compute cluster`__.
+
+    Use `COMPUTE_CLUSTER` type when using placementConstraintDetails.
+
+    `placementConstraintDetails.hpcIslandId` is create-only and cannot be part of this update request.
+
+    All other fields in `placementConstraintDetails` are optional, and only the fields provided will be updated.
+
+    If `placementConstraintDetails.targetNetworkBlockIds` or `placementConstraintDetails.targetMemoryFabricIds` is
+    provided, then the target compute cluster must already have `hpcIslandId` persisted.
 
     __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
     """
@@ -35,20 +43,27 @@ class UpdateComputeClusterDetails(object):
             The value to assign to the freeform_tags property of this UpdateComputeClusterDetails.
         :type freeform_tags: dict(str, str)
 
+        :param placement_constraint_details:
+            The value to assign to the placement_constraint_details property of this UpdateComputeClusterDetails.
+        :type placement_constraint_details: oci.core.models.PlacementConstraintDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'placement_constraint_details': 'PlacementConstraintDetails'
         }
         self.attribute_map = {
             'display_name': 'displayName',
             'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'placement_constraint_details': 'placementConstraintDetails'
         }
         self._display_name = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._placement_constraint_details = None
 
     @property
     def display_name(self):
@@ -143,6 +158,26 @@ class UpdateComputeClusterDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def placement_constraint_details(self):
+        """
+        Gets the placement_constraint_details of this UpdateComputeClusterDetails.
+
+        :return: The placement_constraint_details of this UpdateComputeClusterDetails.
+        :rtype: oci.core.models.PlacementConstraintDetails
+        """
+        return self._placement_constraint_details
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, placement_constraint_details):
+        """
+        Sets the placement_constraint_details of this UpdateComputeClusterDetails.
+
+        :param placement_constraint_details: The placement_constraint_details of this UpdateComputeClusterDetails.
+        :type: oci.core.models.PlacementConstraintDetails
+        """
+        self._placement_constraint_details = placement_constraint_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

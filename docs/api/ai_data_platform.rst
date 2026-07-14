@@ -23,6 +23,7 @@ Ai Data Platform
     oci.ai_data_platform.models.AiDataPlatformSummary
     oci.ai_data_platform.models.ChangeAiDataPlatformCompartmentDetails
     oci.ai_data_platform.models.CreateAiDataPlatformDetails
+    oci.ai_data_platform.models.EnableAiFeatureDetails
     oci.ai_data_platform.models.UpdateAiDataPlatformDetails
     oci.ai_data_platform.models.WorkRequest
     oci.ai_data_platform.models.WorkRequestError

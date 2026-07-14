@@ -12,17 +12,13 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateComputeClusterDetails(object):
     """
-    The data for creating a `compute cluster`__. A compute cluster
-    is an empty remote direct memory access (RDMA) network group
+    The data for creating a `compute cluster`__.
 
-    After the compute cluster is created, you can use the compute cluster's OCID with the
-    :func:`launch_instance` operation to create instances in the compute cluster.
-    The instances must be created in the same compartment and availability domain as the cluster.
+    After the compute cluster is created, you can use the compute cluster's OCID to create Instance, GPU Memory
+    Cluster or Instance Pool resources within the compute cluster. These resources must be created in the same
+    compartment and availability domain as the cluster.
 
-    Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
-
-    For details about creating a cluster network that uses instance pools to manage groups of identical instances,
-    see :func:`create_cluster_network_details`.
+    Use `COMPUTE_CLUSTER` type when using placementConstraintDetails.
 
     __ https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
     """
@@ -52,26 +48,33 @@ class CreateComputeClusterDetails(object):
             The value to assign to the freeform_tags property of this CreateComputeClusterDetails.
         :type freeform_tags: dict(str, str)
 
+        :param placement_constraint_details:
+            The value to assign to the placement_constraint_details property of this CreateComputeClusterDetails.
+        :type placement_constraint_details: oci.core.models.PlacementConstraintDetails
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'placement_constraint_details': 'PlacementConstraintDetails'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'placement_constraint_details': 'placementConstraintDetails'
         }
         self._availability_domain = None
         self._compartment_id = None
         self._display_name = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._placement_constraint_details = None
 
     @property
     def availability_domain(self):
@@ -222,6 +225,26 @@ class CreateComputeClusterDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def placement_constraint_details(self):
+        """
+        Gets the placement_constraint_details of this CreateComputeClusterDetails.
+
+        :return: The placement_constraint_details of this CreateComputeClusterDetails.
+        :rtype: oci.core.models.PlacementConstraintDetails
+        """
+        return self._placement_constraint_details
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, placement_constraint_details):
+        """
+        Sets the placement_constraint_details of this CreateComputeClusterDetails.
+
+        :param placement_constraint_details: The placement_constraint_details of this CreateComputeClusterDetails.
+        :type: oci.core.models.PlacementConstraintDetails
+        """
+        self._placement_constraint_details = placement_constraint_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

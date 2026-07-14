@@ -216,7 +216,7 @@ class HostedDeploymentSummary(object):
     def hosted_application_id(self):
         """
         Gets the hosted_application_id of this HostedDeploymentSummary.
-        The `OCID`__ of the application.
+        The `OCID`__ of the HostedApplication parent.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -230,7 +230,7 @@ class HostedDeploymentSummary(object):
     def hosted_application_id(self, hosted_application_id):
         """
         Sets the hosted_application_id of this HostedDeploymentSummary.
-        The `OCID`__ of the application.
+        The `OCID`__ of the HostedApplication parent.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

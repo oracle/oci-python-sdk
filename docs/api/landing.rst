@@ -29,6 +29,7 @@ API Reference
 * :doc:`Attributes <apm_traces/client/oci.apm_traces.AttributesClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
+* :doc:`Baseinfra <datacc/client/oci.datacc.BaseinfraClient>`
 * :doc:`Bastion <bastion/client/oci.bastion.BastionClient>`
 * :doc:`Batch Computing <batch/client/oci.batch.BatchComputingClient>`
 * :doc:`Bds <bds/client/oci.bds.BdsClient>`
@@ -390,6 +391,7 @@ API Reference
     database_migration
     database_tools
     database_tools_runtime
+    datacc
     dblm
     dbmulticloud
     delegate_access_control

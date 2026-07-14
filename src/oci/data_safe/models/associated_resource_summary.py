@@ -19,6 +19,10 @@ class AssociatedResourceSummary(object):
     #: This constant has a value of "AUDIT_POLICY"
     ASSOCIATED_RESOURCE_TYPE_AUDIT_POLICY = "AUDIT_POLICY"
 
+    #: A constant which can be used with the associated_resource_type property of a AssociatedResourceSummary.
+    #: This constant has a value of "AUDIT_REPORT"
+    ASSOCIATED_RESOURCE_TYPE_AUDIT_REPORT = "AUDIT_REPORT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AssociatedResourceSummary object with values from keyword arguments.
@@ -26,7 +30,7 @@ class AssociatedResourceSummary(object):
 
         :param associated_resource_type:
             The value to assign to the associated_resource_type property of this AssociatedResourceSummary.
-            Allowed values for this property are: "AUDIT_POLICY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUDIT_POLICY", "AUDIT_REPORT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type associated_resource_type: str
 
@@ -73,7 +77,7 @@ class AssociatedResourceSummary(object):
         Gets the associated_resource_type of this AssociatedResourceSummary.
         The resource type that is associated with the attribute set.
 
-        Allowed values for this property are: "AUDIT_POLICY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUDIT_POLICY", "AUDIT_REPORT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -92,7 +96,7 @@ class AssociatedResourceSummary(object):
         :param associated_resource_type: The associated_resource_type of this AssociatedResourceSummary.
         :type: str
         """
-        allowed_values = ["AUDIT_POLICY"]
+        allowed_values = ["AUDIT_POLICY", "AUDIT_REPORT"]
         if not value_allowed_none_or_none_sentinel(associated_resource_type, allowed_values):
             associated_resource_type = 'UNKNOWN_ENUM_VALUE'
         self._associated_resource_type = associated_resource_type

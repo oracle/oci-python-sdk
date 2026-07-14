@@ -323,7 +323,7 @@ class CreateSoftwareSourceProfileDetails(CreateProfileDetails):
     @property
     def software_source_ids(self):
         """
-        **[Required]** Gets the software_source_ids of this CreateSoftwareSourceProfileDetails.
+        Gets the software_source_ids of this CreateSoftwareSourceProfileDetails.
         The list of software source `OCIDs`__ that the registration profile will use.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm

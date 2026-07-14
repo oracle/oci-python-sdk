@@ -39,6 +39,14 @@ class TargetAlertPolicyAssociation(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the target_type property of a TargetAlertPolicyAssociation.
+    #: This constant has a value of "TARGET_DATABASE"
+    TARGET_TYPE_TARGET_DATABASE = "TARGET_DATABASE"
+
+    #: A constant which can be used with the target_type property of a TargetAlertPolicyAssociation.
+    #: This constant has a value of "TARGET_DATABASE_GROUP"
+    TARGET_TYPE_TARGET_DATABASE_GROUP = "TARGET_DATABASE_GROUP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TargetAlertPolicyAssociation object with values from keyword arguments.
@@ -90,6 +98,12 @@ class TargetAlertPolicyAssociation(object):
             The value to assign to the lifecycle_details property of this TargetAlertPolicyAssociation.
         :type lifecycle_details: str
 
+        :param target_type:
+            The value to assign to the target_type property of this TargetAlertPolicyAssociation.
+            Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type target_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this TargetAlertPolicyAssociation.
         :type freeform_tags: dict(str, str)
@@ -115,6 +129,7 @@ class TargetAlertPolicyAssociation(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'target_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -131,6 +146,7 @@ class TargetAlertPolicyAssociation(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'target_type': 'targetType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -146,6 +162,7 @@ class TargetAlertPolicyAssociation(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._target_type = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -250,7 +267,7 @@ class TargetAlertPolicyAssociation(object):
     def target_id(self):
         """
         Gets the target_id of this TargetAlertPolicyAssociation.
-        The OCID of the target on which alert policy is to be applied.
+        The OCID of the target or target database group on which alert policy is to be applied.
 
 
         :return: The target_id of this TargetAlertPolicyAssociation.
@@ -262,7 +279,7 @@ class TargetAlertPolicyAssociation(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this TargetAlertPolicyAssociation.
-        The OCID of the target on which alert policy is to be applied.
+        The OCID of the target or target database group on which alert policy is to be applied.
 
 
         :param target_id: The target_id of this TargetAlertPolicyAssociation.
@@ -427,6 +444,36 @@ class TargetAlertPolicyAssociation(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def target_type(self):
+        """
+        **[Required]** Gets the target_type of this TargetAlertPolicyAssociation.
+        The resource type that is represented by the target alert policy association.
+
+        Allowed values for this property are: "TARGET_DATABASE", "TARGET_DATABASE_GROUP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The target_type of this TargetAlertPolicyAssociation.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this TargetAlertPolicyAssociation.
+        The resource type that is represented by the target alert policy association.
+
+
+        :param target_type: The target_type of this TargetAlertPolicyAssociation.
+        :type: str
+        """
+        allowed_values = ["TARGET_DATABASE", "TARGET_DATABASE_GROUP"]
+        if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
+            target_type = 'UNKNOWN_ENUM_VALUE'
+        self._target_type = target_type
 
     @property
     def freeform_tags(self):

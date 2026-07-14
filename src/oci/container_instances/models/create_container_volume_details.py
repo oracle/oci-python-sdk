@@ -24,11 +24,16 @@ class CreateContainerVolumeDetails(object):
     #: This constant has a value of "CONFIGFILE"
     VOLUME_TYPE_CONFIGFILE = "CONFIGFILE"
 
+    #: A constant which can be used with the volume_type property of a CreateContainerVolumeDetails.
+    #: This constant has a value of "OCI_FSS_FILE_SYSTEM"
+    VOLUME_TYPE_OCI_FSS_FILE_SYSTEM = "OCI_FSS_FILE_SYSTEM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateContainerVolumeDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.container_instances.models.CreateContainerOciFssVolumeDetails`
         * :class:`~oci.container_instances.models.CreateContainerConfigFileVolumeDetails`
         * :class:`~oci.container_instances.models.CreateContainerEmptyDirVolumeDetails`
 
@@ -40,7 +45,7 @@ class CreateContainerVolumeDetails(object):
 
         :param volume_type:
             The value to assign to the volume_type property of this CreateContainerVolumeDetails.
-            Allowed values for this property are: "EMPTYDIR", "CONFIGFILE"
+            Allowed values for this property are: "EMPTYDIR", "CONFIGFILE", "OCI_FSS_FILE_SYSTEM"
         :type volume_type: str
 
         """
@@ -62,6 +67,9 @@ class CreateContainerVolumeDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['volumeType']
+
+        if type == 'OCI_FSS_FILE_SYSTEM':
+            return 'CreateContainerOciFssVolumeDetails'
 
         if type == 'CONFIGFILE':
             return 'CreateContainerConfigFileVolumeDetails'
@@ -101,7 +109,7 @@ class CreateContainerVolumeDetails(object):
         **[Required]** Gets the volume_type of this CreateContainerVolumeDetails.
         The type of volume.
 
-        Allowed values for this property are: "EMPTYDIR", "CONFIGFILE"
+        Allowed values for this property are: "EMPTYDIR", "CONFIGFILE", "OCI_FSS_FILE_SYSTEM"
 
 
         :return: The volume_type of this CreateContainerVolumeDetails.
@@ -119,7 +127,7 @@ class CreateContainerVolumeDetails(object):
         :param volume_type: The volume_type of this CreateContainerVolumeDetails.
         :type: str
         """
-        allowed_values = ["EMPTYDIR", "CONFIGFILE"]
+        allowed_values = ["EMPTYDIR", "CONFIGFILE", "OCI_FSS_FILE_SYSTEM"]
         if not value_allowed_none_or_none_sentinel(volume_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `volume_type`, must be None or one of {allowed_values}"
