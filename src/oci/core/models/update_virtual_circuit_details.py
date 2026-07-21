@@ -39,6 +39,14 @@ class UpdateVirtualCircuitDetails(object):
     #: This constant has a value of "DISABLED"
     BGP_ADMIN_STATE_DISABLED = "DISABLED"
 
+    #: A constant which can be used with the traffic_mode property of a UpdateVirtualCircuitDetails.
+    #: This constant has a value of "NORMAL"
+    TRAFFIC_MODE_NORMAL = "NORMAL"
+
+    #: A constant which can be used with the traffic_mode property of a UpdateVirtualCircuitDetails.
+    #: This constant has a value of "DRAIN"
+    TRAFFIC_MODE_DRAIN = "DRAIN"
+
     #: A constant which can be used with the provider_state property of a UpdateVirtualCircuitDetails.
     #: This constant has a value of "ACTIVE"
     PROVIDER_STATE_ACTIVE = "ACTIVE"
@@ -106,6 +114,11 @@ class UpdateVirtualCircuitDetails(object):
             The value to assign to the freeform_tags property of this UpdateVirtualCircuitDetails.
         :type freeform_tags: dict(str, str)
 
+        :param traffic_mode:
+            The value to assign to the traffic_mode property of this UpdateVirtualCircuitDetails.
+            Allowed values for this property are: "NORMAL", "DRAIN"
+        :type traffic_mode: str
+
         :param gateway_id:
             The value to assign to the gateway_id property of this UpdateVirtualCircuitDetails.
         :type gateway_id: str
@@ -141,6 +154,7 @@ class UpdateVirtualCircuitDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'traffic_mode': 'str',
             'gateway_id': 'str',
             'provider_state': 'str',
             'provider_service_key_name': 'str',
@@ -159,6 +173,7 @@ class UpdateVirtualCircuitDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'traffic_mode': 'trafficMode',
             'gateway_id': 'gatewayId',
             'provider_state': 'providerState',
             'provider_service_key_name': 'providerServiceKeyName',
@@ -176,6 +191,7 @@ class UpdateVirtualCircuitDetails(object):
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._traffic_mode = None
         self._gateway_id = None
         self._provider_state = None
         self._provider_service_key_name = None
@@ -534,6 +550,39 @@ class UpdateVirtualCircuitDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def traffic_mode(self):
+        """
+        Gets the traffic_mode of this UpdateVirtualCircuitDetails.
+        The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained
+        for the associated Virtual Circuit or not.
+
+        Allowed values for this property are: "NORMAL", "DRAIN"
+
+
+        :return: The traffic_mode of this UpdateVirtualCircuitDetails.
+        :rtype: str
+        """
+        return self._traffic_mode
+
+    @traffic_mode.setter
+    def traffic_mode(self, traffic_mode):
+        """
+        Sets the traffic_mode of this UpdateVirtualCircuitDetails.
+        The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained
+        for the associated Virtual Circuit or not.
+
+
+        :param traffic_mode: The traffic_mode of this UpdateVirtualCircuitDetails.
+        :type: str
+        """
+        allowed_values = ["NORMAL", "DRAIN"]
+        if not value_allowed_none_or_none_sentinel(traffic_mode, allowed_values):
+            raise ValueError(
+                f"Invalid value for `traffic_mode`, must be None or one of {allowed_values}"
+            )
+        self._traffic_mode = traffic_mode
 
     @property
     def gateway_id(self):

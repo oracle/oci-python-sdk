@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeAnalyticsInstanceNetworkEndpointDetails(object):
     """
-    Input payload to update an Analytics instance endpoint details.
+    Input payload to update endpoint details for an Analytics instance.
     """
 
     def __init__(self, **kwargs):

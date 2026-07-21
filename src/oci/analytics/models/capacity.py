@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Capacity(object):
     """
-    Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+    Service instance capacity metadata (for example, OLPU count, number of users, and so on).
     """
 
     #: A constant which can be used with the capacity_type property of a Capacity.
@@ -89,7 +89,7 @@ class Capacity(object):
         """
         **[Required]** Gets the capacity_value of this Capacity.
         The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
-        This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+        This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 
 
         :return: The capacity_value of this Capacity.
@@ -102,7 +102,7 @@ class Capacity(object):
         """
         Sets the capacity_value of this Capacity.
         The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
-        This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+        This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 
 
         :param capacity_value: The capacity_value of this Capacity.

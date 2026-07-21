@@ -124,6 +124,18 @@ class CrossConnect(object):
             The value to assign to the oci_logical_device_name property of this CrossConnect.
         :type oci_logical_device_name: str
 
+        :param is_interface_hold_timer_enabled:
+            The value to assign to the is_interface_hold_timer_enabled property of this CrossConnect.
+        :type is_interface_hold_timer_enabled: bool
+
+        :param interface_down_timer_value_in_milliseconds:
+            The value to assign to the interface_down_timer_value_in_milliseconds property of this CrossConnect.
+        :type interface_down_timer_value_in_milliseconds: int
+
+        :param is_qos_enabled:
+            The value to assign to the is_qos_enabled property of this CrossConnect.
+        :type is_qos_enabled: bool
+
         :param interface_name:
             The value to assign to the interface_name property of this CrossConnect.
         :type interface_name: str
@@ -145,6 +157,9 @@ class CrossConnect(object):
             'macsec_properties': 'MacsecProperties',
             'oci_physical_device_name': 'str',
             'oci_logical_device_name': 'str',
+            'is_interface_hold_timer_enabled': 'bool',
+            'interface_down_timer_value_in_milliseconds': 'int',
+            'is_qos_enabled': 'bool',
             'interface_name': 'str'
         }
         self.attribute_map = {
@@ -163,6 +178,9 @@ class CrossConnect(object):
             'macsec_properties': 'macsecProperties',
             'oci_physical_device_name': 'ociPhysicalDeviceName',
             'oci_logical_device_name': 'ociLogicalDeviceName',
+            'is_interface_hold_timer_enabled': 'isInterfaceHoldTimerEnabled',
+            'interface_down_timer_value_in_milliseconds': 'interfaceDownTimerValueInMilliseconds',
+            'is_qos_enabled': 'isQosEnabled',
             'interface_name': 'interfaceName'
         }
         self._compartment_id = None
@@ -180,6 +198,9 @@ class CrossConnect(object):
         self._macsec_properties = None
         self._oci_physical_device_name = None
         self._oci_logical_device_name = None
+        self._is_interface_hold_timer_enabled = None
+        self._interface_down_timer_value_in_milliseconds = None
+        self._is_qos_enabled = None
         self._interface_name = None
 
     @property
@@ -589,6 +610,78 @@ class CrossConnect(object):
         :type: str
         """
         self._oci_logical_device_name = oci_logical_device_name
+
+    @property
+    def is_interface_hold_timer_enabled(self):
+        """
+        Gets the is_interface_hold_timer_enabled of this CrossConnect.
+        The flag to enable or disable the down timer for the interface.
+
+
+        :return: The is_interface_hold_timer_enabled of this CrossConnect.
+        :rtype: bool
+        """
+        return self._is_interface_hold_timer_enabled
+
+    @is_interface_hold_timer_enabled.setter
+    def is_interface_hold_timer_enabled(self, is_interface_hold_timer_enabled):
+        """
+        Sets the is_interface_hold_timer_enabled of this CrossConnect.
+        The flag to enable or disable the down timer for the interface.
+
+
+        :param is_interface_hold_timer_enabled: The is_interface_hold_timer_enabled of this CrossConnect.
+        :type: bool
+        """
+        self._is_interface_hold_timer_enabled = is_interface_hold_timer_enabled
+
+    @property
+    def interface_down_timer_value_in_milliseconds(self):
+        """
+        Gets the interface_down_timer_value_in_milliseconds of this CrossConnect.
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+
+
+        :return: The interface_down_timer_value_in_milliseconds of this CrossConnect.
+        :rtype: int
+        """
+        return self._interface_down_timer_value_in_milliseconds
+
+    @interface_down_timer_value_in_milliseconds.setter
+    def interface_down_timer_value_in_milliseconds(self, interface_down_timer_value_in_milliseconds):
+        """
+        Sets the interface_down_timer_value_in_milliseconds of this CrossConnect.
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+
+
+        :param interface_down_timer_value_in_milliseconds: The interface_down_timer_value_in_milliseconds of this CrossConnect.
+        :type: int
+        """
+        self._interface_down_timer_value_in_milliseconds = interface_down_timer_value_in_milliseconds
+
+    @property
+    def is_qos_enabled(self):
+        """
+        Gets the is_qos_enabled of this CrossConnect.
+        The flag to enable or disable the Qos for the cross-connect.
+
+
+        :return: The is_qos_enabled of this CrossConnect.
+        :rtype: bool
+        """
+        return self._is_qos_enabled
+
+    @is_qos_enabled.setter
+    def is_qos_enabled(self, is_qos_enabled):
+        """
+        Sets the is_qos_enabled of this CrossConnect.
+        The flag to enable or disable the Qos for the cross-connect.
+
+
+        :param is_qos_enabled: The is_qos_enabled of this CrossConnect.
+        :type: bool
+        """
+        self._is_qos_enabled = is_qos_enabled
 
     @property
     def interface_name(self):

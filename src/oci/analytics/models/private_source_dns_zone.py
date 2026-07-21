@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PrivateSourceDnsZone(object):
     """
-    Private source DNS Zone model.
+    Private source DNS zone model.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class PrivateSourceDnsZone(object):
     def dns_zone(self):
         """
         **[Required]** Gets the dns_zone of this PrivateSourceDnsZone.
-        Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+        Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
 
 
         :return: The dns_zone of this PrivateSourceDnsZone.
@@ -56,7 +56,7 @@ class PrivateSourceDnsZone(object):
     def dns_zone(self, dns_zone):
         """
         Sets the dns_zone of this PrivateSourceDnsZone.
-        Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+        Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
 
 
         :param dns_zone: The dns_zone of this PrivateSourceDnsZone.
@@ -68,7 +68,7 @@ class PrivateSourceDnsZone(object):
     def description(self):
         """
         Gets the description of this PrivateSourceDnsZone.
-        Description of private source dns zone.
+        Description of the private source DNS zone.
 
 
         :return: The description of this PrivateSourceDnsZone.
@@ -80,7 +80,7 @@ class PrivateSourceDnsZone(object):
     def description(self, description):
         """
         Sets the description of this PrivateSourceDnsZone.
-        Description of private source dns zone.
+        Description of the private source DNS zone.
 
 
         :param description: The description of this PrivateSourceDnsZone.

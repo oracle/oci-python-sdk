@@ -109,7 +109,7 @@ class PrivateEndpointDetails(NetworkEndpointDetails):
     def network_security_group_ids(self):
         """
         Gets the network_security_group_ids of this PrivateEndpointDetails.
-        Network Security Group OCIDs for an Analytics instance.
+        Network Security Group OCIDs for the Analytics instance.
 
 
         :return: The network_security_group_ids of this PrivateEndpointDetails.
@@ -121,7 +121,7 @@ class PrivateEndpointDetails(NetworkEndpointDetails):
     def network_security_group_ids(self, network_security_group_ids):
         """
         Sets the network_security_group_ids of this PrivateEndpointDetails.
-        Network Security Group OCIDs for an Analytics instance.
+        Network Security Group OCIDs for the Analytics instance.
 
 
         :param network_security_group_ids: The network_security_group_ids of this PrivateEndpointDetails.

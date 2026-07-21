@@ -44,6 +44,22 @@ class CreateCrossConnectGroupDetails(object):
             The value to assign to the macsec_properties property of this CreateCrossConnectGroupDetails.
         :type macsec_properties: oci.core.models.CreateMacsecProperties
 
+        :param minimum_links:
+            The value to assign to the minimum_links property of this CreateCrossConnectGroupDetails.
+        :type minimum_links: int
+
+        :param is_interface_hold_timer_enabled:
+            The value to assign to the is_interface_hold_timer_enabled property of this CreateCrossConnectGroupDetails.
+        :type is_interface_hold_timer_enabled: bool
+
+        :param interface_down_timer_value_in_milliseconds:
+            The value to assign to the interface_down_timer_value_in_milliseconds property of this CreateCrossConnectGroupDetails.
+        :type interface_down_timer_value_in_milliseconds: int
+
+        :param is_qos_enabled:
+            The value to assign to the is_qos_enabled property of this CreateCrossConnectGroupDetails.
+        :type is_qos_enabled: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -51,7 +67,11 @@ class CreateCrossConnectGroupDetails(object):
             'display_name': 'str',
             'customer_reference_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'macsec_properties': 'CreateMacsecProperties'
+            'macsec_properties': 'CreateMacsecProperties',
+            'minimum_links': 'int',
+            'is_interface_hold_timer_enabled': 'bool',
+            'interface_down_timer_value_in_milliseconds': 'int',
+            'is_qos_enabled': 'bool'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -59,7 +79,11 @@ class CreateCrossConnectGroupDetails(object):
             'display_name': 'displayName',
             'customer_reference_name': 'customerReferenceName',
             'freeform_tags': 'freeformTags',
-            'macsec_properties': 'macsecProperties'
+            'macsec_properties': 'macsecProperties',
+            'minimum_links': 'minimumLinks',
+            'is_interface_hold_timer_enabled': 'isInterfaceHoldTimerEnabled',
+            'interface_down_timer_value_in_milliseconds': 'interfaceDownTimerValueInMilliseconds',
+            'is_qos_enabled': 'isQosEnabled'
         }
         self._compartment_id = None
         self._defined_tags = None
@@ -67,6 +91,10 @@ class CreateCrossConnectGroupDetails(object):
         self._customer_reference_name = None
         self._freeform_tags = None
         self._macsec_properties = None
+        self._minimum_links = None
+        self._is_interface_hold_timer_enabled = None
+        self._interface_down_timer_value_in_milliseconds = None
+        self._is_qos_enabled = None
 
     @property
     def compartment_id(self):
@@ -235,6 +263,112 @@ class CreateCrossConnectGroupDetails(object):
         :type: oci.core.models.CreateMacsecProperties
         """
         self._macsec_properties = macsec_properties
+
+    @property
+    def minimum_links(self):
+        """
+        Gets the minimum_links of this CreateCrossConnectGroupDetails.
+        (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered
+        operational. During create cross-connect-group operation this value can only be set to 1 (If not specified,
+        this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not
+        exceed the total number of cross-connects in the cross-connect group.
+
+
+        :return: The minimum_links of this CreateCrossConnectGroupDetails.
+        :rtype: int
+        """
+        return self._minimum_links
+
+    @minimum_links.setter
+    def minimum_links(self, minimum_links):
+        """
+        Sets the minimum_links of this CreateCrossConnectGroupDetails.
+        (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered
+        operational. During create cross-connect-group operation this value can only be set to 1 (If not specified,
+        this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not
+        exceed the total number of cross-connects in the cross-connect group.
+
+
+        :param minimum_links: The minimum_links of this CreateCrossConnectGroupDetails.
+        :type: int
+        """
+        self._minimum_links = minimum_links
+
+    @property
+    def is_interface_hold_timer_enabled(self):
+        """
+        Gets the is_interface_hold_timer_enabled of this CreateCrossConnectGroupDetails.
+        The flag to enable or disable the down timer for the interface.
+
+
+        :return: The is_interface_hold_timer_enabled of this CreateCrossConnectGroupDetails.
+        :rtype: bool
+        """
+        return self._is_interface_hold_timer_enabled
+
+    @is_interface_hold_timer_enabled.setter
+    def is_interface_hold_timer_enabled(self, is_interface_hold_timer_enabled):
+        """
+        Sets the is_interface_hold_timer_enabled of this CreateCrossConnectGroupDetails.
+        The flag to enable or disable the down timer for the interface.
+
+
+        :param is_interface_hold_timer_enabled: The is_interface_hold_timer_enabled of this CreateCrossConnectGroupDetails.
+        :type: bool
+        """
+        self._is_interface_hold_timer_enabled = is_interface_hold_timer_enabled
+
+    @property
+    def interface_down_timer_value_in_milliseconds(self):
+        """
+        Gets the interface_down_timer_value_in_milliseconds of this CreateCrossConnectGroupDetails.
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+
+
+        :return: The interface_down_timer_value_in_milliseconds of this CreateCrossConnectGroupDetails.
+        :rtype: int
+        """
+        return self._interface_down_timer_value_in_milliseconds
+
+    @interface_down_timer_value_in_milliseconds.setter
+    def interface_down_timer_value_in_milliseconds(self, interface_down_timer_value_in_milliseconds):
+        """
+        Sets the interface_down_timer_value_in_milliseconds of this CreateCrossConnectGroupDetails.
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+
+
+        :param interface_down_timer_value_in_milliseconds: The interface_down_timer_value_in_milliseconds of this CreateCrossConnectGroupDetails.
+        :type: int
+        """
+        self._interface_down_timer_value_in_milliseconds = interface_down_timer_value_in_milliseconds
+
+    @property
+    def is_qos_enabled(self):
+        """
+        Gets the is_qos_enabled of this CreateCrossConnectGroupDetails.
+        (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices.
+        When false (default), placement may use any supported device. If no QoS-capable devices are available
+        in the selected location, the request fails.
+
+
+        :return: The is_qos_enabled of this CreateCrossConnectGroupDetails.
+        :rtype: bool
+        """
+        return self._is_qos_enabled
+
+    @is_qos_enabled.setter
+    def is_qos_enabled(self, is_qos_enabled):
+        """
+        Sets the is_qos_enabled of this CreateCrossConnectGroupDetails.
+        (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices.
+        When false (default), placement may use any supported device. If no QoS-capable devices are available
+        in the selected location, the request fails.
+
+
+        :param is_qos_enabled: The is_qos_enabled of this CreateCrossConnectGroupDetails.
+        :type: bool
+        """
+        self._is_qos_enabled = is_qos_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

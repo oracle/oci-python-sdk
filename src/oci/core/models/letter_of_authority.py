@@ -59,6 +59,14 @@ class LetterOfAuthority(object):
             The value to assign to the time_issued property of this LetterOfAuthority.
         :type time_issued: datetime
 
+        :param authorized_agent:
+            The value to assign to the authorized_agent property of this LetterOfAuthority.
+        :type authorized_agent: str
+
+        :param extension_details:
+            The value to assign to the extension_details property of this LetterOfAuthority.
+        :type extension_details: oci.core.models.LoaExtensionData
+
         """
         self.swagger_types = {
             'authorized_entity_name': 'str',
@@ -67,7 +75,9 @@ class LetterOfAuthority(object):
             'facility_location': 'str',
             'port_name': 'str',
             'time_expires': 'datetime',
-            'time_issued': 'datetime'
+            'time_issued': 'datetime',
+            'authorized_agent': 'str',
+            'extension_details': 'LoaExtensionData'
         }
         self.attribute_map = {
             'authorized_entity_name': 'authorizedEntityName',
@@ -76,7 +86,9 @@ class LetterOfAuthority(object):
             'facility_location': 'facilityLocation',
             'port_name': 'portName',
             'time_expires': 'timeExpires',
-            'time_issued': 'timeIssued'
+            'time_issued': 'timeIssued',
+            'authorized_agent': 'authorizedAgent',
+            'extension_details': 'extensionDetails'
         }
         self._authorized_entity_name = None
         self._circuit_type = None
@@ -85,6 +97,8 @@ class LetterOfAuthority(object):
         self._port_name = None
         self._time_expires = None
         self._time_issued = None
+        self._authorized_agent = None
+        self._extension_details = None
 
     @property
     def authorized_entity_name(self):
@@ -275,6 +289,50 @@ class LetterOfAuthority(object):
         :type: datetime
         """
         self._time_issued = time_issued
+
+    @property
+    def authorized_agent(self):
+        """
+        Gets the authorized_agent of this LetterOfAuthority.
+        Name of a customer authorized agent which will be appended to the LOA as 'Authorized Agent'.
+
+
+        :return: The authorized_agent of this LetterOfAuthority.
+        :rtype: str
+        """
+        return self._authorized_agent
+
+    @authorized_agent.setter
+    def authorized_agent(self, authorized_agent):
+        """
+        Sets the authorized_agent of this LetterOfAuthority.
+        Name of a customer authorized agent which will be appended to the LOA as 'Authorized Agent'.
+
+
+        :param authorized_agent: The authorized_agent of this LetterOfAuthority.
+        :type: str
+        """
+        self._authorized_agent = authorized_agent
+
+    @property
+    def extension_details(self):
+        """
+        Gets the extension_details of this LetterOfAuthority.
+
+        :return: The extension_details of this LetterOfAuthority.
+        :rtype: oci.core.models.LoaExtensionData
+        """
+        return self._extension_details
+
+    @extension_details.setter
+    def extension_details(self, extension_details):
+        """
+        Sets the extension_details of this LetterOfAuthority.
+
+        :param extension_details: The extension_details of this LetterOfAuthority.
+        :type: oci.core.models.LoaExtensionData
+        """
+        self._extension_details = extension_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.182.1 - 2026-07-21
+====================
+
+Added 
+----- 
+* Support for multiple FastConnect enhancements in the Networking service 
+* Support for updating a Letter of Authority for a cross-connect in the Networking service 
+* Support for creating, updating, deleting, getting, and listing Analytics instance resource groups in the Analytics Cloud service 
+* Support for reporting snapshot-exclusive bytes for compartment-level quota tracking in the File Storage service
 2.182.0 - 2026-07-14
 ====================
 

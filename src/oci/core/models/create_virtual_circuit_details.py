@@ -55,6 +55,14 @@ class CreateVirtualCircuitDetails(object):
     #: This constant has a value of "MTU_9000"
     IP_MTU_MTU_9000 = "MTU_9000"
 
+    #: A constant which can be used with the traffic_mode property of a CreateVirtualCircuitDetails.
+    #: This constant has a value of "NORMAL"
+    TRAFFIC_MODE_NORMAL = "NORMAL"
+
+    #: A constant which can be used with the traffic_mode property of a CreateVirtualCircuitDetails.
+    #: This constant has a value of "DRAIN"
+    TRAFFIC_MODE_DRAIN = "DRAIN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateVirtualCircuitDetails object with values from keyword arguments.
@@ -148,6 +156,11 @@ class CreateVirtualCircuitDetails(object):
             Allowed values for this property are: "MTU_1500", "MTU_9000"
         :type ip_mtu: str
 
+        :param traffic_mode:
+            The value to assign to the traffic_mode property of this CreateVirtualCircuitDetails.
+            Allowed values for this property are: "NORMAL", "DRAIN"
+        :type traffic_mode: str
+
         """
         self.swagger_types = {
             'bandwidth_shape_name': 'str',
@@ -170,7 +183,8 @@ class CreateVirtualCircuitDetails(object):
             'public_prefixes': 'list[CreateVirtualCircuitPublicPrefixDetails]',
             'region': 'str',
             'type': 'str',
-            'ip_mtu': 'str'
+            'ip_mtu': 'str',
+            'traffic_mode': 'str'
         }
         self.attribute_map = {
             'bandwidth_shape_name': 'bandwidthShapeName',
@@ -193,7 +207,8 @@ class CreateVirtualCircuitDetails(object):
             'public_prefixes': 'publicPrefixes',
             'region': 'region',
             'type': 'type',
-            'ip_mtu': 'ipMtu'
+            'ip_mtu': 'ipMtu',
+            'traffic_mode': 'trafficMode'
         }
         self._bandwidth_shape_name = None
         self._compartment_id = None
@@ -216,6 +231,7 @@ class CreateVirtualCircuitDetails(object):
         self._region = None
         self._type = None
         self._ip_mtu = None
+        self._traffic_mode = None
 
     @property
     def bandwidth_shape_name(self):
@@ -845,6 +861,39 @@ class CreateVirtualCircuitDetails(object):
                 f"Invalid value for `ip_mtu`, must be None or one of {allowed_values}"
             )
         self._ip_mtu = ip_mtu
+
+    @property
+    def traffic_mode(self):
+        """
+        Gets the traffic_mode of this CreateVirtualCircuitDetails.
+        The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained
+        for the associated Virtual Circuit or not.
+
+        Allowed values for this property are: "NORMAL", "DRAIN"
+
+
+        :return: The traffic_mode of this CreateVirtualCircuitDetails.
+        :rtype: str
+        """
+        return self._traffic_mode
+
+    @traffic_mode.setter
+    def traffic_mode(self, traffic_mode):
+        """
+        Sets the traffic_mode of this CreateVirtualCircuitDetails.
+        The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained
+        for the associated Virtual Circuit or not.
+
+
+        :param traffic_mode: The traffic_mode of this CreateVirtualCircuitDetails.
+        :type: str
+        """
+        allowed_values = ["NORMAL", "DRAIN"]
+        if not value_allowed_none_or_none_sentinel(traffic_mode, allowed_values):
+            raise ValueError(
+                f"Invalid value for `traffic_mode`, must be None or one of {allowed_values}"
+            )
+        self._traffic_mode = traffic_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

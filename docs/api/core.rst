@@ -505,6 +505,7 @@ Core Services
     oci.core.models.LetterOfAuthority
     oci.core.models.LicensingConfig
     oci.core.models.ListIpInventoryDetails
+    oci.core.models.LoaExtensionData
     oci.core.models.LocalPeeringGateway
     oci.core.models.LoopBackDrgAttachmentNetworkDetails
     oci.core.models.MacsecKey
@@ -626,6 +627,7 @@ Core Services
     oci.core.models.UpdateCpeDetails
     oci.core.models.UpdateCrossConnectDetails
     oci.core.models.UpdateCrossConnectGroupDetails
+    oci.core.models.UpdateCrossConnectLetterOfAuthorityDetails
     oci.core.models.UpdateDedicatedCapacitySourceDetails
     oci.core.models.UpdateDedicatedVmHostDetails
     oci.core.models.UpdateDhcpDetails

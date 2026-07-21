@@ -25,7 +25,10 @@ Analytics
     oci.analytics.models.ChangeCompartmentDetails
     oci.analytics.models.CreateAnalyticsInstanceDetails
     oci.analytics.models.CreatePrivateAccessChannelDetails
+    oci.analytics.models.CreateResourceGroupDetails
     oci.analytics.models.CreateVanityUrlDetails
+    oci.analytics.models.InstanceResourceGroup
+    oci.analytics.models.InstanceResourceGroupSummary
     oci.analytics.models.NetworkEndpointDetails
     oci.analytics.models.PrivateAccessChannel
     oci.analytics.models.PrivateEndpointDetails
@@ -37,6 +40,7 @@ Analytics
     oci.analytics.models.SetKmsKeyDetails
     oci.analytics.models.UpdateAnalyticsInstanceDetails
     oci.analytics.models.UpdatePrivateAccessChannelDetails
+    oci.analytics.models.UpdateResourceGroupDetails
     oci.analytics.models.UpdateVanityUrlDetails
     oci.analytics.models.VanityUrlDetails
     oci.analytics.models.VirtualCloudNetwork

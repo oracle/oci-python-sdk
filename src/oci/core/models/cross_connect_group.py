@@ -105,6 +105,22 @@ class CrossConnectGroup(object):
             The value to assign to the oci_logical_device_name property of this CrossConnectGroup.
         :type oci_logical_device_name: str
 
+        :param minimum_links:
+            The value to assign to the minimum_links property of this CrossConnectGroup.
+        :type minimum_links: int
+
+        :param is_interface_hold_timer_enabled:
+            The value to assign to the is_interface_hold_timer_enabled property of this CrossConnectGroup.
+        :type is_interface_hold_timer_enabled: bool
+
+        :param interface_down_timer_value_in_milliseconds:
+            The value to assign to the interface_down_timer_value_in_milliseconds property of this CrossConnectGroup.
+        :type interface_down_timer_value_in_milliseconds: int
+
+        :param is_qos_enabled:
+            The value to assign to the is_qos_enabled property of this CrossConnectGroup.
+        :type is_qos_enabled: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -118,7 +134,11 @@ class CrossConnectGroup(object):
             'time_created': 'datetime',
             'macsec_properties': 'MacsecProperties',
             'oci_physical_device_name': 'str',
-            'oci_logical_device_name': 'str'
+            'oci_logical_device_name': 'str',
+            'minimum_links': 'int',
+            'is_interface_hold_timer_enabled': 'bool',
+            'interface_down_timer_value_in_milliseconds': 'int',
+            'is_qos_enabled': 'bool'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -132,7 +152,11 @@ class CrossConnectGroup(object):
             'time_created': 'timeCreated',
             'macsec_properties': 'macsecProperties',
             'oci_physical_device_name': 'ociPhysicalDeviceName',
-            'oci_logical_device_name': 'ociLogicalDeviceName'
+            'oci_logical_device_name': 'ociLogicalDeviceName',
+            'minimum_links': 'minimumLinks',
+            'is_interface_hold_timer_enabled': 'isInterfaceHoldTimerEnabled',
+            'interface_down_timer_value_in_milliseconds': 'interfaceDownTimerValueInMilliseconds',
+            'is_qos_enabled': 'isQosEnabled'
         }
         self._compartment_id = None
         self._defined_tags = None
@@ -146,6 +170,10 @@ class CrossConnectGroup(object):
         self._macsec_properties = None
         self._oci_physical_device_name = None
         self._oci_logical_device_name = None
+        self._minimum_links = None
+        self._is_interface_hold_timer_enabled = None
+        self._interface_down_timer_value_in_milliseconds = None
+        self._is_qos_enabled = None
 
     @property
     def compartment_id(self):
@@ -476,6 +504,106 @@ class CrossConnectGroup(object):
         :type: str
         """
         self._oci_logical_device_name = oci_logical_device_name
+
+    @property
+    def minimum_links(self):
+        """
+        Gets the minimum_links of this CrossConnectGroup.
+        Minimum number of active cross-connects required for the cross-connect group to be considered operational.
+        If the number of active cross-connects falls below this value, the group is not considered operational.
+        If this value was not explicitly set when the group was created or updated, it defaults to 1.
+
+
+        :return: The minimum_links of this CrossConnectGroup.
+        :rtype: int
+        """
+        return self._minimum_links
+
+    @minimum_links.setter
+    def minimum_links(self, minimum_links):
+        """
+        Sets the minimum_links of this CrossConnectGroup.
+        Minimum number of active cross-connects required for the cross-connect group to be considered operational.
+        If the number of active cross-connects falls below this value, the group is not considered operational.
+        If this value was not explicitly set when the group was created or updated, it defaults to 1.
+
+
+        :param minimum_links: The minimum_links of this CrossConnectGroup.
+        :type: int
+        """
+        self._minimum_links = minimum_links
+
+    @property
+    def is_interface_hold_timer_enabled(self):
+        """
+        Gets the is_interface_hold_timer_enabled of this CrossConnectGroup.
+        The flag to enable or disable the down timer for the interface.
+
+
+        :return: The is_interface_hold_timer_enabled of this CrossConnectGroup.
+        :rtype: bool
+        """
+        return self._is_interface_hold_timer_enabled
+
+    @is_interface_hold_timer_enabled.setter
+    def is_interface_hold_timer_enabled(self, is_interface_hold_timer_enabled):
+        """
+        Sets the is_interface_hold_timer_enabled of this CrossConnectGroup.
+        The flag to enable or disable the down timer for the interface.
+
+
+        :param is_interface_hold_timer_enabled: The is_interface_hold_timer_enabled of this CrossConnectGroup.
+        :type: bool
+        """
+        self._is_interface_hold_timer_enabled = is_interface_hold_timer_enabled
+
+    @property
+    def interface_down_timer_value_in_milliseconds(self):
+        """
+        Gets the interface_down_timer_value_in_milliseconds of this CrossConnectGroup.
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+
+
+        :return: The interface_down_timer_value_in_milliseconds of this CrossConnectGroup.
+        :rtype: int
+        """
+        return self._interface_down_timer_value_in_milliseconds
+
+    @interface_down_timer_value_in_milliseconds.setter
+    def interface_down_timer_value_in_milliseconds(self, interface_down_timer_value_in_milliseconds):
+        """
+        Sets the interface_down_timer_value_in_milliseconds of this CrossConnectGroup.
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+
+
+        :param interface_down_timer_value_in_milliseconds: The interface_down_timer_value_in_milliseconds of this CrossConnectGroup.
+        :type: int
+        """
+        self._interface_down_timer_value_in_milliseconds = interface_down_timer_value_in_milliseconds
+
+    @property
+    def is_qos_enabled(self):
+        """
+        Gets the is_qos_enabled of this CrossConnectGroup.
+        The flag to enable or disable the Qos for the cross-connect-group.
+
+
+        :return: The is_qos_enabled of this CrossConnectGroup.
+        :rtype: bool
+        """
+        return self._is_qos_enabled
+
+    @is_qos_enabled.setter
+    def is_qos_enabled(self, is_qos_enabled):
+        """
+        Sets the is_qos_enabled of this CrossConnectGroup.
+        The flag to enable or disable the Qos for the cross-connect-group.
+
+
+        :param is_qos_enabled: The is_qos_enabled of this CrossConnectGroup.
+        :type: bool
+        """
+        self._is_qos_enabled = is_qos_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -24,6 +24,10 @@ class SetFeatureBundleDetails(object):
     FEATURE_BUNDLE_FAW_FREE = "FAW_FREE"
 
     #: A constant which can be used with the feature_bundle property of a SetFeatureBundleDetails.
+    #: This constant has a value of "FDI_BASE"
+    FEATURE_BUNDLE_FDI_BASE = "FDI_BASE"
+
+    #: A constant which can be used with the feature_bundle property of a SetFeatureBundleDetails.
     #: This constant has a value of "EE_EMBEDDED"
     FEATURE_BUNDLE_EE_EMBEDDED = "EE_EMBEDDED"
 
@@ -38,7 +42,7 @@ class SetFeatureBundleDetails(object):
 
         :param feature_bundle:
             The value to assign to the feature_bundle property of this SetFeatureBundleDetails.
-            Allowed values for this property are: "FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED"
+            Allowed values for this property are: "FAW_PAID", "FAW_FREE", "FDI_BASE", "EE_EMBEDDED", "SE_EMBEDDED"
         :type feature_bundle: str
 
         """
@@ -56,7 +60,7 @@ class SetFeatureBundleDetails(object):
         Gets the feature_bundle of this SetFeatureBundleDetails.
         The feature set of an Analytics instance.
 
-        Allowed values for this property are: "FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED"
+        Allowed values for this property are: "FAW_PAID", "FAW_FREE", "FDI_BASE", "EE_EMBEDDED", "SE_EMBEDDED"
 
 
         :return: The feature_bundle of this SetFeatureBundleDetails.
@@ -74,7 +78,7 @@ class SetFeatureBundleDetails(object):
         :param feature_bundle: The feature_bundle of this SetFeatureBundleDetails.
         :type: str
         """
-        allowed_values = ["FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED"]
+        allowed_values = ["FAW_PAID", "FAW_FREE", "FDI_BASE", "EE_EMBEDDED", "SE_EMBEDDED"]
         if not value_allowed_none_or_none_sentinel(feature_bundle, allowed_values):
             raise ValueError(
                 f"Invalid value for `feature_bundle`, must be None or one of {allowed_values}"

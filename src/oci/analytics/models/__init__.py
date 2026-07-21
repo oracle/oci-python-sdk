@@ -13,7 +13,10 @@ from .change_analytics_instance_network_endpoint_details import ChangeAnalyticsI
 from .change_compartment_details import ChangeCompartmentDetails
 from .create_analytics_instance_details import CreateAnalyticsInstanceDetails
 from .create_private_access_channel_details import CreatePrivateAccessChannelDetails
+from .create_resource_group_details import CreateResourceGroupDetails
 from .create_vanity_url_details import CreateVanityUrlDetails
+from .instance_resource_group import InstanceResourceGroup
+from .instance_resource_group_summary import InstanceResourceGroupSummary
 from .network_endpoint_details import NetworkEndpointDetails
 from .private_access_channel import PrivateAccessChannel
 from .private_endpoint_details import PrivateEndpointDetails
@@ -25,6 +28,7 @@ from .set_feature_bundle_details import SetFeatureBundleDetails
 from .set_kms_key_details import SetKmsKeyDetails
 from .update_analytics_instance_details import UpdateAnalyticsInstanceDetails
 from .update_private_access_channel_details import UpdatePrivateAccessChannelDetails
+from .update_resource_group_details import UpdateResourceGroupDetails
 from .update_vanity_url_details import UpdateVanityUrlDetails
 from .vanity_url_details import VanityUrlDetails
 from .virtual_cloud_network import VirtualCloudNetwork
@@ -43,7 +47,10 @@ analytics_type_mapping = {
     "ChangeCompartmentDetails": ChangeCompartmentDetails,
     "CreateAnalyticsInstanceDetails": CreateAnalyticsInstanceDetails,
     "CreatePrivateAccessChannelDetails": CreatePrivateAccessChannelDetails,
+    "CreateResourceGroupDetails": CreateResourceGroupDetails,
     "CreateVanityUrlDetails": CreateVanityUrlDetails,
+    "InstanceResourceGroup": InstanceResourceGroup,
+    "InstanceResourceGroupSummary": InstanceResourceGroupSummary,
     "NetworkEndpointDetails": NetworkEndpointDetails,
     "PrivateAccessChannel": PrivateAccessChannel,
     "PrivateEndpointDetails": PrivateEndpointDetails,
@@ -55,6 +62,7 @@ analytics_type_mapping = {
     "SetKmsKeyDetails": SetKmsKeyDetails,
     "UpdateAnalyticsInstanceDetails": UpdateAnalyticsInstanceDetails,
     "UpdatePrivateAccessChannelDetails": UpdatePrivateAccessChannelDetails,
+    "UpdateResourceGroupDetails": UpdateResourceGroupDetails,
     "UpdateVanityUrlDetails": UpdateVanityUrlDetails,
     "VanityUrlDetails": VanityUrlDetails,
     "VirtualCloudNetwork": VirtualCloudNetwork,

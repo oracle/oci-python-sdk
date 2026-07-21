@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateVanityUrlDetails(object):
     """
-    Input payload to update a vanity url.
+    Input payload to update a vanity URL.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class UpdateVanityUrlDetails(object):
     def passphrase(self):
         """
         Gets the passphrase of this UpdateVanityUrlDetails.
-        Passphrase for the PEM Private key (if any).
+        Passphrase for the PEM private key (if any).
 
 
         :return: The passphrase of this UpdateVanityUrlDetails.
@@ -70,7 +70,7 @@ class UpdateVanityUrlDetails(object):
     def passphrase(self, passphrase):
         """
         Sets the passphrase of this UpdateVanityUrlDetails.
-        Passphrase for the PEM Private key (if any).
+        Passphrase for the PEM private key (if any).
 
 
         :param passphrase: The passphrase of this UpdateVanityUrlDetails.
@@ -82,7 +82,7 @@ class UpdateVanityUrlDetails(object):
     def private_key(self):
         """
         **[Required]** Gets the private_key of this UpdateVanityUrlDetails.
-        PEM Private key for HTTPS connections.
+        PEM private key for HTTPS connections.
 
 
         :return: The private_key of this UpdateVanityUrlDetails.
@@ -94,7 +94,7 @@ class UpdateVanityUrlDetails(object):
     def private_key(self, private_key):
         """
         Sets the private_key of this UpdateVanityUrlDetails.
-        PEM Private key for HTTPS connections.
+        PEM private key for HTTPS connections.
 
 
         :param private_key: The private_key of this UpdateVanityUrlDetails.
@@ -130,7 +130,7 @@ class UpdateVanityUrlDetails(object):
     def ca_certificate(self):
         """
         **[Required]** Gets the ca_certificate of this UpdateVanityUrlDetails.
-        PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+        PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
 
 
         :return: The ca_certificate of this UpdateVanityUrlDetails.
@@ -142,7 +142,7 @@ class UpdateVanityUrlDetails(object):
     def ca_certificate(self, ca_certificate):
         """
         Sets the ca_certificate of this UpdateVanityUrlDetails.
-        PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+        PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
 
 
         :param ca_certificate: The ca_certificate of this UpdateVanityUrlDetails.

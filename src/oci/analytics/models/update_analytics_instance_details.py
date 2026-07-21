@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAnalyticsInstanceDetails(object):
     """
-    Input payload to update an Analytics instance. Fields that are not provided
-    will not be updated.
+    Input payload to update an Analytics instance. Fields that aren't provided
+    won't be updated.
     """
 
     #: A constant which can be used with the license_type property of a UpdateAnalyticsInstanceDetails.
@@ -246,7 +246,7 @@ class UpdateAnalyticsInstanceDetails(object):
     def update_channel(self):
         """
         Gets the update_channel of this UpdateAnalyticsInstanceDetails.
-        Analytics instance update channel.
+        The Analytics instance update cycle.
 
         Allowed values for this property are: "REGULAR", "EARLY", "PHASE_2", "PHASE_1"
 
@@ -260,7 +260,7 @@ class UpdateAnalyticsInstanceDetails(object):
     def update_channel(self, update_channel):
         """
         Sets the update_channel of this UpdateAnalyticsInstanceDetails.
-        Analytics instance update channel.
+        The Analytics instance update cycle.
 
 
         :param update_channel: The update_channel of this UpdateAnalyticsInstanceDetails.
