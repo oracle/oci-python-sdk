@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SetKmsKeyDetails(object):
     """
-    Input payload to reset the OCI Vault encryption key.
+    Input payload to reset the OCI vault encryption key.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class SetKmsKeyDetails(object):
     def kms_key_id(self):
         """
         **[Required]** Gets the kms_key_id of this SetKmsKeyDetails.
-        OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. An empty value indicates Oracle managed default encryption (null is not supported in this API).
+        OCID of the OCI vault key encrypting the customer data stored in this Analytics instance. An empty value indicates the default Oracle-managed encryption (this API doesn't support null).
 
 
         :return: The kms_key_id of this SetKmsKeyDetails.
@@ -49,7 +49,7 @@ class SetKmsKeyDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this SetKmsKeyDetails.
-        OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. An empty value indicates Oracle managed default encryption (null is not supported in this API).
+        OCID of the OCI vault key encrypting the customer data stored in this Analytics instance. An empty value indicates the default Oracle-managed encryption (this API doesn't support null).
 
 
         :param kms_key_id: The kms_key_id of this SetKmsKeyDetails.

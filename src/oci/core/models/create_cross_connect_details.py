@@ -64,6 +64,18 @@ class CreateCrossConnectDetails(object):
             The value to assign to the macsec_properties property of this CreateCrossConnectDetails.
         :type macsec_properties: oci.core.models.CreateMacsecProperties
 
+        :param is_interface_hold_timer_enabled:
+            The value to assign to the is_interface_hold_timer_enabled property of this CreateCrossConnectDetails.
+        :type is_interface_hold_timer_enabled: bool
+
+        :param interface_down_timer_value_in_milliseconds:
+            The value to assign to the interface_down_timer_value_in_milliseconds property of this CreateCrossConnectDetails.
+        :type interface_down_timer_value_in_milliseconds: int
+
+        :param is_qos_enabled:
+            The value to assign to the is_qos_enabled property of this CreateCrossConnectDetails.
+        :type is_qos_enabled: bool
+
         :param oci_physical_device_name:
             The value to assign to the oci_physical_device_name property of this CreateCrossConnectDetails.
         :type oci_physical_device_name: str
@@ -85,6 +97,9 @@ class CreateCrossConnectDetails(object):
             'port_speed_shape_name': 'str',
             'customer_reference_name': 'str',
             'macsec_properties': 'CreateMacsecProperties',
+            'is_interface_hold_timer_enabled': 'bool',
+            'interface_down_timer_value_in_milliseconds': 'int',
+            'is_qos_enabled': 'bool',
             'oci_physical_device_name': 'str',
             'interface_name': 'str'
         }
@@ -100,6 +115,9 @@ class CreateCrossConnectDetails(object):
             'port_speed_shape_name': 'portSpeedShapeName',
             'customer_reference_name': 'customerReferenceName',
             'macsec_properties': 'macsecProperties',
+            'is_interface_hold_timer_enabled': 'isInterfaceHoldTimerEnabled',
+            'interface_down_timer_value_in_milliseconds': 'interfaceDownTimerValueInMilliseconds',
+            'is_qos_enabled': 'isQosEnabled',
             'oci_physical_device_name': 'ociPhysicalDeviceName',
             'interface_name': 'interfaceName'
         }
@@ -114,6 +132,9 @@ class CreateCrossConnectDetails(object):
         self._port_speed_shape_name = None
         self._customer_reference_name = None
         self._macsec_properties = None
+        self._is_interface_hold_timer_enabled = None
+        self._interface_down_timer_value_in_milliseconds = None
+        self._is_qos_enabled = None
         self._oci_physical_device_name = None
         self._interface_name = None
 
@@ -440,6 +461,82 @@ class CreateCrossConnectDetails(object):
         :type: oci.core.models.CreateMacsecProperties
         """
         self._macsec_properties = macsec_properties
+
+    @property
+    def is_interface_hold_timer_enabled(self):
+        """
+        Gets the is_interface_hold_timer_enabled of this CreateCrossConnectDetails.
+        The flag to enable or disable the down timer for the interface.
+
+
+        :return: The is_interface_hold_timer_enabled of this CreateCrossConnectDetails.
+        :rtype: bool
+        """
+        return self._is_interface_hold_timer_enabled
+
+    @is_interface_hold_timer_enabled.setter
+    def is_interface_hold_timer_enabled(self, is_interface_hold_timer_enabled):
+        """
+        Sets the is_interface_hold_timer_enabled of this CreateCrossConnectDetails.
+        The flag to enable or disable the down timer for the interface.
+
+
+        :param is_interface_hold_timer_enabled: The is_interface_hold_timer_enabled of this CreateCrossConnectDetails.
+        :type: bool
+        """
+        self._is_interface_hold_timer_enabled = is_interface_hold_timer_enabled
+
+    @property
+    def interface_down_timer_value_in_milliseconds(self):
+        """
+        Gets the interface_down_timer_value_in_milliseconds of this CreateCrossConnectDetails.
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+
+
+        :return: The interface_down_timer_value_in_milliseconds of this CreateCrossConnectDetails.
+        :rtype: int
+        """
+        return self._interface_down_timer_value_in_milliseconds
+
+    @interface_down_timer_value_in_milliseconds.setter
+    def interface_down_timer_value_in_milliseconds(self, interface_down_timer_value_in_milliseconds):
+        """
+        Sets the interface_down_timer_value_in_milliseconds of this CreateCrossConnectDetails.
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+
+
+        :param interface_down_timer_value_in_milliseconds: The interface_down_timer_value_in_milliseconds of this CreateCrossConnectDetails.
+        :type: int
+        """
+        self._interface_down_timer_value_in_milliseconds = interface_down_timer_value_in_milliseconds
+
+    @property
+    def is_qos_enabled(self):
+        """
+        Gets the is_qos_enabled of this CreateCrossConnectDetails.
+        When true, restricts placement so cross-connects lands only on QoS-capable devices.
+        When false (default), placement may use any supported device. If no QoS-capable devices are available
+        in the selected location, the request fails.
+
+
+        :return: The is_qos_enabled of this CreateCrossConnectDetails.
+        :rtype: bool
+        """
+        return self._is_qos_enabled
+
+    @is_qos_enabled.setter
+    def is_qos_enabled(self, is_qos_enabled):
+        """
+        Sets the is_qos_enabled of this CreateCrossConnectDetails.
+        When true, restricts placement so cross-connects lands only on QoS-capable devices.
+        When false (default), placement may use any supported device. If no QoS-capable devices are available
+        in the selected location, the request fails.
+
+
+        :param is_qos_enabled: The is_qos_enabled of this CreateCrossConnectDetails.
+        :type: bool
+        """
+        self._is_qos_enabled = is_qos_enabled
 
     @property
     def oci_physical_device_name(self):

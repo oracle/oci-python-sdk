@@ -216,7 +216,8 @@ class AnalyticsInstanceSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this AnalyticsInstanceSummary.
-        The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+        The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+        The name must start with a letter and can contain only letters, numbers and dash (-).
 
 
         :return: The name of this AnalyticsInstanceSummary.
@@ -228,7 +229,8 @@ class AnalyticsInstanceSummary(object):
     def name(self, name):
         """
         Sets the name of this AnalyticsInstanceSummary.
-        The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+        The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+        The name must start with a letter and can contain only letters, numbers and dash (-).
 
 
         :param name: The name of this AnalyticsInstanceSummary.
@@ -288,7 +290,7 @@ class AnalyticsInstanceSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this AnalyticsInstanceSummary.
-        The current state of an instance.
+        The current state of the Analytics instance.
 
         Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "INACTIVE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -303,7 +305,7 @@ class AnalyticsInstanceSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this AnalyticsInstanceSummary.
-        The current state of an instance.
+        The current state of the Analytics instance.
 
 
         :param lifecycle_state: The lifecycle_state of this AnalyticsInstanceSummary.
@@ -318,7 +320,7 @@ class AnalyticsInstanceSummary(object):
     def feature_set(self):
         """
         **[Required]** Gets the feature_set of this AnalyticsInstanceSummary.
-        Analytics feature set.
+        The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
 
         Allowed values for this property are: "SELF_SERVICE_ANALYTICS", "ENTERPRISE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -333,7 +335,7 @@ class AnalyticsInstanceSummary(object):
     def feature_set(self, feature_set):
         """
         Sets the feature_set of this AnalyticsInstanceSummary.
-        Analytics feature set.
+        The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
 
 
         :param feature_set: The feature_set of this AnalyticsInstanceSummary.
@@ -442,7 +444,7 @@ class AnalyticsInstanceSummary(object):
     def service_url(self):
         """
         Gets the service_url of this AnalyticsInstanceSummary.
-        URL of the Analytics service.
+        URL of the Analytics instance.
 
 
         :return: The service_url of this AnalyticsInstanceSummary.
@@ -454,7 +456,7 @@ class AnalyticsInstanceSummary(object):
     def service_url(self, service_url):
         """
         Sets the service_url of this AnalyticsInstanceSummary.
-        URL of the Analytics service.
+        URL of the Analytics instance.
 
 
         :param service_url: The service_url of this AnalyticsInstanceSummary.
@@ -560,7 +562,7 @@ class AnalyticsInstanceSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this AnalyticsInstanceSummary.
-        The date and time the instance was created, in the format defined by RFC3339.
+        The date and time the Analytics instance was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -574,7 +576,7 @@ class AnalyticsInstanceSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AnalyticsInstanceSummary.
-        The date and time the instance was created, in the format defined by RFC3339.
+        The date and time the Analytics instance was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -588,9 +590,9 @@ class AnalyticsInstanceSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this AnalyticsInstanceSummary.
-        The date and time the instance was last updated (in the format defined by RFC3339).
-        This timestamp represents updates made through this API. External events do not
-        influence it.
+        The date and time the Analytics instance was last updated (in the format defined by RFC3339).
+        This timestamp represents updates made through this API. External events don't
+        affect it.
 
 
         :return: The time_updated of this AnalyticsInstanceSummary.
@@ -602,9 +604,9 @@ class AnalyticsInstanceSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this AnalyticsInstanceSummary.
-        The date and time the instance was last updated (in the format defined by RFC3339).
-        This timestamp represents updates made through this API. External events do not
-        influence it.
+        The date and time the Analytics instance was last updated (in the format defined by RFC3339).
+        This timestamp represents updates made through this API. External events don't
+        affect it.
 
 
         :param time_updated: The time_updated of this AnalyticsInstanceSummary.

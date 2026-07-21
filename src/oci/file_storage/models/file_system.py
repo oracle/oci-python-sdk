@@ -86,6 +86,14 @@ class FileSystem(object):
     #: This constant has a value of "FAILED"
     QUOTA_ENFORCEMENT_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the compartment_quota_enforcement_state property of a FileSystem.
+    #: This constant has a value of "NOT_BLOCKED"
+    COMPARTMENT_QUOTA_ENFORCEMENT_STATE_NOT_BLOCKED = "NOT_BLOCKED"
+
+    #: A constant which can be used with the compartment_quota_enforcement_state property of a FileSystem.
+    #: This constant has a value of "BLOCKED"
+    COMPARTMENT_QUOTA_ENFORCEMENT_STATE_BLOCKED = "BLOCKED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new FileSystem object with values from keyword arguments.
@@ -193,6 +201,12 @@ class FileSystem(object):
             The value to assign to the replication_source_count property of this FileSystem.
         :type replication_source_count: int
 
+        :param compartment_quota_enforcement_state:
+            The value to assign to the compartment_quota_enforcement_state property of this FileSystem.
+            Allowed values for this property are: "NOT_BLOCKED", "BLOCKED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compartment_quota_enforcement_state: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -218,7 +232,8 @@ class FileSystem(object):
             'filesystem_snapshot_policy_id': 'str',
             'are_quota_rules_enabled': 'bool',
             'quota_enforcement_state': 'str',
-            'replication_source_count': 'int'
+            'replication_source_count': 'int',
+            'compartment_quota_enforcement_state': 'str'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -244,7 +259,8 @@ class FileSystem(object):
             'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId',
             'are_quota_rules_enabled': 'areQuotaRulesEnabled',
             'quota_enforcement_state': 'quotaEnforcementState',
-            'replication_source_count': 'replicationSourceCount'
+            'replication_source_count': 'replicationSourceCount',
+            'compartment_quota_enforcement_state': 'compartmentQuotaEnforcementState'
         }
         self._availability_domain = None
         self._metered_bytes = None
@@ -270,6 +286,7 @@ class FileSystem(object):
         self._are_quota_rules_enabled = None
         self._quota_enforcement_state = None
         self._replication_source_count = None
+        self._compartment_quota_enforcement_state = None
 
     @property
     def availability_domain(self):
@@ -960,6 +977,36 @@ class FileSystem(object):
         :type: int
         """
         self._replication_source_count = replication_source_count
+
+    @property
+    def compartment_quota_enforcement_state(self):
+        """
+        Gets the compartment_quota_enforcement_state of this FileSystem.
+        Displays the compartment-level quota enforcement state affecting this file system.
+
+        Allowed values for this property are: "NOT_BLOCKED", "BLOCKED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compartment_quota_enforcement_state of this FileSystem.
+        :rtype: str
+        """
+        return self._compartment_quota_enforcement_state
+
+    @compartment_quota_enforcement_state.setter
+    def compartment_quota_enforcement_state(self, compartment_quota_enforcement_state):
+        """
+        Sets the compartment_quota_enforcement_state of this FileSystem.
+        Displays the compartment-level quota enforcement state affecting this file system.
+
+
+        :param compartment_quota_enforcement_state: The compartment_quota_enforcement_state of this FileSystem.
+        :type: str
+        """
+        allowed_values = ["NOT_BLOCKED", "BLOCKED"]
+        if not value_allowed_none_or_none_sentinel(compartment_quota_enforcement_state, allowed_values):
+            compartment_quota_enforcement_state = 'UNKNOWN_ENUM_VALUE'
+        self._compartment_quota_enforcement_state = compartment_quota_enforcement_state
 
     def __repr__(self):
         return formatted_flat_dict(self)

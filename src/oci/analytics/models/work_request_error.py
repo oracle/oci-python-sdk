@@ -51,7 +51,7 @@ class WorkRequestError(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestError.
-        A short error code that defines the error, meant for programmatic parsing.
+        A short error code that defines the error, for programmatic parsing.
 
 
         :return: The code of this WorkRequestError.
@@ -63,7 +63,7 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A short error code that defines the error, meant for programmatic parsing.
+        A short error code that defines the error, for programmatic parsing.
 
 
         :param code: The code of this WorkRequestError.
@@ -99,7 +99,7 @@ class WorkRequestError(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestError.
-        The date and time the error occured, in the format defined by RFC3339.
+        The date and time the error occurred, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -113,7 +113,7 @@ class WorkRequestError(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestError.
-        The date and time the error occured, in the format defined by RFC3339.
+        The date and time the error occurred, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 

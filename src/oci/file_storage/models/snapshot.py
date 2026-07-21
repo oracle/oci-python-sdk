@@ -124,6 +124,10 @@ class Snapshot(object):
             The value to assign to the filesystem_snapshot_policy_id property of this Snapshot.
         :type filesystem_snapshot_policy_id: str
 
+        :param exclusive_bytes:
+            The value to assign to the exclusive_bytes property of this Snapshot.
+        :type exclusive_bytes: int
+
         """
         self.swagger_types = {
             'file_system_id': 'str',
@@ -143,7 +147,8 @@ class Snapshot(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'expiration_time': 'datetime',
-            'filesystem_snapshot_policy_id': 'str'
+            'filesystem_snapshot_policy_id': 'str',
+            'exclusive_bytes': 'int'
         }
         self.attribute_map = {
             'file_system_id': 'fileSystemId',
@@ -163,7 +168,8 @@ class Snapshot(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'expiration_time': 'expirationTime',
-            'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId'
+            'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId',
+            'exclusive_bytes': 'exclusiveBytes'
         }
         self._file_system_id = None
         self._id = None
@@ -183,6 +189,7 @@ class Snapshot(object):
         self._system_tags = None
         self._expiration_time = None
         self._filesystem_snapshot_policy_id = None
+        self._exclusive_bytes = None
 
     @property
     def file_system_id(self):
@@ -719,6 +726,30 @@ class Snapshot(object):
         :type: str
         """
         self._filesystem_snapshot_policy_id = filesystem_snapshot_policy_id
+
+    @property
+    def exclusive_bytes(self):
+        """
+        Gets the exclusive_bytes of this Snapshot.
+        Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+
+
+        :return: The exclusive_bytes of this Snapshot.
+        :rtype: int
+        """
+        return self._exclusive_bytes
+
+    @exclusive_bytes.setter
+    def exclusive_bytes(self, exclusive_bytes):
+        """
+        Sets the exclusive_bytes of this Snapshot.
+        Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+
+
+        :param exclusive_bytes: The exclusive_bytes of this Snapshot.
+        :type: int
+        """
+        self._exclusive_bytes = exclusive_bytes
 
     def __repr__(self):
         return formatted_flat_dict(self)

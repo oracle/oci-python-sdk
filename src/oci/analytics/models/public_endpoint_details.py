@@ -116,7 +116,7 @@ class PublicEndpointDetails(NetworkEndpointDetails):
     def whitelisted_services(self):
         """
         Gets the whitelisted_services of this PublicEndpointDetails.
-        Oracle Cloud Services that are allowed to access this Analytics instance.
+        Oracle Cloud services that are allowed to access this Analytics instance.
 
         Allowed values for items in this list are: "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -131,7 +131,7 @@ class PublicEndpointDetails(NetworkEndpointDetails):
     def whitelisted_services(self, whitelisted_services):
         """
         Sets the whitelisted_services of this PublicEndpointDetails.
-        Oracle Cloud Services that are allowed to access this Analytics instance.
+        Oracle Cloud services that are allowed to access this Analytics instance.
 
 
         :param whitelisted_services: The whitelisted_services of this PublicEndpointDetails.

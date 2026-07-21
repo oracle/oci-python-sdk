@@ -487,6 +487,7 @@ from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .licensing_config import LicensingConfig
 from .list_ip_inventory_details import ListIpInventoryDetails
+from .loa_extension_data import LoaExtensionData
 from .local_peering_gateway import LocalPeeringGateway
 from .loop_back_drg_attachment_network_details import LoopBackDrgAttachmentNetworkDetails
 from .macsec_key import MacsecKey
@@ -608,6 +609,7 @@ from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
 from .update_cross_connect_details import UpdateCrossConnectDetails
 from .update_cross_connect_group_details import UpdateCrossConnectGroupDetails
+from .update_cross_connect_letter_of_authority_details import UpdateCrossConnectLetterOfAuthorityDetails
 from .update_dedicated_capacity_source_details import UpdateDedicatedCapacitySourceDetails
 from .update_dedicated_vm_host_details import UpdateDedicatedVmHostDetails
 from .update_dhcp_details import UpdateDhcpDetails
@@ -1196,6 +1198,7 @@ core_type_mapping = {
     "LetterOfAuthority": LetterOfAuthority,
     "LicensingConfig": LicensingConfig,
     "ListIpInventoryDetails": ListIpInventoryDetails,
+    "LoaExtensionData": LoaExtensionData,
     "LocalPeeringGateway": LocalPeeringGateway,
     "LoopBackDrgAttachmentNetworkDetails": LoopBackDrgAttachmentNetworkDetails,
     "MacsecKey": MacsecKey,
@@ -1317,6 +1320,7 @@ core_type_mapping = {
     "UpdateCpeDetails": UpdateCpeDetails,
     "UpdateCrossConnectDetails": UpdateCrossConnectDetails,
     "UpdateCrossConnectGroupDetails": UpdateCrossConnectGroupDetails,
+    "UpdateCrossConnectLetterOfAuthorityDetails": UpdateCrossConnectLetterOfAuthorityDetails,
     "UpdateDedicatedCapacitySourceDetails": UpdateDedicatedCapacitySourceDetails,
     "UpdateDedicatedVmHostDetails": UpdateDedicatedVmHostDetails,
     "UpdateDhcpDetails": UpdateDhcpDetails,

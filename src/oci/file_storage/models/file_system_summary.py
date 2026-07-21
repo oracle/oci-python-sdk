@@ -75,6 +75,14 @@ class FileSystemSummary(object):
     #: This constant has a value of "FAILED"
     QUOTA_ENFORCEMENT_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the compartment_quota_enforcement_state property of a FileSystemSummary.
+    #: This constant has a value of "NOT_BLOCKED"
+    COMPARTMENT_QUOTA_ENFORCEMENT_STATE_NOT_BLOCKED = "NOT_BLOCKED"
+
+    #: A constant which can be used with the compartment_quota_enforcement_state property of a FileSystemSummary.
+    #: This constant has a value of "BLOCKED"
+    COMPARTMENT_QUOTA_ENFORCEMENT_STATE_BLOCKED = "BLOCKED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new FileSystemSummary object with values from keyword arguments.
@@ -162,6 +170,12 @@ class FileSystemSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type quota_enforcement_state: str
 
+        :param compartment_quota_enforcement_state:
+            The value to assign to the compartment_quota_enforcement_state property of this FileSystemSummary.
+            Allowed values for this property are: "NOT_BLOCKED", "BLOCKED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compartment_quota_enforcement_state: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -182,7 +196,8 @@ class FileSystemSummary(object):
             'is_hydrated': 'bool',
             'lifecycle_details': 'str',
             'clone_attach_status': 'str',
-            'quota_enforcement_state': 'str'
+            'quota_enforcement_state': 'str',
+            'compartment_quota_enforcement_state': 'str'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -203,7 +218,8 @@ class FileSystemSummary(object):
             'is_hydrated': 'isHydrated',
             'lifecycle_details': 'lifecycleDetails',
             'clone_attach_status': 'cloneAttachStatus',
-            'quota_enforcement_state': 'quotaEnforcementState'
+            'quota_enforcement_state': 'quotaEnforcementState',
+            'compartment_quota_enforcement_state': 'compartmentQuotaEnforcementState'
         }
         self._availability_domain = None
         self._metered_bytes = None
@@ -224,6 +240,7 @@ class FileSystemSummary(object):
         self._lifecycle_details = None
         self._clone_attach_status = None
         self._quota_enforcement_state = None
+        self._compartment_quota_enforcement_state = None
 
     @property
     def availability_domain(self):
@@ -770,6 +787,36 @@ class FileSystemSummary(object):
         if not value_allowed_none_or_none_sentinel(quota_enforcement_state, allowed_values):
             quota_enforcement_state = 'UNKNOWN_ENUM_VALUE'
         self._quota_enforcement_state = quota_enforcement_state
+
+    @property
+    def compartment_quota_enforcement_state(self):
+        """
+        Gets the compartment_quota_enforcement_state of this FileSystemSummary.
+        Displays the compartment-level quota enforcement state affecting this file system.
+
+        Allowed values for this property are: "NOT_BLOCKED", "BLOCKED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compartment_quota_enforcement_state of this FileSystemSummary.
+        :rtype: str
+        """
+        return self._compartment_quota_enforcement_state
+
+    @compartment_quota_enforcement_state.setter
+    def compartment_quota_enforcement_state(self, compartment_quota_enforcement_state):
+        """
+        Sets the compartment_quota_enforcement_state of this FileSystemSummary.
+        Displays the compartment-level quota enforcement state affecting this file system.
+
+
+        :param compartment_quota_enforcement_state: The compartment_quota_enforcement_state of this FileSystemSummary.
+        :type: str
+        """
+        allowed_values = ["NOT_BLOCKED", "BLOCKED"]
+        if not value_allowed_none_or_none_sentinel(compartment_quota_enforcement_state, allowed_values):
+            compartment_quota_enforcement_state = 'UNKNOWN_ENUM_VALUE'
+        self._compartment_quota_enforcement_state = compartment_quota_enforcement_state
 
     def __repr__(self):
         return formatted_flat_dict(self)

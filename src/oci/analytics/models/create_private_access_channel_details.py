@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreatePrivateAccessChannelDetails(object):
     """
-    Input payload to create a Private Access Channel.
+    Input payload to create a private access channel.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class CreatePrivateAccessChannelDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreatePrivateAccessChannelDetails.
-        Display Name of the Private Access Channel.
+        Display name of the private access channel.
 
 
         :return: The display_name of this CreatePrivateAccessChannelDetails.
@@ -84,7 +84,7 @@ class CreatePrivateAccessChannelDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreatePrivateAccessChannelDetails.
-        Display Name of the Private Access Channel.
+        Display name of the private access channel.
 
 
         :param display_name: The display_name of this CreatePrivateAccessChannelDetails.
@@ -96,7 +96,7 @@ class CreatePrivateAccessChannelDetails(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this CreatePrivateAccessChannelDetails.
-        OCID of the customer VCN peered with private access channel.
+        OCID of the customer VCN peered with the private access channel.
 
 
         :return: The vcn_id of this CreatePrivateAccessChannelDetails.
@@ -108,7 +108,7 @@ class CreatePrivateAccessChannelDetails(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this CreatePrivateAccessChannelDetails.
-        OCID of the customer VCN peered with private access channel.
+        OCID of the customer VCN peered with the private access channel.
 
 
         :param vcn_id: The vcn_id of this CreatePrivateAccessChannelDetails.
@@ -120,7 +120,7 @@ class CreatePrivateAccessChannelDetails(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this CreatePrivateAccessChannelDetails.
-        OCID of the customer subnet connected to private access channel.
+        OCID of the customer subnet connected to the private access channel.
 
 
         :return: The subnet_id of this CreatePrivateAccessChannelDetails.
@@ -132,7 +132,7 @@ class CreatePrivateAccessChannelDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreatePrivateAccessChannelDetails.
-        OCID of the customer subnet connected to private access channel.
+        OCID of the customer subnet connected to the private access channel.
 
 
         :param subnet_id: The subnet_id of this CreatePrivateAccessChannelDetails.
@@ -144,9 +144,9 @@ class CreatePrivateAccessChannelDetails(object):
     def private_source_dns_zones(self):
         """
         **[Required]** Gets the private_source_dns_zones of this CreatePrivateAccessChannelDetails.
-        List of Private Source DNS zones registered with Private Access Channel,
-        where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
-        Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+        List of private source DNS zones registered with the private access channel. The
+         datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance.
+        Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
 
 
         :return: The private_source_dns_zones of this CreatePrivateAccessChannelDetails.
@@ -158,9 +158,9 @@ class CreatePrivateAccessChannelDetails(object):
     def private_source_dns_zones(self, private_source_dns_zones):
         """
         Sets the private_source_dns_zones of this CreatePrivateAccessChannelDetails.
-        List of Private Source DNS zones registered with Private Access Channel,
-        where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance.
-        Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+        List of private source DNS zones registered with the private access channel. The
+         datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance.
+        Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
 
 
         :param private_source_dns_zones: The private_source_dns_zones of this CreatePrivateAccessChannelDetails.
@@ -172,7 +172,7 @@ class CreatePrivateAccessChannelDetails(object):
     def private_source_scan_hosts(self):
         """
         Gets the private_source_scan_hosts of this CreatePrivateAccessChannelDetails.
-        List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
 
 
         :return: The private_source_scan_hosts of this CreatePrivateAccessChannelDetails.
@@ -184,7 +184,7 @@ class CreatePrivateAccessChannelDetails(object):
     def private_source_scan_hosts(self, private_source_scan_hosts):
         """
         Sets the private_source_scan_hosts of this CreatePrivateAccessChannelDetails.
-        List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
 
 
         :param private_source_scan_hosts: The private_source_scan_hosts of this CreatePrivateAccessChannelDetails.
@@ -196,7 +196,7 @@ class CreatePrivateAccessChannelDetails(object):
     def network_security_group_ids(self):
         """
         Gets the network_security_group_ids of this CreatePrivateAccessChannelDetails.
-        Network Security Group OCIDs for an Analytics instance.
+        Network Security Group OCIDs for the Analytics instance.
 
 
         :return: The network_security_group_ids of this CreatePrivateAccessChannelDetails.
@@ -208,7 +208,7 @@ class CreatePrivateAccessChannelDetails(object):
     def network_security_group_ids(self, network_security_group_ids):
         """
         Sets the network_security_group_ids of this CreatePrivateAccessChannelDetails.
-        Network Security Group OCIDs for an Analytics instance.
+        Network Security Group OCIDs for the Analytics instance.
 
 
         :param network_security_group_ids: The network_security_group_ids of this CreatePrivateAccessChannelDetails.

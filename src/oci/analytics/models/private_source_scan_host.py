@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PrivateSourceScanHost(object):
     """
-    Private source Scan Hostname model.
+    Private source SCAN hostname model.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class PrivateSourceScanHost(object):
     def scan_hostname(self):
         """
         **[Required]** Gets the scan_hostname of this PrivateSourceScanHost.
-        Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+        Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
 
 
         :return: The scan_hostname of this PrivateSourceScanHost.
@@ -63,7 +63,7 @@ class PrivateSourceScanHost(object):
     def scan_hostname(self, scan_hostname):
         """
         Sets the scan_hostname of this PrivateSourceScanHost.
-        Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+        Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
 
 
         :param scan_hostname: The scan_hostname of this PrivateSourceScanHost.
@@ -75,7 +75,7 @@ class PrivateSourceScanHost(object):
     def scan_port(self):
         """
         **[Required]** Gets the scan_port of this PrivateSourceScanHost.
-        Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+        Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
 
 
         :return: The scan_port of this PrivateSourceScanHost.
@@ -87,7 +87,7 @@ class PrivateSourceScanHost(object):
     def scan_port(self, scan_port):
         """
         Sets the scan_port of this PrivateSourceScanHost.
-        Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+        Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
 
 
         :param scan_port: The scan_port of this PrivateSourceScanHost.
@@ -99,7 +99,7 @@ class PrivateSourceScanHost(object):
     def description(self):
         """
         Gets the description of this PrivateSourceScanHost.
-        Description of private source scan host zone.
+        Description of private source SCAN host zone.
 
 
         :return: The description of this PrivateSourceScanHost.
@@ -111,7 +111,7 @@ class PrivateSourceScanHost(object):
     def description(self, description):
         """
         Sets the description of this PrivateSourceScanHost.
-        Description of private source scan host zone.
+        Description of private source SCAN host zone.
 
 
         :param description: The description of this PrivateSourceScanHost.

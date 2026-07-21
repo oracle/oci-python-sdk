@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VanityUrlDetails(object):
     """
-    Vanity url configuration details.
+    Vanity URL configuration details.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class VanityUrlDetails(object):
     def key(self):
         """
         Gets the key of this VanityUrlDetails.
-        The vanity url unique identifier key.
+        The vanity URL unique identifier key.
 
 
         :return: The key of this VanityUrlDetails.
@@ -77,7 +77,7 @@ class VanityUrlDetails(object):
     def key(self, key):
         """
         Sets the key of this VanityUrlDetails.
-        The vanity url unique identifier key.
+        The vanity URL unique identifier key.
 
 
         :param key: The key of this VanityUrlDetails.
@@ -89,7 +89,7 @@ class VanityUrlDetails(object):
     def description(self):
         """
         Gets the description of this VanityUrlDetails.
-        Description of the vanity url.
+        Description of the vanity URL.
 
 
         :return: The description of this VanityUrlDetails.
@@ -101,7 +101,7 @@ class VanityUrlDetails(object):
     def description(self, description):
         """
         Sets the description of this VanityUrlDetails.
-        Description of the vanity url.
+        Description of the vanity URL.
 
 
         :param description: The description of this VanityUrlDetails.
@@ -113,7 +113,7 @@ class VanityUrlDetails(object):
     def urls(self):
         """
         Gets the urls of this VanityUrlDetails.
-        List of urls supported by this vanity URL definition (max of 3).
+        List of URLs supported by this vanity URL definition (maximum of 3).
 
 
         :return: The urls of this VanityUrlDetails.
@@ -125,7 +125,7 @@ class VanityUrlDetails(object):
     def urls(self, urls):
         """
         Sets the urls of this VanityUrlDetails.
-        List of urls supported by this vanity URL definition (max of 3).
+        List of URLs supported by this vanity URL definition (maximum of 3).
 
 
         :param urls: The urls of this VanityUrlDetails.
@@ -137,7 +137,7 @@ class VanityUrlDetails(object):
     def hosts(self):
         """
         Gets the hosts of this VanityUrlDetails.
-        List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+        List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
 
 
         :return: The hosts of this VanityUrlDetails.
@@ -149,7 +149,7 @@ class VanityUrlDetails(object):
     def hosts(self, hosts):
         """
         Sets the hosts of this VanityUrlDetails.
-        List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+        List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
 
 
         :param hosts: The hosts of this VanityUrlDetails.

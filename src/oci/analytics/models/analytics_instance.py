@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnalyticsInstance(object):
     """
-    Analytics Instance metadata.
+    Analytics instance metadata.
     """
 
     #: A constant which can be used with the lifecycle_state property of a AnalyticsInstance.
@@ -82,6 +82,10 @@ class AnalyticsInstance(object):
     #: A constant which can be used with the feature_bundle property of a AnalyticsInstance.
     #: This constant has a value of "FAW_FREE"
     FEATURE_BUNDLE_FAW_FREE = "FAW_FREE"
+
+    #: A constant which can be used with the feature_bundle property of a AnalyticsInstance.
+    #: This constant has a value of "FDI_BASE"
+    FEATURE_BUNDLE_FDI_BASE = "FDI_BASE"
 
     #: A constant which can be used with the feature_bundle property of a AnalyticsInstance.
     #: This constant has a value of "EE_EMBEDDED"
@@ -186,13 +190,17 @@ class AnalyticsInstance(object):
 
         :param feature_bundle:
             The value to assign to the feature_bundle property of this AnalyticsInstance.
-            Allowed values for this property are: "FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FAW_PAID", "FAW_FREE", "FDI_BASE", "EE_EMBEDDED", "SE_EMBEDDED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type feature_bundle: str
 
         :param domain_id:
             The value to assign to the domain_id property of this AnalyticsInstance.
         :type domain_id: str
+
+        :param resource_groups:
+            The value to assign to the resource_groups property of this AnalyticsInstance.
+        :type resource_groups: list[oci.analytics.models.InstanceResourceGroup]
 
         """
         self.swagger_types = {
@@ -217,7 +225,8 @@ class AnalyticsInstance(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'feature_bundle': 'str',
-            'domain_id': 'str'
+            'domain_id': 'str',
+            'resource_groups': 'list[InstanceResourceGroup]'
         }
         self.attribute_map = {
             'id': 'id',
@@ -241,7 +250,8 @@ class AnalyticsInstance(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'feature_bundle': 'featureBundle',
-            'domain_id': 'domainId'
+            'domain_id': 'domainId',
+            'resource_groups': 'resourceGroups'
         }
         self._id = None
         self._name = None
@@ -265,6 +275,7 @@ class AnalyticsInstance(object):
         self._time_updated = None
         self._feature_bundle = None
         self._domain_id = None
+        self._resource_groups = None
 
     @property
     def id(self):
@@ -294,7 +305,8 @@ class AnalyticsInstance(object):
     def name(self):
         """
         **[Required]** Gets the name of this AnalyticsInstance.
-        The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+        The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+        The name must start with a letter and can contain only letters, numbers and dash (-).
 
 
         :return: The name of this AnalyticsInstance.
@@ -306,7 +318,8 @@ class AnalyticsInstance(object):
     def name(self, name):
         """
         Sets the name of this AnalyticsInstance.
-        The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+        The name of the Analytics instance. This name must be unique in the tenancy and can't be changed.
+        The name must start with a letter and can contain only letters, numbers and dash (-).
 
 
         :param name: The name of this AnalyticsInstance.
@@ -366,7 +379,7 @@ class AnalyticsInstance(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this AnalyticsInstance.
-        The current state of an instance.
+        The current state of the Analytics instance.
 
         Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "INACTIVE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -381,7 +394,7 @@ class AnalyticsInstance(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this AnalyticsInstance.
-        The current state of an instance.
+        The current state of the Analytics instance.
 
 
         :param lifecycle_state: The lifecycle_state of this AnalyticsInstance.
@@ -396,7 +409,7 @@ class AnalyticsInstance(object):
     def feature_set(self):
         """
         **[Required]** Gets the feature_set of this AnalyticsInstance.
-        Analytics feature set.
+        The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
 
         Allowed values for this property are: "SELF_SERVICE_ANALYTICS", "ENTERPRISE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -411,7 +424,7 @@ class AnalyticsInstance(object):
     def feature_set(self, feature_set):
         """
         Sets the feature_set of this AnalyticsInstance.
-        Analytics feature set.
+        The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
 
 
         :param feature_set: The feature_set of this AnalyticsInstance.
@@ -500,7 +513,7 @@ class AnalyticsInstance(object):
     def update_channel(self):
         """
         Gets the update_channel of this AnalyticsInstance.
-        Analytics instance update channel.
+        The Analytics instance update cycle.
 
         Allowed values for this property are: "REGULAR", "EARLY", "PHASE_2", "PHASE_1", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -515,7 +528,7 @@ class AnalyticsInstance(object):
     def update_channel(self, update_channel):
         """
         Sets the update_channel of this AnalyticsInstance.
-        Analytics instance update channel.
+        The Analytics instance update cycle.
 
 
         :param update_channel: The update_channel of this AnalyticsInstance.
@@ -598,7 +611,7 @@ class AnalyticsInstance(object):
     def service_url(self):
         """
         Gets the service_url of this AnalyticsInstance.
-        URL of the Analytics service.
+        URL of the Analytics instance.
 
 
         :return: The service_url of this AnalyticsInstance.
@@ -610,7 +623,7 @@ class AnalyticsInstance(object):
     def service_url(self, service_url):
         """
         Sets the service_url of this AnalyticsInstance.
-        URL of the Analytics service.
+        URL of the Analytics instance.
 
 
         :param service_url: The service_url of this AnalyticsInstance.
@@ -716,7 +729,7 @@ class AnalyticsInstance(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this AnalyticsInstance.
-        OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
 
 
         :return: The kms_key_id of this AnalyticsInstance.
@@ -728,7 +741,7 @@ class AnalyticsInstance(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this AnalyticsInstance.
-        OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
 
 
         :param kms_key_id: The kms_key_id of this AnalyticsInstance.
@@ -740,7 +753,7 @@ class AnalyticsInstance(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this AnalyticsInstance.
-        The date and time the instance was created, in the format defined by RFC3339.
+        The date and time the Analytics instance was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -754,7 +767,7 @@ class AnalyticsInstance(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AnalyticsInstance.
-        The date and time the instance was created, in the format defined by RFC3339.
+        The date and time the Analytics instance was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -768,9 +781,9 @@ class AnalyticsInstance(object):
     def time_updated(self):
         """
         Gets the time_updated of this AnalyticsInstance.
-        The date and time the instance was last updated (in the format defined by RFC3339).
-        This timestamp represents updates made through this API. External events do not
-        influence it.
+        The date and time the Analytics instance was last updated (in the format defined by RFC3339).
+        This timestamp represents updates made through this API. External events don't
+        affect it.
 
 
         :return: The time_updated of this AnalyticsInstance.
@@ -782,9 +795,9 @@ class AnalyticsInstance(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this AnalyticsInstance.
-        The date and time the instance was last updated (in the format defined by RFC3339).
-        This timestamp represents updates made through this API. External events do not
-        influence it.
+        The date and time the Analytics instance was last updated (in the format defined by RFC3339).
+        This timestamp represents updates made through this API. External events don't
+        affect it.
 
 
         :param time_updated: The time_updated of this AnalyticsInstance.
@@ -798,7 +811,7 @@ class AnalyticsInstance(object):
         Gets the feature_bundle of this AnalyticsInstance.
         The feature set of an Analytics instance.
 
-        Allowed values for this property are: "FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FAW_PAID", "FAW_FREE", "FDI_BASE", "EE_EMBEDDED", "SE_EMBEDDED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -817,7 +830,7 @@ class AnalyticsInstance(object):
         :param feature_bundle: The feature_bundle of this AnalyticsInstance.
         :type: str
         """
-        allowed_values = ["FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED"]
+        allowed_values = ["FAW_PAID", "FAW_FREE", "FDI_BASE", "EE_EMBEDDED", "SE_EMBEDDED"]
         if not value_allowed_none_or_none_sentinel(feature_bundle, allowed_values):
             feature_bundle = 'UNKNOWN_ENUM_VALUE'
         self._feature_bundle = feature_bundle
@@ -845,6 +858,30 @@ class AnalyticsInstance(object):
         :type: str
         """
         self._domain_id = domain_id
+
+    @property
+    def resource_groups(self):
+        """
+        Gets the resource_groups of this AnalyticsInstance.
+        List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+
+
+        :return: The resource_groups of this AnalyticsInstance.
+        :rtype: list[oci.analytics.models.InstanceResourceGroup]
+        """
+        return self._resource_groups
+
+    @resource_groups.setter
+    def resource_groups(self, resource_groups):
+        """
+        Sets the resource_groups of this AnalyticsInstance.
+        List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+
+
+        :param resource_groups: The resource_groups of this AnalyticsInstance.
+        :type: list[oci.analytics.models.InstanceResourceGroup]
+        """
+        self._resource_groups = resource_groups
 
     def __repr__(self):
         return formatted_flat_dict(self)

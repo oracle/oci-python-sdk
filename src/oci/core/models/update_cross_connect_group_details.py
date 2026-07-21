@@ -40,26 +40,47 @@ class UpdateCrossConnectGroupDetails(object):
             The value to assign to the macsec_properties property of this UpdateCrossConnectGroupDetails.
         :type macsec_properties: oci.core.models.UpdateMacsecProperties
 
+        :param minimum_links:
+            The value to assign to the minimum_links property of this UpdateCrossConnectGroupDetails.
+        :type minimum_links: int
+
+        :param is_interface_hold_timer_enabled:
+            The value to assign to the is_interface_hold_timer_enabled property of this UpdateCrossConnectGroupDetails.
+        :type is_interface_hold_timer_enabled: bool
+
+        :param interface_down_timer_value_in_milliseconds:
+            The value to assign to the interface_down_timer_value_in_milliseconds property of this UpdateCrossConnectGroupDetails.
+        :type interface_down_timer_value_in_milliseconds: int
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'customer_reference_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'macsec_properties': 'UpdateMacsecProperties'
+            'macsec_properties': 'UpdateMacsecProperties',
+            'minimum_links': 'int',
+            'is_interface_hold_timer_enabled': 'bool',
+            'interface_down_timer_value_in_milliseconds': 'int'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'customer_reference_name': 'customerReferenceName',
             'freeform_tags': 'freeformTags',
-            'macsec_properties': 'macsecProperties'
+            'macsec_properties': 'macsecProperties',
+            'minimum_links': 'minimumLinks',
+            'is_interface_hold_timer_enabled': 'isInterfaceHoldTimerEnabled',
+            'interface_down_timer_value_in_milliseconds': 'interfaceDownTimerValueInMilliseconds'
         }
         self._defined_tags = None
         self._display_name = None
         self._customer_reference_name = None
         self._freeform_tags = None
         self._macsec_properties = None
+        self._minimum_links = None
+        self._is_interface_hold_timer_enabled = None
+        self._interface_down_timer_value_in_milliseconds = None
 
     @property
     def defined_tags(self):
@@ -198,6 +219,82 @@ class UpdateCrossConnectGroupDetails(object):
         :type: oci.core.models.UpdateMacsecProperties
         """
         self._macsec_properties = macsec_properties
+
+    @property
+    def minimum_links(self):
+        """
+        Gets the minimum_links of this UpdateCrossConnectGroupDetails.
+        (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered
+        operational. If not specified, this value defaults to 1. Value must not exceed the total number of
+        cross-connects in the cross-connect group.
+
+
+        :return: The minimum_links of this UpdateCrossConnectGroupDetails.
+        :rtype: int
+        """
+        return self._minimum_links
+
+    @minimum_links.setter
+    def minimum_links(self, minimum_links):
+        """
+        Sets the minimum_links of this UpdateCrossConnectGroupDetails.
+        (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered
+        operational. If not specified, this value defaults to 1. Value must not exceed the total number of
+        cross-connects in the cross-connect group.
+
+
+        :param minimum_links: The minimum_links of this UpdateCrossConnectGroupDetails.
+        :type: int
+        """
+        self._minimum_links = minimum_links
+
+    @property
+    def is_interface_hold_timer_enabled(self):
+        """
+        Gets the is_interface_hold_timer_enabled of this UpdateCrossConnectGroupDetails.
+        The flag to enable or disable the down timer for the interface.
+
+
+        :return: The is_interface_hold_timer_enabled of this UpdateCrossConnectGroupDetails.
+        :rtype: bool
+        """
+        return self._is_interface_hold_timer_enabled
+
+    @is_interface_hold_timer_enabled.setter
+    def is_interface_hold_timer_enabled(self, is_interface_hold_timer_enabled):
+        """
+        Sets the is_interface_hold_timer_enabled of this UpdateCrossConnectGroupDetails.
+        The flag to enable or disable the down timer for the interface.
+
+
+        :param is_interface_hold_timer_enabled: The is_interface_hold_timer_enabled of this UpdateCrossConnectGroupDetails.
+        :type: bool
+        """
+        self._is_interface_hold_timer_enabled = is_interface_hold_timer_enabled
+
+    @property
+    def interface_down_timer_value_in_milliseconds(self):
+        """
+        Gets the interface_down_timer_value_in_milliseconds of this UpdateCrossConnectGroupDetails.
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+
+
+        :return: The interface_down_timer_value_in_milliseconds of this UpdateCrossConnectGroupDetails.
+        :rtype: int
+        """
+        return self._interface_down_timer_value_in_milliseconds
+
+    @interface_down_timer_value_in_milliseconds.setter
+    def interface_down_timer_value_in_milliseconds(self, interface_down_timer_value_in_milliseconds):
+        """
+        Sets the interface_down_timer_value_in_milliseconds of this UpdateCrossConnectGroupDetails.
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+
+
+        :param interface_down_timer_value_in_milliseconds: The interface_down_timer_value_in_milliseconds of this UpdateCrossConnectGroupDetails.
+        :type: int
+        """
+        self._interface_down_timer_value_in_milliseconds = interface_down_timer_value_in_milliseconds
 
     def __repr__(self):
         return formatted_flat_dict(self)

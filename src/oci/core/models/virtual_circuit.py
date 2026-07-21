@@ -156,6 +156,14 @@ class VirtualCircuit(object):
     #: This constant has a value of "MTU_9000"
     IP_MTU_MTU_9000 = "MTU_9000"
 
+    #: A constant which can be used with the traffic_mode property of a VirtualCircuit.
+    #: This constant has a value of "NORMAL"
+    TRAFFIC_MODE_NORMAL = "NORMAL"
+
+    #: A constant which can be used with the traffic_mode property of a VirtualCircuit.
+    #: This constant has a value of "DRAIN"
+    TRAFFIC_MODE_DRAIN = "DRAIN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new VirtualCircuit object with values from keyword arguments.
@@ -305,6 +313,12 @@ class VirtualCircuit(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type ip_mtu: str
 
+        :param traffic_mode:
+            The value to assign to the traffic_mode property of this VirtualCircuit.
+            Allowed values for this property are: "NORMAL", "DRAIN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type traffic_mode: str
+
         :param virtual_circuit_redundancy_metadata:
             The value to assign to the virtual_circuit_redundancy_metadata property of this VirtualCircuit.
         :type virtual_circuit_redundancy_metadata: oci.core.models.VirtualCircuitRedundancyMetadata
@@ -342,6 +356,7 @@ class VirtualCircuit(object):
             'time_created': 'datetime',
             'type': 'str',
             'ip_mtu': 'str',
+            'traffic_mode': 'str',
             'virtual_circuit_redundancy_metadata': 'VirtualCircuitRedundancyMetadata'
         }
         self.attribute_map = {
@@ -376,6 +391,7 @@ class VirtualCircuit(object):
             'time_created': 'timeCreated',
             'type': 'type',
             'ip_mtu': 'ipMtu',
+            'traffic_mode': 'trafficMode',
             'virtual_circuit_redundancy_metadata': 'virtualCircuitRedundancyMetadata'
         }
         self._bandwidth_shape_name = None
@@ -409,6 +425,7 @@ class VirtualCircuit(object):
         self._time_created = None
         self._type = None
         self._ip_mtu = None
+        self._traffic_mode = None
         self._virtual_circuit_redundancy_metadata = None
 
     @property
@@ -1328,6 +1345,38 @@ class VirtualCircuit(object):
         if not value_allowed_none_or_none_sentinel(ip_mtu, allowed_values):
             ip_mtu = 'UNKNOWN_ENUM_VALUE'
         self._ip_mtu = ip_mtu
+
+    @property
+    def traffic_mode(self):
+        """
+        Gets the traffic_mode of this VirtualCircuit.
+        The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the
+        associated Virtual Circuit or not.
+
+        Allowed values for this property are: "NORMAL", "DRAIN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The traffic_mode of this VirtualCircuit.
+        :rtype: str
+        """
+        return self._traffic_mode
+
+    @traffic_mode.setter
+    def traffic_mode(self, traffic_mode):
+        """
+        Sets the traffic_mode of this VirtualCircuit.
+        The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the
+        associated Virtual Circuit or not.
+
+
+        :param traffic_mode: The traffic_mode of this VirtualCircuit.
+        :type: str
+        """
+        allowed_values = ["NORMAL", "DRAIN"]
+        if not value_allowed_none_or_none_sentinel(traffic_mode, allowed_values):
+            traffic_mode = 'UNKNOWN_ENUM_VALUE'
+        self._traffic_mode = traffic_mode
 
     @property
     def virtual_circuit_redundancy_metadata(self):
