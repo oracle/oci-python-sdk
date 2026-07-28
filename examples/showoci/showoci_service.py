@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "26.04.01"
+    version = "26.07.14"
     oci_compatible_version = "2.165.1"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -199,6 +199,8 @@ class ShowOCIService(object):
     C_MONITORING_ADVISOR_RESOURCE_ACTIONS = "advisor_resource_actions"
     C_MONITORING_ADVISOR_RECOMMENDATIONS = "advisor_recommendations"
     C_MONITORING_DB_MANAGEMENT = "db_management"
+    C_MONITORING_OPSI_DATABASE_INSIGHTS = "opsi_database_insights"
+    C_MONITORING_OPSI_HOST_INSIGHTS = "opsi_host_insights"
 
     # Notifications
     C_NOTIFICATIONS = "notifications"
@@ -261,8 +263,11 @@ class ShowOCIService(object):
     C_SECURITY_CLOUD_GUARD = "cloud_guard"
     C_SECURITY_VAULTS = "vaults"
     C_SECURITY_KEYS = "keys"
+    C_SECURITY_SECRETS = "secrets"
     C_SECURITY_BASTION = "bastion"
     C_SECURITY_LOGGING = "logging"
+    C_SECURITY_LOG_ANALYTICS = "log_analytics"
+    C_SECURITY_LOG_ANALYTICS_NAMESPACE = "log_analytics_namespace"
     C_SECURITY_LOGGING_UA = "unified_agents"
 
     # Security Scores
@@ -321,6 +326,7 @@ class ShowOCIService(object):
     EXCLUDE_GOLDENGATE = 'GOLDENGATE'
     EXCLUDE_ANNOUNCEMENT = 'ANNOUNCEMENT'
     EXCLUDE_ADVISOR = 'ADVISOR'
+    EXCLUDE_OPSI = 'OPSI'
     EXCLUDE_CLOUDGUARD = 'CLOUDGUARD'
     EXCLUDE_LOGGING = 'LOGGING'
     EXCLUDE_BASTION = 'BASTION'
@@ -14848,7 +14854,7 @@ class ShowOCIService(object):
 
         try:
             section_start_time = time.time()
-            print("Monitoring, Notifications, Events, Bastion, Logging, KMS, Limits, Quotas, E-Mail, Budget, Advisors, Certificates...")
+            print("Monitoring, Notifications, Events, Bastion, Logging, KMS, Limits, Quotas, E-Mail, Budget, Advisors, Operations Insights, Certificates...")
 
             db_cloud_advisor_client = self.__create_client(oci.optimizer.OptimizerClient, key=self.EXCLUDE_ADVISOR)
             monitor_client = self.__create_client(oci.monitoring.MonitoringClient)
@@ -14857,9 +14863,11 @@ class ShowOCIService(object):
             event_client = self.__create_client(oci.events.EventsClient)
             management_agent_client = self.__create_client(oci.management_agent.ManagementAgentClient)
             db_management_client = self.__create_client(oci.database_management.DbManagementClient, key=self.EXCLUDE_DBMANAGEMENT)
+            opsi_client = self.__create_client(oci.opsi.OperationsInsightsClient, key=self.EXCLUDE_OPSI)
             bs_client = self.__create_client(oci.bastion.BastionClient, key=self.EXCLUDE_BASTION)
             cg_client = self.__create_client(oci.cloud_guard.CloudGuardClient, key=self.EXCLUDE_CLOUDGUARD)
             log_client = self.__create_client(oci.logging.LoggingManagementClient, key=self.EXCLUDE_LOGGING)
+            log_analytics_client = self.__create_client(oci.log_analytics.LogAnalyticsClient, key=self.EXCLUDE_LOGGING)
             kms_client = self.__create_client(oci.key_management.KmsVaultClient, key=self.EXCLUDE_KMS)
             limits_client = self.__create_client(oci.limits.LimitsClient, key=self.EXCLUDE_LIMITS)
             quotas_client = self.__create_client(oci.limits.QuotasClient, key=self.EXCLUDE_QUOTAS)
@@ -14879,7 +14887,10 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_CLOUD_GUARD)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOGGING_UA)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOGGING)
+            self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOG_ANALYTICS)
+            self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOG_ANALYTICS_NAMESPACE)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_KEYS)
+            self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_SECRETS)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_VAULTS)
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_ADVISOR_RESOURCE_ACTIONS)
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_ADVISOR_RECOMMENDATIONS)
@@ -14887,6 +14898,8 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_EVENTS)
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_AGENTS)
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_DB_MANAGEMENT)
+            self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_OPSI_DATABASE_INSIGHTS)
+            self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_OPSI_HOST_INSIGHTS)
             self.__initialize_data_key(self.C_NOTIFICATIONS, self.C_NOTIFICATIONS_TOPICS)
             self.__initialize_data_key(self.C_NOTIFICATIONS, self.C_NOTIFICATIONS_SUBSCRIPTIONS)
             self.__initialize_data_key(self.C_LIMITS, self.C_LIMITS_SERVICES)
@@ -14916,6 +14929,8 @@ class ShowOCIService(object):
                 monitor[self.C_MONITORING_EVENTS] += self.__load_monitoring_events(event_client, compartments)
                 monitor[self.C_MONITORING_AGENTS] += self.__load_monitoring_agents(management_agent_client, compartments)
                 monitor[self.C_MONITORING_DB_MANAGEMENT] += self.__load_monitoring_database_management(db_management_client, compartments)
+                monitor[self.C_MONITORING_OPSI_DATABASE_INSIGHTS] += self.__load_monitoring_opsi_database_insights(opsi_client, compartments)
+                monitor[self.C_MONITORING_OPSI_HOST_INSIGHTS] += self.__load_monitoring_opsi_host_insights(opsi_client, compartments)
                 monitor[self.C_MONITORING_ADVISOR_RECOMMENDATIONS] += self.__load_monitoring_cloud_advisor_recommendations(db_cloud_advisor_client, tenancy['id'], compartments)
                 monitor[self.C_MONITORING_ADVISOR_RESOURCE_ACTIONS] += self.__load_monitoring_cloud_advisor_resource_actions(db_cloud_advisor_client, compartments)
 
@@ -14925,8 +14940,11 @@ class ShowOCIService(object):
                 sec[self.C_SECURITY_BASTION] += self.__load_security_bastions(bs_client, compartments)
                 sec[self.C_SECURITY_LOGGING_UA] += self.__load_security_log_unified_agents(log_client, compartments)
                 sec[self.C_SECURITY_LOGGING] += self.__load_security_log_groups(log_client, compartments)
+                sec[self.C_SECURITY_LOG_ANALYTICS_NAMESPACE] += self.__load_security_log_analytics_namespace(log_analytics_client)
+                sec[self.C_SECURITY_LOG_ANALYTICS] += self.__load_security_log_analytics_entities(log_analytics_client, compartments)
                 sec[self.C_SECURITY_VAULTS] += self.__load_security_kms_vaults(kms_client, compartments)
                 sec[self.C_SECURITY_KEYS] += self.__load_security_kms_keys(search_client)
+                sec[self.C_SECURITY_SECRETS] += self.__load_security_kms_secrets(search_client)
                 sec[self.C_SECURITY_CLOUD_GUARD] += self.__load_security_cloud_guard(cg_client, compartments)
 
                 email[self.C_EMAIL_SENDERS] += self.__load_email_senders(email_client, compartments)
@@ -14952,13 +14970,18 @@ class ShowOCIService(object):
                     future_MONITORING_EVENTS = executor.submit(self.__load_monitoring_events, event_client, compartments)
                     future_MONITORING_AGENTS = executor.submit(self.__load_monitoring_agents, management_agent_client, compartments)
                     future_MONITORING_DB_MANAGEMENT = executor.submit(self.__load_monitoring_database_management, db_management_client, compartments)
+                    future_MONITORING_OPSI_DATABASE_INSIGHTS = executor.submit(self.__load_monitoring_opsi_database_insights, opsi_client, compartments)
+                    future_MONITORING_OPSI_HOST_INSIGHTS = executor.submit(self.__load_monitoring_opsi_host_insights, opsi_client, compartments)
                     future_NOTIFICATIONS_TOPICS = executor.submit(self.__load_notifications_topics, ons_cp_client, compartments)
                     future_NOTIFICATIONS_SUBSCRIPTIONS = executor.submit(self.__load_notifications_subscriptions, ons_dp_client, compartments)
                     future_SECURITY_BASTION = executor.submit(self.__load_security_bastions, bs_client, compartments)
                     future_SECURITY_LOGGING = executor.submit(self.__load_security_log_groups, log_client, compartments)
+                    future_SECURITY_LOG_ANALYTICS_NAMESPACE = executor.submit(self.__load_security_log_analytics_namespace, log_analytics_client)
+                    future_SECURITY_LOG_ANALYTICS = executor.submit(self.__load_security_log_analytics_entities, log_analytics_client, compartments)
                     future_SECURITY_LOGGING_UA = executor.submit(self.__load_security_log_unified_agents, log_client, compartments)
                     future_SECURITY_VAULTS = executor.submit(self.__load_security_kms_vaults, kms_client, compartments)
                     future_SECURITY_KEYS = executor.submit(self.__load_security_kms_keys, search_client)
+                    future_SECURITY_SECRETS = executor.submit(self.__load_security_kms_secrets, search_client)
                     future_SECURITY_CLOUD_GUARD = executor.submit(self.__load_security_cloud_guard, cg_client, compartments)
                     future_EMAIL_SENDERS = executor.submit(self.__load_email_senders, email_client, compartments)
                     future_EMAIL_SUPPRESSIONS = executor.submit(self.__load_email_suppressions, email_client, compartments)
@@ -14976,13 +14999,18 @@ class ShowOCIService(object):
                     monitor[self.C_MONITORING_EVENTS] += next(as_completed([future_MONITORING_EVENTS])).result()
                     monitor[self.C_MONITORING_AGENTS] += next(as_completed([future_MONITORING_AGENTS])).result()
                     monitor[self.C_MONITORING_DB_MANAGEMENT] += next(as_completed([future_MONITORING_DB_MANAGEMENT])).result()
+                    monitor[self.C_MONITORING_OPSI_DATABASE_INSIGHTS] += next(as_completed([future_MONITORING_OPSI_DATABASE_INSIGHTS])).result()
+                    monitor[self.C_MONITORING_OPSI_HOST_INSIGHTS] += next(as_completed([future_MONITORING_OPSI_HOST_INSIGHTS])).result()
                     notifications[self.C_NOTIFICATIONS_TOPICS] += next(as_completed([future_NOTIFICATIONS_TOPICS])).result()
                     notifications[self.C_NOTIFICATIONS_SUBSCRIPTIONS] += next(as_completed([future_NOTIFICATIONS_SUBSCRIPTIONS])).result()
                     sec[self.C_SECURITY_BASTION] += next(as_completed([future_SECURITY_BASTION])).result()
+                    sec[self.C_SECURITY_LOG_ANALYTICS_NAMESPACE] += next(as_completed([future_SECURITY_LOG_ANALYTICS_NAMESPACE])).result()
+                    sec[self.C_SECURITY_LOG_ANALYTICS] += next(as_completed([future_SECURITY_LOG_ANALYTICS])).result()
                     sec[self.C_SECURITY_LOGGING] += next(as_completed([future_SECURITY_LOGGING])).result()
                     sec[self.C_SECURITY_LOGGING_UA] += next(as_completed([future_SECURITY_LOGGING_UA])).result()
                     sec[self.C_SECURITY_VAULTS] += next(as_completed([future_SECURITY_VAULTS])).result()
                     sec[self.C_SECURITY_KEYS] += next(as_completed([future_SECURITY_KEYS])).result()
+                    sec[self.C_SECURITY_SECRETS] += next(as_completed([future_SECURITY_SECRETS])).result()
                     sec[self.C_SECURITY_CLOUD_GUARD] += next(as_completed([future_SECURITY_CLOUD_GUARD])).result()
                     email[self.C_EMAIL_SENDERS] += next(as_completed([future_EMAIL_SENDERS])).result()
                     email[self.C_EMAIL_SUPPRESSIONS] += next(as_completed([future_EMAIL_SUPPRESSIONS])).result()
@@ -15494,6 +15522,271 @@ class ShowOCIService(object):
                            'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region'])
                            }
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_monitoring_opsi_database_insights
+    ##########################################################################
+    def __load_monitoring_opsi_database_insights(self, opsi_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "OPSI Database Insights"
+            self.__load_print_status_with_threads(header)
+
+            if not opsi_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                database_configs = {}
+                try:
+                    configs = oci.pagination.list_call_get_all_results(
+                        opsi_client.list_database_configurations,
+                        compartment_id=compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                    for config in configs:
+                        database_configs[config.database_insight_id] = config
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+
+                database_insights = []
+                try:
+                    database_insights = oci.pagination.list_call_get_all_results(
+                        opsi_client.list_database_insights,
+                        compartment_id=compartment['id'],
+                        lifecycle_state=["ACTIVE", "NEEDS_ATTENTION"],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                    continue
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # item = oci.opsi.models.DatabaseInsightSummary
+                for item in database_insights:
+                    config = database_configs[item.id] if item.id in database_configs else None
+                    val = {
+                        'id': self.get_value(item.id),
+                        'database_id': self.get_value(item.database_id),
+                        'database_name': self.get_value(item.database_name),
+                        'database_display_name': self.get_value(item.database_display_name),
+                        'database_type': self.get_value(item.database_type),
+                        'database_version': self.get_value(item.database_version),
+                        'database_host_names': self.get_values(item.database_host_names),
+                        'entity_source': self.get_value(item.entity_source),
+                        'processor_count': self.get_value(item.processor_count),
+                        'status': self.get_value(item.status),
+                        'time_created': self.get_date(item.time_created),
+                        'time_updated': self.get_date(item.time_updated),
+                        'lifecycle_state': self.get_value(item.lifecycle_state),
+                        'lifecycle_details': self.get_value(item.lifecycle_details),
+                        'database_connection_status_details': self.get_value(item.database_connection_status_details),
+                        'is_advanced_features_enabled': self.get_value(config.is_advanced_features_enabled) if config else "",
+                        'cdb_name': self.get_value(config.cdb_name) if config else "",
+                        'sum_info': "OPSI Database Insights",
+                        'sum_size_gb': str(1),
+                        'system_tags': [] if item.system_tags is None else item.system_tags,
+                        'defined_tags': [] if item.defined_tags is None else item.defined_tags,
+                        'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])
+                    }
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_monitoring_opsi_host_insights
+    ##########################################################################
+    def __load_monitoring_opsi_host_insights(self, opsi_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "OPSI Host Insights"
+            self.__load_print_status_with_threads(header)
+
+            if not opsi_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                host_configs = {}
+                try:
+                    configs = oci.pagination.list_call_get_all_results(
+                        opsi_client.list_host_configurations,
+                        compartment_id=compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                    for config in configs:
+                        host_configs[config.host_insight_id] = config
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+
+                host_insights = []
+                try:
+                    host_insights = oci.pagination.list_call_get_all_results(
+                        opsi_client.list_host_insights,
+                        compartment_id=compartment['id'],
+                        lifecycle_state=["ACTIVE", "NEEDS_ATTENTION"],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                    continue
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # item = oci.opsi.models.HostInsightSummary
+                for item in host_insights:
+                    config = host_configs[item.id] if item.id in host_configs else None
+                    val = {
+                        'id': self.get_value(item.id),
+                        'host_name': self.get_value(item.host_name),
+                        'host_display_name': self.get_value(item.host_display_name),
+                        'host_type': self.get_value(item.host_type),
+                        'entity_source': self.get_value(item.entity_source),
+                        'processor_count': self.get_value(item.processor_count),
+                        'opsi_private_endpoint_id': self.get_value(item.opsi_private_endpoint_id),
+                        'status': self.get_value(item.status),
+                        'time_created': self.get_date(item.time_created),
+                        'time_updated': self.get_date(item.time_updated),
+                        'lifecycle_state': self.get_value(item.lifecycle_state),
+                        'lifecycle_details': self.get_value(item.lifecycle_details),
+                        'platform_type': self.get_value(config.platform_type) if config else "",
+                        'platform_version': self.get_value(config.platform_version) if config else "",
+                        'platform_vendor': self.get_value(config.platform_vendor) if config else "",
+                        'total_cpus': self.get_value(config.total_cpus) if config else "",
+                        'total_memory_in_gbs': self.get_value(config.total_memory_in_gbs) if config else "",
+                        'cpu_architecture': self.get_value(config.cpu_architecture) if config else "",
+                        'cpu_vendor': self.get_value(config.cpu_vendor) if config else "",
+                        'cpu_frequency_in_mhz': self.get_value(config.cpu_frequency_in_mhz) if config else "",
+                        'cores_per_socket': self.get_value(config.cores_per_socket) if config else "",
+                        'total_sockets': self.get_value(config.total_sockets) if config else "",
+                        'threads_per_socket': self.get_value(config.threads_per_socket) if config else "",
+                        'is_hyper_threading_enabled': self.get_value(config.is_hyper_threading_enabled) if config else "",
+                        'sum_info': "OPSI Host Insights",
+                        'sum_size_gb': str(1),
+                        'system_tags': [] if item.system_tags is None else item.system_tags,
+                        'defined_tags': [] if item.defined_tags is None else item.defined_tags,
+                        'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])
+                    }
 
                     # add the data
                     cnt += 1
@@ -18969,7 +19262,7 @@ class ShowOCIService(object):
             self.__load_print_status_with_threads(header)
 
             key_search_detail = oci.resource_search.models.StructuredSearchDetails(
-                query="query key resources",
+                query="query key resources return allAdditionalFields",
                 type='Structured',
                 matching_context_type=oci.resource_search.models.SearchDetails.MATCHING_CONTEXT_TYPE_NONE
             )
@@ -18985,7 +19278,7 @@ class ShowOCIService(object):
 
                     compartment = self.get_compartment_by_id(item.compartment_id)
                     if compartment:
-
+                        ad = item.additional_details
                         val = {
                             'id': self.get_value(item.identifier),
                             'compartment_id': self.get_value(item.compartment_id),
@@ -18994,7 +19287,75 @@ class ShowOCIService(object):
                             'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
                             'compartment_name': str(compartment['name']),
                             'compartment_path': str(compartment['path']),
-                            'region_name': str(self.config['region'])
+                            'region_name': str(self.config['region']),
+                            # Added thanks to Herman
+                            'current_key_version': self.get_value(ad['currentKeyVersion']) if "currentKeyVersion" in ad else "",
+                            'vault_id': self.get_value(ad['vaultId']) if "vaultId" in ad else "",
+                            'key_algorithm': self.get_value(ad['keyShape']['algorithm']) if "vaultId" in ad and "algorithm" in ad['keyShape'] else "",
+                            'key_length': self.get_value(ad['keyShape']['length']) if "vaultId" in ad and "length" in ad['keyShape'] else ""
+                        }
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_security_kms_secrets
+    ##########################################################################
+    def __load_security_kms_secrets(self, search_client):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Vault Secrets"
+            self.__load_print_status_with_threads(header)
+
+            secret_search_detail = oci.resource_search.models.StructuredSearchDetails(
+                query="query vaultsecret resources return allAdditionalFields",
+                type='Structured',
+                matching_context_type=oci.resource_search.models.SearchDetails.MATCHING_CONTEXT_TYPE_NONE
+            )
+            secrets = oci.pagination.list_call_get_all_results(
+                search_client.search_resources,
+                secret_search_detail,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            for item in secrets:
+                if self.check_lifecycle_state_active(item.lifecycle_state):
+
+                    compartment = self.get_compartment_by_id(item.compartment_id)
+                    if compartment:
+                        ad = item.additional_details or {}
+                        val = {
+                            'id': self.get_value(item.identifier),
+                            'compartment_id': self.get_value(item.compartment_id),
+                            'name': self.get_value(ad.get('name')),
+                            'secret_id': self.get_value(ad.get('secretId')),
+                            'time_created': self.get_date(item.time_created),
+                            'lifecycle_state': self.get_value(item.lifecycle_state),
+                            'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
+                            'defined_tags': [] if item.defined_tags is None else item.defined_tags,
+                            'compartment_name': str(compartment['name']),
+                            'compartment_path': str(compartment['path']),
+                            'region_name': str(self.config['region']),
+                            'sum_info': "KMS Vault Secrets",
+                            'sum_size_gb': "1",
+                            'vault_id': self.get_value(ad.get('vaultId'))
                         }
                         cnt += 1
                         data.append(val)
@@ -19249,6 +19610,267 @@ class ShowOCIService(object):
                 data.append(val)
 
             cnt = 1
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_security_log_analytics_get_namespaces
+    ##########################################################################
+    def __load_security_log_analytics_get_namespaces(self, log_analytics_client, header, start_time):
+        namespaces = []
+        errstr = ""
+
+        try:
+            namespace_collection = log_analytics_client.list_namespaces(
+                self.get_tenancy_id(),
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+            namespaces = namespace_collection.items if namespace_collection and namespace_collection.items else []
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e):
+                self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                errstr += "a"
+            else:
+                self.__load_print_error(e)
+                errstr += "e"
+            self.__load_print_thread_cnt(header, 0, start_time, errstr)
+        except oci.exceptions.ConnectTimeout:
+            self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+            errstr += "a"
+            self.__load_print_thread_cnt(header, 0, start_time, errstr)
+        except Exception as e:
+            self.__load_print_error(e)
+            errstr += "e"
+            self.__load_print_thread_cnt(header, 0, start_time, errstr)
+
+        return [namespace for namespace in namespaces if namespace.is_onboarded], errstr
+
+    ##########################################################################
+    # __load_security_log_analytics_namespace
+    ##########################################################################
+    def __load_security_log_analytics_namespace(self, log_analytics_client):
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Log Analytics Namespaces"
+            self.__load_print_status_with_threads(header)
+
+            if not log_analytics_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            namespaces, errstr_ns = self.__load_security_log_analytics_get_namespaces(log_analytics_client, header, start_time)
+            errstr += errstr_ns
+
+            seen_namespace_ids = set()
+            for namespace in namespaces:
+                namespace_name = str(namespace.namespace_name)
+                namespace_id = namespace_name + ":" + str(self.config['region'])
+                if namespace_id in seen_namespace_ids:
+                    continue
+                seen_namespace_ids.add(namespace_id)
+
+                storage_usage = None
+                storage_active_bytes = ""
+                storage_active_gb = ""
+
+                try:
+                    storage_usage = log_analytics_client.get_storage_usage(
+                        namespace_name,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+                    storage_active_bytes = self.get_value(storage_usage.active_data_size_in_bytes)
+                    storage_active_gb = str(round(float(storage_usage.active_data_size_in_bytes) / 1024 / 1024 / 1024, 3)) if storage_usage and storage_usage.active_data_size_in_bytes else "0"
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                    else:
+                        self.__load_print_error(e)
+                        errstr += "e"
+                except Exception:
+                    pass
+
+                data.append({
+                    'id': namespace_id,
+                    'name': namespace_name,
+                    'namespace_name': namespace_name,
+                    'namespace_lifecycle_state': self.get_value(namespace.lifecycle_state),
+                    'namespace_is_onboarded': self.get_value(namespace.is_onboarded),
+                    'namespace_is_log_set_enabled': self.get_value(namespace.is_log_set_enabled),
+                    'namespace_is_data_ever_ingested': self.get_value(namespace.is_data_ever_ingested),
+                    'namespace_is_archiving_enabled': self.get_value(namespace.is_archiving_enabled),
+                    'storage_active_data_size_in_bytes': storage_active_bytes,
+                    'storage_active_data_size_in_gb': storage_active_gb,
+                    'storage_archived_data_size_in_bytes': self.get_value(storage_usage.archived_data_size_in_bytes) if storage_usage else "",
+                    'storage_recalled_archived_data_size_in_bytes': self.get_value(storage_usage.recalled_archived_data_size_in_bytes) if storage_usage else "",
+                    'sum_info': "Log Analytics Namespaces",
+                    'sum_size_gb': str(1),
+                    'compartment_name': "",
+                    'compartment_path': "",
+                    'compartment_id': self.get_tenancy_id(),
+                    'region_name': str(self.config['region'])
+                })
+                cnt += 1
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_security_log_analytics_entities
+    ##########################################################################
+    def __load_security_log_analytics_entities(self, log_analytics_client, compartments):
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Log Analytics Entities"
+            self.__load_print_status_with_threads(header)
+
+            if not log_analytics_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            namespaces, errstr_ns = self.__load_security_log_analytics_get_namespaces(log_analytics_client, header, start_time)
+            errstr += errstr_ns
+
+            for namespace in namespaces:
+                namespace_name = str(namespace.namespace_name)
+
+                # loop on all compartments
+                for compartment in compartments:
+
+                    # skip managed paas compartment
+                    if self.__if_managed_paas_compartment(compartment['name']):
+                        continue
+
+                    array = []
+                    try:
+                        array = oci.pagination.list_call_get_all_results(
+                            log_analytics_client.list_log_analytics_entities,
+                            namespace_name,
+                            compartment['id'],
+                            lifecycle_state="ACTIVE",
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
+
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e, compartment):
+                            self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                            errstr += "a"
+                            continue
+                        else:
+                            self.__load_print_error(e, compartment)
+                            errstr += "e"
+                            continue
+                    except oci.exceptions.ConnectTimeout:
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+
+                    except Exception as e:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+
+                    if self.flags.skip_threads:
+                        print(".", end="")
+
+                    # item = oci.log_analytics.models.LogAnalyticsEntitySummary
+                    for item in array:
+                        val = {
+                            'id': self.get_value(item.id),
+                            'source_id': self.get_value(item.source_id),
+                            'name': self.get_value(item.name),
+                            'display_name': self.get_value(item.name),
+                            'description': self.get_value(item.lifecycle_details),
+                            'edit_version': "",
+                            'type_name': self.get_value(item.entity_type_name),
+                            'type_display_name': self.get_value(item.entity_type_name),
+                            'is_system': "",
+                            'is_for_cloud': "",
+                            'is_secure_content': "",
+                            'is_auto_association_enabled': "",
+                            'is_auto_association_override': "",
+                            'is_timezone_override': "",
+                            'association_count': self.get_value(item.associated_sources_count),
+                            'pattern_count': "",
+                            'rule_id': "",
+                            'warning_config': "",
+                            'time_updated': self.get_date(item.time_updated),
+                            'lifecycle_state': self.get_value(item.lifecycle_state),
+                            'namespace_name': namespace_name,
+                            'namespace_lifecycle_state': self.get_value(namespace.lifecycle_state),
+                            'namespace_is_log_set_enabled': self.get_value(namespace.is_log_set_enabled),
+                            'namespace_is_data_ever_ingested': self.get_value(namespace.is_data_ever_ingested),
+                            'namespace_is_archiving_enabled': self.get_value(namespace.is_archiving_enabled),
+                            'custom_log_source': "",
+                            'parsers': [],
+                            'user_parsers': [],
+                            'oob_parsers': [],
+                            'labels': [],
+                            'entity_types': [],
+                            'source_properties': [],
+                            'parameters': [],
+                            'association_entity': [],
+                            'log_associations': [],
+                            'entity_names': [self.get_value(item.name)] if item.name else [],
+                            'entity_type_names': [self.get_value(item.entity_type_name)] if item.entity_type_name else [],
+                            'entity_type_display_names': [self.get_value(item.entity_type_name)] if item.entity_type_name else [],
+                            'log_purge': [],
+                            'endpoints': [],
+                            'entity_id': self.get_value(item.id),
+                            'entity_name': self.get_value(item.name),
+                            'entity_type_name': self.get_value(item.entity_type_name),
+                            'entity_type_internal_name': self.get_value(item.entity_type_internal_name),
+                            'management_agent_id': self.get_value(item.management_agent_id),
+                            'cloud_resource_id': self.get_value(item.cloud_resource_id),
+                            'timezone_region': self.get_value(item.timezone_region),
+                            'time_created': self.get_date(item.time_created),
+                            'time_last_discovered': self.get_date(item.time_last_discovered),
+                            'are_logs_collected': self.get_value(item.are_logs_collected),
+                            'associated_sources_count': self.get_value(item.associated_sources_count),
+                            'sum_info': "Log Analytics Entities",
+                            'sum_size_gb': str(1),
+                            'defined_tags': [] if item.defined_tags is None else item.defined_tags,
+                            'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
+                            'compartment_name': str(compartment['name']),
+                            'compartment_path': str(compartment['path']),
+                            'compartment_id': str(compartment['id']),
+                            'region_name': str(self.config['region'])
+                        }
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
             self.__load_print_thread_cnt(header, cnt, start_time, errstr)
             return data
 
@@ -21710,16 +22332,29 @@ class ShowOCIDomains(object):
             groups = self.__list_call_get_all_results(
                 identity_domain_client.list_dynamic_resource_groups,
                 attribute_sets=["all"],
+                # attributes=["id,ocid,schemas,meta,idcs_created_by,idcs_last_modified_by,idcs_prevented_operations,tags,idcs_last_upgraded_in_release,compartment_ocid,matching_rule,display_name,description,grants,dynamic_group_app_roles,freeform_tags,defined_tags"],
                 sort_by="DisplayName",
                 retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
             ).data
 
             # oci.identity_domains.models.DynamicResourceGroup
-            for var in groups:
-                if var.delete_in_progress:
+            for var_list in groups:
+                if var_list.delete_in_progress:
                     continue
                 if self.skip_threads:
                     print(".", end="")
+
+                # list does not return all attributes, querying one by one with get_dynamic_resource_group
+                # Number of dynamic group is not high thererfore this will have small impact on performance
+                var = None
+                try:
+                    var = identity_domain_client.get_dynamic_resource_group(
+                        var_list.id,
+                        attribute_sets=["all"],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+                except Exception:
+                    var = var_list
 
                 data.append({
                     'id': self.get_value(var.id),

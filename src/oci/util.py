@@ -45,11 +45,9 @@ except ImportError:
 missing_attr = object()
 
 
-def to_dict(obj):
+def to_dict(obj, redact_sensitive_fields=False):
     """Helper to flatten models into dicts for rendering.
-
     The following conversions are applied:
-
     * datetime.date, datetime.datetime, datetime.time
       are converted into ISO8601 UTC strings
     """
@@ -70,9 +68,12 @@ def to_dict(obj):
         # datetime.date doesn't have a timezone
         return obj.isoformat()
     elif isinstance(obj, abc.Mapping):
-        return {k: to_dict(v) for k, v in six.iteritems(obj)}
+        return {
+            filter_key(k): to_dict(v, redact_sensitive_fields=redact_sensitive_fields)
+            for k, v in six.iteritems(obj)
+        }
     elif isinstance(obj, abc.Iterable):
-        return [to_dict(v) for v in obj]
+        return [to_dict(v, redact_sensitive_fields=redact_sensitive_fields) for v in obj]
     # Not a string, datetime, dict, list, or model - return directly
     elif not hasattr(obj, "swagger_types"):
         return obj
@@ -82,19 +83,46 @@ def to_dict(obj):
     for key in six.iterkeys(obj.swagger_types):
         value = getattr(obj, key, missing_attr)
         if value is not missing_attr:
-            as_dict[key] = to_dict(value)
+            as_dict[filter_key(key)] = to_dict(
+                value,
+                redact_sensitive_fields=redact_sensitive_fields
+            )
+    if redact_sensitive_fields:
+        for path in getattr(obj, "_redacted_field_paths", []):
+            redact_password_field(as_dict, path)
     return as_dict
+
+
+# Serialize on the wire as 'self' because self is a reserved word in Python
+def filter_key(key):
+    # Note 'self_uri' is used by oci.dns.models.Zone
+    return 'self' if key in ['_self', 'self_uri'] else key
 
 
 def formatted_flat_dict(model):
     """Returns a string of the model flattened as a dict, sorted"""
-    as_dict = to_dict(model)
+    as_dict = to_dict(model, redact_sensitive_fields=True)
     return json.dumps(
         as_dict,
         indent=2,
         sort_keys=True,
         ensure_ascii=False
     )
+
+
+def redact_password_field(value, path):
+    if not path:
+        return '<redacted>'
+    key = path[0]
+    if key == '*' and isinstance(value, list):
+        for index, item in enumerate(value):
+            value[index] = redact_password_field(item, path[1:])
+    elif key == '*' and isinstance(value, dict):
+        for field in value:
+            value[field] = redact_password_field(value[field], path[1:])
+    elif isinstance(value, dict) and key in value:
+        value[key] = redact_password_field(value[key], path[1:])
+    return value
 
 
 def value_allowed_none_or_none_sentinel(value_to_test, allowed_values):

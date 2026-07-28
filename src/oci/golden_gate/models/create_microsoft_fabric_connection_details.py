@@ -23,7 +23,7 @@ class CreateMicrosoftFabricConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateMicrosoftFabricConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
         :type connection_type: str
 
         :param display_name:
@@ -265,7 +265,9 @@ class CreateMicrosoftFabricConnectionDetails(CreateConnectionDetails):
         """
         Gets the client_secret of this CreateMicrosoftFabricConnectionDetails.
         Client secret associated with the client id.
-        Deprecated: This field is deprecated and replaced by \"clientSecretSecretId\". This field will be removed after February 15 2026.
+        Deprecated: This field is deprecated and replaced by \"clientSecretSecretId\".
+        This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
 
         :return: The client_secret of this CreateMicrosoftFabricConnectionDetails.
@@ -278,7 +280,9 @@ class CreateMicrosoftFabricConnectionDetails(CreateConnectionDetails):
         """
         Sets the client_secret of this CreateMicrosoftFabricConnectionDetails.
         Client secret associated with the client id.
-        Deprecated: This field is deprecated and replaced by \"clientSecretSecretId\". This field will be removed after February 15 2026.
+        Deprecated: This field is deprecated and replaced by \"clientSecretSecretId\".
+        This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
 
         :param client_secret: The client_secret of this CreateMicrosoftFabricConnectionDetails.

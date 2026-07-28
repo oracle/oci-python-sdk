@@ -23,7 +23,7 @@ class AzureDataLakeStorageIcebergStorage(IcebergStorage):
 
         :param storage_type:
             The value to assign to the storage_type property of this AzureDataLakeStorageIcebergStorage.
-            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE"
+            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"
         :type storage_type: str
 
         :param account_name:

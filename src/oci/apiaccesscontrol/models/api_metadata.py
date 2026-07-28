@@ -78,6 +78,10 @@ class ApiMetadata(object):
             The value to assign to the fields property of this ApiMetadata.
         :type fields: list[str]
 
+        :param attributes:
+            The value to assign to the attributes property of this ApiMetadata.
+        :type attributes: list[str]
+
         :param time_created:
             The value to assign to the time_created property of this ApiMetadata.
         :type time_created: datetime
@@ -121,6 +125,7 @@ class ApiMetadata(object):
             'entity_type': 'str',
             'api_name': 'str',
             'fields': 'list[str]',
+            'attributes': 'list[str]',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'time_deleted': 'datetime',
@@ -138,6 +143,7 @@ class ApiMetadata(object):
             'entity_type': 'entityType',
             'api_name': 'apiName',
             'fields': 'fields',
+            'attributes': 'attributes',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'time_deleted': 'timeDeleted',
@@ -154,6 +160,7 @@ class ApiMetadata(object):
         self._entity_type = None
         self._api_name = None
         self._fields = None
+        self._attributes = None
         self._time_created = None
         self._time_updated = None
         self._time_deleted = None
@@ -315,7 +322,7 @@ class ApiMetadata(object):
     def fields(self):
         """
         Gets the fields of this ApiMetadata.
-        List of the fields that is use while calling post or put for the data.
+        deprecated; Use attributes field instead.
 
 
         :return: The fields of this ApiMetadata.
@@ -327,13 +334,37 @@ class ApiMetadata(object):
     def fields(self, fields):
         """
         Sets the fields of this ApiMetadata.
-        List of the fields that is use while calling post or put for the data.
+        deprecated; Use attributes field instead.
 
 
         :param fields: The fields of this ApiMetadata.
         :type: list[str]
         """
         self._fields = fields
+
+    @property
+    def attributes(self):
+        """
+        Gets the attributes of this ApiMetadata.
+        List of the fields that is use while calling post or put for the data.
+
+
+        :return: The attributes of this ApiMetadata.
+        :rtype: list[str]
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """
+        Sets the attributes of this ApiMetadata.
+        List of the fields that is use while calling post or put for the data.
+
+
+        :param attributes: The attributes of this ApiMetadata.
+        :type: list[str]
+        """
+        self._attributes = attributes
 
     @property
     def time_created(self):

@@ -153,6 +153,26 @@ class VolumeGroupBackup(object):
             The value to assign to the source_volume_group_backup_id property of this VolumeGroupBackup.
         :type source_volume_group_backup_id: str
 
+        :param time_retention_expires_at:
+            The value to assign to the time_retention_expires_at property of this VolumeGroupBackup.
+        :type time_retention_expires_at: datetime
+
+        :param retention_period:
+            The value to assign to the retention_period property of this VolumeGroupBackup.
+        :type retention_period: oci.core.models.RetentionDuration
+
+        :param is_prevent_deletion_enabled:
+            The value to assign to the is_prevent_deletion_enabled property of this VolumeGroupBackup.
+        :type is_prevent_deletion_enabled: bool
+
+        :param is_retention_lock_enabled:
+            The value to assign to the is_retention_lock_enabled property of this VolumeGroupBackup.
+        :type is_retention_lock_enabled: bool
+
+        :param is_indefinite_retention_enabled:
+            The value to assign to the is_indefinite_retention_enabled property of this VolumeGroupBackup.
+        :type is_indefinite_retention_enabled: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -172,7 +192,12 @@ class VolumeGroupBackup(object):
             'unique_size_in_gbs': 'int',
             'volume_backup_ids': 'list[str]',
             'volume_group_id': 'str',
-            'source_volume_group_backup_id': 'str'
+            'source_volume_group_backup_id': 'str',
+            'time_retention_expires_at': 'datetime',
+            'retention_period': 'RetentionDuration',
+            'is_prevent_deletion_enabled': 'bool',
+            'is_retention_lock_enabled': 'bool',
+            'is_indefinite_retention_enabled': 'bool'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -192,7 +217,12 @@ class VolumeGroupBackup(object):
             'unique_size_in_gbs': 'uniqueSizeInGbs',
             'volume_backup_ids': 'volumeBackupIds',
             'volume_group_id': 'volumeGroupId',
-            'source_volume_group_backup_id': 'sourceVolumeGroupBackupId'
+            'source_volume_group_backup_id': 'sourceVolumeGroupBackupId',
+            'time_retention_expires_at': 'timeRetentionExpiresAt',
+            'retention_period': 'retentionPeriod',
+            'is_prevent_deletion_enabled': 'isPreventDeletionEnabled',
+            'is_retention_lock_enabled': 'isRetentionLockEnabled',
+            'is_indefinite_retention_enabled': 'isIndefiniteRetentionEnabled'
         }
         self._compartment_id = None
         self._defined_tags = None
@@ -212,6 +242,11 @@ class VolumeGroupBackup(object):
         self._volume_backup_ids = None
         self._volume_group_id = None
         self._source_volume_group_backup_id = None
+        self._time_retention_expires_at = None
+        self._retention_period = None
+        self._is_prevent_deletion_enabled = None
+        self._is_retention_lock_enabled = None
+        self._is_indefinite_retention_enabled = None
 
     @property
     def compartment_id(self):
@@ -720,6 +755,122 @@ class VolumeGroupBackup(object):
         :type: str
         """
         self._source_volume_group_backup_id = source_volume_group_backup_id
+
+    @property
+    def time_retention_expires_at(self):
+        """
+        Gets the time_retention_expires_at of this VolumeGroupBackup.
+        The date and time when a backup\u2019s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+
+
+        :return: The time_retention_expires_at of this VolumeGroupBackup.
+        :rtype: datetime
+        """
+        return self._time_retention_expires_at
+
+    @time_retention_expires_at.setter
+    def time_retention_expires_at(self, time_retention_expires_at):
+        """
+        Sets the time_retention_expires_at of this VolumeGroupBackup.
+        The date and time when a backup\u2019s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+
+
+        :param time_retention_expires_at: The time_retention_expires_at of this VolumeGroupBackup.
+        :type: datetime
+        """
+        self._time_retention_expires_at = time_retention_expires_at
+
+    @property
+    def retention_period(self):
+        """
+        Gets the retention_period of this VolumeGroupBackup.
+
+        :return: The retention_period of this VolumeGroupBackup.
+        :rtype: oci.core.models.RetentionDuration
+        """
+        return self._retention_period
+
+    @retention_period.setter
+    def retention_period(self, retention_period):
+        """
+        Sets the retention_period of this VolumeGroupBackup.
+
+        :param retention_period: The retention_period of this VolumeGroupBackup.
+        :type: oci.core.models.RetentionDuration
+        """
+        self._retention_period = retention_period
+
+    @property
+    def is_prevent_deletion_enabled(self):
+        """
+        Gets the is_prevent_deletion_enabled of this VolumeGroupBackup.
+        Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+
+
+        :return: The is_prevent_deletion_enabled of this VolumeGroupBackup.
+        :rtype: bool
+        """
+        return self._is_prevent_deletion_enabled
+
+    @is_prevent_deletion_enabled.setter
+    def is_prevent_deletion_enabled(self, is_prevent_deletion_enabled):
+        """
+        Sets the is_prevent_deletion_enabled of this VolumeGroupBackup.
+        Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+
+
+        :param is_prevent_deletion_enabled: The is_prevent_deletion_enabled of this VolumeGroupBackup.
+        :type: bool
+        """
+        self._is_prevent_deletion_enabled = is_prevent_deletion_enabled
+
+    @property
+    def is_retention_lock_enabled(self):
+        """
+        Gets the is_retention_lock_enabled of this VolumeGroupBackup.
+        feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+
+
+        :return: The is_retention_lock_enabled of this VolumeGroupBackup.
+        :rtype: bool
+        """
+        return self._is_retention_lock_enabled
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, is_retention_lock_enabled):
+        """
+        Sets the is_retention_lock_enabled of this VolumeGroupBackup.
+        feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+
+
+        :param is_retention_lock_enabled: The is_retention_lock_enabled of this VolumeGroupBackup.
+        :type: bool
+        """
+        self._is_retention_lock_enabled = is_retention_lock_enabled
+
+    @property
+    def is_indefinite_retention_enabled(self):
+        """
+        Gets the is_indefinite_retention_enabled of this VolumeGroupBackup.
+        feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+
+
+        :return: The is_indefinite_retention_enabled of this VolumeGroupBackup.
+        :rtype: bool
+        """
+        return self._is_indefinite_retention_enabled
+
+    @is_indefinite_retention_enabled.setter
+    def is_indefinite_retention_enabled(self, is_indefinite_retention_enabled):
+        """
+        Sets the is_indefinite_retention_enabled of this VolumeGroupBackup.
+        feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+
+
+        :param is_indefinite_retention_enabled: The is_indefinite_retention_enabled of this VolumeGroupBackup.
+        :type: bool
+        """
+        self._is_indefinite_retention_enabled = is_indefinite_retention_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

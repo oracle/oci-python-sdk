@@ -91,10 +91,18 @@ from .backup_destination_details_summary import BackupDestinationDetailsSummary
 from .backup_destination_properties import BackupDestinationProperties
 from .backup_destination_summary import BackupDestinationSummary
 from .backup_summary import BackupSummary
+from .basecc_vm_cluster import BaseccVmCluster
+from .basecc_vm_cluster_summary import BaseccVmClusterSummary
+from .basecc_vm_cluster_update import BaseccVmClusterUpdate
+from .basecc_vm_cluster_update_details import BaseccVmClusterUpdateDetails
+from .basecc_vm_cluster_update_history_entry import BaseccVmClusterUpdateHistoryEntry
+from .basecc_vm_cluster_update_history_entry_summary import BaseccVmClusterUpdateHistoryEntrySummary
+from .basecc_vm_cluster_update_summary import BaseccVmClusterUpdateSummary
 from .cancel_execution_window_details import CancelExecutionWindowDetails
 from .change_autonomous_database_software_image_compartment_details import ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
 from .change_autonomous_database_subscription_details import ChangeAutonomousDatabaseSubscriptionDetails
 from .change_autonomous_vm_cluster_compartment_details import ChangeAutonomousVmClusterCompartmentDetails
+from .change_basecc_vm_cluster_compartment_details import ChangeBaseccVmClusterCompartmentDetails
 from .change_cloud_autonomous_vm_cluster_compartment_details import ChangeCloudAutonomousVmClusterCompartmentDetails
 from .change_cloud_autonomous_vm_cluster_subscription_details import ChangeCloudAutonomousVmClusterSubscriptionDetails
 from .change_cloud_db_system_subscription_details import ChangeCloudDbSystemSubscriptionDetails
@@ -164,6 +172,7 @@ from .create_autonomous_database_software_image_details import CreateAutonomousD
 from .create_autonomous_vm_cluster_details import CreateAutonomousVmClusterDetails
 from .create_backup_destination_details import CreateBackupDestinationDetails
 from .create_backup_details import CreateBackupDetails
+from .create_basecc_vm_cluster_details import CreateBaseccVmClusterDetails
 from .create_cloud_autonomous_vm_cluster_details import CreateCloudAutonomousVmClusterDetails
 from .create_cloud_exadata_infrastructure_details import CreateCloudExadataInfrastructureDetails
 from .create_cloud_vm_cluster_details import CreateCloudVmClusterDetails
@@ -328,6 +337,7 @@ from .exadata_infrastructure_summary import ExadataInfrastructureSummary
 from .exadata_infrastructure_un_allocated_resources import ExadataInfrastructureUnAllocatedResources
 from .exadata_iorm_config import ExadataIormConfig
 from .exadata_iorm_config_update_details import ExadataIormConfigUpdateDetails
+from .exadata_live_image_version_details import ExadataLiveImageVersionDetails
 from .exadb_vm_cluster import ExadbVmCluster
 from .exadb_vm_cluster_storage_details import ExadbVmClusterStorageDetails
 from .exadb_vm_cluster_summary import ExadbVmClusterSummary
@@ -445,6 +455,7 @@ from .refreshable_clone_summary import RefreshableCloneSummary
 from .register_autonomous_database_data_safe_details import RegisterAutonomousDatabaseDataSafeDetails
 from .register_cloud_autonomous_vm_cluster_pkcs_details import RegisterCloudAutonomousVmClusterPkcsDetails
 from .register_cloud_vm_cluster_pkcs_details import RegisterCloudVmClusterPkcsDetails
+from .register_exadb_vm_cluster_pkcs_details import RegisterExadbVmClusterPkcsDetails
 from .reinstate_data_guard_association_details import ReinstateDataGuardAssociationDetails
 from .reinstate_data_guard_details import ReinstateDataGuardDetails
 from .remote_clone_pluggable_database_details import RemoteClonePluggableDatabaseDetails
@@ -500,6 +511,7 @@ from .undelete_autonomous_database_details import UndeleteAutonomousDatabaseDeta
 from .unmount_dbnode_snapshot_details import UnmountDbnodeSnapshotDetails
 from .unregister_cloud_autonomous_vm_cluster_pkcs_details import UnregisterCloudAutonomousVmClusterPkcsDetails
 from .unregister_cloud_vm_cluster_pkcs_details import UnregisterCloudVmClusterPkcsDetails
+from .unregister_exadb_vm_cluster_pkcs_details import UnregisterExadbVmClusterPkcsDetails
 from .update import Update
 from .update_advanced_cluster_file_system_details import UpdateAdvancedClusterFileSystemDetails
 from .update_autonomous_container_database_data_guard_association_details import UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
@@ -512,6 +524,7 @@ from .update_autonomous_exadata_infrastructure_details import UpdateAutonomousEx
 from .update_autonomous_vm_cluster_details import UpdateAutonomousVmClusterDetails
 from .update_backup_destination_details import UpdateBackupDestinationDetails
 from .update_backup_details import UpdateBackupDetails
+from .update_basecc_vm_cluster_details import UpdateBaseccVmClusterDetails
 from .update_cloud_autonomous_vm_cluster_details import UpdateCloudAutonomousVmClusterDetails
 from .update_cloud_exadata_infrastructure_details import UpdateCloudExadataInfrastructureDetails
 from .update_cloud_vm_cluster_details import UpdateCloudVmClusterDetails
@@ -657,10 +670,18 @@ database_type_mapping = {
     "BackupDestinationProperties": BackupDestinationProperties,
     "BackupDestinationSummary": BackupDestinationSummary,
     "BackupSummary": BackupSummary,
+    "BaseccVmCluster": BaseccVmCluster,
+    "BaseccVmClusterSummary": BaseccVmClusterSummary,
+    "BaseccVmClusterUpdate": BaseccVmClusterUpdate,
+    "BaseccVmClusterUpdateDetails": BaseccVmClusterUpdateDetails,
+    "BaseccVmClusterUpdateHistoryEntry": BaseccVmClusterUpdateHistoryEntry,
+    "BaseccVmClusterUpdateHistoryEntrySummary": BaseccVmClusterUpdateHistoryEntrySummary,
+    "BaseccVmClusterUpdateSummary": BaseccVmClusterUpdateSummary,
     "CancelExecutionWindowDetails": CancelExecutionWindowDetails,
     "ChangeAutonomousDatabaseSoftwareImageCompartmentDetails": ChangeAutonomousDatabaseSoftwareImageCompartmentDetails,
     "ChangeAutonomousDatabaseSubscriptionDetails": ChangeAutonomousDatabaseSubscriptionDetails,
     "ChangeAutonomousVmClusterCompartmentDetails": ChangeAutonomousVmClusterCompartmentDetails,
+    "ChangeBaseccVmClusterCompartmentDetails": ChangeBaseccVmClusterCompartmentDetails,
     "ChangeCloudAutonomousVmClusterCompartmentDetails": ChangeCloudAutonomousVmClusterCompartmentDetails,
     "ChangeCloudAutonomousVmClusterSubscriptionDetails": ChangeCloudAutonomousVmClusterSubscriptionDetails,
     "ChangeCloudDbSystemSubscriptionDetails": ChangeCloudDbSystemSubscriptionDetails,
@@ -730,6 +751,7 @@ database_type_mapping = {
     "CreateAutonomousVmClusterDetails": CreateAutonomousVmClusterDetails,
     "CreateBackupDestinationDetails": CreateBackupDestinationDetails,
     "CreateBackupDetails": CreateBackupDetails,
+    "CreateBaseccVmClusterDetails": CreateBaseccVmClusterDetails,
     "CreateCloudAutonomousVmClusterDetails": CreateCloudAutonomousVmClusterDetails,
     "CreateCloudExadataInfrastructureDetails": CreateCloudExadataInfrastructureDetails,
     "CreateCloudVmClusterDetails": CreateCloudVmClusterDetails,
@@ -894,6 +916,7 @@ database_type_mapping = {
     "ExadataInfrastructureUnAllocatedResources": ExadataInfrastructureUnAllocatedResources,
     "ExadataIormConfig": ExadataIormConfig,
     "ExadataIormConfigUpdateDetails": ExadataIormConfigUpdateDetails,
+    "ExadataLiveImageVersionDetails": ExadataLiveImageVersionDetails,
     "ExadbVmCluster": ExadbVmCluster,
     "ExadbVmClusterStorageDetails": ExadbVmClusterStorageDetails,
     "ExadbVmClusterSummary": ExadbVmClusterSummary,
@@ -1011,6 +1034,7 @@ database_type_mapping = {
     "RegisterAutonomousDatabaseDataSafeDetails": RegisterAutonomousDatabaseDataSafeDetails,
     "RegisterCloudAutonomousVmClusterPkcsDetails": RegisterCloudAutonomousVmClusterPkcsDetails,
     "RegisterCloudVmClusterPkcsDetails": RegisterCloudVmClusterPkcsDetails,
+    "RegisterExadbVmClusterPkcsDetails": RegisterExadbVmClusterPkcsDetails,
     "ReinstateDataGuardAssociationDetails": ReinstateDataGuardAssociationDetails,
     "ReinstateDataGuardDetails": ReinstateDataGuardDetails,
     "RemoteClonePluggableDatabaseDetails": RemoteClonePluggableDatabaseDetails,
@@ -1066,6 +1090,7 @@ database_type_mapping = {
     "UnmountDbnodeSnapshotDetails": UnmountDbnodeSnapshotDetails,
     "UnregisterCloudAutonomousVmClusterPkcsDetails": UnregisterCloudAutonomousVmClusterPkcsDetails,
     "UnregisterCloudVmClusterPkcsDetails": UnregisterCloudVmClusterPkcsDetails,
+    "UnregisterExadbVmClusterPkcsDetails": UnregisterExadbVmClusterPkcsDetails,
     "Update": Update,
     "UpdateAdvancedClusterFileSystemDetails": UpdateAdvancedClusterFileSystemDetails,
     "UpdateAutonomousContainerDatabaseDataGuardAssociationDetails": UpdateAutonomousContainerDatabaseDataGuardAssociationDetails,
@@ -1078,6 +1103,7 @@ database_type_mapping = {
     "UpdateAutonomousVmClusterDetails": UpdateAutonomousVmClusterDetails,
     "UpdateBackupDestinationDetails": UpdateBackupDestinationDetails,
     "UpdateBackupDetails": UpdateBackupDetails,
+    "UpdateBaseccVmClusterDetails": UpdateBaseccVmClusterDetails,
     "UpdateCloudAutonomousVmClusterDetails": UpdateCloudAutonomousVmClusterDetails,
     "UpdateCloudExadataInfrastructureDetails": UpdateCloudExadataInfrastructureDetails,
     "UpdateCloudVmClusterDetails": UpdateCloudVmClusterDetails,

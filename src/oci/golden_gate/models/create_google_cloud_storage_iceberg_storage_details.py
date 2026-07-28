@@ -23,7 +23,7 @@ class CreateGoogleCloudStorageIcebergStorageDetails(CreateIcebergStorageDetails)
 
         :param storage_type:
             The value to assign to the storage_type property of this CreateGoogleCloudStorageIcebergStorageDetails.
-            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE"
+            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"
         :type storage_type: str
 
         :param bucket:
@@ -155,7 +155,9 @@ class CreateGoogleCloudStorageIcebergStorageDetails(CreateIcebergStorageDetails)
         Gets the service_account_key_file of this CreateGoogleCloudStorageIcebergStorageDetails.
         The base64 encoded content of the service account key file containing
         the credentials required to use Google Cloud Storage.
-        Deprecated: This field is deprecated and replaced by \"serviceAccountKeyFileSecretId\". This field will be removed after February 15 2026.
+        Deprecated: This field is deprecated and replaced by \"serviceAccountKeyFileSecretId\".
+        This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
 
         :return: The service_account_key_file of this CreateGoogleCloudStorageIcebergStorageDetails.
@@ -169,7 +171,9 @@ class CreateGoogleCloudStorageIcebergStorageDetails(CreateIcebergStorageDetails)
         Sets the service_account_key_file of this CreateGoogleCloudStorageIcebergStorageDetails.
         The base64 encoded content of the service account key file containing
         the credentials required to use Google Cloud Storage.
-        Deprecated: This field is deprecated and replaced by \"serviceAccountKeyFileSecretId\". This field will be removed after February 15 2026.
+        Deprecated: This field is deprecated and replaced by \"serviceAccountKeyFileSecretId\".
+        This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
 
         :param service_account_key_file: The service_account_key_file of this CreateGoogleCloudStorageIcebergStorageDetails.

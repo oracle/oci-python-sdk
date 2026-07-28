@@ -23,7 +23,7 @@ class OracleConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this OracleConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
         :type connection_type: str
 
         :param id:
@@ -369,7 +369,7 @@ class OracleConnectionSummary(ConnectionSummary):
         The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
         In this case, the default is REDIRECT.
 
-        Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+        Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
 
 
         :return: The session_mode of this OracleConnectionSummary.
@@ -390,7 +390,7 @@ class OracleConnectionSummary(ConnectionSummary):
         The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
         In this case, the default is REDIRECT.
 
-        Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+        Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
 
 
         :param session_mode: The session_mode of this OracleConnectionSummary.

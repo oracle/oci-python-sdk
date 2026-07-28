@@ -87,7 +87,7 @@ def build_user_agent(extra=""):
 
 
 def utc_now():
-    return " " + str(datetime.utcnow()) + ": "
+    return " " + str(datetime.now(timezone.utc)) + ": "
 
 
 def _get_propagation_request_id_file_path():

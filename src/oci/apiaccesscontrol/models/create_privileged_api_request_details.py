@@ -169,7 +169,7 @@ class CreatePrivilegedApiRequestDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreatePrivilegedApiRequestDetails.
+        **[Required]** Gets the compartment_id of this CreatePrivilegedApiRequestDetails.
         The `OCID`__ of the compartment.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm

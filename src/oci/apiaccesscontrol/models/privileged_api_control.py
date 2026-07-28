@@ -78,6 +78,10 @@ class PrivilegedApiControl(object):
             The value to assign to the approver_group_id_list property of this PrivilegedApiControl.
         :type approver_group_id_list: list[str]
 
+        :param approver_group_level_list:
+            The value to assign to the approver_group_level_list property of this PrivilegedApiControl.
+        :type approver_group_level_list: list[oci.apiaccesscontrol.models.ApproverGroupLevel]
+
         :param resource_type:
             The value to assign to the resource_type property of this PrivilegedApiControl.
         :type resource_type: str
@@ -144,6 +148,7 @@ class PrivilegedApiControl(object):
             'description': 'str',
             'notification_topic_id': 'str',
             'approver_group_id_list': 'list[str]',
+            'approver_group_level_list': 'list[ApproverGroupLevel]',
             'resource_type': 'str',
             'resources': 'list[str]',
             'privileged_operation_list': 'list[PrivilegedApiDetails]',
@@ -166,6 +171,7 @@ class PrivilegedApiControl(object):
             'description': 'description',
             'notification_topic_id': 'notificationTopicId',
             'approver_group_id_list': 'approverGroupIdList',
+            'approver_group_level_list': 'approverGroupLevelList',
             'resource_type': 'resourceType',
             'resources': 'resources',
             'privileged_operation_list': 'privilegedOperationList',
@@ -187,6 +193,7 @@ class PrivilegedApiControl(object):
         self._description = None
         self._notification_topic_id = None
         self._approver_group_id_list = None
+        self._approver_group_level_list = None
         self._resource_type = None
         self._resources = None
         self._privileged_operation_list = None
@@ -355,6 +362,30 @@ class PrivilegedApiControl(object):
         self._approver_group_id_list = approver_group_id_list
 
     @property
+    def approver_group_level_list(self):
+        """
+        Gets the approver_group_level_list of this PrivilegedApiControl.
+        List of Group containing the levels at which the users belonging to the group can authorize.
+
+
+        :return: The approver_group_level_list of this PrivilegedApiControl.
+        :rtype: list[oci.apiaccesscontrol.models.ApproverGroupLevel]
+        """
+        return self._approver_group_level_list
+
+    @approver_group_level_list.setter
+    def approver_group_level_list(self, approver_group_level_list):
+        """
+        Sets the approver_group_level_list of this PrivilegedApiControl.
+        List of Group containing the levels at which the users belonging to the group can authorize.
+
+
+        :param approver_group_level_list: The approver_group_level_list of this PrivilegedApiControl.
+        :type: list[oci.apiaccesscontrol.models.ApproverGroupLevel]
+        """
+        self._approver_group_level_list = approver_group_level_list
+
+    @property
     def resource_type(self):
         """
         Gets the resource_type of this PrivilegedApiControl.
@@ -455,7 +486,6 @@ class PrivilegedApiControl(object):
         """
         **[Required]** Gets the time_created of this PrivilegedApiControl.
         The date and time the PrivilegedApiControl was created, in the format defined by `RFC 3339`__.
-
         Example: `2016-08-25T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -471,7 +501,6 @@ class PrivilegedApiControl(object):
         """
         Sets the time_created of this PrivilegedApiControl.
         The date and time the PrivilegedApiControl was created, in the format defined by `RFC 3339`__.
-
         Example: `2016-08-25T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339

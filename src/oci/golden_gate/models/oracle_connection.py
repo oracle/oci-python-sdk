@@ -32,8 +32,16 @@ class OracleConnection(Connection):
     TECHNOLOGY_TYPE_ORACLE_EXADATA = "ORACLE_EXADATA"
 
     #: A constant which can be used with the technology_type property of a OracleConnection.
+    #: This constant has a value of "ORACLE_EXADATA_EXASCALE"
+    TECHNOLOGY_TYPE_ORACLE_EXADATA_EXASCALE = "ORACLE_EXADATA_EXASCALE"
+
+    #: A constant which can be used with the technology_type property of a OracleConnection.
     #: This constant has a value of "ORACLE_EXADATA_DATABASE_AT_AZURE"
     TECHNOLOGY_TYPE_ORACLE_EXADATA_DATABASE_AT_AZURE = "ORACLE_EXADATA_DATABASE_AT_AZURE"
+
+    #: A constant which can be used with the technology_type property of a OracleConnection.
+    #: This constant has a value of "ORACLE_EXADATA_EXASCALE_AT_AZURE"
+    TECHNOLOGY_TYPE_ORACLE_EXADATA_EXASCALE_AT_AZURE = "ORACLE_EXADATA_EXASCALE_AT_AZURE"
 
     #: A constant which can be used with the technology_type property of a OracleConnection.
     #: This constant has a value of "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE"
@@ -42,6 +50,10 @@ class OracleConnection(Connection):
     #: A constant which can be used with the technology_type property of a OracleConnection.
     #: This constant has a value of "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD"
     TECHNOLOGY_TYPE_ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD = "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD"
+
+    #: A constant which can be used with the technology_type property of a OracleConnection.
+    #: This constant has a value of "ORACLE_EXADATA_EXASCALE_AT_GOOGLE_CLOUD"
+    TECHNOLOGY_TYPE_ORACLE_EXADATA_EXASCALE_AT_GOOGLE_CLOUD = "ORACLE_EXADATA_EXASCALE_AT_GOOGLE_CLOUD"
 
     #: A constant which can be used with the technology_type property of a OracleConnection.
     #: This constant has a value of "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD"
@@ -79,7 +91,7 @@ class OracleConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this OracleConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -113,7 +125,7 @@ class OracleConnection(Connection):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this OracleConnection.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -177,7 +189,7 @@ class OracleConnection(Connection):
 
         :param technology_type:
             The value to assign to the technology_type property of this OracleConnection.
-            Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_EXASCALE", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_EXADATA_EXASCALE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_EXASCALE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -326,7 +338,7 @@ class OracleConnection(Connection):
         **[Required]** Gets the technology_type of this OracleConnection.
         The Oracle technology type.
 
-        Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_EXASCALE", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_EXADATA_EXASCALE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_EXASCALE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -345,7 +357,7 @@ class OracleConnection(Connection):
         :param technology_type: The technology_type of this OracleConnection.
         :type: str
         """
-        allowed_values = ["AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS"]
+        allowed_values = ["AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_EXASCALE", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_EXADATA_EXASCALE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_EXASCALE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type
@@ -447,7 +459,7 @@ class OracleConnection(Connection):
         The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
         In this case, the default is REDIRECT.
 
-        Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+        Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
 
         Allowed values for this property are: "DIRECT", "REDIRECT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -471,7 +483,7 @@ class OracleConnection(Connection):
         The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener.
         In this case, the default is REDIRECT.
 
-        Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+        Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
 
 
         :param session_mode: The session_mode of this OracleConnection.

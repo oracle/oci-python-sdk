@@ -27,20 +27,30 @@ class IcebergStorageSummary(object):
     #: This constant has a value of "AZURE_DATA_LAKE_STORAGE"
     STORAGE_TYPE_AZURE_DATA_LAKE_STORAGE = "AZURE_DATA_LAKE_STORAGE"
 
+    #: A constant which can be used with the storage_type property of a IcebergStorageSummary.
+    #: This constant has a value of "NONE"
+    STORAGE_TYPE_NONE = "NONE"
+
+    #: A constant which can be used with the storage_type property of a IcebergStorageSummary.
+    #: This constant has a value of "OCI_OBJECT_STORAGE_S3_API"
+    STORAGE_TYPE_OCI_OBJECT_STORAGE_S3_API = "OCI_OBJECT_STORAGE_S3_API"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IcebergStorageSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.golden_gate.models.GoogleCloudStorageIcebergStorageSummary`
+        * :class:`~oci.golden_gate.models.OciObjectStorageS3ApiIcebergStorageSummary`
         * :class:`~oci.golden_gate.models.AzureDataLakeStorageIcebergStorageSummary`
+        * :class:`~oci.golden_gate.models.NoIcebergStorageSummary`
         * :class:`~oci.golden_gate.models.AmazonS3IcebergStorageSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param storage_type:
             The value to assign to the storage_type property of this IcebergStorageSummary.
-            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type storage_type: str
 
@@ -64,8 +74,14 @@ class IcebergStorageSummary(object):
         if type == 'GOOGLE_CLOUD_STORAGE':
             return 'GoogleCloudStorageIcebergStorageSummary'
 
+        if type == 'OCI_OBJECT_STORAGE_S3_API':
+            return 'OciObjectStorageS3ApiIcebergStorageSummary'
+
         if type == 'AZURE_DATA_LAKE_STORAGE':
             return 'AzureDataLakeStorageIcebergStorageSummary'
+
+        if type == 'NONE':
+            return 'NoIcebergStorageSummary'
 
         if type == 'AMAZON_S3':
             return 'AmazonS3IcebergStorageSummary'
@@ -78,7 +94,7 @@ class IcebergStorageSummary(object):
         **[Required]** Gets the storage_type of this IcebergStorageSummary.
         The storage type used in the Iceberg connection.
 
-        Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -97,7 +113,7 @@ class IcebergStorageSummary(object):
         :param storage_type: The storage_type of this IcebergStorageSummary.
         :type: str
         """
-        allowed_values = ["AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE"]
+        allowed_values = ["AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"]
         if not value_allowed_none_or_none_sentinel(storage_type, allowed_values):
             storage_type = 'UNKNOWN_ENUM_VALUE'
         self._storage_type = storage_type

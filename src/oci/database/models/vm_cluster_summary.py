@@ -154,6 +154,14 @@ class VmClusterSummary(object):
             The value to assign to the sparse_storage_percentage property of this VmClusterSummary.
         :type sparse_storage_percentage: int
 
+        :param live_image_version_details:
+            The value to assign to the live_image_version_details property of this VmClusterSummary.
+        :type live_image_version_details: oci.database.models.ExadataLiveImageVersionDetails
+
+        :param oracle_linux_version:
+            The value to assign to the oracle_linux_version property of this VmClusterSummary.
+        :type oracle_linux_version: str
+
         :param vm_cluster_network_id:
             The value to assign to the vm_cluster_network_id property of this VmClusterSummary.
         :type vm_cluster_network_id: str
@@ -290,6 +298,8 @@ class VmClusterSummary(object):
             'data_storage_percentage': 'int',
             'reco_storage_percentage': 'int',
             'sparse_storage_percentage': 'int',
+            'live_image_version_details': 'ExadataLiveImageVersionDetails',
+            'oracle_linux_version': 'str',
             'vm_cluster_network_id': 'str',
             'cpus_enabled': 'int',
             'ocpus_enabled': 'float',
@@ -333,6 +343,8 @@ class VmClusterSummary(object):
             'data_storage_percentage': 'dataStoragePercentage',
             'reco_storage_percentage': 'recoStoragePercentage',
             'sparse_storage_percentage': 'sparseStoragePercentage',
+            'live_image_version_details': 'liveImageVersionDetails',
+            'oracle_linux_version': 'oracleLinuxVersion',
             'vm_cluster_network_id': 'vmClusterNetworkId',
             'cpus_enabled': 'cpusEnabled',
             'ocpus_enabled': 'ocpusEnabled',
@@ -375,6 +387,8 @@ class VmClusterSummary(object):
         self._data_storage_percentage = None
         self._reco_storage_percentage = None
         self._sparse_storage_percentage = None
+        self._live_image_version_details = None
+        self._oracle_linux_version = None
         self._vm_cluster_network_id = None
         self._cpus_enabled = None
         self._ocpus_enabled = None
@@ -776,6 +790,50 @@ class VmClusterSummary(object):
         :type: int
         """
         self._sparse_storage_percentage = sparse_storage_percentage
+
+    @property
+    def live_image_version_details(self):
+        """
+        Gets the live_image_version_details of this VmClusterSummary.
+
+        :return: The live_image_version_details of this VmClusterSummary.
+        :rtype: oci.database.models.ExadataLiveImageVersionDetails
+        """
+        return self._live_image_version_details
+
+    @live_image_version_details.setter
+    def live_image_version_details(self, live_image_version_details):
+        """
+        Sets the live_image_version_details of this VmClusterSummary.
+
+        :param live_image_version_details: The live_image_version_details of this VmClusterSummary.
+        :type: oci.database.models.ExadataLiveImageVersionDetails
+        """
+        self._live_image_version_details = live_image_version_details
+
+    @property
+    def oracle_linux_version(self):
+        """
+        Gets the oracle_linux_version of this VmClusterSummary.
+        Oracle Linux version for the respective Exadata Image.
+
+
+        :return: The oracle_linux_version of this VmClusterSummary.
+        :rtype: str
+        """
+        return self._oracle_linux_version
+
+    @oracle_linux_version.setter
+    def oracle_linux_version(self, oracle_linux_version):
+        """
+        Sets the oracle_linux_version of this VmClusterSummary.
+        Oracle Linux version for the respective Exadata Image.
+
+
+        :param oracle_linux_version: The oracle_linux_version of this VmClusterSummary.
+        :type: str
+        """
+        self._oracle_linux_version = oracle_linux_version
 
     @property
     def vm_cluster_network_id(self):

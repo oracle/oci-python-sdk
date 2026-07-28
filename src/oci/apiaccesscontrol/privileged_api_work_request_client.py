@@ -679,12 +679,12 @@ class PrivilegedApiWorkRequestClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_work_requests(self, **kwargs):
+    def list_work_requests(self, compartment_id, **kwargs):
         """
         Lists the work requests in a compartment.
 
 
-        :param str compartment_id: (optional)
+        :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -757,7 +757,7 @@ class PrivilegedApiWorkRequestClient(object):
         Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apiaccesscontrol/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = []
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -768,7 +768,6 @@ class PrivilegedApiWorkRequestClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
-            "compartment_id",
             "work_request_id",
             "status",
             "resource_id",
@@ -805,7 +804,7 @@ class PrivilegedApiWorkRequestClient(object):
                 )
 
         query_params = {
-            "compartmentId": kwargs.get("compartment_id", missing),
+            "compartmentId": compartment_id,
             "workRequestId": kwargs.get("work_request_id", missing),
             "status": kwargs.get("status", missing),
             "resourceId": kwargs.get("resource_id", missing),

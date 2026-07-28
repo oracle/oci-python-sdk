@@ -20,6 +20,10 @@ class ApiMetadataByEntityTypeSummary(object):
         Initializes a new ApiMetadataByEntityTypeSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this ApiMetadataByEntityTypeSummary.
+        :type compartment_id: str
+
         :param entity_type:
             The value to assign to the entity_type property of this ApiMetadataByEntityTypeSummary.
         :type entity_type: str
@@ -42,6 +46,7 @@ class ApiMetadataByEntityTypeSummary(object):
 
         """
         self.swagger_types = {
+            'compartment_id': 'str',
             'entity_type': 'str',
             'api_metadatas': 'list[ApiMetadataSummary]',
             'freeform_tags': 'dict(str, str)',
@@ -49,17 +54,43 @@ class ApiMetadataByEntityTypeSummary(object):
             'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
+            'compartment_id': 'compartmentId',
             'entity_type': 'entityType',
             'api_metadatas': 'apiMetadatas',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
+        self._compartment_id = None
         self._entity_type = None
         self._api_metadatas = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this ApiMetadataByEntityTypeSummary.
+        The OCID of the compartment that contains the Service Provider Action.
+
+
+        :return: The compartment_id of this ApiMetadataByEntityTypeSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this ApiMetadataByEntityTypeSummary.
+        The OCID of the compartment that contains the Service Provider Action.
+
+
+        :param compartment_id: The compartment_id of this ApiMetadataByEntityTypeSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def entity_type(self):

@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "26.04.01"
+    version = "26.07.14"
 
     ##########################################################################
     # spaces for align
@@ -2435,6 +2435,31 @@ class ShowOCIOutput(object):
                     for event in agents:
                         print(self.taba + event['name'] + ", " + event['database_type'] + ", " + str(event['database_sub_type']) + ", is_cluster = " + event['is_cluster'] + ", Created : " + event['time_created'][0:16])
 
+            # if opsi database insights
+            if 'opsi_database_insights' in monitorings:
+                if monitorings['opsi_database_insights']:
+                    database_insights = monitorings['opsi_database_insights']
+                    self.print_header("Operations Insights - Databases", 2)
+
+                    for db in database_insights:
+                        print(self.taba + db['database_display_name'] + ", " + db['database_type'] + ", Version = " + db['database_version'] + ", Source = " + db['entity_source'] + ", Status = " + db['status'])
+                        if db['database_host_names']:
+                            print(self.tabs + "Hosts : " + str(', '.join(x for x in db['database_host_names'])))
+                        if db['cdb_name']:
+                            print(self.tabs + "CDB   : " + db['cdb_name'])
+                        print("")
+
+            # if opsi host insights
+            if 'opsi_host_insights' in monitorings:
+                if monitorings['opsi_host_insights']:
+                    host_insights = monitorings['opsi_host_insights']
+                    self.print_header("Operations Insights - Hosts", 2)
+
+                    for host in host_insights:
+                        print(self.taba + host['host_display_name'] + ", " + host['host_type'] + ", Platform = " + host['platform_type'] + " " + host['platform_version'] + ", Source = " + host['entity_source'] + ", Status = " + host['status'])
+                        print(self.tabs + "CPU   : " + host['processor_count'] + ", Total CPUs: " + host['total_cpus'] + ", Memory GB: " + host['total_memory_in_gbs'])
+                        print("")
+
         except Exception as e:
             self.__print_error("__print_monitoring_main", e)
 
@@ -2740,6 +2765,13 @@ class ShowOCIOutput(object):
                         print(self.tabs2 + "Replicas      : " + rep['status'] + ", " + rep['region'] + ", " + rep['crypto_endpoint'])
                     print("")
 
+            # kms_secrets
+            if 'kms_secrets' in security:
+                self.print_header("KMS Vault Secrets", 2)
+                for val in security['kms_secrets']:
+                    print(self.taba + val['name'] + ", Vault: " + val['vault_name'] + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    print("")
+
             # Logging
             if 'logging' in security:
                 self.print_header("Logging Groups", 2)
@@ -2761,6 +2793,31 @@ class ShowOCIOutput(object):
                 self.print_header("Logging Unified Agents Configuration", 2)
                 for val in security['logging_unified_agents']:
                     print(self.taba + val['display_name'] + ", (" + val['description'] + "), Is Enabled: " + val['is_enabled'] + ", Type: " + val['configuration_type'] + ", Created: " + val['time_created'][0:16])
+                    print("")
+
+            # Log Analytics
+            if 'log_analytics_namespace' in security:
+                self.print_header("Log Analytics Namespaces", 2)
+                for val in security['log_analytics_namespace']:
+                    print(self.taba + val['namespace_name'] + ", Active Storage Used GB: " + val['storage_active_data_size_in_gb'] + ", Archiving: " + val['namespace_is_archiving_enabled'] + ", State: " + val['namespace_lifecycle_state'])
+                    print("")
+
+            if 'log_analytics' in security:
+                self.print_header("Log Analytics Entities", 2)
+                for val in security['log_analytics']:
+                    print(self.taba + val['display_name'] + ", Type: " + val['type_display_name'] + ", Namespace: " + val['namespace_name'] + ", Sources: " + val['associated_sources_count'] + ", Updated: " + val['time_updated'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    if val['entity_names']:
+                        print(self.tabs2 + "Entity Name            : " + str(', '.join(x for x in val['entity_names'])))
+                    if val['entity_type_display_names']:
+                        print(self.tabs2 + "Entity Type            : " + str(', '.join(x for x in val['entity_type_display_names'])))
+                    if val['associated_sources_count']:
+                        print(self.tabs2 + "Log Association        : " + val['associated_sources_count'])
+                    if val['log_purge']:
+                        print(self.tabs2 + "Log Purge              : " + str(', '.join(x['status'] + ":" + x['time_accepted'] for x in val['log_purge'])))
+                    if val['entity_types']:
+                        print(self.tabs2 + "Source Entity Types    : " + str(', '.join(x['entity_type_display_name'] for x in val['entity_types'])))
+                    if val['parsers']:
+                        print(self.tabs2 + "Parsers                : " + str(', '.join(x['display_name'] for x in val['parsers'])))
                     print("")
 
             # Certificates
@@ -3558,12 +3615,18 @@ class ShowOCISummary(object):
                 self.__summary_core_size(security['logging'])
             if 'logging_unified_agents' in security:
                 self.__summary_core_size(security['logging_unified_agents'])
+            if 'log_analytics_namespace' in security:
+                self.__summary_core_size(security['log_analytics_namespace'])
+            if 'log_analytics' in security:
+                self.__summary_core_size(security['log_analytics'])
             if 'bastions' in security:
                 self.__summary_core_size(security['bastions'])
             if 'kms_vaults' in security:
                 self.__summary_core_size(security['kms_vaults'])
                 self.__summary_core_size(security['kms_vaults'], "sum_info_hsm", 'key_count')
                 self.__summary_core_size(security['kms_vaults'], "sum_info_soft", 'software_key_count')
+            if 'kms_secrets' in security:
+                self.__summary_core_size(security['kms_secrets'])
             if 'certificates' in security:
                 self.__summary_core_size(security['certificates'])
             if 'certificate_associations' in security:
@@ -4523,7 +4586,11 @@ class ShowOCICSV(object):
     csv_security_bastions = []
     csv_security_logging = []
     csv_security_log_unified_agents = []
+    csv_security_log_analytics_namespace = []
+    csv_security_log_analytics = []
     csv_security_kms_vault = []
+    csv_security_kms_key = []
+    csv_security_kms_secret = []
     csv_security_cloud_guard = []
     csv_container = []
     csv_container_nodepool = []
@@ -4554,6 +4621,8 @@ class ShowOCICSV(object):
     csv_streams_queues = []
     csv_monitor_agents = []
     csv_monitor_db_management = []
+    csv_monitor_opsi_database_insights = []
+    csv_monitor_opsi_host_insights = []
     csv_monitor_alarms = []
     csv_monitor_events = []
     csv_notifications = []
@@ -4568,6 +4637,7 @@ class ShowOCICSV(object):
     ############################################
     def __init__(self, start_time):
         self.start_time = start_time
+        self.csv_security_log_analytics_namespace_ids = set()
 
     ##########################################################################
     # get errors
@@ -4733,8 +4803,12 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("security_bastions", self.csv_security_bastions)
             self.__export_to_csv_file("security_loggings", self.csv_security_logging)
             self.__export_to_csv_file("security_log_unified_agents", self.csv_security_log_unified_agents)
+            self.__export_to_csv_file("security_log_analytics_ns", self.csv_security_log_analytics_namespace)
+            self.__export_to_csv_file("security_log_analytics", self.csv_security_log_analytics)
             self.__export_to_csv_file("security_cloud_guards", self.csv_security_cloud_guard)
             self.__export_to_csv_file("security_kms_vaults", self.csv_security_kms_vault)
+            self.__export_to_csv_file("security_kms_keys", self.csv_security_kms_key)
+            self.__export_to_csv_file("security_kms_secrets", self.csv_security_kms_secret)
             self.__export_to_csv_file("containers", self.csv_container)
             self.__export_to_csv_file("containers_nodepools", self.csv_container_nodepool)
             self.__export_to_csv_file("edge_dns_steering_policies", self.csv_edge_dns_steering_policies)
@@ -4756,6 +4830,8 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("big_data_service", self.csv_data_ai_bds)
             self.__export_to_csv_file("monitor_agents", self.csv_monitor_agents)
             self.__export_to_csv_file("monitor_db_managements", self.csv_monitor_db_management)
+            self.__export_to_csv_file("monitor_opsi_database_insights", self.csv_monitor_opsi_database_insights)
+            self.__export_to_csv_file("monitor_opsi_host_insights", self.csv_monitor_opsi_host_insights)
             self.__export_to_csv_file("monitor_alarms", self.csv_monitor_alarms)
             self.__export_to_csv_file("monitor_events", self.csv_monitor_events)
             self.__export_to_csv_file("monitor_topics_subs", self.csv_notifications)
@@ -9316,11 +9392,23 @@ class ShowOCICSV(object):
             if 'logging_unified_agents' in data:
                 self.__csv_security_logging_unified_agents(region_name, data['logging_unified_agents'])
 
+            if 'log_analytics_namespace' in data:
+                self.__csv_security_log_analytics_namespace(region_name, data['log_analytics_namespace'])
+
+            if 'log_analytics' in data:
+                self.__csv_security_log_analytics(region_name, data['log_analytics'])
+
             if 'cloud_guard' in data:
                 self.__csv_security_cloud_guard(region_name, data['cloud_guard'])
 
             if 'kms_vaults' in data:
                 self.__csv_security_kms_vaults(region_name, data['kms_vaults'])
+
+            if 'kms_keys' in data:
+                self.__csv_security_kms_keys(region_name, data['kms_keys'])
+
+            if 'kms_secrets' in data:
+                self.__csv_security_kms_secrets(region_name, data['kms_secrets'])
 
             if 'certificates' in data:
                 self.__csv_certificate_certificates(region_name, data['certificates'])
@@ -9635,6 +9723,71 @@ class ShowOCICSV(object):
             self.__print_error("__csv_security_kms_vaults", e)
 
     ##########################################################################
+    # KMS Keys
+    ##########################################################################
+    def __csv_security_kms_keys(self, region_name, kms_keys):
+        try:
+
+            if len(kms_keys) == 0:
+                return
+
+            for ar in kms_keys:
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': ar['compartment_name'],
+                    'compartment_path': ar['compartment_path'],
+                    'compartment_id': ar['compartment_id'],
+                    'name': ar['name'],
+                    'current_key_version': ar['current_key_version'],
+                    'vault_id': ar['vault_id'],
+                    'vault_name': ar['vault_name'],
+                    'key_algorithm': ar['key_algorithm'],
+                    'key_length': ar['key_length'],
+                    'time_created': ar['time_created'][0:16],
+                    'key_id': ar['id'],
+                    'id': ar['id'],
+                    'freeform_tags': self.__get_freeform_tags(ar['freeform_tags'])
+                }
+
+                self.csv_security_kms_key.append(data)
+                self.__csv_add_service(data, "KMS Key")
+
+        except Exception as e:
+            self.__print_error("__csv_security_kms_keys", e)
+
+    ##########################################################################
+    # Vault Secrets
+    ##########################################################################
+    def __csv_security_kms_secrets(self, region_name, kms_secrets):
+        try:
+
+            if len(kms_secrets) == 0:
+                return
+
+            for ar in kms_secrets:
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': ar['compartment_name'],
+                    'compartment_path': ar['compartment_path'],
+                    'compartment_id': ar['compartment_id'],
+                    'name': ar['name'],
+                    'vault_name': ar['vault_name'],
+                    'vault_id': ar['vault_id'],
+                    'time_created': ar['time_created'],
+                    'lifecycle_state': ar['lifecycle_state'],
+                    'secret_id': ar['secret_id'],
+                    'id': ar['id'],
+                    'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(ar['defined_tags'])
+                }
+
+                self.csv_security_kms_secret.append(data)
+                self.__csv_add_service(data, "KMS Vault Secret")
+
+        except Exception as e:
+            self.__print_error("__csv_security_kms_secrets", e)
+
+    ##########################################################################
     # Logging
     ##########################################################################
     def __csv_security_logging(self, region_name, log_groups):
@@ -9707,6 +9860,85 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_security_logging_unified_agents", e)
+
+    ##########################################################################
+    # Log Analytics
+    ##########################################################################
+    def __csv_security_log_analytics_namespace(self, region_name, log_analytics_namespace):
+        try:
+
+            if len(log_analytics_namespace) == 0:
+                return
+
+            if log_analytics_namespace:
+                for ar in log_analytics_namespace:
+                    namespace_id = ar['id']
+                    if namespace_id in self.csv_security_log_analytics_namespace_ids:
+                        continue
+                    self.csv_security_log_analytics_namespace_ids.add(namespace_id)
+
+                    data = {
+                        'region_name': region_name,
+                        'namespace_name': ar['namespace_name'],
+                        'name': ar['namespace_name'],
+                        'namespace_lifecycle_state': ar['namespace_lifecycle_state'],
+                        'namespace_is_onboarded': ar['namespace_is_onboarded'],
+                        'namespace_is_log_set_enabled': ar['namespace_is_log_set_enabled'],
+                        'namespace_is_data_ever_ingested': ar['namespace_is_data_ever_ingested'],
+                        'namespace_is_archiving_enabled': ar['namespace_is_archiving_enabled'],
+                        'storage_active_data_size_in_bytes': ar['storage_active_data_size_in_bytes'],
+                        'storage_active_data_size_in_gb': ar['storage_active_data_size_in_gb'],
+                        'storage_archived_data_size_in_bytes': ar['storage_archived_data_size_in_bytes'],
+                        'storage_recalled_archived_data_size_in_bytes': ar['storage_recalled_archived_data_size_in_bytes'],
+                        'id': namespace_id
+                    }
+
+                    self.csv_security_log_analytics_namespace.append(data)
+                    self.__csv_add_service(data, "Log Analytics Namespace")
+
+        except Exception as e:
+            self.__print_error("__csv_security_log_analytics_namespace", e)
+
+    def __csv_security_log_analytics(self, region_name, log_analytics):
+        try:
+
+            if len(log_analytics) == 0:
+                return
+
+            if log_analytics:
+                for ar in log_analytics:
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'namespace_name': ar['namespace_name'],
+                        'entity_name': ar['entity_name'],
+                        'name': ar['entity_name'],
+                        'display_name': ar['entity_name'],
+                        'description': ar['description'],
+                        'entity_type_name': ar['entity_type_name'],
+                        'entity_type_internal_name': ar['entity_type_internal_name'],
+                        'management_agent_id': ar['management_agent_id'],
+                        'cloud_resource_id': ar['cloud_resource_id'],
+                        'timezone_region': ar['timezone_region'],
+                        'are_logs_collected': ar['are_logs_collected'],
+                        'associated_sources_count': ar['associated_sources_count'],
+                        'time_created': ar['time_created'][0:16],
+                        'time_updated': ar['time_updated'][0:16],
+                        'time_last_discovered': ar['time_last_discovered'][0:16],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'oci_log_analytics_entity_name': self.__csv_list_to_str(ar['entity_names']),
+                        'oci_log_analytics_entity_type': self.__csv_list_to_str(ar['entity_type_display_names']),
+                        'entity_type_names': self.__csv_list_to_str(ar['entity_type_names']),
+                        'source_id': ar['source_id'],
+                        'id': ar['id']
+                    }
+
+                    self.csv_security_log_analytics.append(data)
+                    self.__csv_add_service(data, "Log Analytics Entity")
+
+        except Exception as e:
+            self.__print_error("__csv_security_log_analytics", e)
 
     ##########################################################################
     # Container
@@ -10917,6 +11149,12 @@ class ShowOCICSV(object):
             if 'db_managements' in data:
                 self.__csv_monitor_db_managements(region_name, data['db_managements'])
 
+            if 'opsi_database_insights' in data:
+                self.__csv_monitor_opsi_database_insights(region_name, data['opsi_database_insights'])
+
+            if 'opsi_host_insights' in data:
+                self.__csv_monitor_opsi_host_insights(region_name, data['opsi_host_insights'])
+
             if 'alarms' in data:
                 self.__csv_monitor_alarms(region_name, data['alarms'])
 
@@ -11112,6 +11350,99 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_monitor_db_managements", e)
+
+    ##########################################################################
+    # Monitor OPSI Database Insights
+    ##########################################################################
+    def __csv_monitor_opsi_database_insights(self, region_name, database_insights):
+        try:
+
+            if len(database_insights) == 0:
+                return
+
+            if database_insights:
+                for ar in database_insights:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'name': ar['database_display_name'],
+                        'database_name': ar['database_name'],
+                        'database_type': ar['database_type'],
+                        'database_version': ar['database_version'],
+                        'database_host_names': self.__csv_list_to_str(ar['database_host_names']),
+                        'entity_source': ar['entity_source'],
+                        'processor_count': ar['processor_count'],
+                        'status': ar['status'],
+                        'time_created': ar['time_created'][0:16],
+                        'time_updated': ar['time_updated'][0:16],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'lifecycle_details': ar['lifecycle_details'],
+                        'database_connection_status_details': ar['database_connection_status_details'],
+                        'is_advanced_features_enabled': ar['is_advanced_features_enabled'],
+                        'cdb_name': ar['cdb_name'],
+                        'database_id': ar['database_id'],
+                        'id': ar['id'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags'])
+                    }
+
+                    self.csv_monitor_opsi_database_insights.append(data)
+                    self.__csv_add_service(data, "OPSI Database Insight")
+
+        except Exception as e:
+            self.__print_error("__csv_monitor_opsi_database_insights", e)
+
+    ##########################################################################
+    # Monitor OPSI Host Insights
+    ##########################################################################
+    def __csv_monitor_opsi_host_insights(self, region_name, host_insights):
+        try:
+
+            if len(host_insights) == 0:
+                return
+
+            if host_insights:
+                for ar in host_insights:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'name': ar['host_display_name'],
+                        'host_name': ar['host_name'],
+                        'host_type': ar['host_type'],
+                        'entity_source': ar['entity_source'],
+                        'processor_count': ar['processor_count'],
+                        'platform_type': ar['platform_type'],
+                        'platform_version': ar['platform_version'],
+                        'platform_vendor': ar['platform_vendor'],
+                        'total_cpus': ar['total_cpus'],
+                        'total_memory_in_gbs': ar['total_memory_in_gbs'],
+                        'cpu_architecture': ar['cpu_architecture'],
+                        'cpu_vendor': ar['cpu_vendor'],
+                        'cpu_frequency_in_mhz': ar['cpu_frequency_in_mhz'],
+                        'cores_per_socket': ar['cores_per_socket'],
+                        'total_sockets': ar['total_sockets'],
+                        'threads_per_socket': ar['threads_per_socket'],
+                        'is_hyper_threading_enabled': ar['is_hyper_threading_enabled'],
+                        'opsi_private_endpoint_id': ar['opsi_private_endpoint_id'],
+                        'status': ar['status'],
+                        'time_created': ar['time_created'][0:16],
+                        'time_updated': ar['time_updated'][0:16],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'lifecycle_details': ar['lifecycle_details'],
+                        'id': ar['id'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags'])
+                    }
+
+                    self.csv_monitor_opsi_host_insights.append(data)
+                    self.__csv_add_service(data, "OPSI Host Insight")
+
+        except Exception as e:
+            self.__print_error("__csv_monitor_opsi_host_insights", e)
 
     ##########################################################################
     # Monitor Alarms

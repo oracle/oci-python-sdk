@@ -195,6 +195,18 @@ class VolumeBackupSchedule(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type time_zone: str
 
+        :param retention_period:
+            The value to assign to the retention_period property of this VolumeBackupSchedule.
+        :type retention_period: oci.core.models.RetentionDuration
+
+        :param is_prevent_deletion_enabled:
+            The value to assign to the is_prevent_deletion_enabled property of this VolumeBackupSchedule.
+        :type is_prevent_deletion_enabled: bool
+
+        :param is_retention_lock_enabled:
+            The value to assign to the is_retention_lock_enabled property of this VolumeBackupSchedule.
+        :type is_retention_lock_enabled: bool
+
         """
         self.swagger_types = {
             'backup_type': 'str',
@@ -206,7 +218,10 @@ class VolumeBackupSchedule(object):
             'day_of_month': 'int',
             'month': 'str',
             'retention_seconds': 'int',
-            'time_zone': 'str'
+            'time_zone': 'str',
+            'retention_period': 'RetentionDuration',
+            'is_prevent_deletion_enabled': 'bool',
+            'is_retention_lock_enabled': 'bool'
         }
         self.attribute_map = {
             'backup_type': 'backupType',
@@ -218,7 +233,10 @@ class VolumeBackupSchedule(object):
             'day_of_month': 'dayOfMonth',
             'month': 'month',
             'retention_seconds': 'retentionSeconds',
-            'time_zone': 'timeZone'
+            'time_zone': 'timeZone',
+            'retention_period': 'retentionPeriod',
+            'is_prevent_deletion_enabled': 'isPreventDeletionEnabled',
+            'is_retention_lock_enabled': 'isRetentionLockEnabled'
         }
         self._backup_type = None
         self._offset_seconds = None
@@ -230,6 +248,9 @@ class VolumeBackupSchedule(object):
         self._month = None
         self._retention_seconds = None
         self._time_zone = None
+        self._retention_period = None
+        self._is_prevent_deletion_enabled = None
+        self._is_retention_lock_enabled = None
 
     @property
     def backup_type(self):
@@ -554,6 +575,74 @@ class VolumeBackupSchedule(object):
         if not value_allowed_none_or_none_sentinel(time_zone, allowed_values):
             time_zone = 'UNKNOWN_ENUM_VALUE'
         self._time_zone = time_zone
+
+    @property
+    def retention_period(self):
+        """
+        Gets the retention_period of this VolumeBackupSchedule.
+
+        :return: The retention_period of this VolumeBackupSchedule.
+        :rtype: oci.core.models.RetentionDuration
+        """
+        return self._retention_period
+
+    @retention_period.setter
+    def retention_period(self, retention_period):
+        """
+        Sets the retention_period of this VolumeBackupSchedule.
+
+        :param retention_period: The retention_period of this VolumeBackupSchedule.
+        :type: oci.core.models.RetentionDuration
+        """
+        self._retention_period = retention_period
+
+    @property
+    def is_prevent_deletion_enabled(self):
+        """
+        Gets the is_prevent_deletion_enabled of this VolumeBackupSchedule.
+        Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+
+
+        :return: The is_prevent_deletion_enabled of this VolumeBackupSchedule.
+        :rtype: bool
+        """
+        return self._is_prevent_deletion_enabled
+
+    @is_prevent_deletion_enabled.setter
+    def is_prevent_deletion_enabled(self, is_prevent_deletion_enabled):
+        """
+        Sets the is_prevent_deletion_enabled of this VolumeBackupSchedule.
+        Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+
+
+        :param is_prevent_deletion_enabled: The is_prevent_deletion_enabled of this VolumeBackupSchedule.
+        :type: bool
+        """
+        self._is_prevent_deletion_enabled = is_prevent_deletion_enabled
+
+    @property
+    def is_retention_lock_enabled(self):
+        """
+        Gets the is_retention_lock_enabled of this VolumeBackupSchedule.
+        feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+
+
+        :return: The is_retention_lock_enabled of this VolumeBackupSchedule.
+        :rtype: bool
+        """
+        return self._is_retention_lock_enabled
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, is_retention_lock_enabled):
+        """
+        Sets the is_retention_lock_enabled of this VolumeBackupSchedule.
+        feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+
+
+        :param is_retention_lock_enabled: The is_retention_lock_enabled of this VolumeBackupSchedule.
+        :type: bool
+        """
+        self._is_retention_lock_enabled = is_retention_lock_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

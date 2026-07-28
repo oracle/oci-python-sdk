@@ -164,6 +164,14 @@ class CloudVmClusterSummary(object):
             The value to assign to the listener_port property of this CloudVmClusterSummary.
         :type listener_port: int
 
+        :param live_image_version_details:
+            The value to assign to the live_image_version_details property of this CloudVmClusterSummary.
+        :type live_image_version_details: oci.database.models.ExadataLiveImageVersionDetails
+
+        :param oracle_linux_version:
+            The value to assign to the oracle_linux_version property of this CloudVmClusterSummary.
+        :type oracle_linux_version: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this CloudVmClusterSummary.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
@@ -403,6 +411,8 @@ class CloudVmClusterSummary(object):
             'last_update_history_entry_id': 'str',
             'shape': 'str',
             'listener_port': 'int',
+            'live_image_version_details': 'ExadataLiveImageVersionDetails',
+            'oracle_linux_version': 'str',
             'lifecycle_state': 'str',
             'node_count': 'int',
             'storage_size_in_gbs': 'int',
@@ -468,6 +478,8 @@ class CloudVmClusterSummary(object):
             'last_update_history_entry_id': 'lastUpdateHistoryEntryId',
             'shape': 'shape',
             'listener_port': 'listenerPort',
+            'live_image_version_details': 'liveImageVersionDetails',
+            'oracle_linux_version': 'oracleLinuxVersion',
             'lifecycle_state': 'lifecycleState',
             'node_count': 'nodeCount',
             'storage_size_in_gbs': 'storageSizeInGBs',
@@ -532,6 +544,8 @@ class CloudVmClusterSummary(object):
         self._last_update_history_entry_id = None
         self._shape = None
         self._listener_port = None
+        self._live_image_version_details = None
+        self._oracle_linux_version = None
         self._lifecycle_state = None
         self._node_count = None
         self._storage_size_in_gbs = None
@@ -906,6 +920,50 @@ class CloudVmClusterSummary(object):
         :type: int
         """
         self._listener_port = listener_port
+
+    @property
+    def live_image_version_details(self):
+        """
+        Gets the live_image_version_details of this CloudVmClusterSummary.
+
+        :return: The live_image_version_details of this CloudVmClusterSummary.
+        :rtype: oci.database.models.ExadataLiveImageVersionDetails
+        """
+        return self._live_image_version_details
+
+    @live_image_version_details.setter
+    def live_image_version_details(self, live_image_version_details):
+        """
+        Sets the live_image_version_details of this CloudVmClusterSummary.
+
+        :param live_image_version_details: The live_image_version_details of this CloudVmClusterSummary.
+        :type: oci.database.models.ExadataLiveImageVersionDetails
+        """
+        self._live_image_version_details = live_image_version_details
+
+    @property
+    def oracle_linux_version(self):
+        """
+        Gets the oracle_linux_version of this CloudVmClusterSummary.
+        Oracle Linux version for the respective Exadata Image.
+
+
+        :return: The oracle_linux_version of this CloudVmClusterSummary.
+        :rtype: str
+        """
+        return self._oracle_linux_version
+
+    @oracle_linux_version.setter
+    def oracle_linux_version(self, oracle_linux_version):
+        """
+        Sets the oracle_linux_version of this CloudVmClusterSummary.
+        Oracle Linux version for the respective Exadata Image.
+
+
+        :param oracle_linux_version: The oracle_linux_version of this CloudVmClusterSummary.
+        :type: str
+        """
+        self._oracle_linux_version = oracle_linux_version
 
     @property
     def lifecycle_state(self):

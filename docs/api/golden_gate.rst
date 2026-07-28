@@ -20,6 +20,14 @@ Golden Gate
 
     oci.golden_gate.models.AddDeploymentLocalPeerDetails
     oci.golden_gate.models.AddResourceLockDetails
+    oci.golden_gate.models.AiModelAuthDetails
+    oci.golden_gate.models.AiModelAuthDetailsSummary
+    oci.golden_gate.models.AiModelCollection
+    oci.golden_gate.models.AiModelConnection
+    oci.golden_gate.models.AiModelConnectionSummary
+    oci.golden_gate.models.AiModelSummary
+    oci.golden_gate.models.AiProviderCollection
+    oci.golden_gate.models.AiProviderSummary
     oci.golden_gate.models.AmazonKinesisConnection
     oci.golden_gate.models.AmazonKinesisConnectionSummary
     oci.golden_gate.models.AmazonRedshiftConnection
@@ -28,6 +36,8 @@ Golden Gate
     oci.golden_gate.models.AmazonS3ConnectionSummary
     oci.golden_gate.models.AmazonS3IcebergStorage
     oci.golden_gate.models.AmazonS3IcebergStorageSummary
+    oci.golden_gate.models.ApiKeyAiModelAuthDetails
+    oci.golden_gate.models.ApiKeyAiModelAuthDetailsSummary
     oci.golden_gate.models.AzureDataLakeStorageConnection
     oci.golden_gate.models.AzureDataLakeStorageConnectionSummary
     oci.golden_gate.models.AzureDataLakeStorageIcebergStorage
@@ -59,10 +69,13 @@ Golden Gate
     oci.golden_gate.models.ConnectionCollection
     oci.golden_gate.models.ConnectionSummary
     oci.golden_gate.models.CopyDeploymentBackupDetails
+    oci.golden_gate.models.CreateAiModelAuthDetails
+    oci.golden_gate.models.CreateAiModelConnectionDetails
     oci.golden_gate.models.CreateAmazonKinesisConnectionDetails
     oci.golden_gate.models.CreateAmazonRedshiftConnectionDetails
     oci.golden_gate.models.CreateAmazonS3ConnectionDetails
     oci.golden_gate.models.CreateAmazonS3IcebergStorageDetails
+    oci.golden_gate.models.CreateApiKeyAiModelAuthDetails
     oci.golden_gate.models.CreateAzureDataLakeStorageConnectionDetails
     oci.golden_gate.models.CreateAzureDataLakeStorageIcebergStorageDetails
     oci.golden_gate.models.CreateAzureSynapseConnectionDetails
@@ -99,7 +112,10 @@ Golden Gate
     oci.golden_gate.models.CreateMongoDbConnectionDetails
     oci.golden_gate.models.CreateMysqlConnectionDetails
     oci.golden_gate.models.CreateNessieIcebergCatalogDetails
+    oci.golden_gate.models.CreateNoIcebergStorageDetails
+    oci.golden_gate.models.CreateOciGenAiModelAuthDetails
     oci.golden_gate.models.CreateOciObjectStorageConnectionDetails
+    oci.golden_gate.models.CreateOciObjectStorageS3ApiIcebergStorageDetails
     oci.golden_gate.models.CreateOggDeploymentDetails
     oci.golden_gate.models.CreateOracleAiDataPlatformConnectionDetails
     oci.golden_gate.models.CreateOracleConnectionDetails
@@ -220,8 +236,14 @@ Golden Gate
     oci.golden_gate.models.NameValuePair
     oci.golden_gate.models.NessieIcebergCatalog
     oci.golden_gate.models.NessieIcebergCatalogSummary
+    oci.golden_gate.models.NoIcebergStorage
+    oci.golden_gate.models.NoIcebergStorageSummary
+    oci.golden_gate.models.OciGenAiModelAuthDetails
+    oci.golden_gate.models.OciGenAiModelAuthDetailsSummary
     oci.golden_gate.models.OciObjectStorageConnection
     oci.golden_gate.models.OciObjectStorageConnectionSummary
+    oci.golden_gate.models.OciObjectStorageS3ApiIcebergStorage
+    oci.golden_gate.models.OciObjectStorageS3ApiIcebergStorageSummary
     oci.golden_gate.models.OggDeployment
     oci.golden_gate.models.OracleAiDataPlatformConnection
     oci.golden_gate.models.OracleAiDataPlatformConnectionSummary
@@ -284,10 +306,13 @@ Golden Gate
     oci.golden_gate.models.TrailFileSummary
     oci.golden_gate.models.TrailSequenceCollection
     oci.golden_gate.models.TrailSequenceSummary
+    oci.golden_gate.models.UpdateAiModelAuthDetails
+    oci.golden_gate.models.UpdateAiModelConnectionDetails
     oci.golden_gate.models.UpdateAmazonKinesisConnectionDetails
     oci.golden_gate.models.UpdateAmazonRedshiftConnectionDetails
     oci.golden_gate.models.UpdateAmazonS3ConnectionDetails
     oci.golden_gate.models.UpdateAmazonS3IcebergStorageDetails
+    oci.golden_gate.models.UpdateApiKeyAiModelAuthDetails
     oci.golden_gate.models.UpdateAzureDataLakeStorageConnectionDetails
     oci.golden_gate.models.UpdateAzureDataLakeStorageIcebergStorageDetails
     oci.golden_gate.models.UpdateAzureSynapseConnectionDetails
@@ -322,7 +347,10 @@ Golden Gate
     oci.golden_gate.models.UpdateMongoDbConnectionDetails
     oci.golden_gate.models.UpdateMysqlConnectionDetails
     oci.golden_gate.models.UpdateNessieIcebergCatalogDetails
+    oci.golden_gate.models.UpdateNoIcebergStorageDetails
+    oci.golden_gate.models.UpdateOciGenAiModelAuthDetails
     oci.golden_gate.models.UpdateOciObjectStorageConnectionDetails
+    oci.golden_gate.models.UpdateOciObjectStorageS3ApiIcebergStorageDetails
     oci.golden_gate.models.UpdateOggDeploymentDetails
     oci.golden_gate.models.UpdateOracleAiDataPlatformConnectionDetails
     oci.golden_gate.models.UpdateOracleConnectionDetails

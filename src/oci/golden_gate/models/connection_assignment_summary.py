@@ -15,6 +15,126 @@ class ConnectionAssignmentSummary(object):
     Summary of the Connection Assignment.
     """
 
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "GOLDENGATE"
+    CONNECTION_TYPE_GOLDENGATE = "GOLDENGATE"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "KAFKA"
+    CONNECTION_TYPE_KAFKA = "KAFKA"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "KAFKA_SCHEMA_REGISTRY"
+    CONNECTION_TYPE_KAFKA_SCHEMA_REGISTRY = "KAFKA_SCHEMA_REGISTRY"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "MYSQL"
+    CONNECTION_TYPE_MYSQL = "MYSQL"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "JAVA_MESSAGE_SERVICE"
+    CONNECTION_TYPE_JAVA_MESSAGE_SERVICE = "JAVA_MESSAGE_SERVICE"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "MICROSOFT_SQLSERVER"
+    CONNECTION_TYPE_MICROSOFT_SQLSERVER = "MICROSOFT_SQLSERVER"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "OCI_OBJECT_STORAGE"
+    CONNECTION_TYPE_OCI_OBJECT_STORAGE = "OCI_OBJECT_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "ORACLE"
+    CONNECTION_TYPE_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "AZURE_DATA_LAKE_STORAGE"
+    CONNECTION_TYPE_AZURE_DATA_LAKE_STORAGE = "AZURE_DATA_LAKE_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "POSTGRESQL"
+    CONNECTION_TYPE_POSTGRESQL = "POSTGRESQL"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "AZURE_SYNAPSE_ANALYTICS"
+    CONNECTION_TYPE_AZURE_SYNAPSE_ANALYTICS = "AZURE_SYNAPSE_ANALYTICS"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "SNOWFLAKE"
+    CONNECTION_TYPE_SNOWFLAKE = "SNOWFLAKE"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "AMAZON_S3"
+    CONNECTION_TYPE_AMAZON_S3 = "AMAZON_S3"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "HDFS"
+    CONNECTION_TYPE_HDFS = "HDFS"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "ORACLE_AI_DATA_PLATFORM"
+    CONNECTION_TYPE_ORACLE_AI_DATA_PLATFORM = "ORACLE_AI_DATA_PLATFORM"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "ORACLE_NOSQL"
+    CONNECTION_TYPE_ORACLE_NOSQL = "ORACLE_NOSQL"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "MONGODB"
+    CONNECTION_TYPE_MONGODB = "MONGODB"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "AMAZON_KINESIS"
+    CONNECTION_TYPE_AMAZON_KINESIS = "AMAZON_KINESIS"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "AMAZON_REDSHIFT"
+    CONNECTION_TYPE_AMAZON_REDSHIFT = "AMAZON_REDSHIFT"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "DB2"
+    CONNECTION_TYPE_DB2 = "DB2"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "REDIS"
+    CONNECTION_TYPE_REDIS = "REDIS"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "ELASTICSEARCH"
+    CONNECTION_TYPE_ELASTICSEARCH = "ELASTICSEARCH"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "GENERIC"
+    CONNECTION_TYPE_GENERIC = "GENERIC"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "GOOGLE_CLOUD_STORAGE"
+    CONNECTION_TYPE_GOOGLE_CLOUD_STORAGE = "GOOGLE_CLOUD_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "GOOGLE_BIGQUERY"
+    CONNECTION_TYPE_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "DATABRICKS"
+    CONNECTION_TYPE_DATABRICKS = "DATABRICKS"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "GOOGLE_PUBSUB"
+    CONNECTION_TYPE_GOOGLE_PUBSUB = "GOOGLE_PUBSUB"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "MICROSOFT_FABRIC"
+    CONNECTION_TYPE_MICROSOFT_FABRIC = "MICROSOFT_FABRIC"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "ICEBERG"
+    CONNECTION_TYPE_ICEBERG = "ICEBERG"
+
+    #: A constant which can be used with the connection_type property of a ConnectionAssignmentSummary.
+    #: This constant has a value of "AI_MODEL"
+    CONNECTION_TYPE_AI_MODEL = "AI_MODEL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConnectionAssignmentSummary object with values from keyword arguments.
@@ -31,6 +151,12 @@ class ConnectionAssignmentSummary(object):
         :param connection_id:
             The value to assign to the connection_id property of this ConnectionAssignmentSummary.
         :type connection_id: str
+
+        :param connection_type:
+            The value to assign to the connection_type property of this ConnectionAssignmentSummary.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type connection_type: str
 
         :param deployment_id:
             The value to assign to the deployment_id property of this ConnectionAssignmentSummary.
@@ -57,6 +183,7 @@ class ConnectionAssignmentSummary(object):
             'id': 'str',
             'compartment_id': 'str',
             'connection_id': 'str',
+            'connection_type': 'str',
             'deployment_id': 'str',
             'alias_name': 'str',
             'lifecycle_state': 'str',
@@ -67,6 +194,7 @@ class ConnectionAssignmentSummary(object):
             'id': 'id',
             'compartment_id': 'compartmentId',
             'connection_id': 'connectionId',
+            'connection_type': 'connectionType',
             'deployment_id': 'deploymentId',
             'alias_name': 'aliasName',
             'lifecycle_state': 'lifecycleState',
@@ -76,6 +204,7 @@ class ConnectionAssignmentSummary(object):
         self._id = None
         self._compartment_id = None
         self._connection_id = None
+        self._connection_type = None
         self._deployment_id = None
         self._alias_name = None
         self._lifecycle_state = None
@@ -169,6 +298,36 @@ class ConnectionAssignmentSummary(object):
         :type: str
         """
         self._connection_id = connection_id
+
+    @property
+    def connection_type(self):
+        """
+        **[Required]** Gets the connection_type of this ConnectionAssignmentSummary.
+        The connection type.
+
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The connection_type of this ConnectionAssignmentSummary.
+        :rtype: str
+        """
+        return self._connection_type
+
+    @connection_type.setter
+    def connection_type(self, connection_type):
+        """
+        Sets the connection_type of this ConnectionAssignmentSummary.
+        The connection type.
+
+
+        :param connection_type: The connection_type of this ConnectionAssignmentSummary.
+        :type: str
+        """
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"]
+        if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
+            connection_type = 'UNKNOWN_ENUM_VALUE'
+        self._connection_type = connection_type
 
     @property
     def deployment_id(self):

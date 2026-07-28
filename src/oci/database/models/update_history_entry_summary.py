@@ -31,6 +31,34 @@ class UpdateHistoryEntrySummary(object):
     #: This constant has a value of "ROLLBACK"
     UPDATE_ACTION_ROLLBACK = "ROLLBACK"
 
+    #: A constant which can be used with the update_mode property of a UpdateHistoryEntrySummary.
+    #: This constant has a value of "ONLINE_HIGHCVSS"
+    UPDATE_MODE_ONLINE_HIGHCVSS = "ONLINE_HIGHCVSS"
+
+    #: A constant which can be used with the update_mode property of a UpdateHistoryEntrySummary.
+    #: This constant has a value of "ONLINE_ALLCVSS"
+    UPDATE_MODE_ONLINE_ALLCVSS = "ONLINE_ALLCVSS"
+
+    #: A constant which can be used with the update_mode property of a UpdateHistoryEntrySummary.
+    #: This constant has a value of "ONLINE_ALL_UPDATES"
+    UPDATE_MODE_ONLINE_ALL_UPDATES = "ONLINE_ALL_UPDATES"
+
+    #: A constant which can be used with the update_mode property of a UpdateHistoryEntrySummary.
+    #: This constant has a value of "PENDING_UPDATES_HIGHCVSS"
+    UPDATE_MODE_PENDING_UPDATES_HIGHCVSS = "PENDING_UPDATES_HIGHCVSS"
+
+    #: A constant which can be used with the update_mode property of a UpdateHistoryEntrySummary.
+    #: This constant has a value of "PENDING_UPDATES_ALLCVSS"
+    UPDATE_MODE_PENDING_UPDATES_ALLCVSS = "PENDING_UPDATES_ALLCVSS"
+
+    #: A constant which can be used with the update_mode property of a UpdateHistoryEntrySummary.
+    #: This constant has a value of "PENDING_ALL_UPDATES"
+    UPDATE_MODE_PENDING_ALL_UPDATES = "PENDING_ALL_UPDATES"
+
+    #: A constant which can be used with the update_mode property of a UpdateHistoryEntrySummary.
+    #: This constant has a value of "FULL_UPDATE"
+    UPDATE_MODE_FULL_UPDATE = "FULL_UPDATE"
+
     #: A constant which can be used with the update_type property of a UpdateHistoryEntrySummary.
     #: This constant has a value of "GI_UPGRADE"
     UPDATE_TYPE_GI_UPGRADE = "GI_UPGRADE"
@@ -74,6 +102,12 @@ class UpdateHistoryEntrySummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type update_action: str
 
+        :param update_mode:
+            The value to assign to the update_mode property of this UpdateHistoryEntrySummary.
+            Allowed values for this property are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES_HIGHCVSS", "PENDING_UPDATES_ALLCVSS", "PENDING_ALL_UPDATES", "FULL_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type update_mode: str
+
         :param update_type:
             The value to assign to the update_type property of this UpdateHistoryEntrySummary.
             Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", "OS_UPDATE", 'UNKNOWN_ENUM_VALUE'.
@@ -103,6 +137,7 @@ class UpdateHistoryEntrySummary(object):
             'id': 'str',
             'update_id': 'str',
             'update_action': 'str',
+            'update_mode': 'str',
             'update_type': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -113,6 +148,7 @@ class UpdateHistoryEntrySummary(object):
             'id': 'id',
             'update_id': 'updateId',
             'update_action': 'updateAction',
+            'update_mode': 'updateMode',
             'update_type': 'updateType',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -122,6 +158,7 @@ class UpdateHistoryEntrySummary(object):
         self._id = None
         self._update_id = None
         self._update_action = None
+        self._update_mode = None
         self._update_type = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -213,6 +250,36 @@ class UpdateHistoryEntrySummary(object):
         if not value_allowed_none_or_none_sentinel(update_action, allowed_values):
             update_action = 'UNKNOWN_ENUM_VALUE'
         self._update_action = update_action
+
+    @property
+    def update_mode(self):
+        """
+        Gets the update_mode of this UpdateHistoryEntrySummary.
+        The OS update mode performed using this maintenance update.
+
+        Allowed values for this property are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES_HIGHCVSS", "PENDING_UPDATES_ALLCVSS", "PENDING_ALL_UPDATES", "FULL_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The update_mode of this UpdateHistoryEntrySummary.
+        :rtype: str
+        """
+        return self._update_mode
+
+    @update_mode.setter
+    def update_mode(self, update_mode):
+        """
+        Sets the update_mode of this UpdateHistoryEntrySummary.
+        The OS update mode performed using this maintenance update.
+
+
+        :param update_mode: The update_mode of this UpdateHistoryEntrySummary.
+        :type: str
+        """
+        allowed_values = ["ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES_HIGHCVSS", "PENDING_UPDATES_ALLCVSS", "PENDING_ALL_UPDATES", "FULL_UPDATE"]
+        if not value_allowed_none_or_none_sentinel(update_mode, allowed_values):
+            update_mode = 'UNKNOWN_ENUM_VALUE'
+        self._update_mode = update_mode
 
     @property
     def update_type(self):

@@ -23,7 +23,7 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this AmazonS3ConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
         :type connection_type: str
 
         :param id:
@@ -255,7 +255,7 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
         """
         **[Required]** Gets the access_key_id of this AmazonS3ConnectionSummary.
         Access key ID to access the Amazon S3 bucket.
-        e.g.: \"this-is-not-the-secret\"
+        Note: Despite the \"Id\" suffix, this value is not an OCI OCID.
 
 
         :return: The access_key_id of this AmazonS3ConnectionSummary.
@@ -268,7 +268,7 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
         """
         Sets the access_key_id of this AmazonS3ConnectionSummary.
         Access key ID to access the Amazon S3 bucket.
-        e.g.: \"this-is-not-the-secret\"
+        Note: Despite the \"Id\" suffix, this value is not an OCI OCID.
 
 
         :param access_key_id: The access_key_id of this AmazonS3ConnectionSummary.
