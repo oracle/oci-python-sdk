@@ -464,6 +464,7 @@ Core Services
     oci.core.models.InstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceSourceViaImageDetails
     oci.core.models.InstanceSummary
+    oci.core.models.Instances
     oci.core.models.IntelIcelakeBmLaunchInstancePlatformConfig
     oci.core.models.IntelIcelakeBmPlatformConfig
     oci.core.models.IntelSkylakeBmLaunchInstancePlatformConfig
@@ -541,6 +542,7 @@ Core Services
     oci.core.models.PreemptibleInstanceConfigDetails
     oci.core.models.PreemptionAction
     oci.core.models.PrivateIp
+    oci.core.models.ProviderRemoteRegionName
     oci.core.models.PublicIp
     oci.core.models.PublicIpPool
     oci.core.models.PublicIpPoolCollection
@@ -558,6 +560,7 @@ Core Services
     oci.core.models.RemoveVcnCidrDetails
     oci.core.models.RemoveVcnIpv6CidrDetails
     oci.core.models.ResetActionDetails
+    oci.core.models.RetentionDuration
     oci.core.models.RouteRule
     oci.core.models.RouteTable
     oci.core.models.SecurityList

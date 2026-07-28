@@ -5792,6 +5792,237 @@ class GoldenGateClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_ai_models(self, compartment_id, provider_type, **kwargs):
+        """
+        Returns the list of AI models for the specified provider. If the
+        provider requires additional context to resolve its supported models,
+        that context must be supplied in the request.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment that contains the work request. Work requests should be scoped
+            to the same compartment as the resource the work request affects. If the work request concerns
+            multiple resources, and those resources are not in the same compartment, it is up to the service team
+            to pick the primary resource whose compartment should be used.
+
+        :param str provider_type: (required)
+            The AI provider type for which model information is requested.
+
+            Allowed values are: "OCI_GENERATIVE_AI", "GEMINI", "OPEN_AI", "VOYAGE_AI"
+
+        :param str region: (optional)
+            OCI region identifier, for example us-ashburn-1.
+
+        :param str tenancy_id: (optional)
+            OCI tenancy OCID to use when resolving provider models, for example for
+            OCI Generative AI model discovery across a specific tenancy.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.golden_gate.models.AiModelCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_ai_models.py.html>`__ to see an example of how to use list_ai_models API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'providerType']
+        resource_path = "/aiModels"
+        method = "GET"
+        operation_name = "list_ai_models"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/AiModelCollection/ListAiModels"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "region",
+            "tenancy_id",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_ai_models got unknown kwargs: {extra_kwargs!r}")
+
+        provider_type_allowed_values = ["OCI_GENERATIVE_AI", "GEMINI", "OPEN_AI", "VOYAGE_AI"]
+        if provider_type not in provider_type_allowed_values:
+            raise ValueError(
+                f"Invalid value for `provider_type`, must be one of { provider_type_allowed_values }"
+            )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "providerType": provider_type,
+            "region": kwargs.get("region", missing),
+            "tenancyId": kwargs.get("tenancy_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AiModelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AiModelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_ai_providers(self, compartment_id, **kwargs):
+        """
+        Returns the list of AI providers along with their supported models.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment that contains the work request. Work requests should be scoped
+            to the same compartment as the resource the work request affects. If the work request concerns
+            multiple resources, and those resources are not in the same compartment, it is up to the service team
+            to pick the primary resource whose compartment should be used.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.golden_gate.models.AiProviderCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_ai_providers.py.html>`__ to see an example of how to use list_ai_providers API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/aiProviders"
+        method = "GET"
+        operation_name = "list_ai_providers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/AiProviderCollection/ListAiProviders"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_ai_providers got unknown kwargs: {extra_kwargs!r}")
+
+        query_params = {
+            "compartmentId": compartment_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AiProviderCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AiProviderCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_certificates(self, deployment_id, **kwargs):
         """
         Returns a list of certificates from truststore.
@@ -5979,6 +6210,16 @@ class GoldenGateClient(object):
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] connection_type: (optional)
+            The array of connection types.
+
+            Allowed values are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
+
+        :param list[str] connection_type_not_equal_to: (optional)
+            The array of connection types to exclude.
+
+            Allowed values are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
+
         :param str name: (optional)
             The name of the connection in the assignment (aliasName).
 
@@ -6045,6 +6286,8 @@ class GoldenGateClient(object):
             "retry_strategy",
             "deployment_id",
             "connection_id",
+            "connection_type",
+            "connection_type_not_equal_to",
             "name",
             "lifecycle_state",
             "limit",
@@ -6057,6 +6300,22 @@ class GoldenGateClient(object):
         if extra_kwargs:
             raise ValueError(
                 f"list_connection_assignments got unknown kwargs: {extra_kwargs!r}")
+
+        if 'connection_type' in kwargs:
+            connection_type_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"]
+            for connection_type_item in kwargs['connection_type']:
+                if connection_type_item not in connection_type_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `connection_type`, must be one of { connection_type_allowed_values }"
+                    )
+
+        if 'connection_type_not_equal_to' in kwargs:
+            connection_type_not_equal_to_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"]
+            for connection_type_not_equal_to_item in kwargs['connection_type_not_equal_to']:
+                if connection_type_not_equal_to_item not in connection_type_not_equal_to_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `connection_type_not_equal_to`, must be one of { connection_type_not_equal_to_allowed_values }"
+                    )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING"]
@@ -6083,6 +6342,8 @@ class GoldenGateClient(object):
             "compartmentId": compartment_id,
             "deploymentId": kwargs.get("deployment_id", missing),
             "connectionId": kwargs.get("connection_id", missing),
+            "connectionType": self.base_client.generate_collection_format_param(kwargs.get("connection_type", missing), 'multi'),
+            "connectionTypeNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("connection_type_not_equal_to", missing), 'multi'),
             "name": kwargs.get("name", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "limit": kwargs.get("limit", missing),
@@ -6149,12 +6410,17 @@ class GoldenGateClient(object):
         :param list[str] technology_type: (optional)
             The array of technology types.
 
-            Allowed values are: "GOLDENGATE", "GENERIC", "OCI_AUTONOMOUS_DATABASE", "OCI_AUTONOMOUS_JSON_DATABASE", "OCI_CACHE_WITH_REDIS", "OCI_MYSQL", "OCI_OBJECT_STORAGE", "OCI_POSTGRESQL", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_JSON_COLLECTION", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "ORACLE_REST_DATA_SERVICES", "ORACLE_WEBLOGIC_JMS", "AMAZON_RDS_ORACLE", "AMAZON_RDS_SQLSERVER", "AMAZON_S3", "AMAZON_AURORA_MYSQL", "AMAZON_AURORA_POSTGRESQL", "AMAZON_DOCUMENT_DB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AMAZON_RDS_POSTGRESQL", "APACHE_ICEBERG", "APACHE_KAFKA", "AZURE_COSMOS_DB_FOR_MONGODB", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "AZURE_DATA_LAKE_STORAGE", "AZURE_EVENT_HUBS", "AZURE_MYSQL", "AZURE_POSTGRESQL", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "AZURE_SYNAPSE_ANALYTICS", "CONFLUENT_KAFKA", "CONFLUENT_SCHEMA_REGISTRY", "DATABRICKS", "DB2_I", "DB2_ZOS", "ELASTICSEARCH", "EDB_POSTGRES_ADVANCED_SERVER", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL", "GOOGLE_BIGQUERY", "GOOGLE_CLOUD_STORAGE", "GOOGLE_CLOUD_SQL_MYSQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_CLOUD_SQL_SQLSERVER", "GOOGLE_PUBSUB", "HDFS", "MARIADB", "MICROSOFT_SQLSERVER", "MICROSOFT_FABRIC_EVENTSTREAM", "MICROSOFT_FABRIC_LAKEHOUSE", "MICROSOFT_FABRIC_MIRROR", "MONGODB", "MYSQL_SERVER", "MYSQL_HEATWAVE_ON_AZURE", "MYSQL_HEATWAVE_ON_AWS", "POSTGRESQL_SERVER", "REDIS", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD", "SNOWFLAKE", "YUGABYTE_DB"
+            Allowed values are: "GOLDENGATE", "GENERIC", "OCI_AUTONOMOUS_DATABASE", "OCI_AUTONOMOUS_JSON_DATABASE", "OCI_CACHE_WITH_REDIS", "OCI_MYSQL", "OCI_OBJECT_STORAGE", "OCI_POSTGRESQL", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_EXASCALE", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_EXADATA_EXASCALE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_JSON_COLLECTION", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_EXASCALE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "ORACLE_REST_DATA_SERVICES", "ORACLE_WEBLOGIC_JMS", "AMAZON_RDS_ORACLE", "AMAZON_RDS_SQLSERVER", "AMAZON_S3", "AMAZON_AURORA_MYSQL", "AMAZON_AURORA_POSTGRESQL", "AMAZON_DOCUMENT_DB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AMAZON_RDS_POSTGRESQL", "APACHE_ICEBERG", "APACHE_KAFKA", "AZURE_COSMOS_DB_FOR_MONGODB", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "AZURE_DATA_LAKE_STORAGE", "AZURE_EVENT_HUBS", "AZURE_MYSQL", "AZURE_POSTGRESQL", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "AZURE_SYNAPSE_ANALYTICS", "CONFLUENT_KAFKA", "CONFLUENT_SCHEMA_REGISTRY", "DATABRICKS", "DB2_I", "DB2_ZOS", "ELASTICSEARCH", "EDB_POSTGRES_ADVANCED_SERVER", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL", "GOOGLE_BIGQUERY", "GOOGLE_CLOUD_MANAGED_SERVICE_FOR_APACHE_KAFKA", "GOOGLE_CLOUD_STORAGE", "GOOGLE_CLOUD_SQL_MYSQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_CLOUD_SQL_SQLSERVER", "GOOGLE_PUBSUB", "HDFS", "MARIADB", "MICROSOFT_SQLSERVER", "MICROSOFT_FABRIC_EVENTSTREAM", "MICROSOFT_FABRIC_LAKEHOUSE", "MICROSOFT_FABRIC_MIRROR", "MONGODB", "MYSQL_SERVER", "MYSQL_HEATWAVE_ON_AZURE", "MYSQL_HEATWAVE_ON_AWS", "POSTGRESQL_SERVER", "REDIS", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD", "SNOWFLAKE", "YUGABYTE_DB", "AI_MODEL"
 
         :param list[str] connection_type: (optional)
             The array of connection types.
 
-            Allowed values are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
+
+        :param list[str] connection_type_not_equal_to: (optional)
+            The array of connection types to exclude.
+
+            Allowed values are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
 
         :param str assigned_deployment_id: (optional)
             The OCID of the deployment which for the connection must be assigned.
@@ -6170,7 +6436,7 @@ class GoldenGateClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only connections having the 'lifecycleState' given.
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
 
         :param str display_name: (optional)
             A filter to return only the resources that match the entire 'displayName' given.
@@ -6233,6 +6499,7 @@ class GoldenGateClient(object):
             "retry_strategy",
             "technology_type",
             "connection_type",
+            "connection_type_not_equal_to",
             "assigned_deployment_id",
             "assignable_deployment_id",
             "assignable_deployment_type",
@@ -6250,7 +6517,7 @@ class GoldenGateClient(object):
                 f"list_connections got unknown kwargs: {extra_kwargs!r}")
 
         if 'technology_type' in kwargs:
-            technology_type_allowed_values = ["GOLDENGATE", "GENERIC", "OCI_AUTONOMOUS_DATABASE", "OCI_AUTONOMOUS_JSON_DATABASE", "OCI_CACHE_WITH_REDIS", "OCI_MYSQL", "OCI_OBJECT_STORAGE", "OCI_POSTGRESQL", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_JSON_COLLECTION", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "ORACLE_REST_DATA_SERVICES", "ORACLE_WEBLOGIC_JMS", "AMAZON_RDS_ORACLE", "AMAZON_RDS_SQLSERVER", "AMAZON_S3", "AMAZON_AURORA_MYSQL", "AMAZON_AURORA_POSTGRESQL", "AMAZON_DOCUMENT_DB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AMAZON_RDS_POSTGRESQL", "APACHE_ICEBERG", "APACHE_KAFKA", "AZURE_COSMOS_DB_FOR_MONGODB", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "AZURE_DATA_LAKE_STORAGE", "AZURE_EVENT_HUBS", "AZURE_MYSQL", "AZURE_POSTGRESQL", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "AZURE_SYNAPSE_ANALYTICS", "CONFLUENT_KAFKA", "CONFLUENT_SCHEMA_REGISTRY", "DATABRICKS", "DB2_I", "DB2_ZOS", "ELASTICSEARCH", "EDB_POSTGRES_ADVANCED_SERVER", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL", "GOOGLE_BIGQUERY", "GOOGLE_CLOUD_STORAGE", "GOOGLE_CLOUD_SQL_MYSQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_CLOUD_SQL_SQLSERVER", "GOOGLE_PUBSUB", "HDFS", "MARIADB", "MICROSOFT_SQLSERVER", "MICROSOFT_FABRIC_EVENTSTREAM", "MICROSOFT_FABRIC_LAKEHOUSE", "MICROSOFT_FABRIC_MIRROR", "MONGODB", "MYSQL_SERVER", "MYSQL_HEATWAVE_ON_AZURE", "MYSQL_HEATWAVE_ON_AWS", "POSTGRESQL_SERVER", "REDIS", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD", "SNOWFLAKE", "YUGABYTE_DB"]
+            technology_type_allowed_values = ["GOLDENGATE", "GENERIC", "OCI_AUTONOMOUS_DATABASE", "OCI_AUTONOMOUS_JSON_DATABASE", "OCI_CACHE_WITH_REDIS", "OCI_MYSQL", "OCI_OBJECT_STORAGE", "OCI_POSTGRESQL", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_EXASCALE", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_EXADATA_EXASCALE_AT_AZURE", "ORACLE_AUTONOMOUS_DATABASE_AT_AZURE", "ORACLE_JSON_COLLECTION", "ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_EXASCALE_AT_GOOGLE_CLOUD", "ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD", "ORACLE_EXADATA_DATABASE_AT_AWS", "ORACLE_AUTONOMOUS_DATABASE_AT_AWS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "ORACLE_REST_DATA_SERVICES", "ORACLE_WEBLOGIC_JMS", "AMAZON_RDS_ORACLE", "AMAZON_RDS_SQLSERVER", "AMAZON_S3", "AMAZON_AURORA_MYSQL", "AMAZON_AURORA_POSTGRESQL", "AMAZON_DOCUMENT_DB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AMAZON_RDS_POSTGRESQL", "APACHE_ICEBERG", "APACHE_KAFKA", "AZURE_COSMOS_DB_FOR_MONGODB", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "AZURE_DATA_LAKE_STORAGE", "AZURE_EVENT_HUBS", "AZURE_MYSQL", "AZURE_POSTGRESQL", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "AZURE_SYNAPSE_ANALYTICS", "CONFLUENT_KAFKA", "CONFLUENT_SCHEMA_REGISTRY", "DATABRICKS", "DB2_I", "DB2_ZOS", "ELASTICSEARCH", "EDB_POSTGRES_ADVANCED_SERVER", "GOOGLE_ALLOY_DB_FOR_POSTGRESQL", "GOOGLE_BIGQUERY", "GOOGLE_CLOUD_MANAGED_SERVICE_FOR_APACHE_KAFKA", "GOOGLE_CLOUD_STORAGE", "GOOGLE_CLOUD_SQL_MYSQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_CLOUD_SQL_SQLSERVER", "GOOGLE_PUBSUB", "HDFS", "MARIADB", "MICROSOFT_SQLSERVER", "MICROSOFT_FABRIC_EVENTSTREAM", "MICROSOFT_FABRIC_LAKEHOUSE", "MICROSOFT_FABRIC_MIRROR", "MONGODB", "MYSQL_SERVER", "MYSQL_HEATWAVE_ON_AZURE", "MYSQL_HEATWAVE_ON_AWS", "POSTGRESQL_SERVER", "REDIS", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD", "SNOWFLAKE", "YUGABYTE_DB", "AI_MODEL"]
             for technology_type_item in kwargs['technology_type']:
                 if technology_type_item not in technology_type_allowed_values:
                     raise ValueError(
@@ -6258,11 +6525,19 @@ class GoldenGateClient(object):
                     )
 
         if 'connection_type' in kwargs:
-            connection_type_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"]
+            connection_type_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"]
             for connection_type_item in kwargs['connection_type']:
                 if connection_type_item not in connection_type_allowed_values:
                     raise ValueError(
                         f"Invalid value for `connection_type`, must be one of { connection_type_allowed_values }"
+                    )
+
+        if 'connection_type_not_equal_to' in kwargs:
+            connection_type_not_equal_to_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"]
+            for connection_type_not_equal_to_item in kwargs['connection_type_not_equal_to']:
+                if connection_type_not_equal_to_item not in connection_type_not_equal_to_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `connection_type_not_equal_to`, must be one of { connection_type_not_equal_to_allowed_values }"
                     )
 
         if 'assignable_deployment_type' in kwargs:
@@ -6273,7 +6548,7 @@ class GoldenGateClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
@@ -6297,6 +6572,7 @@ class GoldenGateClient(object):
             "compartmentId": compartment_id,
             "technologyType": self.base_client.generate_collection_format_param(kwargs.get("technology_type", missing), 'multi'),
             "connectionType": self.base_client.generate_collection_format_param(kwargs.get("connection_type", missing), 'multi'),
+            "connectionTypeNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("connection_type_not_equal_to", missing), 'multi'),
             "assignedDeploymentId": kwargs.get("assigned_deployment_id", missing),
             "assignableDeploymentId": kwargs.get("assignable_deployment_id", missing),
             "assignableDeploymentType": kwargs.get("assignable_deployment_type", missing),
@@ -7674,7 +7950,7 @@ class GoldenGateClient(object):
         :param str supported_connection_type: (optional)
             The connection type which the deployment must support.
 
-            Allowed values are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
 
         :param str assigned_connection_id: (optional)
             The OCID of the connection which for the deployment must be assigned.
@@ -7779,7 +8055,7 @@ class GoldenGateClient(object):
                 f"list_deployments got unknown kwargs: {extra_kwargs!r}")
 
         if 'supported_connection_type' in kwargs:
-            supported_connection_type_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"]
+            supported_connection_type_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"]
             if kwargs['supported_connection_type'] not in supported_connection_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `supported_connection_type`, must be one of { supported_connection_type_allowed_values }"

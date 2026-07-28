@@ -24,14 +24,21 @@ class SupportedCapabilities(object):
             The value to assign to the is_memory_encryption_supported property of this SupportedCapabilities.
         :type is_memory_encryption_supported: bool
 
+        :param is_burstable_supported:
+            The value to assign to the is_burstable_supported property of this SupportedCapabilities.
+        :type is_burstable_supported: bool
+
         """
         self.swagger_types = {
-            'is_memory_encryption_supported': 'bool'
+            'is_memory_encryption_supported': 'bool',
+            'is_burstable_supported': 'bool'
         }
         self.attribute_map = {
-            'is_memory_encryption_supported': 'isMemoryEncryptionSupported'
+            'is_memory_encryption_supported': 'isMemoryEncryptionSupported',
+            'is_burstable_supported': 'isBurstableSupported'
         }
         self._is_memory_encryption_supported = None
+        self._is_burstable_supported = None
 
     @property
     def is_memory_encryption_supported(self):
@@ -56,6 +63,30 @@ class SupportedCapabilities(object):
         :type: bool
         """
         self._is_memory_encryption_supported = is_memory_encryption_supported
+
+    @property
+    def is_burstable_supported(self):
+        """
+        Gets the is_burstable_supported of this SupportedCapabilities.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If `true`, only Burstable VMs can be launched. If `false`, Burstable VMs cannot be launched.
+
+
+        :return: The is_burstable_supported of this SupportedCapabilities.
+        :rtype: bool
+        """
+        return self._is_burstable_supported
+
+    @is_burstable_supported.setter
+    def is_burstable_supported(self, is_burstable_supported):
+        """
+        Sets the is_burstable_supported of this SupportedCapabilities.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If `true`, only Burstable VMs can be launched. If `false`, Burstable VMs cannot be launched.
+
+
+        :param is_burstable_supported: The is_burstable_supported of this SupportedCapabilities.
+        :type: bool
+        """
+        self._is_burstable_supported = is_burstable_supported
 
     def __repr__(self):
         return formatted_flat_dict(self)

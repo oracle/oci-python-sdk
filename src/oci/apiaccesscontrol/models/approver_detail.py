@@ -28,6 +28,10 @@ class ApproverDetail(object):
             The value to assign to the approval_action property of this ApproverDetail.
         :type approval_action: str
 
+        :param approver_group_level:
+            The value to assign to the approver_group_level property of this ApproverDetail.
+        :type approver_group_level: int
+
         :param approval_comment:
             The value to assign to the approval_comment property of this ApproverDetail.
         :type approval_comment: str
@@ -44,6 +48,7 @@ class ApproverDetail(object):
         self.swagger_types = {
             'approver_id': 'str',
             'approval_action': 'str',
+            'approver_group_level': 'int',
             'approval_comment': 'str',
             'time_of_authorization': 'datetime',
             'time_approved_for_access': 'datetime'
@@ -51,12 +56,14 @@ class ApproverDetail(object):
         self.attribute_map = {
             'approver_id': 'approverId',
             'approval_action': 'approvalAction',
+            'approver_group_level': 'approverGroupLevel',
             'approval_comment': 'approvalComment',
             'time_of_authorization': 'timeOfAuthorization',
             'time_approved_for_access': 'timeApprovedForAccess'
         }
         self._approver_id = None
         self._approval_action = None
+        self._approver_group_level = None
         self._approval_comment = None
         self._time_of_authorization = None
         self._time_approved_for_access = None
@@ -108,6 +115,30 @@ class ApproverDetail(object):
         :type: str
         """
         self._approval_action = approval_action
+
+    @property
+    def approver_group_level(self):
+        """
+        Gets the approver_group_level of this ApproverDetail.
+        The group level at which the approver approved.
+
+
+        :return: The approver_group_level of this ApproverDetail.
+        :rtype: int
+        """
+        return self._approver_group_level
+
+    @approver_group_level.setter
+    def approver_group_level(self, approver_group_level):
+        """
+        Sets the approver_group_level of this ApproverDetail.
+        The group level at which the approver approved.
+
+
+        :param approver_group_level: The approver_group_level of this ApproverDetail.
+        :type: int
+        """
+        self._approver_group_level = approver_group_level
 
     @property
     def approval_comment(self):

@@ -131,6 +131,10 @@ class CreateConnectionDetails(object):
     #: This constant has a value of "ICEBERG"
     CONNECTION_TYPE_ICEBERG = "ICEBERG"
 
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "AI_MODEL"
+    CONNECTION_TYPE_AI_MODEL = "AI_MODEL"
+
     #: A constant which can be used with the routing_method property of a CreateConnectionDetails.
     #: This constant has a value of "SHARED_SERVICE_ENDPOINT"
     ROUTING_METHOD_SHARED_SERVICE_ENDPOINT = "SHARED_SERVICE_ENDPOINT"
@@ -170,6 +174,7 @@ class CreateConnectionDetails(object):
         * :class:`~oci.golden_gate.models.CreateDatabricksConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateDb2ConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateElasticsearchConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateAiModelConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateAzureSynapseConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateIcebergConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateMysqlConnectionDetails`
@@ -182,7 +187,7 @@ class CreateConnectionDetails(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
         :type connection_type: str
 
         :param display_name:
@@ -374,6 +379,9 @@ class CreateConnectionDetails(object):
         if type == 'ELASTICSEARCH':
             return 'CreateElasticsearchConnectionDetails'
 
+        if type == 'AI_MODEL':
+            return 'CreateAiModelConnectionDetails'
+
         if type == 'AZURE_SYNAPSE_ANALYTICS':
             return 'CreateAzureSynapseConnectionDetails'
 
@@ -403,7 +411,7 @@ class CreateConnectionDetails(object):
         **[Required]** Gets the connection_type of this CreateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
 
 
         :return: The connection_type of this CreateConnectionDetails.
@@ -421,7 +429,7 @@ class CreateConnectionDetails(object):
         :param connection_type: The connection_type of this CreateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `connection_type`, must be None or one of {allowed_values}"
@@ -590,9 +598,15 @@ class CreateConnectionDetails(object):
     def vault_id(self):
         """
         Gets the vault_id of this CreateConnectionDetails.
-        Refers to the customer's vault OCID.
-        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
-        to manage secrets contained within this vault.
+        References the OCI Vault that contains the customer-managed encryption key identified by `keyId`.
+
+        Deprecated: This field is deprecated for GoldenGate connections. Sensitive attributes should be provided using the
+        corresponding Secret OCID attributes of the connection (for example, `passwordSecretId`) instead of plain-text
+        attributes encrypted with `vaultId` and `keyId`. This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+
+        This field is applicable only when `doesUseSecretIds` is set to `false`.
+        If `vaultId` is provided, `keyId` must also be provided.
 
 
         :return: The vault_id of this CreateConnectionDetails.
@@ -604,9 +618,15 @@ class CreateConnectionDetails(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this CreateConnectionDetails.
-        Refers to the customer's vault OCID.
-        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
-        to manage secrets contained within this vault.
+        References the OCI Vault that contains the customer-managed encryption key identified by `keyId`.
+
+        Deprecated: This field is deprecated for GoldenGate connections. Sensitive attributes should be provided using the
+        corresponding Secret OCID attributes of the connection (for example, `passwordSecretId`) instead of plain-text
+        attributes encrypted with `vaultId` and `keyId`. This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+
+        This field is applicable only when `doesUseSecretIds` is set to `false`.
+        If `vaultId` is provided, `keyId` must also be provided.
 
 
         :param vault_id: The vault_id of this CreateConnectionDetails.
@@ -618,8 +638,17 @@ class CreateConnectionDetails(object):
     def key_id(self):
         """
         Gets the key_id of this CreateConnectionDetails.
-        Refers to the customer's master key OCID.
-        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+        References the OCI Vault key in the OCI Vault identified by `vaultId`.
+
+        Deprecated: This field is deprecated for GoldenGate connections. Sensitive attributes should be provided using the
+        corresponding Secret OCID attributes of the connection (for example, `passwordSecretId`) instead of plain-text
+        attributes encrypted with `vaultId` and `keyId`. This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+
+        The GoldenGate service uses this key to encrypt sensitive information (for example, `password`) that is provided in plain-text connection attributes through the API.
+        This field is applicable only when `doesUseSecretIds` is set to `false`. If both `vaultId` and `keyId` are provided,
+        the GoldenGate service uses the specified customer-managed key to encrypt the sensitive data.
+        If neither `vaultId` nor `keyId` is provided, the GoldenGate service uses Oracle-managed encryption keys.
 
 
         :return: The key_id of this CreateConnectionDetails.
@@ -631,8 +660,17 @@ class CreateConnectionDetails(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this CreateConnectionDetails.
-        Refers to the customer's master key OCID.
-        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+        References the OCI Vault key in the OCI Vault identified by `vaultId`.
+
+        Deprecated: This field is deprecated for GoldenGate connections. Sensitive attributes should be provided using the
+        corresponding Secret OCID attributes of the connection (for example, `passwordSecretId`) instead of plain-text
+        attributes encrypted with `vaultId` and `keyId`. This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+
+        The GoldenGate service uses this key to encrypt sensitive information (for example, `password`) that is provided in plain-text connection attributes through the API.
+        This field is applicable only when `doesUseSecretIds` is set to `false`. If both `vaultId` and `keyId` are provided,
+        the GoldenGate service uses the specified customer-managed key to encrypt the sensitive data.
+        If neither `vaultId` nor `keyId` is provided, the GoldenGate service uses Oracle-managed encryption keys.
 
 
         :param key_id: The key_id of this CreateConnectionDetails.
@@ -697,9 +735,13 @@ class CreateConnectionDetails(object):
         """
         Gets the routing_method of this CreateConnectionDetails.
         Controls the network traffic direction to the target:
-        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
         SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
         DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+
+        Deprecated: SHARED_SERVICE_ENDPOINT is deprecated. Use another supported routingMethod value, or update existing connections to use a supported routing method.
+        This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
         Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
 
@@ -714,9 +756,13 @@ class CreateConnectionDetails(object):
         """
         Sets the routing_method of this CreateConnectionDetails.
         Controls the network traffic direction to the target:
-        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
         SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
         DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+
+        Deprecated: SHARED_SERVICE_ENDPOINT is deprecated. Use another supported routingMethod value, or update existing connections to use a supported routing method.
+        This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
 
         :param routing_method: The routing_method of this CreateConnectionDetails.
@@ -735,6 +781,21 @@ class CreateConnectionDetails(object):
         Gets the does_use_secret_ids of this CreateConnectionDetails.
         Indicates that sensitive attributes are provided via Secrets.
 
+        Deprecated: This field is deprecated. Sensitive attributes should be provided using the corresponding Secret OCID
+        attributes of the connection (for example, `passwordSecretId`) instead of plain-text attributes. This change follows
+        the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+
+        When set to `true`, all sensitive information must be provided as OCI Vault secrets using the corresponding
+        `*SecretId` attributes of the connection (for example, `passwordSecretId`). Plain-text sensitive attributes (for example, `password`) must not be used.
+        This ensures that sensitive information remains stored and managed in the customer's OCI Vault rather than by the GoldenGate service.
+
+        When set to false, sensitive information must be provided in the corresponding plain-text attributes (for example, `password`) rather than in secret OCID attributes.
+        In this mode, the sensitive information is stored by the GoldenGate service. If `vaultId` and `keyId` are not specified,
+        the GoldenGate service uses Oracle-managed encryption keys to encrypt the stored data.
+
+        If `vaultId` and `keyId` are provided, the specified customer-managed key is used.
+
 
         :return: The does_use_secret_ids of this CreateConnectionDetails.
         :rtype: bool
@@ -746,6 +807,21 @@ class CreateConnectionDetails(object):
         """
         Sets the does_use_secret_ids of this CreateConnectionDetails.
         Indicates that sensitive attributes are provided via Secrets.
+
+        Deprecated: This field is deprecated. Sensitive attributes should be provided using the corresponding Secret OCID
+        attributes of the connection (for example, `passwordSecretId`) instead of plain-text attributes. This change follows
+        the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+
+        When set to `true`, all sensitive information must be provided as OCI Vault secrets using the corresponding
+        `*SecretId` attributes of the connection (for example, `passwordSecretId`). Plain-text sensitive attributes (for example, `password`) must not be used.
+        This ensures that sensitive information remains stored and managed in the customer's OCI Vault rather than by the GoldenGate service.
+
+        When set to false, sensitive information must be provided in the corresponding plain-text attributes (for example, `password`) rather than in secret OCID attributes.
+        In this mode, the sensitive information is stored by the GoldenGate service. If `vaultId` and `keyId` are not specified,
+        the GoldenGate service uses Oracle-managed encryption keys to encrypt the stored data.
+
+        If `vaultId` and `keyId` are provided, the specified customer-managed key is used.
 
 
         :param does_use_secret_ids: The does_use_secret_ids of this CreateConnectionDetails.

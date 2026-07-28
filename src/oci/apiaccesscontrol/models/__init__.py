@@ -13,6 +13,7 @@ from .api_metadata_collection import ApiMetadataCollection
 from .api_metadata_summary import ApiMetadataSummary
 from .approve_privileged_api_request_details import ApprovePrivilegedApiRequestDetails
 from .approver_detail import ApproverDetail
+from .approver_group_level import ApproverGroupLevel
 from .change_privileged_api_control_compartment_details import ChangePrivilegedApiControlCompartmentDetails
 from .close_privileged_api_request_details import ClosePrivilegedApiRequestDetails
 from .create_privileged_api_control_details import CreatePrivilegedApiControlDetails
@@ -46,6 +47,7 @@ apiaccesscontrol_type_mapping = {
     "ApiMetadataSummary": ApiMetadataSummary,
     "ApprovePrivilegedApiRequestDetails": ApprovePrivilegedApiRequestDetails,
     "ApproverDetail": ApproverDetail,
+    "ApproverGroupLevel": ApproverGroupLevel,
     "ChangePrivilegedApiControlCompartmentDetails": ChangePrivilegedApiControlCompartmentDetails,
     "ClosePrivilegedApiRequestDetails": ClosePrivilegedApiRequestDetails,
     "CreatePrivilegedApiControlDetails": CreatePrivilegedApiControlDetails,

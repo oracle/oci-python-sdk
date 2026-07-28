@@ -103,10 +103,18 @@ Database
     oci.database.models.BackupDestinationProperties
     oci.database.models.BackupDestinationSummary
     oci.database.models.BackupSummary
+    oci.database.models.BaseccVmCluster
+    oci.database.models.BaseccVmClusterSummary
+    oci.database.models.BaseccVmClusterUpdate
+    oci.database.models.BaseccVmClusterUpdateDetails
+    oci.database.models.BaseccVmClusterUpdateHistoryEntry
+    oci.database.models.BaseccVmClusterUpdateHistoryEntrySummary
+    oci.database.models.BaseccVmClusterUpdateSummary
     oci.database.models.CancelExecutionWindowDetails
     oci.database.models.ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
     oci.database.models.ChangeAutonomousDatabaseSubscriptionDetails
     oci.database.models.ChangeAutonomousVmClusterCompartmentDetails
+    oci.database.models.ChangeBaseccVmClusterCompartmentDetails
     oci.database.models.ChangeCloudAutonomousVmClusterCompartmentDetails
     oci.database.models.ChangeCloudAutonomousVmClusterSubscriptionDetails
     oci.database.models.ChangeCloudDbSystemSubscriptionDetails
@@ -176,6 +184,7 @@ Database
     oci.database.models.CreateAutonomousVmClusterDetails
     oci.database.models.CreateBackupDestinationDetails
     oci.database.models.CreateBackupDetails
+    oci.database.models.CreateBaseccVmClusterDetails
     oci.database.models.CreateCloudAutonomousVmClusterDetails
     oci.database.models.CreateCloudExadataInfrastructureDetails
     oci.database.models.CreateCloudVmClusterDetails
@@ -340,6 +349,7 @@ Database
     oci.database.models.ExadataInfrastructureUnAllocatedResources
     oci.database.models.ExadataIormConfig
     oci.database.models.ExadataIormConfigUpdateDetails
+    oci.database.models.ExadataLiveImageVersionDetails
     oci.database.models.ExadbVmCluster
     oci.database.models.ExadbVmClusterStorageDetails
     oci.database.models.ExadbVmClusterSummary
@@ -457,6 +467,7 @@ Database
     oci.database.models.RegisterAutonomousDatabaseDataSafeDetails
     oci.database.models.RegisterCloudAutonomousVmClusterPkcsDetails
     oci.database.models.RegisterCloudVmClusterPkcsDetails
+    oci.database.models.RegisterExadbVmClusterPkcsDetails
     oci.database.models.ReinstateDataGuardAssociationDetails
     oci.database.models.ReinstateDataGuardDetails
     oci.database.models.RemoteClonePluggableDatabaseDetails
@@ -512,6 +523,7 @@ Database
     oci.database.models.UnmountDbnodeSnapshotDetails
     oci.database.models.UnregisterCloudAutonomousVmClusterPkcsDetails
     oci.database.models.UnregisterCloudVmClusterPkcsDetails
+    oci.database.models.UnregisterExadbVmClusterPkcsDetails
     oci.database.models.Update
     oci.database.models.UpdateAdvancedClusterFileSystemDetails
     oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
@@ -524,6 +536,7 @@ Database
     oci.database.models.UpdateAutonomousVmClusterDetails
     oci.database.models.UpdateBackupDestinationDetails
     oci.database.models.UpdateBackupDetails
+    oci.database.models.UpdateBaseccVmClusterDetails
     oci.database.models.UpdateCloudAutonomousVmClusterDetails
     oci.database.models.UpdateCloudExadataInfrastructureDetails
     oci.database.models.UpdateCloudVmClusterDetails

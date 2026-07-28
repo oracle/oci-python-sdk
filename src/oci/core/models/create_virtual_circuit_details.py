@@ -156,6 +156,14 @@ class CreateVirtualCircuitDetails(object):
             Allowed values for this property are: "MTU_1500", "MTU_9000"
         :type ip_mtu: str
 
+        :param provider_remote_region:
+            The value to assign to the provider_remote_region property of this CreateVirtualCircuitDetails.
+        :type provider_remote_region: str
+
+        :param remote_account_id:
+            The value to assign to the remote_account_id property of this CreateVirtualCircuitDetails.
+        :type remote_account_id: str
+
         :param traffic_mode:
             The value to assign to the traffic_mode property of this CreateVirtualCircuitDetails.
             Allowed values for this property are: "NORMAL", "DRAIN"
@@ -184,6 +192,8 @@ class CreateVirtualCircuitDetails(object):
             'region': 'str',
             'type': 'str',
             'ip_mtu': 'str',
+            'provider_remote_region': 'str',
+            'remote_account_id': 'str',
             'traffic_mode': 'str'
         }
         self.attribute_map = {
@@ -208,6 +218,8 @@ class CreateVirtualCircuitDetails(object):
             'region': 'region',
             'type': 'type',
             'ip_mtu': 'ipMtu',
+            'provider_remote_region': 'providerRemoteRegion',
+            'remote_account_id': 'remoteAccountId',
             'traffic_mode': 'trafficMode'
         }
         self._bandwidth_shape_name = None
@@ -231,6 +243,8 @@ class CreateVirtualCircuitDetails(object):
         self._region = None
         self._type = None
         self._ip_mtu = None
+        self._provider_remote_region = None
+        self._remote_account_id = None
         self._traffic_mode = None
 
     @property
@@ -861,6 +875,56 @@ class CreateVirtualCircuitDetails(object):
                 f"Invalid value for `ip_mtu`, must be None or one of {allowed_values}"
             )
         self._ip_mtu = ip_mtu
+
+    @property
+    def provider_remote_region(self):
+        """
+        Gets the provider_remote_region of this CreateVirtualCircuitDetails.
+        The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the OCI region.
+        To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+
+
+        :return: The provider_remote_region of this CreateVirtualCircuitDetails.
+        :rtype: str
+        """
+        return self._provider_remote_region
+
+    @provider_remote_region.setter
+    def provider_remote_region(self, provider_remote_region):
+        """
+        Sets the provider_remote_region of this CreateVirtualCircuitDetails.
+        The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the OCI region.
+        To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+
+
+        :param provider_remote_region: The provider_remote_region of this CreateVirtualCircuitDetails.
+        :type: str
+        """
+        self._provider_remote_region = provider_remote_region
+
+    @property
+    def remote_account_id(self):
+        """
+        Gets the remote_account_id of this CreateVirtualCircuitDetails.
+        Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+
+
+        :return: The remote_account_id of this CreateVirtualCircuitDetails.
+        :rtype: str
+        """
+        return self._remote_account_id
+
+    @remote_account_id.setter
+    def remote_account_id(self, remote_account_id):
+        """
+        Sets the remote_account_id of this CreateVirtualCircuitDetails.
+        Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+
+
+        :param remote_account_id: The remote_account_id of this CreateVirtualCircuitDetails.
+        :type: str
+        """
+        self._remote_account_id = remote_account_id
 
     @property
     def traffic_mode(self):

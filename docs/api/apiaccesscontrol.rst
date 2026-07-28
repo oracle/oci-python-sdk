@@ -31,6 +31,7 @@ Apiaccesscontrol
     oci.apiaccesscontrol.models.ApiMetadataSummary
     oci.apiaccesscontrol.models.ApprovePrivilegedApiRequestDetails
     oci.apiaccesscontrol.models.ApproverDetail
+    oci.apiaccesscontrol.models.ApproverGroupLevel
     oci.apiaccesscontrol.models.ChangePrivilegedApiControlCompartmentDetails
     oci.apiaccesscontrol.models.ClosePrivilegedApiRequestDetails
     oci.apiaccesscontrol.models.CreatePrivilegedApiControlDetails

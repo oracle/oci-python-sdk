@@ -53,6 +53,22 @@ class CreateVolumeBackupDetails(object):
             The value to assign to the volume_id property of this CreateVolumeBackupDetails.
         :type volume_id: str
 
+        :param retention_period:
+            The value to assign to the retention_period property of this CreateVolumeBackupDetails.
+        :type retention_period: oci.core.models.RetentionDuration
+
+        :param is_prevent_deletion_enabled:
+            The value to assign to the is_prevent_deletion_enabled property of this CreateVolumeBackupDetails.
+        :type is_prevent_deletion_enabled: bool
+
+        :param is_retention_lock_enabled:
+            The value to assign to the is_retention_lock_enabled property of this CreateVolumeBackupDetails.
+        :type is_retention_lock_enabled: bool
+
+        :param is_indefinite_retention_enabled:
+            The value to assign to the is_indefinite_retention_enabled property of this CreateVolumeBackupDetails.
+        :type is_indefinite_retention_enabled: bool
+
         """
         self.swagger_types = {
             'kms_key_id': 'str',
@@ -60,7 +76,11 @@ class CreateVolumeBackupDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'type': 'str',
-            'volume_id': 'str'
+            'volume_id': 'str',
+            'retention_period': 'RetentionDuration',
+            'is_prevent_deletion_enabled': 'bool',
+            'is_retention_lock_enabled': 'bool',
+            'is_indefinite_retention_enabled': 'bool'
         }
         self.attribute_map = {
             'kms_key_id': 'kmsKeyId',
@@ -68,7 +88,11 @@ class CreateVolumeBackupDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'type': 'type',
-            'volume_id': 'volumeId'
+            'volume_id': 'volumeId',
+            'retention_period': 'retentionPeriod',
+            'is_prevent_deletion_enabled': 'isPreventDeletionEnabled',
+            'is_retention_lock_enabled': 'isRetentionLockEnabled',
+            'is_indefinite_retention_enabled': 'isIndefiniteRetentionEnabled'
         }
         self._kms_key_id = None
         self._defined_tags = None
@@ -76,6 +100,10 @@ class CreateVolumeBackupDetails(object):
         self._freeform_tags = None
         self._type = None
         self._volume_id = None
+        self._retention_period = None
+        self._is_prevent_deletion_enabled = None
+        self._is_retention_lock_enabled = None
+        self._is_indefinite_retention_enabled = None
 
     @property
     def kms_key_id(self):
@@ -261,6 +289,98 @@ class CreateVolumeBackupDetails(object):
         :type: str
         """
         self._volume_id = volume_id
+
+    @property
+    def retention_period(self):
+        """
+        Gets the retention_period of this CreateVolumeBackupDetails.
+
+        :return: The retention_period of this CreateVolumeBackupDetails.
+        :rtype: oci.core.models.RetentionDuration
+        """
+        return self._retention_period
+
+    @retention_period.setter
+    def retention_period(self, retention_period):
+        """
+        Sets the retention_period of this CreateVolumeBackupDetails.
+
+        :param retention_period: The retention_period of this CreateVolumeBackupDetails.
+        :type: oci.core.models.RetentionDuration
+        """
+        self._retention_period = retention_period
+
+    @property
+    def is_prevent_deletion_enabled(self):
+        """
+        Gets the is_prevent_deletion_enabled of this CreateVolumeBackupDetails.
+        Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+
+
+        :return: The is_prevent_deletion_enabled of this CreateVolumeBackupDetails.
+        :rtype: bool
+        """
+        return self._is_prevent_deletion_enabled
+
+    @is_prevent_deletion_enabled.setter
+    def is_prevent_deletion_enabled(self, is_prevent_deletion_enabled):
+        """
+        Sets the is_prevent_deletion_enabled of this CreateVolumeBackupDetails.
+        Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+
+
+        :param is_prevent_deletion_enabled: The is_prevent_deletion_enabled of this CreateVolumeBackupDetails.
+        :type: bool
+        """
+        self._is_prevent_deletion_enabled = is_prevent_deletion_enabled
+
+    @property
+    def is_retention_lock_enabled(self):
+        """
+        Gets the is_retention_lock_enabled of this CreateVolumeBackupDetails.
+        feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+
+
+        :return: The is_retention_lock_enabled of this CreateVolumeBackupDetails.
+        :rtype: bool
+        """
+        return self._is_retention_lock_enabled
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, is_retention_lock_enabled):
+        """
+        Sets the is_retention_lock_enabled of this CreateVolumeBackupDetails.
+        feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+
+
+        :param is_retention_lock_enabled: The is_retention_lock_enabled of this CreateVolumeBackupDetails.
+        :type: bool
+        """
+        self._is_retention_lock_enabled = is_retention_lock_enabled
+
+    @property
+    def is_indefinite_retention_enabled(self):
+        """
+        Gets the is_indefinite_retention_enabled of this CreateVolumeBackupDetails.
+        feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+
+
+        :return: The is_indefinite_retention_enabled of this CreateVolumeBackupDetails.
+        :rtype: bool
+        """
+        return self._is_indefinite_retention_enabled
+
+    @is_indefinite_retention_enabled.setter
+    def is_indefinite_retention_enabled(self, is_indefinite_retention_enabled):
+        """
+        Sets the is_indefinite_retention_enabled of this CreateVolumeBackupDetails.
+        feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+
+
+        :param is_indefinite_retention_enabled: The is_indefinite_retention_enabled of this CreateVolumeBackupDetails.
+        :type: bool
+        """
+        self._is_indefinite_retention_enabled = is_indefinite_retention_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

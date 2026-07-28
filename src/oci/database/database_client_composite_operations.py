@@ -1125,6 +1125,47 @@ class DatabaseClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def change_basecc_vm_cluster_compartment_and_wait_for_work_request(self, change_basecc_vm_cluster_compartment_details, basecc_vm_cluster_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.change_basecc_vm_cluster_compartment` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param oci.database.models.ChangeBaseccVmClusterCompartmentDetails change_basecc_vm_cluster_compartment_details: (required)
+            Request to move the BaseDB-C@C VM cluster to a different compartment.
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.change_basecc_vm_cluster_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_basecc_vm_cluster_compartment(change_basecc_vm_cluster_compartment_details, basecc_vm_cluster_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        work_request_id = operation_result.headers['opc-work-request-id']
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def change_cloud_autonomous_vm_cluster_compartment_and_wait_for_work_request(self, change_cloud_autonomous_vm_cluster_compartment_details, cloud_autonomous_vm_cluster_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database.DatabaseClient.change_cloud_autonomous_vm_cluster_compartment` and waits for the oci.work_requests.models.WorkRequest
@@ -3913,6 +3954,84 @@ class DatabaseClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_basecc_vm_cluster_and_wait_for_work_request(self, create_basecc_vm_cluster_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.create_basecc_vm_cluster` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param oci.database.models.CreateBaseccVmClusterDetails create_basecc_vm_cluster_details: (required)
+            Request to create a BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.create_basecc_vm_cluster`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_basecc_vm_cluster(create_basecc_vm_cluster_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        work_request_id = operation_result.headers['opc-work-request-id']
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_basecc_vm_cluster_and_wait_for_state(self, create_basecc_vm_cluster_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.create_basecc_vm_cluster` and waits for the :py:class:`~oci.database.models.BaseccVmCluster` acted upon
+        to enter the given state(s).
+
+        :param oci.database.models.CreateBaseccVmClusterDetails create_basecc_vm_cluster_details: (required)
+            Request to create a BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.BaseccVmCluster.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.create_basecc_vm_cluster`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_basecc_vm_cluster(create_basecc_vm_cluster_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        basecc_vm_cluster_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_basecc_vm_cluster(basecc_vm_cluster_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_cloud_autonomous_vm_cluster_and_wait_for_work_request(self, create_cloud_autonomous_vm_cluster_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database.DatabaseClient.create_cloud_autonomous_vm_cluster` and waits for the oci.work_requests.models.WorkRequest
@@ -6619,6 +6738,44 @@ class DatabaseClientCompositeOperations(object):
                 e.args = ('',)
             e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_basecc_vm_cluster_and_wait_for_work_request(self, basecc_vm_cluster_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.delete_basecc_vm_cluster` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.delete_basecc_vm_cluster`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.delete_basecc_vm_cluster(basecc_vm_cluster_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        work_request_id = operation_result.headers['opc-work-request-id']
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -10836,6 +10993,47 @@ class DatabaseClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def register_exadb_vm_cluster_pkcs_and_wait_for_work_request(self, exadb_vm_cluster_id, register_exadb_vm_cluster_pkcs_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.register_exadb_vm_cluster_pkcs` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str exadb_vm_cluster_id: (required)
+            The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.RegisterExadbVmClusterPkcsDetails register_exadb_vm_cluster_pkcs_details: (required)
+            Details of registering PKCS11 driver.
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.register_exadb_vm_cluster_pkcs`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.register_exadb_vm_cluster_pkcs(exadb_vm_cluster_id, register_exadb_vm_cluster_pkcs_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        work_request_id = operation_result.headers['opc-work-request-id']
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def reinstate_autonomous_container_database_dataguard_and_wait_for_work_request(self, autonomous_container_database_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database.DatabaseClient.reinstate_autonomous_container_database_dataguard` and waits for the oci.work_requests.models.WorkRequest
@@ -14358,6 +14556,47 @@ class DatabaseClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def unregister_exadb_vm_cluster_pkcs_and_wait_for_work_request(self, exadb_vm_cluster_id, unregister_exadb_vm_cluster_pkcs_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.unregister_exadb_vm_cluster_pkcs` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str exadb_vm_cluster_id: (required)
+            The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.UnregisterExadbVmClusterPkcsDetails unregister_exadb_vm_cluster_pkcs_details: (required)
+            Details of unregistering PKCS11 driver.
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.unregister_exadb_vm_cluster_pkcs`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.unregister_exadb_vm_cluster_pkcs(exadb_vm_cluster_id, unregister_exadb_vm_cluster_pkcs_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        work_request_id = operation_result.headers['opc-work-request-id']
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_advanced_cluster_file_system_and_wait_for_work_request(self, advanced_cluster_file_system_id, update_advanced_cluster_file_system_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database.DatabaseClient.update_advanced_cluster_file_system` and waits for the oci.work_requests.models.WorkRequest
@@ -15230,6 +15469,94 @@ class DatabaseClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_backup_destination(backup_destination_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_basecc_vm_cluster_and_wait_for_work_request(self, basecc_vm_cluster_id, update_basecc_vm_cluster_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.update_basecc_vm_cluster` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.UpdateBaseccVmClusterDetails update_basecc_vm_cluster_details: (required)
+            Request to update the attributes of a BaseDB-C@C VM cluster.
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.update_basecc_vm_cluster`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_basecc_vm_cluster(basecc_vm_cluster_id, update_basecc_vm_cluster_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        work_request_id = operation_result.headers['opc-work-request-id']
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_basecc_vm_cluster_and_wait_for_state(self, basecc_vm_cluster_id, update_basecc_vm_cluster_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.update_basecc_vm_cluster` and waits for the :py:class:`~oci.database.models.BaseccVmCluster` acted upon
+        to enter the given state(s).
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.UpdateBaseccVmClusterDetails update_basecc_vm_cluster_details: (required)
+            Request to update the attributes of a BaseDB-C@C VM cluster.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.BaseccVmCluster.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.update_basecc_vm_cluster`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_basecc_vm_cluster(basecc_vm_cluster_id, update_basecc_vm_cluster_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        basecc_vm_cluster_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_basecc_vm_cluster(basecc_vm_cluster_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )

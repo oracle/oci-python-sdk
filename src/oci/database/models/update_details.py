@@ -31,6 +31,26 @@ class UpdateDetails(object):
     #: This constant has a value of "ROLLBACK"
     UPDATE_ACTION_ROLLBACK = "ROLLBACK"
 
+    #: A constant which can be used with the update_mode property of a UpdateDetails.
+    #: This constant has a value of "ONLINE_HIGHCVSS"
+    UPDATE_MODE_ONLINE_HIGHCVSS = "ONLINE_HIGHCVSS"
+
+    #: A constant which can be used with the update_mode property of a UpdateDetails.
+    #: This constant has a value of "ONLINE_ALLCVSS"
+    UPDATE_MODE_ONLINE_ALLCVSS = "ONLINE_ALLCVSS"
+
+    #: A constant which can be used with the update_mode property of a UpdateDetails.
+    #: This constant has a value of "ONLINE_ALL_UPDATES"
+    UPDATE_MODE_ONLINE_ALL_UPDATES = "ONLINE_ALL_UPDATES"
+
+    #: A constant which can be used with the update_mode property of a UpdateDetails.
+    #: This constant has a value of "PENDING_UPDATES"
+    UPDATE_MODE_PENDING_UPDATES = "PENDING_UPDATES"
+
+    #: A constant which can be used with the update_mode property of a UpdateDetails.
+    #: This constant has a value of "FULL_UPDATE"
+    UPDATE_MODE_FULL_UPDATE = "FULL_UPDATE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDetails object with values from keyword arguments.
@@ -45,6 +65,11 @@ class UpdateDetails(object):
             Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK"
         :type update_action: str
 
+        :param update_mode:
+            The value to assign to the update_mode property of this UpdateDetails.
+            Allowed values for this property are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE"
+        :type update_mode: str
+
         :param gi_software_image_id:
             The value to assign to the gi_software_image_id property of this UpdateDetails.
         :type gi_software_image_id: str
@@ -53,15 +78,18 @@ class UpdateDetails(object):
         self.swagger_types = {
             'update_id': 'str',
             'update_action': 'str',
+            'update_mode': 'str',
             'gi_software_image_id': 'str'
         }
         self.attribute_map = {
             'update_id': 'updateId',
             'update_action': 'updateAction',
+            'update_mode': 'updateMode',
             'gi_software_image_id': 'giSoftwareImageId'
         }
         self._update_id = None
         self._update_action = None
+        self._update_mode = None
         self._gi_software_image_id = None
 
     @property
@@ -122,6 +150,37 @@ class UpdateDetails(object):
                 f"Invalid value for `update_action`, must be None or one of {allowed_values}"
             )
         self._update_action = update_action
+
+    @property
+    def update_mode(self):
+        """
+        Gets the update_mode of this UpdateDetails.
+        The update mode to perform for OS Update.
+
+        Allowed values for this property are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE"
+
+
+        :return: The update_mode of this UpdateDetails.
+        :rtype: str
+        """
+        return self._update_mode
+
+    @update_mode.setter
+    def update_mode(self, update_mode):
+        """
+        Sets the update_mode of this UpdateDetails.
+        The update mode to perform for OS Update.
+
+
+        :param update_mode: The update_mode of this UpdateDetails.
+        :type: str
+        """
+        allowed_values = ["ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE"]
+        if not value_allowed_none_or_none_sentinel(update_mode, allowed_values):
+            raise ValueError(
+                f"Invalid value for `update_mode`, must be None or one of {allowed_values}"
+            )
+        self._update_mode = update_mode
 
     @property
     def gi_software_image_id(self):

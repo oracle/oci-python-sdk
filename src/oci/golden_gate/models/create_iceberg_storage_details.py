@@ -27,20 +27,30 @@ class CreateIcebergStorageDetails(object):
     #: This constant has a value of "AZURE_DATA_LAKE_STORAGE"
     STORAGE_TYPE_AZURE_DATA_LAKE_STORAGE = "AZURE_DATA_LAKE_STORAGE"
 
+    #: A constant which can be used with the storage_type property of a CreateIcebergStorageDetails.
+    #: This constant has a value of "NONE"
+    STORAGE_TYPE_NONE = "NONE"
+
+    #: A constant which can be used with the storage_type property of a CreateIcebergStorageDetails.
+    #: This constant has a value of "OCI_OBJECT_STORAGE_S3_API"
+    STORAGE_TYPE_OCI_OBJECT_STORAGE_S3_API = "OCI_OBJECT_STORAGE_S3_API"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateIcebergStorageDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.golden_gate.models.CreateAzureDataLakeStorageIcebergStorageDetails`
+        * :class:`~oci.golden_gate.models.CreateNoIcebergStorageDetails`
         * :class:`~oci.golden_gate.models.CreateGoogleCloudStorageIcebergStorageDetails`
         * :class:`~oci.golden_gate.models.CreateAmazonS3IcebergStorageDetails`
+        * :class:`~oci.golden_gate.models.CreateOciObjectStorageS3ApiIcebergStorageDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param storage_type:
             The value to assign to the storage_type property of this CreateIcebergStorageDetails.
-            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE"
+            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"
         :type storage_type: str
 
         """
@@ -63,11 +73,17 @@ class CreateIcebergStorageDetails(object):
         if type == 'AZURE_DATA_LAKE_STORAGE':
             return 'CreateAzureDataLakeStorageIcebergStorageDetails'
 
+        if type == 'NONE':
+            return 'CreateNoIcebergStorageDetails'
+
         if type == 'GOOGLE_CLOUD_STORAGE':
             return 'CreateGoogleCloudStorageIcebergStorageDetails'
 
         if type == 'AMAZON_S3':
             return 'CreateAmazonS3IcebergStorageDetails'
+
+        if type == 'OCI_OBJECT_STORAGE_S3_API':
+            return 'CreateOciObjectStorageS3ApiIcebergStorageDetails'
         else:
             return 'CreateIcebergStorageDetails'
 
@@ -77,7 +93,7 @@ class CreateIcebergStorageDetails(object):
         **[Required]** Gets the storage_type of this CreateIcebergStorageDetails.
         The storage type used in the Iceberg connection.
 
-        Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE"
+        Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"
 
 
         :return: The storage_type of this CreateIcebergStorageDetails.
@@ -95,7 +111,7 @@ class CreateIcebergStorageDetails(object):
         :param storage_type: The storage_type of this CreateIcebergStorageDetails.
         :type: str
         """
-        allowed_values = ["AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE"]
+        allowed_values = ["AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"]
         if not value_allowed_none_or_none_sentinel(storage_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `storage_type`, must be None or one of {allowed_values}"

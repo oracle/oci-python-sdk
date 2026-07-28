@@ -60,6 +60,10 @@ class CreateDedicatedVmHostDetails(object):
             The value to assign to the is_memory_encryption_enabled property of this CreateDedicatedVmHostDetails.
         :type is_memory_encryption_enabled: bool
 
+        :param is_burstable:
+            The value to assign to the is_burstable property of this CreateDedicatedVmHostDetails.
+        :type is_burstable: bool
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -71,7 +75,8 @@ class CreateDedicatedVmHostDetails(object):
             'freeform_tags': 'dict(str, str)',
             'placement_constraint_details': 'PlacementConstraintDetails',
             'capacity_config': 'str',
-            'is_memory_encryption_enabled': 'bool'
+            'is_memory_encryption_enabled': 'bool',
+            'is_burstable': 'bool'
         }
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
@@ -83,7 +88,8 @@ class CreateDedicatedVmHostDetails(object):
             'freeform_tags': 'freeformTags',
             'placement_constraint_details': 'placementConstraintDetails',
             'capacity_config': 'capacityConfig',
-            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled'
+            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled',
+            'is_burstable': 'isBurstable'
         }
         self._availability_domain = None
         self._compartment_id = None
@@ -95,6 +101,7 @@ class CreateDedicatedVmHostDetails(object):
         self._placement_constraint_details = None
         self._capacity_config = None
         self._is_memory_encryption_enabled = None
+        self._is_burstable = None
 
     @property
     def availability_domain(self):
@@ -383,6 +390,30 @@ class CreateDedicatedVmHostDetails(object):
         :type: bool
         """
         self._is_memory_encryption_enabled = is_memory_encryption_enabled
+
+    @property
+    def is_burstable(self):
+        """
+        Gets the is_burstable of this CreateDedicatedVmHostDetails.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Burstable VMs. If `true`, only Burstable VMs can be launched. If `false`, Burstable VMs cannot be launched.
+
+
+        :return: The is_burstable of this CreateDedicatedVmHostDetails.
+        :rtype: bool
+        """
+        return self._is_burstable
+
+    @is_burstable.setter
+    def is_burstable(self, is_burstable):
+        """
+        Sets the is_burstable of this CreateDedicatedVmHostDetails.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Burstable VMs. If `true`, only Burstable VMs can be launched. If `false`, Burstable VMs cannot be launched.
+
+
+        :param is_burstable: The is_burstable of this CreateDedicatedVmHostDetails.
+        :type: bool
+        """
+        self._is_burstable = is_burstable
 
     def __repr__(self):
         return formatted_flat_dict(self)

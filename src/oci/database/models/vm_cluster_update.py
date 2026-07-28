@@ -33,6 +33,46 @@ class VmClusterUpdate(object):
     #: This constant has a value of "ROLLBACK"
     LAST_ACTION_ROLLBACK = "ROLLBACK"
 
+    #: A constant which can be used with the last_update_mode property of a VmClusterUpdate.
+    #: This constant has a value of "ONLINE_HIGHCVSS"
+    LAST_UPDATE_MODE_ONLINE_HIGHCVSS = "ONLINE_HIGHCVSS"
+
+    #: A constant which can be used with the last_update_mode property of a VmClusterUpdate.
+    #: This constant has a value of "ONLINE_ALLCVSS"
+    LAST_UPDATE_MODE_ONLINE_ALLCVSS = "ONLINE_ALLCVSS"
+
+    #: A constant which can be used with the last_update_mode property of a VmClusterUpdate.
+    #: This constant has a value of "ONLINE_ALL_UPDATES"
+    LAST_UPDATE_MODE_ONLINE_ALL_UPDATES = "ONLINE_ALL_UPDATES"
+
+    #: A constant which can be used with the last_update_mode property of a VmClusterUpdate.
+    #: This constant has a value of "PENDING_UPDATES"
+    LAST_UPDATE_MODE_PENDING_UPDATES = "PENDING_UPDATES"
+
+    #: A constant which can be used with the last_update_mode property of a VmClusterUpdate.
+    #: This constant has a value of "FULL_UPDATE"
+    LAST_UPDATE_MODE_FULL_UPDATE = "FULL_UPDATE"
+
+    #: A constant which can be used with the available_update_modes property of a VmClusterUpdate.
+    #: This constant has a value of "ONLINE_HIGHCVSS"
+    AVAILABLE_UPDATE_MODES_ONLINE_HIGHCVSS = "ONLINE_HIGHCVSS"
+
+    #: A constant which can be used with the available_update_modes property of a VmClusterUpdate.
+    #: This constant has a value of "ONLINE_ALLCVSS"
+    AVAILABLE_UPDATE_MODES_ONLINE_ALLCVSS = "ONLINE_ALLCVSS"
+
+    #: A constant which can be used with the available_update_modes property of a VmClusterUpdate.
+    #: This constant has a value of "ONLINE_ALL_UPDATES"
+    AVAILABLE_UPDATE_MODES_ONLINE_ALL_UPDATES = "ONLINE_ALL_UPDATES"
+
+    #: A constant which can be used with the available_update_modes property of a VmClusterUpdate.
+    #: This constant has a value of "PENDING_UPDATES"
+    AVAILABLE_UPDATE_MODES_PENDING_UPDATES = "PENDING_UPDATES"
+
+    #: A constant which can be used with the available_update_modes property of a VmClusterUpdate.
+    #: This constant has a value of "FULL_UPDATE"
+    AVAILABLE_UPDATE_MODES_FULL_UPDATE = "FULL_UPDATE"
+
     #: A constant which can be used with the available_actions property of a VmClusterUpdate.
     #: This constant has a value of "ROLLING_APPLY"
     AVAILABLE_ACTIONS_ROLLING_APPLY = "ROLLING_APPLY"
@@ -92,6 +132,22 @@ class VmClusterUpdate(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type last_action: str
 
+        :param last_update_mode:
+            The value to assign to the last_update_mode property of this VmClusterUpdate.
+            Allowed values for this property are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type last_update_mode: str
+
+        :param available_update_modes:
+            The value to assign to the available_update_modes property of this VmClusterUpdate.
+            Allowed values for items in this list are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type available_update_modes: list[str]
+
+        :param oracle_linux_version:
+            The value to assign to the oracle_linux_version property of this VmClusterUpdate.
+        :type oracle_linux_version: str
+
         :param available_actions:
             The value to assign to the available_actions property of this VmClusterUpdate.
             Allowed values for items in this list are: "ROLLING_APPLY", "PRECHECK", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
@@ -127,6 +183,9 @@ class VmClusterUpdate(object):
             'id': 'str',
             'description': 'str',
             'last_action': 'str',
+            'last_update_mode': 'str',
+            'available_update_modes': 'list[str]',
+            'oracle_linux_version': 'str',
             'available_actions': 'list[str]',
             'update_type': 'str',
             'lifecycle_details': 'str',
@@ -138,6 +197,9 @@ class VmClusterUpdate(object):
             'id': 'id',
             'description': 'description',
             'last_action': 'lastAction',
+            'last_update_mode': 'lastUpdateMode',
+            'available_update_modes': 'availableUpdateModes',
+            'oracle_linux_version': 'oracleLinuxVersion',
             'available_actions': 'availableActions',
             'update_type': 'updateType',
             'lifecycle_details': 'lifecycleDetails',
@@ -148,6 +210,9 @@ class VmClusterUpdate(object):
         self._id = None
         self._description = None
         self._last_action = None
+        self._last_update_mode = None
+        self._available_update_modes = None
+        self._oracle_linux_version = None
         self._available_actions = None
         self._update_type = None
         self._lifecycle_details = None
@@ -236,6 +301,90 @@ class VmClusterUpdate(object):
         if not value_allowed_none_or_none_sentinel(last_action, allowed_values):
             last_action = 'UNKNOWN_ENUM_VALUE'
         self._last_action = last_action
+
+    @property
+    def last_update_mode(self):
+        """
+        Gets the last_update_mode of this VmClusterUpdate.
+        The update mode performed most recently using this maintenance update (only valid for OS Update).
+
+        Allowed values for this property are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The last_update_mode of this VmClusterUpdate.
+        :rtype: str
+        """
+        return self._last_update_mode
+
+    @last_update_mode.setter
+    def last_update_mode(self, last_update_mode):
+        """
+        Sets the last_update_mode of this VmClusterUpdate.
+        The update mode performed most recently using this maintenance update (only valid for OS Update).
+
+
+        :param last_update_mode: The last_update_mode of this VmClusterUpdate.
+        :type: str
+        """
+        allowed_values = ["ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE"]
+        if not value_allowed_none_or_none_sentinel(last_update_mode, allowed_values):
+            last_update_mode = 'UNKNOWN_ENUM_VALUE'
+        self._last_update_mode = last_update_mode
+
+    @property
+    def available_update_modes(self):
+        """
+        Gets the available_update_modes of this VmClusterUpdate.
+        The possible update options that can be performed using this maintenance update (only valid for OS Update).
+
+        Allowed values for items in this list are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The available_update_modes of this VmClusterUpdate.
+        :rtype: list[str]
+        """
+        return self._available_update_modes
+
+    @available_update_modes.setter
+    def available_update_modes(self, available_update_modes):
+        """
+        Sets the available_update_modes of this VmClusterUpdate.
+        The possible update options that can be performed using this maintenance update (only valid for OS Update).
+
+
+        :param available_update_modes: The available_update_modes of this VmClusterUpdate.
+        :type: list[str]
+        """
+        allowed_values = ["ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE"]
+        if available_update_modes:
+            available_update_modes[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in available_update_modes]
+        self._available_update_modes = available_update_modes
+
+    @property
+    def oracle_linux_version(self):
+        """
+        Gets the oracle_linux_version of this VmClusterUpdate.
+        Oracle Linux version for the respective Exadata Image.
+
+
+        :return: The oracle_linux_version of this VmClusterUpdate.
+        :rtype: str
+        """
+        return self._oracle_linux_version
+
+    @oracle_linux_version.setter
+    def oracle_linux_version(self, oracle_linux_version):
+        """
+        Sets the oracle_linux_version of this VmClusterUpdate.
+        Oracle Linux version for the respective Exadata Image.
+
+
+        :param oracle_linux_version: The oracle_linux_version of this VmClusterUpdate.
+        :type: str
+        """
+        self._oracle_linux_version = oracle_linux_version
 
     @property
     def available_actions(self):

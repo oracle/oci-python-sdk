@@ -446,6 +446,7 @@ from .instance_source_image_filter_details import InstanceSourceImageFilterDetai
 from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolumeDetails
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .instance_summary import InstanceSummary
+from .instances import Instances
 from .intel_icelake_bm_launch_instance_platform_config import IntelIcelakeBmLaunchInstancePlatformConfig
 from .intel_icelake_bm_platform_config import IntelIcelakeBmPlatformConfig
 from .intel_skylake_bm_launch_instance_platform_config import IntelSkylakeBmLaunchInstancePlatformConfig
@@ -523,6 +524,7 @@ from .port_range import PortRange
 from .preemptible_instance_config_details import PreemptibleInstanceConfigDetails
 from .preemption_action import PreemptionAction
 from .private_ip import PrivateIp
+from .provider_remote_region_name import ProviderRemoteRegionName
 from .public_ip import PublicIp
 from .public_ip_pool import PublicIpPool
 from .public_ip_pool_collection import PublicIpPoolCollection
@@ -540,6 +542,7 @@ from .remove_subnet_ipv6_cidr_details import RemoveSubnetIpv6CidrDetails
 from .remove_vcn_cidr_details import RemoveVcnCidrDetails
 from .remove_vcn_ipv6_cidr_details import RemoveVcnIpv6CidrDetails
 from .reset_action_details import ResetActionDetails
+from .retention_duration import RetentionDuration
 from .route_rule import RouteRule
 from .route_table import RouteTable
 from .security_list import SecurityList
@@ -1157,6 +1160,7 @@ core_type_mapping = {
     "InstanceSourceViaBootVolumeDetails": InstanceSourceViaBootVolumeDetails,
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InstanceSummary": InstanceSummary,
+    "Instances": Instances,
     "IntelIcelakeBmLaunchInstancePlatformConfig": IntelIcelakeBmLaunchInstancePlatformConfig,
     "IntelIcelakeBmPlatformConfig": IntelIcelakeBmPlatformConfig,
     "IntelSkylakeBmLaunchInstancePlatformConfig": IntelSkylakeBmLaunchInstancePlatformConfig,
@@ -1234,6 +1238,7 @@ core_type_mapping = {
     "PreemptibleInstanceConfigDetails": PreemptibleInstanceConfigDetails,
     "PreemptionAction": PreemptionAction,
     "PrivateIp": PrivateIp,
+    "ProviderRemoteRegionName": ProviderRemoteRegionName,
     "PublicIp": PublicIp,
     "PublicIpPool": PublicIpPool,
     "PublicIpPoolCollection": PublicIpPoolCollection,
@@ -1251,6 +1256,7 @@ core_type_mapping = {
     "RemoveVcnCidrDetails": RemoveVcnCidrDetails,
     "RemoveVcnIpv6CidrDetails": RemoveVcnIpv6CidrDetails,
     "ResetActionDetails": ResetActionDetails,
+    "RetentionDuration": RetentionDuration,
     "RouteRule": RouteRule,
     "RouteTable": RouteTable,
     "SecurityList": SecurityList,

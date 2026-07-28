@@ -8,6 +8,14 @@ from __future__ import absolute_import
 
 from .add_deployment_local_peer_details import AddDeploymentLocalPeerDetails
 from .add_resource_lock_details import AddResourceLockDetails
+from .ai_model_auth_details import AiModelAuthDetails
+from .ai_model_auth_details_summary import AiModelAuthDetailsSummary
+from .ai_model_collection import AiModelCollection
+from .ai_model_connection import AiModelConnection
+from .ai_model_connection_summary import AiModelConnectionSummary
+from .ai_model_summary import AiModelSummary
+from .ai_provider_collection import AiProviderCollection
+from .ai_provider_summary import AiProviderSummary
 from .amazon_kinesis_connection import AmazonKinesisConnection
 from .amazon_kinesis_connection_summary import AmazonKinesisConnectionSummary
 from .amazon_redshift_connection import AmazonRedshiftConnection
@@ -16,6 +24,8 @@ from .amazon_s3_connection import AmazonS3Connection
 from .amazon_s3_connection_summary import AmazonS3ConnectionSummary
 from .amazon_s3_iceberg_storage import AmazonS3IcebergStorage
 from .amazon_s3_iceberg_storage_summary import AmazonS3IcebergStorageSummary
+from .api_key_ai_model_auth_details import ApiKeyAiModelAuthDetails
+from .api_key_ai_model_auth_details_summary import ApiKeyAiModelAuthDetailsSummary
 from .azure_data_lake_storage_connection import AzureDataLakeStorageConnection
 from .azure_data_lake_storage_connection_summary import AzureDataLakeStorageConnectionSummary
 from .azure_data_lake_storage_iceberg_storage import AzureDataLakeStorageIcebergStorage
@@ -47,10 +57,13 @@ from .connection_assignment_summary import ConnectionAssignmentSummary
 from .connection_collection import ConnectionCollection
 from .connection_summary import ConnectionSummary
 from .copy_deployment_backup_details import CopyDeploymentBackupDetails
+from .create_ai_model_auth_details import CreateAiModelAuthDetails
+from .create_ai_model_connection_details import CreateAiModelConnectionDetails
 from .create_amazon_kinesis_connection_details import CreateAmazonKinesisConnectionDetails
 from .create_amazon_redshift_connection_details import CreateAmazonRedshiftConnectionDetails
 from .create_amazon_s3_connection_details import CreateAmazonS3ConnectionDetails
 from .create_amazon_s3_iceberg_storage_details import CreateAmazonS3IcebergStorageDetails
+from .create_api_key_ai_model_auth_details import CreateApiKeyAiModelAuthDetails
 from .create_azure_data_lake_storage_connection_details import CreateAzureDataLakeStorageConnectionDetails
 from .create_azure_data_lake_storage_iceberg_storage_details import CreateAzureDataLakeStorageIcebergStorageDetails
 from .create_azure_synapse_connection_details import CreateAzureSynapseConnectionDetails
@@ -87,7 +100,10 @@ from .create_microsoft_sqlserver_connection_details import CreateMicrosoftSqlser
 from .create_mongo_db_connection_details import CreateMongoDbConnectionDetails
 from .create_mysql_connection_details import CreateMysqlConnectionDetails
 from .create_nessie_iceberg_catalog_details import CreateNessieIcebergCatalogDetails
+from .create_no_iceberg_storage_details import CreateNoIcebergStorageDetails
+from .create_oci_gen_ai_model_auth_details import CreateOciGenAiModelAuthDetails
 from .create_oci_object_storage_connection_details import CreateOciObjectStorageConnectionDetails
+from .create_oci_object_storage_s3_api_iceberg_storage_details import CreateOciObjectStorageS3ApiIcebergStorageDetails
 from .create_ogg_deployment_details import CreateOggDeploymentDetails
 from .create_oracle_ai_data_platform_connection_details import CreateOracleAiDataPlatformConnectionDetails
 from .create_oracle_connection_details import CreateOracleConnectionDetails
@@ -208,8 +224,14 @@ from .mysql_connection_summary import MysqlConnectionSummary
 from .name_value_pair import NameValuePair
 from .nessie_iceberg_catalog import NessieIcebergCatalog
 from .nessie_iceberg_catalog_summary import NessieIcebergCatalogSummary
+from .no_iceberg_storage import NoIcebergStorage
+from .no_iceberg_storage_summary import NoIcebergStorageSummary
+from .oci_gen_ai_model_auth_details import OciGenAiModelAuthDetails
+from .oci_gen_ai_model_auth_details_summary import OciGenAiModelAuthDetailsSummary
 from .oci_object_storage_connection import OciObjectStorageConnection
 from .oci_object_storage_connection_summary import OciObjectStorageConnectionSummary
+from .oci_object_storage_s3_api_iceberg_storage import OciObjectStorageS3ApiIcebergStorage
+from .oci_object_storage_s3_api_iceberg_storage_summary import OciObjectStorageS3ApiIcebergStorageSummary
 from .ogg_deployment import OggDeployment
 from .oracle_ai_data_platform_connection import OracleAiDataPlatformConnection
 from .oracle_ai_data_platform_connection_summary import OracleAiDataPlatformConnectionSummary
@@ -272,10 +294,13 @@ from .trail_file_collection import TrailFileCollection
 from .trail_file_summary import TrailFileSummary
 from .trail_sequence_collection import TrailSequenceCollection
 from .trail_sequence_summary import TrailSequenceSummary
+from .update_ai_model_auth_details import UpdateAiModelAuthDetails
+from .update_ai_model_connection_details import UpdateAiModelConnectionDetails
 from .update_amazon_kinesis_connection_details import UpdateAmazonKinesisConnectionDetails
 from .update_amazon_redshift_connection_details import UpdateAmazonRedshiftConnectionDetails
 from .update_amazon_s3_connection_details import UpdateAmazonS3ConnectionDetails
 from .update_amazon_s3_iceberg_storage_details import UpdateAmazonS3IcebergStorageDetails
+from .update_api_key_ai_model_auth_details import UpdateApiKeyAiModelAuthDetails
 from .update_azure_data_lake_storage_connection_details import UpdateAzureDataLakeStorageConnectionDetails
 from .update_azure_data_lake_storage_iceberg_storage_details import UpdateAzureDataLakeStorageIcebergStorageDetails
 from .update_azure_synapse_connection_details import UpdateAzureSynapseConnectionDetails
@@ -310,7 +335,10 @@ from .update_microsoft_sqlserver_connection_details import UpdateMicrosoftSqlser
 from .update_mongo_db_connection_details import UpdateMongoDbConnectionDetails
 from .update_mysql_connection_details import UpdateMysqlConnectionDetails
 from .update_nessie_iceberg_catalog_details import UpdateNessieIcebergCatalogDetails
+from .update_no_iceberg_storage_details import UpdateNoIcebergStorageDetails
+from .update_oci_gen_ai_model_auth_details import UpdateOciGenAiModelAuthDetails
 from .update_oci_object_storage_connection_details import UpdateOciObjectStorageConnectionDetails
+from .update_oci_object_storage_s3_api_iceberg_storage_details import UpdateOciObjectStorageS3ApiIcebergStorageDetails
 from .update_ogg_deployment_details import UpdateOggDeploymentDetails
 from .update_oracle_ai_data_platform_connection_details import UpdateOracleAiDataPlatformConnectionDetails
 from .update_oracle_connection_details import UpdateOracleConnectionDetails
@@ -337,6 +365,14 @@ from .zero_etl_pipeline_summary import ZeroEtlPipelineSummary
 golden_gate_type_mapping = {
     "AddDeploymentLocalPeerDetails": AddDeploymentLocalPeerDetails,
     "AddResourceLockDetails": AddResourceLockDetails,
+    "AiModelAuthDetails": AiModelAuthDetails,
+    "AiModelAuthDetailsSummary": AiModelAuthDetailsSummary,
+    "AiModelCollection": AiModelCollection,
+    "AiModelConnection": AiModelConnection,
+    "AiModelConnectionSummary": AiModelConnectionSummary,
+    "AiModelSummary": AiModelSummary,
+    "AiProviderCollection": AiProviderCollection,
+    "AiProviderSummary": AiProviderSummary,
     "AmazonKinesisConnection": AmazonKinesisConnection,
     "AmazonKinesisConnectionSummary": AmazonKinesisConnectionSummary,
     "AmazonRedshiftConnection": AmazonRedshiftConnection,
@@ -345,6 +381,8 @@ golden_gate_type_mapping = {
     "AmazonS3ConnectionSummary": AmazonS3ConnectionSummary,
     "AmazonS3IcebergStorage": AmazonS3IcebergStorage,
     "AmazonS3IcebergStorageSummary": AmazonS3IcebergStorageSummary,
+    "ApiKeyAiModelAuthDetails": ApiKeyAiModelAuthDetails,
+    "ApiKeyAiModelAuthDetailsSummary": ApiKeyAiModelAuthDetailsSummary,
     "AzureDataLakeStorageConnection": AzureDataLakeStorageConnection,
     "AzureDataLakeStorageConnectionSummary": AzureDataLakeStorageConnectionSummary,
     "AzureDataLakeStorageIcebergStorage": AzureDataLakeStorageIcebergStorage,
@@ -376,10 +414,13 @@ golden_gate_type_mapping = {
     "ConnectionCollection": ConnectionCollection,
     "ConnectionSummary": ConnectionSummary,
     "CopyDeploymentBackupDetails": CopyDeploymentBackupDetails,
+    "CreateAiModelAuthDetails": CreateAiModelAuthDetails,
+    "CreateAiModelConnectionDetails": CreateAiModelConnectionDetails,
     "CreateAmazonKinesisConnectionDetails": CreateAmazonKinesisConnectionDetails,
     "CreateAmazonRedshiftConnectionDetails": CreateAmazonRedshiftConnectionDetails,
     "CreateAmazonS3ConnectionDetails": CreateAmazonS3ConnectionDetails,
     "CreateAmazonS3IcebergStorageDetails": CreateAmazonS3IcebergStorageDetails,
+    "CreateApiKeyAiModelAuthDetails": CreateApiKeyAiModelAuthDetails,
     "CreateAzureDataLakeStorageConnectionDetails": CreateAzureDataLakeStorageConnectionDetails,
     "CreateAzureDataLakeStorageIcebergStorageDetails": CreateAzureDataLakeStorageIcebergStorageDetails,
     "CreateAzureSynapseConnectionDetails": CreateAzureSynapseConnectionDetails,
@@ -416,7 +457,10 @@ golden_gate_type_mapping = {
     "CreateMongoDbConnectionDetails": CreateMongoDbConnectionDetails,
     "CreateMysqlConnectionDetails": CreateMysqlConnectionDetails,
     "CreateNessieIcebergCatalogDetails": CreateNessieIcebergCatalogDetails,
+    "CreateNoIcebergStorageDetails": CreateNoIcebergStorageDetails,
+    "CreateOciGenAiModelAuthDetails": CreateOciGenAiModelAuthDetails,
     "CreateOciObjectStorageConnectionDetails": CreateOciObjectStorageConnectionDetails,
+    "CreateOciObjectStorageS3ApiIcebergStorageDetails": CreateOciObjectStorageS3ApiIcebergStorageDetails,
     "CreateOggDeploymentDetails": CreateOggDeploymentDetails,
     "CreateOracleAiDataPlatformConnectionDetails": CreateOracleAiDataPlatformConnectionDetails,
     "CreateOracleConnectionDetails": CreateOracleConnectionDetails,
@@ -537,8 +581,14 @@ golden_gate_type_mapping = {
     "NameValuePair": NameValuePair,
     "NessieIcebergCatalog": NessieIcebergCatalog,
     "NessieIcebergCatalogSummary": NessieIcebergCatalogSummary,
+    "NoIcebergStorage": NoIcebergStorage,
+    "NoIcebergStorageSummary": NoIcebergStorageSummary,
+    "OciGenAiModelAuthDetails": OciGenAiModelAuthDetails,
+    "OciGenAiModelAuthDetailsSummary": OciGenAiModelAuthDetailsSummary,
     "OciObjectStorageConnection": OciObjectStorageConnection,
     "OciObjectStorageConnectionSummary": OciObjectStorageConnectionSummary,
+    "OciObjectStorageS3ApiIcebergStorage": OciObjectStorageS3ApiIcebergStorage,
+    "OciObjectStorageS3ApiIcebergStorageSummary": OciObjectStorageS3ApiIcebergStorageSummary,
     "OggDeployment": OggDeployment,
     "OracleAiDataPlatformConnection": OracleAiDataPlatformConnection,
     "OracleAiDataPlatformConnectionSummary": OracleAiDataPlatformConnectionSummary,
@@ -601,10 +651,13 @@ golden_gate_type_mapping = {
     "TrailFileSummary": TrailFileSummary,
     "TrailSequenceCollection": TrailSequenceCollection,
     "TrailSequenceSummary": TrailSequenceSummary,
+    "UpdateAiModelAuthDetails": UpdateAiModelAuthDetails,
+    "UpdateAiModelConnectionDetails": UpdateAiModelConnectionDetails,
     "UpdateAmazonKinesisConnectionDetails": UpdateAmazonKinesisConnectionDetails,
     "UpdateAmazonRedshiftConnectionDetails": UpdateAmazonRedshiftConnectionDetails,
     "UpdateAmazonS3ConnectionDetails": UpdateAmazonS3ConnectionDetails,
     "UpdateAmazonS3IcebergStorageDetails": UpdateAmazonS3IcebergStorageDetails,
+    "UpdateApiKeyAiModelAuthDetails": UpdateApiKeyAiModelAuthDetails,
     "UpdateAzureDataLakeStorageConnectionDetails": UpdateAzureDataLakeStorageConnectionDetails,
     "UpdateAzureDataLakeStorageIcebergStorageDetails": UpdateAzureDataLakeStorageIcebergStorageDetails,
     "UpdateAzureSynapseConnectionDetails": UpdateAzureSynapseConnectionDetails,
@@ -639,7 +692,10 @@ golden_gate_type_mapping = {
     "UpdateMongoDbConnectionDetails": UpdateMongoDbConnectionDetails,
     "UpdateMysqlConnectionDetails": UpdateMysqlConnectionDetails,
     "UpdateNessieIcebergCatalogDetails": UpdateNessieIcebergCatalogDetails,
+    "UpdateNoIcebergStorageDetails": UpdateNoIcebergStorageDetails,
+    "UpdateOciGenAiModelAuthDetails": UpdateOciGenAiModelAuthDetails,
     "UpdateOciObjectStorageConnectionDetails": UpdateOciObjectStorageConnectionDetails,
+    "UpdateOciObjectStorageS3ApiIcebergStorageDetails": UpdateOciObjectStorageS3ApiIcebergStorageDetails,
     "UpdateOggDeploymentDetails": UpdateOggDeploymentDetails,
     "UpdateOracleAiDataPlatformConnectionDetails": UpdateOracleAiDataPlatformConnectionDetails,
     "UpdateOracleConnectionDetails": UpdateOracleConnectionDetails,

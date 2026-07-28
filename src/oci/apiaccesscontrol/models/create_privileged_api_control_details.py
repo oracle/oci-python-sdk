@@ -40,6 +40,10 @@ class CreatePrivilegedApiControlDetails(object):
             The value to assign to the approver_group_id_list property of this CreatePrivilegedApiControlDetails.
         :type approver_group_id_list: list[str]
 
+        :param approver_group_level_list:
+            The value to assign to the approver_group_level_list property of this CreatePrivilegedApiControlDetails.
+        :type approver_group_level_list: list[oci.apiaccesscontrol.models.ApproverGroupLevel]
+
         :param privileged_operation_list:
             The value to assign to the privileged_operation_list property of this CreatePrivilegedApiControlDetails.
         :type privileged_operation_list: list[oci.apiaccesscontrol.models.PrivilegedApiDetails]
@@ -71,6 +75,7 @@ class CreatePrivilegedApiControlDetails(object):
             'compartment_id': 'str',
             'notification_topic_id': 'str',
             'approver_group_id_list': 'list[str]',
+            'approver_group_level_list': 'list[ApproverGroupLevel]',
             'privileged_operation_list': 'list[PrivilegedApiDetails]',
             'resource_type': 'str',
             'resources': 'list[str]',
@@ -84,6 +89,7 @@ class CreatePrivilegedApiControlDetails(object):
             'compartment_id': 'compartmentId',
             'notification_topic_id': 'notificationTopicId',
             'approver_group_id_list': 'approverGroupIdList',
+            'approver_group_level_list': 'approverGroupLevelList',
             'privileged_operation_list': 'privilegedOperationList',
             'resource_type': 'resourceType',
             'resources': 'resources',
@@ -96,6 +102,7 @@ class CreatePrivilegedApiControlDetails(object):
         self._compartment_id = None
         self._notification_topic_id = None
         self._approver_group_id_list = None
+        self._approver_group_level_list = None
         self._privileged_operation_list = None
         self._resource_type = None
         self._resources = None
@@ -183,7 +190,7 @@ class CreatePrivilegedApiControlDetails(object):
     def notification_topic_id(self):
         """
         **[Required]** Gets the notification_topic_id of this CreatePrivilegedApiControlDetails.
-        The OCID of the OCI Notification topic to publish messages related to this Delegation Control.
+        The OCID of the OCI Notification topic to publish messages related to this Privileged Api Control.
 
 
         :return: The notification_topic_id of this CreatePrivilegedApiControlDetails.
@@ -195,7 +202,7 @@ class CreatePrivilegedApiControlDetails(object):
     def notification_topic_id(self, notification_topic_id):
         """
         Sets the notification_topic_id of this CreatePrivilegedApiControlDetails.
-        The OCID of the OCI Notification topic to publish messages related to this Delegation Control.
+        The OCID of the OCI Notification topic to publish messages related to this Privileged Api Control.
 
 
         :param notification_topic_id: The notification_topic_id of this CreatePrivilegedApiControlDetails.
@@ -226,6 +233,30 @@ class CreatePrivilegedApiControlDetails(object):
         :type: list[str]
         """
         self._approver_group_id_list = approver_group_id_list
+
+    @property
+    def approver_group_level_list(self):
+        """
+        Gets the approver_group_level_list of this CreatePrivilegedApiControlDetails.
+        List of Group containing the levels at which the users belonging to the group can authorize.
+
+
+        :return: The approver_group_level_list of this CreatePrivilegedApiControlDetails.
+        :rtype: list[oci.apiaccesscontrol.models.ApproverGroupLevel]
+        """
+        return self._approver_group_level_list
+
+    @approver_group_level_list.setter
+    def approver_group_level_list(self, approver_group_level_list):
+        """
+        Sets the approver_group_level_list of this CreatePrivilegedApiControlDetails.
+        List of Group containing the levels at which the users belonging to the group can authorize.
+
+
+        :param approver_group_level_list: The approver_group_level_list of this CreatePrivilegedApiControlDetails.
+        :type: list[oci.apiaccesscontrol.models.ApproverGroupLevel]
+        """
+        self._approver_group_level_list = approver_group_level_list
 
     @property
     def privileged_operation_list(self):
@@ -278,7 +309,7 @@ class CreatePrivilegedApiControlDetails(object):
     @property
     def resources(self):
         """
-        **[Required]** Gets the resources of this CreatePrivilegedApiControlDetails.
+        Gets the resources of this CreatePrivilegedApiControlDetails.
         contains Resource details
 
 

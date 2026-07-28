@@ -36,6 +36,10 @@ class DedicatedVmHostInstanceSummary(object):
             The value to assign to the is_memory_encryption_enabled property of this DedicatedVmHostInstanceSummary.
         :type is_memory_encryption_enabled: bool
 
+        :param is_burstable:
+            The value to assign to the is_burstable property of this DedicatedVmHostInstanceSummary.
+        :type is_burstable: bool
+
         :param shape:
             The value to assign to the shape property of this DedicatedVmHostInstanceSummary.
         :type shape: str
@@ -50,6 +54,7 @@ class DedicatedVmHostInstanceSummary(object):
             'compartment_id': 'str',
             'instance_id': 'str',
             'is_memory_encryption_enabled': 'bool',
+            'is_burstable': 'bool',
             'shape': 'str',
             'time_created': 'datetime'
         }
@@ -58,6 +63,7 @@ class DedicatedVmHostInstanceSummary(object):
             'compartment_id': 'compartmentId',
             'instance_id': 'instanceId',
             'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled',
+            'is_burstable': 'isBurstable',
             'shape': 'shape',
             'time_created': 'timeCreated'
         }
@@ -65,6 +71,7 @@ class DedicatedVmHostInstanceSummary(object):
         self._compartment_id = None
         self._instance_id = None
         self._is_memory_encryption_enabled = None
+        self._is_burstable = None
         self._shape = None
         self._time_created = None
 
@@ -167,6 +174,30 @@ class DedicatedVmHostInstanceSummary(object):
         :type: bool
         """
         self._is_memory_encryption_enabled = is_memory_encryption_enabled
+
+    @property
+    def is_burstable(self):
+        """
+        Gets the is_burstable of this DedicatedVmHostInstanceSummary.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If `true`, only Burstable VMs can be launched. If `false`, Burstable VMs cannot be launched.
+
+
+        :return: The is_burstable of this DedicatedVmHostInstanceSummary.
+        :rtype: bool
+        """
+        return self._is_burstable
+
+    @is_burstable.setter
+    def is_burstable(self, is_burstable):
+        """
+        Sets the is_burstable of this DedicatedVmHostInstanceSummary.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If `true`, only Burstable VMs can be launched. If `false`, Burstable VMs cannot be launched.
+
+
+        :param is_burstable: The is_burstable of this DedicatedVmHostInstanceSummary.
+        :type: bool
+        """
+        self._is_burstable = is_burstable
 
     @property
     def shape(self):

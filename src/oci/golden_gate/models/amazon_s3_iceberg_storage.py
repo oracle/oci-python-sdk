@@ -31,7 +31,7 @@ class AmazonS3IcebergStorage(IcebergStorage):
 
         :param storage_type:
             The value to assign to the storage_type property of this AmazonS3IcebergStorage.
-            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type storage_type: str
 
@@ -150,6 +150,7 @@ class AmazonS3IcebergStorage(IcebergStorage):
         """
         **[Required]** Gets the access_key_id of this AmazonS3IcebergStorage.
         Access key ID to access the Amazon S3 bucket.
+        Note: Despite the \"Id\" suffix, this value is not an OCI OCID.
 
 
         :return: The access_key_id of this AmazonS3IcebergStorage.
@@ -162,6 +163,7 @@ class AmazonS3IcebergStorage(IcebergStorage):
         """
         Sets the access_key_id of this AmazonS3IcebergStorage.
         Access key ID to access the Amazon S3 bucket.
+        Note: Despite the \"Id\" suffix, this value is not an OCI OCID.
 
 
         :param access_key_id: The access_key_id of this AmazonS3IcebergStorage.

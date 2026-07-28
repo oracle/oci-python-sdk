@@ -313,6 +313,18 @@ class VirtualCircuit(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type ip_mtu: str
 
+        :param provider_remote_region:
+            The value to assign to the provider_remote_region property of this VirtualCircuit.
+        :type provider_remote_region: str
+
+        :param shared_connection_uuid:
+            The value to assign to the shared_connection_uuid property of this VirtualCircuit.
+        :type shared_connection_uuid: str
+
+        :param remote_account_id:
+            The value to assign to the remote_account_id property of this VirtualCircuit.
+        :type remote_account_id: str
+
         :param traffic_mode:
             The value to assign to the traffic_mode property of this VirtualCircuit.
             Allowed values for this property are: "NORMAL", "DRAIN", 'UNKNOWN_ENUM_VALUE'.
@@ -356,6 +368,9 @@ class VirtualCircuit(object):
             'time_created': 'datetime',
             'type': 'str',
             'ip_mtu': 'str',
+            'provider_remote_region': 'str',
+            'shared_connection_uuid': 'str',
+            'remote_account_id': 'str',
             'traffic_mode': 'str',
             'virtual_circuit_redundancy_metadata': 'VirtualCircuitRedundancyMetadata'
         }
@@ -391,6 +406,9 @@ class VirtualCircuit(object):
             'time_created': 'timeCreated',
             'type': 'type',
             'ip_mtu': 'ipMtu',
+            'provider_remote_region': 'providerRemoteRegion',
+            'shared_connection_uuid': 'sharedConnectionUuid',
+            'remote_account_id': 'remoteAccountId',
             'traffic_mode': 'trafficMode',
             'virtual_circuit_redundancy_metadata': 'virtualCircuitRedundancyMetadata'
         }
@@ -425,6 +443,9 @@ class VirtualCircuit(object):
         self._time_created = None
         self._type = None
         self._ip_mtu = None
+        self._provider_remote_region = None
+        self._shared_connection_uuid = None
+        self._remote_account_id = None
         self._traffic_mode = None
         self._virtual_circuit_redundancy_metadata = None
 
@@ -1345,6 +1366,80 @@ class VirtualCircuit(object):
         if not value_allowed_none_or_none_sentinel(ip_mtu, allowed_values):
             ip_mtu = 'UNKNOWN_ENUM_VALUE'
         self._ip_mtu = ip_mtu
+
+    @property
+    def provider_remote_region(self):
+        """
+        Gets the provider_remote_region of this VirtualCircuit.
+        The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the OCI region.
+        To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+
+
+        :return: The provider_remote_region of this VirtualCircuit.
+        :rtype: str
+        """
+        return self._provider_remote_region
+
+    @provider_remote_region.setter
+    def provider_remote_region(self, provider_remote_region):
+        """
+        Sets the provider_remote_region of this VirtualCircuit.
+        The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the OCI region.
+        To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+
+
+        :param provider_remote_region: The provider_remote_region of this VirtualCircuit.
+        :type: str
+        """
+        self._provider_remote_region = provider_remote_region
+
+    @property
+    def shared_connection_uuid(self):
+        """
+        Gets the shared_connection_uuid of this VirtualCircuit.
+        The Shared unique identifier for the connection between the multicloud interconnect providers
+
+
+        :return: The shared_connection_uuid of this VirtualCircuit.
+        :rtype: str
+        """
+        return self._shared_connection_uuid
+
+    @shared_connection_uuid.setter
+    def shared_connection_uuid(self, shared_connection_uuid):
+        """
+        Sets the shared_connection_uuid of this VirtualCircuit.
+        The Shared unique identifier for the connection between the multicloud interconnect providers
+
+
+        :param shared_connection_uuid: The shared_connection_uuid of this VirtualCircuit.
+        :type: str
+        """
+        self._shared_connection_uuid = shared_connection_uuid
+
+    @property
+    def remote_account_id(self):
+        """
+        Gets the remote_account_id of this VirtualCircuit.
+        Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+
+
+        :return: The remote_account_id of this VirtualCircuit.
+        :rtype: str
+        """
+        return self._remote_account_id
+
+    @remote_account_id.setter
+    def remote_account_id(self, remote_account_id):
+        """
+        Sets the remote_account_id of this VirtualCircuit.
+        Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+
+
+        :param remote_account_id: The remote_account_id of this VirtualCircuit.
+        :type: str
+        """
+        self._remote_account_id = remote_account_id
 
     @property
     def traffic_mode(self):

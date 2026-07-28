@@ -89,6 +89,10 @@ class DedicatedVmHost(object):
             The value to assign to the is_memory_encryption_enabled property of this DedicatedVmHost.
         :type is_memory_encryption_enabled: bool
 
+        :param is_burstable:
+            The value to assign to the is_burstable property of this DedicatedVmHost.
+        :type is_burstable: bool
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DedicatedVmHost.
             Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -144,6 +148,7 @@ class DedicatedVmHost(object):
             'id': 'str',
             'capacity_config': 'str',
             'is_memory_encryption_enabled': 'bool',
+            'is_burstable': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'total_ocpus': 'float',
@@ -167,6 +172,7 @@ class DedicatedVmHost(object):
             'id': 'id',
             'capacity_config': 'capacityConfig',
             'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled',
+            'is_burstable': 'isBurstable',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'total_ocpus': 'totalOcpus',
@@ -189,6 +195,7 @@ class DedicatedVmHost(object):
         self._id = None
         self._capacity_config = None
         self._is_memory_encryption_enabled = None
+        self._is_burstable = None
         self._lifecycle_state = None
         self._time_created = None
         self._total_ocpus = None
@@ -515,6 +522,30 @@ class DedicatedVmHost(object):
         :type: bool
         """
         self._is_memory_encryption_enabled = is_memory_encryption_enabled
+
+    @property
+    def is_burstable(self):
+        """
+        Gets the is_burstable of this DedicatedVmHost.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If `true`, only Burstable VMs can be launched. If `false`, Burstable VMs cannot be launched.
+
+
+        :return: The is_burstable of this DedicatedVmHost.
+        :rtype: bool
+        """
+        return self._is_burstable
+
+    @is_burstable.setter
+    def is_burstable(self, is_burstable):
+        """
+        Sets the is_burstable of this DedicatedVmHost.
+        Specifies if the Dedicated Virtual Machine Host (DVMH) is to running only Burstable VMs. If `true`, only Burstable VMs can be launched. If `false`, Burstable VMs cannot be launched.
+
+
+        :param is_burstable: The is_burstable of this DedicatedVmHost.
+        :type: bool
+        """
+        self._is_burstable = is_burstable
 
     @property
     def lifecycle_state(self):

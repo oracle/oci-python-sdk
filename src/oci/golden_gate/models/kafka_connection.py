@@ -28,6 +28,10 @@ class KafkaConnection(Connection):
     TECHNOLOGY_TYPE_CONFLUENT_KAFKA = "CONFLUENT_KAFKA"
 
     #: A constant which can be used with the technology_type property of a KafkaConnection.
+    #: This constant has a value of "GOOGLE_CLOUD_MANAGED_SERVICE_FOR_APACHE_KAFKA"
+    TECHNOLOGY_TYPE_GOOGLE_CLOUD_MANAGED_SERVICE_FOR_APACHE_KAFKA = "GOOGLE_CLOUD_MANAGED_SERVICE_FOR_APACHE_KAFKA"
+
+    #: A constant which can be used with the technology_type property of a KafkaConnection.
     #: This constant has a value of "MICROSOFT_FABRIC_EVENTSTREAM"
     TECHNOLOGY_TYPE_MICROSOFT_FABRIC_EVENTSTREAM = "MICROSOFT_FABRIC_EVENTSTREAM"
 
@@ -63,7 +67,7 @@ class KafkaConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this KafkaConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -97,7 +101,7 @@ class KafkaConnection(Connection):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this KafkaConnection.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -161,7 +165,7 @@ class KafkaConnection(Connection):
 
         :param technology_type:
             The value to assign to the technology_type property of this KafkaConnection.
-            Allowed values for this property are: "APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "MICROSOFT_FABRIC_EVENTSTREAM", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "GOOGLE_CLOUD_MANAGED_SERVICE_FOR_APACHE_KAFKA", "MICROSOFT_FABRIC_EVENTSTREAM", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -350,7 +354,7 @@ class KafkaConnection(Connection):
         **[Required]** Gets the technology_type of this KafkaConnection.
         The Kafka technology type.
 
-        Allowed values for this property are: "APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "MICROSOFT_FABRIC_EVENTSTREAM", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "GOOGLE_CLOUD_MANAGED_SERVICE_FOR_APACHE_KAFKA", "MICROSOFT_FABRIC_EVENTSTREAM", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -369,7 +373,7 @@ class KafkaConnection(Connection):
         :param technology_type: The technology_type of this KafkaConnection.
         :type: str
         """
-        allowed_values = ["APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "MICROSOFT_FABRIC_EVENTSTREAM", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA"]
+        allowed_values = ["APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "GOOGLE_CLOUD_MANAGED_SERVICE_FOR_APACHE_KAFKA", "MICROSOFT_FABRIC_EVENTSTREAM", "OCI_STREAMING", "OCI_STREAMING_WITH_APACHE_KAFKA"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type

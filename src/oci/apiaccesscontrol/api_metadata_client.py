@@ -239,12 +239,12 @@ class ApiMetadataClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_api_metadata(self, **kwargs):
+    def list_api_metadata(self, compartment_id, **kwargs):
         """
         Gets a list of ApiMetadata.
 
 
-        :param str compartment_id: (optional)
+        :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -315,7 +315,7 @@ class ApiMetadataClient(object):
         Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apiaccesscontrol/list_api_metadata.py.html>`__ to see an example of how to use list_api_metadata API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = []
+        required_arguments = ['compartmentId']
         resource_path = "/apiMetadatas"
         method = "GET"
         operation_name = "list_api_metadata"
@@ -326,7 +326,6 @@ class ApiMetadataClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
-            "compartment_id",
             "lifecycle_state",
             "resource_type",
             "display_name",
@@ -363,7 +362,7 @@ class ApiMetadataClient(object):
                 )
 
         query_params = {
-            "compartmentId": kwargs.get("compartment_id", missing),
+            "compartmentId": compartment_id,
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "resourceType": kwargs.get("resource_type", missing),
             "displayName": kwargs.get("display_name", missing),
@@ -417,12 +416,12 @@ class ApiMetadataClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_api_metadata_by_entity_types(self, **kwargs):
+    def list_api_metadata_by_entity_types(self, compartment_id, **kwargs):
         """
         Gets a list of ApiMetadata Grouped By Entity Types.
 
 
-        :param str compartment_id: (optional)
+        :param str compartment_id: (required)
             The `OCID`__ of the compartment in which to list resources.
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -493,7 +492,7 @@ class ApiMetadataClient(object):
         Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apiaccesscontrol/list_api_metadata_by_entity_types.py.html>`__ to see an example of how to use list_api_metadata_by_entity_types API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = []
+        required_arguments = ['compartmentId']
         resource_path = "/apiMetadatas/byEntityType"
         method = "GET"
         operation_name = "list_api_metadata_by_entity_types"
@@ -504,7 +503,6 @@ class ApiMetadataClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
-            "compartment_id",
             "lifecycle_state",
             "resource_type",
             "display_name",
@@ -541,7 +539,7 @@ class ApiMetadataClient(object):
                 )
 
         query_params = {
-            "compartmentId": kwargs.get("compartment_id", missing),
+            "compartmentId": compartment_id,
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "resourceType": kwargs.get("resource_type", missing),
             "displayName": kwargs.get("display_name", missing),

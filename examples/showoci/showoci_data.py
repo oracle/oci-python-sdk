@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "26.04.01"
+    version = "26.07.14"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -4402,6 +4402,8 @@ class ShowOCIData(object):
             advisor_recommendations = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_ADVISOR_RECOMMENDATIONS, 'region_name', region_name, 'compartment_id', compartment['id'])
             advisor_resource_actions = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_ADVISOR_RESOURCE_ACTIONS, 'region_name', region_name, 'compartment_id', compartment['id'])
             db_managements = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_DB_MANAGEMENT, 'region_name', region_name, 'compartment_id', compartment['id'])
+            opsi_database_insights = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_OPSI_DATABASE_INSIGHTS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            opsi_host_insights = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_OPSI_HOST_INSIGHTS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             data = {}
             # if events add it
@@ -4431,6 +4433,14 @@ class ShowOCIData(object):
             # if db_managements add it
             if db_managements:
                 data['db_managements'] = db_managements
+
+            # if opsi database insights add it
+            if opsi_database_insights:
+                data['opsi_database_insights'] = opsi_database_insights
+
+            # if opsi host insights add it
+            if opsi_host_insights:
+                data['opsi_host_insights'] = opsi_host_insights
 
             # if events add it
             if alarms:
@@ -4675,8 +4685,18 @@ class ShowOCIData(object):
 
             # logging unified agents
             logua = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_LOGGING_UA, 'region_name', region_name, 'compartment_id', compartment['id'])
-            if log:
+            if logua:
                 security_services['logging_unified_agents'] = logua
+
+            # log analytics sources
+            logan = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_LOG_ANALYTICS_NAMESPACE, 'region_name', region_name, 'compartment_id', self.service.get_tenancy_id())
+            if logan:
+                security_services['log_analytics_namespace'] = logan
+
+            # log analytics entities
+            loga = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_LOG_ANALYTICS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if loga:
+                security_services['log_analytics'] = loga
 
             # kms_vaults
             vaults = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_VAULTS, 'region_name', region_name, 'compartment_id', compartment['id'])
@@ -4686,7 +4706,28 @@ class ShowOCIData(object):
             # kms_keys
             keys = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_KEYS, 'region_name', region_name, 'compartment_id', compartment['id'])
             if keys:
+                for key in keys:
+                    vault = self.service.search_unique_item(
+                        self.service.C_SECURITY,
+                        self.service.C_SECURITY_VAULTS,
+                        'id',
+                        key['vault_id']
+                    )
+                    key['vault_name'] = vault['name'] if vault else ""
                 security_services['kms_keys'] = keys
+
+            # kms_secrets
+            secrets = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_SECRETS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if secrets:
+                for secret in secrets:
+                    vault = self.service.search_unique_item(
+                        self.service.C_SECURITY,
+                        self.service.C_SECURITY_VAULTS,
+                        'id',
+                        secret['vault_id']
+                    )
+                    secret['vault_name'] = vault['name'] if vault else ""
+                security_services['kms_secrets'] = secrets
 
             # certificate
             certificates = self.service.search_multi_items(self.service.C_CERTIFICATE, self.service.C_CERTIFICATE_CERTIFICATES, 'region_name', region_name, 'compartment_id', compartment['id'])

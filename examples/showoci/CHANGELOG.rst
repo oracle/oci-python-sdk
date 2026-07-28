@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+26.07.14 - 26.07.14
+=====================
+* Added Log Analytics entities and active storage reporting
+* Added Operations Insights database and host insights
+* Added Vault Secrets inventory with Vault and encryption key details
+* Added IAM domains Dynamic Group full info
+* Added KMS Keys additional information
+
+=====================
 26.04.23 - 26.04.23
 =====================
 * Added groups attribute for IAM Domain list users

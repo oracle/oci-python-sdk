@@ -23,7 +23,7 @@ class AmazonS3IcebergStorageSummary(IcebergStorageSummary):
 
         :param storage_type:
             The value to assign to the storage_type property of this AmazonS3IcebergStorageSummary.
-            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE"
+            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"
         :type storage_type: str
 
         :param scheme_type:
@@ -133,6 +133,7 @@ class AmazonS3IcebergStorageSummary(IcebergStorageSummary):
         """
         **[Required]** Gets the access_key_id of this AmazonS3IcebergStorageSummary.
         Access key ID to access the Amazon S3 bucket.
+        Note: Despite the \"Id\" suffix, this value is not an OCI OCID.
 
 
         :return: The access_key_id of this AmazonS3IcebergStorageSummary.
@@ -145,6 +146,7 @@ class AmazonS3IcebergStorageSummary(IcebergStorageSummary):
         """
         Sets the access_key_id of this AmazonS3IcebergStorageSummary.
         Access key ID to access the Amazon S3 bucket.
+        Note: Despite the \"Id\" suffix, this value is not an OCI OCID.
 
 
         :param access_key_id: The access_key_id of this AmazonS3IcebergStorageSummary.

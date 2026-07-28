@@ -2404,6 +2404,131 @@ class DatabaseClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def change_basecc_vm_cluster_compartment(self, change_basecc_vm_cluster_compartment_details, basecc_vm_cluster_id, **kwargs):
+        """
+        Moves a BaseDB-C@C VM cluster and its dependent resources to another compartment. Applies to Base Database Service on Cloud@Customer instances only.
+
+
+        :param oci.database.models.ChangeBaseccVmClusterCompartmentDetails change_basecc_vm_cluster_compartment_details: (required)
+            Request to move the BaseDB-C@C VM cluster to a different compartment.
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_basecc_vm_cluster_compartment.py.html>`__ to see an example of how to use change_basecc_vm_cluster_compartment API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['baseccVmClusterId']
+        resource_path = "/baseccVmClusters/{baseccVmClusterId}/actions/changeCompartment"
+        method = "POST"
+        operation_name = "change_basecc_vm_cluster_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/ChangeBaseccVmClusterCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"change_basecc_vm_cluster_compartment got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "baseccVmClusterId": basecc_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_basecc_vm_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_basecc_vm_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def change_cloud_autonomous_vm_cluster_compartment(self, change_cloud_autonomous_vm_cluster_compartment_details, cloud_autonomous_vm_cluster_id, **kwargs):
         """
         Moves an Autonomous Exadata VM cluster in the Oracle cloud and its dependent resources to another compartment. For Exadata Cloud@Customer systems, see :func:`change_autonomous_vm_cluster_compartment`.
@@ -8263,6 +8388,109 @@ class DatabaseClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_basecc_vm_cluster(self, create_basecc_vm_cluster_details, **kwargs):
+        """
+        Creates a BaseDB-C@C VM cluster.
+
+
+        :param oci.database.models.CreateBaseccVmClusterDetails create_basecc_vm_cluster_details: (required)
+            Request to create a BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.BaseccVmCluster`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_basecc_vm_cluster.py.html>`__ to see an example of how to use create_basecc_vm_cluster API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/baseccVmClusters"
+        method = "POST"
+        operation_name = "create_basecc_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/CreateBaseccVmCluster"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_basecc_vm_cluster got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_basecc_vm_cluster_details,
+                response_type="BaseccVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_basecc_vm_cluster_details,
+                response_type="BaseccVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_cloud_autonomous_vm_cluster(self, create_cloud_autonomous_vm_cluster_details, **kwargs):
         """
         Creates an Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see :func:`create_autonomous_vm_cluster`.
@@ -12463,6 +12691,116 @@ class DatabaseClient(object):
 
         path_params = {
             "backupDestinationId": backup_destination_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def delete_basecc_vm_cluster(self, basecc_vm_cluster_id, **kwargs):
+        """
+        Deletes the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_basecc_vm_cluster.py.html>`__ to see an example of how to use delete_basecc_vm_cluster API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['baseccVmClusterId']
+        resource_path = "/baseccVmClusters/{baseccVmClusterId}"
+        method = "DELETE"
+        operation_name = "delete_basecc_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/DeleteBaseccVmCluster"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_basecc_vm_cluster got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "baseccVmClusterId": basecc_vm_cluster_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -22236,6 +22574,333 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="BackupDestination",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_basecc_vm_cluster(self, basecc_vm_cluster_id, **kwargs):
+        """
+        Gets information about the BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.BaseccVmCluster`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_basecc_vm_cluster.py.html>`__ to see an example of how to use get_basecc_vm_cluster API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['baseccVmClusterId']
+        resource_path = "/baseccVmClusters/{baseccVmClusterId}"
+        method = "GET"
+        operation_name = "get_basecc_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/GetBaseccVmCluster"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_basecc_vm_cluster got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "baseccVmClusterId": basecc_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BaseccVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BaseccVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_basecc_vm_cluster_update(self, basecc_vm_cluster_id, update_id, **kwargs):
+        """
+        Gets information about a specified maintenance update package for a BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str update_id: (required)
+            The `OCID`__ of the maintenance update.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.BaseccVmClusterUpdate`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_basecc_vm_cluster_update.py.html>`__ to see an example of how to use get_basecc_vm_cluster_update API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['baseccVmClusterId', 'updateId']
+        resource_path = "/baseccVmClusters/{baseccVmClusterId}/updates/{updateId}"
+        method = "GET"
+        operation_name = "get_basecc_vm_cluster_update"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdate/GetBaseccVmClusterUpdate"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_basecc_vm_cluster_update got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "baseccVmClusterId": basecc_vm_cluster_id,
+            "updateId": update_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BaseccVmClusterUpdate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BaseccVmClusterUpdate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_basecc_vm_cluster_update_history_entry(self, basecc_vm_cluster_id, update_history_entry_id, **kwargs):
+        """
+        Gets the maintenance update history details for the specified update history entry. Applies to Base Database Service on Cloud@Customer instances only.
+
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str update_history_entry_id: (required)
+            The `OCID`__ of the maintenance update history entry.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.BaseccVmClusterUpdateHistoryEntry`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_basecc_vm_cluster_update_history_entry.py.html>`__ to see an example of how to use get_basecc_vm_cluster_update_history_entry API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['baseccVmClusterId', 'updateHistoryEntryId']
+        resource_path = "/baseccVmClusters/{baseccVmClusterId}/updateHistoryEntries/{updateHistoryEntryId}"
+        method = "GET"
+        operation_name = "get_basecc_vm_cluster_update_history_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdateHistoryEntry/GetBaseccVmClusterUpdateHistoryEntry"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_basecc_vm_cluster_update_history_entry got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "baseccVmClusterId": basecc_vm_cluster_id,
+            "updateHistoryEntryId": update_history_entry_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BaseccVmClusterUpdateHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="BaseccVmClusterUpdateHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -32418,6 +33083,485 @@ class DatabaseClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_basecc_vm_cluster_update_history_entries(self, basecc_vm_cluster_id, **kwargs):
+        """
+        Gets the history of the maintenance update actions performed on the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str update_type: (optional)
+            A filter to return only resources that match the given update type exactly.
+
+            Allowed values are: "GI_UPGRADE", "GI_PATCH", "OS_UPDATE"
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the given lifecycle state exactly.
+
+            Allowed values are: "IN_PROGRESS", "SUCCEEDED", "FAILED"
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.BaseccVmClusterUpdateHistoryEntrySummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_basecc_vm_cluster_update_history_entries.py.html>`__ to see an example of how to use list_basecc_vm_cluster_update_history_entries API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['baseccVmClusterId']
+        resource_path = "/baseccVmClusters/{baseccVmClusterId}/updateHistoryEntries"
+        method = "GET"
+        operation_name = "list_basecc_vm_cluster_update_history_entries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdateHistoryEntry/ListBaseccVmClusterUpdateHistoryEntries"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "update_type",
+            "lifecycle_state",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_basecc_vm_cluster_update_history_entries got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "baseccVmClusterId": basecc_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'update_type' in kwargs:
+            update_type_allowed_values = ["GI_UPGRADE", "GI_PATCH", "OS_UPDATE"]
+            if kwargs['update_type'] not in update_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `update_type`, must be one of { update_type_allowed_values }"
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["IN_PROGRESS", "SUCCEEDED", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        query_params = {
+            "updateType": kwargs.get("update_type", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BaseccVmClusterUpdateHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BaseccVmClusterUpdateHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_basecc_vm_cluster_updates(self, basecc_vm_cluster_id, **kwargs):
+        """
+        Lists the maintenance updates that can be applied to the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str update_type: (optional)
+            A filter to return only resources that match the given update type exactly.
+
+            Allowed values are: "GI_UPGRADE", "GI_PATCH", "OS_UPDATE"
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the given lifecycle state exactly.
+
+            Allowed values are: "AVAILABLE", "SUCCESS", "IN_PROGRESS", "FAILED"
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.BaseccVmClusterUpdateSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_basecc_vm_cluster_updates.py.html>`__ to see an example of how to use list_basecc_vm_cluster_updates API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['baseccVmClusterId']
+        resource_path = "/baseccVmClusters/{baseccVmClusterId}/updates"
+        method = "GET"
+        operation_name = "list_basecc_vm_cluster_updates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmClusterUpdate/ListBaseccVmClusterUpdates"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "update_type",
+            "lifecycle_state",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_basecc_vm_cluster_updates got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "baseccVmClusterId": basecc_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'update_type' in kwargs:
+            update_type_allowed_values = ["GI_UPGRADE", "GI_PATCH", "OS_UPDATE"]
+            if kwargs['update_type'] not in update_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `update_type`, must be one of { update_type_allowed_values }"
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["AVAILABLE", "SUCCESS", "IN_PROGRESS", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        query_params = {
+            "updateType": kwargs.get("update_type", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BaseccVmClusterUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BaseccVmClusterUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_basecc_vm_clusters(self, compartment_id, **kwargs):
+        """
+        Lists the BaseDB-C@C VM clusters in the specified compartment. Applies to Base Database Service on Cloud@Customer instances only.
+
+
+        :param str compartment_id: (required)
+            The compartment `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str base_infrastructure_id: (optional)
+            If provided, filters the results for the given Oracle Data Cloud@Customer Infrastructure.
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param str sort_by: (optional)
+            The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the given lifecycle state exactly.
+
+            Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"
+
+        :param str availability_domain: (optional)
+            A filter to return only resources that match the given availability domain exactly.
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given. The match is not case sensitive.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str vm_cluster_type: (optional)
+            A filter to return only BaseDB-C@C VM clusters that match the given VM Cluster type exactly.
+
+            Allowed values are: "REGULAR", "DEVELOPER"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.BaseccVmClusterSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_basecc_vm_clusters.py.html>`__ to see an example of how to use list_basecc_vm_clusters API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/baseccVmClusters"
+        method = "GET"
+        operation_name = "list_basecc_vm_clusters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/ListBaseccVmClusters"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "base_infrastructure_id",
+            "limit",
+            "page",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state",
+            "availability_domain",
+            "display_name",
+            "opc_request_id",
+            "vm_cluster_type"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_basecc_vm_clusters got unknown kwargs: {extra_kwargs!r}")
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        if 'vm_cluster_type' in kwargs:
+            vm_cluster_type_allowed_values = ["REGULAR", "DEVELOPER"]
+            if kwargs['vm_cluster_type'] not in vm_cluster_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `vm_cluster_type`, must be one of { vm_cluster_type_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "baseInfrastructureId": kwargs.get("base_infrastructure_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "vmClusterType": kwargs.get("vm_cluster_type", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BaseccVmClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[BaseccVmClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_cloud_autonomous_vm_cluster_acd_resource_usage(self, cloud_autonomous_vm_cluster_id, **kwargs):
         """
         Gets the list of resource usage details for all the Cloud Autonomous Container Database
@@ -33877,7 +35021,7 @@ class DatabaseClient(object):
         :param str image_shape_family: (optional)
             A filter to return only resources that match the given image shape family exactly.
 
-            Allowed values are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE", "EXADBXS_SHAPE"
+            Allowed values are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE", "EXADBXS_SHAPE", "BDBCC_SHAPE"
 
         :param str patch_set_greater_than_or_equal_to: (optional)
             A filter to return only resources with `patchSet` greater than or equal to given value.
@@ -33970,7 +35114,7 @@ class DatabaseClient(object):
                 )
 
         if 'image_shape_family' in kwargs:
-            image_shape_family_allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE", "EXADBXS_SHAPE"]
+            image_shape_family_allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE", "EXADBXS_SHAPE", "BDBCC_SHAPE"]
             if kwargs['image_shape_family'] not in image_shape_family_allowed_values:
                 raise ValueError(
                     f"Invalid value for `image_shape_family`, must be one of { image_shape_family_allowed_values }"
@@ -38893,6 +40037,9 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param str exadata_infrastructure_id: (optional)
+            If provided, filters the results for the given Exadata Infrastructure.
+
         :param str shape_family: (optional)
             If provided, filters the results to the set of database versions which are supported for the given shape family.
 
@@ -38957,6 +40104,7 @@ class DatabaseClient(object):
             "availability_domain",
             "compartment_id",
             "opc_request_id",
+            "exadata_infrastructure_id",
             "shape_family",
             "is_gi_version_for_provisioning",
             "shape",
@@ -39004,6 +40152,7 @@ class DatabaseClient(object):
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
             "compartmentId": kwargs.get("compartment_id", missing),
+            "exadataInfrastructureId": kwargs.get("exadata_infrastructure_id", missing),
             "shapeFamily": kwargs.get("shape_family", missing),
             "isGiVersionForProvisioning": kwargs.get("is_gi_version_for_provisioning", missing),
             "shape": kwargs.get("shape", missing),
@@ -44510,6 +45659,131 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=register_cloud_vm_cluster_pkcs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def register_exadb_vm_cluster_pkcs(self, exadb_vm_cluster_id, register_exadb_vm_cluster_pkcs_details, **kwargs):
+        """
+        Install the PKCS11 driver for given keystore type
+
+
+        :param str exadb_vm_cluster_id: (required)
+            The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.RegisterExadbVmClusterPkcsDetails register_exadb_vm_cluster_pkcs_details: (required)
+            Details of registering PKCS11 driver.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/register_exadb_vm_cluster_pkcs.py.html>`__ to see an example of how to use register_exadb_vm_cluster_pkcs API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadbVmClusterId']
+        resource_path = "/exadbVmClusters/{exadbVmClusterId}/actions/registerPkcs"
+        method = "POST"
+        operation_name = "register_exadb_vm_cluster_pkcs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/RegisterExadbVmClusterPkcs"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"register_exadb_vm_cluster_pkcs got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "exadbVmClusterId": exadb_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=register_exadb_vm_cluster_pkcs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=register_exadb_vm_cluster_pkcs_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -50756,6 +52030,131 @@ class DatabaseClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def unregister_exadb_vm_cluster_pkcs(self, exadb_vm_cluster_id, unregister_exadb_vm_cluster_pkcs_details, **kwargs):
+        """
+        Uninstall the PKCS11 driver for given keystore type
+
+
+        :param str exadb_vm_cluster_id: (required)
+            The Exadata VM cluster `OCID`__ on Exascale Infrastructure.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.UnregisterExadbVmClusterPkcsDetails unregister_exadb_vm_cluster_pkcs_details: (required)
+            Details of unregistering PKCS11 driver.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/unregister_exadb_vm_cluster_pkcs.py.html>`__ to see an example of how to use unregister_exadb_vm_cluster_pkcs API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadbVmClusterId']
+        resource_path = "/exadbVmClusters/{exadbVmClusterId}/actions/unregisterPkcs"
+        method = "POST"
+        operation_name = "unregister_exadb_vm_cluster_pkcs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/UnregisterExadbVmClusterPkcs"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"unregister_exadb_vm_cluster_pkcs got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "exadbVmClusterId": exadb_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=unregister_exadb_vm_cluster_pkcs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=unregister_exadb_vm_cluster_pkcs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def update_advanced_cluster_file_system(self, advanced_cluster_file_system_id, update_advanced_cluster_file_system_details, **kwargs):
         """
         Updates the advanced cluster file system resource.
@@ -52142,6 +53541,123 @@ class DatabaseClient(object):
                 header_params=header_params,
                 body=update_backup_destination_details,
                 response_type="BackupDestination",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_basecc_vm_cluster(self, basecc_vm_cluster_id, update_basecc_vm_cluster_details, **kwargs):
+        """
+        Updates the specified BaseDB-C@C VM cluster. Applies to Base Database Service on Cloud@Customer instances only.
+
+
+        :param str basecc_vm_cluster_id: (required)
+            The BaseDB-C@C VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.UpdateBaseccVmClusterDetails update_basecc_vm_cluster_details: (required)
+            Request to update the attributes of a BaseDB-C@C VM cluster.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.BaseccVmCluster`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_basecc_vm_cluster.py.html>`__ to see an example of how to use update_basecc_vm_cluster API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['baseccVmClusterId']
+        resource_path = "/baseccVmClusters/{baseccVmClusterId}"
+        method = "PUT"
+        operation_name = "update_basecc_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BaseccVmCluster/UpdateBaseccVmCluster"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_basecc_vm_cluster got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "baseccVmClusterId": basecc_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_basecc_vm_cluster_details,
+                response_type="BaseccVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_basecc_vm_cluster_details,
+                response_type="BaseccVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,

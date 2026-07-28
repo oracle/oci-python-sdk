@@ -47,6 +47,46 @@ class Update(object):
     #: This constant has a value of "ROLLBACK"
     AVAILABLE_ACTIONS_ROLLBACK = "ROLLBACK"
 
+    #: A constant which can be used with the last_update_mode property of a Update.
+    #: This constant has a value of "ONLINE_HIGHCVSS"
+    LAST_UPDATE_MODE_ONLINE_HIGHCVSS = "ONLINE_HIGHCVSS"
+
+    #: A constant which can be used with the last_update_mode property of a Update.
+    #: This constant has a value of "ONLINE_ALLCVSS"
+    LAST_UPDATE_MODE_ONLINE_ALLCVSS = "ONLINE_ALLCVSS"
+
+    #: A constant which can be used with the last_update_mode property of a Update.
+    #: This constant has a value of "ONLINE_ALL_UPDATES"
+    LAST_UPDATE_MODE_ONLINE_ALL_UPDATES = "ONLINE_ALL_UPDATES"
+
+    #: A constant which can be used with the last_update_mode property of a Update.
+    #: This constant has a value of "PENDING_UPDATES"
+    LAST_UPDATE_MODE_PENDING_UPDATES = "PENDING_UPDATES"
+
+    #: A constant which can be used with the last_update_mode property of a Update.
+    #: This constant has a value of "FULL_UPDATE"
+    LAST_UPDATE_MODE_FULL_UPDATE = "FULL_UPDATE"
+
+    #: A constant which can be used with the available_update_modes property of a Update.
+    #: This constant has a value of "ONLINE_HIGHCVSS"
+    AVAILABLE_UPDATE_MODES_ONLINE_HIGHCVSS = "ONLINE_HIGHCVSS"
+
+    #: A constant which can be used with the available_update_modes property of a Update.
+    #: This constant has a value of "ONLINE_ALLCVSS"
+    AVAILABLE_UPDATE_MODES_ONLINE_ALLCVSS = "ONLINE_ALLCVSS"
+
+    #: A constant which can be used with the available_update_modes property of a Update.
+    #: This constant has a value of "ONLINE_ALL_UPDATES"
+    AVAILABLE_UPDATE_MODES_ONLINE_ALL_UPDATES = "ONLINE_ALL_UPDATES"
+
+    #: A constant which can be used with the available_update_modes property of a Update.
+    #: This constant has a value of "PENDING_UPDATES"
+    AVAILABLE_UPDATE_MODES_PENDING_UPDATES = "PENDING_UPDATES"
+
+    #: A constant which can be used with the available_update_modes property of a Update.
+    #: This constant has a value of "FULL_UPDATE"
+    AVAILABLE_UPDATE_MODES_FULL_UPDATE = "FULL_UPDATE"
+
     #: A constant which can be used with the update_type property of a Update.
     #: This constant has a value of "GI_UPGRADE"
     UPDATE_TYPE_GI_UPGRADE = "GI_UPGRADE"
@@ -100,6 +140,22 @@ class Update(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type available_actions: list[str]
 
+        :param last_update_mode:
+            The value to assign to the last_update_mode property of this Update.
+            Allowed values for this property are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type last_update_mode: str
+
+        :param available_update_modes:
+            The value to assign to the available_update_modes property of this Update.
+            Allowed values for items in this list are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type available_update_modes: list[str]
+
+        :param oracle_linux_version:
+            The value to assign to the oracle_linux_version property of this Update.
+        :type oracle_linux_version: str
+
         :param update_type:
             The value to assign to the update_type property of this Update.
             Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", "OS_UPDATE", 'UNKNOWN_ENUM_VALUE'.
@@ -130,6 +186,9 @@ class Update(object):
             'description': 'str',
             'last_action': 'str',
             'available_actions': 'list[str]',
+            'last_update_mode': 'str',
+            'available_update_modes': 'list[str]',
+            'oracle_linux_version': 'str',
             'update_type': 'str',
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
@@ -141,6 +200,9 @@ class Update(object):
             'description': 'description',
             'last_action': 'lastAction',
             'available_actions': 'availableActions',
+            'last_update_mode': 'lastUpdateMode',
+            'available_update_modes': 'availableUpdateModes',
+            'oracle_linux_version': 'oracleLinuxVersion',
             'update_type': 'updateType',
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
@@ -151,6 +213,9 @@ class Update(object):
         self._description = None
         self._last_action = None
         self._available_actions = None
+        self._last_update_mode = None
+        self._available_update_modes = None
+        self._oracle_linux_version = None
         self._update_type = None
         self._lifecycle_details = None
         self._lifecycle_state = None
@@ -268,6 +333,90 @@ class Update(object):
         if available_actions:
             available_actions[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in available_actions]
         self._available_actions = available_actions
+
+    @property
+    def last_update_mode(self):
+        """
+        Gets the last_update_mode of this Update.
+        The previous update mode performed (only valid for OS Updates).
+
+        Allowed values for this property are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The last_update_mode of this Update.
+        :rtype: str
+        """
+        return self._last_update_mode
+
+    @last_update_mode.setter
+    def last_update_mode(self, last_update_mode):
+        """
+        Sets the last_update_mode of this Update.
+        The previous update mode performed (only valid for OS Updates).
+
+
+        :param last_update_mode: The last_update_mode of this Update.
+        :type: str
+        """
+        allowed_values = ["ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE"]
+        if not value_allowed_none_or_none_sentinel(last_update_mode, allowed_values):
+            last_update_mode = 'UNKNOWN_ENUM_VALUE'
+        self._last_update_mode = last_update_mode
+
+    @property
+    def available_update_modes(self):
+        """
+        Gets the available_update_modes of this Update.
+        The possible update options available (only valid for OS Update).
+
+        Allowed values for items in this list are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The available_update_modes of this Update.
+        :rtype: list[str]
+        """
+        return self._available_update_modes
+
+    @available_update_modes.setter
+    def available_update_modes(self, available_update_modes):
+        """
+        Sets the available_update_modes of this Update.
+        The possible update options available (only valid for OS Update).
+
+
+        :param available_update_modes: The available_update_modes of this Update.
+        :type: list[str]
+        """
+        allowed_values = ["ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE"]
+        if available_update_modes:
+            available_update_modes[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in available_update_modes]
+        self._available_update_modes = available_update_modes
+
+    @property
+    def oracle_linux_version(self):
+        """
+        Gets the oracle_linux_version of this Update.
+        Oracle Linux version for the respective Exadata Image.
+
+
+        :return: The oracle_linux_version of this Update.
+        :rtype: str
+        """
+        return self._oracle_linux_version
+
+    @oracle_linux_version.setter
+    def oracle_linux_version(self, oracle_linux_version):
+        """
+        Sets the oracle_linux_version of this Update.
+        Oracle Linux version for the respective Exadata Image.
+
+
+        :param oracle_linux_version: The oracle_linux_version of this Update.
+        :type: str
+        """
+        self._oracle_linux_version = oracle_linux_version
 
     @property
     def update_type(self):

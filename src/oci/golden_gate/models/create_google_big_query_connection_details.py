@@ -23,7 +23,7 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateGoogleBigQueryConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
         :type connection_type: str
 
         :param display_name:
@@ -226,7 +226,9 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
         Gets the service_account_key_file of this CreateGoogleBigQueryConnectionDetails.
         The base64 encoded content of the service account key file containing
         the credentials required to use Google BigQuery.
-        Deprecated: This field is deprecated and replaced by \"serviceAccountKeyFileSecretId\". This field will be removed after February 15 2026.
+        Deprecated: This field is deprecated and replaced by \"serviceAccountKeyFileSecretId\".
+        This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
 
         :return: The service_account_key_file of this CreateGoogleBigQueryConnectionDetails.
@@ -240,7 +242,9 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
         Sets the service_account_key_file of this CreateGoogleBigQueryConnectionDetails.
         The base64 encoded content of the service account key file containing
         the credentials required to use Google BigQuery.
-        Deprecated: This field is deprecated and replaced by \"serviceAccountKeyFileSecretId\". This field will be removed after February 15 2026.
+        Deprecated: This field is deprecated and replaced by \"serviceAccountKeyFileSecretId\".
+        This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
 
         :param service_account_key_file: The service_account_key_file of this CreateGoogleBigQueryConnectionDetails.
