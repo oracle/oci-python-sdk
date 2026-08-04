@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Pricing(object):
     """
-    the pricing information for the offer
+    The pricing information for the offer.
     """
 
     #: A constant which can be used with the billing_cycle property of a Pricing.
@@ -57,7 +57,7 @@ class Pricing(object):
     def currency_type(self):
         """
         Gets the currency_type of this Pricing.
-        The currency supported for a given Offer, in the format specified by ISO-4217
+        The currency supported for a given Offer, in the format specified by ISO-4217.
 
 
         :return: The currency_type of this Pricing.
@@ -69,7 +69,7 @@ class Pricing(object):
     def currency_type(self, currency_type):
         """
         Sets the currency_type of this Pricing.
-        The currency supported for a given Offer, in the format specified by ISO-4217
+        The currency supported for a given Offer, in the format specified by ISO-4217.
 
 
         :param currency_type: The currency_type of this Pricing.
@@ -81,7 +81,7 @@ class Pricing(object):
     def total_amount(self):
         """
         Gets the total_amount of this Pricing.
-        The total amount an Offer costs
+        The total amount an offer costs.
 
 
         :return: The total_amount of this Pricing.
@@ -93,7 +93,7 @@ class Pricing(object):
     def total_amount(self, total_amount):
         """
         Sets the total_amount of this Pricing.
-        The total amount an Offer costs
+        The total amount an offer costs.
 
 
         :param total_amount: The total_amount of this Pricing.
@@ -105,7 +105,7 @@ class Pricing(object):
     def billing_cycle(self):
         """
         Gets the billing_cycle of this Pricing.
-        The frequency at which the customer is billed for the Offer
+        The frequency at which the customer is billed for the offer.
 
         Allowed values for this property are: "ONE_TIME", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -120,7 +120,7 @@ class Pricing(object):
     def billing_cycle(self, billing_cycle):
         """
         Sets the billing_cycle of this Pricing.
-        The frequency at which the customer is billed for the Offer
+        The frequency at which the customer is billed for the offer.
 
 
         :param billing_cycle: The billing_cycle of this Pricing.

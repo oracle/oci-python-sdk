@@ -168,6 +168,7 @@ class UpdateMongoDbConnectionDetails(UpdateConnectionDetails):
         }
         self._redacted_field_paths = [
             ['password'],
+            ['tls_certificate_key_file'],
             ['tls_certificate_key_file_password'],
         ]
         self._connection_type = None
@@ -510,6 +511,7 @@ class UpdateMongoDbConnectionDetails(UpdateConnectionDetails):
     def __repr__(self):
         as_dict = to_dict(self)
         redact_password_field(as_dict, ['password'])
+        redact_password_field(as_dict, ['tls_certificate_key_file'])
         redact_password_field(as_dict, ['tls_certificate_key_file_password'])
         return formatted_flat_dict(as_dict)
 

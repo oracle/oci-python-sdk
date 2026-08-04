@@ -31,7 +31,7 @@ class CreateAutonomousContainerDatabaseDetails(CreateAutonomousContainerDatabase
 
         :param source:
             The value to assign to the source property of this CreateAutonomousContainerDatabaseDetails.
-            Allowed values for this property are: "NONE", "BACKUP_FROM_ID"
+            Allowed values for this property are: "NONE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
         :type source: str
 
         :param display_name:

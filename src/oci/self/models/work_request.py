@@ -33,6 +33,10 @@ class WorkRequest(object):
     #: This constant has a value of "MOVE_SUBSCRIPTION"
     OPERATION_TYPE_MOVE_SUBSCRIPTION = "MOVE_SUBSCRIPTION"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "SUBMIT_SUBSCRIPTION_USAGE_BATCH"
+    OPERATION_TYPE_SUBMIT_SUBSCRIPTION_USAGE_BATCH = "SUBMIT_SUBSCRIPTION_USAGE_BATCH"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -72,7 +76,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_SUBSCRIPTION", "UPDATE_SUBSCRIPTION", "DELETE_SUBSCRIPTION", "MOVE_SUBSCRIPTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_SUBSCRIPTION", "UPDATE_SUBSCRIPTION", "DELETE_SUBSCRIPTION", "MOVE_SUBSCRIPTION", "SUBMIT_SUBSCRIPTION_USAGE_BATCH", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -156,7 +160,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_SUBSCRIPTION", "UPDATE_SUBSCRIPTION", "DELETE_SUBSCRIPTION", "MOVE_SUBSCRIPTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_SUBSCRIPTION", "UPDATE_SUBSCRIPTION", "DELETE_SUBSCRIPTION", "MOVE_SUBSCRIPTION", "SUBMIT_SUBSCRIPTION_USAGE_BATCH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -175,7 +179,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_SUBSCRIPTION", "UPDATE_SUBSCRIPTION", "DELETE_SUBSCRIPTION", "MOVE_SUBSCRIPTION"]
+        allowed_values = ["CREATE_SUBSCRIPTION", "UPDATE_SUBSCRIPTION", "DELETE_SUBSCRIPTION", "MOVE_SUBSCRIPTION", "SUBMIT_SUBSCRIPTION_USAGE_BATCH"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

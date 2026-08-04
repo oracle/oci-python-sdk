@@ -37,6 +37,7 @@ Database
     oci.database.models.AssociatedDatabaseDetails
     oci.database.models.AssociatedLongTermBackup
     oci.database.models.AssociatedResourceDetails
+    oci.database.models.AutoFailoverConfiguration
     oci.database.models.AutomatedMountDetails
     oci.database.models.AutonomousContainerDatabase
     oci.database.models.AutonomousContainerDatabaseBackup
@@ -64,6 +65,8 @@ Database
     oci.database.models.AutonomousDatabaseEncryptionKeyDetails
     oci.database.models.AutonomousDatabaseEncryptionKeyHistoryEntry
     oci.database.models.AutonomousDatabaseInBackup
+    oci.database.models.AutonomousDatabaseInBackupCollection
+    oci.database.models.AutonomousDatabaseInBackupSummary
     oci.database.models.AutonomousDatabaseKeyHistoryEntry
     oci.database.models.AutonomousDatabaseMaintenanceWindowSummary
     oci.database.models.AutonomousDatabaseManualRefreshDetails
@@ -174,6 +177,7 @@ Database
     oci.database.models.CreateAutonomousContainerDatabaseDataguardAssociationDetails
     oci.database.models.CreateAutonomousContainerDatabaseDetails
     oci.database.models.CreateAutonomousContainerDatabaseFromBackupDetails
+    oci.database.models.CreateAutonomousContainerDatabaseFromBackupTimestampDetails
     oci.database.models.CreateAutonomousDatabaseBackupDetails
     oci.database.models.CreateAutonomousDatabaseBase
     oci.database.models.CreateAutonomousDatabaseCloneDetails

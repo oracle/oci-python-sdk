@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.184.0 - 2026-08-04
+====================
+
+Added 
+----- 
+* Support for cloning autonomous container databases from backups by timestamp and retrieving backup details in the Database service 
+* Support for managing automatic failover for existing data guard configurations with multiple standby databases in the Database service 
+* Support for creating and managing private-offer quotes and quote attachments in the Marketplace Private Offer service 
+* Support for usage-based SaaS listings, subscription usage reporting, and subscription cancellation in the Service Enablement Lifecycle Framework service 
+* Support for network security group IDs on private endpoints during open search cluster updates in the OpenSearch service 
+* Support for database tools MCP server, DB API gateway configuration, and IAM authentication APIs in the Database Tools service   
+
+Breaking 
+-------- 
+* Return type for property `billing_details` changed to `list[BillingDetails]` from `BillingDetails ` in model `SubscriptionDetails` in the Service Enablement Lifecycle Framework service  
+* Allowed value `selfTokenId` was removed from the property `sort_by` in operation `listing_subscriptions` in the Service Enablement Lifecycle Framework service  
+
+====================
 2.183.0 - 2026-07-28
 ====================
 

@@ -11,6 +11,10 @@ from .attachment_client import AttachmentClient
 from .attachment_client_composite_operations import AttachmentClientCompositeOperations
 from .offer_client import OfferClient
 from .offer_client_composite_operations import OfferClientCompositeOperations
+from .offer_quote_client import OfferQuoteClient
+from .offer_quote_client_composite_operations import OfferQuoteClientCompositeOperations
+from .quote_attachment_client import QuoteAttachmentClient
+from .quote_attachment_client_composite_operations import QuoteAttachmentClientCompositeOperations
 from . import models
 
-__all__ = ["AttachmentClient", "AttachmentClientCompositeOperations", "OfferClient", "OfferClientCompositeOperations", "models"]
+__all__ = ["AttachmentClient", "AttachmentClientCompositeOperations", "OfferClient", "OfferClientCompositeOperations", "OfferQuoteClient", "OfferQuoteClientCompositeOperations", "QuoteAttachmentClient", "QuoteAttachmentClientCompositeOperations", "models"]

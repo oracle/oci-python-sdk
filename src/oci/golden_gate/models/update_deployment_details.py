@@ -171,6 +171,7 @@ class UpdateDeploymentDetails(object):
         }
         self._redacted_field_paths = [
             ['ogg_data', 'admin_password'],
+            ['ogg_data', 'key'],
         ]
         self._display_name = None
         self._license_model = None
@@ -757,6 +758,7 @@ class UpdateDeploymentDetails(object):
     def __repr__(self):
         as_dict = to_dict(self)
         redact_password_field(as_dict, ['ogg_data', 'admin_password'])
+        redact_password_field(as_dict, ['ogg_data', 'key'])
         return formatted_flat_dict(as_dict)
 
     def __eq__(self, other):

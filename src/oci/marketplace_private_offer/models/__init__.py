@@ -13,16 +13,29 @@ from .buyer_information import BuyerInformation
 from .contact import Contact
 from .create_attachment_details import CreateAttachmentDetails
 from .create_offer_details import CreateOfferDetails
+from .create_offer_quote_details import CreateOfferQuoteDetails
+from .create_quote_attachment_details import CreateQuoteAttachmentDetails
 from .custom_field import CustomField
+from .isv_information import IsvInformation
 from .offer import Offer
 from .offer_collection import OfferCollection
 from .offer_internal_detail import OfferInternalDetail
+from .offer_quote import OfferQuote
+from .offer_quote_collection import OfferQuoteCollection
+from .offer_quote_internal_detail import OfferQuoteInternalDetail
+from .offer_quote_summary import OfferQuoteSummary
 from .offer_summary import OfferSummary
 from .pricing import Pricing
 from .publisher_summary import PublisherSummary
+from .quote_attachment import QuoteAttachment
+from .quote_attachment_collection import QuoteAttachmentCollection
+from .quote_attachment_summary import QuoteAttachmentSummary
+from .reseller_information import ResellerInformation
 from .resource_bundle import ResourceBundle
+from .respond_to_offer_quote_details import RespondToOfferQuoteDetails
 from .seller_information import SellerInformation
 from .update_offer_details import UpdateOfferDetails
+from .update_offer_quote_details import UpdateOfferQuoteDetails
 from .upload_data import UploadData
 
 # Maps type names to classes for marketplace_private_offer services.
@@ -34,15 +47,28 @@ marketplace_private_offer_type_mapping = {
     "Contact": Contact,
     "CreateAttachmentDetails": CreateAttachmentDetails,
     "CreateOfferDetails": CreateOfferDetails,
+    "CreateOfferQuoteDetails": CreateOfferQuoteDetails,
+    "CreateQuoteAttachmentDetails": CreateQuoteAttachmentDetails,
     "CustomField": CustomField,
+    "IsvInformation": IsvInformation,
     "Offer": Offer,
     "OfferCollection": OfferCollection,
     "OfferInternalDetail": OfferInternalDetail,
+    "OfferQuote": OfferQuote,
+    "OfferQuoteCollection": OfferQuoteCollection,
+    "OfferQuoteInternalDetail": OfferQuoteInternalDetail,
+    "OfferQuoteSummary": OfferQuoteSummary,
     "OfferSummary": OfferSummary,
     "Pricing": Pricing,
     "PublisherSummary": PublisherSummary,
+    "QuoteAttachment": QuoteAttachment,
+    "QuoteAttachmentCollection": QuoteAttachmentCollection,
+    "QuoteAttachmentSummary": QuoteAttachmentSummary,
+    "ResellerInformation": ResellerInformation,
     "ResourceBundle": ResourceBundle,
+    "RespondToOfferQuoteDetails": RespondToOfferQuoteDetails,
     "SellerInformation": SellerInformation,
     "UpdateOfferDetails": UpdateOfferDetails,
+    "UpdateOfferQuoteDetails": UpdateOfferQuoteDetails,
     "UploadData": UploadData
 }

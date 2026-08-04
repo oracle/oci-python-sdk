@@ -94,6 +94,10 @@ class CreateStandbyDetails(object):
             The value to assign to the defined_tags property of this CreateStandbyDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param auto_failover_configuration:
+            The value to assign to the auto_failover_configuration property of this CreateStandbyDetails.
+        :type auto_failover_configuration: oci.database.models.AutoFailoverConfiguration
+
         """
         self.swagger_types = {
             'source_database_id': 'str',
@@ -107,7 +111,8 @@ class CreateStandbyDetails(object):
             'transport_type': 'str',
             'storage_size_details': 'DatabaseStorageSizeDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'auto_failover_configuration': 'AutoFailoverConfiguration'
         }
         self.attribute_map = {
             'source_database_id': 'sourceDatabaseId',
@@ -121,7 +126,8 @@ class CreateStandbyDetails(object):
             'transport_type': 'transportType',
             'storage_size_details': 'storageSizeDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'auto_failover_configuration': 'autoFailoverConfiguration'
         }
         self._redacted_field_paths = [
             ['database_admin_password'],
@@ -139,6 +145,7 @@ class CreateStandbyDetails(object):
         self._storage_size_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._auto_failover_configuration = None
 
     @property
     def source_database_id(self):
@@ -489,6 +496,26 @@ class CreateStandbyDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def auto_failover_configuration(self):
+        """
+        Gets the auto_failover_configuration of this CreateStandbyDetails.
+
+        :return: The auto_failover_configuration of this CreateStandbyDetails.
+        :rtype: oci.database.models.AutoFailoverConfiguration
+        """
+        return self._auto_failover_configuration
+
+    @auto_failover_configuration.setter
+    def auto_failover_configuration(self, auto_failover_configuration):
+        """
+        Sets the auto_failover_configuration of this CreateStandbyDetails.
+
+        :param auto_failover_configuration: The auto_failover_configuration of this CreateStandbyDetails.
+        :type: oci.database.models.AutoFailoverConfiguration
+        """
+        self._auto_failover_configuration = auto_failover_configuration
 
     def __repr__(self):
         as_dict = to_dict(self)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceBundle(object):
     """
-    Resource Bundle associated with an Offer
+    Resource bundle associated with an offer.
     """
 
     #: A constant which can be used with the type property of a ResourceBundle.
@@ -86,7 +86,7 @@ class ResourceBundle(object):
     def type(self):
         """
         Gets the type of this ResourceBundle.
-        The type of resources in the bundle
+        The type of resources in the bundle.
 
         Allowed values for this property are: "LISTING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -101,7 +101,7 @@ class ResourceBundle(object):
     def type(self, type):
         """
         Sets the type of this ResourceBundle.
-        The type of resources in the bundle
+        The type of resources in the bundle.
 
 
         :param type: The type of this ResourceBundle.
@@ -116,7 +116,7 @@ class ResourceBundle(object):
     def quantity(self):
         """
         Gets the quantity of this ResourceBundle.
-        The quantity of a resources associated with the bundle
+        The quantity of a resources associated with the bundle.
 
 
         :return: The quantity of this ResourceBundle.
@@ -128,7 +128,7 @@ class ResourceBundle(object):
     def quantity(self, quantity):
         """
         Sets the quantity of this ResourceBundle.
-        The quantity of a resources associated with the bundle
+        The quantity of a resources associated with the bundle.
 
 
         :param quantity: The quantity of this ResourceBundle.
@@ -140,7 +140,7 @@ class ResourceBundle(object):
     def unit_of_measurement(self):
         """
         Gets the unit_of_measurement of this ResourceBundle.
-        The unit of measurement for the resource bundle
+        The unit of measurement for the resource bundle.
 
         Allowed values for this property are: "OCPU_PER_HOUR", "INSTANCE_PER_HOUR", "CREDITS", "INSTANCES", "NODES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -155,7 +155,7 @@ class ResourceBundle(object):
     def unit_of_measurement(self, unit_of_measurement):
         """
         Sets the unit_of_measurement of this ResourceBundle.
-        The unit of measurement for the resource bundle
+        The unit of measurement for the resource bundle.
 
 
         :param unit_of_measurement: The unit_of_measurement of this ResourceBundle.
@@ -170,7 +170,7 @@ class ResourceBundle(object):
     def resource_ids(self):
         """
         Gets the resource_ids of this ResourceBundle.
-        the ids of the resources in the Offer
+        The IDs of the resources in the offer.
 
 
         :return: The resource_ids of this ResourceBundle.
@@ -182,7 +182,7 @@ class ResourceBundle(object):
     def resource_ids(self, resource_ids):
         """
         Sets the resource_ids of this ResourceBundle.
-        the ids of the resources in the Offer
+        The IDs of the resources in the offer.
 
 
         :param resource_ids: The resource_ids of this ResourceBundle.

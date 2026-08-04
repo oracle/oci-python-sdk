@@ -143,6 +143,14 @@ class AutonomousContainerDatabaseBackupSummary(object):
             The value to assign to the autonomous_databases property of this AutonomousContainerDatabaseBackupSummary.
         :type autonomous_databases: list[oci.database.models.AutonomousDatabaseInBackup]
 
+        :param db_version:
+            The value to assign to the db_version property of this AutonomousContainerDatabaseBackupSummary.
+        :type db_version: str
+
+        :param backup_destination_details:
+            The value to assign to the backup_destination_details property of this AutonomousContainerDatabaseBackupSummary.
+        :type backup_destination_details: oci.database.models.BackupDestinationDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -162,7 +170,9 @@ class AutonomousContainerDatabaseBackupSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
-            'autonomous_databases': 'list[AutonomousDatabaseInBackup]'
+            'autonomous_databases': 'list[AutonomousDatabaseInBackup]',
+            'db_version': 'str',
+            'backup_destination_details': 'BackupDestinationDetails'
         }
         self.attribute_map = {
             'id': 'id',
@@ -182,7 +192,9 @@ class AutonomousContainerDatabaseBackupSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
-            'autonomous_databases': 'autonomousDatabases'
+            'autonomous_databases': 'autonomousDatabases',
+            'db_version': 'dbVersion',
+            'backup_destination_details': 'backupDestinationDetails'
         }
         self._id = None
         self._compartment_id = None
@@ -202,6 +214,8 @@ class AutonomousContainerDatabaseBackupSummary(object):
         self._defined_tags = None
         self._system_tags = None
         self._autonomous_databases = None
+        self._db_version = None
+        self._backup_destination_details = None
 
     @property
     def id(self):
@@ -686,6 +700,60 @@ class AutonomousContainerDatabaseBackupSummary(object):
         :type: list[oci.database.models.AutonomousDatabaseInBackup]
         """
         self._autonomous_databases = autonomous_databases
+
+    @property
+    def db_version(self):
+        """
+        Gets the db_version of this AutonomousContainerDatabaseBackupSummary.
+        A valid Oracle AI Database version for Autonomous AI Database.
+        When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+        When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+        For new databases, it is recommended to use either 19c or 26ai.
+
+        **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+
+
+        :return: The db_version of this AutonomousContainerDatabaseBackupSummary.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this AutonomousContainerDatabaseBackupSummary.
+        A valid Oracle AI Database version for Autonomous AI Database.
+        When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+        When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+        For new databases, it is recommended to use either 19c or 26ai.
+
+        **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+
+
+        :param db_version: The db_version of this AutonomousContainerDatabaseBackupSummary.
+        :type: str
+        """
+        self._db_version = db_version
+
+    @property
+    def backup_destination_details(self):
+        """
+        Gets the backup_destination_details of this AutonomousContainerDatabaseBackupSummary.
+
+        :return: The backup_destination_details of this AutonomousContainerDatabaseBackupSummary.
+        :rtype: oci.database.models.BackupDestinationDetails
+        """
+        return self._backup_destination_details
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, backup_destination_details):
+        """
+        Sets the backup_destination_details of this AutonomousContainerDatabaseBackupSummary.
+
+        :param backup_destination_details: The backup_destination_details of this AutonomousContainerDatabaseBackupSummary.
+        :type: oci.database.models.BackupDestinationDetails
+        """
+        self._backup_destination_details = backup_destination_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

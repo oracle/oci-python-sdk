@@ -17,6 +17,30 @@ class UpdateDatabaseDetails(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
+    #: A constant which can be used with the protection_mode property of a UpdateDatabaseDetails.
+    #: This constant has a value of "MAXIMUM_AVAILABILITY"
+    PROTECTION_MODE_MAXIMUM_AVAILABILITY = "MAXIMUM_AVAILABILITY"
+
+    #: A constant which can be used with the protection_mode property of a UpdateDatabaseDetails.
+    #: This constant has a value of "MAXIMUM_PERFORMANCE"
+    PROTECTION_MODE_MAXIMUM_PERFORMANCE = "MAXIMUM_PERFORMANCE"
+
+    #: A constant which can be used with the protection_mode property of a UpdateDatabaseDetails.
+    #: This constant has a value of "MAXIMUM_PROTECTION"
+    PROTECTION_MODE_MAXIMUM_PROTECTION = "MAXIMUM_PROTECTION"
+
+    #: A constant which can be used with the transport_type property of a UpdateDatabaseDetails.
+    #: This constant has a value of "SYNC"
+    TRANSPORT_TYPE_SYNC = "SYNC"
+
+    #: A constant which can be used with the transport_type property of a UpdateDatabaseDetails.
+    #: This constant has a value of "ASYNC"
+    TRANSPORT_TYPE_ASYNC = "ASYNC"
+
+    #: A constant which can be used with the transport_type property of a UpdateDatabaseDetails.
+    #: This constant has a value of "FASTSYNC"
+    TRANSPORT_TYPE_FASTSYNC = "FASTSYNC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDatabaseDetails object with values from keyword arguments.
@@ -62,6 +86,28 @@ class UpdateDatabaseDetails(object):
             The value to assign to the patch_options property of this UpdateDatabaseDetails.
         :type patch_options: oci.database.models.PatchOptions
 
+        :param database_admin_password:
+            The value to assign to the database_admin_password property of this UpdateDatabaseDetails.
+        :type database_admin_password: str
+
+        :param protection_mode:
+            The value to assign to the protection_mode property of this UpdateDatabaseDetails.
+            Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION"
+        :type protection_mode: str
+
+        :param transport_type:
+            The value to assign to the transport_type property of this UpdateDatabaseDetails.
+            Allowed values for this property are: "SYNC", "ASYNC", "FASTSYNC"
+        :type transport_type: str
+
+        :param is_active_data_guard_enabled:
+            The value to assign to the is_active_data_guard_enabled property of this UpdateDatabaseDetails.
+        :type is_active_data_guard_enabled: bool
+
+        :param auto_failover_configuration:
+            The value to assign to the auto_failover_configuration property of this UpdateDatabaseDetails.
+        :type auto_failover_configuration: oci.database.models.AutoFailoverConfiguration
+
         """
         self.swagger_types = {
             'db_backup_config': 'DbBackupConfig',
@@ -73,7 +119,12 @@ class UpdateDatabaseDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'managed_software_update_details': 'ManagedSoftwareUpdateInputDetails',
-            'patch_options': 'PatchOptions'
+            'patch_options': 'PatchOptions',
+            'database_admin_password': 'str',
+            'protection_mode': 'str',
+            'transport_type': 'str',
+            'is_active_data_guard_enabled': 'bool',
+            'auto_failover_configuration': 'AutoFailoverConfiguration'
         }
         self.attribute_map = {
             'db_backup_config': 'dbBackupConfig',
@@ -85,12 +136,18 @@ class UpdateDatabaseDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'managed_software_update_details': 'managedSoftwareUpdateDetails',
-            'patch_options': 'patchOptions'
+            'patch_options': 'patchOptions',
+            'database_admin_password': 'databaseAdminPassword',
+            'protection_mode': 'protectionMode',
+            'transport_type': 'transportType',
+            'is_active_data_guard_enabled': 'isActiveDataGuardEnabled',
+            'auto_failover_configuration': 'autoFailoverConfiguration'
         }
         self._redacted_field_paths = [
             ['new_admin_password'],
             ['old_tde_wallet_password'],
             ['new_tde_wallet_password'],
+            ['database_admin_password'],
         ]
         self._db_backup_config = None
         self._db_home_id = None
@@ -102,6 +159,11 @@ class UpdateDatabaseDetails(object):
         self._defined_tags = None
         self._managed_software_update_details = None
         self._patch_options = None
+        self._database_admin_password = None
+        self._protection_mode = None
+        self._transport_type = None
+        self._is_active_data_guard_enabled = None
+        self._auto_failover_configuration = None
 
     @property
     def db_backup_config(self):
@@ -347,11 +409,178 @@ class UpdateDatabaseDetails(object):
         """
         self._patch_options = patch_options
 
+    @property
+    def database_admin_password(self):
+        """
+        Gets the database_admin_password of this UpdateDatabaseDetails.
+        The administrator password of the primary database in this Data Guard association.
+
+        **The password MUST be the same as the primary admin password.**
+
+
+        :return: The database_admin_password of this UpdateDatabaseDetails.
+        :rtype: str
+        """
+        return self._database_admin_password
+
+    @database_admin_password.setter
+    def database_admin_password(self, database_admin_password):
+        """
+        Sets the database_admin_password of this UpdateDatabaseDetails.
+        The administrator password of the primary database in this Data Guard association.
+
+        **The password MUST be the same as the primary admin password.**
+
+
+        :param database_admin_password: The database_admin_password of this UpdateDatabaseDetails.
+        :type: str
+        """
+        self._database_admin_password = database_admin_password
+
+    @property
+    def protection_mode(self):
+        """
+        Gets the protection_mode of this UpdateDatabaseDetails.
+        The protection mode of this Data Guard. For more information, see
+        `Oracle Data Guard Protection Modes`__
+        in the Oracle Data Guard documentation.
+
+        __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000
+
+        Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION"
+
+
+        :return: The protection_mode of this UpdateDatabaseDetails.
+        :rtype: str
+        """
+        return self._protection_mode
+
+    @protection_mode.setter
+    def protection_mode(self, protection_mode):
+        """
+        Sets the protection_mode of this UpdateDatabaseDetails.
+        The protection mode of this Data Guard. For more information, see
+        `Oracle Data Guard Protection Modes`__
+        in the Oracle Data Guard documentation.
+
+        __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000
+
+
+        :param protection_mode: The protection_mode of this UpdateDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION"]
+        if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
+            raise ValueError(
+                f"Invalid value for `protection_mode`, must be None or one of {allowed_values}"
+            )
+        self._protection_mode = protection_mode
+
+    @property
+    def transport_type(self):
+        """
+        Gets the transport_type of this UpdateDatabaseDetails.
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+
+        For more information, see
+        `Redo Transport Services`__
+        in the Oracle Data Guard documentation.
+
+        **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+
+        __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400
+
+        Allowed values for this property are: "SYNC", "ASYNC", "FASTSYNC"
+
+
+        :return: The transport_type of this UpdateDatabaseDetails.
+        :rtype: str
+        """
+        return self._transport_type
+
+    @transport_type.setter
+    def transport_type(self, transport_type):
+        """
+        Sets the transport_type of this UpdateDatabaseDetails.
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+
+        For more information, see
+        `Redo Transport Services`__
+        in the Oracle Data Guard documentation.
+
+        **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
+
+        __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400
+
+
+        :param transport_type: The transport_type of this UpdateDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["SYNC", "ASYNC", "FASTSYNC"]
+        if not value_allowed_none_or_none_sentinel(transport_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `transport_type`, must be None or one of {allowed_values}"
+            )
+        self._transport_type = transport_type
+
+    @property
+    def is_active_data_guard_enabled(self):
+        """
+        Gets the is_active_data_guard_enabled of this UpdateDatabaseDetails.
+        True if active Data Guard is enabled.
+
+
+        :return: The is_active_data_guard_enabled of this UpdateDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_active_data_guard_enabled
+
+    @is_active_data_guard_enabled.setter
+    def is_active_data_guard_enabled(self, is_active_data_guard_enabled):
+        """
+        Sets the is_active_data_guard_enabled of this UpdateDatabaseDetails.
+        True if active Data Guard is enabled.
+
+
+        :param is_active_data_guard_enabled: The is_active_data_guard_enabled of this UpdateDatabaseDetails.
+        :type: bool
+        """
+        self._is_active_data_guard_enabled = is_active_data_guard_enabled
+
+    @property
+    def auto_failover_configuration(self):
+        """
+        Gets the auto_failover_configuration of this UpdateDatabaseDetails.
+
+        :return: The auto_failover_configuration of this UpdateDatabaseDetails.
+        :rtype: oci.database.models.AutoFailoverConfiguration
+        """
+        return self._auto_failover_configuration
+
+    @auto_failover_configuration.setter
+    def auto_failover_configuration(self, auto_failover_configuration):
+        """
+        Sets the auto_failover_configuration of this UpdateDatabaseDetails.
+
+        :param auto_failover_configuration: The auto_failover_configuration of this UpdateDatabaseDetails.
+        :type: oci.database.models.AutoFailoverConfiguration
+        """
+        self._auto_failover_configuration = auto_failover_configuration
+
     def __repr__(self):
         as_dict = to_dict(self)
         redact_password_field(as_dict, ['new_admin_password'])
         redact_password_field(as_dict, ['old_tde_wallet_password'])
         redact_password_field(as_dict, ['new_tde_wallet_password'])
+        redact_password_field(as_dict, ['database_admin_password'])
         return formatted_flat_dict(as_dict)
 
     def __eq__(self, other):

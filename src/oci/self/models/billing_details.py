@@ -12,8 +12,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BillingDetails(object):
     """
-    Sku details for billing subscription.
+    Billing detail entry associated with a subscription.
     """
+
+    #: A constant which can be used with the billing_model property of a BillingDetails.
+    #: This constant has a value of "FLAT_RATE"
+    BILLING_MODEL_FLAT_RATE = "FLAT_RATE"
+
+    #: A constant which can be used with the billing_model property of a BillingDetails.
+    #: This constant has a value of "USAGE_BASED"
+    BILLING_MODEL_USAGE_BASED = "USAGE_BASED"
 
     #: A constant which can be used with the metric_type property of a BillingDetails.
     #: This constant has a value of "OCPU_HOURS"
@@ -27,10 +35,24 @@ class BillingDetails(object):
     #: This constant has a value of "CORE_HOURS"
     METRIC_TYPE_CORE_HOURS = "CORE_HOURS"
 
+    #: A constant which can be used with the metric_type property of a BillingDetails.
+    #: This constant has a value of "EACH"
+    METRIC_TYPE_EACH = "EACH"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BillingDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param pricing_plan_key:
+            The value to assign to the pricing_plan_key property of this BillingDetails.
+        :type pricing_plan_key: str
+
+        :param billing_model:
+            The value to assign to the billing_model property of this BillingDetails.
+            Allowed values for this property are: "FLAT_RATE", "USAGE_BASED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type billing_model: str
 
         :param sku:
             The value to assign to the sku property of this BillingDetails.
@@ -38,7 +60,7 @@ class BillingDetails(object):
 
         :param metric_type:
             The value to assign to the metric_type property of this BillingDetails.
-            Allowed values for this property are: "OCPU_HOURS", "INSTANCE_HOURS", "CORE_HOURS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OCPU_HOURS", "INSTANCE_HOURS", "CORE_HOURS", "EACH", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type metric_type: str
 
@@ -56,6 +78,8 @@ class BillingDetails(object):
 
         """
         self.swagger_types = {
+            'pricing_plan_key': 'str',
+            'billing_model': 'str',
             'sku': 'str',
             'metric_type': 'str',
             'rate_allocation': 'float',
@@ -63,17 +87,75 @@ class BillingDetails(object):
             'meters': 'list[Meter]'
         }
         self.attribute_map = {
+            'pricing_plan_key': 'pricingPlanKey',
+            'billing_model': 'billingModel',
             'sku': 'sku',
             'metric_type': 'metricType',
             'rate_allocation': 'rateAllocation',
             'has_gov_sku': 'hasGovSku',
             'meters': 'meters'
         }
+        self._pricing_plan_key = None
+        self._billing_model = None
         self._sku = None
         self._metric_type = None
         self._rate_allocation = None
         self._has_gov_sku = None
         self._meters = None
+
+    @property
+    def pricing_plan_key(self):
+        """
+        **[Required]** Gets the pricing_plan_key of this BillingDetails.
+        Unique key used to map this SKU to the pricing plan.
+
+
+        :return: The pricing_plan_key of this BillingDetails.
+        :rtype: str
+        """
+        return self._pricing_plan_key
+
+    @pricing_plan_key.setter
+    def pricing_plan_key(self, pricing_plan_key):
+        """
+        Sets the pricing_plan_key of this BillingDetails.
+        Unique key used to map this SKU to the pricing plan.
+
+
+        :param pricing_plan_key: The pricing_plan_key of this BillingDetails.
+        :type: str
+        """
+        self._pricing_plan_key = pricing_plan_key
+
+    @property
+    def billing_model(self):
+        """
+        **[Required]** Gets the billing_model of this BillingDetails.
+        The billing model this billing detail applies to.
+
+        Allowed values for this property are: "FLAT_RATE", "USAGE_BASED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The billing_model of this BillingDetails.
+        :rtype: str
+        """
+        return self._billing_model
+
+    @billing_model.setter
+    def billing_model(self, billing_model):
+        """
+        Sets the billing_model of this BillingDetails.
+        The billing model this billing detail applies to.
+
+
+        :param billing_model: The billing_model of this BillingDetails.
+        :type: str
+        """
+        allowed_values = ["FLAT_RATE", "USAGE_BASED"]
+        if not value_allowed_none_or_none_sentinel(billing_model, allowed_values):
+            billing_model = 'UNKNOWN_ENUM_VALUE'
+        self._billing_model = billing_model
 
     @property
     def sku(self):
@@ -105,7 +187,7 @@ class BillingDetails(object):
         **[Required]** Gets the metric_type of this BillingDetails.
         The part's metric.
 
-        Allowed values for this property are: "OCPU_HOURS", "INSTANCE_HOURS", "CORE_HOURS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OCPU_HOURS", "INSTANCE_HOURS", "CORE_HOURS", "EACH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -124,7 +206,7 @@ class BillingDetails(object):
         :param metric_type: The metric_type of this BillingDetails.
         :type: str
         """
-        allowed_values = ["OCPU_HOURS", "INSTANCE_HOURS", "CORE_HOURS"]
+        allowed_values = ["OCPU_HOURS", "INSTANCE_HOURS", "CORE_HOURS", "EACH"]
         if not value_allowed_none_or_none_sentinel(metric_type, allowed_values):
             metric_type = 'UNKNOWN_ENUM_VALUE'
         self._metric_type = metric_type

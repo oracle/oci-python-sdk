@@ -82,7 +82,8 @@ class AutonomousContainerDatabaseBackup(object):
 
         :param type:
             The value to assign to the type property of this AutonomousContainerDatabaseBackup.
-            Allowed values for this property are: "INCREMENTAL", "FULL", "VIRTUAL_FULL"
+            Allowed values for this property are: "INCREMENTAL", "FULL", "VIRTUAL_FULL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param is_automatic:
@@ -103,7 +104,8 @@ class AutonomousContainerDatabaseBackup(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousContainerDatabaseBackup.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param retention_period_in_days:
@@ -116,7 +118,8 @@ class AutonomousContainerDatabaseBackup(object):
 
         :param infrastructure_type:
             The value to assign to the infrastructure_type property of this AutonomousContainerDatabaseBackup.
-            Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER"
+            Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type infrastructure_type: str
 
         :param freeform_tags:
@@ -134,6 +137,14 @@ class AutonomousContainerDatabaseBackup(object):
         :param autonomous_databases:
             The value to assign to the autonomous_databases property of this AutonomousContainerDatabaseBackup.
         :type autonomous_databases: list[oci.database.models.AutonomousDatabaseInBackup]
+
+        :param db_version:
+            The value to assign to the db_version property of this AutonomousContainerDatabaseBackup.
+        :type db_version: str
+
+        :param backup_destination_details:
+            The value to assign to the backup_destination_details property of this AutonomousContainerDatabaseBackup.
+        :type backup_destination_details: oci.database.models.BackupDestinationDetails
 
         """
         self.swagger_types = {
@@ -154,7 +165,9 @@ class AutonomousContainerDatabaseBackup(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
-            'autonomous_databases': 'list[AutonomousDatabaseInBackup]'
+            'autonomous_databases': 'list[AutonomousDatabaseInBackup]',
+            'db_version': 'str',
+            'backup_destination_details': 'BackupDestinationDetails'
         }
         self.attribute_map = {
             'id': 'id',
@@ -174,7 +187,9 @@ class AutonomousContainerDatabaseBackup(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
-            'autonomous_databases': 'autonomousDatabases'
+            'autonomous_databases': 'autonomousDatabases',
+            'db_version': 'dbVersion',
+            'backup_destination_details': 'backupDestinationDetails'
         }
         self._id = None
         self._compartment_id = None
@@ -194,6 +209,8 @@ class AutonomousContainerDatabaseBackup(object):
         self._defined_tags = None
         self._system_tags = None
         self._autonomous_databases = None
+        self._db_version = None
+        self._backup_destination_details = None
 
     @property
     def id(self):
@@ -333,7 +350,8 @@ class AutonomousContainerDatabaseBackup(object):
         **[Required]** Gets the type of this AutonomousContainerDatabaseBackup.
         The type of backup.
 
-        Allowed values for this property are: "INCREMENTAL", "FULL", "VIRTUAL_FULL"
+        Allowed values for this property are: "INCREMENTAL", "FULL", "VIRTUAL_FULL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The type of this AutonomousContainerDatabaseBackup.
@@ -353,9 +371,7 @@ class AutonomousContainerDatabaseBackup(object):
         """
         allowed_values = ["INCREMENTAL", "FULL", "VIRTUAL_FULL"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `type`, must be None or one of {allowed_values}"
-            )
+            type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
 
     @property
@@ -460,7 +476,8 @@ class AutonomousContainerDatabaseBackup(object):
         **[Required]** Gets the lifecycle_state of this AutonomousContainerDatabaseBackup.
         The current state of the backup.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this AutonomousContainerDatabaseBackup.
@@ -480,9 +497,7 @@ class AutonomousContainerDatabaseBackup(object):
         """
         allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -539,7 +554,8 @@ class AutonomousContainerDatabaseBackup(object):
         Gets the infrastructure_type of this AutonomousContainerDatabaseBackup.
         The infrastructure type this resource belongs to.
 
-        Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER"
+        Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The infrastructure_type of this AutonomousContainerDatabaseBackup.
@@ -559,9 +575,7 @@ class AutonomousContainerDatabaseBackup(object):
         """
         allowed_values = ["CLOUD", "CLOUD_AT_CUSTOMER"]
         if not value_allowed_none_or_none_sentinel(infrastructure_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `infrastructure_type`, must be None or one of {allowed_values}"
-            )
+            infrastructure_type = 'UNKNOWN_ENUM_VALUE'
         self._infrastructure_type = infrastructure_type
 
     @property
@@ -681,6 +695,60 @@ class AutonomousContainerDatabaseBackup(object):
         :type: list[oci.database.models.AutonomousDatabaseInBackup]
         """
         self._autonomous_databases = autonomous_databases
+
+    @property
+    def db_version(self):
+        """
+        Gets the db_version of this AutonomousContainerDatabaseBackup.
+        A valid Oracle AI Database version for Autonomous AI Database.
+        When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+        When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+        For new databases, it is recommended to use either 19c or 26ai.
+
+        **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+
+
+        :return: The db_version of this AutonomousContainerDatabaseBackup.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this AutonomousContainerDatabaseBackup.
+        A valid Oracle AI Database version for Autonomous AI Database.
+        When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
+        When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
+        For new databases, it is recommended to use either 19c or 26ai.
+
+        **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
+
+
+        :param db_version: The db_version of this AutonomousContainerDatabaseBackup.
+        :type: str
+        """
+        self._db_version = db_version
+
+    @property
+    def backup_destination_details(self):
+        """
+        Gets the backup_destination_details of this AutonomousContainerDatabaseBackup.
+
+        :return: The backup_destination_details of this AutonomousContainerDatabaseBackup.
+        :rtype: oci.database.models.BackupDestinationDetails
+        """
+        return self._backup_destination_details
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, backup_destination_details):
+        """
+        Sets the backup_destination_details of this AutonomousContainerDatabaseBackup.
+
+        :param backup_destination_details: The backup_destination_details of this AutonomousContainerDatabaseBackup.
+        :type: oci.database.models.BackupDestinationDetails
+        """
+        self._backup_destination_details = backup_destination_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

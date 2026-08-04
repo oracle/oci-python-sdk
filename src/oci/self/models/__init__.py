@@ -9,22 +9,29 @@ from __future__ import absolute_import
 from .activate_subscription_details import ActivateSubscriptionDetails
 from .activate_subscription_result import ActivateSubscriptionResult
 from .billing_details import BillingDetails
+from .cancel_subscription_details import CancelSubscriptionDetails
 from .change_subscription_compartment_details import ChangeSubscriptionCompartmentDetails
 from .create_subscription_details import CreateSubscriptionDetails
+from .create_subscription_usage_record_details import CreateSubscriptionUsageRecordDetails
 from .extended_metadata import ExtendedMetadata
 from .listing_subscription_summary import ListingSubscriptionSummary
 from .listing_subscriptions_collection import ListingSubscriptionsCollection
 from .meter import Meter
+from .partner import Partner
+from .partner_collection import PartnerCollection
 from .partner_subscription import PartnerSubscription
+from .partner_summary import PartnerSummary
 from .pricing_plan import PricingPlan
 from .pricing_rate import PricingRate
 from .resolve_subscription_details import ResolveSubscriptionDetails
+from .submit_subscription_usage_records_details import SubmitSubscriptionUsageRecordsDetails
 from .subscription import Subscription
 from .subscription_collection import SubscriptionCollection
 from .subscription_details import SubscriptionDetails
 from .subscription_summary import SubscriptionSummary
 from .subscription_token import SubscriptionToken
 from .update_subscription_details import UpdateSubscriptionDetails
+from .usage_dimension import UsageDimension
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -39,22 +46,29 @@ self_type_mapping = {
     "ActivateSubscriptionDetails": ActivateSubscriptionDetails,
     "ActivateSubscriptionResult": ActivateSubscriptionResult,
     "BillingDetails": BillingDetails,
+    "CancelSubscriptionDetails": CancelSubscriptionDetails,
     "ChangeSubscriptionCompartmentDetails": ChangeSubscriptionCompartmentDetails,
     "CreateSubscriptionDetails": CreateSubscriptionDetails,
+    "CreateSubscriptionUsageRecordDetails": CreateSubscriptionUsageRecordDetails,
     "ExtendedMetadata": ExtendedMetadata,
     "ListingSubscriptionSummary": ListingSubscriptionSummary,
     "ListingSubscriptionsCollection": ListingSubscriptionsCollection,
     "Meter": Meter,
+    "Partner": Partner,
+    "PartnerCollection": PartnerCollection,
     "PartnerSubscription": PartnerSubscription,
+    "PartnerSummary": PartnerSummary,
     "PricingPlan": PricingPlan,
     "PricingRate": PricingRate,
     "ResolveSubscriptionDetails": ResolveSubscriptionDetails,
+    "SubmitSubscriptionUsageRecordsDetails": SubmitSubscriptionUsageRecordsDetails,
     "Subscription": Subscription,
     "SubscriptionCollection": SubscriptionCollection,
     "SubscriptionDetails": SubscriptionDetails,
     "SubscriptionSummary": SubscriptionSummary,
     "SubscriptionToken": SubscriptionToken,
     "UpdateSubscriptionDetails": UpdateSubscriptionDetails,
+    "UsageDimension": UsageDimension,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

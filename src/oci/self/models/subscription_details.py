@@ -38,7 +38,7 @@ class SubscriptionDetails(object):
 
         :param billing_details:
             The value to assign to the billing_details property of this SubscriptionDetails.
-        :type billing_details: oci.self.models.BillingDetails
+        :type billing_details: list[oci.self.models.BillingDetails]
 
         :param is_auto_renew:
             The value to assign to the is_auto_renew property of this SubscriptionDetails.
@@ -50,7 +50,7 @@ class SubscriptionDetails(object):
             'partner_registration_url': 'str',
             'currency': 'str',
             'amount': 'float',
-            'billing_details': 'BillingDetails',
+            'billing_details': 'list[BillingDetails]',
             'is_auto_renew': 'bool'
         }
         self.attribute_map = {
@@ -164,9 +164,11 @@ class SubscriptionDetails(object):
     def billing_details(self):
         """
         **[Required]** Gets the billing_details of this SubscriptionDetails.
+        Billing details associated with the subscription plan and its usage dimensions.
+
 
         :return: The billing_details of this SubscriptionDetails.
-        :rtype: oci.self.models.BillingDetails
+        :rtype: list[oci.self.models.BillingDetails]
         """
         return self._billing_details
 
@@ -174,9 +176,11 @@ class SubscriptionDetails(object):
     def billing_details(self, billing_details):
         """
         Sets the billing_details of this SubscriptionDetails.
+        Billing details associated with the subscription plan and its usage dimensions.
+
 
         :param billing_details: The billing_details of this SubscriptionDetails.
-        :type: oci.self.models.BillingDetails
+        :type: list[oci.self.models.BillingDetails]
         """
         self._billing_details = billing_details
 

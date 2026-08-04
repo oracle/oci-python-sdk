@@ -28,6 +28,14 @@ class DataGuardGroup(object):
     #: This constant has a value of "MAXIMUM_PROTECTION"
     PROTECTION_MODE_MAXIMUM_PROTECTION = "MAXIMUM_PROTECTION"
 
+    #: A constant which can be used with the managed_auto_fail_over_readiness property of a DataGuardGroup.
+    #: This constant has a value of "HEALTHY"
+    MANAGED_AUTO_FAIL_OVER_READINESS_HEALTHY = "HEALTHY"
+
+    #: A constant which can be used with the managed_auto_fail_over_readiness property of a DataGuardGroup.
+    #: This constant has a value of "CRITICAL"
+    MANAGED_AUTO_FAIL_OVER_READINESS_CRITICAL = "CRITICAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataGuardGroup object with values from keyword arguments.
@@ -43,17 +51,26 @@ class DataGuardGroup(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type protection_mode: str
 
+        :param managed_auto_fail_over_readiness:
+            The value to assign to the managed_auto_fail_over_readiness property of this DataGuardGroup.
+            Allowed values for this property are: "HEALTHY", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type managed_auto_fail_over_readiness: str
+
         """
         self.swagger_types = {
             'members': 'list[DataGuardGroupMember]',
-            'protection_mode': 'str'
+            'protection_mode': 'str',
+            'managed_auto_fail_over_readiness': 'str'
         }
         self.attribute_map = {
             'members': 'members',
-            'protection_mode': 'protectionMode'
+            'protection_mode': 'protectionMode',
+            'managed_auto_fail_over_readiness': 'managedAutoFailOverReadiness'
         }
         self._members = None
         self._protection_mode = None
+        self._managed_auto_fail_over_readiness = None
 
     @property
     def members(self):
@@ -116,6 +133,36 @@ class DataGuardGroup(object):
         if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
             protection_mode = 'UNKNOWN_ENUM_VALUE'
         self._protection_mode = protection_mode
+
+    @property
+    def managed_auto_fail_over_readiness(self):
+        """
+        Gets the managed_auto_fail_over_readiness of this DataGuardGroup.
+        Specifies readiness of Managed Automatic failover.
+
+        Allowed values for this property are: "HEALTHY", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The managed_auto_fail_over_readiness of this DataGuardGroup.
+        :rtype: str
+        """
+        return self._managed_auto_fail_over_readiness
+
+    @managed_auto_fail_over_readiness.setter
+    def managed_auto_fail_over_readiness(self, managed_auto_fail_over_readiness):
+        """
+        Sets the managed_auto_fail_over_readiness of this DataGuardGroup.
+        Specifies readiness of Managed Automatic failover.
+
+
+        :param managed_auto_fail_over_readiness: The managed_auto_fail_over_readiness of this DataGuardGroup.
+        :type: str
+        """
+        allowed_values = ["HEALTHY", "CRITICAL"]
+        if not value_allowed_none_or_none_sentinel(managed_auto_fail_over_readiness, allowed_values):
+            managed_auto_fail_over_readiness = 'UNKNOWN_ENUM_VALUE'
+        self._managed_auto_fail_over_readiness = managed_auto_fail_over_readiness
 
     def __repr__(self):
         return formatted_flat_dict(self)
