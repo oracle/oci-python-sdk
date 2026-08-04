@@ -90,6 +90,7 @@ class UpdateOggDeploymentDetails(object):
         }
         self._redacted_field_paths = [
             ['admin_password'],
+            ['key'],
         ]
         self._credential_store = None
         self._identity_domain_id = None
@@ -341,6 +342,7 @@ class UpdateOggDeploymentDetails(object):
     def __repr__(self):
         as_dict = to_dict(self)
         redact_password_field(as_dict, ['admin_password'])
+        redact_password_field(as_dict, ['key'])
         return formatted_flat_dict(as_dict)
 
     def __eq__(self, other):

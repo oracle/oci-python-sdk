@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CustomField(object):
     """
-    A key value pair specified by the seller of the offer
+    A key value pair specified by the seller of the offer.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class CustomField(object):
     def key(self):
         """
         Gets the key of this CustomField.
-        the key of the custom field
+        The key of the custom field.
 
 
         :return: The key of this CustomField.
@@ -56,7 +56,7 @@ class CustomField(object):
     def key(self, key):
         """
         Sets the key of this CustomField.
-        the key of the custom field
+        The key of the custom field.
 
 
         :param key: The key of this CustomField.
@@ -68,7 +68,7 @@ class CustomField(object):
     def value(self):
         """
         Gets the value of this CustomField.
-        the value of the custom field
+        The value of the custom field.
 
 
         :return: The value of this CustomField.
@@ -80,7 +80,7 @@ class CustomField(object):
     def value(self, value):
         """
         Sets the value of this CustomField.
-        the value of the custom field
+        The value of the custom field.
 
 
         :param value: The value of this CustomField.

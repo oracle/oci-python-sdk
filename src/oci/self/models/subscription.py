@@ -87,6 +87,18 @@ class Subscription(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_DETAILS_DELETED = "DELETED"
 
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "PENDING_CANCELLATION"
+    LIFECYCLE_DETAILS_PENDING_CANCELLATION = "PENDING_CANCELLATION"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "SUSPENDED"
+    LIFECYCLE_DETAILS_SUSPENDED = "SUSPENDED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "CANCELED"
+    LIFECYCLE_DETAILS_CANCELED = "CANCELED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Subscription object with values from keyword arguments.
@@ -162,7 +174,7 @@ class Subscription(object):
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this Subscription.
-            Allowed values for this property are: "CREATED", "PENDING_ACTIVATION", "PROVISIONING_STARTED", "PROVISIONING_COMPLETED", "PROVISIONING_FAILED", "ACTIVE", "EXPIRED", "TERMINATED", "FAILED", "DELETING", "UPDATING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATED", "PENDING_ACTIVATION", "PROVISIONING_STARTED", "PROVISIONING_COMPLETED", "PROVISIONING_FAILED", "ACTIVE", "EXPIRED", "TERMINATED", "FAILED", "DELETING", "UPDATING", "DELETED", "PENDING_CANCELLATION", "SUSPENDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_details: str
 
@@ -675,7 +687,7 @@ class Subscription(object):
         A message that describes the current state of the Subscription in more detail. For example,
         can be used to provide actionable information for a resource in the Failed state.
 
-        Allowed values for this property are: "CREATED", "PENDING_ACTIVATION", "PROVISIONING_STARTED", "PROVISIONING_COMPLETED", "PROVISIONING_FAILED", "ACTIVE", "EXPIRED", "TERMINATED", "FAILED", "DELETING", "UPDATING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATED", "PENDING_ACTIVATION", "PROVISIONING_STARTED", "PROVISIONING_COMPLETED", "PROVISIONING_FAILED", "ACTIVE", "EXPIRED", "TERMINATED", "FAILED", "DELETING", "UPDATING", "DELETED", "PENDING_CANCELLATION", "SUSPENDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -695,7 +707,7 @@ class Subscription(object):
         :param lifecycle_details: The lifecycle_details of this Subscription.
         :type: str
         """
-        allowed_values = ["CREATED", "PENDING_ACTIVATION", "PROVISIONING_STARTED", "PROVISIONING_COMPLETED", "PROVISIONING_FAILED", "ACTIVE", "EXPIRED", "TERMINATED", "FAILED", "DELETING", "UPDATING", "DELETED"]
+        allowed_values = ["CREATED", "PENDING_ACTIVATION", "PROVISIONING_STARTED", "PROVISIONING_COMPLETED", "PROVISIONING_FAILED", "ACTIVE", "EXPIRED", "TERMINATED", "FAILED", "DELETING", "UPDATING", "DELETED", "PENDING_CANCELLATION", "SUSPENDED", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
             lifecycle_details = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_details = lifecycle_details

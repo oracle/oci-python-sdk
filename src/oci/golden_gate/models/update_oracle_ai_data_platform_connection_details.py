@@ -161,6 +161,7 @@ class UpdateOracleAiDataPlatformConnectionDetails(UpdateConnectionDetails):
             'should_use_resource_principal': 'shouldUseResourcePrincipal'
         }
         self._redacted_field_paths = [
+            ['private_key_file'],
             ['private_key_passphrase'],
         ]
         self._connection_type = None
@@ -477,6 +478,7 @@ class UpdateOracleAiDataPlatformConnectionDetails(UpdateConnectionDetails):
 
     def __repr__(self):
         as_dict = to_dict(self)
+        redact_password_field(as_dict, ['private_key_file'])
         redact_password_field(as_dict, ['private_key_passphrase'])
         return formatted_flat_dict(as_dict)
 

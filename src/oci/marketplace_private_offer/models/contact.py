@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Contact(object):
     """
-    The contact information of an individual
+    The contact information of an individual.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class Contact(object):
     def first_name(self):
         """
         Gets the first_name of this Contact.
-        The first name of the contact
+        The first name of the contact.
 
 
         :return: The first_name of this Contact.
@@ -63,7 +63,7 @@ class Contact(object):
     def first_name(self, first_name):
         """
         Sets the first_name of this Contact.
-        The first name of the contact
+        The first name of the contact.
 
 
         :param first_name: The first_name of this Contact.
@@ -75,7 +75,7 @@ class Contact(object):
     def last_name(self):
         """
         Gets the last_name of this Contact.
-        The last name of the contact
+        The last name of the contact.
 
 
         :return: The last_name of this Contact.
@@ -87,7 +87,7 @@ class Contact(object):
     def last_name(self, last_name):
         """
         Sets the last_name of this Contact.
-        The last name of the contact
+        The last name of the contact.
 
 
         :param last_name: The last_name of this Contact.
@@ -99,7 +99,7 @@ class Contact(object):
     def email(self):
         """
         Gets the email of this Contact.
-        The email of the contact
+        The email of the contact.
 
 
         :return: The email of this Contact.
@@ -111,7 +111,7 @@ class Contact(object):
     def email(self, email):
         """
         Sets the email of this Contact.
-        The email of the contact
+        The email of the contact.
 
 
         :param email: The email of this Contact.

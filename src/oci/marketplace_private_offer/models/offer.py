@@ -75,6 +75,14 @@ class Offer(object):
     #: This constant has a value of "FAILED_ACCEPT"
     OFFER_STATUS_FAILED_ACCEPT = "FAILED_ACCEPT"
 
+    #: A constant which can be used with the offer_type property of a Offer.
+    #: This constant has a value of "DIRECT"
+    OFFER_TYPE_DIRECT = "DIRECT"
+
+    #: A constant which can be used with the offer_type property of a Offer.
+    #: This constant has a value of "MULTI_PARTY"
+    OFFER_TYPE_MULTI_PARTY = "MULTI_PARTY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Offer object with values from keyword arguments.
@@ -164,6 +172,12 @@ class Offer(object):
             The value to assign to the resource_bundles property of this Offer.
         :type resource_bundles: list[oci.marketplace_private_offer.models.ResourceBundle]
 
+        :param offer_type:
+            The value to assign to the offer_type property of this Offer.
+            Allowed values for this property are: "DIRECT", "MULTI_PARTY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type offer_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Offer.
         :type freeform_tags: dict(str, str)
@@ -171,6 +185,10 @@ class Offer(object):
         :param defined_tags:
             The value to assign to the defined_tags property of this Offer.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param system_tags:
+            The value to assign to the system_tags property of this Offer.
+        :type system_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -194,8 +212,10 @@ class Offer(object):
             'buyer_information': 'BuyerInformation',
             'seller_information': 'SellerInformation',
             'resource_bundles': 'list[ResourceBundle]',
+            'offer_type': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -218,8 +238,10 @@ class Offer(object):
             'buyer_information': 'buyerInformation',
             'seller_information': 'sellerInformation',
             'resource_bundles': 'resourceBundles',
+            'offer_type': 'offerType',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
         self._id = None
         self._display_name = None
@@ -241,8 +263,10 @@ class Offer(object):
         self._buyer_information = None
         self._seller_information = None
         self._resource_bundles = None
+        self._offer_type = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -721,6 +745,36 @@ class Offer(object):
         self._resource_bundles = resource_bundles
 
     @property
+    def offer_type(self):
+        """
+        Gets the offer_type of this Offer.
+        The type of the offer.
+
+        Allowed values for this property are: "DIRECT", "MULTI_PARTY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The offer_type of this Offer.
+        :rtype: str
+        """
+        return self._offer_type
+
+    @offer_type.setter
+    def offer_type(self, offer_type):
+        """
+        Sets the offer_type of this Offer.
+        The type of the offer.
+
+
+        :param offer_type: The offer_type of this Offer.
+        :type: str
+        """
+        allowed_values = ["DIRECT", "MULTI_PARTY"]
+        if not value_allowed_none_or_none_sentinel(offer_type, allowed_values):
+            offer_type = 'UNKNOWN_ENUM_VALUE'
+        self._offer_type = offer_type
+
+    @property
     def freeform_tags(self):
         """
         **[Required]** Gets the freeform_tags of this Offer.
@@ -771,6 +825,32 @@ class Offer(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Offer.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this Offer.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Offer.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this Offer.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

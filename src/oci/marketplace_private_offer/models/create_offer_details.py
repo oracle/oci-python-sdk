@@ -72,6 +72,14 @@ class CreateOfferDetails(object):
             The value to assign to the custom_fields property of this CreateOfferDetails.
         :type custom_fields: list[oci.marketplace_private_offer.models.CustomField]
 
+        :param offer_type:
+            The value to assign to the offer_type property of this CreateOfferDetails.
+        :type offer_type: str
+
+        :param offer_quote_ids:
+            The value to assign to the offer_quote_ids property of this CreateOfferDetails.
+        :type offer_quote_ids: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateOfferDetails.
         :type freeform_tags: dict(str, str)
@@ -95,6 +103,8 @@ class CreateOfferDetails(object):
             'seller_information': 'SellerInformation',
             'resource_bundles': 'list[ResourceBundle]',
             'custom_fields': 'list[CustomField]',
+            'offer_type': 'str',
+            'offer_quote_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -112,6 +122,8 @@ class CreateOfferDetails(object):
             'seller_information': 'sellerInformation',
             'resource_bundles': 'resourceBundles',
             'custom_fields': 'customFields',
+            'offer_type': 'offerType',
+            'offer_quote_ids': 'offerQuoteIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -128,6 +140,8 @@ class CreateOfferDetails(object):
         self._seller_information = None
         self._resource_bundles = None
         self._custom_fields = None
+        self._offer_type = None
+        self._offer_quote_ids = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -430,6 +444,54 @@ class CreateOfferDetails(object):
         :type: list[oci.marketplace_private_offer.models.CustomField]
         """
         self._custom_fields = custom_fields
+
+    @property
+    def offer_type(self):
+        """
+        Gets the offer_type of this CreateOfferDetails.
+        The type of the offer.
+
+
+        :return: The offer_type of this CreateOfferDetails.
+        :rtype: str
+        """
+        return self._offer_type
+
+    @offer_type.setter
+    def offer_type(self, offer_type):
+        """
+        Sets the offer_type of this CreateOfferDetails.
+        The type of the offer.
+
+
+        :param offer_type: The offer_type of this CreateOfferDetails.
+        :type: str
+        """
+        self._offer_type = offer_type
+
+    @property
+    def offer_quote_ids(self):
+        """
+        Gets the offer_quote_ids of this CreateOfferDetails.
+        A list of associated offer quotes.
+
+
+        :return: The offer_quote_ids of this CreateOfferDetails.
+        :rtype: list[str]
+        """
+        return self._offer_quote_ids
+
+    @offer_quote_ids.setter
+    def offer_quote_ids(self, offer_quote_ids):
+        """
+        Sets the offer_quote_ids of this CreateOfferDetails.
+        A list of associated offer quotes.
+
+
+        :param offer_quote_ids: The offer_quote_ids of this CreateOfferDetails.
+        :type: list[str]
+        """
+        self._offer_quote_ids = offer_quote_ids
 
     @property
     def freeform_tags(self):

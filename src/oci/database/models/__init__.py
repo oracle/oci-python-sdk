@@ -25,6 +25,7 @@ from .application_vip_summary import ApplicationVipSummary
 from .associated_database_details import AssociatedDatabaseDetails
 from .associated_long_term_backup import AssociatedLongTermBackup
 from .associated_resource_details import AssociatedResourceDetails
+from .auto_failover_configuration import AutoFailoverConfiguration
 from .automated_mount_details import AutomatedMountDetails
 from .autonomous_container_database import AutonomousContainerDatabase
 from .autonomous_container_database_backup import AutonomousContainerDatabaseBackup
@@ -52,6 +53,8 @@ from .autonomous_database_dataguard_association import AutonomousDatabaseDatagua
 from .autonomous_database_encryption_key_details import AutonomousDatabaseEncryptionKeyDetails
 from .autonomous_database_encryption_key_history_entry import AutonomousDatabaseEncryptionKeyHistoryEntry
 from .autonomous_database_in_backup import AutonomousDatabaseInBackup
+from .autonomous_database_in_backup_collection import AutonomousDatabaseInBackupCollection
+from .autonomous_database_in_backup_summary import AutonomousDatabaseInBackupSummary
 from .autonomous_database_key_history_entry import AutonomousDatabaseKeyHistoryEntry
 from .autonomous_database_maintenance_window_summary import AutonomousDatabaseMaintenanceWindowSummary
 from .autonomous_database_manual_refresh_details import AutonomousDatabaseManualRefreshDetails
@@ -162,6 +165,7 @@ from .create_autonomous_container_database_base import CreateAutonomousContainer
 from .create_autonomous_container_database_dataguard_association_details import CreateAutonomousContainerDatabaseDataguardAssociationDetails
 from .create_autonomous_container_database_details import CreateAutonomousContainerDatabaseDetails
 from .create_autonomous_container_database_from_backup_details import CreateAutonomousContainerDatabaseFromBackupDetails
+from .create_autonomous_container_database_from_backup_timestamp_details import CreateAutonomousContainerDatabaseFromBackupTimestampDetails
 from .create_autonomous_database_backup_details import CreateAutonomousDatabaseBackupDetails
 from .create_autonomous_database_base import CreateAutonomousDatabaseBase
 from .create_autonomous_database_clone_details import CreateAutonomousDatabaseCloneDetails
@@ -604,6 +608,7 @@ database_type_mapping = {
     "AssociatedDatabaseDetails": AssociatedDatabaseDetails,
     "AssociatedLongTermBackup": AssociatedLongTermBackup,
     "AssociatedResourceDetails": AssociatedResourceDetails,
+    "AutoFailoverConfiguration": AutoFailoverConfiguration,
     "AutomatedMountDetails": AutomatedMountDetails,
     "AutonomousContainerDatabase": AutonomousContainerDatabase,
     "AutonomousContainerDatabaseBackup": AutonomousContainerDatabaseBackup,
@@ -631,6 +636,8 @@ database_type_mapping = {
     "AutonomousDatabaseEncryptionKeyDetails": AutonomousDatabaseEncryptionKeyDetails,
     "AutonomousDatabaseEncryptionKeyHistoryEntry": AutonomousDatabaseEncryptionKeyHistoryEntry,
     "AutonomousDatabaseInBackup": AutonomousDatabaseInBackup,
+    "AutonomousDatabaseInBackupCollection": AutonomousDatabaseInBackupCollection,
+    "AutonomousDatabaseInBackupSummary": AutonomousDatabaseInBackupSummary,
     "AutonomousDatabaseKeyHistoryEntry": AutonomousDatabaseKeyHistoryEntry,
     "AutonomousDatabaseMaintenanceWindowSummary": AutonomousDatabaseMaintenanceWindowSummary,
     "AutonomousDatabaseManualRefreshDetails": AutonomousDatabaseManualRefreshDetails,
@@ -741,6 +748,7 @@ database_type_mapping = {
     "CreateAutonomousContainerDatabaseDataguardAssociationDetails": CreateAutonomousContainerDatabaseDataguardAssociationDetails,
     "CreateAutonomousContainerDatabaseDetails": CreateAutonomousContainerDatabaseDetails,
     "CreateAutonomousContainerDatabaseFromBackupDetails": CreateAutonomousContainerDatabaseFromBackupDetails,
+    "CreateAutonomousContainerDatabaseFromBackupTimestampDetails": CreateAutonomousContainerDatabaseFromBackupTimestampDetails,
     "CreateAutonomousDatabaseBackupDetails": CreateAutonomousDatabaseBackupDetails,
     "CreateAutonomousDatabaseBase": CreateAutonomousDatabaseBase,
     "CreateAutonomousDatabaseCloneDetails": CreateAutonomousDatabaseCloneDetails,

@@ -15,6 +15,94 @@ class AutonomousDatabaseInBackup(object):
     Details of Autonomous AI Database in Autonomous Container Database
     """
 
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "PROVISIONING"
+    LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "AVAILABLE"
+    LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "STOPPING"
+    LIFECYCLE_STATE_STOPPING = "STOPPING"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "STOPPED"
+    LIFECYCLE_STATE_STOPPED = "STOPPED"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "STARTING"
+    LIFECYCLE_STATE_STARTING = "STARTING"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "UNAVAILABLE"
+    LIFECYCLE_STATE_UNAVAILABLE = "UNAVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "RESTORE_IN_PROGRESS"
+    LIFECYCLE_STATE_RESTORE_IN_PROGRESS = "RESTORE_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "RESTORE_FAILED"
+    LIFECYCLE_STATE_RESTORE_FAILED = "RESTORE_FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "BACKUP_IN_PROGRESS"
+    LIFECYCLE_STATE_BACKUP_IN_PROGRESS = "BACKUP_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "SCALE_IN_PROGRESS"
+    LIFECYCLE_STATE_SCALE_IN_PROGRESS = "SCALE_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "AVAILABLE_NEEDS_ATTENTION"
+    LIFECYCLE_STATE_AVAILABLE_NEEDS_ATTENTION = "AVAILABLE_NEEDS_ATTENTION"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
+    LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "RESTARTING"
+    LIFECYCLE_STATE_RESTARTING = "RESTARTING"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "RECREATING"
+    LIFECYCLE_STATE_RECREATING = "RECREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "ROLE_CHANGE_IN_PROGRESS"
+    LIFECYCLE_STATE_ROLE_CHANGE_IN_PROGRESS = "ROLE_CHANGE_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "UPGRADING"
+    LIFECYCLE_STATE_UPGRADING = "UPGRADING"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "INACCESSIBLE"
+    LIFECYCLE_STATE_INACCESSIBLE = "INACCESSIBLE"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "STANDBY"
+    LIFECYCLE_STATE_STANDBY = "STANDBY"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseInBackup.
+    #: This constant has a value of "TRANSPORTING"
+    LIFECYCLE_STATE_TRANSPORTING = "TRANSPORTING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabaseInBackup object with values from keyword arguments.
@@ -28,17 +116,26 @@ class AutonomousDatabaseInBackup(object):
             The value to assign to the display_name property of this AutonomousDatabaseInBackup.
         :type display_name: str
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this AutonomousDatabaseInBackup.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY", "TRANSPORTING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
-            'display_name': 'str'
+            'display_name': 'str',
+            'lifecycle_state': 'str'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'lifecycle_state': 'lifecycleState'
         }
         self._compartment_id = None
         self._display_name = None
+        self._lifecycle_state = None
 
     @property
     def compartment_id(self):
@@ -91,6 +188,36 @@ class AutonomousDatabaseInBackup(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this AutonomousDatabaseInBackup.
+        The current state of the Autonomous AI Database.
+
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY", "TRANSPORTING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this AutonomousDatabaseInBackup.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this AutonomousDatabaseInBackup.
+        The current state of the Autonomous AI Database.
+
+
+        :param lifecycle_state: The lifecycle_state of this AutonomousDatabaseInBackup.
+        :type: str
+        """
+        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY", "TRANSPORTING"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
 
     def __repr__(self):
         return formatted_flat_dict(self)

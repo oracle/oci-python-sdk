@@ -213,6 +213,7 @@ API Reference
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Odapackage <oda/client/oci.oda.OdapackageClient>`
 * :doc:`Offer <marketplace_private_offer/client/oci.marketplace_private_offer.OfferClient>`
+* :doc:`Offer Quote <marketplace_private_offer/client/oci.marketplace_private_offer.OfferQuoteClient>`
 * :doc:`Omhub Network Anchor <multicloud/client/oci.multicloud.OmhubNetworkAnchorClient>`
 * :doc:`Omhub Resource Anchor <multicloud/client/oci.multicloud.OmhubResourceAnchorClient>`
 * :doc:`Onboarding <os_management_hub/client/oci.os_management_hub.OnboardingClient>`
@@ -248,6 +249,7 @@ API Reference
 * :doc:`Queue <queue/client/oci.queue.QueueClient>`
 * :doc:`Queue Admin <queue/client/oci.queue.QueueAdminClient>`
 * :doc:`Quotas <limits/client/oci.limits.QuotasClient>`
+* :doc:`Quote Attachment <marketplace_private_offer/client/oci.marketplace_private_offer.QuoteAttachmentClient>`
 * :doc:`Ratecard <osub_subscription/client/oci.osub_subscription.RatecardClient>`
 * :doc:`Ratecard <osub_subscription/client/oci.osub_subscription.RatecardClient>`
 * :doc:`Recipient Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.RecipientInvitationClient>`

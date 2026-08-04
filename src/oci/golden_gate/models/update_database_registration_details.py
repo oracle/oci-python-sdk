@@ -102,6 +102,7 @@ class UpdateDatabaseRegistrationDetails(object):
         }
         self._redacted_field_paths = [
             ['password'],
+            ['wallet'],
         ]
         self._display_name = None
         self._description = None
@@ -425,6 +426,7 @@ class UpdateDatabaseRegistrationDetails(object):
     def __repr__(self):
         as_dict = to_dict(self)
         redact_password_field(as_dict, ['password'])
+        redact_password_field(as_dict, ['wallet'])
         return formatted_flat_dict(as_dict)
 
     def __eq__(self, other):

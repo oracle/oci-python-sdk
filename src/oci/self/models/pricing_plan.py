@@ -19,13 +19,65 @@ class PricingPlan(object):
     #: This constant has a value of "FIXED"
     PLAN_TYPE_FIXED = "FIXED"
 
+    #: A constant which can be used with the plan_type property of a PricingPlan.
+    #: This constant has a value of "USAGE_BASED"
+    PLAN_TYPE_USAGE_BASED = "USAGE_BASED"
+
+    #: A constant which can be used with the plan_type property of a PricingPlan.
+    #: This constant has a value of "HYBRID"
+    PLAN_TYPE_HYBRID = "HYBRID"
+
+    #: A constant which can be used with the billing_frequency property of a PricingPlan.
+    #: This constant has a value of "MONTHLY"
+    BILLING_FREQUENCY_MONTHLY = "MONTHLY"
+
+    #: A constant which can be used with the billing_frequency property of a PricingPlan.
+    #: This constant has a value of "QUARTERLY"
+    BILLING_FREQUENCY_QUARTERLY = "QUARTERLY"
+
+    #: A constant which can be used with the billing_frequency property of a PricingPlan.
+    #: This constant has a value of "SEMI_ANNUAL"
+    BILLING_FREQUENCY_SEMI_ANNUAL = "SEMI_ANNUAL"
+
+    #: A constant which can be used with the billing_frequency property of a PricingPlan.
+    #: This constant has a value of "ANNUAL"
+    BILLING_FREQUENCY_ANNUAL = "ANNUAL"
+
+    #: A constant which can be used with the billing_frequency property of a PricingPlan.
+    #: This constant has a value of "BIENNIAL"
+    BILLING_FREQUENCY_BIENNIAL = "BIENNIAL"
+
+    #: A constant which can be used with the billing_frequency property of a PricingPlan.
+    #: This constant has a value of "TRIENNIAL"
+    BILLING_FREQUENCY_TRIENNIAL = "TRIENNIAL"
+
     #: A constant which can be used with the billing_frequency property of a PricingPlan.
     #: This constant has a value of "YEARLY"
     BILLING_FREQUENCY_YEARLY = "YEARLY"
 
     #: A constant which can be used with the plan_duration property of a PricingPlan.
+    #: This constant has a value of "MONTHLY"
+    PLAN_DURATION_MONTHLY = "MONTHLY"
+
+    #: A constant which can be used with the plan_duration property of a PricingPlan.
+    #: This constant has a value of "QUARTERLY"
+    PLAN_DURATION_QUARTERLY = "QUARTERLY"
+
+    #: A constant which can be used with the plan_duration property of a PricingPlan.
+    #: This constant has a value of "SEMI_ANNUAL"
+    PLAN_DURATION_SEMI_ANNUAL = "SEMI_ANNUAL"
+
+    #: A constant which can be used with the plan_duration property of a PricingPlan.
     #: This constant has a value of "ANNUAL"
     PLAN_DURATION_ANNUAL = "ANNUAL"
+
+    #: A constant which can be used with the plan_duration property of a PricingPlan.
+    #: This constant has a value of "BIENNIAL"
+    PLAN_DURATION_BIENNIAL = "BIENNIAL"
+
+    #: A constant which can be used with the plan_duration property of a PricingPlan.
+    #: This constant has a value of "TRIENNIAL"
+    PLAN_DURATION_TRIENNIAL = "TRIENNIAL"
 
     def __init__(self, **kwargs):
         """
@@ -34,7 +86,7 @@ class PricingPlan(object):
 
         :param plan_type:
             The value to assign to the plan_type property of this PricingPlan.
-            Allowed values for this property are: "FIXED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FIXED", "USAGE_BASED", "HYBRID", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type plan_type: str
 
@@ -48,19 +100,23 @@ class PricingPlan(object):
 
         :param billing_frequency:
             The value to assign to the billing_frequency property of this PricingPlan.
-            Allowed values for this property are: "YEARLY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MONTHLY", "QUARTERLY", "SEMI_ANNUAL", "ANNUAL", "BIENNIAL", "TRIENNIAL", "YEARLY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type billing_frequency: str
 
         :param plan_duration:
             The value to assign to the plan_duration property of this PricingPlan.
-            Allowed values for this property are: "ANNUAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MONTHLY", "QUARTERLY", "SEMI_ANNUAL", "ANNUAL", "BIENNIAL", "TRIENNIAL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type plan_duration: str
 
         :param rates:
             The value to assign to the rates property of this PricingPlan.
         :type rates: list[oci.self.models.PricingRate]
+
+        :param dimensions:
+            The value to assign to the dimensions property of this PricingPlan.
+        :type dimensions: list[oci.self.models.UsageDimension]
 
         """
         self.swagger_types = {
@@ -69,7 +125,8 @@ class PricingPlan(object):
             'plan_description': 'str',
             'billing_frequency': 'str',
             'plan_duration': 'str',
-            'rates': 'list[PricingRate]'
+            'rates': 'list[PricingRate]',
+            'dimensions': 'list[UsageDimension]'
         }
         self.attribute_map = {
             'plan_type': 'planType',
@@ -77,7 +134,8 @@ class PricingPlan(object):
             'plan_description': 'planDescription',
             'billing_frequency': 'billingFrequency',
             'plan_duration': 'planDuration',
-            'rates': 'rates'
+            'rates': 'rates',
+            'dimensions': 'dimensions'
         }
         self._plan_type = None
         self._plan_name = None
@@ -85,6 +143,7 @@ class PricingPlan(object):
         self._billing_frequency = None
         self._plan_duration = None
         self._rates = None
+        self._dimensions = None
 
     @property
     def plan_type(self):
@@ -92,7 +151,7 @@ class PricingPlan(object):
         **[Required]** Gets the plan_type of this PricingPlan.
         The type of the subscription plan.
 
-        Allowed values for this property are: "FIXED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FIXED", "USAGE_BASED", "HYBRID", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -111,7 +170,7 @@ class PricingPlan(object):
         :param plan_type: The plan_type of this PricingPlan.
         :type: str
         """
-        allowed_values = ["FIXED"]
+        allowed_values = ["FIXED", "USAGE_BASED", "HYBRID"]
         if not value_allowed_none_or_none_sentinel(plan_type, allowed_values):
             plan_type = 'UNKNOWN_ENUM_VALUE'
         self._plan_type = plan_type
@@ -168,9 +227,9 @@ class PricingPlan(object):
     def billing_frequency(self):
         """
         **[Required]** Gets the billing_frequency of this PricingPlan.
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the interval at which billing occurs for the subscription plan or usage dimension.
 
-        Allowed values for this property are: "YEARLY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MONTHLY", "QUARTERLY", "SEMI_ANNUAL", "ANNUAL", "BIENNIAL", "TRIENNIAL", "YEARLY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -183,13 +242,13 @@ class PricingPlan(object):
     def billing_frequency(self, billing_frequency):
         """
         Sets the billing_frequency of this PricingPlan.
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the interval at which billing occurs for the subscription plan or usage dimension.
 
 
         :param billing_frequency: The billing_frequency of this PricingPlan.
         :type: str
         """
-        allowed_values = ["YEARLY"]
+        allowed_values = ["MONTHLY", "QUARTERLY", "SEMI_ANNUAL", "ANNUAL", "BIENNIAL", "TRIENNIAL", "YEARLY"]
         if not value_allowed_none_or_none_sentinel(billing_frequency, allowed_values):
             billing_frequency = 'UNKNOWN_ENUM_VALUE'
         self._billing_frequency = billing_frequency
@@ -198,9 +257,9 @@ class PricingPlan(object):
     def plan_duration(self):
         """
         Gets the plan_duration of this PricingPlan.
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the duration of the subscription plan.
 
-        Allowed values for this property are: "ANNUAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MONTHLY", "QUARTERLY", "SEMI_ANNUAL", "ANNUAL", "BIENNIAL", "TRIENNIAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -213,13 +272,13 @@ class PricingPlan(object):
     def plan_duration(self, plan_duration):
         """
         Sets the plan_duration of this PricingPlan.
-        Specifies the interval at which billing occurs for the subscription plan.
+        Specifies the duration of the subscription plan.
 
 
         :param plan_duration: The plan_duration of this PricingPlan.
         :type: str
         """
-        allowed_values = ["ANNUAL"]
+        allowed_values = ["MONTHLY", "QUARTERLY", "SEMI_ANNUAL", "ANNUAL", "BIENNIAL", "TRIENNIAL"]
         if not value_allowed_none_or_none_sentinel(plan_duration, allowed_values):
             plan_duration = 'UNKNOWN_ENUM_VALUE'
         self._plan_duration = plan_duration
@@ -247,6 +306,30 @@ class PricingPlan(object):
         :type: list[oci.self.models.PricingRate]
         """
         self._rates = rates
+
+    @property
+    def dimensions(self):
+        """
+        Gets the dimensions of this PricingPlan.
+        Metered usage dimensions associated with the pricing plan.
+
+
+        :return: The dimensions of this PricingPlan.
+        :rtype: list[oci.self.models.UsageDimension]
+        """
+        return self._dimensions
+
+    @dimensions.setter
+    def dimensions(self, dimensions):
+        """
+        Sets the dimensions of this PricingPlan.
+        Metered usage dimensions associated with the pricing plan.
+
+
+        :param dimensions: The dimensions of this PricingPlan.
+        :type: list[oci.self.models.UsageDimension]
+        """
+        self._dimensions = dimensions
 
     def __repr__(self):
         return formatted_flat_dict(self)

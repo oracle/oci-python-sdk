@@ -23,22 +23,29 @@ Self
     oci.self.models.ActivateSubscriptionDetails
     oci.self.models.ActivateSubscriptionResult
     oci.self.models.BillingDetails
+    oci.self.models.CancelSubscriptionDetails
     oci.self.models.ChangeSubscriptionCompartmentDetails
     oci.self.models.CreateSubscriptionDetails
+    oci.self.models.CreateSubscriptionUsageRecordDetails
     oci.self.models.ExtendedMetadata
     oci.self.models.ListingSubscriptionSummary
     oci.self.models.ListingSubscriptionsCollection
     oci.self.models.Meter
+    oci.self.models.Partner
+    oci.self.models.PartnerCollection
     oci.self.models.PartnerSubscription
+    oci.self.models.PartnerSummary
     oci.self.models.PricingPlan
     oci.self.models.PricingRate
     oci.self.models.ResolveSubscriptionDetails
+    oci.self.models.SubmitSubscriptionUsageRecordsDetails
     oci.self.models.Subscription
     oci.self.models.SubscriptionCollection
     oci.self.models.SubscriptionDetails
     oci.self.models.SubscriptionSummary
     oci.self.models.SubscriptionToken
     oci.self.models.UpdateSubscriptionDetails
+    oci.self.models.UsageDimension
     oci.self.models.WorkRequest
     oci.self.models.WorkRequestError
     oci.self.models.WorkRequestErrorCollection

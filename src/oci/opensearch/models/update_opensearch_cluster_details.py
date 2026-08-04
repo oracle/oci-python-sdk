@@ -62,6 +62,10 @@ class UpdateOpensearchClusterDetails(object):
             The value to assign to the backup_policy property of this UpdateOpensearchClusterDetails.
         :type backup_policy: oci.opensearch.models.BackupPolicy
 
+        :param nsg_id:
+            The value to assign to the nsg_id property of this UpdateOpensearchClusterDetails.
+        :type nsg_id: str
+
         :param reverse_connection_endpoint_customer_ips:
             The value to assign to the reverse_connection_endpoint_customer_ips property of this UpdateOpensearchClusterDetails.
         :type reverse_connection_endpoint_customer_ips: list[str]
@@ -103,6 +107,7 @@ class UpdateOpensearchClusterDetails(object):
             'security_master_user_password_hash': 'str',
             'security_saml_config': 'SecuritySamlConfig',
             'backup_policy': 'BackupPolicy',
+            'nsg_id': 'str',
             'reverse_connection_endpoint_customer_ips': 'list[str]',
             'outbound_cluster_config': 'OutboundClusterConfig',
             'maintenance_details': 'UpdateMaintenanceDetails',
@@ -120,6 +125,7 @@ class UpdateOpensearchClusterDetails(object):
             'security_master_user_password_hash': 'securityMasterUserPasswordHash',
             'security_saml_config': 'securitySamlConfig',
             'backup_policy': 'backupPolicy',
+            'nsg_id': 'nsgId',
             'reverse_connection_endpoint_customer_ips': 'reverseConnectionEndpointCustomerIps',
             'outbound_cluster_config': 'outboundClusterConfig',
             'maintenance_details': 'maintenanceDetails',
@@ -136,6 +142,7 @@ class UpdateOpensearchClusterDetails(object):
         self._security_master_user_password_hash = None
         self._security_saml_config = None
         self._backup_policy = None
+        self._nsg_id = None
         self._reverse_connection_endpoint_customer_ips = None
         self._outbound_cluster_config = None
         self._maintenance_details = None
@@ -307,6 +314,30 @@ class UpdateOpensearchClusterDetails(object):
         :type: oci.opensearch.models.BackupPolicy
         """
         self._backup_policy = backup_policy
+
+    @property
+    def nsg_id(self):
+        """
+        Gets the nsg_id of this UpdateOpensearchClusterDetails.
+        The OCID of the NSG where the private endpoint vnic will be attached.
+
+
+        :return: The nsg_id of this UpdateOpensearchClusterDetails.
+        :rtype: str
+        """
+        return self._nsg_id
+
+    @nsg_id.setter
+    def nsg_id(self, nsg_id):
+        """
+        Sets the nsg_id of this UpdateOpensearchClusterDetails.
+        The OCID of the NSG where the private endpoint vnic will be attached.
+
+
+        :param nsg_id: The nsg_id of this UpdateOpensearchClusterDetails.
+        :type: str
+        """
+        self._nsg_id = nsg_id
 
     @property
     def reverse_connection_endpoint_customer_ips(self):

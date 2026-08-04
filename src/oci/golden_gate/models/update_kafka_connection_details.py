@@ -222,7 +222,9 @@ class UpdateKafkaConnectionDetails(UpdateConnectionDetails):
         }
         self._redacted_field_paths = [
             ['password'],
+            ['trust_store'],
             ['trust_store_password'],
+            ['key_store'],
             ['key_store_password'],
             ['ssl_key_password'],
         ]
@@ -853,7 +855,9 @@ class UpdateKafkaConnectionDetails(UpdateConnectionDetails):
     def __repr__(self):
         as_dict = to_dict(self)
         redact_password_field(as_dict, ['password'])
+        redact_password_field(as_dict, ['trust_store'])
         redact_password_field(as_dict, ['trust_store_password'])
+        redact_password_field(as_dict, ['key_store'])
         redact_password_field(as_dict, ['key_store_password'])
         redact_password_field(as_dict, ['ssl_key_password'])
         return formatted_flat_dict(as_dict)

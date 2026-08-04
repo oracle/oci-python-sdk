@@ -198,6 +198,7 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
         }
         self._redacted_field_paths = [
             ['password'],
+            ['ssl_key'],
         ]
         self._connection_type = None
         self._display_name = None
@@ -676,6 +677,7 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
     def __repr__(self):
         as_dict = to_dict(self)
         redact_password_field(as_dict, ['password'])
+        redact_password_field(as_dict, ['ssl_key'])
         return formatted_flat_dict(as_dict)
 
     def __eq__(self, other):

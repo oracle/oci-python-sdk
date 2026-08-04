@@ -15,6 +15,30 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
     Details to create an Autonomous Container Database (ACD) by cloning a backup of an existing ACD.
     """
 
+    #: A constant which can be used with the clone_type property of a CreateAutonomousContainerDatabaseFromBackupDetails.
+    #: This constant has a value of "FULL"
+    CLONE_TYPE_FULL = "FULL"
+
+    #: A constant which can be used with the clone_type property of a CreateAutonomousContainerDatabaseFromBackupDetails.
+    #: This constant has a value of "METADATA"
+    CLONE_TYPE_METADATA = "METADATA"
+
+    #: A constant which can be used with the clone_type property of a CreateAutonomousContainerDatabaseFromBackupDetails.
+    #: This constant has a value of "PARTIAL"
+    CLONE_TYPE_PARTIAL = "PARTIAL"
+
+    #: A constant which can be used with the clone_band_width property of a CreateAutonomousContainerDatabaseFromBackupDetails.
+    #: This constant has a value of "SLOW"
+    CLONE_BAND_WIDTH_SLOW = "SLOW"
+
+    #: A constant which can be used with the clone_band_width property of a CreateAutonomousContainerDatabaseFromBackupDetails.
+    #: This constant has a value of "MEDIUM"
+    CLONE_BAND_WIDTH_MEDIUM = "MEDIUM"
+
+    #: A constant which can be used with the clone_band_width property of a CreateAutonomousContainerDatabaseFromBackupDetails.
+    #: This constant has a value of "FAST"
+    CLONE_BAND_WIDTH_FAST = "FAST"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAutonomousContainerDatabaseFromBackupDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateAutonomousContainerDatabaseFromBackupDetails.source` attribute
@@ -31,7 +55,7 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
 
         :param source:
             The value to assign to the source property of this CreateAutonomousContainerDatabaseFromBackupDetails.
-            Allowed values for this property are: "NONE", "BACKUP_FROM_ID"
+            Allowed values for this property are: "NONE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
         :type source: str
 
         :param display_name:
@@ -192,6 +216,20 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
             The value to assign to the autonomous_container_database_backup_id property of this CreateAutonomousContainerDatabaseFromBackupDetails.
         :type autonomous_container_database_backup_id: str
 
+        :param clone_type:
+            The value to assign to the clone_type property of this CreateAutonomousContainerDatabaseFromBackupDetails.
+            Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
+        :type clone_type: str
+
+        :param autonomous_databases_to_clone:
+            The value to assign to the autonomous_databases_to_clone property of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        :type autonomous_databases_to_clone: list[str]
+
+        :param clone_band_width:
+            The value to assign to the clone_band_width property of this CreateAutonomousContainerDatabaseFromBackupDetails.
+            Allowed values for this property are: "SLOW", "MEDIUM", "FAST"
+        :type clone_band_width: str
+
         """
         self.swagger_types = {
             'customer_contacts': 'list[CustomerContact]',
@@ -234,7 +272,10 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
             'vm_failover_reservation': 'int',
             'distribution_affinity': 'str',
             'net_services_architecture': 'str',
-            'autonomous_container_database_backup_id': 'str'
+            'autonomous_container_database_backup_id': 'str',
+            'clone_type': 'str',
+            'autonomous_databases_to_clone': 'list[str]',
+            'clone_band_width': 'str'
         }
         self.attribute_map = {
             'customer_contacts': 'customerContacts',
@@ -277,7 +318,10 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
             'vm_failover_reservation': 'vmFailoverReservation',
             'distribution_affinity': 'distributionAffinity',
             'net_services_architecture': 'netServicesArchitecture',
-            'autonomous_container_database_backup_id': 'autonomousContainerDatabaseBackupId'
+            'autonomous_container_database_backup_id': 'autonomousContainerDatabaseBackupId',
+            'clone_type': 'cloneType',
+            'autonomous_databases_to_clone': 'autonomousDatabasesToClone',
+            'clone_band_width': 'cloneBandWidth'
         }
         self._customer_contacts = None
         self._okv_end_point_group_name = None
@@ -320,6 +364,9 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
         self._distribution_affinity = None
         self._net_services_architecture = None
         self._autonomous_container_database_backup_id = None
+        self._clone_type = None
+        self._autonomous_databases_to_clone = None
+        self._clone_band_width = None
         self._source = 'BACKUP_FROM_ID'
 
     @property
@@ -349,6 +396,92 @@ class CreateAutonomousContainerDatabaseFromBackupDetails(CreateAutonomousContain
         :type: str
         """
         self._autonomous_container_database_backup_id = autonomous_container_database_backup_id
+
+    @property
+    def clone_type(self):
+        """
+        Gets the clone_type of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        The Autonomous AI Database clone type.
+
+        Allowed values for this property are: "FULL", "METADATA", "PARTIAL"
+
+
+        :return: The clone_type of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        :rtype: str
+        """
+        return self._clone_type
+
+    @clone_type.setter
+    def clone_type(self, clone_type):
+        """
+        Sets the clone_type of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        The Autonomous AI Database clone type.
+
+
+        :param clone_type: The clone_type of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        :type: str
+        """
+        allowed_values = ["FULL", "METADATA", "PARTIAL"]
+        if not value_allowed_none_or_none_sentinel(clone_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `clone_type`, must be None or one of {allowed_values}"
+            )
+        self._clone_type = clone_type
+
+    @property
+    def autonomous_databases_to_clone(self):
+        """
+        Gets the autonomous_databases_to_clone of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+
+
+        :return: The autonomous_databases_to_clone of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        :rtype: list[str]
+        """
+        return self._autonomous_databases_to_clone
+
+    @autonomous_databases_to_clone.setter
+    def autonomous_databases_to_clone(self, autonomous_databases_to_clone):
+        """
+        Sets the autonomous_databases_to_clone of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+
+
+        :param autonomous_databases_to_clone: The autonomous_databases_to_clone of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        :type: list[str]
+        """
+        self._autonomous_databases_to_clone = autonomous_databases_to_clone
+
+    @property
+    def clone_band_width(self):
+        """
+        Gets the clone_band_width of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+
+        Allowed values for this property are: "SLOW", "MEDIUM", "FAST"
+
+
+        :return: The clone_band_width of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        :rtype: str
+        """
+        return self._clone_band_width
+
+    @clone_band_width.setter
+    def clone_band_width(self, clone_band_width):
+        """
+        Sets the clone_band_width of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+
+
+        :param clone_band_width: The clone_band_width of this CreateAutonomousContainerDatabaseFromBackupDetails.
+        :type: str
+        """
+        allowed_values = ["SLOW", "MEDIUM", "FAST"]
+        if not value_allowed_none_or_none_sentinel(clone_band_width, allowed_values):
+            raise ValueError(
+                f"Invalid value for `clone_band_width`, must be None or one of {allowed_values}"
+            )
+        self._clone_band_width = clone_band_width
 
     def __repr__(self):
         return formatted_flat_dict(self)

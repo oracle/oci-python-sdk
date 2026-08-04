@@ -28,17 +28,24 @@ class OfferInternalDetail(object):
             The value to assign to the internal_notes property of this OfferInternalDetail.
         :type internal_notes: str
 
+        :param offer_quote_ids:
+            The value to assign to the offer_quote_ids property of this OfferInternalDetail.
+        :type offer_quote_ids: list[str]
+
         """
         self.swagger_types = {
             'custom_fields': 'list[CustomField]',
-            'internal_notes': 'str'
+            'internal_notes': 'str',
+            'offer_quote_ids': 'list[str]'
         }
         self.attribute_map = {
             'custom_fields': 'customFields',
-            'internal_notes': 'internalNotes'
+            'internal_notes': 'internalNotes',
+            'offer_quote_ids': 'offerQuoteIds'
         }
         self._custom_fields = None
         self._internal_notes = None
+        self._offer_quote_ids = None
 
     @property
     def custom_fields(self):
@@ -87,6 +94,30 @@ class OfferInternalDetail(object):
         :type: str
         """
         self._internal_notes = internal_notes
+
+    @property
+    def offer_quote_ids(self):
+        """
+        Gets the offer_quote_ids of this OfferInternalDetail.
+        A list of associated offer quotes.
+
+
+        :return: The offer_quote_ids of this OfferInternalDetail.
+        :rtype: list[str]
+        """
+        return self._offer_quote_ids
+
+    @offer_quote_ids.setter
+    def offer_quote_ids(self, offer_quote_ids):
+        """
+        Sets the offer_quote_ids of this OfferInternalDetail.
+        A list of associated offer quotes.
+
+
+        :param offer_quote_ids: The offer_quote_ids of this OfferInternalDetail.
+        :type: list[str]
+        """
+        self._offer_quote_ids = offer_quote_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

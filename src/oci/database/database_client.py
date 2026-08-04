@@ -21054,6 +21054,111 @@ class DatabaseClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_autonomous_container_database_backup(self, autonomous_container_database_backup_id, **kwargs):
+        """
+        Gets information about the specified Autonomous Container Database backup.
+
+
+        :param str autonomous_container_database_backup_id: (required)
+            The Autonomous Container Database backup `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabaseBackup`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_container_database_backup.py.html>`__ to see an example of how to use get_autonomous_container_database_backup API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseBackupId']
+        resource_path = "/autonomousContainerDatabaseBackups/{autonomousContainerDatabaseBackupId}"
+        method = "GET"
+        operation_name = "get_autonomous_container_database_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseBackup/GetAutonomousContainerDatabaseBackup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_autonomous_container_database_backup got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "autonomousContainerDatabaseBackupId": autonomous_container_database_backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="AutonomousContainerDatabaseBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="AutonomousContainerDatabaseBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
         **Deprecated.** Use the :func:`get_autonomous_container_database` operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
@@ -30615,6 +30720,9 @@ class DatabaseClient(object):
 
             Allowed values are: "CLOUD", "CLOUD_AT_CUSTOMER"
 
+        :param bool is_pitr_eligible: (optional)
+            Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
@@ -30664,6 +30772,7 @@ class DatabaseClient(object):
             "backup_destination_id",
             "key_store_id",
             "infrastructure_type",
+            "is_pitr_eligible",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -30711,7 +30820,8 @@ class DatabaseClient(object):
             "type": kwargs.get("type", missing),
             "backupDestinationId": kwargs.get("backup_destination_id", missing),
             "keyStoreId": kwargs.get("key_store_id", missing),
-            "infrastructureType": kwargs.get("infrastructure_type", missing)
+            "infrastructureType": kwargs.get("infrastructure_type", missing),
+            "isPitrEligible": kwargs.get("is_pitr_eligible", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -31826,6 +31936,127 @@ class DatabaseClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[AutonomousDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_autonomous_databases_in_autonomous_container_database_backup(self, autonomous_container_database_id, time_stamp_requested, **kwargs):
+        """
+        Gets a list of Autonomous Databases associated with backups at the given timestamp for the specified Autonomous Container Database. If `compartmentId` is provided, filters to that compartment; otherwise, uses the container's compartment.
+
+
+        :param str autonomous_container_database_id: (required)
+            The Autonomous Container Database `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param datetime time_stamp_requested: (required)
+            The timestamp at which the list of autonomous databases present to be returned (ISO-8601 format, e.g., \"2025-12-02T06:39:15Z\"). The requested value must be after the end timestamp of the oldest available Autonomous Container Database backup.
+
+        :param str compartment_id: (optional)
+            The compartment `OCID`__. If not provided, uses the Autonomous Container Database's compartment.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabaseInBackupCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_databases_in_autonomous_container_database_backup.py.html>`__ to see an example of how to use list_autonomous_databases_in_autonomous_container_database_backup API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId', 'timeStampRequested']
+        resource_path = "/autonomousContainerDatabaseBackups/listAutonomousDatabasesInBackup"
+        method = "GET"
+        operation_name = "list_autonomous_databases_in_autonomous_container_database_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseInBackup/ListAutonomousDatabasesInAutonomousContainerDatabaseBackup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "compartment_id",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_autonomous_databases_in_autonomous_container_database_backup got unknown kwargs: {extra_kwargs!r}")
+
+        query_params = {
+            "autonomousContainerDatabaseId": autonomous_container_database_id,
+            "timeStampRequested": time_stamp_requested,
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AutonomousDatabaseInBackupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AutonomousDatabaseInBackupCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -35396,6 +35627,16 @@ class DatabaseClient(object):
         :param str db_name: (optional)
             A filter to return only resources that match the entire database name given. The match is not case sensitive.
 
+        :param str managed_auto_failover: (optional)
+            Filter the databases by managed auto failover param.
+
+            Allowed values are: "REGISTERED", "UNREGISTERED", "ALL"
+
+        :param str failover_targets: (optional)
+            Filter the databases by failoverTargets param.
+
+            Allowed values are: "DEFINED", "UNDEFINED", "ALL"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -35437,7 +35678,9 @@ class DatabaseClient(object):
             "sort_by",
             "sort_order",
             "lifecycle_state",
-            "db_name"
+            "db_name",
+            "managed_auto_failover",
+            "failover_targets"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -35465,6 +35708,20 @@ class DatabaseClient(object):
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
+        if 'managed_auto_failover' in kwargs:
+            managed_auto_failover_allowed_values = ["REGISTERED", "UNREGISTERED", "ALL"]
+            if kwargs['managed_auto_failover'] not in managed_auto_failover_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `managed_auto_failover`, must be one of { managed_auto_failover_allowed_values }"
+                )
+
+        if 'failover_targets' in kwargs:
+            failover_targets_allowed_values = ["DEFINED", "UNDEFINED", "ALL"]
+            if kwargs['failover_targets'] not in failover_targets_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `failover_targets`, must be one of { failover_targets_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "dbHomeId": kwargs.get("db_home_id", missing),
@@ -35474,7 +35731,9 @@ class DatabaseClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "dbName": kwargs.get("db_name", missing)
+            "dbName": kwargs.get("db_name", missing),
+            "managedAutoFailover": kwargs.get("managed_auto_failover", missing),
+            "failoverTargets": kwargs.get("failover_targets", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

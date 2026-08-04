@@ -23,6 +23,10 @@ class CreateAutonomousContainerDatabaseBase(object):
     #: This constant has a value of "BACKUP_FROM_ID"
     SOURCE_BACKUP_FROM_ID = "BACKUP_FROM_ID"
 
+    #: A constant which can be used with the source property of a CreateAutonomousContainerDatabaseBase.
+    #: This constant has a value of "BACKUP_FROM_TIMESTAMP"
+    SOURCE_BACKUP_FROM_TIMESTAMP = "BACKUP_FROM_TIMESTAMP"
+
     #: A constant which can be used with the service_level_agreement_type property of a CreateAutonomousContainerDatabaseBase.
     #: This constant has a value of "STANDARD"
     SERVICE_LEVEL_AGREEMENT_TYPE_STANDARD = "STANDARD"
@@ -80,6 +84,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Initializes a new CreateAutonomousContainerDatabaseBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.database.models.CreateAutonomousContainerDatabaseFromBackupTimestampDetails`
         * :class:`~oci.database.models.CreateAutonomousContainerDatabaseDetails`
         * :class:`~oci.database.models.CreateAutonomousContainerDatabaseFromBackupDetails`
 
@@ -95,7 +100,7 @@ class CreateAutonomousContainerDatabaseBase(object):
 
         :param source:
             The value to assign to the source property of this CreateAutonomousContainerDatabaseBase.
-            Allowed values for this property are: "NONE", "BACKUP_FROM_ID"
+            Allowed values for this property are: "NONE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
         :type source: str
 
         :param display_name:
@@ -386,6 +391,9 @@ class CreateAutonomousContainerDatabaseBase(object):
         """
         type = object_dictionary['source']
 
+        if type == 'BACKUP_FROM_TIMESTAMP':
+            return 'CreateAutonomousContainerDatabaseFromBackupTimestampDetails'
+
         if type == 'NONE':
             return 'CreateAutonomousContainerDatabaseDetails'
 
@@ -448,7 +456,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         Gets the source of this CreateAutonomousContainerDatabaseBase.
         The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
 
-        Allowed values for this property are: "NONE", "BACKUP_FROM_ID"
+        Allowed values for this property are: "NONE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
 
 
         :return: The source of this CreateAutonomousContainerDatabaseBase.
@@ -466,7 +474,7 @@ class CreateAutonomousContainerDatabaseBase(object):
         :param source: The source of this CreateAutonomousContainerDatabaseBase.
         :type: str
         """
-        allowed_values = ["NONE", "BACKUP_FROM_ID"]
+        allowed_values = ["NONE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 f"Invalid value for `source`, must be None or one of {allowed_values}"

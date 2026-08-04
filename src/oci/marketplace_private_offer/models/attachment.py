@@ -104,6 +104,10 @@ class Attachment(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param offer_type:
+            The value to assign to the offer_type property of this Attachment.
+        :type offer_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Attachment.
         :type freeform_tags: dict(str, str)
@@ -111,6 +115,10 @@ class Attachment(object):
         :param defined_tags:
             The value to assign to the defined_tags property of this Attachment.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param system_tags:
+            The value to assign to the system_tags property of this Attachment.
+        :type system_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -123,8 +131,10 @@ class Attachment(object):
             'type': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
+            'offer_type': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'id': 'id',
@@ -136,8 +146,10 @@ class Attachment(object):
             'type': 'type',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
+            'offer_type': 'offerType',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
         self._id = None
         self._seller_compartment_id = None
@@ -148,8 +160,10 @@ class Attachment(object):
         self._type = None
         self._time_created = None
         self._lifecycle_state = None
+        self._offer_type = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -380,6 +394,30 @@ class Attachment(object):
         self._lifecycle_state = lifecycle_state
 
     @property
+    def offer_type(self):
+        """
+        Gets the offer_type of this Attachment.
+        The type of the offer.
+
+
+        :return: The offer_type of this Attachment.
+        :rtype: str
+        """
+        return self._offer_type
+
+    @offer_type.setter
+    def offer_type(self, offer_type):
+        """
+        Sets the offer_type of this Attachment.
+        The type of the offer.
+
+
+        :param offer_type: The offer_type of this Attachment.
+        :type: str
+        """
+        self._offer_type = offer_type
+
+    @property
     def freeform_tags(self):
         """
         **[Required]** Gets the freeform_tags of this Attachment.
@@ -430,6 +468,32 @@ class Attachment(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Attachment.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this Attachment.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Attachment.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this Attachment.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

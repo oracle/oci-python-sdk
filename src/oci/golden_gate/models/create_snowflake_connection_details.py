@@ -186,6 +186,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
         }
         self._redacted_field_paths = [
             ['password'],
+            ['private_key_file'],
             ['private_key_passphrase'],
         ]
         self._connection_type = None
@@ -507,6 +508,7 @@ class CreateSnowflakeConnectionDetails(CreateConnectionDetails):
     def __repr__(self):
         as_dict = to_dict(self)
         redact_password_field(as_dict, ['password'])
+        redact_password_field(as_dict, ['private_key_file'])
         redact_password_field(as_dict, ['private_key_passphrase'])
         return formatted_flat_dict(as_dict)
 

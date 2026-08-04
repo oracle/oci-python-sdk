@@ -25,6 +25,51 @@ class SubscriptionClientCompositeOperations(object):
         """
         self.client = client
 
+    def cancel_subscription_and_wait_for_state(self, subscription_id, cancel_subscription_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.self.SubscriptionClient.cancel_subscription` and waits for the :py:class:`~oci.self.models.Subscription` acted upon
+        to enter the given state(s).
+
+        :param str subscription_id: (required)
+            The unique identifier for the subscription.
+
+        :param oci.self.models.CancelSubscriptionDetails cancel_subscription_details: (required)
+            Details for the cancellation request.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.self.models.Subscription.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.self.SubscriptionClient.cancel_subscription`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.cancel_subscription(subscription_id, cancel_subscription_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        subscription_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_subscription(subscription_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def change_subscription_compartment_and_wait_for_state(self, subscription_id, change_subscription_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.self.SubscriptionClient.change_subscription_compartment` and waits for the :py:class:`~oci.self.models.WorkRequest`

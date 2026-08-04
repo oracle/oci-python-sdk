@@ -55,6 +55,10 @@ class DataGuardGroupMember(object):
     #: This constant has a value of "CRITICAL"
     SWITCHOVER_READINESS_CRITICAL = "CRITICAL"
 
+    #: A constant which can be used with the switchover_readiness property of a DataGuardGroupMember.
+    #: This constant has a value of "HEALTHY_AND_NOT_ROLECHANGE_TARGET"
+    SWITCHOVER_READINESS_HEALTHY_AND_NOT_ROLECHANGE_TARGET = "HEALTHY_AND_NOT_ROLECHANGE_TARGET"
+
     #: A constant which can be used with the failover_readiness property of a DataGuardGroupMember.
     #: This constant has a value of "HEALTHY"
     FAILOVER_READINESS_HEALTHY = "HEALTHY"
@@ -66,6 +70,18 @@ class DataGuardGroupMember(object):
     #: A constant which can be used with the failover_readiness property of a DataGuardGroupMember.
     #: This constant has a value of "CRITICAL"
     FAILOVER_READINESS_CRITICAL = "CRITICAL"
+
+    #: A constant which can be used with the failover_readiness property of a DataGuardGroupMember.
+    #: This constant has a value of "HEALTHY_AND_NOT_ROLECHANGE_TARGET"
+    FAILOVER_READINESS_HEALTHY_AND_NOT_ROLECHANGE_TARGET = "HEALTHY_AND_NOT_ROLECHANGE_TARGET"
+
+    #: A constant which can be used with the managed_auto_failover property of a DataGuardGroupMember.
+    #: This constant has a value of "ENABLE"
+    MANAGED_AUTO_FAILOVER_ENABLE = "ENABLE"
+
+    #: A constant which can be used with the managed_auto_failover property of a DataGuardGroupMember.
+    #: This constant has a value of "DISABLE"
+    MANAGED_AUTO_FAILOVER_DISABLE = "DISABLE"
 
     def __init__(self, **kwargs):
         """
@@ -114,7 +130,7 @@ class DataGuardGroupMember(object):
 
         :param switchover_readiness:
             The value to assign to the switchover_readiness property of this DataGuardGroupMember.
-            Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", "HEALTHY_AND_NOT_ROLECHANGE_TARGET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type switchover_readiness: str
 
@@ -124,7 +140,7 @@ class DataGuardGroupMember(object):
 
         :param failover_readiness:
             The value to assign to the failover_readiness property of this DataGuardGroupMember.
-            Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", "HEALTHY_AND_NOT_ROLECHANGE_TARGET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type failover_readiness: str
 
@@ -139,6 +155,16 @@ class DataGuardGroupMember(object):
         :param time_updated:
             The value to assign to the time_updated property of this DataGuardGroupMember.
         :type time_updated: datetime
+
+        :param managed_auto_failover:
+            The value to assign to the managed_auto_failover property of this DataGuardGroupMember.
+            Allowed values for this property are: "ENABLE", "DISABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type managed_auto_failover: str
+
+        :param failover_targets:
+            The value to assign to the failover_targets property of this DataGuardGroupMember.
+        :type failover_targets: list[str]
 
         """
         self.swagger_types = {
@@ -156,7 +182,9 @@ class DataGuardGroupMember(object):
             'failover_readiness': 'str',
             'failover_readiness_message': 'str',
             'data_loss_exposure': 'str',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'managed_auto_failover': 'str',
+            'failover_targets': 'list[str]'
         }
         self.attribute_map = {
             'db_system_id': 'dbSystemId',
@@ -173,7 +201,9 @@ class DataGuardGroupMember(object):
             'failover_readiness': 'failoverReadiness',
             'failover_readiness_message': 'failoverReadinessMessage',
             'data_loss_exposure': 'dataLossExposure',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'managed_auto_failover': 'managedAutoFailover',
+            'failover_targets': 'failoverTargets'
         }
         self._db_system_id = None
         self._database_id = None
@@ -190,6 +220,8 @@ class DataGuardGroupMember(object):
         self._failover_readiness_message = None
         self._data_loss_exposure = None
         self._time_updated = None
+        self._managed_auto_failover = None
+        self._failover_targets = None
 
     @property
     def db_system_id(self):
@@ -470,8 +502,10 @@ class DataGuardGroupMember(object):
         """
         Gets the switchover_readiness of this DataGuardGroupMember.
         The switchover readiness status of the Data Guard member.
+        * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy
+        but not currently designated to take switchover, when auto failover is enabled.
 
-        Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", "HEALTHY_AND_NOT_ROLECHANGE_TARGET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -485,12 +519,14 @@ class DataGuardGroupMember(object):
         """
         Sets the switchover_readiness of this DataGuardGroupMember.
         The switchover readiness status of the Data Guard member.
+        * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy
+        but not currently designated to take switchover, when auto failover is enabled.
 
 
         :param switchover_readiness: The switchover_readiness of this DataGuardGroupMember.
         :type: str
         """
-        allowed_values = ["HEALTHY", "WARNING", "CRITICAL"]
+        allowed_values = ["HEALTHY", "WARNING", "CRITICAL", "HEALTHY_AND_NOT_ROLECHANGE_TARGET"]
         if not value_allowed_none_or_none_sentinel(switchover_readiness, allowed_values):
             switchover_readiness = 'UNKNOWN_ENUM_VALUE'
         self._switchover_readiness = switchover_readiness
@@ -526,8 +562,10 @@ class DataGuardGroupMember(object):
         """
         Gets the failover_readiness of this DataGuardGroupMember.
         The failover readiness status of the Data Guard member.
+        HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy
+        but not currently designated to take failover, when auto failover is enabled.
 
-        Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HEALTHY", "WARNING", "CRITICAL", "HEALTHY_AND_NOT_ROLECHANGE_TARGET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -541,12 +579,14 @@ class DataGuardGroupMember(object):
         """
         Sets the failover_readiness of this DataGuardGroupMember.
         The failover readiness status of the Data Guard member.
+        HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy
+        but not currently designated to take failover, when auto failover is enabled.
 
 
         :param failover_readiness: The failover_readiness of this DataGuardGroupMember.
         :type: str
         """
-        allowed_values = ["HEALTHY", "WARNING", "CRITICAL"]
+        allowed_values = ["HEALTHY", "WARNING", "CRITICAL", "HEALTHY_AND_NOT_ROLECHANGE_TARGET"]
         if not value_allowed_none_or_none_sentinel(failover_readiness, allowed_values):
             failover_readiness = 'UNKNOWN_ENUM_VALUE'
         self._failover_readiness = failover_readiness
@@ -628,6 +668,60 @@ class DataGuardGroupMember(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def managed_auto_failover(self):
+        """
+        Gets the managed_auto_failover of this DataGuardGroupMember.
+        The state of managed auto failover.
+
+        Allowed values for this property are: "ENABLE", "DISABLE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The managed_auto_failover of this DataGuardGroupMember.
+        :rtype: str
+        """
+        return self._managed_auto_failover
+
+    @managed_auto_failover.setter
+    def managed_auto_failover(self, managed_auto_failover):
+        """
+        Sets the managed_auto_failover of this DataGuardGroupMember.
+        The state of managed auto failover.
+
+
+        :param managed_auto_failover: The managed_auto_failover of this DataGuardGroupMember.
+        :type: str
+        """
+        allowed_values = ["ENABLE", "DISABLE"]
+        if not value_allowed_none_or_none_sentinel(managed_auto_failover, allowed_values):
+            managed_auto_failover = 'UNKNOWN_ENUM_VALUE'
+        self._managed_auto_failover = managed_auto_failover
+
+    @property
+    def failover_targets(self):
+        """
+        Gets the failover_targets of this DataGuardGroupMember.
+        Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+
+
+        :return: The failover_targets of this DataGuardGroupMember.
+        :rtype: list[str]
+        """
+        return self._failover_targets
+
+    @failover_targets.setter
+    def failover_targets(self, failover_targets):
+        """
+        Sets the failover_targets of this DataGuardGroupMember.
+        Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+
+
+        :param failover_targets: The failover_targets of this DataGuardGroupMember.
+        :type: list[str]
+        """
+        self._failover_targets = failover_targets
 
     def __repr__(self):
         return formatted_flat_dict(self)

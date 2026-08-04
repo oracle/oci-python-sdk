@@ -3,14 +3,12 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 import io
-import hashlib
 import base64
 import logging
 import platform
 from . import md5 as MD5
 from multiprocessing.dummy import Pool
 from os import stat
-from cryptography.exceptions import InternalError
 from ..constants import DEFAULT_PART_SIZE
 from ..constants import MEBIBYTE
 from .buffered_part_reader import BufferedPartReader
@@ -21,7 +19,6 @@ from oci._vendor.requests.exceptions import Timeout, ConnectionError
 from oci._vendor.six.moves.queue import Queue
 from threading import Semaphore
 from oci._vendor import six
-from oci.fips import is_fips_mode
 from ....version import __version__
 from ..internal.additional_checksum import Checksum
 
@@ -203,18 +200,7 @@ class MultipartObjectAssembler:
         :rtype: str
         """
 
-        # Determine if we can use the hashlib version of md5 or the bundled
-        # version of md5
-        if is_fips_mode():
-            try:
-                md5 = MD5.md5()
-            except InternalError as ex:
-                logger.warning("An exception occur due to {}. Fallback to using hashlib.new('md5', usedforsecurity=false) for md5.".format(ex))
-                md5 = hashlib.new('md5', usedforsecurity=False)
-        else:
-            md5 = hashlib.md5()
-
-        m = md5
+        m = MD5.create_checksum_md5()
         with io.open(file_path, mode='rb') as f:
             bpr = BufferedPartReader(f, offset, chunk)
             while True:
@@ -534,16 +520,7 @@ class MultipartObjectAssembler:
 
     def _upload_stream_part(self, part_num, part_bytes, **kwargs):
         try:
-            if is_fips_mode():
-                try:
-                    m = MD5.md5()
-                except InternalError as ex:
-                    logger.warning(
-                        "An exception occur due to {}. Fallback to using hashlib.new('md5', usedforsecurity=false) for md5.".format(
-                            ex))
-                    m = hashlib.new('md5', usedforsecurity=False)
-            else:
-                m = hashlib.md5()
+            m = MD5.create_checksum_md5()
 
             m.update(part_bytes)
 
