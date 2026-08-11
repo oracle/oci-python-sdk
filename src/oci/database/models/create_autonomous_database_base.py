@@ -123,6 +123,10 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the compartment_id property of this CreateAutonomousDatabaseBase.
         :type compartment_id: str
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this CreateAutonomousDatabaseBase.
+        :type availability_domain: str
+
         :param character_set:
             The value to assign to the character_set property of this CreateAutonomousDatabaseBase.
         :type character_set: str
@@ -348,6 +352,7 @@ class CreateAutonomousDatabaseBase(object):
         self.swagger_types = {
             'subscription_id': 'str',
             'compartment_id': 'str',
+            'availability_domain': 'str',
             'character_set': 'str',
             'ncharacter_set': 'str',
             'db_name': 'str',
@@ -406,6 +411,7 @@ class CreateAutonomousDatabaseBase(object):
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
             'compartment_id': 'compartmentId',
+            'availability_domain': 'availabilityDomain',
             'character_set': 'characterSet',
             'ncharacter_set': 'ncharacterSet',
             'db_name': 'dbName',
@@ -463,6 +469,7 @@ class CreateAutonomousDatabaseBase(object):
         }
         self._subscription_id = None
         self._compartment_id = None
+        self._availability_domain = None
         self._character_set = None
         self._ncharacter_set = None
         self._db_name = None
@@ -610,6 +617,30 @@ class CreateAutonomousDatabaseBase(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def availability_domain(self):
+        """
+        Gets the availability_domain of this CreateAutonomousDatabaseBase.
+        The Autonomous Database Serverless instance's availability domain.
+
+
+        :return: The availability_domain of this CreateAutonomousDatabaseBase.
+        :rtype: str
+        """
+        return self._availability_domain
+
+    @availability_domain.setter
+    def availability_domain(self, availability_domain):
+        """
+        Sets the availability_domain of this CreateAutonomousDatabaseBase.
+        The Autonomous Database Serverless instance's availability domain.
+
+
+        :param availability_domain: The availability_domain of this CreateAutonomousDatabaseBase.
+        :type: str
+        """
+        self._availability_domain = availability_domain
 
     @property
     def character_set(self):

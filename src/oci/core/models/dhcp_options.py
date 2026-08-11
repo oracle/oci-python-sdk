@@ -96,6 +96,10 @@ class DhcpOptions(object):
             The value to assign to the options property of this DhcpOptions.
         :type options: list[oci.core.models.DhcpOption]
 
+        :param system_tags:
+            The value to assign to the system_tags property of this DhcpOptions.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this DhcpOptions.
         :type time_created: datetime
@@ -119,6 +123,7 @@ class DhcpOptions(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'options': 'list[DhcpOption]',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'vcn_id': 'str',
             'domain_name_type': 'str'
@@ -131,6 +136,7 @@ class DhcpOptions(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'options': 'options',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId',
             'domain_name_type': 'domainNameType'
@@ -142,6 +148,7 @@ class DhcpOptions(object):
         self._id = None
         self._lifecycle_state = None
         self._options = None
+        self._system_tags = None
         self._time_created = None
         self._vcn_id = None
         self._domain_name_type = None
@@ -349,6 +356,32 @@ class DhcpOptions(object):
         :type: list[oci.core.models.DhcpOption]
         """
         self._options = options
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this DhcpOptions.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this DhcpOptions.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this DhcpOptions.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this DhcpOptions.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):

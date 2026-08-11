@@ -82,6 +82,10 @@ class CreateScheduleDetails(object):
             The value to assign to the time_ends property of this CreateScheduleDetails.
         :type time_ends: datetime
 
+        :param local_time_zone:
+            The value to assign to the local_time_zone property of this CreateScheduleDetails.
+        :type local_time_zone: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateScheduleDetails.
         :type freeform_tags: dict(str, str)
@@ -102,6 +106,7 @@ class CreateScheduleDetails(object):
             'resources': 'list[Resource]',
             'time_starts': 'datetime',
             'time_ends': 'datetime',
+            'local_time_zone': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -116,6 +121,7 @@ class CreateScheduleDetails(object):
             'resources': 'resources',
             'time_starts': 'timeStarts',
             'time_ends': 'timeEnds',
+            'local_time_zone': 'localTimeZone',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -129,6 +135,7 @@ class CreateScheduleDetails(object):
         self._resources = None
         self._time_starts = None
         self._time_ends = None
+        self._local_time_zone = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -407,6 +414,32 @@ class CreateScheduleDetails(object):
         :type: datetime
         """
         self._time_ends = time_ends
+
+    @property
+    def local_time_zone(self):
+        """
+        Gets the local_time_zone of this CreateScheduleDetails.
+        IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+        This determines the timezone context for evaluating the recurrence expression.
+
+
+        :return: The local_time_zone of this CreateScheduleDetails.
+        :rtype: str
+        """
+        return self._local_time_zone
+
+    @local_time_zone.setter
+    def local_time_zone(self, local_time_zone):
+        """
+        Sets the local_time_zone of this CreateScheduleDetails.
+        IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+        This determines the timezone context for evaluating the recurrence expression.
+
+
+        :param local_time_zone: The local_time_zone of this CreateScheduleDetails.
+        :type: str
+        """
+        self._local_time_zone = local_time_zone
 
     @property
     def freeform_tags(self):

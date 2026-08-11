@@ -89,6 +89,10 @@ class SecurityList(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param system_tags:
+            The value to assign to the system_tags property of this SecurityList.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this SecurityList.
         :type time_created: datetime
@@ -107,6 +111,7 @@ class SecurityList(object):
             'id': 'str',
             'ingress_security_rules': 'list[IngressSecurityRule]',
             'lifecycle_state': 'str',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'vcn_id': 'str'
         }
@@ -119,6 +124,7 @@ class SecurityList(object):
             'id': 'id',
             'ingress_security_rules': 'ingressSecurityRules',
             'lifecycle_state': 'lifecycleState',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
         }
@@ -130,6 +136,7 @@ class SecurityList(object):
         self._id = None
         self._ingress_security_rules = None
         self._lifecycle_state = None
+        self._system_tags = None
         self._time_created = None
         self._vcn_id = None
 
@@ -360,6 +367,32 @@ class SecurityList(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this SecurityList.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this SecurityList.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this SecurityList.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this SecurityList.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):

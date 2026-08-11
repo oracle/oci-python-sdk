@@ -37,7 +37,6 @@ from utils.dbtools import get_dbtools_clients, get_secrets_client, get_kms_vault
 from utils.dbtools import create_secret, delete_secret
 from utils.dbtools import Colors
 
-import pkg_resources
 import base64
 from datetime import datetime, timedelta
 
@@ -57,7 +56,7 @@ connection_string = "mysql://host.changeme:port/"
 db_username = "example-username"
 db_password = "example-password"
 
-print("Using oci version:", pkg_resources.get_distribution("oci").version)
+print("Using oci version:", oci.__version__)
 
 
 class DBToolsExample:

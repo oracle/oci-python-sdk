@@ -155,6 +155,10 @@ class Schedule(object):
             The value to assign to the time_ends property of this Schedule.
         :type time_ends: datetime
 
+        :param local_time_zone:
+            The value to assign to the local_time_zone property of this Schedule.
+        :type local_time_zone: str
+
         :param time_created:
             The value to assign to the time_created property of this Schedule.
         :type time_created: datetime
@@ -208,6 +212,7 @@ class Schedule(object):
             'resources': 'list[Resource]',
             'time_starts': 'datetime',
             'time_ends': 'datetime',
+            'local_time_zone': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'time_last_run': 'datetime',
@@ -230,6 +235,7 @@ class Schedule(object):
             'resources': 'resources',
             'time_starts': 'timeStarts',
             'time_ends': 'timeEnds',
+            'local_time_zone': 'localTimeZone',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'time_last_run': 'timeLastRun',
@@ -251,6 +257,7 @@ class Schedule(object):
         self._resources = None
         self._time_starts = None
         self._time_ends = None
+        self._local_time_zone = None
         self._time_created = None
         self._time_updated = None
         self._time_last_run = None
@@ -562,6 +569,32 @@ class Schedule(object):
         :type: datetime
         """
         self._time_ends = time_ends
+
+    @property
+    def local_time_zone(self):
+        """
+        Gets the local_time_zone of this Schedule.
+        IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+        This determines the timezone context for evaluating the recurrence expression.
+
+
+        :return: The local_time_zone of this Schedule.
+        :rtype: str
+        """
+        return self._local_time_zone
+
+    @local_time_zone.setter
+    def local_time_zone(self, local_time_zone):
+        """
+        Sets the local_time_zone of this Schedule.
+        IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London').
+        This determines the timezone context for evaluating the recurrence expression.
+
+
+        :param local_time_zone: The local_time_zone of this Schedule.
+        :type: str
+        """
+        self._local_time_zone = local_time_zone
 
     @property
     def time_created(self):

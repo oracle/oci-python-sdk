@@ -75,6 +75,10 @@ class InternetGateway(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param system_tags:
+            The value to assign to the system_tags property of this InternetGateway.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this InternetGateway.
         :type time_created: datetime
@@ -96,6 +100,7 @@ class InternetGateway(object):
             'id': 'str',
             'is_enabled': 'bool',
             'lifecycle_state': 'str',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'vcn_id': 'str',
             'route_table_id': 'str'
@@ -108,6 +113,7 @@ class InternetGateway(object):
             'id': 'id',
             'is_enabled': 'isEnabled',
             'lifecycle_state': 'lifecycleState',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId',
             'route_table_id': 'routeTableId'
@@ -119,6 +125,7 @@ class InternetGateway(object):
         self._id = None
         self._is_enabled = None
         self._lifecycle_state = None
+        self._system_tags = None
         self._time_created = None
         self._vcn_id = None
         self._route_table_id = None
@@ -328,6 +335,32 @@ class InternetGateway(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this InternetGateway.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this InternetGateway.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this InternetGateway.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this InternetGateway.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):

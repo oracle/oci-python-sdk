@@ -34,7 +34,6 @@ from utils.dbtools import Colors
 from utils.dbtools import get_dbtools_clients, get_database_clients, get_secrets_client, get_kms_vault_client
 from utils.dbtools import get_vaults_clients, get_wallet_and_create_secrets, delete_secret
 
-import pkg_resources
 from datetime import datetime, timedelta
 
 # Set do_clean_up_at_end = False to keep the secrets and connection created
@@ -49,7 +48,7 @@ vault_id = "ocid1.vault.....changeme"
 # Specify the password for the ADB-S database ADMIN user
 db_password = "example-password"
 
-print("Using oci version:", pkg_resources.get_distribution("oci").version)
+print("Using oci version:", oci.__version__)
 
 
 class DBToolsExample:

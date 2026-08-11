@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "26.07.14"
+    version = "26.08.19"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -4673,6 +4673,19 @@ class ShowOCIData(object):
             if cg:
                 security_services['cloud_guard'] = cg
 
+            # Cloud Guard configuration and findings
+            cg_problems = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_CLOUD_GUARD_PROBLEMS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if cg_problems:
+                security_services['cloud_guard_problems'] = cg_problems
+
+            cg_managed_lists = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_CLOUD_GUARD_MANAGED_LISTS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if cg_managed_lists:
+                security_services['cloud_guard_managed_lists'] = cg_managed_lists
+
+            cg_data_mask_rules = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_CLOUD_GUARD_DATA_MASK_RULES, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if cg_data_mask_rules:
+                security_services['cloud_guard_data_mask_rules'] = cg_data_mask_rules
+
             # bastions
             bs = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_BASTION, 'region_name', region_name, 'compartment_id', compartment['id'])
             if bs:
@@ -4707,13 +4720,14 @@ class ShowOCIData(object):
             keys = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_KEYS, 'region_name', region_name, 'compartment_id', compartment['id'])
             if keys:
                 for key in keys:
-                    vault = self.service.search_unique_item(
-                        self.service.C_SECURITY,
-                        self.service.C_SECURITY_VAULTS,
-                        'id',
-                        key['vault_id']
-                    )
-                    key['vault_name'] = vault['name'] if vault else ""
+                    if not key['vault_name']:
+                        vault = self.service.search_unique_item(
+                            self.service.C_SECURITY,
+                            self.service.C_SECURITY_VAULTS,
+                            'id',
+                            key['vault_id']
+                        )
+                        key['vault_name'] = vault['name'] if vault else ""
                 security_services['kms_keys'] = keys
 
             # kms_secrets

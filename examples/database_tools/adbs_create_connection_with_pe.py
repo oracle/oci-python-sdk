@@ -39,7 +39,6 @@ from utils.dbtools import get_dbtools_clients, get_database_clients, get_secrets
 from utils.dbtools import get_vaults_clients, delete_secret, get_wallet_and_create_secrets
 from utils.dbtools import Colors
 
-import pkg_resources
 from datetime import datetime, timedelta
 
 # Set do_clean_up_at_end = False to keep the secrets, connection, and PE created
@@ -61,7 +60,7 @@ subnet_id = "ocid1.subnet.....changeme"
 db_username = "changeme_user"
 db_password = "example-password"
 
-print("Using oci version:", pkg_resources.get_distribution("oci").version)
+print("Using oci version:", oci.__version__)
 
 
 class DBToolsExample:

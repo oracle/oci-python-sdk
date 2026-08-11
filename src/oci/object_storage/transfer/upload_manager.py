@@ -471,10 +471,9 @@ class UploadManager:
         pool_block = getattr(current_adapter, '_pool_block', requests.adapters.DEFAULT_POOLBLOCK)
         max_retries = getattr(current_adapter, 'max_retries', requests.adapters.DEFAULT_RETRIES)
 
-        # OCIHTTPAdapter sets this marker so resizing preserves OCI's scoped
-        # Expect-header transport behavior instead of replacing it with a plain
-        # HTTPAdapter.
-        if getattr(current_adapter, 'uses_oci_connection_pool', False):
+        # OCIHTTPAdapter sets this marker so resizing preserves OCI transport
+        # adapter behavior instead of replacing it with a plain HTTPAdapter.
+        if getattr(current_adapter, 'preserves_oci_https_adapter_behavior', False):
             return current_adapter.__class__(
                 pool_connections=pool_connections,
                 pool_maxsize=target_pool_size,

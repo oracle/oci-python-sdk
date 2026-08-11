@@ -50,6 +50,10 @@ class HostGroupConfiguration(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type recycle_level: str
 
+        :param quick_recycle_settings:
+            The value to assign to the quick_recycle_settings property of this HostGroupConfiguration.
+        :type quick_recycle_settings: oci.core.models.QuickRecycleSettings
+
         :param state:
             The value to assign to the state property of this HostGroupConfiguration.
             Allowed values for this property are: "VALID", "INVALID", 'UNKNOWN_ENUM_VALUE'.
@@ -61,17 +65,20 @@ class HostGroupConfiguration(object):
             'target': 'str',
             'firmware_bundle_id': 'str',
             'recycle_level': 'str',
+            'quick_recycle_settings': 'QuickRecycleSettings',
             'state': 'str'
         }
         self.attribute_map = {
             'target': 'target',
             'firmware_bundle_id': 'firmwareBundleId',
             'recycle_level': 'recycleLevel',
+            'quick_recycle_settings': 'quickRecycleSettings',
             'state': 'state'
         }
         self._target = None
         self._firmware_bundle_id = None
         self._recycle_level = None
+        self._quick_recycle_settings = None
         self._state = None
 
     @property
@@ -155,6 +162,26 @@ class HostGroupConfiguration(object):
         if not value_allowed_none_or_none_sentinel(recycle_level, allowed_values):
             recycle_level = 'UNKNOWN_ENUM_VALUE'
         self._recycle_level = recycle_level
+
+    @property
+    def quick_recycle_settings(self):
+        """
+        Gets the quick_recycle_settings of this HostGroupConfiguration.
+
+        :return: The quick_recycle_settings of this HostGroupConfiguration.
+        :rtype: oci.core.models.QuickRecycleSettings
+        """
+        return self._quick_recycle_settings
+
+    @quick_recycle_settings.setter
+    def quick_recycle_settings(self, quick_recycle_settings):
+        """
+        Sets the quick_recycle_settings of this HostGroupConfiguration.
+
+        :param quick_recycle_settings: The quick_recycle_settings of this HostGroupConfiguration.
+        :type: oci.core.models.QuickRecycleSettings
+        """
+        self._quick_recycle_settings = quick_recycle_settings
 
     @property
     def state(self):

@@ -99,6 +99,10 @@ class Ipv6(object):
             The value to assign to the subnet_id property of this Ipv6.
         :type subnet_id: str
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Ipv6.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this Ipv6.
         :type time_created: datetime
@@ -138,6 +142,7 @@ class Ipv6(object):
             'cidr_prefix_length': 'int',
             'lifecycle_state': 'str',
             'subnet_id': 'str',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'vnic_id': 'str',
             'ip_state': 'str',
@@ -155,6 +160,7 @@ class Ipv6(object):
             'cidr_prefix_length': 'cidrPrefixLength',
             'lifecycle_state': 'lifecycleState',
             'subnet_id': 'subnetId',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'vnic_id': 'vnicId',
             'ip_state': 'ipState',
@@ -171,6 +177,7 @@ class Ipv6(object):
         self._cidr_prefix_length = None
         self._lifecycle_state = None
         self._subnet_id = None
+        self._system_tags = None
         self._time_created = None
         self._vnic_id = None
         self._ip_state = None
@@ -441,6 +448,32 @@ class Ipv6(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Ipv6.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this Ipv6.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Ipv6.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this Ipv6.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):

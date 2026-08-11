@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.184.1 - 2026-08-11
+====================
+
+Added 
+----- 
+* Support for the OCI Device Data FHIR (Fast Healthcare Interoperability Resources) Service 
+* Support for the Globally Distributed Database service 
+* Support for availability domain selection during and after provisioning of autonomous databases in the Database service 
+* Support for system tags in virtual cloud networks and subnets in the Networking service 
+* Support for local time zones in the Resource Scheduler service 
+* Support for IPv6 dual-stack endpoints in the Object Storage service 
+* Support for B300 unit shapes in the Generative AI service 
+* Support for retrieving work request log entries and their content in the Resource Manager service 
+* Support for quick-recycle settings in compute host groups in the Compute service  
+
+====================
 2.184.0 - 2026-08-04
 ====================
 

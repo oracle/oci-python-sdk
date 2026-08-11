@@ -130,6 +130,10 @@ class Subnet(object):
             The value to assign to the subnet_domain_name property of this Subnet.
         :type subnet_domain_name: str
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Subnet.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this Subnet.
         :type time_created: datetime
@@ -167,6 +171,7 @@ class Subnet(object):
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
             'subnet_domain_name': 'str',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'vcn_id': 'str',
             'virtual_router_ip': 'str',
@@ -192,6 +197,7 @@ class Subnet(object):
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
             'subnet_domain_name': 'subnetDomainName',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId',
             'virtual_router_ip': 'virtualRouterIp',
@@ -216,6 +222,7 @@ class Subnet(object):
         self._route_table_id = None
         self._security_list_ids = None
         self._subnet_domain_name = None
+        self._system_tags = None
         self._time_created = None
         self._vcn_id = None
         self._virtual_router_ip = None
@@ -842,6 +849,32 @@ class Subnet(object):
         :type: str
         """
         self._subnet_domain_name = subnet_domain_name
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Subnet.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this Subnet.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Subnet.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this Subnet.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):

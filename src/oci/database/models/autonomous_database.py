@@ -908,6 +908,22 @@ class AutonomousDatabase(object):
             The value to assign to the cluster_placement_group_id property of this AutonomousDatabase.
         :type cluster_placement_group_id: str
 
+        :param ad_scheduled_for_update:
+            The value to assign to the ad_scheduled_for_update property of this AutonomousDatabase.
+        :type ad_scheduled_for_update: str
+
+        :param time_earliest_available_ad_update:
+            The value to assign to the time_earliest_available_ad_update property of this AutonomousDatabase.
+        :type time_earliest_available_ad_update: datetime
+
+        :param time_latest_available_ad_update:
+            The value to assign to the time_latest_available_ad_update property of this AutonomousDatabase.
+        :type time_latest_available_ad_update: datetime
+
+        :param time_scheduled_ad_update:
+            The value to assign to the time_scheduled_ad_update property of this AutonomousDatabase.
+        :type time_scheduled_ad_update: datetime
+
         :param clone_table_space_list:
             The value to assign to the clone_table_space_list property of this AutonomousDatabase.
         :type clone_table_space_list: list[int]
@@ -1064,6 +1080,10 @@ class AutonomousDatabase(object):
             'net_services_architecture': 'str',
             'availability_domain': 'str',
             'cluster_placement_group_id': 'str',
+            'ad_scheduled_for_update': 'str',
+            'time_earliest_available_ad_update': 'datetime',
+            'time_latest_available_ad_update': 'datetime',
+            'time_scheduled_ad_update': 'datetime',
             'clone_table_space_list': 'list[int]',
             'clone_type': 'str',
             'additional_attributes': 'dict(str, str)',
@@ -1206,6 +1226,10 @@ class AutonomousDatabase(object):
             'net_services_architecture': 'netServicesArchitecture',
             'availability_domain': 'availabilityDomain',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'ad_scheduled_for_update': 'adScheduledForUpdate',
+            'time_earliest_available_ad_update': 'timeEarliestAvailableAdUpdate',
+            'time_latest_available_ad_update': 'timeLatestAvailableAdUpdate',
+            'time_scheduled_ad_update': 'timeScheduledAdUpdate',
             'clone_table_space_list': 'cloneTableSpaceList',
             'clone_type': 'cloneType',
             'additional_attributes': 'additionalAttributes',
@@ -1347,6 +1371,10 @@ class AutonomousDatabase(object):
         self._net_services_architecture = None
         self._availability_domain = None
         self._cluster_placement_group_id = None
+        self._ad_scheduled_for_update = None
+        self._time_earliest_available_ad_update = None
+        self._time_latest_available_ad_update = None
+        self._time_scheduled_ad_update = None
         self._clone_table_space_list = None
         self._clone_type = None
         self._additional_attributes = None
@@ -5021,6 +5049,102 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def ad_scheduled_for_update(self):
+        """
+        Gets the ad_scheduled_for_update of this AutonomousDatabase.
+        The Availability Domain which is planned for Scheduled Update
+
+
+        :return: The ad_scheduled_for_update of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._ad_scheduled_for_update
+
+    @ad_scheduled_for_update.setter
+    def ad_scheduled_for_update(self, ad_scheduled_for_update):
+        """
+        Sets the ad_scheduled_for_update of this AutonomousDatabase.
+        The Availability Domain which is planned for Scheduled Update
+
+
+        :param ad_scheduled_for_update: The ad_scheduled_for_update of this AutonomousDatabase.
+        :type: str
+        """
+        self._ad_scheduled_for_update = ad_scheduled_for_update
+
+    @property
+    def time_earliest_available_ad_update(self):
+        """
+        Gets the time_earliest_available_ad_update of this AutonomousDatabase.
+        The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+
+
+        :return: The time_earliest_available_ad_update of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_earliest_available_ad_update
+
+    @time_earliest_available_ad_update.setter
+    def time_earliest_available_ad_update(self, time_earliest_available_ad_update):
+        """
+        Sets the time_earliest_available_ad_update of this AutonomousDatabase.
+        The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+
+
+        :param time_earliest_available_ad_update: The time_earliest_available_ad_update of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_earliest_available_ad_update = time_earliest_available_ad_update
+
+    @property
+    def time_latest_available_ad_update(self):
+        """
+        Gets the time_latest_available_ad_update of this AutonomousDatabase.
+        The latest date and time to which you can schedule an Autonomous Database availability domain update.
+
+
+        :return: The time_latest_available_ad_update of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_latest_available_ad_update
+
+    @time_latest_available_ad_update.setter
+    def time_latest_available_ad_update(self, time_latest_available_ad_update):
+        """
+        Sets the time_latest_available_ad_update of this AutonomousDatabase.
+        The latest date and time to which you can schedule an Autonomous Database availability domain update.
+
+
+        :param time_latest_available_ad_update: The time_latest_available_ad_update of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_latest_available_ad_update = time_latest_available_ad_update
+
+    @property
+    def time_scheduled_ad_update(self):
+        """
+        Gets the time_scheduled_ad_update of this AutonomousDatabase.
+        The date and time to which the Autonomous Database availability domain update is scheduled.
+
+
+        :return: The time_scheduled_ad_update of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_scheduled_ad_update
+
+    @time_scheduled_ad_update.setter
+    def time_scheduled_ad_update(self, time_scheduled_ad_update):
+        """
+        Sets the time_scheduled_ad_update of this AutonomousDatabase.
+        The date and time to which the Autonomous Database availability domain update is scheduled.
+
+
+        :param time_scheduled_ad_update: The time_scheduled_ad_update of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_scheduled_ad_update = time_scheduled_ad_update
 
     @property
     def clone_table_space_list(self):

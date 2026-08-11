@@ -29,6 +29,10 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             The value to assign to the compartment_id property of this CreateAutonomousDatabaseDetails.
         :type compartment_id: str
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this CreateAutonomousDatabaseDetails.
+        :type availability_domain: str
+
         :param character_set:
             The value to assign to the character_set property of this CreateAutonomousDatabaseDetails.
         :type character_set: str
@@ -254,6 +258,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         self.swagger_types = {
             'subscription_id': 'str',
             'compartment_id': 'str',
+            'availability_domain': 'str',
             'character_set': 'str',
             'ncharacter_set': 'str',
             'db_name': 'str',
@@ -312,6 +317,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         self.attribute_map = {
             'subscription_id': 'subscriptionId',
             'compartment_id': 'compartmentId',
+            'availability_domain': 'availabilityDomain',
             'character_set': 'characterSet',
             'ncharacter_set': 'ncharacterSet',
             'db_name': 'dbName',
@@ -369,6 +375,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         }
         self._subscription_id = None
         self._compartment_id = None
+        self._availability_domain = None
         self._character_set = None
         self._ncharacter_set = None
         self._db_name = None

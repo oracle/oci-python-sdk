@@ -359,17 +359,33 @@ class OCIProxyManager(urllib3.ProxyManager):
 
 
 class OCIHTTPAdapter(requests.adapters.HTTPAdapter):
-    """HTTP adapter that confines OCI Expect-header support to one session."""
+    """HTTPS transport adapter for configuring certain OCI-specific request behavior.
+    This adapter is mounted for all HTTPS requests made by ``BaseClient``. It preserves OCI-specific transport behavior
+    for:
+     - the Expect-header flow
+     - applying the underscore-hostname workaround needed for urllib3 2.x
+    hostname verification.
+    """
 
-    # UploadManager uses this marker to preserve OCI transport behavior when it
-    # replaces an adapter only to increase connection pool size.
-    uses_oci_connection_pool = True
+    # UploadManager uses this marker to preserve OCI transport adapter behavior
+    # when it replaces an adapter only to increase connection pool size.
+    preserves_oci_https_adapter_behavior = True
 
     def init_poolmanager(self, connections, maxsize, block=requests.adapters.DEFAULT_POOLBLOCK, **pool_kwargs):
-        """Initialize a per-adapter pool manager with OCI HTTPS support."""
+        """Initialize a per-adapter pool manager."""
         self._pool_connections = connections
         self._pool_maxsize = maxsize
         self._pool_block = block
+        self._use_oci_connection_pool = enable_expect_header  # as of now we only need to use a custom pool if the enable expect header is set
+
+        if not self._use_oci_connection_pool:
+            self.poolmanager = urllib3.PoolManager(
+                num_pools=connections,
+                maxsize=maxsize,
+                block=block,
+                **pool_kwargs
+            )
+            return
 
         self.poolmanager = OCIPoolManager(
             num_pools=connections,
@@ -380,6 +396,9 @@ class OCIHTTPAdapter(requests.adapters.HTTPAdapter):
 
     def proxy_manager_for(self, proxy, **proxy_kwargs):
         """Return a scoped OCI proxy manager for regular HTTP/HTTPS proxies."""
+        if not getattr(self, '_use_oci_connection_pool', enable_expect_header):
+            return super(OCIHTTPAdapter, self).proxy_manager_for(proxy, **proxy_kwargs)
+
         if proxy in self.proxy_manager:
             return self.proxy_manager[proxy]
 
@@ -396,6 +415,35 @@ class OCIHTTPAdapter(requests.adapters.HTTPAdapter):
         )
         self.proxy_manager[proxy] = manager
         return manager
+
+    def cert_verify(self, conn, url, verify, cert):
+        """Verify a SSL certificate while preserving certificate verification while using urllib3 hostname matching for
+        underscore-containing hosts.
+
+        urllib3 2.x relies on Python/OpenSSL certificate verification by default:
+        https://urllib3.readthedocs.io/en/stable/v2-migration-guide.html#certificate-verification-via-sslcontext
+        OpenSSL rejects some underscore-containing host labels during hostname verification. Setting ``assert_hostname``
+        for these hosts makes urllib3 perform hostname matching against the request host while certificate verification
+        remains enabled.
+        References:
+            https://urllib3.readthedocs.io/en/stable/advanced-usage.html#verifying-tls-against-a-different-host
+            https://requests.readthedocs.io/en/latest/api/#requests.adapters.HTTPAdapter.cert_verify
+        """
+        super(OCIHTTPAdapter, self).cert_verify(conn, url, verify, cert)
+        if not verify:
+            return
+
+        # Respect explicit caller behavior if already configured.
+        if getattr(conn, 'assert_hostname', None) is not None:
+            return
+
+        try:
+            parsed_host = urllib3.util.parse_url(url).host
+        except Exception:
+            return
+
+        if parsed_host and "_" in parsed_host:
+            conn.assert_hostname = parsed_host
 
 
 class BaseClient(object):
@@ -466,7 +514,7 @@ class BaseClient(object):
         self.complex_type_mappings = type_mapping
         self.type_mappings = merge_type_mappings(self.primitive_type_map, type_mapping)
         self.session = requests.Session()
-        self._configure_session_for_expect_header()
+        self._configure_http_adapter()
 
         # If the user doesn't specify timeout explicitly we would use default timeout.
         self.timeout = kwargs.get('timeout') if 'timeout' in kwargs else (DEFAULT_CONNECTION_TIMEOUT, DEFAULT_READ_TIMEOUT)
@@ -503,14 +551,18 @@ class BaseClient(object):
             self.request = circuit_breaker(self.request)
         self.logger.debug('Endpoint: {}'.format(self._endpoint))
 
-    def _configure_session_for_expect_header(self):
-        """Mount OCI's scoped HTTPS adapter when Expect-header support is enabled.
+    def _configure_http_adapter(self):
+        """Mount OCI's HTTPS transport adapter for all client HTTPS requests.
 
-        This keeps OCIConnectionPool limited to this BaseClient session instead
-        of replacing urllib3's process-wide HTTPS pool class.
+        Previously an adapter was added only to those requests that had enable expect header set to True. This adapter
+        is no longer limited to the Expect-header flow. It is now mounted for every HTTPS request so one transport path
+        can handle:
+         - OCI-specific connection-pool behavior when Expect-header support is enabled
+         - request-level hostname handling for underscore-containing hosts under urllib3 2.x.
+        Also since a single session can mount only one adapter, modifying any flow would require updates to this single
+        transport adapter.
         """
-        if enable_expect_header:
-            self.session.mount('https://', OCIHTTPAdapter())
+        self.session.mount('https://', OCIHTTPAdapter())
 
     def handle_service_endpoint_template(self, region_id, service_endpoint_template, service_endpoint_template_per_realm):
         should_enable_realm_template = self.should_allow_template_per_realm()

@@ -130,6 +130,10 @@ class Vnic(object):
             The value to assign to the subnet_id property of this Vnic.
         :type subnet_id: str
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Vnic.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this Vnic.
         :type time_created: datetime
@@ -161,6 +165,7 @@ class Vnic(object):
             'public_ip': 'str',
             'skip_source_dest_check': 'bool',
             'subnet_id': 'str',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'ipv6_addresses': 'list[str]',
             'route_table_id': 'str'
@@ -183,6 +188,7 @@ class Vnic(object):
             'public_ip': 'publicIp',
             'skip_source_dest_check': 'skipSourceDestCheck',
             'subnet_id': 'subnetId',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'ipv6_addresses': 'ipv6Addresses',
             'route_table_id': 'routeTableId'
@@ -204,6 +210,7 @@ class Vnic(object):
         self._public_ip = None
         self._skip_source_dest_check = None
         self._subnet_id = None
+        self._system_tags = None
         self._time_created = None
         self._ipv6_addresses = None
         self._route_table_id = None
@@ -765,6 +772,32 @@ class Vnic(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Vnic.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this Vnic.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Vnic.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this Vnic.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):
