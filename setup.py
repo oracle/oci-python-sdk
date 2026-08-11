@@ -32,7 +32,7 @@ with open_relative("README.rst") as f:
 requires = [
     "certifi",
     "configparser==4.0.2 ; python_version < '3'",
-    "cryptography>=3.2.1,<50.0.0",
+    "cryptography>=3.2.1,<51.0.0",
     "pyOpenSSL>=17.5.0,<27.0.0",
     "python-dateutil>=2.5.3,<3.0.0",
     "pytz>=2016.10",
@@ -82,5 +82,5 @@ setup(
         "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: 3.13",
     ],
-    extras_require = extras_require
+    extras_require=extras_require
 )

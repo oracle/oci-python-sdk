@@ -281,6 +281,9 @@ class CreateDedicatedAiClusterDetails(object):
         - OAI_B200_X4
         - OAI_B200_X8
         - SB_B200_X1
+        - COHERE_B300_X1
+        - META_B300_X1
+        - OAI_B300_X1
 
 
         :return: The unit_shape of this CreateDedicatedAiClusterDetails.
@@ -359,6 +362,9 @@ class CreateDedicatedAiClusterDetails(object):
         - OAI_B200_X4
         - OAI_B200_X8
         - SB_B200_X1
+        - COHERE_B300_X1
+        - META_B300_X1
+        - OAI_B300_X1
 
 
         :param unit_shape: The unit_shape of this CreateDedicatedAiClusterDetails.

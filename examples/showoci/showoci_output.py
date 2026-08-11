@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "26.07.14"
+    version = "26.08.19"
 
     ##########################################################################
     # spaces for align
@@ -2616,6 +2616,10 @@ class ShowOCIOutput(object):
                     print(self.taba + val['display_name'] + ", (" + val['integration_instance_type'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
                     print(self.tabs + "Pack     : " + val['message_packs'] + ", " + ("BYOL License" if val['is_byol'] else "License Included"))
                     print(self.tabs + "URL      : " + val['instance_url'])
+                    if val['process_automation_attachments']:
+                        print(self.tabs + "Process Automation: " + val['process_automation_attachments'])
+                    if val['human_task_attachments']:
+                        print(self.tabs + "Human Task: " + val['human_task_attachments'])
                     if val['disaster_recovery_role']:
                         print(self.tabs + "DR Role  : " + val['disaster_recovery_role'])
                     if val['private_endpoint_outbound_connection_type']:
@@ -2740,9 +2744,28 @@ class ShowOCIOutput(object):
 
                     for dr in val['target_detector_recipes']:
                         print(self.tabs + "Det Recipes: Owner = " + dr['owner'] + ", " + dr['display_name'] + ", Created: " + dr['time_created'][0:16] + " (" + dr['lifecycle_state'] + ")" + " Rules: " + str(len(dr['effective_detector_rules'])))
+                        for rule in dr.get('enabled_rules', []):
+                            print(self.tabs2 + "Enabled rule: " + rule['display_name'])
 
                     for dr in val['target_responder_recipes']:
                         print(self.tabs + "Res Recipes: Owner = " + dr['owner'] + ", " + dr['display_name'] + ", Created: " + dr['time_created'][0:16] + " Rules: " + str(len(dr['effective_responder_rules'])))
+                        for rule in dr.get('enabled_rules', []):
+                            print(self.tabs2 + "Enabled rule: " + rule['display_name'])
+
+            if 'cloud_guard_problems' in security:
+                self.print_header("Cloud Guard Problems", 2)
+                for val in security['cloud_guard_problems']:
+                    print(self.taba + val['resource_name'] + ", " + val['risk_level'] + ", " + val['lifecycle_detail'])
+
+            if 'cloud_guard_managed_lists' in security:
+                self.print_header("Cloud Guard Managed Lists", 2)
+                for val in security['cloud_guard_managed_lists']:
+                    print(self.taba + val['display_name'] + ", " + val['list_type'] + " (" + val['lifecycle_state'] + ")")
+
+            if 'cloud_guard_data_mask_rules' in security:
+                self.print_header("Cloud Guard Data Mask Rules", 2)
+                for val in security['cloud_guard_data_mask_rules']:
+                    print(self.taba + val['display_name'] + ", " + val['data_mask_rule_status'] + " (" + val['lifecycle_state'] + ")")
 
             # bastions
             if 'bastions' in security:
@@ -2763,6 +2786,15 @@ class ShowOCIOutput(object):
                     print(self.tabs2 + "Crypto URL    : " + val['crypto_endpoint'])
                     for rep in val['replicas']:
                         print(self.tabs2 + "Replicas      : " + rep['status'] + ", " + rep['region'] + ", " + rep['crypto_endpoint'])
+                    print("")
+
+            # kms_keys
+            if 'kms_keys' in security:
+                self.print_header("KMS Keys", 2)
+                for val in security['kms_keys']:
+                    print(self.taba + val['name'] + ", Vault: " + val['vault_name'] + ", " +
+                          val['key_algorithm'] + " " + val['key_length'] + ", Created: " +
+                          val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
                     print("")
 
             # kms_secrets
@@ -3625,6 +3657,8 @@ class ShowOCISummary(object):
                 self.__summary_core_size(security['kms_vaults'])
                 self.__summary_core_size(security['kms_vaults'], "sum_info_hsm", 'key_count')
                 self.__summary_core_size(security['kms_vaults'], "sum_info_soft", 'software_key_count')
+            if 'kms_keys' in security:
+                self.__summary_core_count(security['kms_keys'], "KMS Keys")
             if 'kms_secrets' in security:
                 self.__summary_core_size(security['kms_secrets'])
             if 'certificates' in security:
@@ -4592,6 +4626,11 @@ class ShowOCICSV(object):
     csv_security_kms_key = []
     csv_security_kms_secret = []
     csv_security_cloud_guard = []
+    csv_security_cloud_guard_detector_recipes = []
+    csv_security_cloud_guard_responder_recipes = []
+    csv_security_cloud_guard_problems = []
+    csv_security_cloud_guard_managed_lists = []
+    csv_security_cloud_guard_data_mask_rules = []
     csv_container = []
     csv_container_nodepool = []
     csv_edge_waas_policies = []
@@ -4806,6 +4845,11 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("security_log_analytics_ns", self.csv_security_log_analytics_namespace)
             self.__export_to_csv_file("security_log_analytics", self.csv_security_log_analytics)
             self.__export_to_csv_file("security_cloud_guards", self.csv_security_cloud_guard)
+            self.__export_to_csv_file("security_cloud_guard_detector_recipes", self.csv_security_cloud_guard_detector_recipes)
+            self.__export_to_csv_file("security_cloud_guard_responder_recipes", self.csv_security_cloud_guard_responder_recipes)
+            self.__export_to_csv_file("security_cloud_guard_problems", self.csv_security_cloud_guard_problems)
+            self.__export_to_csv_file("security_cloud_guard_managed_lists", self.csv_security_cloud_guard_managed_lists)
+            self.__export_to_csv_file("security_cloud_guard_data_mask_rules", self.csv_security_cloud_guard_data_mask_rules)
             self.__export_to_csv_file("security_kms_vaults", self.csv_security_kms_vault)
             self.__export_to_csv_file("security_kms_keys", self.csv_security_kms_key)
             self.__export_to_csv_file("security_kms_secrets", self.csv_security_kms_secret)
@@ -4881,7 +4925,7 @@ class ShowOCICSV(object):
             new_result = []
             for row in list_of_dicts:
                 for tag_type in ['defined_tags', 'freeform_tags']:
-                    if tag_type in row:
+                    if tag_type and tag_type in row and row[tag_type]:
                         tags = row[tag_type].split(', ')
                         for tag in tags:
                             tag_split = tag.split("=")
@@ -9400,6 +9444,17 @@ class ShowOCICSV(object):
 
             if 'cloud_guard' in data:
                 self.__csv_security_cloud_guard(region_name, data['cloud_guard'])
+                self.__csv_security_cloud_guard_detector_recipes(region_name, data['cloud_guard'])
+                self.__csv_security_cloud_guard_responder_recipes(region_name, data['cloud_guard'])
+
+            if 'cloud_guard_problems' in data:
+                self.__csv_security_cloud_guard_items(region_name, data['cloud_guard_problems'], self.csv_security_cloud_guard_problems)
+
+            if 'cloud_guard_managed_lists' in data:
+                self.__csv_security_cloud_guard_items(region_name, data['cloud_guard_managed_lists'], self.csv_security_cloud_guard_managed_lists)
+
+            if 'cloud_guard_data_mask_rules' in data:
+                self.__csv_security_cloud_guard_items(region_name, data['cloud_guard_data_mask_rules'], self.csv_security_cloud_guard_data_mask_rules)
 
             if 'kms_vaults' in data:
                 self.__csv_security_kms_vaults(region_name, data['kms_vaults'])
@@ -9650,10 +9705,6 @@ class ShowOCICSV(object):
                         'target_resource_name': ar['target_resource_name'],
                         'inherited_by_compartments': ar['inherited_by_compartments'],
                         'inherited_by_compartments_names': ar['inherited_by_compartments_names'],
-                        'target_detector_recipes': self.__csv_list_to_str(ar['target_detector_recipes'], 'display_name'),
-                        'target_responder_recipes': self.__csv_list_to_str(ar['target_responder_recipes'], 'display_name'),
-                        'target_detector_rules': "",
-                        'target_responder_rules': "",
                         'recipe_count': ar['recipe_count'],
                         'time_created': ar['time_created'][0:16],
                         'time_updated': ar['time_updated'][0:16],
@@ -9663,26 +9714,75 @@ class ShowOCICSV(object):
                         'id': ar['id']
                     }
 
-                    # target_detector_rules
-                    if ar['target_detector_recipes']:
-                        arrrules = []
-                        for dt in ar['target_detector_recipes']:
-                            for rule in dt['effective_detector_rules']:
-                                arrrules.append(rule)
-                        data['target_detector_rules'] = self.__csv_list_to_str(list(set(arrrules)))
-
-                    # target_detector_rules
-                    if ar['target_responder_recipes']:
-                        arrrules = []
-                        for dt in ar['target_responder_recipes']:
-                            for rule in dt['effective_responder_rules']:
-                                arrrules.append(rule)
-                        data['target_responder_rules'] = self.__csv_list_to_str(list(set(arrrules)))
-
                     self.csv_security_cloud_guard.append(data)
 
         except Exception as e:
             self.__print_error("__csv_security_cloud_guard", e)
+
+    def __csv_security_cloud_guard_detector_recipes(self, region_name, cloud_guards):
+        try:
+            for target in cloud_guards:
+                for recipe in target['target_detector_recipes']:
+                    for rule in recipe.get('enabled_rules', []):
+                        self.csv_security_cloud_guard_detector_recipes.append({
+                            'region_name': region_name,
+                            'compartment_name': target['compartment_name'],
+                            'compartment_id': target['compartment_id'],
+                            'compartment_path': target['compartment_path'],
+                            'target_id': target['id'],
+                            'target_name': target['display_name'],
+                            'target_resource_id': target['target_resource_id'],
+                            'recipe_id': recipe['id'],
+                            'detector_recipe_id': recipe['detector_recipe_id'],
+                            'recipe_name': recipe['display_name'],
+                            'recipe_owner': recipe['owner'],
+                            'detector': recipe['detector'],
+                            'detector_rule_id': rule['id'],
+                            'detector_rule_name': rule['display_name'],
+                            'detector_rule_description': rule['description'],
+                            'condition': str(rule['condition']),
+                            'configurations': str(rule['configurations']),
+                            'rule_lifecycle_state': rule['lifecycle_state'],
+                            'rule_time_updated': rule['time_updated'][0:16]
+                        })
+        except Exception as e:
+            self.__print_error("__csv_security_cloud_guard_detector_recipes", e)
+
+    def __csv_security_cloud_guard_responder_recipes(self, region_name, cloud_guards):
+        try:
+            for target in cloud_guards:
+                for recipe in target['target_responder_recipes']:
+                    self.csv_security_cloud_guard_responder_recipes.append({
+                        'region_name': region_name,
+                        'compartment_name': target['compartment_name'],
+                        'compartment_id': target['compartment_id'],
+                        'compartment_path': target['compartment_path'],
+                        'target_id': target['id'],
+                        'target_name': target['display_name'],
+                        'target_resource_id': target['target_resource_id'],
+                        'recipe_id': recipe['id'],
+                        'responder_recipe_id': recipe['responder_recipe_id'],
+                        'name': recipe['display_name'],
+                        'description': recipe['description'],
+                        'owner': recipe['owner'],
+                        'effective_responder_rules': str(recipe['effective_responder_rules']),
+                        'enabled_rule_configurations': str(recipe.get('enabled_rules', [])),
+                        'time_created': recipe['time_created'][0:16],
+                        'time_updated': recipe['time_updated'][0:16]
+                    })
+        except Exception as e:
+            self.__print_error("__csv_security_cloud_guard_responder_recipes", e)
+
+    def __csv_security_cloud_guard_items(self, region_name, items, output):
+        """Export dynamic Cloud Guard resources without dropping their configuration fields."""
+        try:
+            for item in items:
+                data = {'region_name': region_name}
+                for key, value in item.items():
+                    data[key] = str(value) if isinstance(value, (dict, list)) else value
+                output.append(data)
+        except Exception as e:
+            self.__print_error("__csv_security_cloud_guard_items", e)
 
     ##########################################################################
     # KMS Vaults
@@ -9741,12 +9841,24 @@ class ShowOCICSV(object):
                     'current_key_version': ar['current_key_version'],
                     'vault_id': ar['vault_id'],
                     'vault_name': ar['vault_name'],
+                    'vault_management_endpoint': ar['vault_management_endpoint'],
                     'key_algorithm': ar['key_algorithm'],
                     'key_length': ar['key_length'],
                     'time_created': ar['time_created'][0:16],
+                    'time_of_deletion': ar['time_of_deletion'],
+                    'lifecycle_state': ar['lifecycle_state'],
+                    'protection_mode': ar['protection_mode'],
+                    'restored_from_key_id': ar['restored_from_key_id'],
+                    'replica_details': str(ar['replica_details']),
+                    'is_primary': ar['is_primary'],
+                    'is_auto_rotation_enabled': ar['is_auto_rotation_enabled'],
+                    'auto_key_rotation_details': str(ar['auto_key_rotation_details']),
+                    'external_key_reference_details': str(ar['external_key_reference_details']),
+                    'key_versions': str(ar['key_versions']),
                     'key_id': ar['id'],
                     'id': ar['id'],
-                    'freeform_tags': self.__get_freeform_tags(ar['freeform_tags'])
+                    'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(ar['defined_tags'])
                 }
 
                 self.csv_security_kms_key.append(data)
@@ -10309,6 +10421,8 @@ class ShowOCICSV(object):
                         'idcs_info_app_name': ar['idcs_info_app_name'],
                         'idcs_info_instance_primary_audience_url': ar['idcs_info_instance_primary_audience_url'],
                         'attachments': str(ar['attachments']),
+                        'process_automation_attachments': ar['process_automation_attachments'],
+                        'human_task_attachments': ar['human_task_attachments'],
                         'disaster_recovery_role': ar['disaster_recovery_role'],
                         'disaster_recovery_regional_instance_url': ar['disaster_recovery_regional_instance_url'],
                         'disaster_recovery_peer_role': ar['disaster_recovery_peer_role'],

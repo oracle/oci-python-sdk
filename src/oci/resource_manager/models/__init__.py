@@ -81,6 +81,7 @@ from .job_output_summary import JobOutputSummary
 from .job_outputs_collection import JobOutputsCollection
 from .job_summary import JobSummary
 from .log_entry import LogEntry
+from .log_entry_collection import LogEntryCollection
 from .object_storage_config_source import ObjectStorageConfigSource
 from .object_storage_config_source_record import ObjectStorageConfigSourceRecord
 from .plan_job_operation_details import PlanJobOperationDetails
@@ -211,6 +212,7 @@ resource_manager_type_mapping = {
     "JobOutputsCollection": JobOutputsCollection,
     "JobSummary": JobSummary,
     "LogEntry": LogEntry,
+    "LogEntryCollection": LogEntryCollection,
     "ObjectStorageConfigSource": ObjectStorageConfigSource,
     "ObjectStorageConfigSourceRecord": ObjectStorageConfigSourceRecord,
     "PlanJobOperationDetails": PlanJobOperationDetails,

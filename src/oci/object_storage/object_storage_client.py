@@ -107,9 +107,9 @@ class ObjectStorageClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/',
-            'service_endpoint_template': 'https://objectstorage.{region}.{secondLevelDomain}',
+            'service_endpoint_template': 'https://objectstorage.{region}.{dualStack?ds.oci.:}{secondLevelDomain}',
             'endpoint_service_name': 'objectstorage',
-            'service_endpoint_template_per_realm': { 'oc1': 'https://{namespaceName+Dot}objectstorage.{region}.oci.customer-oci.com' },  # noqa: E201 E202
+            'service_endpoint_template_per_realm': { 'oc1': 'https://{namespaceName+Dot}objectstorage.{region}.{dualStack?ds.:}oci.customer-oci.com' },  # noqa: E201 E202
             'service_uses_dualstack_endpoints_by_default': False,
             'skip_deserialization': kwargs.get('skip_deserialization', False),
             'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
@@ -5964,9 +5964,10 @@ class ObjectStorageClient(object):
 
         :param str content_type: (optional)
             The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to
-            'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect
-            on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example,
-            you could use this header to identify and perform special operations on text only objects.
+            'application/octet-stream' if not specified in the PutObject call. In the OCI CLI, you can set this value to 'auto'
+            to have the CLI infer the content type from the file name. Specifying values for this header has no effect on Object
+            Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you
+            could use this header to identify and perform special operations on text only objects.
 
         :param str content_language: (optional)
             The optional Content-Language header that defines the content language of the object to upload. Specifying

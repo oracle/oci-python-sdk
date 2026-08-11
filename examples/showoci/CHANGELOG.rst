@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+26.08.19 - 26.08.19
+=====================
+* Added Cloud Guard problems, managed lists, and data mask rules
+* Added enabled detector and responder recipe rule condition and configuration details
+* Added separate Cloud Guard detector and responder recipe CSV exports; detector rules include enabled rules only
+* Added separate OIC CSV columns for Process Automation and Human Task attachments
+* Added optional KMS key enrichment with key metadata and versions, expanded CSV and console output, and KMS key summary counts, use -keydata
+
+=====================
 26.07.14 - 26.07.14
 =====================
 * Added Log Analytics entities and active storage reporting

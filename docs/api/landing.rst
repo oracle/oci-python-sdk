@@ -97,10 +97,14 @@ API Reference
 * :doc:`Diagnosability <database_management/client/oci.database_management.DiagnosabilityClient>`
 * :doc:`Disaster Recovery <disaster_recovery/client/oci.disaster_recovery.DisasterRecoveryClient>`
 * :doc:`Discovery <cloud_bridge/client/oci.cloud_bridge.DiscoveryClient>`
-* :doc:`Distributed Autonomous Db Service <distributed_database/client/oci.distributed_database.DistributedAutonomousDbServiceClient>`
-* :doc:`Distributed Db Private Endpoint Service <distributed_database/client/oci.distributed_database.DistributedDbPrivateEndpointServiceClient>`
-* :doc:`Distributed Db Service <distributed_database/client/oci.distributed_database.DistributedDbServiceClient>`
-* :doc:`Distributed Db Work Request Service <distributed_database/client/oci.distributed_database.DistributedDbWorkRequestServiceClient>`
+* :doc:`Distributed Autonomous Db Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedAutonomousDbServiceClient>`
+* :doc:`Distributed Autonomous Db Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedAutonomousDbServiceClient>`
+* :doc:`Distributed Db Private Endpoint Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbPrivateEndpointServiceClient>`
+* :doc:`Distributed Db Private Endpoint Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbPrivateEndpointServiceClient>`
+* :doc:`Distributed Db Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbServiceClient>`
+* :doc:`Distributed Db Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbServiceClient>`
+* :doc:`Distributed Db Work Request Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbWorkRequestServiceClient>`
+* :doc:`Distributed Db Work Request Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedDbWorkRequestServiceClient>`
 * :doc:`Domain <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainClient>`
 * :doc:`Domain Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainGovernanceClient>`
 * :doc:`Dynamic Set <os_management_hub/client/oci.os_management_hub.DynamicSetClient>`
@@ -141,6 +145,7 @@ API Reference
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
 * :doc:`Identity Domains <identity_domains/client/oci.identity_domains.IdentityDomainsClient>`
 * :doc:`Incident <cims/client/oci.cims.IncidentClient>`
+* :doc:`Instance <ddfs/client/oci.ddfs.InstanceClient>`
 * :doc:`Integration Instance <integration/client/oci.integration.IntegrationInstanceClient>`
 * :doc:`Internal Demand Signal <capacity_management/client/oci.capacity_management.InternalDemandSignalClient>`
 * :doc:`Inventory <cloud_bridge/client/oci.cloud_bridge.InventoryClient>`
@@ -396,6 +401,7 @@ API Reference
     datacc
     dblm
     dbmulticloud
+    ddfs
     delegate_access_control
     demand_signal
     desktops
@@ -403,6 +409,7 @@ API Reference
     dif
     disaster_recovery
     distributed_database
+    distributed_database_v26
     dns
     em_warehouse
     email

@@ -84,6 +84,10 @@ class CaptureFilter(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type filter_type: str
 
+        :param system_tags:
+            The value to assign to the system_tags property of this CaptureFilter.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this CaptureFilter.
         :type time_created: datetime
@@ -105,6 +109,7 @@ class CaptureFilter(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'filter_type': 'str',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'vtap_capture_filter_rules': 'list[VtapCaptureFilterRuleDetails]',
             'flow_log_capture_filter_rules': 'list[FlowLogCaptureFilterRuleDetails]'
@@ -117,6 +122,7 @@ class CaptureFilter(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'filter_type': 'filterType',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'vtap_capture_filter_rules': 'vtapCaptureFilterRules',
             'flow_log_capture_filter_rules': 'flowLogCaptureFilterRules'
@@ -128,6 +134,7 @@ class CaptureFilter(object):
         self._id = None
         self._lifecycle_state = None
         self._filter_type = None
+        self._system_tags = None
         self._time_created = None
         self._vtap_capture_filter_rules = None
         self._flow_log_capture_filter_rules = None
@@ -341,6 +348,32 @@ class CaptureFilter(object):
         if not value_allowed_none_or_none_sentinel(filter_type, allowed_values):
             filter_type = 'UNKNOWN_ENUM_VALUE'
         self._filter_type = filter_type
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this CaptureFilter.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this CaptureFilter.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this CaptureFilter.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this CaptureFilter.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):

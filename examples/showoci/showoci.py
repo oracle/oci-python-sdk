@@ -126,7 +126,7 @@ import contextlib
 import os
 import time
 
-version = "26.07.14"
+version = "26.08.19"
 
 ##########################################################################
 # check OCI version
@@ -345,6 +345,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-ic', action='store_true', default=False, dest='identity_compartments', help='Print Identity Compartments only.')
     parser.add_argument('-isc', action='store_true', default=False, dest='skip_identity_user_credential', help='Skip Identity User Credential extract.')
     parser.add_argument('-ifilter', default="", dest='ifilter', help='Filter IAM domains by Domain Names using comma seperated')
+    parser.add_argument('-keydata', action='store_true', default=False, dest='kms_addiontal_keys_attributes', help='Fetch Additional KMS Key Attributes.')
 
     parser.add_argument('-s', '-api', '-rm', '-fun', action='store_true', default=False, dest='streams_queues', help='Print API, Functions, Resource management, Gateways, FSDR, Streams and Queues.')
 
@@ -488,6 +489,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.threads:
         prm.threads = cmd.threads
+
+    if cmd.kms_addiontal_keys_attributes:
+        prm.read_kms_addiontal_keys_attributes = True
 
     if cmd.exclude:
         prm.exclude = str(cmd.exclude).split(",")

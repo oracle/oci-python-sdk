@@ -147,6 +147,22 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the is_free_tier property of this UpdateAutonomousDatabaseDetails.
         :type is_free_tier: bool
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this UpdateAutonomousDatabaseDetails.
+        :type availability_domain: str
+
+        :param time_scheduled_ad_update:
+            The value to assign to the time_scheduled_ad_update property of this UpdateAutonomousDatabaseDetails.
+        :type time_scheduled_ad_update: datetime
+
+        :param is_disable_ad_update_schedule:
+            The value to assign to the is_disable_ad_update_schedule property of this UpdateAutonomousDatabaseDetails.
+        :type is_disable_ad_update_schedule: bool
+
+        :param is_schedule_ad_update_to_earliest:
+            The value to assign to the is_schedule_ad_update_to_earliest property of this UpdateAutonomousDatabaseDetails.
+        :type is_schedule_ad_update_to_earliest: bool
+
         :param admin_password:
             The value to assign to the admin_password property of this UpdateAutonomousDatabaseDetails.
         :type admin_password: str
@@ -364,6 +380,10 @@ class UpdateAutonomousDatabaseDetails(object):
             'data_storage_size_in_gbs': 'int',
             'display_name': 'str',
             'is_free_tier': 'bool',
+            'availability_domain': 'str',
+            'time_scheduled_ad_update': 'datetime',
+            'is_disable_ad_update_schedule': 'bool',
+            'is_schedule_ad_update_to_earliest': 'bool',
             'admin_password': 'str',
             'db_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -428,6 +448,10 @@ class UpdateAutonomousDatabaseDetails(object):
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'display_name': 'displayName',
             'is_free_tier': 'isFreeTier',
+            'availability_domain': 'availabilityDomain',
+            'time_scheduled_ad_update': 'timeScheduledAdUpdate',
+            'is_disable_ad_update_schedule': 'isDisableAdUpdateSchedule',
+            'is_schedule_ad_update_to_earliest': 'isScheduleAdUpdateToEarliest',
             'admin_password': 'adminPassword',
             'db_name': 'dbName',
             'freeform_tags': 'freeformTags',
@@ -491,6 +515,10 @@ class UpdateAutonomousDatabaseDetails(object):
         self._data_storage_size_in_gbs = None
         self._display_name = None
         self._is_free_tier = None
+        self._availability_domain = None
+        self._time_scheduled_ad_update = None
+        self._is_disable_ad_update_schedule = None
+        self._is_schedule_ad_update_to_earliest = None
         self._admin_password = None
         self._db_name = None
         self._freeform_tags = None
@@ -923,6 +951,102 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: bool
         """
         self._is_free_tier = is_free_tier
+
+    @property
+    def availability_domain(self):
+        """
+        Gets the availability_domain of this UpdateAutonomousDatabaseDetails.
+        The Autonomous Database Serverless instance's availability domain.
+
+
+        :return: The availability_domain of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._availability_domain
+
+    @availability_domain.setter
+    def availability_domain(self, availability_domain):
+        """
+        Sets the availability_domain of this UpdateAutonomousDatabaseDetails.
+        The Autonomous Database Serverless instance's availability domain.
+
+
+        :param availability_domain: The availability_domain of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        self._availability_domain = availability_domain
+
+    @property
+    def time_scheduled_ad_update(self):
+        """
+        Gets the time_scheduled_ad_update of this UpdateAutonomousDatabaseDetails.
+        The date and time when the Autonomous Database availability domain is to be updated.
+
+
+        :return: The time_scheduled_ad_update of this UpdateAutonomousDatabaseDetails.
+        :rtype: datetime
+        """
+        return self._time_scheduled_ad_update
+
+    @time_scheduled_ad_update.setter
+    def time_scheduled_ad_update(self, time_scheduled_ad_update):
+        """
+        Sets the time_scheduled_ad_update of this UpdateAutonomousDatabaseDetails.
+        The date and time when the Autonomous Database availability domain is to be updated.
+
+
+        :param time_scheduled_ad_update: The time_scheduled_ad_update of this UpdateAutonomousDatabaseDetails.
+        :type: datetime
+        """
+        self._time_scheduled_ad_update = time_scheduled_ad_update
+
+    @property
+    def is_disable_ad_update_schedule(self):
+        """
+        Gets the is_disable_ad_update_schedule of this UpdateAutonomousDatabaseDetails.
+        True, if you want to disable Autonomous Database availability domain scheduled update.
+
+
+        :return: The is_disable_ad_update_schedule of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_disable_ad_update_schedule
+
+    @is_disable_ad_update_schedule.setter
+    def is_disable_ad_update_schedule(self, is_disable_ad_update_schedule):
+        """
+        Sets the is_disable_ad_update_schedule of this UpdateAutonomousDatabaseDetails.
+        True, if you want to disable Autonomous Database availability domain scheduled update.
+
+
+        :param is_disable_ad_update_schedule: The is_disable_ad_update_schedule of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_disable_ad_update_schedule = is_disable_ad_update_schedule
+
+    @property
+    def is_schedule_ad_update_to_earliest(self):
+        """
+        Gets the is_schedule_ad_update_to_earliest of this UpdateAutonomousDatabaseDetails.
+        True, if you want to schedule Autonomous Database availability domain update to the earliest available time.
+
+
+        :return: The is_schedule_ad_update_to_earliest of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_schedule_ad_update_to_earliest
+
+    @is_schedule_ad_update_to_earliest.setter
+    def is_schedule_ad_update_to_earliest(self, is_schedule_ad_update_to_earliest):
+        """
+        Sets the is_schedule_ad_update_to_earliest of this UpdateAutonomousDatabaseDetails.
+        True, if you want to schedule Autonomous Database availability domain update to the earliest available time.
+
+
+        :param is_schedule_ad_update_to_earliest: The is_schedule_ad_update_to_earliest of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_schedule_ad_update_to_earliest = is_schedule_ad_update_to_earliest
 
     @property
     def admin_password(self):

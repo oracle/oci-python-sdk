@@ -135,6 +135,10 @@ class Vtap(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state_details: str
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Vtap.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this Vtap.
         :type time_created: datetime
@@ -209,6 +213,7 @@ class Vtap(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'lifecycle_state_details': 'str',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'source_id': 'str',
             'target_id': 'str',
@@ -233,6 +238,7 @@ class Vtap(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_state_details': 'lifecycleStateDetails',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'source_id': 'sourceId',
             'target_id': 'targetId',
@@ -256,6 +262,7 @@ class Vtap(object):
         self._id = None
         self._lifecycle_state = None
         self._lifecycle_state_details = None
+        self._system_tags = None
         self._time_created = None
         self._source_id = None
         self._target_id = None
@@ -508,6 +515,32 @@ class Vtap(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state_details, allowed_values):
             lifecycle_state_details = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state_details = lifecycle_state_details
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Vtap.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this Vtap.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Vtap.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this Vtap.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):

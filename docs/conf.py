@@ -5,11 +5,15 @@ import oci
 import os
 import re
 import sys
-import pkg_resources
 import sphinx_rtd_theme
 from docutils.utils import Reporter
 
 from sphinx.domains.python import PythonDomain
+
+try:
+    from importlib import metadata as importlib_metadata
+except ImportError:
+    import importlib_metadata
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -42,14 +46,13 @@ copyright = "2016, {}, Oracle".format(datetime.datetime.now().year)
 author = "Oracle"
 
 try:
-    release = pkg_resources.get_distribution("oci").version
-except pkg_resources.DistributionNotFound:
+    release = importlib_metadata.version("oci")
+except importlib_metadata.PackageNotFoundError:
     print("To build the documentation, The distribution information of oci")
     print("Has to be available.  Either install the package into your")
     print("development environment or run 'setup.py develop' to setup the")
     print("metadata.  A virtualenv is recommended!")
     sys.exit(1)
-del pkg_resources
 version = ".".join(release.split(".")[:3])
 
 language = "en"

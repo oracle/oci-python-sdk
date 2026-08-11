@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "26.07.14"
+    version = "26.08.19"
     oci_compatible_version = "2.165.1"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -261,6 +261,9 @@ class ShowOCIService(object):
     # Security and Logging
     C_SECURITY = "security"
     C_SECURITY_CLOUD_GUARD = "cloud_guard"
+    C_SECURITY_CLOUD_GUARD_PROBLEMS = "cloud_guard_problems"
+    C_SECURITY_CLOUD_GUARD_MANAGED_LISTS = "cloud_guard_managed_lists"
+    C_SECURITY_CLOUD_GUARD_DATA_MASK_RULES = "cloud_guard_data_mask_rules"
     C_SECURITY_VAULTS = "vaults"
     C_SECURITY_KEYS = "keys"
     C_SECURITY_SECRETS = "secrets"
@@ -14885,6 +14888,9 @@ class ShowOCIService(object):
             # add the key if not exists
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_BASTION)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_CLOUD_GUARD)
+            self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_CLOUD_GUARD_PROBLEMS)
+            self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_CLOUD_GUARD_MANAGED_LISTS)
+            self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_CLOUD_GUARD_DATA_MASK_RULES)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOGGING_UA)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOGGING)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOG_ANALYTICS)
@@ -14946,6 +14952,9 @@ class ShowOCIService(object):
                 sec[self.C_SECURITY_KEYS] += self.__load_security_kms_keys(search_client)
                 sec[self.C_SECURITY_SECRETS] += self.__load_security_kms_secrets(search_client)
                 sec[self.C_SECURITY_CLOUD_GUARD] += self.__load_security_cloud_guard(cg_client, compartments)
+                sec[self.C_SECURITY_CLOUD_GUARD_PROBLEMS] += self.__load_security_cloud_guard_problems(cg_client, compartments)
+                sec[self.C_SECURITY_CLOUD_GUARD_MANAGED_LISTS] += self.__load_security_cloud_guard_managed_lists(cg_client, compartments)
+                sec[self.C_SECURITY_CLOUD_GUARD_DATA_MASK_RULES] += self.__load_security_cloud_guard_data_mask_rules(cg_client, compartments)
 
                 email[self.C_EMAIL_SENDERS] += self.__load_email_senders(email_client, compartments)
                 email[self.C_EMAIL_SUPPRESSIONS] += self.__load_email_suppressions(email_client, compartments)
@@ -14983,6 +14992,9 @@ class ShowOCIService(object):
                     future_SECURITY_KEYS = executor.submit(self.__load_security_kms_keys, search_client)
                     future_SECURITY_SECRETS = executor.submit(self.__load_security_kms_secrets, search_client)
                     future_SECURITY_CLOUD_GUARD = executor.submit(self.__load_security_cloud_guard, cg_client, compartments)
+                    future_SECURITY_CLOUD_GUARD_PROBLEMS = executor.submit(self.__load_security_cloud_guard_problems, cg_client, compartments)
+                    future_SECURITY_CLOUD_GUARD_MANAGED_LISTS = executor.submit(self.__load_security_cloud_guard_managed_lists, cg_client, compartments)
+                    future_SECURITY_CLOUD_GUARD_DATA_MASK_RULES = executor.submit(self.__load_security_cloud_guard_data_mask_rules, cg_client, compartments)
                     future_EMAIL_SENDERS = executor.submit(self.__load_email_senders, email_client, compartments)
                     future_EMAIL_SUPPRESSIONS = executor.submit(self.__load_email_suppressions, email_client, compartments)
                     future_BUDGETS_BUDGETS = executor.submit(self.__load_budgets_budgets, budget_client, tenancy['id'])
@@ -15012,6 +15024,9 @@ class ShowOCIService(object):
                     sec[self.C_SECURITY_KEYS] += next(as_completed([future_SECURITY_KEYS])).result()
                     sec[self.C_SECURITY_SECRETS] += next(as_completed([future_SECURITY_SECRETS])).result()
                     sec[self.C_SECURITY_CLOUD_GUARD] += next(as_completed([future_SECURITY_CLOUD_GUARD])).result()
+                    sec[self.C_SECURITY_CLOUD_GUARD_PROBLEMS] += next(as_completed([future_SECURITY_CLOUD_GUARD_PROBLEMS])).result()
+                    sec[self.C_SECURITY_CLOUD_GUARD_MANAGED_LISTS] += next(as_completed([future_SECURITY_CLOUD_GUARD_MANAGED_LISTS])).result()
+                    sec[self.C_SECURITY_CLOUD_GUARD_DATA_MASK_RULES] += next(as_completed([future_SECURITY_CLOUD_GUARD_DATA_MASK_RULES])).result()
                     email[self.C_EMAIL_SENDERS] += next(as_completed([future_EMAIL_SENDERS])).result()
                     email[self.C_EMAIL_SUPPRESSIONS] += next(as_completed([future_EMAIL_SUPPRESSIONS])).result()
                     budget[self.C_BUDGETS_BUDGETS] += next(as_completed([future_BUDGETS_BUDGETS])).result()
@@ -17970,6 +17985,8 @@ class ShowOCIService(object):
                         'idcs_info_app_name': '',
                         'idcs_info_instance_primary_audience_url': '',
                         'attachments': [],
+                        'process_automation_attachments': '',
+                        'human_task_attachments': '',
                         'disaster_recovery_role': '',
                         'disaster_recovery_regional_instance_url': '',
                         'disaster_recovery_peer_role': '',
@@ -18003,6 +18020,10 @@ class ShowOCIService(object):
                             'target_instance_url': self.get_value(x.target_instance_url),
                             'target_service_type': self.get_value(x.target_service_type)
                         } for x in oico.attachments] if oico.attachments else []
+                        val['process_automation_attachments'] = self.__get_oic_attachments_by_service_type(
+                            val['attachments'], 'PROCESS_AUTOMATION')
+                        val['human_task_attachments'] = self.__get_oic_attachments_by_service_type(
+                            val['attachments'], 'HUMAN')
                         val['disaster_recovery_role'] = self.get_value(oico.disaster_recovery_details.role) if oico.disaster_recovery_details else ""
                         val['disaster_recovery_regional_instance_url'] = self.get_value(oico.disaster_recovery_details.regional_instance_url) if oico.disaster_recovery_details else ""
                         val['disaster_recovery_peer_role'] = self.get_value(oico.disaster_recovery_details.cross_region_integration_instance_details.role) if oico.cross_region_integration_instance_details and oico.disaster_recovery_details.cross_region_integration_instance_details else ""
@@ -18027,6 +18048,17 @@ class ShowOCIService(object):
         except Exception as e:
             self.__print_error(e)
             return data
+
+    ##########################################################################
+    # __get_oic_attachments_by_service_type
+    ##########################################################################
+    def __get_oic_attachments_by_service_type(self, attachments, service_type):
+        """Return attachment identifiers and URLs for a requested OIC service type."""
+        matches = []
+        for attachment in attachments:
+            if service_type in attachment['target_service_type'].upper():
+                matches.append(attachment['target_id'] + ' | ' + attachment['target_instance_url'])
+        return '; '.join(matches)
 
     ##########################################################################
     # __load_paas_osvc - vmware
@@ -19042,6 +19074,242 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # Load Cloud Guard problems using list_problems
+    ##########################################################################
+    def __load_security_cloud_guard_problems(self, cg_client, compartments):
+        data = []
+        cnt = 0
+        errstr = ""
+        start_time = time.time()
+        header = "Cloud Guard Problems"
+        try:
+            self.__load_print_status_with_threads(header)
+            if not cg_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            # The Cloud Guard list_problems API is available only from the
+            # tenancy home region.
+            if self.config['region'] != self.tenancy_home_region:
+                errstr = "Can run on home region only, skipping."
+                self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+                return data
+
+            for compartment in compartments:
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+                try:
+                    problems = oci.pagination.list_call_get_all_results(
+                        cg_client.list_problems,
+                        compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                    for problem in problems:
+                        value = self.__cloud_guard_to_dict(problem)
+                        value['compartment_name'] = str(compartment['name'])
+                        value['compartment_path'] = str(compartment['path'])
+                        value['region_name'] = str(self.config['region'])
+                        data.append(value)
+                        cnt += 1
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # Load Cloud Guard managed lists using list_managed_lists
+    ##########################################################################
+    def __load_security_cloud_guard_managed_lists(self, cg_client, compartments):
+        data = []
+        cnt = 0
+        errstr = ""
+        start_time = time.time()
+        header = "Cloud Guard Managed Lists"
+        try:
+            self.__load_print_status_with_threads(header)
+            if not cg_client:
+                self.__load_print_thread_exclude(header)
+                return data
+            for compartment in compartments:
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+                try:
+                    managed_lists = oci.pagination.list_call_get_all_results(
+                        cg_client.list_managed_lists, compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                    for managed_list in managed_lists:
+                        value = self.__cloud_guard_to_dict(managed_list)
+                        value['compartment_name'] = str(compartment['name'])
+                        value['compartment_path'] = str(compartment['path'])
+                        value['region_name'] = str(self.config['region'])
+                        data.append(value)
+                        cnt += 1
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # Load Cloud Guard data mask rules using list_data_mask_rules
+    ##########################################################################
+    def __load_security_cloud_guard_data_mask_rules(self, cg_client, compartments):
+
+        data = []
+        # A parent-compartment query can include rules from its subcompartments.
+        # Query every selected compartment (filters may omit the parent), but add
+        # each rule only once.
+
+        seen_rule_ids = set()
+        cnt = 0
+        errstr = ""
+        start_time = time.time()
+        header = "Cloud Guard Data Mask Rules"
+        try:
+            self.__load_print_status_with_threads(header)
+            if not cg_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            for compartment in compartments:
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+                try:
+                    data_mask_rules = oci.pagination.list_call_get_all_results(
+                        cg_client.list_data_mask_rules, compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                    for data_mask_rule in data_mask_rules:
+
+                        # if rule already seen, skip it
+                        rule_id = str(data_mask_rule.id)
+                        if rule_id in seen_rule_ids:
+                            continue
+
+                        value = self.__cloud_guard_to_dict(data_mask_rule)
+                        value['compartment_name'] = str(compartment['name'])
+                        value['compartment_path'] = str(compartment['path'])
+                        value['region_name'] = str(self.config['region'])
+                        data.append(value)
+
+                        # Add the rule ID to the set of seen rule IDs to avoid duplicates.
+                        seen_rule_ids.add(rule_id)
+                        cnt += 1
+
+                except oci.exceptions.ServiceError as e:
+                    # Data Mask Rules are not available in every compartment.
+                    if e.code == 'NotAuthorizedOrNotFound':
+                        continue
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __cloud_guard_to_dict
+    ##########################################################################
+    def __cloud_guard_to_dict(self, value):
+        """Convert SDK objects to plain, JSON-safe values for Cloud Guard output."""
+        value = oci.util.to_dict(value)
+        if isinstance(value, dict):
+            return {key: self.__cloud_guard_to_dict(val) for key, val in value.items()}
+        if isinstance(value, list):
+            return [self.__cloud_guard_to_dict(val) for val in value]
+        if isinstance(value, datetime.datetime):
+            return str(value)
+        return value
+
+    ##########################################################################
+    # Load enabled detector recipe rules using list_detector_recipe_detector_rules
+    ##########################################################################
+    def __load_cloud_guard_detector_recipe_rules(self, cg_client, recipe_id, compartment_id):
+        """Return condition and configuration for enabled detector recipe rules."""
+        try:
+            rules = oci.pagination.list_call_get_all_results(
+                cg_client.list_detector_recipe_detector_rules, recipe_id, compartment_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+            enabled_rules = []
+            for rule in rules:
+                details = rule.detector_details
+                if details and getattr(details, 'is_enabled', False):
+                    value = self.__cloud_guard_to_dict(rule)
+                    value['condition'] = self.__cloud_guard_to_dict(getattr(details, 'condition', None))
+                    value['configurations'] = self.__cloud_guard_to_dict(getattr(details, 'configurations', None))
+                    enabled_rules.append(value)
+            return enabled_rules
+        except Exception as e:
+            self.__print_error(e)
+            return []
+
+    ##########################################################################
+    # Load enabled responder recipe rules using list_responder_recipe_responder_rules
+    ##########################################################################
+    def __load_cloud_guard_responder_recipe_rules(self, cg_client, recipe_id, compartment_id):
+        """Return condition and configuration for enabled responder recipe rules."""
+        try:
+            rules = oci.pagination.list_call_get_all_results(
+                cg_client.list_responder_recipe_responder_rules, recipe_id, compartment_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+            enabled_rules = []
+            for rule in rules:
+                details = rule.details
+                if details and getattr(details, 'is_enabled', False):
+                    value = self.__cloud_guard_to_dict(rule)
+                    value['condition'] = self.__cloud_guard_to_dict(getattr(details, 'condition', None))
+                    value['configurations'] = self.__cloud_guard_to_dict(getattr(details, 'configurations', None))
+                    enabled_rules.append(value)
+            return enabled_rules
+        except Exception as e:
+            self.__print_error(e)
+            return []
+
+    ##########################################################################
     # __load_security_cloud_guard
     ##########################################################################
     def __load_security_cloud_guard(self, cg_client, compartments):
@@ -19158,6 +19426,7 @@ class ShowOCIService(object):
                             'owner': str(arr.owner),
                             'detector': str(arr.detector),
                             'effective_detector_rules': [y.detector_rule_id for y in arr.effective_detector_rules] if arr.effective_detector_rules else [],
+                            'enabled_rules': self.__load_cloud_guard_detector_recipe_rules(cg_client, arr.detector_recipe_id, compartment['id']),
                             'time_created': str(arr.time_created),
                             'time_updated': str(arr.time_updated),
                             'lifecycle_state': str(arr.lifecycle_state),
@@ -19175,6 +19444,7 @@ class ShowOCIService(object):
                             'time_created': str(arr.time_created),
                             'time_updated': str(arr.time_updated),
                             'effective_responder_rules': [y.responder_rule_id for y in arr.effective_responder_rules] if arr.effective_responder_rules else [],
+                            'enabled_rules': self.__load_cloud_guard_responder_recipe_rules(cg_client, arr.responder_recipe_id, compartment['id']),
                         } for arr in itemfull.target_responder_recipes] if itemfull.target_responder_recipes else []
 
                     except oci.exceptions.ServiceError as e:
@@ -19284,7 +19554,6 @@ class ShowOCIService(object):
                             'compartment_id': self.get_value(item.compartment_id),
                             'name': self.get_value(item.display_name),
                             'time_created': self.get_date(item.time_created),
-                            'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
                             'compartment_name': str(compartment['name']),
                             'compartment_path': str(compartment['path']),
                             'region_name': str(self.config['region']),
@@ -19292,10 +19561,28 @@ class ShowOCIService(object):
                             'current_key_version': self.get_value(ad['currentKeyVersion']) if "currentKeyVersion" in ad else "",
                             'vault_id': self.get_value(ad['vaultId']) if "vaultId" in ad else "",
                             'key_algorithm': self.get_value(ad['keyShape']['algorithm']) if "vaultId" in ad and "algorithm" in ad['keyShape'] else "",
-                            'key_length': self.get_value(ad['keyShape']['length']) if "vaultId" in ad and "length" in ad['keyShape'] else ""
+                            'key_length': self.get_value(ad['keyShape']['length']) if "vaultId" in ad and "length" in ad['keyShape'] else "",
+                            'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
+                            # Added in case additional data requested
+                            'vault_name': "",
+                            'vault_management_endpoint': "",
+                            'defined_tags': [],
+                            'key_versions': [],
+                            'protection_mode': "",
+                            'lifecycle_state': "",
+                            'time_of_deletion': "",
+                            'restored_from_key_id': "",
+                            'replica_details': {},
+                            'is_primary': "",
+                            'is_auto_rotation_enabled': "",
+                            'auto_key_rotation_details': {},
+                            'external_key_reference_details': {}
                         }
                         cnt += 1
                         data.append(val)
+
+            if self.flags.read_kms_addiontal_keys_attributes:
+                self.__load_security_kms_keys_additional_data(data)
 
             self.__load_print_thread_cnt(header, cnt, start_time, errstr)
             return data
@@ -19309,6 +19596,93 @@ class ShowOCIService(object):
         except Exception as e:
             self.__print_error(e)
             return data
+
+    ##########################################################################
+    # __load_security_kms_keys_additional_data
+    ##########################################################################
+    def __load_security_kms_keys_additional_data(self, kms_keys):
+
+        try:
+            if not kms_keys:
+                return
+
+            kms_vault_client = self.__create_client(oci.key_management.KmsVaultClient, key=self.EXCLUDE_KMS)
+            if not kms_vault_client:
+                return
+
+            kms_keys.sort(key=lambda key: key['vault_id'])
+            vault_id = None
+            vault_name = ""
+            kms_management_client = None
+            vault_management_endpoint = ""
+
+            for kms_key in kms_keys:
+                try:
+                    # Check if vault_id is present
+                    if not kms_key['vault_id']:
+                        continue
+
+                    # check if vault_id is different from previous key, if so create new client for that vault
+                    if kms_key['vault_id'] != vault_id:
+                        vault = kms_vault_client.get_vault(
+                            kms_key['vault_id'],
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
+                        vault_name = self.get_value(vault.display_name)
+                        vault_management_endpoint = self.get_value(vault.management_endpoint)
+                        kms_management_client = self.__create_client(
+                            oci.key_management.KmsManagementClient,
+                            service_endpoint=vault_management_endpoint,
+                            key=self.EXCLUDE_KMS
+                        )
+                        vault_id = kms_key['vault_id']
+
+                    # if no management client, skip this key
+                    if not kms_management_client:
+                        continue
+
+                    # query the key details and versions
+                    key = kms_management_client.get_key(
+                        kms_key['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+                    key_versions = oci.pagination.list_call_get_all_results(
+                        kms_management_client.list_key_versions,
+                        kms_key['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                    kms_key['vault_name'] = vault_name
+                    kms_key['vault_management_endpoint'] = vault_management_endpoint
+                    kms_key['freeform_tags'] = [] if key.freeform_tags is None else key.freeform_tags
+                    kms_key['defined_tags'] = [] if key.defined_tags is None else key.defined_tags
+                    kms_key['key_versions'] = [oci.util.to_dict(version) for version in key_versions]
+                    kms_key['protection_mode'] = self.get_value(key.protection_mode)
+                    kms_key['lifecycle_state'] = self.get_value(key.lifecycle_state)
+                    kms_key['time_created'] = self.get_date(key.time_created)
+                    kms_key['time_of_deletion'] = self.get_date(key.time_of_deletion)
+                    kms_key['restored_from_key_id'] = self.get_value(key.restored_from_key_id)
+                    kms_key['replica_details'] = {} if key.replica_details is None else oci.util.to_dict(key.replica_details)
+                    kms_key['is_primary'] = self.get_value(key.is_primary)
+                    kms_key['is_auto_rotation_enabled'] = self.get_value(key.is_auto_rotation_enabled)
+                    kms_key['auto_key_rotation_details'] = {} if key.auto_key_rotation_details is None else oci.util.to_dict(key.auto_key_rotation_details)
+                    kms_key['external_key_reference_details'] = {} if key.external_key_reference_details is None else oci.util.to_dict(key.external_key_reference_details)
+
+                # if failed to get key details, skip this key and continue with next
+                except oci.exceptions.RequestException as e:
+                    if not self.__check_request_error(e):
+                        self.__load_print_error(e)
+                except Exception as e:
+                    self.__print_error(e)
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return
+            else:
+                self.__load_print_error(e)
+                return
+        except Exception as e:
+            self.__print_error(e)
 
     ##########################################################################
     # __load_security_kms_secrets
@@ -20995,6 +21369,7 @@ class ShowOCIFlags(object):
     read_root_compartment = True
     read_paas_native = False
     read_security = False
+    read_kms_addiontal_keys_attributes = False
     read_function = False
     read_api = False
     read_limits = False

@@ -75,6 +75,10 @@ class RouteTable(object):
             The value to assign to the route_rules property of this RouteTable.
         :type route_rules: list[oci.core.models.RouteRule]
 
+        :param system_tags:
+            The value to assign to the system_tags property of this RouteTable.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this RouteTable.
         :type time_created: datetime
@@ -92,6 +96,7 @@ class RouteTable(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'route_rules': 'list[RouteRule]',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'vcn_id': 'str'
         }
@@ -103,6 +108,7 @@ class RouteTable(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'route_rules': 'routeRules',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
         }
@@ -113,6 +119,7 @@ class RouteTable(object):
         self._id = None
         self._lifecycle_state = None
         self._route_rules = None
+        self._system_tags = None
         self._time_created = None
         self._vcn_id = None
 
@@ -319,6 +326,32 @@ class RouteTable(object):
         :type: list[oci.core.models.RouteRule]
         """
         self._route_rules = route_rules
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this RouteTable.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this RouteTable.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this RouteTable.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this RouteTable.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):

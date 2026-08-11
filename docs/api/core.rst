@@ -547,6 +547,7 @@ Core Services
     oci.core.models.PublicIpPool
     oci.core.models.PublicIpPoolCollection
     oci.core.models.PublicIpPoolSummary
+    oci.core.models.QuickRecycleSettings
     oci.core.models.RebootMigrateActionDetails
     oci.core.models.RecycleDetails
     oci.core.models.RemotePeeringConnection

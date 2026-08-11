@@ -529,6 +529,7 @@ from .public_ip import PublicIp
 from .public_ip_pool import PublicIpPool
 from .public_ip_pool_collection import PublicIpPoolCollection
 from .public_ip_pool_summary import PublicIpPoolSummary
+from .quick_recycle_settings import QuickRecycleSettings
 from .reboot_migrate_action_details import RebootMigrateActionDetails
 from .recycle_details import RecycleDetails
 from .remote_peering_connection import RemotePeeringConnection
@@ -1243,6 +1244,7 @@ core_type_mapping = {
     "PublicIpPool": PublicIpPool,
     "PublicIpPoolCollection": PublicIpPoolCollection,
     "PublicIpPoolSummary": PublicIpPoolSummary,
+    "QuickRecycleSettings": QuickRecycleSettings,
     "RebootMigrateActionDetails": RebootMigrateActionDetails,
     "RecycleDetails": RecycleDetails,
     "RemotePeeringConnection": RemotePeeringConnection,

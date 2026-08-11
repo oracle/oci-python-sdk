@@ -505,11 +505,12 @@ class UpdateBucketDetails(object):
     def bucket_scope(self):
         """
         Gets the bucket_scope of this UpdateBucketDetails.
-        Scope in which the bucket is unique. Default value is NAMESPACE.
-        Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
-        tenancies can have a bucket with same name in their namespace.
-        Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
-        same name and scope REGION.
+        The bucket scope determines weather the bucket name must be unique within the tenancy and region (essentially the namespace) or across all tenancies in the region. The bucket scope also determines if the bucket supports S3 virtual-hosted style URL's or not.
+
+        Allowed values:
+        NAMESPACE: Only supports path-style bucket access, bucket name only needs to be unique within the tenancy and region.
+        REGION: Supports both path-style and virtual-hosted URL style access, bucket name needs to be unique across all tenancies in the region.
+
         BucketScope can only be updated from NAMESPACE to REGION, it cannot be updated from REGION to NAMESPACE.
         Updating bucket scope is possible only if the bucket name is valid and there is no existing regionally unique
         bucket with the same name.
@@ -524,11 +525,12 @@ class UpdateBucketDetails(object):
     def bucket_scope(self, bucket_scope):
         """
         Sets the bucket_scope of this UpdateBucketDetails.
-        Scope in which the bucket is unique. Default value is NAMESPACE.
-        Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other
-        tenancies can have a bucket with same name in their namespace.
-        Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with
-        same name and scope REGION.
+        The bucket scope determines weather the bucket name must be unique within the tenancy and region (essentially the namespace) or across all tenancies in the region. The bucket scope also determines if the bucket supports S3 virtual-hosted style URL's or not.
+
+        Allowed values:
+        NAMESPACE: Only supports path-style bucket access, bucket name only needs to be unique within the tenancy and region.
+        REGION: Supports both path-style and virtual-hosted URL style access, bucket name needs to be unique across all tenancies in the region.
+
         BucketScope can only be updated from NAMESPACE to REGION, it cannot be updated from REGION to NAMESPACE.
         Updating bucket scope is possible only if the bucket name is valid and there is no existing regionally unique
         bucket with the same name.

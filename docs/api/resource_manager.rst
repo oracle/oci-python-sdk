@@ -93,6 +93,7 @@ Resource Manager
     oci.resource_manager.models.JobOutputsCollection
     oci.resource_manager.models.JobSummary
     oci.resource_manager.models.LogEntry
+    oci.resource_manager.models.LogEntryCollection
     oci.resource_manager.models.ObjectStorageConfigSource
     oci.resource_manager.models.ObjectStorageConfigSourceRecord
     oci.resource_manager.models.PlanJobOperationDetails
