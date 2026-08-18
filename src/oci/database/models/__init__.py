@@ -511,6 +511,7 @@ from .system_version_collection import SystemVersionCollection
 from .system_version_minor_version_collection import SystemVersionMinorVersionCollection
 from .system_version_minor_version_summary import SystemVersionMinorVersionSummary
 from .system_version_summary import SystemVersionSummary
+from .tde_wallet_backup_destination import TdeWalletBackupDestination
 from .undelete_autonomous_database_details import UndeleteAutonomousDatabaseDetails
 from .unmount_dbnode_snapshot_details import UnmountDbnodeSnapshotDetails
 from .unregister_cloud_autonomous_vm_cluster_pkcs_details import UnregisterCloudAutonomousVmClusterPkcsDetails
@@ -1094,6 +1095,7 @@ database_type_mapping = {
     "SystemVersionMinorVersionCollection": SystemVersionMinorVersionCollection,
     "SystemVersionMinorVersionSummary": SystemVersionMinorVersionSummary,
     "SystemVersionSummary": SystemVersionSummary,
+    "TdeWalletBackupDestination": TdeWalletBackupDestination,
     "UndeleteAutonomousDatabaseDetails": UndeleteAutonomousDatabaseDetails,
     "UnmountDbnodeSnapshotDetails": UnmountDbnodeSnapshotDetails,
     "UnregisterCloudAutonomousVmClusterPkcsDetails": UnregisterCloudAutonomousVmClusterPkcsDetails,

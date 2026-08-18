@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.184.2 - 2026-08-18
+====================
+
+Added 
+----- 
+* Support for creating databases from another database with additional input fields and source encryption-key location details in the Database service 
+* Support for IPv6 dual-stack endpoints in the Compute Instance Agent service  
+
+====================
 2.184.1 - 2026-08-11
 ====================
 

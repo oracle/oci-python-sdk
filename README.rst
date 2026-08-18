@@ -64,6 +64,9 @@ See the `development readme`__ for information on how to make changes, run tests
 
 __ https://github.com/oracle/oci-python-sdk/blob/master/README-development.rst
 
+Per-service codegen conditionals belong in
+``enabledGroups`` beside the service module POM under ``poms/<service>/``.
+
 ========
 Examples
 ========
