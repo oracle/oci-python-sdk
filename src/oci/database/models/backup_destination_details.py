@@ -100,6 +100,10 @@ class BackupDestinationDetails(object):
             The value to assign to the remote_region property of this BackupDestinationDetails.
         :type remote_region: str
 
+        :param tde_wallet_backup_destination:
+            The value to assign to the tde_wallet_backup_destination property of this BackupDestinationDetails.
+        :type tde_wallet_backup_destination: oci.database.models.TdeWalletBackupDestination
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -112,7 +116,8 @@ class BackupDestinationDetails(object):
             'is_retention_lock_enabled': 'bool',
             'backup_retention_policy_on_terminate': 'str',
             'is_remote': 'bool',
-            'remote_region': 'str'
+            'remote_region': 'str',
+            'tde_wallet_backup_destination': 'TdeWalletBackupDestination'
         }
         self.attribute_map = {
             'type': 'type',
@@ -125,7 +130,8 @@ class BackupDestinationDetails(object):
             'is_retention_lock_enabled': 'isRetentionLockEnabled',
             'backup_retention_policy_on_terminate': 'backupRetentionPolicyOnTerminate',
             'is_remote': 'isRemote',
-            'remote_region': 'remoteRegion'
+            'remote_region': 'remoteRegion',
+            'tde_wallet_backup_destination': 'tdeWalletBackupDestination'
         }
         self._type = None
         self._id = None
@@ -138,6 +144,7 @@ class BackupDestinationDetails(object):
         self._backup_retention_policy_on_terminate = None
         self._is_remote = None
         self._remote_region = None
+        self._tde_wallet_backup_destination = None
 
     @property
     def type(self):
@@ -440,6 +447,26 @@ class BackupDestinationDetails(object):
         :type: str
         """
         self._remote_region = remote_region
+
+    @property
+    def tde_wallet_backup_destination(self):
+        """
+        Gets the tde_wallet_backup_destination of this BackupDestinationDetails.
+
+        :return: The tde_wallet_backup_destination of this BackupDestinationDetails.
+        :rtype: oci.database.models.TdeWalletBackupDestination
+        """
+        return self._tde_wallet_backup_destination
+
+    @tde_wallet_backup_destination.setter
+    def tde_wallet_backup_destination(self, tde_wallet_backup_destination):
+        """
+        Sets the tde_wallet_backup_destination of this BackupDestinationDetails.
+
+        :param tde_wallet_backup_destination: The tde_wallet_backup_destination of this BackupDestinationDetails.
+        :type: oci.database.models.TdeWalletBackupDestination
+        """
+        self._tde_wallet_backup_destination = tde_wallet_backup_destination
 
     def __repr__(self):
         return formatted_flat_dict(self)

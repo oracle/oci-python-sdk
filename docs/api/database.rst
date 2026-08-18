@@ -523,6 +523,7 @@ Database
     oci.database.models.SystemVersionMinorVersionCollection
     oci.database.models.SystemVersionMinorVersionSummary
     oci.database.models.SystemVersionSummary
+    oci.database.models.TdeWalletBackupDestination
     oci.database.models.UndeleteAutonomousDatabaseDetails
     oci.database.models.UnmountDbnodeSnapshotDetails
     oci.database.models.UnregisterCloudAutonomousVmClusterPkcsDetails
