@@ -37,10 +37,10 @@ API Reference
 * :doc:`Billing Schedule <osub_billing_schedule/client/oci.osub_billing_schedule.BillingScheduleClient>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Blockchain Platform <blockchain/client/oci.blockchain.BlockchainPlatformClient>`
+* :doc:`Blue Green Deployments <mysql/client/oci.mysql.BlueGreenDeploymentsClient>`
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
 * :doc:`Byol <ocvp/client/oci.ocvp.ByolClient>`
 * :doc:`Byol Allocation <ocvp/client/oci.ocvp.ByolAllocationClient>`
-* :doc:`Cancel Enrichment Job <generative_ai_data/client/oci.generative_ai_data.CancelEnrichmentJobClient>`
 * :doc:`Capacity Management <capacity_management/client/oci.capacity_management.CapacityManagementClient>`
 * :doc:`Certificates <certificates/client/oci.certificates.CertificatesClient>`
 * :doc:`Certificates Management <certificates_management/client/oci.certificates_management.CertificatesManagementClient>`
@@ -112,6 +112,7 @@ API Reference
 * :doc:`Em Warehouse <em_warehouse/client/oci.em_warehouse.EmWarehouseClient>`
 * :doc:`Email <email/client/oci.email.EmailClient>`
 * :doc:`Email Dp <email_data_plane/client/oci.email_data_plane.EmailDPClient>`
+* :doc:`Enrichment Job <generative_ai_data/client/oci.generative_ai_data.EnrichmentJobClient>`
 * :doc:`Esxi Host <ocvp/client/oci.ocvp.EsxiHostClient>`
 * :doc:`Event <os_management_hub/client/oci.os_management_hub.EventClient>`
 * :doc:`Events <events/client/oci.events.EventsClient>`
@@ -129,14 +130,12 @@ API Reference
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
 * :doc:`Fusion Applications <fusion_apps/client/oci.fusion_apps.FusionApplicationsClient>`
 * :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
-* :doc:`Generate Enrichment Job <generative_ai_data/client/oci.generative_ai_data.GenerateEnrichmentJobClient>`
-* :doc:`Generate Sql From Nl Job <generative_ai_data/client/oci.generative_ai_data.GenerateSqlFromNlJobClient>`
+* :doc:`Generate Sql <generative_ai_data/client/oci.generative_ai_data.GenerateSqlClient>`
 * :doc:`Generative Ai <generative_ai/client/oci.generative_ai.GenerativeAiClient>`
 * :doc:`Generative Ai Agent <generative_ai_agent/client/oci.generative_ai_agent.GenerativeAiAgentClient>`
 * :doc:`Generative Ai Agent Runtime <generative_ai_agent_runtime/client/oci.generative_ai_agent_runtime.GenerativeAiAgentRuntimeClient>`
 * :doc:`Generative Ai Inference <generative_ai_inference/client/oci.generative_ai_inference.GenerativeAiInferenceClient>`
 * :doc:`Generic Artifacts Content <generic_artifacts_content/client/oci.generic_artifacts_content.GenericArtifactsContentClient>`
-* :doc:`Get Enrichment Job <generative_ai_data/client/oci.generative_ai_data.GetEnrichmentJobClient>`
 * :doc:`Golden Gate <golden_gate/client/oci.golden_gate.GoldenGateClient>`
 * :doc:`Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.GovernanceClient>`
 * :doc:`Governance Rule <governance_rules_control_plane/client/oci.governance_rules_control_plane.GovernanceRuleClient>`
@@ -166,7 +165,6 @@ API Reference
 * :doc:`Limits Increase <limits_increase/client/oci.limits_increase.LimitsIncreaseClient>`
 * :doc:`Link <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkClient>`
 * :doc:`Link Features <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkFeaturesClient>`
-* :doc:`List Enrichment Jobs <generative_ai_data/client/oci.generative_ai_data.ListEnrichmentJobsClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Lockbox <lockbox/client/oci.lockbox.LockboxClient>`
 * :doc:`Log Analytics <log_analytics/client/oci.log_analytics.LogAnalyticsClient>`

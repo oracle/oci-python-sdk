@@ -10,10 +10,14 @@ from .change_protected_database_compartment_details import ChangeProtectedDataba
 from .change_protected_database_subscription_details import ChangeProtectedDatabaseSubscriptionDetails
 from .change_protection_policy_compartment_details import ChangeProtectionPolicyCompartmentDetails
 from .change_recovery_service_subnet_compartment_details import ChangeRecoveryServiceSubnetCompartmentDetails
+from .create_long_term_backup_details import CreateLongTermBackupDetails
 from .create_protected_database_details import CreateProtectedDatabaseDetails
 from .create_protection_policy_details import CreateProtectionPolicyDetails
 from .create_recovery_service_subnet_details import CreateRecoveryServiceSubnetDetails
 from .fetch_protected_database_configuration_details import FetchProtectedDatabaseConfigurationDetails
+from .long_term_backup import LongTermBackup
+from .long_term_backup_collection import LongTermBackupCollection
+from .long_term_backup_summary import LongTermBackupSummary
 from .metrics import Metrics
 from .metrics_summary import MetricsSummary
 from .protected_database import ProtectedDatabase
@@ -27,7 +31,9 @@ from .recovery_service_subnet_collection import RecoveryServiceSubnetCollection
 from .recovery_service_subnet_details import RecoveryServiceSubnetDetails
 from .recovery_service_subnet_input import RecoveryServiceSubnetInput
 from .recovery_service_subnet_summary import RecoveryServiceSubnetSummary
+from .retention_period_value import RetentionPeriodValue
 from .schedule_protected_database_deletion_details import ScheduleProtectedDatabaseDeletionDetails
+from .update_long_term_backup_details import UpdateLongTermBackupDetails
 from .update_protected_database_details import UpdateProtectedDatabaseDetails
 from .update_protection_policy_details import UpdateProtectionPolicyDetails
 from .update_recovery_service_subnet_details import UpdateRecoveryServiceSubnetDetails
@@ -46,10 +52,14 @@ recovery_type_mapping = {
     "ChangeProtectedDatabaseSubscriptionDetails": ChangeProtectedDatabaseSubscriptionDetails,
     "ChangeProtectionPolicyCompartmentDetails": ChangeProtectionPolicyCompartmentDetails,
     "ChangeRecoveryServiceSubnetCompartmentDetails": ChangeRecoveryServiceSubnetCompartmentDetails,
+    "CreateLongTermBackupDetails": CreateLongTermBackupDetails,
     "CreateProtectedDatabaseDetails": CreateProtectedDatabaseDetails,
     "CreateProtectionPolicyDetails": CreateProtectionPolicyDetails,
     "CreateRecoveryServiceSubnetDetails": CreateRecoveryServiceSubnetDetails,
     "FetchProtectedDatabaseConfigurationDetails": FetchProtectedDatabaseConfigurationDetails,
+    "LongTermBackup": LongTermBackup,
+    "LongTermBackupCollection": LongTermBackupCollection,
+    "LongTermBackupSummary": LongTermBackupSummary,
     "Metrics": Metrics,
     "MetricsSummary": MetricsSummary,
     "ProtectedDatabase": ProtectedDatabase,
@@ -63,7 +73,9 @@ recovery_type_mapping = {
     "RecoveryServiceSubnetDetails": RecoveryServiceSubnetDetails,
     "RecoveryServiceSubnetInput": RecoveryServiceSubnetInput,
     "RecoveryServiceSubnetSummary": RecoveryServiceSubnetSummary,
+    "RetentionPeriodValue": RetentionPeriodValue,
     "ScheduleProtectedDatabaseDeletionDetails": ScheduleProtectedDatabaseDeletionDetails,
+    "UpdateLongTermBackupDetails": UpdateLongTermBackupDetails,
     "UpdateProtectedDatabaseDetails": UpdateProtectedDatabaseDetails,
     "UpdateProtectionPolicyDetails": UpdateProtectionPolicyDetails,
     "UpdateRecoveryServiceSubnetDetails": UpdateRecoveryServiceSubnetDetails,

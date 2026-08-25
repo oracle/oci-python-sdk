@@ -13,7 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class EnrichmentJob(object):
     """
     Object representing to EnrichmentJob.
-    ocidEntityType: generativeaiEnrichmentJob
+    ocidEntityType: generativeaisemanticstorejob
     adLocality: regional
     """
 
@@ -84,6 +84,10 @@ class EnrichmentJob(object):
             The value to assign to the enrichment_job_configuration property of this EnrichmentJob.
         :type enrichment_job_configuration: oci.generative_ai_data.models.EnrichmentJobConfiguration
 
+        :param model_id:
+            The value to assign to the model_id property of this EnrichmentJob.
+        :type model_id: str
+
         :param time_accepted:
             The value to assign to the time_accepted property of this EnrichmentJob.
         :type time_accepted: datetime
@@ -130,6 +134,7 @@ class EnrichmentJob(object):
             'display_name': 'str',
             'enrichment_job_type': 'str',
             'enrichment_job_configuration': 'EnrichmentJobConfiguration',
+            'model_id': 'str',
             'time_accepted': 'datetime',
             'time_started': 'datetime',
             'time_finished': 'datetime',
@@ -147,6 +152,7 @@ class EnrichmentJob(object):
             'display_name': 'displayName',
             'enrichment_job_type': 'enrichmentJobType',
             'enrichment_job_configuration': 'enrichmentJobConfiguration',
+            'model_id': 'modelId',
             'time_accepted': 'timeAccepted',
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished',
@@ -163,6 +169,7 @@ class EnrichmentJob(object):
         self._display_name = None
         self._enrichment_job_type = None
         self._enrichment_job_configuration = None
+        self._model_id = None
         self._time_accepted = None
         self._time_started = None
         self._time_finished = None
@@ -177,7 +184,7 @@ class EnrichmentJob(object):
     def id(self):
         """
         **[Required]** Gets the id of this EnrichmentJob.
-        Unique identifier that is immutable on creation.
+        The OCID of the Semantic Store job.
 
 
         :return: The id of this EnrichmentJob.
@@ -189,7 +196,7 @@ class EnrichmentJob(object):
     def id(self, id):
         """
         Sets the id of this EnrichmentJob.
-        Unique identifier that is immutable on creation.
+        The OCID of the Semantic Store job.
 
 
         :param id: The id of this EnrichmentJob.
@@ -277,7 +284,7 @@ class EnrichmentJob(object):
     def enrichment_job_type(self):
         """
         **[Required]** Gets the enrichment_job_type of this EnrichmentJob.
-        Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+        Enrichment job type. Supported values are Full Build (all supported objects in a given schema), Partial Build (selected tables and/or supported objects in a given schema), and Delta Refresh (objects in a given schema that have changed since the previous enrichment job).
 
         Allowed values for this property are: "FULL_BUILD", "PARTIAL_BUILD", "DELTA_REFRESH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -292,7 +299,7 @@ class EnrichmentJob(object):
     def enrichment_job_type(self, enrichment_job_type):
         """
         Sets the enrichment_job_type of this EnrichmentJob.
-        Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+        Enrichment job type. Supported values are Full Build (all supported objects in a given schema), Partial Build (selected tables and/or supported objects in a given schema), and Delta Refresh (objects in a given schema that have changed since the previous enrichment job).
 
 
         :param enrichment_job_type: The enrichment_job_type of this EnrichmentJob.
@@ -322,6 +329,30 @@ class EnrichmentJob(object):
         :type: oci.generative_ai_data.models.EnrichmentJobConfiguration
         """
         self._enrichment_job_configuration = enrichment_job_configuration
+
+    @property
+    def model_id(self):
+        """
+        **[Required]** Gets the model_id of this EnrichmentJob.
+        The generative AI modelId used for Enrichment. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+
+
+        :return: The model_id of this EnrichmentJob.
+        :rtype: str
+        """
+        return self._model_id
+
+    @model_id.setter
+    def model_id(self, model_id):
+        """
+        Sets the model_id of this EnrichmentJob.
+        The generative AI modelId used for Enrichment. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+
+
+        :param model_id: The model_id of this EnrichmentJob.
+        :type: str
+        """
+        self._model_id = model_id
 
     @property
     def time_accepted(self):
@@ -447,7 +478,7 @@ class EnrichmentJob(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this EnrichmentJob.
-        The lifecycleState of GenerateSqlJob.
+        The lifecycle state of the EnrichmentJob.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -462,7 +493,7 @@ class EnrichmentJob(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this EnrichmentJob.
-        The lifecycleState of GenerateSqlJob.
+        The lifecycle state of the EnrichmentJob.
 
 
         :param lifecycle_state: The lifecycle_state of this EnrichmentJob.

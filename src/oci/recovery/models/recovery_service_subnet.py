@@ -78,6 +78,10 @@ class RecoveryServiceSubnet(object):
             The value to assign to the nsg_ids property of this RecoveryServiceSubnet.
         :type nsg_ids: list[str]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this RecoveryServiceSubnet.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this RecoveryServiceSubnet.
         :type time_created: datetime
@@ -117,6 +121,7 @@ class RecoveryServiceSubnet(object):
             'subnet_id': 'str',
             'subnets': 'list[str]',
             'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -133,6 +138,7 @@ class RecoveryServiceSubnet(object):
             'subnet_id': 'subnetId',
             'subnets': 'subnets',
             'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -148,6 +154,7 @@ class RecoveryServiceSubnet(object):
         self._subnet_id = None
         self._subnets = None
         self._nsg_ids = None
+        self._security_attributes = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -329,6 +336,40 @@ class RecoveryServiceSubnet(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this RecoveryServiceSubnet.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this RecoveryServiceSubnet.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this RecoveryServiceSubnet.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this RecoveryServiceSubnet.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def time_created(self):

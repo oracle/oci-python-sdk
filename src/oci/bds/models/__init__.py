@@ -33,6 +33,14 @@ from .batching_based_patching_configs import BatchingBasedPatchingConfigs
 from .bds_api_key import BdsApiKey
 from .bds_api_key_summary import BdsApiKeySummary
 from .bds_capacity_report import BdsCapacityReport
+from .bds_capacity_reservation import BdsCapacityReservation
+from .bds_capacity_reservation_associated_configuration_collection import BdsCapacityReservationAssociatedConfigurationCollection
+from .bds_capacity_reservation_associated_configuration_summary import BdsCapacityReservationAssociatedConfigurationSummary
+from .bds_capacity_reservation_collection import BdsCapacityReservationCollection
+from .bds_capacity_reservation_configuration import BdsCapacityReservationConfiguration
+from .bds_capacity_reservation_configuration_collection import BdsCapacityReservationConfigurationCollection
+from .bds_capacity_reservation_configuration_summary import BdsCapacityReservationConfigurationSummary
+from .bds_capacity_reservation_summary import BdsCapacityReservationSummary
 from .bds_certificate_configuration import BdsCertificateConfiguration
 from .bds_certificate_configuration_summary import BdsCertificateConfigurationSummary
 from .bds_cluster_version_summary import BdsClusterVersionSummary
@@ -46,14 +54,18 @@ from .capacity_availability import CapacityAvailability
 from .capacity_report_shape_availability import CapacityReportShapeAvailability
 from .certificate_service_info_details import CertificateServiceInfoDetails
 from .certificate_service_info_summary import CertificateServiceInfoSummary
+from .change_bds_capacity_reservation_compartment_details import ChangeBdsCapacityReservationCompartmentDetails
 from .change_bds_instance_compartment_details import ChangeBdsInstanceCompartmentDetails
 from .change_shape_details import ChangeShapeDetails
 from .change_shape_nodes import ChangeShapeNodes
 from .cloud_sql_details import CloudSqlDetails
 from .cluster_details import ClusterDetails
+from .compute_capacity_reservations import ComputeCapacityReservations
 from .config_level_manage_bds_certificate_details import ConfigLevelManageBdsCertificateDetails
 from .create_bds_api_key_details import CreateBdsApiKeyDetails
 from .create_bds_capacity_report_details import CreateBdsCapacityReportDetails
+from .create_bds_capacity_reservation_configuration_details import CreateBdsCapacityReservationConfigurationDetails
+from .create_bds_capacity_reservation_details import CreateBdsCapacityReservationDetails
 from .create_bds_certificate_configuration_details import CreateBdsCertificateConfigurationDetails
 from .create_bds_instance_details import CreateBdsInstanceDetails
 from .create_bds_metastore_configuration_details import CreateBdsMetastoreConfigurationDetails
@@ -151,6 +163,8 @@ from .time_and_horizontal_scaling_config import TimeAndHorizontalScalingConfig
 from .time_and_vertical_scaling_config import TimeAndVerticalScalingConfig
 from .update_auto_scale_policy_details import UpdateAutoScalePolicyDetails
 from .update_auto_scaling_configuration_details import UpdateAutoScalingConfigurationDetails
+from .update_bds_capacity_reservation_configuration_details import UpdateBdsCapacityReservationConfigurationDetails
+from .update_bds_capacity_reservation_details import UpdateBdsCapacityReservationDetails
 from .update_bds_instance_details import UpdateBdsInstanceDetails
 from .update_bds_metastore_configuration_details import UpdateBdsMetastoreConfigurationDetails
 from .update_identity_configuration_details import UpdateIdentityConfigurationDetails
@@ -199,6 +213,14 @@ bds_type_mapping = {
     "BdsApiKey": BdsApiKey,
     "BdsApiKeySummary": BdsApiKeySummary,
     "BdsCapacityReport": BdsCapacityReport,
+    "BdsCapacityReservation": BdsCapacityReservation,
+    "BdsCapacityReservationAssociatedConfigurationCollection": BdsCapacityReservationAssociatedConfigurationCollection,
+    "BdsCapacityReservationAssociatedConfigurationSummary": BdsCapacityReservationAssociatedConfigurationSummary,
+    "BdsCapacityReservationCollection": BdsCapacityReservationCollection,
+    "BdsCapacityReservationConfiguration": BdsCapacityReservationConfiguration,
+    "BdsCapacityReservationConfigurationCollection": BdsCapacityReservationConfigurationCollection,
+    "BdsCapacityReservationConfigurationSummary": BdsCapacityReservationConfigurationSummary,
+    "BdsCapacityReservationSummary": BdsCapacityReservationSummary,
     "BdsCertificateConfiguration": BdsCertificateConfiguration,
     "BdsCertificateConfigurationSummary": BdsCertificateConfigurationSummary,
     "BdsClusterVersionSummary": BdsClusterVersionSummary,
@@ -212,14 +234,18 @@ bds_type_mapping = {
     "CapacityReportShapeAvailability": CapacityReportShapeAvailability,
     "CertificateServiceInfoDetails": CertificateServiceInfoDetails,
     "CertificateServiceInfoSummary": CertificateServiceInfoSummary,
+    "ChangeBdsCapacityReservationCompartmentDetails": ChangeBdsCapacityReservationCompartmentDetails,
     "ChangeBdsInstanceCompartmentDetails": ChangeBdsInstanceCompartmentDetails,
     "ChangeShapeDetails": ChangeShapeDetails,
     "ChangeShapeNodes": ChangeShapeNodes,
     "CloudSqlDetails": CloudSqlDetails,
     "ClusterDetails": ClusterDetails,
+    "ComputeCapacityReservations": ComputeCapacityReservations,
     "ConfigLevelManageBdsCertificateDetails": ConfigLevelManageBdsCertificateDetails,
     "CreateBdsApiKeyDetails": CreateBdsApiKeyDetails,
     "CreateBdsCapacityReportDetails": CreateBdsCapacityReportDetails,
+    "CreateBdsCapacityReservationConfigurationDetails": CreateBdsCapacityReservationConfigurationDetails,
+    "CreateBdsCapacityReservationDetails": CreateBdsCapacityReservationDetails,
     "CreateBdsCertificateConfigurationDetails": CreateBdsCertificateConfigurationDetails,
     "CreateBdsInstanceDetails": CreateBdsInstanceDetails,
     "CreateBdsMetastoreConfigurationDetails": CreateBdsMetastoreConfigurationDetails,
@@ -317,6 +343,8 @@ bds_type_mapping = {
     "TimeAndVerticalScalingConfig": TimeAndVerticalScalingConfig,
     "UpdateAutoScalePolicyDetails": UpdateAutoScalePolicyDetails,
     "UpdateAutoScalingConfigurationDetails": UpdateAutoScalingConfigurationDetails,
+    "UpdateBdsCapacityReservationConfigurationDetails": UpdateBdsCapacityReservationConfigurationDetails,
+    "UpdateBdsCapacityReservationDetails": UpdateBdsCapacityReservationDetails,
     "UpdateBdsInstanceDetails": UpdateBdsInstanceDetails,
     "UpdateBdsMetastoreConfigurationDetails": UpdateBdsMetastoreConfigurationDetails,
     "UpdateIdentityConfigurationDetails": UpdateIdentityConfigurationDetails,

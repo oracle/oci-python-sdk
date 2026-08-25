@@ -22,10 +22,14 @@ Recovery
     oci.recovery.models.ChangeProtectedDatabaseSubscriptionDetails
     oci.recovery.models.ChangeProtectionPolicyCompartmentDetails
     oci.recovery.models.ChangeRecoveryServiceSubnetCompartmentDetails
+    oci.recovery.models.CreateLongTermBackupDetails
     oci.recovery.models.CreateProtectedDatabaseDetails
     oci.recovery.models.CreateProtectionPolicyDetails
     oci.recovery.models.CreateRecoveryServiceSubnetDetails
     oci.recovery.models.FetchProtectedDatabaseConfigurationDetails
+    oci.recovery.models.LongTermBackup
+    oci.recovery.models.LongTermBackupCollection
+    oci.recovery.models.LongTermBackupSummary
     oci.recovery.models.Metrics
     oci.recovery.models.MetricsSummary
     oci.recovery.models.ProtectedDatabase
@@ -39,7 +43,9 @@ Recovery
     oci.recovery.models.RecoveryServiceSubnetDetails
     oci.recovery.models.RecoveryServiceSubnetInput
     oci.recovery.models.RecoveryServiceSubnetSummary
+    oci.recovery.models.RetentionPeriodValue
     oci.recovery.models.ScheduleProtectedDatabaseDeletionDetails
+    oci.recovery.models.UpdateLongTermBackupDetails
     oci.recovery.models.UpdateProtectedDatabaseDetails
     oci.recovery.models.UpdateProtectionPolicyDetails
     oci.recovery.models.UpdateRecoveryServiceSubnetDetails

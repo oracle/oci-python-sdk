@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.185.0 - 2026-08-25
+====================
+
+Added 
+----- 
+* Support for blue/green deployments in the MySQL HeatWave service 
+* Support for capacity reservations, capacity reservation configurations, and associating reservations when creating instances in the Big Data service 
+* Support for Zero Trust Packet Routing (ZPR) security attributes on recovery subnets in the Autonomous Recovery service 
+* Support for network firewall as a Virtual Test Access Points (VTAP) source in the Networking service 
+* Support for NL2SQL model selection, annotation, background mode and delta enrichment in the Generative AI service 
+* Support for NL2SQL model selection, annotation, background mode and delta enrichment in the Generative AI Data service 
+* Support for B200, B300, L40S, and MI300X dedicated AI cluster unit shapes in the Generative AI service  
+
+Breaking 
+-------- 
+* Deleted classes `CancelEnrichmentJobClientCompositeOperations`, `CancelEnrichmentJobClient`, `GenerateEnrichmentJobClientCompositeOperations`, `GenerateEnrichmentJobClient`, `GenerateSqlFromNlJobClientCompositeOperations`, `GetEnrichmentJobClient`, `ListEnrichmentJobsClientCompositeOperations` ,and `ListEnrichmentJobsClient` from the Generative AI service 
+* `GetEnrichmentJobClientCompositeOperations` was renamed to `GenerateSqlClientCompositeOperations` in the Generative AI service 
+* `GenerateSqlFromNlJobClient` was renamed to `GenerateSqlClient` in the Generative AI service  
+
+Security
+--------
+* The supported `pyOpenSSL` dependency range has changed to `>=17.5.0,<22.0.0` for Python 3.7 and earlier, and `>=26.2.0,<27.0.0` for Python 3.8 and later. Python 3.7 and earlier retain residual CVE-2026-27448 risk.
+* The supported `cryptography` dependency range has changed to `>=3.2.1,<=37.0.2` for Python 3.7 and earlier.
+
+====================
 2.184.2 - 2026-08-18
 ====================
 

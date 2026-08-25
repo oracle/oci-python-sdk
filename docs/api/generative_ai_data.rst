@@ -6,16 +6,10 @@ Generative Ai Data
     :nosignatures:
     :template: autosummary/service_client.rst
 
-    oci.generative_ai_data.CancelEnrichmentJobClient
-    oci.generative_ai_data.GenerateEnrichmentJobClient
-    oci.generative_ai_data.GenerateSqlFromNlJobClient
-    oci.generative_ai_data.GetEnrichmentJobClient
-    oci.generative_ai_data.ListEnrichmentJobsClient
-    oci.generative_ai_data.CancelEnrichmentJobClientCompositeOperations
-    oci.generative_ai_data.GenerateEnrichmentJobClientCompositeOperations
-    oci.generative_ai_data.GenerateSqlFromNlJobClientCompositeOperations
-    oci.generative_ai_data.GetEnrichmentJobClientCompositeOperations
-    oci.generative_ai_data.ListEnrichmentJobsClientCompositeOperations
+    oci.generative_ai_data.EnrichmentJobClient
+    oci.generative_ai_data.GenerateSqlClient
+    oci.generative_ai_data.EnrichmentJobClientCompositeOperations
+    oci.generative_ai_data.GenerateSqlClientCompositeOperations
 
 --------
  Models

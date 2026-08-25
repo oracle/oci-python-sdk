@@ -132,8 +132,8 @@ class GenerateEnrichmentJobDetails(object):
     @property
     def enrichment_job_type(self):
         """
-        **[Required]** Gets the enrichment_job_type of this GenerateEnrichmentJobDetails.
-        Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+        Gets the enrichment_job_type of this GenerateEnrichmentJobDetails.
+        Deprecated. Use EnrichmentJobConfiguration.enrichmentJobType instead.
 
         Allowed values for this property are: "FULL_BUILD", "PARTIAL_BUILD", "DELTA_REFRESH"
 
@@ -147,7 +147,7 @@ class GenerateEnrichmentJobDetails(object):
     def enrichment_job_type(self, enrichment_job_type):
         """
         Sets the enrichment_job_type of this GenerateEnrichmentJobDetails.
-        Enrichment job type. Currently supported Full Build (All supported objects in a given schema) and Partial Build (Selected tables and/or supported objects in a given schema).
+        Deprecated. Use EnrichmentJobConfiguration.enrichmentJobType instead.
 
 
         :param enrichment_job_type: The enrichment_job_type of this GenerateEnrichmentJobDetails.

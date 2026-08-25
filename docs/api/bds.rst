@@ -45,6 +45,14 @@ Bds
     oci.bds.models.BdsApiKey
     oci.bds.models.BdsApiKeySummary
     oci.bds.models.BdsCapacityReport
+    oci.bds.models.BdsCapacityReservation
+    oci.bds.models.BdsCapacityReservationAssociatedConfigurationCollection
+    oci.bds.models.BdsCapacityReservationAssociatedConfigurationSummary
+    oci.bds.models.BdsCapacityReservationCollection
+    oci.bds.models.BdsCapacityReservationConfiguration
+    oci.bds.models.BdsCapacityReservationConfigurationCollection
+    oci.bds.models.BdsCapacityReservationConfigurationSummary
+    oci.bds.models.BdsCapacityReservationSummary
     oci.bds.models.BdsCertificateConfiguration
     oci.bds.models.BdsCertificateConfigurationSummary
     oci.bds.models.BdsClusterVersionSummary
@@ -58,14 +66,18 @@ Bds
     oci.bds.models.CapacityReportShapeAvailability
     oci.bds.models.CertificateServiceInfoDetails
     oci.bds.models.CertificateServiceInfoSummary
+    oci.bds.models.ChangeBdsCapacityReservationCompartmentDetails
     oci.bds.models.ChangeBdsInstanceCompartmentDetails
     oci.bds.models.ChangeShapeDetails
     oci.bds.models.ChangeShapeNodes
     oci.bds.models.CloudSqlDetails
     oci.bds.models.ClusterDetails
+    oci.bds.models.ComputeCapacityReservations
     oci.bds.models.ConfigLevelManageBdsCertificateDetails
     oci.bds.models.CreateBdsApiKeyDetails
     oci.bds.models.CreateBdsCapacityReportDetails
+    oci.bds.models.CreateBdsCapacityReservationConfigurationDetails
+    oci.bds.models.CreateBdsCapacityReservationDetails
     oci.bds.models.CreateBdsCertificateConfigurationDetails
     oci.bds.models.CreateBdsInstanceDetails
     oci.bds.models.CreateBdsMetastoreConfigurationDetails
@@ -163,6 +175,8 @@ Bds
     oci.bds.models.TimeAndVerticalScalingConfig
     oci.bds.models.UpdateAutoScalePolicyDetails
     oci.bds.models.UpdateAutoScalingConfigurationDetails
+    oci.bds.models.UpdateBdsCapacityReservationConfigurationDetails
+    oci.bds.models.UpdateBdsCapacityReservationDetails
     oci.bds.models.UpdateBdsInstanceDetails
     oci.bds.models.UpdateBdsMetastoreConfigurationDetails
     oci.bds.models.UpdateIdentityConfigurationDetails

@@ -14,8 +14,13 @@ from .backup import Backup
 from .backup_policy import BackupPolicy
 from .backup_summary import BackupSummary
 from .backup_validation_details import BackupValidationDetails
+from .blue_green_deployment import BlueGreenDeployment
+from .blue_green_deployment_collection import BlueGreenDeploymentCollection
+from .blue_green_deployment_summary import BlueGreenDeploymentSummary
+from .blue_green_deployment_target_db_system_details import BlueGreenDeploymentTargetDbSystemDetails
 from .ca_certificate import CaCertificate
 from .change_backup_compartment_details import ChangeBackupCompartmentDetails
+from .change_blue_green_deployment_compartment_details import ChangeBlueGreenDeploymentCompartmentDetails
 from .channel import Channel
 from .channel_filter import ChannelFilter
 from .channel_source import ChannelSource
@@ -35,6 +40,9 @@ from .copy_backup_details import CopyBackupDetails
 from .copy_policy import CopyPolicy
 from .create_backup_details import CreateBackupDetails
 from .create_backup_policy_details import CreateBackupPolicyDetails
+from .create_blue_green_deployment_channel_details import CreateBlueGreenDeploymentChannelDetails
+from .create_blue_green_deployment_details import CreateBlueGreenDeploymentDetails
+from .create_blue_green_deployment_target_db_system_details import CreateBlueGreenDeploymentTargetDbSystemDetails
 from .create_channel_details import CreateChannelDetails
 from .create_channel_source_details import CreateChannelSourceDetails
 from .create_channel_source_from_mysql_details import CreateChannelSourceFromMysqlDetails
@@ -107,9 +115,11 @@ from .restart_db_system_details import RestartDbSystemDetails
 from .secure_connection_details import SecureConnectionDetails
 from .shape_summary import ShapeSummary
 from .stop_db_system_details import StopDbSystemDetails
+from .switchover_blue_green_deployment_details import SwitchoverBlueGreenDeploymentDetails
 from .telemetry_configuration_details import TelemetryConfigurationDetails
 from .update_backup_details import UpdateBackupDetails
 from .update_backup_policy_details import UpdateBackupPolicyDetails
+from .update_blue_green_deployment_details import UpdateBlueGreenDeploymentDetails
 from .update_channel_details import UpdateChannelDetails
 from .update_channel_source_details import UpdateChannelSourceDetails
 from .update_channel_source_from_mysql_details import UpdateChannelSourceFromMysqlDetails
@@ -144,8 +154,13 @@ mysql_type_mapping = {
     "BackupPolicy": BackupPolicy,
     "BackupSummary": BackupSummary,
     "BackupValidationDetails": BackupValidationDetails,
+    "BlueGreenDeployment": BlueGreenDeployment,
+    "BlueGreenDeploymentCollection": BlueGreenDeploymentCollection,
+    "BlueGreenDeploymentSummary": BlueGreenDeploymentSummary,
+    "BlueGreenDeploymentTargetDbSystemDetails": BlueGreenDeploymentTargetDbSystemDetails,
     "CaCertificate": CaCertificate,
     "ChangeBackupCompartmentDetails": ChangeBackupCompartmentDetails,
+    "ChangeBlueGreenDeploymentCompartmentDetails": ChangeBlueGreenDeploymentCompartmentDetails,
     "Channel": Channel,
     "ChannelFilter": ChannelFilter,
     "ChannelSource": ChannelSource,
@@ -165,6 +180,9 @@ mysql_type_mapping = {
     "CopyPolicy": CopyPolicy,
     "CreateBackupDetails": CreateBackupDetails,
     "CreateBackupPolicyDetails": CreateBackupPolicyDetails,
+    "CreateBlueGreenDeploymentChannelDetails": CreateBlueGreenDeploymentChannelDetails,
+    "CreateBlueGreenDeploymentDetails": CreateBlueGreenDeploymentDetails,
+    "CreateBlueGreenDeploymentTargetDbSystemDetails": CreateBlueGreenDeploymentTargetDbSystemDetails,
     "CreateChannelDetails": CreateChannelDetails,
     "CreateChannelSourceDetails": CreateChannelSourceDetails,
     "CreateChannelSourceFromMysqlDetails": CreateChannelSourceFromMysqlDetails,
@@ -237,9 +255,11 @@ mysql_type_mapping = {
     "SecureConnectionDetails": SecureConnectionDetails,
     "ShapeSummary": ShapeSummary,
     "StopDbSystemDetails": StopDbSystemDetails,
+    "SwitchoverBlueGreenDeploymentDetails": SwitchoverBlueGreenDeploymentDetails,
     "TelemetryConfigurationDetails": TelemetryConfigurationDetails,
     "UpdateBackupDetails": UpdateBackupDetails,
     "UpdateBackupPolicyDetails": UpdateBackupPolicyDetails,
+    "UpdateBlueGreenDeploymentDetails": UpdateBlueGreenDeploymentDetails,
     "UpdateChannelDetails": UpdateChannelDetails,
     "UpdateChannelSourceDetails": UpdateChannelSourceDetails,
     "UpdateChannelSourceFromMysqlDetails": UpdateChannelSourceFromMysqlDetails,

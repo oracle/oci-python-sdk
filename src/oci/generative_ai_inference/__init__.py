@@ -10,5 +10,30 @@ from __future__ import absolute_import
 from .generative_ai_inference_client import GenerativeAiInferenceClient
 from .generative_ai_inference_client_composite_operations import GenerativeAiInferenceClientCompositeOperations
 from . import models
+import types
+import sys
 
-__all__ = ["GenerativeAiInferenceClient", "GenerativeAiInferenceClientCompositeOperations", "models"]
+
+class _GenerativeAiInferenceModule(types.ModuleType):
+    def __getattr__(self, name):
+
+        if name == "AsyncGenerativeAiInferenceClient":
+            from .async_generative_ai_inference_client import AsyncGenerativeAiInferenceClient
+            setattr(self, name, AsyncGenerativeAiInferenceClient)
+            return AsyncGenerativeAiInferenceClient
+
+        raise AttributeError("module {!r} has no attribute {!r}".format(__name__, name))
+
+    def __dir__(self):
+        names = set(types.ModuleType.__dir__(self))
+
+        names.add("AsyncGenerativeAiInferenceClient")
+
+        return sorted(names)
+
+
+# Loading a service module does not import its async transport until the async
+# client is explicitly requested.
+sys.modules[__name__].__class__ = _GenerativeAiInferenceModule
+
+__all__ = ["GenerativeAiInferenceClient", "GenerativeAiInferenceClientCompositeOperations", "AsyncGenerativeAiInferenceClient", "models"]

@@ -13,7 +13,8 @@ from oci.decorators import init_model_state_from_kwargs
 class DeltaRefreshEnrichmentJobConfiguration(EnrichmentJobConfiguration):
     """
     A DeltaRefreshEnrichmentJobConfiguration is an EnrichmentJobConfiguration [indicated by the first item under `allOf`, which is a reference to EnrichmentJobConfiguration]
-    that describes the database schema that will be the scope of the enrichment job and the schedule on which the job will run. As distinguished by enrichmentJobType [with specific characteristics defined by the second item under `allOf`].
+    that describes the database schema that will be the scope of the delta refresh enrichment job. As distinguished by enrichmentJobType [with specific characteristics defined by the second item under `allOf`].
+    deltaRefreshSchedule is optional, is not used by the service, and is retained only for backward compatibility. It should be treated as deprecated.
     """
 
     def __init__(self, **kwargs):
@@ -78,8 +79,8 @@ class DeltaRefreshEnrichmentJobConfiguration(EnrichmentJobConfiguration):
     @property
     def delta_refresh_schedule(self):
         """
-        **[Required]** Gets the delta_refresh_schedule of this DeltaRefreshEnrichmentJobConfiguration.
-        Schedule for occurrences of Delta Refresh jobs
+        Gets the delta_refresh_schedule of this DeltaRefreshEnrichmentJobConfiguration.
+        Deprecated schedule for occurrences of Delta Refresh jobs. This value is not used by the service.
 
 
         :return: The delta_refresh_schedule of this DeltaRefreshEnrichmentJobConfiguration.
@@ -91,7 +92,7 @@ class DeltaRefreshEnrichmentJobConfiguration(EnrichmentJobConfiguration):
     def delta_refresh_schedule(self, delta_refresh_schedule):
         """
         Sets the delta_refresh_schedule of this DeltaRefreshEnrichmentJobConfiguration.
-        Schedule for occurrences of Delta Refresh jobs
+        Deprecated schedule for occurrences of Delta Refresh jobs. This value is not used by the service.
 
 
         :param delta_refresh_schedule: The delta_refresh_schedule of this DeltaRefreshEnrichmentJobConfiguration.

@@ -12,8 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InboundAuthConfig(object):
     """
-    The client-side inbound authentication configuration for the Hosted Application.
-    Defines the network access rules.
+    The inbound authentication configuration for the Hosted Application.
     When unspecified, the service applies the default inbound authentication configuration type.
     """
 
@@ -52,8 +51,7 @@ class InboundAuthConfig(object):
     def inbound_auth_config_type(self):
         """
         **[Required]** Gets the inbound_auth_config_type of this InboundAuthConfig.
-        Inbound authentication configuration type of network access
-        (IDCS_AUTH_CONFIG).
+        The inbound authentication configuration type for the Hosted Application.
 
         Allowed values for this property are: "IDCS_AUTH_CONFIG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -68,8 +66,7 @@ class InboundAuthConfig(object):
     def inbound_auth_config_type(self, inbound_auth_config_type):
         """
         Sets the inbound_auth_config_type of this InboundAuthConfig.
-        Inbound authentication configuration type of network access
-        (IDCS_AUTH_CONFIG).
+        The inbound authentication configuration type for the Hosted Application.
 
 
         :param inbound_auth_config_type: The inbound_auth_config_type of this InboundAuthConfig.

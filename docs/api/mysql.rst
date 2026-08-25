@@ -6,12 +6,14 @@ Mysql
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.mysql.BlueGreenDeploymentsClient
     oci.mysql.ChannelsClient
     oci.mysql.DbBackupsClient
     oci.mysql.DbSystemClient
     oci.mysql.MysqlaasClient
     oci.mysql.ReplicasClient
     oci.mysql.WorkRequestsClient
+    oci.mysql.BlueGreenDeploymentsClientCompositeOperations
     oci.mysql.ChannelsClientCompositeOperations
     oci.mysql.DbBackupsClientCompositeOperations
     oci.mysql.DbSystemClientCompositeOperations
@@ -36,8 +38,13 @@ Mysql
     oci.mysql.models.BackupPolicy
     oci.mysql.models.BackupSummary
     oci.mysql.models.BackupValidationDetails
+    oci.mysql.models.BlueGreenDeployment
+    oci.mysql.models.BlueGreenDeploymentCollection
+    oci.mysql.models.BlueGreenDeploymentSummary
+    oci.mysql.models.BlueGreenDeploymentTargetDbSystemDetails
     oci.mysql.models.CaCertificate
     oci.mysql.models.ChangeBackupCompartmentDetails
+    oci.mysql.models.ChangeBlueGreenDeploymentCompartmentDetails
     oci.mysql.models.Channel
     oci.mysql.models.ChannelFilter
     oci.mysql.models.ChannelSource
@@ -57,6 +64,9 @@ Mysql
     oci.mysql.models.CopyPolicy
     oci.mysql.models.CreateBackupDetails
     oci.mysql.models.CreateBackupPolicyDetails
+    oci.mysql.models.CreateBlueGreenDeploymentChannelDetails
+    oci.mysql.models.CreateBlueGreenDeploymentDetails
+    oci.mysql.models.CreateBlueGreenDeploymentTargetDbSystemDetails
     oci.mysql.models.CreateChannelDetails
     oci.mysql.models.CreateChannelSourceDetails
     oci.mysql.models.CreateChannelSourceFromMysqlDetails
@@ -129,9 +139,11 @@ Mysql
     oci.mysql.models.SecureConnectionDetails
     oci.mysql.models.ShapeSummary
     oci.mysql.models.StopDbSystemDetails
+    oci.mysql.models.SwitchoverBlueGreenDeploymentDetails
     oci.mysql.models.TelemetryConfigurationDetails
     oci.mysql.models.UpdateBackupDetails
     oci.mysql.models.UpdateBackupPolicyDetails
+    oci.mysql.models.UpdateBlueGreenDeploymentDetails
     oci.mysql.models.UpdateChannelDetails
     oci.mysql.models.UpdateChannelSourceDetails
     oci.mysql.models.UpdateChannelSourceFromMysqlDetails

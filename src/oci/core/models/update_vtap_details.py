@@ -63,6 +63,10 @@ class UpdateVtapDetails(object):
     #: This constant has a value of "AUTONOMOUS_DATA_WAREHOUSE"
     SOURCE_TYPE_AUTONOMOUS_DATA_WAREHOUSE = "AUTONOMOUS_DATA_WAREHOUSE"
 
+    #: A constant which can be used with the source_type property of a UpdateVtapDetails.
+    #: This constant has a value of "NETWORK_FIREWALL"
+    SOURCE_TYPE_NETWORK_FIREWALL = "NETWORK_FIREWALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateVtapDetails object with values from keyword arguments.
@@ -133,7 +137,7 @@ class UpdateVtapDetails(object):
 
         :param source_type:
             The value to assign to the source_type property of this UpdateVtapDetails.
-            Allowed values for this property are: "VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE"
+            Allowed values for this property are: "VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE", "NETWORK_FIREWALL"
         :type source_type: str
 
         """
@@ -621,7 +625,7 @@ class UpdateVtapDetails(object):
         Gets the source_type of this UpdateVtapDetails.
         The source type for the VTAP.
 
-        Allowed values for this property are: "VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE"
+        Allowed values for this property are: "VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE", "NETWORK_FIREWALL"
 
 
         :return: The source_type of this UpdateVtapDetails.
@@ -639,7 +643,7 @@ class UpdateVtapDetails(object):
         :param source_type: The source_type of this UpdateVtapDetails.
         :type: str
         """
-        allowed_values = ["VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE"]
+        allowed_values = ["VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE", "NETWORK_FIREWALL"]
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `source_type`, must be None or one of {allowed_values}"

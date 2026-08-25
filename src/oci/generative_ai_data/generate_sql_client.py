@@ -20,7 +20,7 @@ from .models import generative_ai_data_type_mapping
 missing = Sentinel("Missing")
 
 
-class GenerateEnrichmentJobClient(object):
+class GenerateSqlClient(object):
     """
     A description of the ReferenceService API. in progress
     """
@@ -120,17 +120,31 @@ class GenerateEnrichmentJobClient(object):
             base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
         if 'enable_strict_url_encoding' in kwargs:
             base_client_init_kwargs['enable_strict_url_encoding'] = kwargs.get('enable_strict_url_encoding')
-        self.base_client = BaseClient("generate_enrichment_job", config, signer, generative_ai_data_type_mapping, **base_client_init_kwargs)
+        self.base_client = BaseClient("generate_sql", config, signer, generative_ai_data_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
-    def generate_enrichment_job(self, generate_enrichment_job_details, semantic_store_id, **kwargs):
+    def generate_sql_from_nl(self, generate_sql_from_nl_details, semantic_store_id, **kwargs):
         """
-        Creates a new asynchronous EnrichmentJob.
+        Generates a SQL query from a natural language input for the specified SemanticStore.
+
+        This operation creates a GenerateSqlFromNlJob. The request can either be processed as a
+        background job or wait for completion, depending on completionMode.
+
+        If modelId is provided, the service validates it and uses it for schema-linking in table selection,
+        SQL generation, and SQL refinement. If modelId is omitted, the service default model is used. The response
+        includes the modelId used for generation.
+
+        Clients should inspect lifecycleState in the response:
+        - If lifecycleState is SUCCEEDED, SQL generation is complete and the result is available in jobOutput.
+        - If lifecycleState is ACCEPTED or IN_PROGRESS, poll GetGenerateSqlFromNlJob using the returned job id.
+        - If lifecycleState is FAILED or CANCELED, SQL generation did not complete. See lifecycleDetails for more information.
+
+        The GetGenerateSqlFromNlJob endpoint is the source of truth for final job state and result availability.
 
 
-        :param oci.generative_ai_data.models.GenerateEnrichmentJobDetails generate_enrichment_job_details: (required)
-            Details for the new EnrichmentJob.
+        :param oci.generative_ai_data.models.GenerateSqlFromNlDetails generate_sql_from_nl_details: (required)
+            Details for generating SQL from natural language.
 
         :param str semantic_store_id: (required)
             The OCID of the semantic store
@@ -168,18 +182,18 @@ class GenerateEnrichmentJobClient(object):
             enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
             By default, strict url encoding for path params is disabled
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.generative_ai_data.models.EnrichmentJob`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.generative_ai_data.models.GenerateSqlFromNlJob`
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/generativeaidata/generate_enrichment_job.py.html>`__ to see an example of how to use generate_enrichment_job API.
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/generativeaidata/generate_sql_from_nl.py.html>`__ to see an example of how to use generate_sql_from_nl API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['semanticStoreId']
-        resource_path = "/semanticStores/{semanticStoreId}/actions/enrich"
+        resource_path = "/semanticStores/{semanticStoreId}/actions/generateSqlFromNl"
         method = "POST"
-        operation_name = "generate_enrichment_job"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/EnrichmentJob/GenerateEnrichmentJob"
+        operation_name = "generate_sql_from_nl"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/GenerateSqlFromNlJob/GenerateSqlFromNl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -193,7 +207,7 @@ class GenerateEnrichmentJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                f"generate_enrichment_job got unknown kwargs: {extra_kwargs!r}")
+                f"generate_sql_from_nl got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "semanticStoreId": semantic_store_id
@@ -232,8 +246,8 @@ class GenerateEnrichmentJobClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_enrichment_job_details,
-                response_type="EnrichmentJob",
+                body=generate_sql_from_nl_details,
+                response_type="GenerateSqlFromNlJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -245,8 +259,120 @@ class GenerateEnrichmentJobClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_enrichment_job_details,
-                response_type="EnrichmentJob",
+                body=generate_sql_from_nl_details,
+                response_type="GenerateSqlFromNlJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_generate_sql_from_nl_job(self, semantic_store_id, generate_sql_from_nl_job_id, **kwargs):
+        """
+        Retrieves the current state of a GenerateSqlFromNlJob.
+        Clients should poll this endpoint until lifecycleState is SUCCEEDED or FAILED.
+        When lifecycleState is SUCCEEDED, the result is available in jobOutput.
+        The returned job includes the modelId used for generation.
+
+
+        :param str semantic_store_id: (required)
+            The OCID of the semantic store
+
+        :param str generate_sql_from_nl_job_id: (required)
+            The OCID of the Semantic Store job for a GenerateSqlFromNl job.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.generative_ai_data.models.GenerateSqlFromNlJob`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/generativeaidata/get_generate_sql_from_nl_job.py.html>`__ to see an example of how to use get_generate_sql_from_nl_job API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['semanticStoreId', 'generateSqlFromNlJobId']
+        resource_path = "/semanticStores/{semanticStoreId}/generateSqlFromNlJobs/{generateSqlFromNlJobId}"
+        method = "GET"
+        operation_name = "get_generate_sql_from_nl_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-nl2sql/20260325/GenerateSqlFromNlJob/GetGenerateSqlFromNlJob"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_generate_sql_from_nl_job got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "semanticStoreId": semantic_store_id,
+            "generateSqlFromNlJobId": generate_sql_from_nl_job_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="GenerateSqlFromNlJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="GenerateSqlFromNlJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,

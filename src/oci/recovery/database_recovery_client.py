@@ -124,6 +124,128 @@ class DatabaseRecoveryClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def cancel_long_term_backup(self, long_term_backup_id, **kwargs):
+        """
+        Cancels a long-term backup that is being created or scheduled to be created. You must specify the unique identifier or OCID of the long-term backup that you want to cancel. You can cancel a long-term backup only if the current state of the backup resource is WAITING_FOR_BACKUP_FROM_DB, or SCHEDULED_FOR_ARCHIVAL, or ARCHIVAL_IN_PROGRESS.
+
+
+        :param str long_term_backup_id: (required)
+            The long term backup OCID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/cancel_long_term_backup.py.html>`__ to see an example of how to use cancel_long_term_backup API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['longTermBackupId']
+        resource_path = "/longTermBackups/{longTermBackupId}/actions/cancel"
+        method = "POST"
+        operation_name = "cancel_long_term_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/CancelLongTermBackup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_retry_token",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"cancel_long_term_backup got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "longTermBackupId": long_term_backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def cancel_protected_database_deletion(self, protected_database_id, **kwargs):
         """
         Cancels the scheduled deletion of a protected database, and returns the protected database to an ACTIVE state. You can cancel the deletion only if the protected database is in the DELETE SCHEDULED state.
@@ -131,6 +253,13 @@ class DatabaseRecoveryClient(object):
 
         :param str protected_database_id: (required)
             The protected database OCID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -176,6 +305,7 @@ class DatabaseRecoveryClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "opc_retry_token",
             "if_match",
             "opc_request_id"
         ]
@@ -197,6 +327,7 @@ class DatabaseRecoveryClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
@@ -211,6 +342,7 @@ class DatabaseRecoveryClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -246,6 +378,13 @@ class DatabaseRecoveryClient(object):
 
         :param oci.recovery.models.ChangeProtectedDatabaseCompartmentDetails change_protected_database_compartment_details: (required)
             The configuration details required to move a protected database from the existing compartment to a specified compartment.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -291,6 +430,7 @@ class DatabaseRecoveryClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "opc_retry_token",
             "if_match",
             "opc_request_id"
         ]
@@ -312,6 +452,7 @@ class DatabaseRecoveryClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
@@ -326,6 +467,7 @@ class DatabaseRecoveryClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -363,6 +505,13 @@ class DatabaseRecoveryClient(object):
 
         :param oci.recovery.models.ChangeProtectedDatabaseSubscriptionDetails change_protected_database_subscription_details: (required)
             Associate a protected database with a different subscription.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -408,6 +557,7 @@ class DatabaseRecoveryClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "opc_retry_token",
             "opc_request_id",
             "if_match"
         ]
@@ -429,6 +579,7 @@ class DatabaseRecoveryClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
@@ -443,6 +594,7 @@ class DatabaseRecoveryClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -480,6 +632,13 @@ class DatabaseRecoveryClient(object):
 
         :param oci.recovery.models.ChangeProtectionPolicyCompartmentDetails change_protection_policy_compartment_details: (required)
             The configuration details required to move a protection policy from the existing compartment to a specified compartment.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -525,6 +684,7 @@ class DatabaseRecoveryClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "opc_retry_token",
             "if_match",
             "opc_request_id"
         ]
@@ -546,6 +706,7 @@ class DatabaseRecoveryClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
@@ -560,6 +721,7 @@ class DatabaseRecoveryClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -597,6 +759,13 @@ class DatabaseRecoveryClient(object):
 
         :param oci.recovery.models.ChangeRecoveryServiceSubnetCompartmentDetails change_recovery_service_subnet_compartment_details: (required)
             The configuration details required to move a Recovery Service subnet from the existing compartment to a specified compartment.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -642,6 +811,7 @@ class DatabaseRecoveryClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "opc_retry_token",
             "if_match",
             "opc_request_id"
         ]
@@ -663,6 +833,7 @@ class DatabaseRecoveryClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
@@ -677,6 +848,7 @@ class DatabaseRecoveryClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -698,6 +870,111 @@ class DatabaseRecoveryClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_recovery_service_subnet_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def create_long_term_backup(self, create_long_term_backup_details, **kwargs):
+        """
+        Creates a long-term backup of a specified protected database.
+
+
+        :param oci.recovery.models.CreateLongTermBackupDetails create_long_term_backup_details: (required)
+            Describes the parameters required to create a long term backup for a protected database.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.recovery.models.LongTermBackup`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/create_long_term_backup.py.html>`__ to see an example of how to use create_long_term_backup API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/longTermBackups"
+        method = "POST"
+        operation_name = "create_long_term_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/CreateLongTermBackup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_long_term_backup got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_long_term_backup_details,
+                response_type="LongTermBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_long_term_backup_details,
+                response_type="LongTermBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -1044,9 +1321,122 @@ class DatabaseRecoveryClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def delete_long_term_backup(self, long_term_backup_id, **kwargs):
+        """
+        Deletes a long-term backup. You can delete a long-term backup only if the current state of the backup is ACTIVE, FAILED, or CANCELED.
+
+
+        :param str long_term_backup_id: (required)
+            The long term backup OCID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/delete_long_term_backup.py.html>`__ to see an example of how to use delete_long_term_backup API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['longTermBackupId']
+        resource_path = "/longTermBackups/{longTermBackupId}"
+        method = "DELETE"
+        operation_name = "delete_long_term_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/DeleteLongTermBackup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_long_term_backup got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "longTermBackupId": long_term_backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def delete_protected_database(self, protected_database_id, **kwargs):
         """
         Deletes a protected database based on the specified protected database ID.
+        Only the user or the Oracle Database service that created the protected database is allowed to modify or delete it.
 
 
         :param str protected_database_id: (required)
@@ -1414,6 +1804,13 @@ class DatabaseRecoveryClient(object):
         :param oci.recovery.models.FetchProtectedDatabaseConfigurationDetails fetch_protected_database_configuration_details: (optional)
             Which configuration to get
 
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
@@ -1459,6 +1856,7 @@ class DatabaseRecoveryClient(object):
             "enable_strict_url_encoding",
             "retry_strategy",
             "fetch_protected_database_configuration_details",
+            "opc_retry_token",
             "opc_request_id",
             "if_match"
         ]
@@ -1480,6 +1878,7 @@ class DatabaseRecoveryClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
@@ -1494,6 +1893,7 @@ class DatabaseRecoveryClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -1517,6 +1917,111 @@ class DatabaseRecoveryClient(object):
                 header_params=header_params,
                 body=kwargs.get('fetch_protected_database_configuration_details'),
                 response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_long_term_backup(self, long_term_backup_id, **kwargs):
+        """
+        Retrieves information regarding a long-term backup.
+
+
+        :param str long_term_backup_id: (required)
+            The long term backup OCID.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.recovery.models.LongTermBackup`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/get_long_term_backup.py.html>`__ to see an example of how to use get_long_term_backup API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['longTermBackupId']
+        resource_path = "/longTermBackups/{longTermBackupId}"
+        method = "GET"
+        operation_name = "get_long_term_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/GetLongTermBackup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_long_term_backup got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "longTermBackupId": long_term_backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LongTermBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LongTermBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -1943,12 +2448,186 @@ class DatabaseRecoveryClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_protected_databases(self, compartment_id, **kwargs):
+    def list_long_term_backups(self, **kwargs):
+        """
+        Lists the long-term backups associated with a protected database. You can filter the results using the unique identifier (OCID) of a specific compartment, a protected database, or a long-term backup.
+
+
+        :param str compartment_id: (optional)
+            The compartment OCID.
+
+        :param str id: (optional)
+            The long-term backup OCID. Use longTermBackupId to filter a long-term backup based on its unique identifier.
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire 'displayname' given.
+
+        :param str protected_database_id: (optional)
+            The protected database OCID. Use protectedDatabaseId to list the long-term backups of a specific protected database.
+
+        :param str lifecycle_state: (optional)
+            A filter to return only the resources that match the specified lifecycle state.
+
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED"
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+            Allowed values are:
+              - ASC
+              - DESC
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (sortOrder). Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If you do not specify a value, then TIMECREATED is used as the default sort order.
+            Allowed values are:
+              - TIMECREATED
+              - DISPLAYNAME
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.recovery.models.LongTermBackupCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/list_long_term_backups.py.html>`__ to see an example of how to use list_long_term_backups API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/longTermBackups"
+        method = "GET"
+        operation_name = "list_long_term_backups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackupCollection/ListLongTermBackups"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "compartment_id",
+            "id",
+            "display_name",
+            "protected_database_id",
+            "lifecycle_state",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_long_term_backups got unknown kwargs: {extra_kwargs!r}")
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "id": kwargs.get("id", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "protectedDatabaseId": kwargs.get("protected_database_id", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="LongTermBackupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="LongTermBackupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_protected_databases(self, **kwargs):
         """
         Lists the protected databases based on the specified parameters.
 
 
-        :param str compartment_id: (required)
+        :param str compartment_id: (optional)
             The compartment OCID.
 
         :param str lifecycle_state: (optional)
@@ -1967,6 +2646,11 @@ class DatabaseRecoveryClient(object):
 
         :param str recovery_service_subnet_id: (optional)
             The recovery service subnet OCID.
+
+        :param str backup_cloud_location: (optional)
+            Filter for cloud location of protected database.
+
+            Allowed values are: "AZURE", "OCI", "GCP", "AWS"
 
         :param int limit: (optional)
             The maximum number of items to return per page.
@@ -2016,7 +2700,7 @@ class DatabaseRecoveryClient(object):
         Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/list_protected_databases.py.html>`__ to see an example of how to use list_protected_databases API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['compartmentId']
+        required_arguments = []
         resource_path = "/protectedDatabases"
         method = "GET"
         operation_name = "list_protected_databases"
@@ -2027,11 +2711,13 @@ class DatabaseRecoveryClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "compartment_id",
             "lifecycle_state",
             "display_name",
             "id",
             "protection_policy_id",
             "recovery_service_subnet_id",
+            "backup_cloud_location",
             "limit",
             "page",
             "sort_order",
@@ -2050,6 +2736,13 @@ class DatabaseRecoveryClient(object):
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
+        if 'backup_cloud_location' in kwargs:
+            backup_cloud_location_allowed_values = ["AZURE", "OCI", "GCP", "AWS"]
+            if kwargs['backup_cloud_location'] not in backup_cloud_location_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `backup_cloud_location`, must be one of { backup_cloud_location_allowed_values }"
+                )
+
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
@@ -2065,12 +2758,13 @@ class DatabaseRecoveryClient(object):
                 )
 
         query_params = {
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "displayName": kwargs.get("display_name", missing),
             "id": kwargs.get("id", missing),
             "protectionPolicyId": kwargs.get("protection_policy_id", missing),
             "recoveryServiceSubnetId": kwargs.get("recovery_service_subnet_id", missing),
+            "backupCloudLocation": kwargs.get("backup_cloud_location", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -2121,12 +2815,12 @@ class DatabaseRecoveryClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_protection_policies(self, compartment_id, **kwargs):
+    def list_protection_policies(self, **kwargs):
         """
         Gets a list of protection policies based on the specified parameters.
 
 
-        :param str compartment_id: (required)
+        :param str compartment_id: (optional)
             The compartment OCID.
 
         :param str lifecycle_state: (optional)
@@ -2144,6 +2838,9 @@ class DatabaseRecoveryClient(object):
             A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
 
             Allowed values are: "oracle", "customer"
+
+        :param bool must_enforce_cloud_locality: (optional)
+            A filter to return only the protection policies that enforce backup colocation (mustEnforceCloudLocality is set to TRUE).
 
         :param int limit: (optional)
             The maximum number of items to return. Specify a value greater than 4.
@@ -2193,7 +2890,7 @@ class DatabaseRecoveryClient(object):
         Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/list_protection_policies.py.html>`__ to see an example of how to use list_protection_policies API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['compartmentId']
+        required_arguments = []
         resource_path = "/protectionPolicies"
         method = "GET"
         operation_name = "list_protection_policies"
@@ -2204,10 +2901,12 @@ class DatabaseRecoveryClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "compartment_id",
             "lifecycle_state",
             "display_name",
             "protection_policy_id",
             "owner",
+            "must_enforce_cloud_locality",
             "limit",
             "page",
             "sort_order",
@@ -2248,11 +2947,12 @@ class DatabaseRecoveryClient(object):
                 )
 
         query_params = {
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "displayName": kwargs.get("display_name", missing),
             "protectionPolicyId": kwargs.get("protection_policy_id", missing),
             "owner": kwargs.get("owner", missing),
+            "mustEnforceCloudLocality": kwargs.get("must_enforce_cloud_locality", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -2303,12 +3003,12 @@ class DatabaseRecoveryClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_recovery_service_subnets(self, compartment_id, **kwargs):
+    def list_recovery_service_subnets(self, **kwargs):
         """
         Returns a list of Recovery Service Subnets.
 
 
-        :param str compartment_id: (required)
+        :param str compartment_id: (optional)
             The compartment OCID.
 
         :param str lifecycle_state: (optional)
@@ -2373,7 +3073,7 @@ class DatabaseRecoveryClient(object):
         Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/list_recovery_service_subnets.py.html>`__ to see an example of how to use list_recovery_service_subnets API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['compartmentId']
+        required_arguments = []
         resource_path = "/recoveryServiceSubnets"
         method = "GET"
         operation_name = "list_recovery_service_subnets"
@@ -2384,6 +3084,7 @@ class DatabaseRecoveryClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "compartment_id",
             "lifecycle_state",
             "display_name",
             "id",
@@ -2421,7 +3122,7 @@ class DatabaseRecoveryClient(object):
                 )
 
         query_params = {
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "displayName": kwargs.get("display_name", missing),
             "id": kwargs.get("id", missing),
@@ -2780,12 +3481,12 @@ class DatabaseRecoveryClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_work_requests(self, compartment_id, **kwargs):
+    def list_work_requests(self, **kwargs):
         """
         Lists the work requests in a compartment.
 
 
-        :param str compartment_id: (required)
+        :param str compartment_id: (optional)
             The compartment OCID.
 
         :param str work_request_id: (optional)
@@ -2844,7 +3545,7 @@ class DatabaseRecoveryClient(object):
         Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['compartmentId']
+        required_arguments = []
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2855,6 +3556,7 @@ class DatabaseRecoveryClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "compartment_id",
             "work_request_id",
             "status",
             "resource_id",
@@ -2891,7 +3593,7 @@ class DatabaseRecoveryClient(object):
                 )
 
         query_params = {
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
             "workRequestId": kwargs.get("work_request_id", missing),
             "status": kwargs.get("status", missing),
             "resourceId": kwargs.get("resource_id", missing),
@@ -2948,6 +3650,8 @@ class DatabaseRecoveryClient(object):
     def schedule_protected_database_deletion(self, protected_database_id, **kwargs):
         """
         Defines a preferred schedule to delete a protected database after you terminate the source database.
+        Only the user or the Oracle Database service that created the protected database is allowed to modify or delete it.
+
         The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
         The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
 
@@ -2957,6 +3661,13 @@ class DatabaseRecoveryClient(object):
 
         :param oci.recovery.models.ScheduleProtectedDatabaseDeletionDetails schedule_protected_database_deletion_details: (optional)
             The details for scheduling deletion of the protected database
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3003,6 +3714,7 @@ class DatabaseRecoveryClient(object):
             "enable_strict_url_encoding",
             "retry_strategy",
             "schedule_protected_database_deletion_details",
+            "opc_retry_token",
             "if_match",
             "opc_request_id"
         ]
@@ -3013,6 +3725,125 @@ class DatabaseRecoveryClient(object):
 
         path_params = {
             "protectedDatabaseId": protected_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=kwargs.get('schedule_protected_database_deletion_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=kwargs.get('schedule_protected_database_deletion_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_long_term_backup(self, long_term_backup_id, update_long_term_backup_details, **kwargs):
+        """
+        Updates the specified long term backup.
+
+
+        :param str long_term_backup_id: (required)
+            The long term backup OCID.
+
+        :param oci.recovery.models.UpdateLongTermBackupDetails update_long_term_backup_details: (required)
+            The information to be updated.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/update_long_term_backup.py.html>`__ to see an example of how to use update_long_term_backup API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['longTermBackupId']
+        resource_path = "/longTermBackups/{longTermBackupId}"
+        method = "PUT"
+        operation_name = "update_long_term_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/LongTermBackup/UpdateLongTermBackup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_long_term_backup got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "longTermBackupId": long_term_backup_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -3046,7 +3877,7 @@ class DatabaseRecoveryClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('schedule_protected_database_deletion_details'),
+                body=update_long_term_backup_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -3058,7 +3889,7 @@ class DatabaseRecoveryClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('schedule_protected_database_deletion_details'),
+                body=update_long_term_backup_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,

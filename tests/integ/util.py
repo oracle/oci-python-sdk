@@ -17,6 +17,10 @@ TEST_DATA_VERSION = '2'
 COMPARTMENT_ID = os.environ.get("OCI_PYSDK_COMPARTMENT_ID")
 COMPARTMENT_NAME = os.environ.get("OCI_PYSDK_COMPARTMENT_NAME")
 
+# Generative AI configuration
+GENAI_REGION = os.environ.get("OCI_GENAI_REGION", "us-chicago-1")
+GENAI_MODEL_ID = os.environ.get("OCI_GENAI_MODEL_ID", "meta.llama-3.3-70b-instruct")
+
 REGIONAL_CONFIG = {
     'us-phoenix-1': {
         'bucket_prefix': '',

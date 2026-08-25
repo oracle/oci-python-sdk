@@ -168,6 +168,10 @@ class BdsInstance(object):
             The value to assign to the nodes property of this BdsInstance.
         :type nodes: list[oci.bds.models.Node]
 
+        :param bds_capacity_reservation_configurations:
+            The value to assign to the bds_capacity_reservation_configurations property of this BdsInstance.
+        :type bds_capacity_reservation_configurations: list[oci.bds.models.BdsCapacityReservationConfiguration]
+
         :param cloud_sql_details:
             The value to assign to the cloud_sql_details property of this BdsInstance.
         :type cloud_sql_details: oci.bds.models.CloudSqlDetails
@@ -238,6 +242,7 @@ class BdsInstance(object):
             'network_config': 'NetworkConfig',
             'cluster_details': 'ClusterDetails',
             'nodes': 'list[Node]',
+            'bds_capacity_reservation_configurations': 'list[BdsCapacityReservationConfiguration]',
             'cloud_sql_details': 'CloudSqlDetails',
             'created_by': 'str',
             'time_created': 'datetime',
@@ -267,6 +272,7 @@ class BdsInstance(object):
             'network_config': 'networkConfig',
             'cluster_details': 'clusterDetails',
             'nodes': 'nodes',
+            'bds_capacity_reservation_configurations': 'bdsCapacityReservationConfigurations',
             'cloud_sql_details': 'cloudSqlDetails',
             'created_by': 'createdBy',
             'time_created': 'timeCreated',
@@ -295,6 +301,7 @@ class BdsInstance(object):
         self._network_config = None
         self._cluster_details = None
         self._nodes = None
+        self._bds_capacity_reservation_configurations = None
         self._cloud_sql_details = None
         self._created_by = None
         self._time_created = None
@@ -648,6 +655,30 @@ class BdsInstance(object):
         :type: list[oci.bds.models.Node]
         """
         self._nodes = nodes
+
+    @property
+    def bds_capacity_reservation_configurations(self):
+        """
+        Gets the bds_capacity_reservation_configurations of this BdsInstance.
+        The list of BDS capacity reservation configurations associated with the cluster.
+
+
+        :return: The bds_capacity_reservation_configurations of this BdsInstance.
+        :rtype: list[oci.bds.models.BdsCapacityReservationConfiguration]
+        """
+        return self._bds_capacity_reservation_configurations
+
+    @bds_capacity_reservation_configurations.setter
+    def bds_capacity_reservation_configurations(self, bds_capacity_reservation_configurations):
+        """
+        Sets the bds_capacity_reservation_configurations of this BdsInstance.
+        The list of BDS capacity reservation configurations associated with the cluster.
+
+
+        :param bds_capacity_reservation_configurations: The bds_capacity_reservation_configurations of this BdsInstance.
+        :type: list[oci.bds.models.BdsCapacityReservationConfiguration]
+        """
+        self._bds_capacity_reservation_configurations = bds_capacity_reservation_configurations
 
     @property
     def cloud_sql_details(self):

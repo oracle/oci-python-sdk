@@ -7,16 +7,10 @@
 from __future__ import absolute_import
 
 
-from .cancel_enrichment_job_client import CancelEnrichmentJobClient
-from .cancel_enrichment_job_client_composite_operations import CancelEnrichmentJobClientCompositeOperations
-from .generate_enrichment_job_client import GenerateEnrichmentJobClient
-from .generate_enrichment_job_client_composite_operations import GenerateEnrichmentJobClientCompositeOperations
-from .generate_sql_from_nl_job_client import GenerateSqlFromNlJobClient
-from .generate_sql_from_nl_job_client_composite_operations import GenerateSqlFromNlJobClientCompositeOperations
-from .get_enrichment_job_client import GetEnrichmentJobClient
-from .get_enrichment_job_client_composite_operations import GetEnrichmentJobClientCompositeOperations
-from .list_enrichment_jobs_client import ListEnrichmentJobsClient
-from .list_enrichment_jobs_client_composite_operations import ListEnrichmentJobsClientCompositeOperations
+from .enrichment_job_client import EnrichmentJobClient
+from .enrichment_job_client_composite_operations import EnrichmentJobClientCompositeOperations
+from .generate_sql_client import GenerateSqlClient
+from .generate_sql_client_composite_operations import GenerateSqlClientCompositeOperations
 from . import models
 
-__all__ = ["CancelEnrichmentJobClient", "CancelEnrichmentJobClientCompositeOperations", "GenerateEnrichmentJobClient", "GenerateEnrichmentJobClientCompositeOperations", "GenerateSqlFromNlJobClient", "GenerateSqlFromNlJobClientCompositeOperations", "GetEnrichmentJobClient", "GetEnrichmentJobClientCompositeOperations", "ListEnrichmentJobsClient", "ListEnrichmentJobsClientCompositeOperations", "models"]
+__all__ = ["EnrichmentJobClient", "EnrichmentJobClientCompositeOperations", "GenerateSqlClient", "GenerateSqlClientCompositeOperations", "models"]

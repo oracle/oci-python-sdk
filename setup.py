@@ -32,8 +32,10 @@ with open_relative("README.rst") as f:
 requires = [
     "certifi",
     "configparser==4.0.2 ; python_version < '3'",
-    "cryptography>=3.2.1,<51.0.0",
-    "pyOpenSSL>=17.5.0,<27.0.0",
+    "cryptography>=3.2.1,<=37.0.2; python_version <= '3.7'",
+    "cryptography>=3.2.1,<51.0.0; python_version >= '3.8'",
+    "pyOpenSSL>=17.5.0,<22.0.0; python_version <= '3.7'",
+    "pyOpenSSL>=26.2.0,<27.0.0; python_version >= '3.8'",
     "python-dateutil>=2.5.3,<3.0.0",
     "pytz>=2016.10",
     "circuitbreaker>=1.3.1,<2.0.0; python_version <= '3.6'",
@@ -43,7 +45,11 @@ requires = [
     "PyJWT==2.4.0; python_version < '3.9'",
     "PyJWT>=2.12.0; python_version >= '3.9'",
     "crc32c==2.5; python_version == '3.6'",
-    "crc32c==2.8.0; python_version >= '3.7'"
+    "crc32c==2.8.0; python_version >= '3.7'",
+    "aiohttp>=3.8.3,<3.9; python_version == '3.6'",
+    "aiohttp>=3.8.6,<3.9; python_version == '3.7'",
+    "aiohttp>=3.10.11,<3.11; python_version == '3.8'",
+    "aiohttp>=3.10.11,<4; python_version >= '3.9'"
 ]
 
 extras_require = {

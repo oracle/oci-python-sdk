@@ -28,6 +28,14 @@ class UpdateSemanticStoreDetails(object):
             The value to assign to the display_name property of this UpdateSemanticStoreDetails.
         :type display_name: str
 
+        :param model_selection:
+            The value to assign to the model_selection property of this UpdateSemanticStoreDetails.
+        :type model_selection: oci.generative_ai.models.SemanticStoreModelSelection
+
+        :param is_user_defined_semantics_enabled:
+            The value to assign to the is_user_defined_semantics_enabled property of this UpdateSemanticStoreDetails.
+        :type is_user_defined_semantics_enabled: bool
+
         :param refresh_schedule:
             The value to assign to the refresh_schedule property of this UpdateSemanticStoreDetails.
         :type refresh_schedule: oci.generative_ai.models.RefreshScheduleDetails
@@ -48,6 +56,8 @@ class UpdateSemanticStoreDetails(object):
         self.swagger_types = {
             'description': 'str',
             'display_name': 'str',
+            'model_selection': 'SemanticStoreModelSelection',
+            'is_user_defined_semantics_enabled': 'bool',
             'refresh_schedule': 'RefreshScheduleDetails',
             'schemas': 'CreateSchemasDetails',
             'freeform_tags': 'dict(str, str)',
@@ -56,6 +66,8 @@ class UpdateSemanticStoreDetails(object):
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
+            'model_selection': 'modelSelection',
+            'is_user_defined_semantics_enabled': 'isUserDefinedSemanticsEnabled',
             'refresh_schedule': 'refreshSchedule',
             'schemas': 'schemas',
             'freeform_tags': 'freeformTags',
@@ -63,6 +75,8 @@ class UpdateSemanticStoreDetails(object):
         }
         self._description = None
         self._display_name = None
+        self._model_selection = None
+        self._is_user_defined_semantics_enabled = None
         self._refresh_schedule = None
         self._schemas = None
         self._freeform_tags = None
@@ -115,6 +129,56 @@ class UpdateSemanticStoreDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def model_selection(self):
+        """
+        Gets the model_selection of this UpdateSemanticStoreDetails.
+
+        :return: The model_selection of this UpdateSemanticStoreDetails.
+        :rtype: oci.generative_ai.models.SemanticStoreModelSelection
+        """
+        return self._model_selection
+
+    @model_selection.setter
+    def model_selection(self, model_selection):
+        """
+        Sets the model_selection of this UpdateSemanticStoreDetails.
+
+        :param model_selection: The model_selection of this UpdateSemanticStoreDetails.
+        :type: oci.generative_ai.models.SemanticStoreModelSelection
+        """
+        self._model_selection = model_selection
+
+    @property
+    def is_user_defined_semantics_enabled(self):
+        """
+        Gets the is_user_defined_semantics_enabled of this UpdateSemanticStoreDetails.
+        Whether to include user-defined semantic inputs, such as annotations, comments, and synonyms, during semantic-store enrichment.
+        When true, enrichment uses both metadata and user-defined semantics.
+        When false, enrichment uses metadata only.
+        If omitted, the existing setting is unchanged.
+
+
+        :return: The is_user_defined_semantics_enabled of this UpdateSemanticStoreDetails.
+        :rtype: bool
+        """
+        return self._is_user_defined_semantics_enabled
+
+    @is_user_defined_semantics_enabled.setter
+    def is_user_defined_semantics_enabled(self, is_user_defined_semantics_enabled):
+        """
+        Sets the is_user_defined_semantics_enabled of this UpdateSemanticStoreDetails.
+        Whether to include user-defined semantic inputs, such as annotations, comments, and synonyms, during semantic-store enrichment.
+        When true, enrichment uses both metadata and user-defined semantics.
+        When false, enrichment uses metadata only.
+        If omitted, the existing setting is unchanged.
+
+
+        :param is_user_defined_semantics_enabled: The is_user_defined_semantics_enabled of this UpdateSemanticStoreDetails.
+        :type: bool
+        """
+        self._is_user_defined_semantics_enabled = is_user_defined_semantics_enabled
 
     @property
     def refresh_schedule(self):

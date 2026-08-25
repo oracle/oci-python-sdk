@@ -405,7 +405,7 @@ class DedicatedAiClusterSummary(object):
     def unit_shape(self):
         """
         **[Required]** Gets the unit_shape of this DedicatedAiClusterSummary.
-        The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+        The shape of dedicated unit in this AI cluster.
 
 
         :return: The unit_shape of this DedicatedAiClusterSummary.
@@ -417,7 +417,7 @@ class DedicatedAiClusterSummary(object):
     def unit_shape(self, unit_shape):
         """
         Sets the unit_shape of this DedicatedAiClusterSummary.
-        The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+        The shape of dedicated unit in this AI cluster.
 
 
         :param unit_shape: The unit_shape of this DedicatedAiClusterSummary.

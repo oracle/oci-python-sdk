@@ -40,6 +40,10 @@ class SemanticStoreSummary(object):
             The value to assign to the data_source property of this SemanticStoreSummary.
         :type data_source: oci.generative_ai.models.DataSourceDetails
 
+        :param model_selection:
+            The value to assign to the model_selection property of this SemanticStoreSummary.
+        :type model_selection: oci.generative_ai.models.SemanticStoreModelSelection
+
         :param refresh_schedule:
             The value to assign to the refresh_schedule property of this SemanticStoreSummary.
         :type refresh_schedule: oci.generative_ai.models.RefreshScheduleDetails
@@ -64,6 +68,10 @@ class SemanticStoreSummary(object):
             The value to assign to the lifecycle_details property of this SemanticStoreSummary.
         :type lifecycle_details: str
 
+        :param is_user_defined_semantics_enabled:
+            The value to assign to the is_user_defined_semantics_enabled property of this SemanticStoreSummary.
+        :type is_user_defined_semantics_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SemanticStoreSummary.
         :type freeform_tags: dict(str, str)
@@ -83,12 +91,14 @@ class SemanticStoreSummary(object):
             'description': 'str',
             'compartment_id': 'str',
             'data_source': 'DataSourceDetails',
+            'model_selection': 'SemanticStoreModelSelection',
             'refresh_schedule': 'RefreshScheduleDetails',
             'schemas': 'SchemasDetails',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'is_user_defined_semantics_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -99,12 +109,14 @@ class SemanticStoreSummary(object):
             'description': 'description',
             'compartment_id': 'compartmentId',
             'data_source': 'dataSource',
+            'model_selection': 'modelSelection',
             'refresh_schedule': 'refreshSchedule',
             'schemas': 'schemas',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'is_user_defined_semantics_enabled': 'isUserDefinedSemanticsEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -114,12 +126,14 @@ class SemanticStoreSummary(object):
         self._description = None
         self._compartment_id = None
         self._data_source = None
+        self._model_selection = None
         self._refresh_schedule = None
         self._schemas = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._is_user_defined_semantics_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -247,6 +261,26 @@ class SemanticStoreSummary(object):
         :type: oci.generative_ai.models.DataSourceDetails
         """
         self._data_source = data_source
+
+    @property
+    def model_selection(self):
+        """
+        Gets the model_selection of this SemanticStoreSummary.
+
+        :return: The model_selection of this SemanticStoreSummary.
+        :rtype: oci.generative_ai.models.SemanticStoreModelSelection
+        """
+        return self._model_selection
+
+    @model_selection.setter
+    def model_selection(self, model_selection):
+        """
+        Sets the model_selection of this SemanticStoreSummary.
+
+        :param model_selection: The model_selection of this SemanticStoreSummary.
+        :type: oci.generative_ai.models.SemanticStoreModelSelection
+        """
+        self._model_selection = model_selection
 
     @property
     def refresh_schedule(self):
@@ -399,6 +433,36 @@ class SemanticStoreSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def is_user_defined_semantics_enabled(self):
+        """
+        Gets the is_user_defined_semantics_enabled of this SemanticStoreSummary.
+        Whether user-defined semantic inputs, such as annotations, comments, and synonyms, are enabled for semantic-store enrichment.
+        When true, enrichment uses both metadata and user-defined semantics.
+        When false, enrichment uses metadata only.
+        If not specified when the semantic store is created, this value defaults to true.
+
+
+        :return: The is_user_defined_semantics_enabled of this SemanticStoreSummary.
+        :rtype: bool
+        """
+        return self._is_user_defined_semantics_enabled
+
+    @is_user_defined_semantics_enabled.setter
+    def is_user_defined_semantics_enabled(self, is_user_defined_semantics_enabled):
+        """
+        Sets the is_user_defined_semantics_enabled of this SemanticStoreSummary.
+        Whether user-defined semantic inputs, such as annotations, comments, and synonyms, are enabled for semantic-store enrichment.
+        When true, enrichment uses both metadata and user-defined semantics.
+        When false, enrichment uses metadata only.
+        If not specified when the semantic store is created, this value defaults to true.
+
+
+        :param is_user_defined_semantics_enabled: The is_user_defined_semantics_enabled of this SemanticStoreSummary.
+        :type: bool
+        """
+        self._is_user_defined_semantics_enabled = is_user_defined_semantics_enabled
 
     @property
     def freeform_tags(self):

@@ -68,6 +68,10 @@ class CreateBdsInstanceDetails(object):
             The value to assign to the nodes property of this CreateBdsInstanceDetails.
         :type nodes: list[oci.bds.models.CreateNodeDetails]
 
+        :param bds_capacity_reservation_configurations:
+            The value to assign to the bds_capacity_reservation_configurations property of this CreateBdsInstanceDetails.
+        :type bds_capacity_reservation_configurations: list[oci.bds.models.CreateBdsCapacityReservationConfigurationDetails]
+
         :param kerberos_realm_name:
             The value to assign to the kerberos_realm_name property of this CreateBdsInstanceDetails.
         :type kerberos_realm_name: str
@@ -106,6 +110,7 @@ class CreateBdsInstanceDetails(object):
             'network_config': 'NetworkConfig',
             'bootstrap_script_url': 'str',
             'nodes': 'list[CreateNodeDetails]',
+            'bds_capacity_reservation_configurations': 'list[CreateBdsCapacityReservationConfigurationDetails]',
             'kerberos_realm_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -126,6 +131,7 @@ class CreateBdsInstanceDetails(object):
             'network_config': 'networkConfig',
             'bootstrap_script_url': 'bootstrapScriptUrl',
             'nodes': 'nodes',
+            'bds_capacity_reservation_configurations': 'bdsCapacityReservationConfigurations',
             'kerberos_realm_name': 'kerberosRealmName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -148,6 +154,7 @@ class CreateBdsInstanceDetails(object):
         self._network_config = None
         self._bootstrap_script_url = None
         self._nodes = None
+        self._bds_capacity_reservation_configurations = None
         self._kerberos_realm_name = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -438,6 +445,30 @@ class CreateBdsInstanceDetails(object):
         :type: list[oci.bds.models.CreateNodeDetails]
         """
         self._nodes = nodes
+
+    @property
+    def bds_capacity_reservation_configurations(self):
+        """
+        Gets the bds_capacity_reservation_configurations of this CreateBdsInstanceDetails.
+        Optional BDS capacity reservation configurations to associate with the cluster during creation.
+
+
+        :return: The bds_capacity_reservation_configurations of this CreateBdsInstanceDetails.
+        :rtype: list[oci.bds.models.CreateBdsCapacityReservationConfigurationDetails]
+        """
+        return self._bds_capacity_reservation_configurations
+
+    @bds_capacity_reservation_configurations.setter
+    def bds_capacity_reservation_configurations(self, bds_capacity_reservation_configurations):
+        """
+        Sets the bds_capacity_reservation_configurations of this CreateBdsInstanceDetails.
+        Optional BDS capacity reservation configurations to associate with the cluster during creation.
+
+
+        :param bds_capacity_reservation_configurations: The bds_capacity_reservation_configurations of this CreateBdsInstanceDetails.
+        :type: list[oci.bds.models.CreateBdsCapacityReservationConfigurationDetails]
+        """
+        self._bds_capacity_reservation_configurations = bds_capacity_reservation_configurations
 
     @property
     def kerberos_realm_name(self):
