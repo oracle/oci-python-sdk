@@ -43,7 +43,7 @@ class BdsClusterVersionSummary(object):
     @property
     def bds_version(self):
         """
-        **[Required]** Gets the bds_version of this BdsClusterVersionSummary.
+        Gets the bds_version of this BdsClusterVersionSummary.
         BDS version to be used for cluster creation
 
 

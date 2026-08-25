@@ -60,6 +60,7 @@ Generative Ai
     oci.generative_ai.models.CreateSingleDockerArtifactDetails
     oci.generative_ai.models.CreateVectorStoreConnectorDetails
     oci.generative_ai.models.CreateVectorStoreConnectorFileSyncDetails
+    oci.generative_ai.models.CustomSemanticStoreModelSelection
     oci.generative_ai.models.DataSourceDatabaseToolsConnectionDetails
     oci.generative_ai.models.DataSourceDetails
     oci.generative_ai.models.DatabaseToolsConnection
@@ -69,6 +70,7 @@ Generative Ai
     oci.generative_ai.models.DedicatedAiClusterCollection
     oci.generative_ai.models.DedicatedAiClusterHostingCapacity
     oci.generative_ai.models.DedicatedAiClusterSummary
+    oci.generative_ai.models.DefaultSemanticStoreModelSelection
     oci.generative_ai.models.EmbeddingConfig
     oci.generative_ai.models.Endpoint
     oci.generative_ai.models.EndpointCollection
@@ -136,6 +138,7 @@ Generative Ai
     oci.generative_ai.models.SchemasDetails
     oci.generative_ai.models.SemanticStore
     oci.generative_ai.models.SemanticStoreCollection
+    oci.generative_ai.models.SemanticStoreModelSelection
     oci.generative_ai.models.SemanticStoreSummary
     oci.generative_ai.models.SetApiKeyStateDetails
     oci.generative_ai.models.ShortTermMemoryOptimizationConfig

@@ -173,7 +173,7 @@ class InstanceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -295,7 +295,7 @@ class InstanceClient(object):
         resource_path = "/instances/{instanceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_instance_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/ChangeInstanceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -412,7 +412,7 @@ class InstanceClient(object):
         resource_path = "/instances"
         method = "POST"
         operation_name = "create_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/CreateInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -521,7 +521,7 @@ class InstanceClient(object):
         resource_path = "/instances/{instanceId}"
         method = "DELETE"
         operation_name = "delete_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/DeleteInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -631,7 +631,7 @@ class InstanceClient(object):
         resource_path = "/instances/{instanceId}"
         method = "GET"
         operation_name = "get_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/GetInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -741,7 +741,7 @@ class InstanceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -890,7 +890,7 @@ class InstanceClient(object):
         resource_path = "/instances"
         method = "GET"
         operation_name = "list_instances"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/InstanceCollection/ListInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1055,7 +1055,7 @@ class InstanceClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1217,7 +1217,7 @@ class InstanceClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1394,7 +1394,7 @@ class InstanceClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1544,7 +1544,7 @@ class InstanceClient(object):
         resource_path = "/instances/{instanceId}"
         method = "PUT"
         operation_name = "update_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ddfs/20260831/Instance/UpdateInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

@@ -48,6 +48,7 @@ from .create_semantic_store_details import CreateSemanticStoreDetails
 from .create_single_docker_artifact_details import CreateSingleDockerArtifactDetails
 from .create_vector_store_connector_details import CreateVectorStoreConnectorDetails
 from .create_vector_store_connector_file_sync_details import CreateVectorStoreConnectorFileSyncDetails
+from .custom_semantic_store_model_selection import CustomSemanticStoreModelSelection
 from .data_source_database_tools_connection_details import DataSourceDatabaseToolsConnectionDetails
 from .data_source_details import DataSourceDetails
 from .database_tools_connection import DatabaseToolsConnection
@@ -57,6 +58,7 @@ from .dedicated_ai_cluster_capacity import DedicatedAiClusterCapacity
 from .dedicated_ai_cluster_collection import DedicatedAiClusterCollection
 from .dedicated_ai_cluster_hosting_capacity import DedicatedAiClusterHostingCapacity
 from .dedicated_ai_cluster_summary import DedicatedAiClusterSummary
+from .default_semantic_store_model_selection import DefaultSemanticStoreModelSelection
 from .embedding_config import EmbeddingConfig
 from .endpoint import Endpoint
 from .endpoint_collection import EndpointCollection
@@ -124,6 +126,7 @@ from .schemas_database_tools_connection_details import SchemasDatabaseToolsConne
 from .schemas_details import SchemasDetails
 from .semantic_store import SemanticStore
 from .semantic_store_collection import SemanticStoreCollection
+from .semantic_store_model_selection import SemanticStoreModelSelection
 from .semantic_store_summary import SemanticStoreSummary
 from .set_api_key_state_details import SetApiKeyStateDetails
 from .short_term_memory_optimization_config import ShortTermMemoryOptimizationConfig
@@ -209,6 +212,7 @@ generative_ai_type_mapping = {
     "CreateSingleDockerArtifactDetails": CreateSingleDockerArtifactDetails,
     "CreateVectorStoreConnectorDetails": CreateVectorStoreConnectorDetails,
     "CreateVectorStoreConnectorFileSyncDetails": CreateVectorStoreConnectorFileSyncDetails,
+    "CustomSemanticStoreModelSelection": CustomSemanticStoreModelSelection,
     "DataSourceDatabaseToolsConnectionDetails": DataSourceDatabaseToolsConnectionDetails,
     "DataSourceDetails": DataSourceDetails,
     "DatabaseToolsConnection": DatabaseToolsConnection,
@@ -218,6 +222,7 @@ generative_ai_type_mapping = {
     "DedicatedAiClusterCollection": DedicatedAiClusterCollection,
     "DedicatedAiClusterHostingCapacity": DedicatedAiClusterHostingCapacity,
     "DedicatedAiClusterSummary": DedicatedAiClusterSummary,
+    "DefaultSemanticStoreModelSelection": DefaultSemanticStoreModelSelection,
     "EmbeddingConfig": EmbeddingConfig,
     "Endpoint": Endpoint,
     "EndpointCollection": EndpointCollection,
@@ -285,6 +290,7 @@ generative_ai_type_mapping = {
     "SchemasDetails": SchemasDetails,
     "SemanticStore": SemanticStore,
     "SemanticStoreCollection": SemanticStoreCollection,
+    "SemanticStoreModelSelection": SemanticStoreModelSelection,
     "SemanticStoreSummary": SemanticStoreSummary,
     "SetApiKeyStateDetails": SetApiKeyStateDetails,
     "ShortTermMemoryOptimizationConfig": ShortTermMemoryOptimizationConfig,

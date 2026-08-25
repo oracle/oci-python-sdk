@@ -7,6 +7,8 @@
 from __future__ import absolute_import
 
 
+from .blue_green_deployments_client import BlueGreenDeploymentsClient
+from .blue_green_deployments_client_composite_operations import BlueGreenDeploymentsClientCompositeOperations
 from .channels_client import ChannelsClient
 from .channels_client_composite_operations import ChannelsClientCompositeOperations
 from .db_backups_client import DbBackupsClient
@@ -21,4 +23,4 @@ from .work_requests_client import WorkRequestsClient
 from .work_requests_client_composite_operations import WorkRequestsClientCompositeOperations
 from . import models
 
-__all__ = ["ChannelsClient", "ChannelsClientCompositeOperations", "DbBackupsClient", "DbBackupsClientCompositeOperations", "DbSystemClient", "DbSystemClientCompositeOperations", "MysqlaasClient", "MysqlaasClientCompositeOperations", "ReplicasClient", "ReplicasClientCompositeOperations", "WorkRequestsClient", "WorkRequestsClientCompositeOperations", "models"]
+__all__ = ["BlueGreenDeploymentsClient", "BlueGreenDeploymentsClientCompositeOperations", "ChannelsClient", "ChannelsClientCompositeOperations", "DbBackupsClient", "DbBackupsClientCompositeOperations", "DbSystemClient", "DbSystemClientCompositeOperations", "MysqlaasClient", "MysqlaasClientCompositeOperations", "ReplicasClient", "ReplicasClientCompositeOperations", "WorkRequestsClient", "WorkRequestsClientCompositeOperations", "models"]

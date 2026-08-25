@@ -44,7 +44,7 @@ class StorageConfig(object):
     def environment_variable_key(self):
         """
         **[Required]** Gets the environment_variable_key of this StorageConfig.
-        The key of environment variable to store the database connection.
+        The environment variable key for accessing the managed storage.
 
 
         :return: The environment_variable_key of this StorageConfig.
@@ -56,7 +56,7 @@ class StorageConfig(object):
     def environment_variable_key(self, environment_variable_key):
         """
         Sets the environment_variable_key of this StorageConfig.
-        The key of environment variable to store the database connection.
+        The environment variable key for accessing the managed storage.
 
 
         :param environment_variable_key: The environment_variable_key of this StorageConfig.

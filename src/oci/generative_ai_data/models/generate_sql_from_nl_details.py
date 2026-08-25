@@ -15,6 +15,14 @@ class GenerateSqlFromNlDetails(object):
     The data to create a GenerateSqlFromNlJob.
     """
 
+    #: A constant which can be used with the completion_mode property of a GenerateSqlFromNlDetails.
+    #: This constant has a value of "WAIT_FOR_COMPLETION"
+    COMPLETION_MODE_WAIT_FOR_COMPLETION = "WAIT_FOR_COMPLETION"
+
+    #: A constant which can be used with the completion_mode property of a GenerateSqlFromNlDetails.
+    #: This constant has a value of "BACKGROUND_JOB"
+    COMPLETION_MODE_BACKGROUND_JOB = "BACKGROUND_JOB"
+
     def __init__(self, **kwargs):
         """
         Initializes a new GenerateSqlFromNlDetails object with values from keyword arguments.
@@ -32,6 +40,15 @@ class GenerateSqlFromNlDetails(object):
             The value to assign to the input_natural_language_query property of this GenerateSqlFromNlDetails.
         :type input_natural_language_query: str
 
+        :param model_id:
+            The value to assign to the model_id property of this GenerateSqlFromNlDetails.
+        :type model_id: str
+
+        :param completion_mode:
+            The value to assign to the completion_mode property of this GenerateSqlFromNlDetails.
+            Allowed values for this property are: "WAIT_FOR_COMPLETION", "BACKGROUND_JOB"
+        :type completion_mode: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this GenerateSqlFromNlDetails.
         :type freeform_tags: dict(str, str)
@@ -45,6 +62,8 @@ class GenerateSqlFromNlDetails(object):
             'description': 'str',
             'display_name': 'str',
             'input_natural_language_query': 'str',
+            'model_id': 'str',
+            'completion_mode': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -52,12 +71,16 @@ class GenerateSqlFromNlDetails(object):
             'description': 'description',
             'display_name': 'displayName',
             'input_natural_language_query': 'inputNaturalLanguageQuery',
+            'model_id': 'modelId',
+            'completion_mode': 'completionMode',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._description = None
         self._display_name = None
         self._input_natural_language_query = None
+        self._model_id = None
+        self._completion_mode = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -136,6 +159,65 @@ class GenerateSqlFromNlDetails(object):
         :type: str
         """
         self._input_natural_language_query = input_natural_language_query
+
+    @property
+    def model_id(self):
+        """
+        Gets the model_id of this GenerateSqlFromNlDetails.
+        The generative AI modelId to use for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+
+
+        :return: The model_id of this GenerateSqlFromNlDetails.
+        :rtype: str
+        """
+        return self._model_id
+
+    @model_id.setter
+    def model_id(self, model_id):
+        """
+        Sets the model_id of this GenerateSqlFromNlDetails.
+        The generative AI modelId to use for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+
+
+        :param model_id: The model_id of this GenerateSqlFromNlDetails.
+        :type: str
+        """
+        self._model_id = model_id
+
+    @property
+    def completion_mode(self):
+        """
+        Gets the completion_mode of this GenerateSqlFromNlDetails.
+        Controls whether GenerateSqlFromNl should be accepted as a background job or wait for completion.
+        BACKGROUND_JOB accepts the request for background processing and returns a pollable job.
+        WAIT_FOR_COMPLETION waits for completion within the service-defined timeout.
+
+        Allowed values for this property are: "WAIT_FOR_COMPLETION", "BACKGROUND_JOB"
+
+
+        :return: The completion_mode of this GenerateSqlFromNlDetails.
+        :rtype: str
+        """
+        return self._completion_mode
+
+    @completion_mode.setter
+    def completion_mode(self, completion_mode):
+        """
+        Sets the completion_mode of this GenerateSqlFromNlDetails.
+        Controls whether GenerateSqlFromNl should be accepted as a background job or wait for completion.
+        BACKGROUND_JOB accepts the request for background processing and returns a pollable job.
+        WAIT_FOR_COMPLETION waits for completion within the service-defined timeout.
+
+
+        :param completion_mode: The completion_mode of this GenerateSqlFromNlDetails.
+        :type: str
+        """
+        allowed_values = ["WAIT_FOR_COMPLETION", "BACKGROUND_JOB"]
+        if not value_allowed_none_or_none_sentinel(completion_mode, allowed_values):
+            raise ValueError(
+                f"Invalid value for `completion_mode`, must be None or one of {allowed_values}"
+            )
+        self._completion_mode = completion_mode
 
     @property
     def freeform_tags(self):

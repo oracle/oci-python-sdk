@@ -74,6 +74,10 @@ class Vtap(object):
     #: This constant has a value of "AUTONOMOUS_DATA_WAREHOUSE"
     SOURCE_TYPE_AUTONOMOUS_DATA_WAREHOUSE = "AUTONOMOUS_DATA_WAREHOUSE"
 
+    #: A constant which can be used with the source_type property of a Vtap.
+    #: This constant has a value of "NETWORK_FIREWALL"
+    SOURCE_TYPE_NETWORK_FIREWALL = "NETWORK_FIREWALL"
+
     #: A constant which can be used with the traffic_mode property of a Vtap.
     #: This constant has a value of "DEFAULT"
     TRAFFIC_MODE_DEFAULT = "DEFAULT"
@@ -175,7 +179,7 @@ class Vtap(object):
 
         :param source_type:
             The value to assign to the source_type property of this Vtap.
-            Allowed values for this property are: "VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE", "NETWORK_FIREWALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_type: str
 
@@ -772,7 +776,7 @@ class Vtap(object):
         Gets the source_type of this Vtap.
         The source type for the VTAP.
 
-        Allowed values for this property are: "VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE", "NETWORK_FIREWALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -791,7 +795,7 @@ class Vtap(object):
         :param source_type: The source_type of this Vtap.
         :type: str
         """
-        allowed_values = ["VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE"]
+        allowed_values = ["VNIC", "SUBNET", "LOAD_BALANCER", "DB_SYSTEM", "EXADATA_VM_CLUSTER", "AUTONOMOUS_DATA_WAREHOUSE", "NETWORK_FIREWALL"]
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
             source_type = 'UNKNOWN_ENUM_VALUE'
         self._source_type = source_type

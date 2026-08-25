@@ -8,9 +8,9 @@ import oci  # noqa: F401
 from oci.util import WAIT_RESOURCE_NOT_FOUND  # noqa: F401
 
 
-class CancelEnrichmentJobClientCompositeOperations(object):
+class GenerateSqlClientCompositeOperations(object):
     """
-    This class provides a wrapper around :py:class:`~oci.generative_ai_data.CancelEnrichmentJobClient` and offers convenience methods
+    This class provides a wrapper around :py:class:`~oci.generative_ai_data.GenerateSqlClient` and offers convenience methods
     for operations that would otherwise need to be chained together. For example, instead of performing an action
     on a resource (e.g. launching an instance, creating a load balancer) and then using a waiter to wait for the resource
     to enter a given state, you can call a single method in this class to accomplish the same functionality
@@ -18,9 +18,9 @@ class CancelEnrichmentJobClientCompositeOperations(object):
 
     def __init__(self, client, **kwargs):
         """
-        Creates a new CancelEnrichmentJobClientCompositeOperations object
+        Creates a new GenerateSqlClientCompositeOperations object
 
-        :param CancelEnrichmentJobClient client:
+        :param GenerateSqlClient client:
             The service client which will be wrapped by this object
         """
         self.client = client

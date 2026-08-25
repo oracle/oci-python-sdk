@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class HostedApplicationStorage(object):
     """
-    defines a physical storage (database or cache) managed by service. Each application can choose one or two storages for certain purpose such as agent memory.
+    Represents managed storage for an application. An application can use at most one managed storage resource of each type.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator who gives OCI resource access to users. See
     `Getting Started with Policies`__ and `Getting Access to Generative AI Resources`__.
@@ -267,7 +267,7 @@ class HostedApplicationStorage(object):
     def storage_type(self):
         """
         **[Required]** Gets the storage_type of this HostedApplicationStorage.
-        type like Cache, Postgresql and ADB.
+        The managed storage type for the application.
 
         Allowed values for this property are: "CACHE", "POSTGRESQL", "ADB", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -282,7 +282,7 @@ class HostedApplicationStorage(object):
     def storage_type(self, storage_type):
         """
         Sets the storage_type of this HostedApplicationStorage.
-        type like Cache, Postgresql and ADB.
+        The managed storage type for the application.
 
 
         :param storage_type: The storage_type of this HostedApplicationStorage.

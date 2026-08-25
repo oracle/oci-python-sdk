@@ -221,7 +221,7 @@ class HostedApplicationStorageSummary(object):
     def storage_type(self):
         """
         Gets the storage_type of this HostedApplicationStorageSummary.
-        type like Cache, Postgresql and ADB.
+        The managed storage type for the application.
 
         Allowed values for this property are: "CACHE", "POSTGRESQL", "ADB", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -236,7 +236,7 @@ class HostedApplicationStorageSummary(object):
     def storage_type(self, storage_type):
         """
         Sets the storage_type of this HostedApplicationStorageSummary.
-        type like Cache, Postgresql and ADB.
+        The managed storage type for the application.
 
 
         :param storage_type: The storage_type of this HostedApplicationStorageSummary.

@@ -878,9 +878,6 @@ class BaseClient(object):
             raise ValueError('Invalid endpoint host: endpoint must not contain path, query, or fragment.')
 
     def _is_valid_endpoint_path(self, endpoint_path):
-        if self._base_path == '/':
-            return endpoint_path in ('', '/')
-
         if self._base_path:
             endpoint_host_and_path = self._endpoint.rstrip('/').split('://', 1)[-1]
             configured_path_start_index = endpoint_host_and_path.find('/')

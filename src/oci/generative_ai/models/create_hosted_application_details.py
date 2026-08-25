@@ -234,8 +234,7 @@ class CreateHostedApplicationDetails(object):
     def storage_configs(self):
         """
         Gets the storage_configs of this CreateHostedApplicationDetails.
-        The list of storage configuration for the Hosted Application.
-        Defines a list of service-managed storage back-ends.
+        A list of managed storage configurations for the application.
 
 
         :return: The storage_configs of this CreateHostedApplicationDetails.
@@ -247,8 +246,7 @@ class CreateHostedApplicationDetails(object):
     def storage_configs(self, storage_configs):
         """
         Sets the storage_configs of this CreateHostedApplicationDetails.
-        The list of storage configuration for the Hosted Application.
-        Defines a list of service-managed storage back-ends.
+        A list of managed storage configurations for the application.
 
 
         :param storage_configs: The storage_configs of this CreateHostedApplicationDetails.

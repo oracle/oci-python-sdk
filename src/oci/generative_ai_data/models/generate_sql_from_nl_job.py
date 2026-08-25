@@ -13,7 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class GenerateSqlFromNlJob(object):
     """
     Object representing to GenerateSqlFromNlJob.
-    ocidEntityType: generativeaiGenerateSqlFromNlJob
+    ocidEntityType: generativeaisemanticstorejob
     adLocality: regional
     """
 
@@ -88,6 +88,10 @@ class GenerateSqlFromNlJob(object):
             The value to assign to the input_natural_language_query property of this GenerateSqlFromNlJob.
         :type input_natural_language_query: str
 
+        :param model_id:
+            The value to assign to the model_id property of this GenerateSqlFromNlJob.
+        :type model_id: str
+
         :param job_output:
             The value to assign to the job_output property of this GenerateSqlFromNlJob.
         :type job_output: oci.generative_ai_data.models.JobOutput
@@ -116,6 +120,7 @@ class GenerateSqlFromNlJob(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'input_natural_language_query': 'str',
+            'model_id': 'str',
             'job_output': 'JobOutput',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -132,6 +137,7 @@ class GenerateSqlFromNlJob(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'input_natural_language_query': 'inputNaturalLanguageQuery',
+            'model_id': 'modelId',
             'job_output': 'jobOutput',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -147,6 +153,7 @@ class GenerateSqlFromNlJob(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._input_natural_language_query = None
+        self._model_id = None
         self._job_output = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -156,7 +163,7 @@ class GenerateSqlFromNlJob(object):
     def id(self):
         """
         **[Required]** Gets the id of this GenerateSqlFromNlJob.
-        Unique identifier that is immutable on creation.
+        The OCID of the Semantic Store job.
 
 
         :return: The id of this GenerateSqlFromNlJob.
@@ -168,7 +175,7 @@ class GenerateSqlFromNlJob(object):
     def id(self, id):
         """
         Sets the id of this GenerateSqlFromNlJob.
-        Unique identifier that is immutable on creation.
+        The OCID of the Semantic Store job.
 
 
         :param id: The id of this GenerateSqlFromNlJob.
@@ -256,7 +263,7 @@ class GenerateSqlFromNlJob(object):
     def time_accepted(self):
         """
         **[Required]** Gets the time_accepted of this GenerateSqlFromNlJob.
-        The date and time that the enrichment job was accepted in the format of an RFC3339 datetime string.
+        The date and time that the GenerateSqlFromNlJob was accepted in the format of an RFC3339 datetime string.
 
 
         :return: The time_accepted of this GenerateSqlFromNlJob.
@@ -268,7 +275,7 @@ class GenerateSqlFromNlJob(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this GenerateSqlFromNlJob.
-        The date and time that the enrichment job was accepted in the format of an RFC3339 datetime string.
+        The date and time that the GenerateSqlFromNlJob was accepted in the format of an RFC3339 datetime string.
 
 
         :param time_accepted: The time_accepted of this GenerateSqlFromNlJob.
@@ -280,7 +287,7 @@ class GenerateSqlFromNlJob(object):
     def time_started(self):
         """
         Gets the time_started of this GenerateSqlFromNlJob.
-        The date and time that the enrichment job was started in the format of an RFC3339 datetime string.
+        The date and time that the GenerateSqlFromNlJob was started in the format of an RFC3339 datetime string.
 
 
         :return: The time_started of this GenerateSqlFromNlJob.
@@ -292,7 +299,7 @@ class GenerateSqlFromNlJob(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this GenerateSqlFromNlJob.
-        The date and time that the enrichment job was started in the format of an RFC3339 datetime string.
+        The date and time that the GenerateSqlFromNlJob was started in the format of an RFC3339 datetime string.
 
 
         :param time_started: The time_started of this GenerateSqlFromNlJob.
@@ -304,7 +311,7 @@ class GenerateSqlFromNlJob(object):
     def time_finished(self):
         """
         Gets the time_finished of this GenerateSqlFromNlJob.
-        The date and time that the enrichment job was finished in the format of an RFC3339 datetime string.
+        The date and time that the GenerateSqlFromNlJob was finished in the format of an RFC3339 datetime string.
 
 
         :return: The time_finished of this GenerateSqlFromNlJob.
@@ -316,7 +323,7 @@ class GenerateSqlFromNlJob(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this GenerateSqlFromNlJob.
-        The date and time that the enrichment job was finished in the format of an RFC3339 datetime string.
+        The date and time that the GenerateSqlFromNlJob was finished in the format of an RFC3339 datetime string.
 
 
         :param time_finished: The time_finished of this GenerateSqlFromNlJob.
@@ -328,7 +335,12 @@ class GenerateSqlFromNlJob(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this GenerateSqlFromNlJob.
-        The lifecycleState of GenerateSqlFromNlJob.
+        The current state of GenerateSqlFromNlJob.
+
+        - ACCEPTED: Job has been created but not yet started.
+        - IN_PROGRESS: Job is currently running.
+        - SUCCEEDED: Job completed successfully. The result is available in jobOutput.
+        - FAILED: Job failed. See lifecycleDetails for error information.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -343,7 +355,12 @@ class GenerateSqlFromNlJob(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this GenerateSqlFromNlJob.
-        The lifecycleState of GenerateSqlFromNlJob.
+        The current state of GenerateSqlFromNlJob.
+
+        - ACCEPTED: Job has been created but not yet started.
+        - IN_PROGRESS: Job is currently running.
+        - SUCCEEDED: Job completed successfully. The result is available in jobOutput.
+        - FAILED: Job failed. See lifecycleDetails for error information.
 
 
         :param lifecycle_state: The lifecycle_state of this GenerateSqlFromNlJob.
@@ -405,6 +422,30 @@ class GenerateSqlFromNlJob(object):
         :type: str
         """
         self._input_natural_language_query = input_natural_language_query
+
+    @property
+    def model_id(self):
+        """
+        **[Required]** Gets the model_id of this GenerateSqlFromNlJob.
+        The generative AI modelId used for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+
+
+        :return: The model_id of this GenerateSqlFromNlJob.
+        :rtype: str
+        """
+        return self._model_id
+
+    @model_id.setter
+    def model_id(self, model_id):
+        """
+        Sets the model_id of this GenerateSqlFromNlJob.
+        The generative AI modelId used for Generate SQL. You can use the ListModels API to list the available models. https://docs.oracle.com/en-us/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels
+
+
+        :param model_id: The model_id of this GenerateSqlFromNlJob.
+        :type: str
+        """
+        self._model_id = model_id
 
     @property
     def job_output(self):

@@ -86,6 +86,22 @@ class ProtectedDatabase(object):
     #: This constant has a value of "ALERT"
     HEALTH_ALERT = "ALERT"
 
+    #: A constant which can be used with the backup_cloud_location property of a ProtectedDatabase.
+    #: This constant has a value of "AZURE"
+    BACKUP_CLOUD_LOCATION_AZURE = "AZURE"
+
+    #: A constant which can be used with the backup_cloud_location property of a ProtectedDatabase.
+    #: This constant has a value of "OCI"
+    BACKUP_CLOUD_LOCATION_OCI = "OCI"
+
+    #: A constant which can be used with the backup_cloud_location property of a ProtectedDatabase.
+    #: This constant has a value of "GCP"
+    BACKUP_CLOUD_LOCATION_GCP = "GCP"
+
+    #: A constant which can be used with the backup_cloud_location property of a ProtectedDatabase.
+    #: This constant has a value of "AWS"
+    BACKUP_CLOUD_LOCATION_AWS = "AWS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ProtectedDatabase object with values from keyword arguments.
@@ -185,6 +201,12 @@ class ProtectedDatabase(object):
             The value to assign to the metrics property of this ProtectedDatabase.
         :type metrics: oci.recovery.models.Metrics
 
+        :param backup_cloud_location:
+            The value to assign to the backup_cloud_location property of this ProtectedDatabase.
+            Allowed values for this property are: "AZURE", "OCI", "GCP", "AWS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type backup_cloud_location: str
+
         :param subscription_id:
             The value to assign to the subscription_id property of this ProtectedDatabase.
         :type subscription_id: str
@@ -225,6 +247,7 @@ class ProtectedDatabase(object):
             'lifecycle_details': 'str',
             'health_details': 'str',
             'metrics': 'Metrics',
+            'backup_cloud_location': 'str',
             'subscription_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -253,6 +276,7 @@ class ProtectedDatabase(object):
             'lifecycle_details': 'lifecycleDetails',
             'health_details': 'healthDetails',
             'metrics': 'metrics',
+            'backup_cloud_location': 'backupCloudLocation',
             'subscription_id': 'subscriptionId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -280,6 +304,7 @@ class ProtectedDatabase(object):
         self._lifecycle_details = None
         self._health_details = None
         self._metrics = None
+        self._backup_cloud_location = None
         self._subscription_id = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -860,6 +885,36 @@ class ProtectedDatabase(object):
         :type: oci.recovery.models.Metrics
         """
         self._metrics = metrics
+
+    @property
+    def backup_cloud_location(self):
+        """
+        Gets the backup_cloud_location of this ProtectedDatabase.
+        Indicates the cloud service environment where the protected database is provisioned. For example, Oracle Cloud or Microsoft Azure.
+
+        Allowed values for this property are: "AZURE", "OCI", "GCP", "AWS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The backup_cloud_location of this ProtectedDatabase.
+        :rtype: str
+        """
+        return self._backup_cloud_location
+
+    @backup_cloud_location.setter
+    def backup_cloud_location(self, backup_cloud_location):
+        """
+        Sets the backup_cloud_location of this ProtectedDatabase.
+        Indicates the cloud service environment where the protected database is provisioned. For example, Oracle Cloud or Microsoft Azure.
+
+
+        :param backup_cloud_location: The backup_cloud_location of this ProtectedDatabase.
+        :type: str
+        """
+        allowed_values = ["AZURE", "OCI", "GCP", "AWS"]
+        if not value_allowed_none_or_none_sentinel(backup_cloud_location, allowed_values):
+            backup_cloud_location = 'UNKNOWN_ENUM_VALUE'
+        self._backup_cloud_location = backup_cloud_location
 
     @property
     def subscription_id(self):

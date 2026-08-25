@@ -32,6 +32,14 @@ class CreateSemanticStoreDetails(object):
             The value to assign to the display_name property of this CreateSemanticStoreDetails.
         :type display_name: str
 
+        :param is_user_defined_semantics_enabled:
+            The value to assign to the is_user_defined_semantics_enabled property of this CreateSemanticStoreDetails.
+        :type is_user_defined_semantics_enabled: bool
+
+        :param model_selection:
+            The value to assign to the model_selection property of this CreateSemanticStoreDetails.
+        :type model_selection: oci.generative_ai.models.SemanticStoreModelSelection
+
         :param data_source:
             The value to assign to the data_source property of this CreateSemanticStoreDetails.
         :type data_source: oci.generative_ai.models.CreateDataSourceDetails
@@ -57,6 +65,8 @@ class CreateSemanticStoreDetails(object):
             'description': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
+            'is_user_defined_semantics_enabled': 'bool',
+            'model_selection': 'SemanticStoreModelSelection',
             'data_source': 'CreateDataSourceDetails',
             'refresh_schedule': 'RefreshScheduleDetails',
             'schemas': 'CreateSchemasDetails',
@@ -67,6 +77,8 @@ class CreateSemanticStoreDetails(object):
             'description': 'description',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'is_user_defined_semantics_enabled': 'isUserDefinedSemanticsEnabled',
+            'model_selection': 'modelSelection',
             'data_source': 'dataSource',
             'refresh_schedule': 'refreshSchedule',
             'schemas': 'schemas',
@@ -76,6 +88,8 @@ class CreateSemanticStoreDetails(object):
         self._description = None
         self._compartment_id = None
         self._display_name = None
+        self._is_user_defined_semantics_enabled = None
+        self._model_selection = None
         self._data_source = None
         self._refresh_schedule = None
         self._schemas = None
@@ -157,6 +171,56 @@ class CreateSemanticStoreDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def is_user_defined_semantics_enabled(self):
+        """
+        Gets the is_user_defined_semantics_enabled of this CreateSemanticStoreDetails.
+        Whether to include user-defined semantic inputs, such as annotations, comments, and synonyms, during semantic-store enrichment.
+        When true, enrichment uses both metadata and user-defined semantics.
+        When false, enrichment uses metadata only.
+        When omitted, this value defaults to true.
+
+
+        :return: The is_user_defined_semantics_enabled of this CreateSemanticStoreDetails.
+        :rtype: bool
+        """
+        return self._is_user_defined_semantics_enabled
+
+    @is_user_defined_semantics_enabled.setter
+    def is_user_defined_semantics_enabled(self, is_user_defined_semantics_enabled):
+        """
+        Sets the is_user_defined_semantics_enabled of this CreateSemanticStoreDetails.
+        Whether to include user-defined semantic inputs, such as annotations, comments, and synonyms, during semantic-store enrichment.
+        When true, enrichment uses both metadata and user-defined semantics.
+        When false, enrichment uses metadata only.
+        When omitted, this value defaults to true.
+
+
+        :param is_user_defined_semantics_enabled: The is_user_defined_semantics_enabled of this CreateSemanticStoreDetails.
+        :type: bool
+        """
+        self._is_user_defined_semantics_enabled = is_user_defined_semantics_enabled
+
+    @property
+    def model_selection(self):
+        """
+        Gets the model_selection of this CreateSemanticStoreDetails.
+
+        :return: The model_selection of this CreateSemanticStoreDetails.
+        :rtype: oci.generative_ai.models.SemanticStoreModelSelection
+        """
+        return self._model_selection
+
+    @model_selection.setter
+    def model_selection(self, model_selection):
+        """
+        Sets the model_selection of this CreateSemanticStoreDetails.
+
+        :param model_selection: The model_selection of this CreateSemanticStoreDetails.
+        :type: oci.generative_ai.models.SemanticStoreModelSelection
+        """
+        self._model_selection = model_selection
 
     @property
     def data_source(self):

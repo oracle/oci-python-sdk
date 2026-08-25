@@ -144,7 +144,7 @@ class CreateHostedApplicationStorageDetails(object):
     def storage_type(self):
         """
         **[Required]** Gets the storage_type of this CreateHostedApplicationStorageDetails.
-        type like Cache, Postgresql and ADB.
+        The managed storage type for the application.
 
 
         :return: The storage_type of this CreateHostedApplicationStorageDetails.
@@ -156,7 +156,7 @@ class CreateHostedApplicationStorageDetails(object):
     def storage_type(self, storage_type):
         """
         Sets the storage_type of this CreateHostedApplicationStorageDetails.
-        type like Cache, Postgresql and ADB.
+        The managed storage type for the application.
 
 
         :param storage_type: The storage_type of this CreateHostedApplicationStorageDetails.

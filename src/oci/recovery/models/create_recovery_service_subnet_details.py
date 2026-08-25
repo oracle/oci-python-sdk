@@ -36,6 +36,10 @@ class CreateRecoveryServiceSubnetDetails(object):
             The value to assign to the nsg_ids property of this CreateRecoveryServiceSubnetDetails.
         :type nsg_ids: list[str]
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateRecoveryServiceSubnetDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param vcn_id:
             The value to assign to the vcn_id property of this CreateRecoveryServiceSubnetDetails.
         :type vcn_id: str
@@ -58,6 +62,7 @@ class CreateRecoveryServiceSubnetDetails(object):
             'subnet_id': 'str',
             'subnets': 'list[str]',
             'nsg_ids': 'list[str]',
+            'security_attributes': 'dict(str, dict(str, object))',
             'vcn_id': 'str',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -68,6 +73,7 @@ class CreateRecoveryServiceSubnetDetails(object):
             'subnet_id': 'subnetId',
             'subnets': 'subnets',
             'nsg_ids': 'nsgIds',
+            'security_attributes': 'securityAttributes',
             'vcn_id': 'vcnId',
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
@@ -77,6 +83,7 @@ class CreateRecoveryServiceSubnetDetails(object):
         self._subnet_id = None
         self._subnets = None
         self._nsg_ids = None
+        self._security_attributes = None
         self._vcn_id = None
         self._compartment_id = None
         self._freeform_tags = None
@@ -183,6 +190,40 @@ class CreateRecoveryServiceSubnetDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateRecoveryServiceSubnetDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreateRecoveryServiceSubnetDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateRecoveryServiceSubnetDetails.
+        Security attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"enforce\"}}}`
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreateRecoveryServiceSubnetDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def vcn_id(self):

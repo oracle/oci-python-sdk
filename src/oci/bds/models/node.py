@@ -148,6 +148,10 @@ class Node(object):
             The value to assign to the fault_domain property of this Node.
         :type fault_domain: str
 
+        :param compute_capacity_reservation_id:
+            The value to assign to the compute_capacity_reservation_id property of this Node.
+        :type compute_capacity_reservation_id: str
+
         :param time_created:
             The value to assign to the time_created property of this Node.
         :type time_created: datetime
@@ -215,6 +219,7 @@ class Node(object):
             'ssh_fingerprint': 'str',
             'availability_domain': 'str',
             'fault_domain': 'str',
+            'compute_capacity_reservation_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'ocpus': 'int',
@@ -243,6 +248,7 @@ class Node(object):
             'ssh_fingerprint': 'sshFingerprint',
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
+            'compute_capacity_reservation_id': 'computeCapacityReservationId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'ocpus': 'ocpus',
@@ -270,6 +276,7 @@ class Node(object):
         self._ssh_fingerprint = None
         self._availability_domain = None
         self._fault_domain = None
+        self._compute_capacity_reservation_id = None
         self._time_created = None
         self._time_updated = None
         self._ocpus = None
@@ -607,6 +614,30 @@ class Node(object):
         :type: str
         """
         self._fault_domain = fault_domain
+
+    @property
+    def compute_capacity_reservation_id(self):
+        """
+        Gets the compute_capacity_reservation_id of this Node.
+        The OCID of the Compute capacity reservation used by this node.
+
+
+        :return: The compute_capacity_reservation_id of this Node.
+        :rtype: str
+        """
+        return self._compute_capacity_reservation_id
+
+    @compute_capacity_reservation_id.setter
+    def compute_capacity_reservation_id(self, compute_capacity_reservation_id):
+        """
+        Sets the compute_capacity_reservation_id of this Node.
+        The OCID of the Compute capacity reservation used by this node.
+
+
+        :param compute_capacity_reservation_id: The compute_capacity_reservation_id of this Node.
+        :type: str
+        """
+        self._compute_capacity_reservation_id = compute_capacity_reservation_id
 
     @property
     def time_created(self):
