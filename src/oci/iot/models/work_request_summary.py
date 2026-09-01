@@ -59,6 +59,30 @@ class WorkRequestSummary(object):
     #: This constant has a value of "CHANGE_IOT_DOMAIN_DATA_RETENTION"
     OPERATION_TYPE_CHANGE_IOT_DOMAIN_DATA_RETENTION = "CHANGE_IOT_DOMAIN_DATA_RETENTION"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_IOT_FLOW_RUNTIME"
+    OPERATION_TYPE_CREATE_IOT_FLOW_RUNTIME = "CREATE_IOT_FLOW_RUNTIME"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_IOT_FLOW_RUNTIME"
+    OPERATION_TYPE_UPDATE_IOT_FLOW_RUNTIME = "UPDATE_IOT_FLOW_RUNTIME"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_IOT_FLOW_RUNTIME"
+    OPERATION_TYPE_DELETE_IOT_FLOW_RUNTIME = "DELETE_IOT_FLOW_RUNTIME"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "MOVE_IOT_FLOW_RUNTIME"
+    OPERATION_TYPE_MOVE_IOT_FLOW_RUNTIME = "MOVE_IOT_FLOW_RUNTIME"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "ACTIVATE_IOT_FLOW_RUNTIME"
+    OPERATION_TYPE_ACTIVATE_IOT_FLOW_RUNTIME = "ACTIVATE_IOT_FLOW_RUNTIME"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DEACTIVATE_IOT_FLOW_RUNTIME"
+    OPERATION_TYPE_DEACTIVATE_IOT_FLOW_RUNTIME = "DEACTIVATE_IOT_FLOW_RUNTIME"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -90,7 +114,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_IOT_DOMAIN", "UPDATE_IOT_DOMAIN", "DELETE_IOT_DOMAIN", "MOVE_IOT_DOMAIN", "MOVE_IOT_DOMAIN_GROUP", "CREATE_IOT_DOMAIN_GROUP", "UPDATE_IOT_DOMAIN_GROUP", "DELETE_IOT_DOMAIN_GROUP", "CONFIGURE_DOMAIN_DATA_ACCESS", "CONFIGURE_DOMAIN_GROUP_DATA_ACCESS", "CHANGE_IOT_DOMAIN_DATA_RETENTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_IOT_DOMAIN", "UPDATE_IOT_DOMAIN", "DELETE_IOT_DOMAIN", "MOVE_IOT_DOMAIN", "MOVE_IOT_DOMAIN_GROUP", "CREATE_IOT_DOMAIN_GROUP", "UPDATE_IOT_DOMAIN_GROUP", "DELETE_IOT_DOMAIN_GROUP", "CONFIGURE_DOMAIN_DATA_ACCESS", "CONFIGURE_DOMAIN_GROUP_DATA_ACCESS", "CHANGE_IOT_DOMAIN_DATA_RETENTION", "CREATE_IOT_FLOW_RUNTIME", "UPDATE_IOT_FLOW_RUNTIME", "DELETE_IOT_FLOW_RUNTIME", "MOVE_IOT_FLOW_RUNTIME", "ACTIVATE_IOT_FLOW_RUNTIME", "DEACTIVATE_IOT_FLOW_RUNTIME", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -174,7 +198,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_IOT_DOMAIN", "UPDATE_IOT_DOMAIN", "DELETE_IOT_DOMAIN", "MOVE_IOT_DOMAIN", "MOVE_IOT_DOMAIN_GROUP", "CREATE_IOT_DOMAIN_GROUP", "UPDATE_IOT_DOMAIN_GROUP", "DELETE_IOT_DOMAIN_GROUP", "CONFIGURE_DOMAIN_DATA_ACCESS", "CONFIGURE_DOMAIN_GROUP_DATA_ACCESS", "CHANGE_IOT_DOMAIN_DATA_RETENTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_IOT_DOMAIN", "UPDATE_IOT_DOMAIN", "DELETE_IOT_DOMAIN", "MOVE_IOT_DOMAIN", "MOVE_IOT_DOMAIN_GROUP", "CREATE_IOT_DOMAIN_GROUP", "UPDATE_IOT_DOMAIN_GROUP", "DELETE_IOT_DOMAIN_GROUP", "CONFIGURE_DOMAIN_DATA_ACCESS", "CONFIGURE_DOMAIN_GROUP_DATA_ACCESS", "CHANGE_IOT_DOMAIN_DATA_RETENTION", "CREATE_IOT_FLOW_RUNTIME", "UPDATE_IOT_FLOW_RUNTIME", "DELETE_IOT_FLOW_RUNTIME", "MOVE_IOT_FLOW_RUNTIME", "ACTIVATE_IOT_FLOW_RUNTIME", "DEACTIVATE_IOT_FLOW_RUNTIME", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -193,7 +217,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_IOT_DOMAIN", "UPDATE_IOT_DOMAIN", "DELETE_IOT_DOMAIN", "MOVE_IOT_DOMAIN", "MOVE_IOT_DOMAIN_GROUP", "CREATE_IOT_DOMAIN_GROUP", "UPDATE_IOT_DOMAIN_GROUP", "DELETE_IOT_DOMAIN_GROUP", "CONFIGURE_DOMAIN_DATA_ACCESS", "CONFIGURE_DOMAIN_GROUP_DATA_ACCESS", "CHANGE_IOT_DOMAIN_DATA_RETENTION"]
+        allowed_values = ["CREATE_IOT_DOMAIN", "UPDATE_IOT_DOMAIN", "DELETE_IOT_DOMAIN", "MOVE_IOT_DOMAIN", "MOVE_IOT_DOMAIN_GROUP", "CREATE_IOT_DOMAIN_GROUP", "UPDATE_IOT_DOMAIN_GROUP", "DELETE_IOT_DOMAIN_GROUP", "CONFIGURE_DOMAIN_DATA_ACCESS", "CONFIGURE_DOMAIN_GROUP_DATA_ACCESS", "CHANGE_IOT_DOMAIN_DATA_RETENTION", "CREATE_IOT_FLOW_RUNTIME", "UPDATE_IOT_FLOW_RUNTIME", "DELETE_IOT_FLOW_RUNTIME", "MOVE_IOT_FLOW_RUNTIME", "ACTIVATE_IOT_FLOW_RUNTIME", "DEACTIVATE_IOT_FLOW_RUNTIME"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

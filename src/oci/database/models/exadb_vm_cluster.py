@@ -51,6 +51,10 @@ class ExadbVmCluster(object):
     #: This constant has a value of "CUSTOM_IMAGE"
     GRID_IMAGE_TYPE_CUSTOM_IMAGE = "CUSTOM_IMAGE"
 
+    #: A constant which can be used with the grid_image_type property of a ExadbVmCluster.
+    #: This constant has a value of "GRID_HOME"
+    GRID_IMAGE_TYPE_GRID_HOME = "GRID_HOME"
+
     #: A constant which can be used with the license_model property of a ExadbVmCluster.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -180,7 +184,7 @@ class ExadbVmCluster(object):
 
         :param grid_image_type:
             The value to assign to the grid_image_type property of this ExadbVmCluster.
-            Allowed values for this property are: "RELEASE_UPDATE", "CUSTOM_IMAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "RELEASE_UPDATE", "CUSTOM_IMAGE", "GRID_HOME", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type grid_image_type: str
 
@@ -1061,7 +1065,7 @@ class ExadbVmCluster(object):
         Gets the grid_image_type of this ExadbVmCluster.
         The type of Grid Image
 
-        Allowed values for this property are: "RELEASE_UPDATE", "CUSTOM_IMAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "RELEASE_UPDATE", "CUSTOM_IMAGE", "GRID_HOME", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1080,7 +1084,7 @@ class ExadbVmCluster(object):
         :param grid_image_type: The grid_image_type of this ExadbVmCluster.
         :type: str
         """
-        allowed_values = ["RELEASE_UPDATE", "CUSTOM_IMAGE"]
+        allowed_values = ["RELEASE_UPDATE", "CUSTOM_IMAGE", "GRID_HOME"]
         if not value_allowed_none_or_none_sentinel(grid_image_type, allowed_values):
             grid_image_type = 'UNKNOWN_ENUM_VALUE'
         self._grid_image_type = grid_image_type

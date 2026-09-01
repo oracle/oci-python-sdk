@@ -159,7 +159,7 @@ class CreateDigitalTwinInstanceDetails(object):
     def connectivity_type(self):
         """
         Gets the connectivity_type of this CreateDigitalTwinInstanceDetails.
-        Connectivity type of the digital twin instance
+        Connectivity type of the digital twin instance.
 
         Allowed values for this property are: "DIRECT", "INDIRECT", "GATEWAY", "NONE"
 
@@ -173,7 +173,7 @@ class CreateDigitalTwinInstanceDetails(object):
     def connectivity_type(self, connectivity_type):
         """
         Sets the connectivity_type of this CreateDigitalTwinInstanceDetails.
-        Connectivity type of the digital twin instance
+        Connectivity type of the digital twin instance.
 
 
         :param connectivity_type: The connectivity_type of this CreateDigitalTwinInstanceDetails.

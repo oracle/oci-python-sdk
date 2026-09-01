@@ -6,7 +6,9 @@ Generative Ai Inference
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.generative_ai_inference.AsyncGenerativeAiInferenceClient
     oci.generative_ai_inference.GenerativeAiInferenceClient
+    oci.generative_ai_inference.AsyncGenerativeAiInferenceClientCompositeOperations
     oci.generative_ai_inference.GenerativeAiInferenceClientCompositeOperations
 
 --------

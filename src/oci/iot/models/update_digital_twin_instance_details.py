@@ -15,10 +15,31 @@ class UpdateDigitalTwinInstanceDetails(object):
     The information to be updated for the given digital twin instance.
     """
 
+    #: A constant which can be used with the connectivity_type property of a UpdateDigitalTwinInstanceDetails.
+    #: This constant has a value of "DIRECT"
+    CONNECTIVITY_TYPE_DIRECT = "DIRECT"
+
+    #: A constant which can be used with the connectivity_type property of a UpdateDigitalTwinInstanceDetails.
+    #: This constant has a value of "INDIRECT"
+    CONNECTIVITY_TYPE_INDIRECT = "INDIRECT"
+
+    #: A constant which can be used with the connectivity_type property of a UpdateDigitalTwinInstanceDetails.
+    #: This constant has a value of "GATEWAY"
+    CONNECTIVITY_TYPE_GATEWAY = "GATEWAY"
+
+    #: A constant which can be used with the connectivity_type property of a UpdateDigitalTwinInstanceDetails.
+    #: This constant has a value of "NONE"
+    CONNECTIVITY_TYPE_NONE = "NONE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDigitalTwinInstanceDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param connectivity_type:
+            The value to assign to the connectivity_type property of this UpdateDigitalTwinInstanceDetails.
+            Allowed values for this property are: "DIRECT", "INDIRECT", "GATEWAY", "NONE"
+        :type connectivity_type: str
 
         :param auth_id:
             The value to assign to the auth_id property of this UpdateDigitalTwinInstanceDetails.
@@ -62,6 +83,7 @@ class UpdateDigitalTwinInstanceDetails(object):
 
         """
         self.swagger_types = {
+            'connectivity_type': 'str',
             'auth_id': 'str',
             'external_key': 'str',
             'display_name': 'str',
@@ -74,6 +96,7 @@ class UpdateDigitalTwinInstanceDetails(object):
             'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
+            'connectivity_type': 'connectivityType',
             'auth_id': 'authId',
             'external_key': 'externalKey',
             'display_name': 'displayName',
@@ -85,6 +108,7 @@ class UpdateDigitalTwinInstanceDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
+        self._connectivity_type = None
         self._auth_id = None
         self._external_key = None
         self._display_name = None
@@ -95,6 +119,37 @@ class UpdateDigitalTwinInstanceDetails(object):
         self._gateways = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def connectivity_type(self):
+        """
+        Gets the connectivity_type of this UpdateDigitalTwinInstanceDetails.
+        Connectivity type of the digital twin instance.
+
+        Allowed values for this property are: "DIRECT", "INDIRECT", "GATEWAY", "NONE"
+
+
+        :return: The connectivity_type of this UpdateDigitalTwinInstanceDetails.
+        :rtype: str
+        """
+        return self._connectivity_type
+
+    @connectivity_type.setter
+    def connectivity_type(self, connectivity_type):
+        """
+        Sets the connectivity_type of this UpdateDigitalTwinInstanceDetails.
+        Connectivity type of the digital twin instance.
+
+
+        :param connectivity_type: The connectivity_type of this UpdateDigitalTwinInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["DIRECT", "INDIRECT", "GATEWAY", "NONE"]
+        if not value_allowed_none_or_none_sentinel(connectivity_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `connectivity_type`, must be None or one of {allowed_values}"
+            )
+        self._connectivity_type = connectivity_type
 
     @property
     def auth_id(self):

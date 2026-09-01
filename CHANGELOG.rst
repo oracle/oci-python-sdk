@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.185.1 - 2026-09-01
+====================
+
+Added 
+----- 
+* Support for the Cluster Health service 
+* Support for scheduling and canceling maintenance window changes after provisioning Autonomous Database Serverless instances in the Database service 
+* Support for quick launches of BaseDB Database systems in the Database service 
+* Support for IoT Flow Runtime (Node-RED) resources in the OCI Internet of Things (OCI IoT) service  
+
+====================
 2.185.0 - 2026-08-25
 ====================
 

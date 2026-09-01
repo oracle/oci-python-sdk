@@ -840,6 +840,14 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the time_maintenance_pause_until property of this AutonomousDatabaseSummary.
         :type time_maintenance_pause_until: datetime
 
+        :param scheduled_maintenance_window:
+            The value to assign to the scheduled_maintenance_window property of this AutonomousDatabaseSummary.
+        :type scheduled_maintenance_window: oci.database.models.AutonomousDatabaseMaintenanceWindowSummary
+
+        :param time_scheduled_maintenance_window_update:
+            The value to assign to the time_scheduled_maintenance_window_update property of this AutonomousDatabaseSummary.
+        :type time_scheduled_maintenance_window_update: datetime
+
         :param scheduled_operations:
             The value to assign to the scheduled_operations property of this AutonomousDatabaseSummary.
         :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
@@ -1062,6 +1070,8 @@ class AutonomousDatabaseSummary(object):
             'autonomous_maintenance_schedule_type': 'str',
             'autonomous_database_maintenance_window': 'AutonomousDatabaseMaintenanceWindowSummary',
             'time_maintenance_pause_until': 'datetime',
+            'scheduled_maintenance_window': 'AutonomousDatabaseMaintenanceWindowSummary',
+            'time_scheduled_maintenance_window_update': 'datetime',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
             'is_auto_scaling_for_storage_enabled': 'bool',
             'allocated_storage_size_in_tbs': 'float',
@@ -1207,6 +1217,8 @@ class AutonomousDatabaseSummary(object):
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'autonomous_database_maintenance_window': 'autonomousDatabaseMaintenanceWindow',
             'time_maintenance_pause_until': 'timeMaintenancePauseUntil',
+            'scheduled_maintenance_window': 'scheduledMaintenanceWindow',
+            'time_scheduled_maintenance_window_update': 'timeScheduledMaintenanceWindowUpdate',
             'scheduled_operations': 'scheduledOperations',
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'allocated_storage_size_in_tbs': 'allocatedStorageSizeInTBs',
@@ -1351,6 +1363,8 @@ class AutonomousDatabaseSummary(object):
         self._autonomous_maintenance_schedule_type = None
         self._autonomous_database_maintenance_window = None
         self._time_maintenance_pause_until = None
+        self._scheduled_maintenance_window = None
+        self._time_scheduled_maintenance_window_update = None
         self._scheduled_operations = None
         self._is_auto_scaling_for_storage_enabled = None
         self._allocated_storage_size_in_tbs = None
@@ -4630,6 +4644,50 @@ class AutonomousDatabaseSummary(object):
         :type: datetime
         """
         self._time_maintenance_pause_until = time_maintenance_pause_until
+
+    @property
+    def scheduled_maintenance_window(self):
+        """
+        Gets the scheduled_maintenance_window of this AutonomousDatabaseSummary.
+
+        :return: The scheduled_maintenance_window of this AutonomousDatabaseSummary.
+        :rtype: oci.database.models.AutonomousDatabaseMaintenanceWindowSummary
+        """
+        return self._scheduled_maintenance_window
+
+    @scheduled_maintenance_window.setter
+    def scheduled_maintenance_window(self, scheduled_maintenance_window):
+        """
+        Sets the scheduled_maintenance_window of this AutonomousDatabaseSummary.
+
+        :param scheduled_maintenance_window: The scheduled_maintenance_window of this AutonomousDatabaseSummary.
+        :type: oci.database.models.AutonomousDatabaseMaintenanceWindowSummary
+        """
+        self._scheduled_maintenance_window = scheduled_maintenance_window
+
+    @property
+    def time_scheduled_maintenance_window_update(self):
+        """
+        Gets the time_scheduled_maintenance_window_update of this AutonomousDatabaseSummary.
+        The date and time at which operation to change Maintenance Window is scheduled to take place.
+
+
+        :return: The time_scheduled_maintenance_window_update of this AutonomousDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_scheduled_maintenance_window_update
+
+    @time_scheduled_maintenance_window_update.setter
+    def time_scheduled_maintenance_window_update(self, time_scheduled_maintenance_window_update):
+        """
+        Sets the time_scheduled_maintenance_window_update of this AutonomousDatabaseSummary.
+        The date and time at which operation to change Maintenance Window is scheduled to take place.
+
+
+        :param time_scheduled_maintenance_window_update: The time_scheduled_maintenance_window_update of this AutonomousDatabaseSummary.
+        :type: datetime
+        """
+        self._time_scheduled_maintenance_window_update = time_scheduled_maintenance_window_update
 
     @property
     def scheduled_operations(self):

@@ -31,6 +31,14 @@ class DigitalTwinAdapterInboundRoute(object):
             The value to assign to the reference_payload property of this DigitalTwinAdapterInboundRoute.
         :type reference_payload: oci.iot.models.DigitalTwinAdapterPayload
 
+        :param target:
+            The value to assign to the target property of this DigitalTwinAdapterInboundRoute.
+        :type target: str
+
+        :param content_root:
+            The value to assign to the content_root property of this DigitalTwinAdapterInboundRoute.
+        :type content_root: str
+
         :param payload_mapping:
             The value to assign to the payload_mapping property of this DigitalTwinAdapterInboundRoute.
         :type payload_mapping: dict(str, str)
@@ -43,17 +51,23 @@ class DigitalTwinAdapterInboundRoute(object):
         self.swagger_types = {
             'condition': 'str',
             'reference_payload': 'DigitalTwinAdapterPayload',
+            'target': 'str',
+            'content_root': 'str',
             'payload_mapping': 'dict(str, str)',
             'description': 'str'
         }
         self.attribute_map = {
             'condition': 'condition',
             'reference_payload': 'referencePayload',
+            'target': 'target',
+            'content_root': 'contentRoot',
             'payload_mapping': 'payloadMapping',
             'description': 'description'
         }
         self._condition = None
         self._reference_payload = None
+        self._target = None
+        self._content_root = None
         self._payload_mapping = None
         self._description = None
 
@@ -104,6 +118,54 @@ class DigitalTwinAdapterInboundRoute(object):
         :type: oci.iot.models.DigitalTwinAdapterPayload
         """
         self._reference_payload = reference_payload
+
+    @property
+    def target(self):
+        """
+        Gets the target of this DigitalTwinAdapterInboundRoute.
+        Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+
+
+        :return: The target of this DigitalTwinAdapterInboundRoute.
+        :rtype: str
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """
+        Sets the target of this DigitalTwinAdapterInboundRoute.
+        Optional. JQ expression to map the target resource, which is externalKey of digital twin instance, the incoming data belongs to.
+
+
+        :param target: The target of this DigitalTwinAdapterInboundRoute.
+        :type: str
+        """
+        self._target = target
+
+    @property
+    def content_root(self):
+        """
+        Gets the content_root of this DigitalTwinAdapterInboundRoute.
+        JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+
+
+        :return: The content_root of this DigitalTwinAdapterInboundRoute.
+        :rtype: str
+        """
+        return self._content_root
+
+    @content_root.setter
+    def content_root(self, content_root):
+        """
+        Sets the content_root of this DigitalTwinAdapterInboundRoute.
+        JSON Path string to override the context root before delegating to the adapter of the target digital twin instance.
+
+
+        :param content_root: The content_root of this DigitalTwinAdapterInboundRoute.
+        :type: str
+        """
+        self._content_root = content_root
 
     @property
     def payload_mapping(self):

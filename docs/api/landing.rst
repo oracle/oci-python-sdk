@@ -25,6 +25,7 @@ API Reference
 * :doc:`Application Dependency Management <adm/client/oci.adm.ApplicationDependencyManagementClient>`
 * :doc:`Appmgmt Control <appmgmt_control/client/oci.appmgmt_control.AppmgmtControlClient>`
 * :doc:`Artifacts <artifacts/client/oci.artifacts.ArtifactsClient>`
+* :doc:`Async Generative Ai Inference <generative_ai_inference/client/oci.generative_ai_inference.AsyncGenerativeAiInferenceClient>`
 * :doc:`Attachment <marketplace_private_offer/client/oci.marketplace_private_offer.AttachmentClient>`
 * :doc:`Attributes <apm_traces/client/oci.apm_traces.AttributesClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
@@ -95,6 +96,7 @@ API Reference
 * :doc:`Desktop Service <desktops/client/oci.desktops.DesktopServiceClient>`
 * :doc:`Devops <devops/client/oci.devops.DevopsClient>`
 * :doc:`Diagnosability <database_management/client/oci.database_management.DiagnosabilityClient>`
+* :doc:`Diagnosis <cluster_health/client/oci.cluster_health.DiagnosisClient>`
 * :doc:`Disaster Recovery <disaster_recovery/client/oci.disaster_recovery.DisasterRecoveryClient>`
 * :doc:`Discovery <cloud_bridge/client/oci.cloud_bridge.DiscoveryClient>`
 * :doc:`Distributed Autonomous Db Service <distributed_database_v26/client/oci.distributed_database_v26.DistributedAutonomousDbServiceClient>`
@@ -375,6 +377,7 @@ API Reference
     cloud_bridge
     cloud_guard
     cloud_migrations
+    cluster_health
     cluster_placement_groups
     compute_cloud_at_customer
     compute_instance_agent
