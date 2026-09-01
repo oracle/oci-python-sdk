@@ -239,7 +239,7 @@ class DigitalTwinInstance(object):
     def connectivity_type(self):
         """
         **[Required]** Gets the connectivity_type of this DigitalTwinInstance.
-        Connectivity type of the digital twin instance
+        Connectivity type of the digital twin instance.
 
         Allowed values for this property are: "DIRECT", "INDIRECT", "GATEWAY", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -254,7 +254,7 @@ class DigitalTwinInstance(object):
     def connectivity_type(self, connectivity_type):
         """
         Sets the connectivity_type of this DigitalTwinInstance.
-        Connectivity type of the digital twin instance
+        Connectivity type of the digital twin instance.
 
 
         :param connectivity_type: The connectivity_type of this DigitalTwinInstance.

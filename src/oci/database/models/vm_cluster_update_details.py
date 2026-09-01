@@ -56,6 +56,10 @@ class VmClusterUpdateDetails(object):
             The value to assign to the update_id property of this VmClusterUpdateDetails.
         :type update_id: str
 
+        :param gi_home_id:
+            The value to assign to the gi_home_id property of this VmClusterUpdateDetails.
+        :type gi_home_id: str
+
         :param update_mode:
             The value to assign to the update_mode property of this VmClusterUpdateDetails.
             Allowed values for this property are: "ONLINE_HIGHCVSS", "ONLINE_ALLCVSS", "ONLINE_ALL_UPDATES", "PENDING_UPDATES", "FULL_UPDATE"
@@ -73,17 +77,20 @@ class VmClusterUpdateDetails(object):
         """
         self.swagger_types = {
             'update_id': 'str',
+            'gi_home_id': 'str',
             'update_mode': 'str',
             'update_action': 'str',
             'gi_software_image_id': 'str'
         }
         self.attribute_map = {
             'update_id': 'updateId',
+            'gi_home_id': 'giHomeId',
             'update_mode': 'updateMode',
             'update_action': 'updateAction',
             'gi_software_image_id': 'giSoftwareImageId'
         }
         self._update_id = None
+        self._gi_home_id = None
         self._update_mode = None
         self._update_action = None
         self._gi_software_image_id = None
@@ -115,6 +122,38 @@ class VmClusterUpdateDetails(object):
         :type: str
         """
         self._update_id = update_id
+
+    @property
+    def gi_home_id(self):
+        """
+        Gets the gi_home_id of this VmClusterUpdateDetails.
+        The `OCID`__ of the Grid Infrastructure Home.
+        Specify this field for out of place Grid Infrastructure Home patching and upgrade of the VM Cluster.
+        This is mutually exclusive option to `updateId` and `giSoftwareImageId` which are used for in place patching and upgrade using Oracle supplied and custom images respectively.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The gi_home_id of this VmClusterUpdateDetails.
+        :rtype: str
+        """
+        return self._gi_home_id
+
+    @gi_home_id.setter
+    def gi_home_id(self, gi_home_id):
+        """
+        Sets the gi_home_id of this VmClusterUpdateDetails.
+        The `OCID`__ of the Grid Infrastructure Home.
+        Specify this field for out of place Grid Infrastructure Home patching and upgrade of the VM Cluster.
+        This is mutually exclusive option to `updateId` and `giSoftwareImageId` which are used for in place patching and upgrade using Oracle supplied and custom images respectively.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param gi_home_id: The gi_home_id of this VmClusterUpdateDetails.
+        :type: str
+        """
+        self._gi_home_id = gi_home_id
 
     @property
     def update_mode(self):

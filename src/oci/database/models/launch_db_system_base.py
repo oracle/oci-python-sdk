@@ -752,7 +752,7 @@ class LaunchDbSystemBase(object):
     @property
     def ssh_public_keys(self):
         """
-        **[Required]** Gets the ssh_public_keys of this LaunchDbSystemBase.
+        Gets the ssh_public_keys of this LaunchDbSystemBase.
         The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
 
 

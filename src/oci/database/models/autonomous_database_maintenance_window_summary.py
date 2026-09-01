@@ -32,20 +32,34 @@ class AutonomousDatabaseMaintenanceWindowSummary(object):
             The value to assign to the maintenance_end_time property of this AutonomousDatabaseMaintenanceWindowSummary.
         :type maintenance_end_time: str
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this AutonomousDatabaseMaintenanceWindowSummary.
+        :type availability_domain: str
+
+        :param is_maintenance_window_change_scheduled:
+            The value to assign to the is_maintenance_window_change_scheduled property of this AutonomousDatabaseMaintenanceWindowSummary.
+        :type is_maintenance_window_change_scheduled: bool
+
         """
         self.swagger_types = {
             'day_of_week': 'DayOfWeek',
             'maintenance_start_time': 'str',
-            'maintenance_end_time': 'str'
+            'maintenance_end_time': 'str',
+            'availability_domain': 'str',
+            'is_maintenance_window_change_scheduled': 'bool'
         }
         self.attribute_map = {
             'day_of_week': 'dayOfWeek',
             'maintenance_start_time': 'maintenanceStartTime',
-            'maintenance_end_time': 'maintenanceEndTime'
+            'maintenance_end_time': 'maintenanceEndTime',
+            'availability_domain': 'availabilityDomain',
+            'is_maintenance_window_change_scheduled': 'isMaintenanceWindowChangeScheduled'
         }
         self._day_of_week = None
         self._maintenance_start_time = None
         self._maintenance_end_time = None
+        self._availability_domain = None
+        self._is_maintenance_window_change_scheduled = None
 
     @property
     def day_of_week(self):
@@ -114,6 +128,54 @@ class AutonomousDatabaseMaintenanceWindowSummary(object):
         :type: str
         """
         self._maintenance_end_time = maintenance_end_time
+
+    @property
+    def availability_domain(self):
+        """
+        Gets the availability_domain of this AutonomousDatabaseMaintenanceWindowSummary.
+        The AD in which the maintenance will occur.
+
+
+        :return: The availability_domain of this AutonomousDatabaseMaintenanceWindowSummary.
+        :rtype: str
+        """
+        return self._availability_domain
+
+    @availability_domain.setter
+    def availability_domain(self, availability_domain):
+        """
+        Sets the availability_domain of this AutonomousDatabaseMaintenanceWindowSummary.
+        The AD in which the maintenance will occur.
+
+
+        :param availability_domain: The availability_domain of this AutonomousDatabaseMaintenanceWindowSummary.
+        :type: str
+        """
+        self._availability_domain = availability_domain
+
+    @property
+    def is_maintenance_window_change_scheduled(self):
+        """
+        Gets the is_maintenance_window_change_scheduled of this AutonomousDatabaseMaintenanceWindowSummary.
+        Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+
+
+        :return: The is_maintenance_window_change_scheduled of this AutonomousDatabaseMaintenanceWindowSummary.
+        :rtype: bool
+        """
+        return self._is_maintenance_window_change_scheduled
+
+    @is_maintenance_window_change_scheduled.setter
+    def is_maintenance_window_change_scheduled(self, is_maintenance_window_change_scheduled):
+        """
+        Sets the is_maintenance_window_change_scheduled of this AutonomousDatabaseMaintenanceWindowSummary.
+        Indicates if the maintenance window change is scheduled or not for the Autonomous AI Database.
+
+
+        :param is_maintenance_window_change_scheduled: The is_maintenance_window_change_scheduled of this AutonomousDatabaseMaintenanceWindowSummary.
+        :type: bool
+        """
+        self._is_maintenance_window_change_scheduled = is_maintenance_window_change_scheduled
 
     def __repr__(self):
         return formatted_flat_dict(self)

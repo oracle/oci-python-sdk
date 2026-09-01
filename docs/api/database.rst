@@ -68,6 +68,7 @@ Database
     oci.database.models.AutonomousDatabaseInBackupCollection
     oci.database.models.AutonomousDatabaseInBackupSummary
     oci.database.models.AutonomousDatabaseKeyHistoryEntry
+    oci.database.models.AutonomousDatabaseMaintenanceWindowCollection
     oci.database.models.AutonomousDatabaseMaintenanceWindowSummary
     oci.database.models.AutonomousDatabaseManualRefreshDetails
     oci.database.models.AutonomousDatabasePeerCollection
@@ -235,6 +236,7 @@ Database
     oci.database.models.CreateExternalMacsConnectorDetails
     oci.database.models.CreateExternalNonContainerDatabaseDetails
     oci.database.models.CreateExternalPluggableDatabaseDetails
+    oci.database.models.CreateGiHomeDetails
     oci.database.models.CreateKeyStoreDetails
     oci.database.models.CreateMaintenanceRunDetails
     oci.database.models.CreateNFSBackupDestinationDetails
@@ -393,6 +395,9 @@ Database
     oci.database.models.GcpKeyDetails
     oci.database.models.GenerateAutonomousDatabaseWalletDetails
     oci.database.models.GenerateRecommendedNetworkDetails
+    oci.database.models.GiHome
+    oci.database.models.GiHomeCollection
+    oci.database.models.GiHomeSummary
     oci.database.models.GiMinorVersionSummary
     oci.database.models.GiVersionSummary
     oci.database.models.GoogleCloudProviderEncryptionKeyDetails
@@ -567,6 +572,7 @@ Database
     oci.database.models.UpdateExternalMacsConnectorDetails
     oci.database.models.UpdateExternalNonContainerDatabaseDetails
     oci.database.models.UpdateExternalPluggableDatabaseDetails
+    oci.database.models.UpdateGiHomeDetails
     oci.database.models.UpdateHistoryEntry
     oci.database.models.UpdateHistoryEntrySummary
     oci.database.models.UpdateKeyStoreDetails

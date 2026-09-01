@@ -60,6 +60,10 @@ class UpdateDetails(object):
             The value to assign to the update_id property of this UpdateDetails.
         :type update_id: str
 
+        :param gi_home_id:
+            The value to assign to the gi_home_id property of this UpdateDetails.
+        :type gi_home_id: str
+
         :param update_action:
             The value to assign to the update_action property of this UpdateDetails.
             Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK"
@@ -77,17 +81,20 @@ class UpdateDetails(object):
         """
         self.swagger_types = {
             'update_id': 'str',
+            'gi_home_id': 'str',
             'update_action': 'str',
             'update_mode': 'str',
             'gi_software_image_id': 'str'
         }
         self.attribute_map = {
             'update_id': 'updateId',
+            'gi_home_id': 'giHomeId',
             'update_action': 'updateAction',
             'update_mode': 'updateMode',
             'gi_software_image_id': 'giSoftwareImageId'
         }
         self._update_id = None
+        self._gi_home_id = None
         self._update_action = None
         self._update_mode = None
         self._gi_software_image_id = None
@@ -119,6 +126,38 @@ class UpdateDetails(object):
         :type: str
         """
         self._update_id = update_id
+
+    @property
+    def gi_home_id(self):
+        """
+        Gets the gi_home_id of this UpdateDetails.
+        The `OCID`__ of the Grid Infrastructure Home.
+        Specify this field for out of place Grid Infrastructure Home patching and upgrade of the Cloud VM Cluster.
+        This is mutually exclusive option to `updateId` and `giSoftwareImageId` which are used for in place patching and upgrade using Oracle supplied and custom images respectively.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The gi_home_id of this UpdateDetails.
+        :rtype: str
+        """
+        return self._gi_home_id
+
+    @gi_home_id.setter
+    def gi_home_id(self, gi_home_id):
+        """
+        Sets the gi_home_id of this UpdateDetails.
+        The `OCID`__ of the Grid Infrastructure Home.
+        Specify this field for out of place Grid Infrastructure Home patching and upgrade of the Cloud VM Cluster.
+        This is mutually exclusive option to `updateId` and `giSoftwareImageId` which are used for in place patching and upgrade using Oracle supplied and custom images respectively.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param gi_home_id: The gi_home_id of this UpdateDetails.
+        :type: str
+        """
+        self._gi_home_id = gi_home_id
 
     @property
     def update_action(self):

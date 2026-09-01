@@ -96,6 +96,10 @@ class CreateDatabaseSoftwareImageDetails(object):
             The value to assign to the source_db_home_id property of this CreateDatabaseSoftwareImageDetails.
         :type source_db_home_id: str
 
+        :param source_gi_home_id:
+            The value to assign to the source_gi_home_id property of this CreateDatabaseSoftwareImageDetails.
+        :type source_gi_home_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -108,7 +112,8 @@ class CreateDatabaseSoftwareImageDetails(object):
             'ls_inventory': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'source_db_home_id': 'str'
+            'source_db_home_id': 'str',
+            'source_gi_home_id': 'str'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -121,7 +126,8 @@ class CreateDatabaseSoftwareImageDetails(object):
             'ls_inventory': 'lsInventory',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'source_db_home_id': 'sourceDbHomeId'
+            'source_db_home_id': 'sourceDbHomeId',
+            'source_gi_home_id': 'sourceGiHomeId'
         }
         self._compartment_id = None
         self._database_version = None
@@ -134,6 +140,7 @@ class CreateDatabaseSoftwareImageDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._source_db_home_id = None
+        self._source_gi_home_id = None
 
     @property
     def compartment_id(self):
@@ -436,6 +443,34 @@ class CreateDatabaseSoftwareImageDetails(object):
         :type: str
         """
         self._source_db_home_id = source_db_home_id
+
+    @property
+    def source_gi_home_id(self):
+        """
+        Gets the source_gi_home_id of this CreateDatabaseSoftwareImageDetails.
+        The `OCID`__ of the Grid Infrastructure Home.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The source_gi_home_id of this CreateDatabaseSoftwareImageDetails.
+        :rtype: str
+        """
+        return self._source_gi_home_id
+
+    @source_gi_home_id.setter
+    def source_gi_home_id(self, source_gi_home_id):
+        """
+        Sets the source_gi_home_id of this CreateDatabaseSoftwareImageDetails.
+        The `OCID`__ of the Grid Infrastructure Home.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param source_gi_home_id: The source_gi_home_id of this CreateDatabaseSoftwareImageDetails.
+        :type: str
+        """
+        self._source_gi_home_id = source_gi_home_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

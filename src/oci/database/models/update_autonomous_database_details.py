@@ -309,6 +309,14 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the time_maintenance_pause_until property of this UpdateAutonomousDatabaseDetails.
         :type time_maintenance_pause_until: datetime
 
+        :param scheduled_maintenance_window:
+            The value to assign to the scheduled_maintenance_window property of this UpdateAutonomousDatabaseDetails.
+        :type scheduled_maintenance_window: oci.database.models.AutonomousDatabaseMaintenanceWindowSummary
+
+        :param time_scheduled_maintenance_window_update:
+            The value to assign to the time_scheduled_maintenance_window_update property of this UpdateAutonomousDatabaseDetails.
+        :type time_scheduled_maintenance_window_update: datetime
+
         :param is_backup_retention_locked:
             The value to assign to the is_backup_retention_locked property of this UpdateAutonomousDatabaseDetails.
         :type is_backup_retention_locked: bool
@@ -419,6 +427,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'autonomous_maintenance_schedule_type': 'str',
             'autonomous_database_maintenance_window': 'AutonomousDatabaseMaintenanceWindowSummary',
             'time_maintenance_pause_until': 'datetime',
+            'scheduled_maintenance_window': 'AutonomousDatabaseMaintenanceWindowSummary',
+            'time_scheduled_maintenance_window_update': 'datetime',
             'is_backup_retention_locked': 'bool',
             'time_scheduled_db_version_upgrade': 'datetime',
             'is_disable_db_version_upgrade_schedule': 'bool',
@@ -487,6 +497,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'autonomous_database_maintenance_window': 'autonomousDatabaseMaintenanceWindow',
             'time_maintenance_pause_until': 'timeMaintenancePauseUntil',
+            'scheduled_maintenance_window': 'scheduledMaintenanceWindow',
+            'time_scheduled_maintenance_window_update': 'timeScheduledMaintenanceWindowUpdate',
             'is_backup_retention_locked': 'isBackupRetentionLocked',
             'time_scheduled_db_version_upgrade': 'timeScheduledDbVersionUpgrade',
             'is_disable_db_version_upgrade_schedule': 'isDisableDbVersionUpgradeSchedule',
@@ -554,6 +566,8 @@ class UpdateAutonomousDatabaseDetails(object):
         self._autonomous_maintenance_schedule_type = None
         self._autonomous_database_maintenance_window = None
         self._time_maintenance_pause_until = None
+        self._scheduled_maintenance_window = None
+        self._time_scheduled_maintenance_window_update = None
         self._is_backup_retention_locked = None
         self._time_scheduled_db_version_upgrade = None
         self._is_disable_db_version_upgrade_schedule = None
@@ -2217,6 +2231,50 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: datetime
         """
         self._time_maintenance_pause_until = time_maintenance_pause_until
+
+    @property
+    def scheduled_maintenance_window(self):
+        """
+        Gets the scheduled_maintenance_window of this UpdateAutonomousDatabaseDetails.
+
+        :return: The scheduled_maintenance_window of this UpdateAutonomousDatabaseDetails.
+        :rtype: oci.database.models.AutonomousDatabaseMaintenanceWindowSummary
+        """
+        return self._scheduled_maintenance_window
+
+    @scheduled_maintenance_window.setter
+    def scheduled_maintenance_window(self, scheduled_maintenance_window):
+        """
+        Sets the scheduled_maintenance_window of this UpdateAutonomousDatabaseDetails.
+
+        :param scheduled_maintenance_window: The scheduled_maintenance_window of this UpdateAutonomousDatabaseDetails.
+        :type: oci.database.models.AutonomousDatabaseMaintenanceWindowSummary
+        """
+        self._scheduled_maintenance_window = scheduled_maintenance_window
+
+    @property
+    def time_scheduled_maintenance_window_update(self):
+        """
+        Gets the time_scheduled_maintenance_window_update of this UpdateAutonomousDatabaseDetails.
+        The date and time at which operation to change Maintenance Window is scheduled to take place.
+
+
+        :return: The time_scheduled_maintenance_window_update of this UpdateAutonomousDatabaseDetails.
+        :rtype: datetime
+        """
+        return self._time_scheduled_maintenance_window_update
+
+    @time_scheduled_maintenance_window_update.setter
+    def time_scheduled_maintenance_window_update(self, time_scheduled_maintenance_window_update):
+        """
+        Sets the time_scheduled_maintenance_window_update of this UpdateAutonomousDatabaseDetails.
+        The date and time at which operation to change Maintenance Window is scheduled to take place.
+
+
+        :param time_scheduled_maintenance_window_update: The time_scheduled_maintenance_window_update of this UpdateAutonomousDatabaseDetails.
+        :type: datetime
+        """
+        self._time_scheduled_maintenance_window_update = time_scheduled_maintenance_window_update
 
     @property
     def is_backup_retention_locked(self):

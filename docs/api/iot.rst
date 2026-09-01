@@ -22,6 +22,7 @@ Iot
     oci.iot.models.ChangeIotDomainCompartmentDetails
     oci.iot.models.ChangeIotDomainDataRetentionPeriodDetails
     oci.iot.models.ChangeIotDomainGroupCompartmentDetails
+    oci.iot.models.ChangeIotFlowRuntimeCompartmentDetails
     oci.iot.models.ConfigureIotDomainDataAccessDetails
     oci.iot.models.ConfigureIotDomainGroupDataAccessDetails
     oci.iot.models.CreateDigitalTwinAdapterDetails
@@ -30,6 +31,7 @@ Iot
     oci.iot.models.CreateDigitalTwinRelationshipDetails
     oci.iot.models.CreateIotDomainDetails
     oci.iot.models.CreateIotDomainGroupDetails
+    oci.iot.models.CreateIotFlowRuntimeDetails
     oci.iot.models.DataRetentionPeriodsInDays
     oci.iot.models.DigitalTwinAdapter
     oci.iot.models.DigitalTwinAdapterCollection
@@ -50,6 +52,8 @@ Iot
     oci.iot.models.DigitalTwinRelationshipSummary
     oci.iot.models.DirectDataAccessDetails
     oci.iot.models.ErrorDetails
+    oci.iot.models.FileFamily
+    oci.iot.models.FileStorageMountDetails
     oci.iot.models.InvokeRawBinaryCommandDetails
     oci.iot.models.InvokeRawCommandDetails
     oci.iot.models.InvokeRawJsonCommandDetails
@@ -60,13 +64,23 @@ Iot
     oci.iot.models.IotDomainGroupCollection
     oci.iot.models.IotDomainGroupSummary
     oci.iot.models.IotDomainSummary
+    oci.iot.models.IotFlowRuntime
+    oci.iot.models.IotFlowRuntimeCollection
+    oci.iot.models.IotFlowRuntimeSummary
+    oci.iot.models.Log
+    oci.iot.models.LogConfigDetails
+    oci.iot.models.LogGroup
+    oci.iot.models.NetworkConfigDetails
+    oci.iot.models.NetworkSecurityGroup
     oci.iot.models.OrdsDataAccessDetails
+    oci.iot.models.Subnet
     oci.iot.models.UpdateDigitalTwinAdapterDetails
     oci.iot.models.UpdateDigitalTwinInstanceDetails
     oci.iot.models.UpdateDigitalTwinModelDetails
     oci.iot.models.UpdateDigitalTwinRelationshipDetails
     oci.iot.models.UpdateIotDomainDetails
     oci.iot.models.UpdateIotDomainGroupDetails
+    oci.iot.models.UpdateIotFlowRuntimeDetails
     oci.iot.models.Vcn
     oci.iot.models.WorkRequest
     oci.iot.models.WorkRequestError

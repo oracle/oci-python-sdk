@@ -56,6 +56,7 @@ from .autonomous_database_in_backup import AutonomousDatabaseInBackup
 from .autonomous_database_in_backup_collection import AutonomousDatabaseInBackupCollection
 from .autonomous_database_in_backup_summary import AutonomousDatabaseInBackupSummary
 from .autonomous_database_key_history_entry import AutonomousDatabaseKeyHistoryEntry
+from .autonomous_database_maintenance_window_collection import AutonomousDatabaseMaintenanceWindowCollection
 from .autonomous_database_maintenance_window_summary import AutonomousDatabaseMaintenanceWindowSummary
 from .autonomous_database_manual_refresh_details import AutonomousDatabaseManualRefreshDetails
 from .autonomous_database_peer_collection import AutonomousDatabasePeerCollection
@@ -223,6 +224,7 @@ from .create_external_database_details_base import CreateExternalDatabaseDetails
 from .create_external_macs_connector_details import CreateExternalMacsConnectorDetails
 from .create_external_non_container_database_details import CreateExternalNonContainerDatabaseDetails
 from .create_external_pluggable_database_details import CreateExternalPluggableDatabaseDetails
+from .create_gi_home_details import CreateGiHomeDetails
 from .create_key_store_details import CreateKeyStoreDetails
 from .create_maintenance_run_details import CreateMaintenanceRunDetails
 from .create_nfs_backup_destination_details import CreateNFSBackupDestinationDetails
@@ -381,6 +383,9 @@ from .flex_component_summary import FlexComponentSummary
 from .gcp_key_details import GcpKeyDetails
 from .generate_autonomous_database_wallet_details import GenerateAutonomousDatabaseWalletDetails
 from .generate_recommended_network_details import GenerateRecommendedNetworkDetails
+from .gi_home import GiHome
+from .gi_home_collection import GiHomeCollection
+from .gi_home_summary import GiHomeSummary
 from .gi_minor_version_summary import GiMinorVersionSummary
 from .gi_version_summary import GiVersionSummary
 from .google_cloud_provider_encryption_key_details import GoogleCloudProviderEncryptionKeyDetails
@@ -555,6 +560,7 @@ from .update_external_database_details_base import UpdateExternalDatabaseDetails
 from .update_external_macs_connector_details import UpdateExternalMacsConnectorDetails
 from .update_external_non_container_database_details import UpdateExternalNonContainerDatabaseDetails
 from .update_external_pluggable_database_details import UpdateExternalPluggableDatabaseDetails
+from .update_gi_home_details import UpdateGiHomeDetails
 from .update_history_entry import UpdateHistoryEntry
 from .update_history_entry_summary import UpdateHistoryEntrySummary
 from .update_key_store_details import UpdateKeyStoreDetails
@@ -640,6 +646,7 @@ database_type_mapping = {
     "AutonomousDatabaseInBackupCollection": AutonomousDatabaseInBackupCollection,
     "AutonomousDatabaseInBackupSummary": AutonomousDatabaseInBackupSummary,
     "AutonomousDatabaseKeyHistoryEntry": AutonomousDatabaseKeyHistoryEntry,
+    "AutonomousDatabaseMaintenanceWindowCollection": AutonomousDatabaseMaintenanceWindowCollection,
     "AutonomousDatabaseMaintenanceWindowSummary": AutonomousDatabaseMaintenanceWindowSummary,
     "AutonomousDatabaseManualRefreshDetails": AutonomousDatabaseManualRefreshDetails,
     "AutonomousDatabasePeerCollection": AutonomousDatabasePeerCollection,
@@ -807,6 +814,7 @@ database_type_mapping = {
     "CreateExternalMacsConnectorDetails": CreateExternalMacsConnectorDetails,
     "CreateExternalNonContainerDatabaseDetails": CreateExternalNonContainerDatabaseDetails,
     "CreateExternalPluggableDatabaseDetails": CreateExternalPluggableDatabaseDetails,
+    "CreateGiHomeDetails": CreateGiHomeDetails,
     "CreateKeyStoreDetails": CreateKeyStoreDetails,
     "CreateMaintenanceRunDetails": CreateMaintenanceRunDetails,
     "CreateNFSBackupDestinationDetails": CreateNFSBackupDestinationDetails,
@@ -965,6 +973,9 @@ database_type_mapping = {
     "GcpKeyDetails": GcpKeyDetails,
     "GenerateAutonomousDatabaseWalletDetails": GenerateAutonomousDatabaseWalletDetails,
     "GenerateRecommendedNetworkDetails": GenerateRecommendedNetworkDetails,
+    "GiHome": GiHome,
+    "GiHomeCollection": GiHomeCollection,
+    "GiHomeSummary": GiHomeSummary,
     "GiMinorVersionSummary": GiMinorVersionSummary,
     "GiVersionSummary": GiVersionSummary,
     "GoogleCloudProviderEncryptionKeyDetails": GoogleCloudProviderEncryptionKeyDetails,
@@ -1139,6 +1150,7 @@ database_type_mapping = {
     "UpdateExternalMacsConnectorDetails": UpdateExternalMacsConnectorDetails,
     "UpdateExternalNonContainerDatabaseDetails": UpdateExternalNonContainerDatabaseDetails,
     "UpdateExternalPluggableDatabaseDetails": UpdateExternalPluggableDatabaseDetails,
+    "UpdateGiHomeDetails": UpdateGiHomeDetails,
     "UpdateHistoryEntry": UpdateHistoryEntry,
     "UpdateHistoryEntrySummary": UpdateHistoryEntrySummary,
     "UpdateKeyStoreDetails": UpdateKeyStoreDetails,

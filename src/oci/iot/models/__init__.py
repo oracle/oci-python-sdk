@@ -10,6 +10,7 @@ from .apex_data_access_details import ApexDataAccessDetails
 from .change_iot_domain_compartment_details import ChangeIotDomainCompartmentDetails
 from .change_iot_domain_data_retention_period_details import ChangeIotDomainDataRetentionPeriodDetails
 from .change_iot_domain_group_compartment_details import ChangeIotDomainGroupCompartmentDetails
+from .change_iot_flow_runtime_compartment_details import ChangeIotFlowRuntimeCompartmentDetails
 from .configure_iot_domain_data_access_details import ConfigureIotDomainDataAccessDetails
 from .configure_iot_domain_group_data_access_details import ConfigureIotDomainGroupDataAccessDetails
 from .create_digital_twin_adapter_details import CreateDigitalTwinAdapterDetails
@@ -18,6 +19,7 @@ from .create_digital_twin_model_details import CreateDigitalTwinModelDetails
 from .create_digital_twin_relationship_details import CreateDigitalTwinRelationshipDetails
 from .create_iot_domain_details import CreateIotDomainDetails
 from .create_iot_domain_group_details import CreateIotDomainGroupDetails
+from .create_iot_flow_runtime_details import CreateIotFlowRuntimeDetails
 from .data_retention_periods_in_days import DataRetentionPeriodsInDays
 from .digital_twin_adapter import DigitalTwinAdapter
 from .digital_twin_adapter_collection import DigitalTwinAdapterCollection
@@ -38,6 +40,8 @@ from .digital_twin_relationship_collection import DigitalTwinRelationshipCollect
 from .digital_twin_relationship_summary import DigitalTwinRelationshipSummary
 from .direct_data_access_details import DirectDataAccessDetails
 from .error_details import ErrorDetails
+from .file_family import FileFamily
+from .file_storage_mount_details import FileStorageMountDetails
 from .invoke_raw_binary_command_details import InvokeRawBinaryCommandDetails
 from .invoke_raw_command_details import InvokeRawCommandDetails
 from .invoke_raw_json_command_details import InvokeRawJsonCommandDetails
@@ -48,13 +52,23 @@ from .iot_domain_group import IotDomainGroup
 from .iot_domain_group_collection import IotDomainGroupCollection
 from .iot_domain_group_summary import IotDomainGroupSummary
 from .iot_domain_summary import IotDomainSummary
+from .iot_flow_runtime import IotFlowRuntime
+from .iot_flow_runtime_collection import IotFlowRuntimeCollection
+from .iot_flow_runtime_summary import IotFlowRuntimeSummary
+from .log import Log
+from .log_config_details import LogConfigDetails
+from .log_group import LogGroup
+from .network_config_details import NetworkConfigDetails
+from .network_security_group import NetworkSecurityGroup
 from .ords_data_access_details import OrdsDataAccessDetails
+from .subnet import Subnet
 from .update_digital_twin_adapter_details import UpdateDigitalTwinAdapterDetails
 from .update_digital_twin_instance_details import UpdateDigitalTwinInstanceDetails
 from .update_digital_twin_model_details import UpdateDigitalTwinModelDetails
 from .update_digital_twin_relationship_details import UpdateDigitalTwinRelationshipDetails
 from .update_iot_domain_details import UpdateIotDomainDetails
 from .update_iot_domain_group_details import UpdateIotDomainGroupDetails
+from .update_iot_flow_runtime_details import UpdateIotFlowRuntimeDetails
 from .vcn import Vcn
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -71,6 +85,7 @@ iot_type_mapping = {
     "ChangeIotDomainCompartmentDetails": ChangeIotDomainCompartmentDetails,
     "ChangeIotDomainDataRetentionPeriodDetails": ChangeIotDomainDataRetentionPeriodDetails,
     "ChangeIotDomainGroupCompartmentDetails": ChangeIotDomainGroupCompartmentDetails,
+    "ChangeIotFlowRuntimeCompartmentDetails": ChangeIotFlowRuntimeCompartmentDetails,
     "ConfigureIotDomainDataAccessDetails": ConfigureIotDomainDataAccessDetails,
     "ConfigureIotDomainGroupDataAccessDetails": ConfigureIotDomainGroupDataAccessDetails,
     "CreateDigitalTwinAdapterDetails": CreateDigitalTwinAdapterDetails,
@@ -79,6 +94,7 @@ iot_type_mapping = {
     "CreateDigitalTwinRelationshipDetails": CreateDigitalTwinRelationshipDetails,
     "CreateIotDomainDetails": CreateIotDomainDetails,
     "CreateIotDomainGroupDetails": CreateIotDomainGroupDetails,
+    "CreateIotFlowRuntimeDetails": CreateIotFlowRuntimeDetails,
     "DataRetentionPeriodsInDays": DataRetentionPeriodsInDays,
     "DigitalTwinAdapter": DigitalTwinAdapter,
     "DigitalTwinAdapterCollection": DigitalTwinAdapterCollection,
@@ -99,6 +115,8 @@ iot_type_mapping = {
     "DigitalTwinRelationshipSummary": DigitalTwinRelationshipSummary,
     "DirectDataAccessDetails": DirectDataAccessDetails,
     "ErrorDetails": ErrorDetails,
+    "FileFamily": FileFamily,
+    "FileStorageMountDetails": FileStorageMountDetails,
     "InvokeRawBinaryCommandDetails": InvokeRawBinaryCommandDetails,
     "InvokeRawCommandDetails": InvokeRawCommandDetails,
     "InvokeRawJsonCommandDetails": InvokeRawJsonCommandDetails,
@@ -109,13 +127,23 @@ iot_type_mapping = {
     "IotDomainGroupCollection": IotDomainGroupCollection,
     "IotDomainGroupSummary": IotDomainGroupSummary,
     "IotDomainSummary": IotDomainSummary,
+    "IotFlowRuntime": IotFlowRuntime,
+    "IotFlowRuntimeCollection": IotFlowRuntimeCollection,
+    "IotFlowRuntimeSummary": IotFlowRuntimeSummary,
+    "Log": Log,
+    "LogConfigDetails": LogConfigDetails,
+    "LogGroup": LogGroup,
+    "NetworkConfigDetails": NetworkConfigDetails,
+    "NetworkSecurityGroup": NetworkSecurityGroup,
     "OrdsDataAccessDetails": OrdsDataAccessDetails,
+    "Subnet": Subnet,
     "UpdateDigitalTwinAdapterDetails": UpdateDigitalTwinAdapterDetails,
     "UpdateDigitalTwinInstanceDetails": UpdateDigitalTwinInstanceDetails,
     "UpdateDigitalTwinModelDetails": UpdateDigitalTwinModelDetails,
     "UpdateDigitalTwinRelationshipDetails": UpdateDigitalTwinRelationshipDetails,
     "UpdateIotDomainDetails": UpdateIotDomainDetails,
     "UpdateIotDomainGroupDetails": UpdateIotDomainGroupDetails,
+    "UpdateIotFlowRuntimeDetails": UpdateIotFlowRuntimeDetails,
     "Vcn": Vcn,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
