@@ -158,6 +158,10 @@ class EsxiHostSummary(object):
             The value to assign to the compute_availability_domain property of this EsxiHostSummary.
         :type compute_availability_domain: str
 
+        :param compute_fault_domain:
+            The value to assign to the compute_fault_domain property of this EsxiHostSummary.
+        :type compute_fault_domain: str
+
         :param host_shape_name:
             The value to assign to the host_shape_name property of this EsxiHostSummary.
         :type host_shape_name: str
@@ -231,6 +235,7 @@ class EsxiHostSummary(object):
             'non_upgraded_esxi_host_id': 'str',
             'upgraded_replacement_esxi_host_id': 'str',
             'compute_availability_domain': 'str',
+            'compute_fault_domain': 'str',
             'host_shape_name': 'str',
             'host_ocpu_count': 'float',
             'billing_donor_host_id': 'str',
@@ -265,6 +270,7 @@ class EsxiHostSummary(object):
             'non_upgraded_esxi_host_id': 'nonUpgradedEsxiHostId',
             'upgraded_replacement_esxi_host_id': 'upgradedReplacementEsxiHostId',
             'compute_availability_domain': 'computeAvailabilityDomain',
+            'compute_fault_domain': 'computeFaultDomain',
             'host_shape_name': 'hostShapeName',
             'host_ocpu_count': 'hostOcpuCount',
             'billing_donor_host_id': 'billingDonorHostId',
@@ -298,6 +304,7 @@ class EsxiHostSummary(object):
         self._non_upgraded_esxi_host_id = None
         self._upgraded_replacement_esxi_host_id = None
         self._compute_availability_domain = None
+        self._compute_fault_domain = None
         self._host_shape_name = None
         self._host_ocpu_count = None
         self._billing_donor_host_id = None
@@ -873,6 +880,30 @@ class EsxiHostSummary(object):
         :type: str
         """
         self._compute_availability_domain = compute_availability_domain
+
+    @property
+    def compute_fault_domain(self):
+        """
+        Gets the compute_fault_domain of this EsxiHostSummary.
+        The fault domain of the ESXi host.
+
+
+        :return: The compute_fault_domain of this EsxiHostSummary.
+        :rtype: str
+        """
+        return self._compute_fault_domain
+
+    @compute_fault_domain.setter
+    def compute_fault_domain(self, compute_fault_domain):
+        """
+        Sets the compute_fault_domain of this EsxiHostSummary.
+        The fault domain of the ESXi host.
+
+
+        :param compute_fault_domain: The compute_fault_domain of this EsxiHostSummary.
+        :type: str
+        """
+        self._compute_fault_domain = compute_fault_domain
 
     @property
     def host_shape_name(self):

@@ -52,6 +52,7 @@ from .esxi_host import EsxiHost
 from .esxi_host_collection import EsxiHostCollection
 from .esxi_host_summary import EsxiHostSummary
 from .hcx_license_summary import HcxLicenseSummary
+from .host_distribution_report_details import HostDistributionReportDetails
 from .initial_cluster_configuration import InitialClusterConfiguration
 from .initial_configuration import InitialConfiguration
 from .inplace_upgrade_details import InplaceUpgradeDetails
@@ -142,6 +143,7 @@ ocvp_type_mapping = {
     "EsxiHostCollection": EsxiHostCollection,
     "EsxiHostSummary": EsxiHostSummary,
     "HcxLicenseSummary": HcxLicenseSummary,
+    "HostDistributionReportDetails": HostDistributionReportDetails,
     "InitialClusterConfiguration": InitialClusterConfiguration,
     "InitialConfiguration": InitialConfiguration,
     "InplaceUpgradeDetails": InplaceUpgradeDetails,

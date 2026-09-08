@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NoneSuccessDestinationDetails(SuccessDestinationDetails):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Specifies no success destination
 
     Example: `{\"kind\": \"NONE\"}`

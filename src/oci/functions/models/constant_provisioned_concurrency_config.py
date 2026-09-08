@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConstantProvisionedConcurrencyConfig(FunctionProvisionedConcurrencyConfig):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Configuration specifying a constant amount of provisioned concurrency.
     """
 

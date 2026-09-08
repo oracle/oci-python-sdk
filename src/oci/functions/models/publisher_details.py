@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PublisherDetails(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Contains details about the publisher of this PBF Listing.
     """
 

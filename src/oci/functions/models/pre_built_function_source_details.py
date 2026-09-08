@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PreBuiltFunctionSourceDetails(FunctionSourceDetails):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     The source of the Function which is based on a Pre-Built Function Listing (PbfListing).
     """
 

@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ApplicationLoggingConfig(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Set logging configuration for an application. This is only used if Service Logs for the application are enabled in the OCI Logging service.
     """
 

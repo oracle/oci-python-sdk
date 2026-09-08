@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Application(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     An application contains functions and defined attributes shared between those functions, such as network configuration and configuration. Avoid entering confidential information.
     """
 

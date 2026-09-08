@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PbfListing(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     PbfListing resources provide details about the available PBFs for consumption by the user.
     This resource contains details about PBF's functionality, policies required, configuration parameters expected
     etc.

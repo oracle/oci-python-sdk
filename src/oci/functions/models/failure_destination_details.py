@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FailureDestinationDetails(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation.
     A notification is an example of a failure destination.
 

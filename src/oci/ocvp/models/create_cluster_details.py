@@ -31,6 +31,14 @@ class CreateClusterDetails(object):
     #: This constant has a value of "THREE_YEARS"
     INITIAL_COMMITMENT_THREE_YEARS = "THREE_YEARS"
 
+    #: A constant which can be used with the initial_fault_domain_host_distribution property of a CreateClusterDetails.
+    #: This constant has a value of "EVENLY_DISTRIBUTED"
+    INITIAL_FAULT_DOMAIN_HOST_DISTRIBUTION_EVENLY_DISTRIBUTED = "EVENLY_DISTRIBUTED"
+
+    #: A constant which can be used with the initial_fault_domain_host_distribution property of a CreateClusterDetails.
+    #: This constant has a value of "UNEVENLY_DISTRIBUTED"
+    INITIAL_FAULT_DOMAIN_HOST_DISTRIBUTION_UNEVENLY_DISTRIBUTED = "UNEVENLY_DISTRIBUTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateClusterDetails object with values from keyword arguments.
@@ -101,6 +109,11 @@ class CreateClusterDetails(object):
             The value to assign to the esxi_software_version property of this CreateClusterDetails.
         :type esxi_software_version: str
 
+        :param initial_fault_domain_host_distribution:
+            The value to assign to the initial_fault_domain_host_distribution property of this CreateClusterDetails.
+            Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"
+        :type initial_fault_domain_host_distribution: str
+
         :param cluster_byol_allocation_details:
             The value to assign to the cluster_byol_allocation_details property of this CreateClusterDetails.
         :type cluster_byol_allocation_details: oci.ocvp.models.ClusterByolAllocationDetails
@@ -135,6 +148,7 @@ class CreateClusterDetails(object):
             'datastore_cluster_ids': 'list[str]',
             'vmware_software_version': 'str',
             'esxi_software_version': 'str',
+            'initial_fault_domain_host_distribution': 'str',
             'cluster_byol_allocation_details': 'ClusterByolAllocationDetails',
             'initial_vcf_byol_allocation_id': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -157,6 +171,7 @@ class CreateClusterDetails(object):
             'datastore_cluster_ids': 'datastoreClusterIds',
             'vmware_software_version': 'vmwareSoftwareVersion',
             'esxi_software_version': 'esxiSoftwareVersion',
+            'initial_fault_domain_host_distribution': 'initialFaultDomainHostDistribution',
             'cluster_byol_allocation_details': 'clusterByolAllocationDetails',
             'initial_vcf_byol_allocation_id': 'initialVcfByolAllocationId',
             'freeform_tags': 'freeformTags',
@@ -178,6 +193,7 @@ class CreateClusterDetails(object):
         self._datastore_cluster_ids = None
         self._vmware_software_version = None
         self._esxi_software_version = None
+        self._initial_fault_domain_host_distribution = None
         self._cluster_byol_allocation_details = None
         self._initial_vcf_byol_allocation_id = None
         self._freeform_tags = None
@@ -619,6 +635,37 @@ class CreateClusterDetails(object):
         :type: str
         """
         self._esxi_software_version = esxi_software_version
+
+    @property
+    def initial_fault_domain_host_distribution(self):
+        """
+        Gets the initial_fault_domain_host_distribution of this CreateClusterDetails.
+        The initial fault domain host distribution mode for the Cluster.
+
+        Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"
+
+
+        :return: The initial_fault_domain_host_distribution of this CreateClusterDetails.
+        :rtype: str
+        """
+        return self._initial_fault_domain_host_distribution
+
+    @initial_fault_domain_host_distribution.setter
+    def initial_fault_domain_host_distribution(self, initial_fault_domain_host_distribution):
+        """
+        Sets the initial_fault_domain_host_distribution of this CreateClusterDetails.
+        The initial fault domain host distribution mode for the Cluster.
+
+
+        :param initial_fault_domain_host_distribution: The initial_fault_domain_host_distribution of this CreateClusterDetails.
+        :type: str
+        """
+        allowed_values = ["EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"]
+        if not value_allowed_none_or_none_sentinel(initial_fault_domain_host_distribution, allowed_values):
+            raise ValueError(
+                f"Invalid value for `initial_fault_domain_host_distribution`, must be None or one of {allowed_values}"
+            )
+        self._initial_fault_domain_host_distribution = initial_fault_domain_host_distribution
 
     @property
     def cluster_byol_allocation_details(self):

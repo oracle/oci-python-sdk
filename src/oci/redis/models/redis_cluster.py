@@ -65,6 +65,18 @@ class RedisCluster(object):
     #: This constant has a value of "NONSHARDED"
     CLUSTER_MODE_NONSHARDED = "NONSHARDED"
 
+    #: A constant which can be used with the cluster_role property of a RedisCluster.
+    #: This constant has a value of "PRIMARY"
+    CLUSTER_ROLE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the cluster_role property of a RedisCluster.
+    #: This constant has a value of "SECONDARY"
+    CLUSTER_ROLE_SECONDARY = "SECONDARY"
+
+    #: A constant which can be used with the cluster_role property of a RedisCluster.
+    #: This constant has a value of "STANDALONE"
+    CLUSTER_ROLE_STANDALONE = "STANDALONE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RedisCluster object with values from keyword arguments.
@@ -176,6 +188,20 @@ class RedisCluster(object):
             The value to assign to the security_attributes property of this RedisCluster.
         :type security_attributes: dict(str, dict(str, object))
 
+        :param cluster_role:
+            The value to assign to the cluster_role property of this RedisCluster.
+            Allowed values for this property are: "PRIMARY", "SECONDARY", "STANDALONE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type cluster_role: str
+
+        :param primary_cluster_id:
+            The value to assign to the primary_cluster_id property of this RedisCluster.
+        :type primary_cluster_id: str
+
+        :param cluster_replication_topology:
+            The value to assign to the cluster_replication_topology property of this RedisCluster.
+        :type cluster_replication_topology: oci.redis.models.ClusterReplicationTopology
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this RedisCluster.
         :type freeform_tags: dict(str, str)
@@ -215,6 +241,9 @@ class RedisCluster(object):
             'backup_id': 'str',
             'import_from_object_storage_details': 'ImportOciCacheFromObjectStorageDetails',
             'security_attributes': 'dict(str, dict(str, object))',
+            'cluster_role': 'str',
+            'primary_cluster_id': 'str',
+            'cluster_replication_topology': 'ClusterReplicationTopology',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -245,6 +274,9 @@ class RedisCluster(object):
             'backup_id': 'backupId',
             'import_from_object_storage_details': 'importFromObjectStorageDetails',
             'security_attributes': 'securityAttributes',
+            'cluster_role': 'clusterRole',
+            'primary_cluster_id': 'primaryClusterId',
+            'cluster_replication_topology': 'clusterReplicationTopology',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -274,6 +306,9 @@ class RedisCluster(object):
         self._backup_id = None
         self._import_from_object_storage_details = None
         self._security_attributes = None
+        self._cluster_role = None
+        self._primary_cluster_id = None
+        self._cluster_replication_topology = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -927,6 +962,84 @@ class RedisCluster(object):
         :type: dict(str, dict(str, object))
         """
         self._security_attributes = security_attributes
+
+    @property
+    def cluster_role(self):
+        """
+        Gets the cluster_role of this RedisCluster.
+        The current role of the cluster.
+
+        Allowed values for this property are: "PRIMARY", "SECONDARY", "STANDALONE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The cluster_role of this RedisCluster.
+        :rtype: str
+        """
+        return self._cluster_role
+
+    @cluster_role.setter
+    def cluster_role(self, cluster_role):
+        """
+        Sets the cluster_role of this RedisCluster.
+        The current role of the cluster.
+
+
+        :param cluster_role: The cluster_role of this RedisCluster.
+        :type: str
+        """
+        allowed_values = ["PRIMARY", "SECONDARY", "STANDALONE"]
+        if not value_allowed_none_or_none_sentinel(cluster_role, allowed_values):
+            cluster_role = 'UNKNOWN_ENUM_VALUE'
+        self._cluster_role = cluster_role
+
+    @property
+    def primary_cluster_id(self):
+        """
+        Gets the primary_cluster_id of this RedisCluster.
+        The `OCID`__ of the primary cluster in CRR.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+
+
+        :return: The primary_cluster_id of this RedisCluster.
+        :rtype: str
+        """
+        return self._primary_cluster_id
+
+    @primary_cluster_id.setter
+    def primary_cluster_id(self, primary_cluster_id):
+        """
+        Sets the primary_cluster_id of this RedisCluster.
+        The `OCID`__ of the primary cluster in CRR.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+
+
+        :param primary_cluster_id: The primary_cluster_id of this RedisCluster.
+        :type: str
+        """
+        self._primary_cluster_id = primary_cluster_id
+
+    @property
+    def cluster_replication_topology(self):
+        """
+        Gets the cluster_replication_topology of this RedisCluster.
+
+        :return: The cluster_replication_topology of this RedisCluster.
+        :rtype: oci.redis.models.ClusterReplicationTopology
+        """
+        return self._cluster_replication_topology
+
+    @cluster_replication_topology.setter
+    def cluster_replication_topology(self, cluster_replication_topology):
+        """
+        Sets the cluster_replication_topology of this RedisCluster.
+
+        :param cluster_replication_topology: The cluster_replication_topology of this RedisCluster.
+        :type: oci.redis.models.ClusterReplicationTopology
+        """
+        self._cluster_replication_topology = cluster_replication_topology
 
     @property
     def freeform_tags(self):

@@ -126,6 +126,7 @@ class FunctionsManagementClient(object):
 
     def change_application_compartment(self, application_id, change_application_compartment_details, **kwargs):
         """
+        Note: Deprecated. Use the new operation instead.
         Moves an application into a different compartment within the same tenancy.
         For information about moving resources between compartments, see `Moving Resources Between Compartments`__.
 
@@ -247,7 +248,8 @@ class FunctionsManagementClient(object):
 
     def create_application(self, create_application_details, **kwargs):
         """
-        Creates a new application.
+        Note: Deprecated. Use the new operation instead.
+        \"Creates a new application.\"
 
 
         :param oci.functions.models.CreateApplicationDetails create_application_details: (required)
@@ -343,7 +345,8 @@ class FunctionsManagementClient(object):
 
     def create_function(self, create_function_details, **kwargs):
         """
-        Creates a new function.
+        Note: Deprecated. Use the new operation instead.
+        \"Creates a new function.\"
 
 
         :param oci.functions.models.CreateFunctionDetails create_function_details: (required)
@@ -439,6 +442,7 @@ class FunctionsManagementClient(object):
 
     def delete_application(self, application_id, **kwargs):
         """
+        Note: Deprecated. Use the new operation instead.
         Deletes an application.
 
 
@@ -552,6 +556,7 @@ class FunctionsManagementClient(object):
 
     def delete_function(self, function_id, **kwargs):
         """
+        Note: Deprecated. Use the new operation instead.
         Deletes a function.
 
 
@@ -665,7 +670,8 @@ class FunctionsManagementClient(object):
 
     def get_application(self, application_id, **kwargs):
         """
-        Retrieves an application.
+        Note: Deprecated. Use the new operation instead.
+        \"Retrieves an application.\"
 
 
         :param str application_id: (required)
@@ -773,7 +779,8 @@ class FunctionsManagementClient(object):
 
     def get_function(self, function_id, **kwargs):
         """
-        Retrieves a function.
+        Note: Deprecated. Use the new operation instead.
+        \"Retrieves a function.\"
 
 
         :param str function_id: (required)
@@ -881,6 +888,7 @@ class FunctionsManagementClient(object):
 
     def get_pbf_listing(self, pbf_listing_id, **kwargs):
         """
+        Note: Deprecated. Use the new operation instead.
         Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
 
 
@@ -987,6 +995,7 @@ class FunctionsManagementClient(object):
 
     def get_pbf_listing_version(self, pbf_listing_version_id, **kwargs):
         """
+        Note: Deprecated. Use the new operation instead.
         Gets a PbfListingVersion by identifier for a PbfListing.
 
 
@@ -1093,7 +1102,8 @@ class FunctionsManagementClient(object):
 
     def list_applications(self, compartment_id, **kwargs):
         """
-        Lists applications for a compartment.
+        Note: Deprecated. Use the new operation instead.
+        \"Lists applications for a compartment.\"
 
 
         :param str compartment_id: (required)
@@ -1270,7 +1280,8 @@ class FunctionsManagementClient(object):
 
     def list_functions(self, application_id, **kwargs):
         """
-        Lists functions for an application.
+        Note: Deprecated. Use the new operation instead.
+        \"Lists functions for an application.\"
 
 
         :param str application_id: (required)
@@ -1447,6 +1458,7 @@ class FunctionsManagementClient(object):
 
     def list_pbf_listing_versions(self, pbf_listing_id, **kwargs):
         """
+        Note: Deprecated. Use the new operation instead.
         Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
         containing an array of PbfListingVersionSummary response models.
 
@@ -1626,6 +1638,7 @@ class FunctionsManagementClient(object):
 
     def list_pbf_listings(self, **kwargs):
         """
+        Note: Deprecated. Use the new operation instead.
         Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a PbfListingCollection containing
         an array of PbfListingSummary response models.
 
@@ -1806,6 +1819,7 @@ class FunctionsManagementClient(object):
 
     def list_triggers(self, **kwargs):
         """
+        Note: Deprecated. Use the new operation instead.
         Returns a list of Triggers.
 
 
@@ -1937,7 +1951,8 @@ class FunctionsManagementClient(object):
 
     def update_application(self, application_id, update_application_details, **kwargs):
         """
-        Modifies an application
+        Note: Deprecated. Use the new operation instead.
+        \"Modifies an application\"
 
 
         :param str application_id: (required)
@@ -2057,7 +2072,8 @@ class FunctionsManagementClient(object):
 
     def update_function(self, function_id, update_function_details, **kwargs):
         """
-        Modifies a function
+        Note: Deprecated. Use the new operation instead.
+        \"Modifies a function\"
 
 
         :param str function_id: (required)

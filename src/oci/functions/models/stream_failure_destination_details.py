@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StreamFailureDestinationDetails(FailureDestinationDetails):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     The destination stream in the Streaming service to which to send the response of the failed detached function invocation.
 
     Example: `{\"kind\": \"STREAM\", \"streamId\": \"stream_OCID\"}`

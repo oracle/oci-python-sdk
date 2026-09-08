@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RequirementDetails(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Minimum memory required by this PBF. The user should use memory greater than or equal to this value
     while configuring the Function.
     """
