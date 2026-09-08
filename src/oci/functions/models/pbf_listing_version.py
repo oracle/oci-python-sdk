@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PbfListingVersion(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     This represents a version of a PbfListing. Each new update from the publisher or the change in the image will
     result in the creation of new PbfListingVersion resource creation. This is a sub-resource of a PbfListing.
     """

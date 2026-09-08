@@ -74,6 +74,10 @@ class CreateRedisClusterDetails(object):
             The value to assign to the import_from_object_storage_details property of this CreateRedisClusterDetails.
         :type import_from_object_storage_details: oci.redis.models.ImportOciCacheFromObjectStorageDetails
 
+        :param primary_cluster_id:
+            The value to assign to the primary_cluster_id property of this CreateRedisClusterDetails.
+        :type primary_cluster_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateRedisClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -97,6 +101,7 @@ class CreateRedisClusterDetails(object):
             'security_attributes': 'dict(str, dict(str, object))',
             'backup_id': 'str',
             'import_from_object_storage_details': 'ImportOciCacheFromObjectStorageDetails',
+            'primary_cluster_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -114,6 +119,7 @@ class CreateRedisClusterDetails(object):
             'security_attributes': 'securityAttributes',
             'backup_id': 'backupId',
             'import_from_object_storage_details': 'importFromObjectStorageDetails',
+            'primary_cluster_id': 'primaryClusterId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -130,6 +136,7 @@ class CreateRedisClusterDetails(object):
         self._security_attributes = None
         self._backup_id = None
         self._import_from_object_storage_details = None
+        self._primary_cluster_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -468,6 +475,34 @@ class CreateRedisClusterDetails(object):
         :type: oci.redis.models.ImportOciCacheFromObjectStorageDetails
         """
         self._import_from_object_storage_details = import_from_object_storage_details
+
+    @property
+    def primary_cluster_id(self):
+        """
+        Gets the primary_cluster_id of this CreateRedisClusterDetails.
+        The `OCID`__ of the primary cluster from which data will be replicated.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+
+
+        :return: The primary_cluster_id of this CreateRedisClusterDetails.
+        :rtype: str
+        """
+        return self._primary_cluster_id
+
+    @primary_cluster_id.setter
+    def primary_cluster_id(self, primary_cluster_id):
+        """
+        Sets the primary_cluster_id of this CreateRedisClusterDetails.
+        The `OCID`__ of the primary cluster from which data will be replicated.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+
+
+        :param primary_cluster_id: The primary_cluster_id of this CreateRedisClusterDetails.
+        :type: str
+        """
+        self._primary_cluster_id = primary_cluster_id
 
     @property
     def freeform_tags(self):

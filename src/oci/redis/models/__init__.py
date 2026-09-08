@@ -16,8 +16,10 @@ from .change_oci_cache_backup_compartment_details import ChangeOciCacheBackupCom
 from .change_oci_cache_config_set_compartment_details import ChangeOciCacheConfigSetCompartmentDetails
 from .change_oci_cache_user_compartment_details import ChangeOciCacheUserCompartmentDetails
 from .change_redis_cluster_compartment_details import ChangeRedisClusterCompartmentDetails
+from .cluster_replication_topology import ClusterReplicationTopology
 from .configuration_details import ConfigurationDetails
 from .configuration_info import ConfigurationInfo
+from .convert_to_secondary_cluster_details import ConvertToSecondaryClusterDetails
 from .create_identity_token_details import CreateIdentityTokenDetails
 from .create_oci_cache_backup_details import CreateOciCacheBackupDetails
 from .create_oci_cache_config_set_details import CreateOciCacheConfigSetDetails
@@ -32,6 +34,7 @@ from .iam_authentication_mode import IamAuthenticationMode
 from .identity_token_details_response import IdentityTokenDetailsResponse
 from .import_oci_cache_from_object_storage_details import ImportOciCacheFromObjectStorageDetails
 from .import_oci_cache_from_object_storage_object import ImportOciCacheFromObjectStorageObject
+from .member_cluster import MemberCluster
 from .node import Node
 from .node_collection import NodeCollection
 from .node_summary import NodeSummary
@@ -79,8 +82,10 @@ redis_type_mapping = {
     "ChangeOciCacheConfigSetCompartmentDetails": ChangeOciCacheConfigSetCompartmentDetails,
     "ChangeOciCacheUserCompartmentDetails": ChangeOciCacheUserCompartmentDetails,
     "ChangeRedisClusterCompartmentDetails": ChangeRedisClusterCompartmentDetails,
+    "ClusterReplicationTopology": ClusterReplicationTopology,
     "ConfigurationDetails": ConfigurationDetails,
     "ConfigurationInfo": ConfigurationInfo,
+    "ConvertToSecondaryClusterDetails": ConvertToSecondaryClusterDetails,
     "CreateIdentityTokenDetails": CreateIdentityTokenDetails,
     "CreateOciCacheBackupDetails": CreateOciCacheBackupDetails,
     "CreateOciCacheConfigSetDetails": CreateOciCacheConfigSetDetails,
@@ -95,6 +100,7 @@ redis_type_mapping = {
     "IdentityTokenDetailsResponse": IdentityTokenDetailsResponse,
     "ImportOciCacheFromObjectStorageDetails": ImportOciCacheFromObjectStorageDetails,
     "ImportOciCacheFromObjectStorageObject": ImportOciCacheFromObjectStorageObject,
+    "MemberCluster": MemberCluster,
     "Node": Node,
     "NodeCollection": NodeCollection,
     "NodeSummary": NodeSummary,

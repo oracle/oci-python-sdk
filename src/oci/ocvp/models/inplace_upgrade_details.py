@@ -15,10 +15,23 @@ class InplaceUpgradeDetails(object):
     The details for upgrading ESXi host.
     """
 
+    #: A constant which can be used with the initial_fault_domain_host_distribution property of a InplaceUpgradeDetails.
+    #: This constant has a value of "EVENLY_DISTRIBUTED"
+    INITIAL_FAULT_DOMAIN_HOST_DISTRIBUTION_EVENLY_DISTRIBUTED = "EVENLY_DISTRIBUTED"
+
+    #: A constant which can be used with the initial_fault_domain_host_distribution property of a InplaceUpgradeDetails.
+    #: This constant has a value of "UNEVENLY_DISTRIBUTED"
+    INITIAL_FAULT_DOMAIN_HOST_DISTRIBUTION_UNEVENLY_DISTRIBUTED = "UNEVENLY_DISTRIBUTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InplaceUpgradeDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param initial_fault_domain_host_distribution:
+            The value to assign to the initial_fault_domain_host_distribution property of this InplaceUpgradeDetails.
+            Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"
+        :type initial_fault_domain_host_distribution: str
 
         :param vcf_byol_allocation_id:
             The value to assign to the vcf_byol_allocation_id property of this InplaceUpgradeDetails.
@@ -26,12 +39,46 @@ class InplaceUpgradeDetails(object):
 
         """
         self.swagger_types = {
+            'initial_fault_domain_host_distribution': 'str',
             'vcf_byol_allocation_id': 'str'
         }
         self.attribute_map = {
+            'initial_fault_domain_host_distribution': 'initialFaultDomainHostDistribution',
             'vcf_byol_allocation_id': 'vcfByolAllocationId'
         }
+        self._initial_fault_domain_host_distribution = None
         self._vcf_byol_allocation_id = None
+
+    @property
+    def initial_fault_domain_host_distribution(self):
+        """
+        Gets the initial_fault_domain_host_distribution of this InplaceUpgradeDetails.
+        Initial Fault Domain Host distribution mode for the ESXi host.
+
+        Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"
+
+
+        :return: The initial_fault_domain_host_distribution of this InplaceUpgradeDetails.
+        :rtype: str
+        """
+        return self._initial_fault_domain_host_distribution
+
+    @initial_fault_domain_host_distribution.setter
+    def initial_fault_domain_host_distribution(self, initial_fault_domain_host_distribution):
+        """
+        Sets the initial_fault_domain_host_distribution of this InplaceUpgradeDetails.
+        Initial Fault Domain Host distribution mode for the ESXi host.
+
+
+        :param initial_fault_domain_host_distribution: The initial_fault_domain_host_distribution of this InplaceUpgradeDetails.
+        :type: str
+        """
+        allowed_values = ["EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"]
+        if not value_allowed_none_or_none_sentinel(initial_fault_domain_host_distribution, allowed_values):
+            raise ValueError(
+                f"Invalid value for `initial_fault_domain_host_distribution`, must be None or one of {allowed_values}"
+            )
+        self._initial_fault_domain_host_distribution = initial_fault_domain_host_distribution
 
     @property
     def vcf_byol_allocation_id(self):

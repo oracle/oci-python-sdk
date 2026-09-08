@@ -78,6 +78,14 @@ class EsxiHost(object):
     #: This constant has a value of "THREE_YEARS"
     NEXT_COMMITMENT_THREE_YEARS = "THREE_YEARS"
 
+    #: A constant which can be used with the initial_fault_domain_host_distribution property of a EsxiHost.
+    #: This constant has a value of "EVENLY_DISTRIBUTED"
+    INITIAL_FAULT_DOMAIN_HOST_DISTRIBUTION_EVENLY_DISTRIBUTED = "EVENLY_DISTRIBUTED"
+
+    #: A constant which can be used with the initial_fault_domain_host_distribution property of a EsxiHost.
+    #: This constant has a value of "UNEVENLY_DISTRIBUTED"
+    INITIAL_FAULT_DOMAIN_HOST_DISTRIBUTION_UNEVENLY_DISTRIBUTED = "UNEVENLY_DISTRIBUTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EsxiHost object with values from keyword arguments.
@@ -185,6 +193,16 @@ class EsxiHost(object):
             The value to assign to the compute_availability_domain property of this EsxiHost.
         :type compute_availability_domain: str
 
+        :param compute_fault_domain:
+            The value to assign to the compute_fault_domain property of this EsxiHost.
+        :type compute_fault_domain: str
+
+        :param initial_fault_domain_host_distribution:
+            The value to assign to the initial_fault_domain_host_distribution property of this EsxiHost.
+            Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type initial_fault_domain_host_distribution: str
+
         :param host_shape_name:
             The value to assign to the host_shape_name property of this EsxiHost.
         :type host_shape_name: str
@@ -255,6 +273,8 @@ class EsxiHost(object):
             'non_upgraded_esxi_host_id': 'str',
             'upgraded_replacement_esxi_host_id': 'str',
             'compute_availability_domain': 'str',
+            'compute_fault_domain': 'str',
+            'initial_fault_domain_host_distribution': 'str',
             'host_shape_name': 'str',
             'host_ocpu_count': 'float',
             'capacity_reservation_id': 'str',
@@ -292,6 +312,8 @@ class EsxiHost(object):
             'non_upgraded_esxi_host_id': 'nonUpgradedEsxiHostId',
             'upgraded_replacement_esxi_host_id': 'upgradedReplacementEsxiHostId',
             'compute_availability_domain': 'computeAvailabilityDomain',
+            'compute_fault_domain': 'computeFaultDomain',
+            'initial_fault_domain_host_distribution': 'initialFaultDomainHostDistribution',
             'host_shape_name': 'hostShapeName',
             'host_ocpu_count': 'hostOcpuCount',
             'capacity_reservation_id': 'capacityReservationId',
@@ -328,6 +350,8 @@ class EsxiHost(object):
         self._non_upgraded_esxi_host_id = None
         self._upgraded_replacement_esxi_host_id = None
         self._compute_availability_domain = None
+        self._compute_fault_domain = None
+        self._initial_fault_domain_host_distribution = None
         self._host_shape_name = None
         self._host_ocpu_count = None
         self._capacity_reservation_id = None
@@ -1029,6 +1053,60 @@ class EsxiHost(object):
         :type: str
         """
         self._compute_availability_domain = compute_availability_domain
+
+    @property
+    def compute_fault_domain(self):
+        """
+        Gets the compute_fault_domain of this EsxiHost.
+        The fault domain of the ESXi host.
+
+
+        :return: The compute_fault_domain of this EsxiHost.
+        :rtype: str
+        """
+        return self._compute_fault_domain
+
+    @compute_fault_domain.setter
+    def compute_fault_domain(self, compute_fault_domain):
+        """
+        Sets the compute_fault_domain of this EsxiHost.
+        The fault domain of the ESXi host.
+
+
+        :param compute_fault_domain: The compute_fault_domain of this EsxiHost.
+        :type: str
+        """
+        self._compute_fault_domain = compute_fault_domain
+
+    @property
+    def initial_fault_domain_host_distribution(self):
+        """
+        Gets the initial_fault_domain_host_distribution of this EsxiHost.
+        The initial fault domain host distribution mode for the ESXi host.
+
+        Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The initial_fault_domain_host_distribution of this EsxiHost.
+        :rtype: str
+        """
+        return self._initial_fault_domain_host_distribution
+
+    @initial_fault_domain_host_distribution.setter
+    def initial_fault_domain_host_distribution(self, initial_fault_domain_host_distribution):
+        """
+        Sets the initial_fault_domain_host_distribution of this EsxiHost.
+        The initial fault domain host distribution mode for the ESXi host.
+
+
+        :param initial_fault_domain_host_distribution: The initial_fault_domain_host_distribution of this EsxiHost.
+        :type: str
+        """
+        allowed_values = ["EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"]
+        if not value_allowed_none_or_none_sentinel(initial_fault_domain_host_distribution, allowed_values):
+            initial_fault_domain_host_distribution = 'UNKNOWN_ENUM_VALUE'
+        self._initial_fault_domain_host_distribution = initial_fault_domain_host_distribution
 
     @property
     def host_shape_name(self):

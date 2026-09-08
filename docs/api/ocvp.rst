@@ -80,6 +80,7 @@ Ocvp
     oci.ocvp.models.EsxiHostCollection
     oci.ocvp.models.EsxiHostSummary
     oci.ocvp.models.HcxLicenseSummary
+    oci.ocvp.models.HostDistributionReportDetails
     oci.ocvp.models.InitialClusterConfiguration
     oci.ocvp.models.InitialConfiguration
     oci.ocvp.models.InplaceUpgradeDetails

@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NotificationFailureDestinationDetails(FailureDestinationDetails):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     The destination topic in the Notifications service to which to send the response of the failed detached function invocation.
 
     Example: `{\"kind\": \"NOTIFICATION\", \"topicId\": \"topic_OCID\"}`

@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PolicyDetails(object):
     """
-    A policy required for this PBF execution.
+    Note: Deprecated. Use the new resource model APIs instead.
+    \"A policy required for this PBF execution.\"
     """
 
     def __init__(self, **kwargs):

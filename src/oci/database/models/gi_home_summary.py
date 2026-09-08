@@ -51,6 +51,30 @@ class GiHomeSummary(object):
     #: This constant has a value of "INACTIVE"
     LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
+    #: A constant which can be used with the available_actions property of a GiHomeSummary.
+    #: This constant has a value of "PRECHECK"
+    AVAILABLE_ACTIONS_PRECHECK = "PRECHECK"
+
+    #: A constant which can be used with the available_actions property of a GiHomeSummary.
+    #: This constant has a value of "ROLLING_APPLY"
+    AVAILABLE_ACTIONS_ROLLING_APPLY = "ROLLING_APPLY"
+
+    #: A constant which can be used with the available_actions property of a GiHomeSummary.
+    #: This constant has a value of "RETRY"
+    AVAILABLE_ACTIONS_RETRY = "RETRY"
+
+    #: A constant which can be used with the available_actions property of a GiHomeSummary.
+    #: This constant has a value of "ROLLBACK"
+    AVAILABLE_ACTIONS_ROLLBACK = "ROLLBACK"
+
+    #: A constant which can be used with the available_type property of a GiHomeSummary.
+    #: This constant has a value of "GI_UPGRADE"
+    AVAILABLE_TYPE_GI_UPGRADE = "GI_UPGRADE"
+
+    #: A constant which can be used with the available_type property of a GiHomeSummary.
+    #: This constant has a value of "GI_PATCH"
+    AVAILABLE_TYPE_GI_PATCH = "GI_PATCH"
+
     def __init__(self, **kwargs):
         """
         Initializes a new GiHomeSummary object with values from keyword arguments.
@@ -72,6 +96,10 @@ class GiHomeSummary(object):
             The value to assign to the is_default_created property of this GiHomeSummary.
         :type is_default_created: bool
 
+        :param is_active:
+            The value to assign to the is_active property of this GiHomeSummary.
+        :type is_active: bool
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this GiHomeSummary.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
@@ -85,6 +113,22 @@ class GiHomeSummary(object):
         :param home_path:
             The value to assign to the home_path property of this GiHomeSummary.
         :type home_path: str
+
+        :param available_actions:
+            The value to assign to the available_actions property of this GiHomeSummary.
+            Allowed values for items in this list are: "PRECHECK", "ROLLING_APPLY", "RETRY", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type available_actions: list[str]
+
+        :param available_type:
+            The value to assign to the available_type property of this GiHomeSummary.
+            Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type available_type: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this GiHomeSummary.
+        :type lifecycle_details: str
 
         :param gi_version:
             The value to assign to the gi_version property of this GiHomeSummary.
@@ -120,9 +164,13 @@ class GiHomeSummary(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'is_default_created': 'bool',
+            'is_active': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'home_path': 'str',
+            'available_actions': 'list[str]',
+            'available_type': 'str',
+            'lifecycle_details': 'str',
             'gi_version': 'str',
             'gi_image_id': 'str',
             'time_updated': 'datetime',
@@ -136,9 +184,13 @@ class GiHomeSummary(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'is_default_created': 'isDefaultCreated',
+            'is_active': 'isActive',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'home_path': 'homePath',
+            'available_actions': 'availableActions',
+            'available_type': 'availableType',
+            'lifecycle_details': 'lifecycleDetails',
             'gi_version': 'giVersion',
             'gi_image_id': 'giImageId',
             'time_updated': 'timeUpdated',
@@ -151,9 +203,13 @@ class GiHomeSummary(object):
         self._compartment_id = None
         self._display_name = None
         self._is_default_created = None
+        self._is_active = None
         self._lifecycle_state = None
         self._time_created = None
         self._home_path = None
+        self._available_actions = None
+        self._available_type = None
+        self._lifecycle_details = None
         self._gi_version = None
         self._gi_image_id = None
         self._time_updated = None
@@ -267,6 +323,30 @@ class GiHomeSummary(object):
         self._is_default_created = is_default_created
 
     @property
+    def is_active(self):
+        """
+        Gets the is_active of this GiHomeSummary.
+        Indicates whether the Grid Infrastructure Home is currently active for the cluster.
+
+
+        :return: The is_active of this GiHomeSummary.
+        :rtype: bool
+        """
+        return self._is_active
+
+    @is_active.setter
+    def is_active(self, is_active):
+        """
+        Sets the is_active of this GiHomeSummary.
+        Indicates whether the Grid Infrastructure Home is currently active for the cluster.
+
+
+        :param is_active: The is_active of this GiHomeSummary.
+        :type: bool
+        """
+        self._is_active = is_active
+
+    @property
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this GiHomeSummary.
@@ -299,7 +379,7 @@ class GiHomeSummary(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this GiHomeSummary.
+        **[Required]** Gets the time_created of this GiHomeSummary.
         The time and date as an RFC3339 formatted string, e.g., 2024-04-11T01:59:07.032Z, when the grid infrastructure home was created
 
 
@@ -343,6 +423,90 @@ class GiHomeSummary(object):
         :type: str
         """
         self._home_path = home_path
+
+    @property
+    def available_actions(self):
+        """
+        Gets the available_actions of this GiHomeSummary.
+        The possible Grid Infrastructure update actions that can be performed using this Grid Infrastructure Home.
+
+        Allowed values for items in this list are: "PRECHECK", "ROLLING_APPLY", "RETRY", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The available_actions of this GiHomeSummary.
+        :rtype: list[str]
+        """
+        return self._available_actions
+
+    @available_actions.setter
+    def available_actions(self, available_actions):
+        """
+        Sets the available_actions of this GiHomeSummary.
+        The possible Grid Infrastructure update actions that can be performed using this Grid Infrastructure Home.
+
+
+        :param available_actions: The available_actions of this GiHomeSummary.
+        :type: list[str]
+        """
+        allowed_values = ["PRECHECK", "ROLLING_APPLY", "RETRY", "ROLLBACK"]
+        if available_actions:
+            available_actions[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in available_actions]
+        self._available_actions = available_actions
+
+    @property
+    def available_type(self):
+        """
+        Gets the available_type of this GiHomeSummary.
+        The type of update that the Grid Infrastructure Home can be used for.
+
+        Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The available_type of this GiHomeSummary.
+        :rtype: str
+        """
+        return self._available_type
+
+    @available_type.setter
+    def available_type(self, available_type):
+        """
+        Sets the available_type of this GiHomeSummary.
+        The type of update that the Grid Infrastructure Home can be used for.
+
+
+        :param available_type: The available_type of this GiHomeSummary.
+        :type: str
+        """
+        allowed_values = ["GI_UPGRADE", "GI_PATCH"]
+        if not value_allowed_none_or_none_sentinel(available_type, allowed_values):
+            available_type = 'UNKNOWN_ENUM_VALUE'
+        self._available_type = available_type
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this GiHomeSummary.
+        Additional information about the current lifecycle state.
+
+
+        :return: The lifecycle_details of this GiHomeSummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this GiHomeSummary.
+        Additional information about the current lifecycle state.
+
+
+        :param lifecycle_details: The lifecycle_details of this GiHomeSummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def gi_version(self):
@@ -399,7 +563,7 @@ class GiHomeSummary(object):
     @property
     def time_updated(self):
         """
-        Gets the time_updated of this GiHomeSummary.
+        **[Required]** Gets the time_updated of this GiHomeSummary.
         The time and date as an RFC3339 formatted string, e.g., 2024-04-11T01:59:07.032Z, when the grid infrastructure home was updated
 
 

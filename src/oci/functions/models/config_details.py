@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigDetails(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Details about the required and optional Function configurations needed for proper performance of the PBF.
     """
 

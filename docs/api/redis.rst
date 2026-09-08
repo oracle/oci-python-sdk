@@ -40,8 +40,10 @@ Redis
     oci.redis.models.ChangeOciCacheConfigSetCompartmentDetails
     oci.redis.models.ChangeOciCacheUserCompartmentDetails
     oci.redis.models.ChangeRedisClusterCompartmentDetails
+    oci.redis.models.ClusterReplicationTopology
     oci.redis.models.ConfigurationDetails
     oci.redis.models.ConfigurationInfo
+    oci.redis.models.ConvertToSecondaryClusterDetails
     oci.redis.models.CreateIdentityTokenDetails
     oci.redis.models.CreateOciCacheBackupDetails
     oci.redis.models.CreateOciCacheConfigSetDetails
@@ -56,6 +58,7 @@ Redis
     oci.redis.models.IdentityTokenDetailsResponse
     oci.redis.models.ImportOciCacheFromObjectStorageDetails
     oci.redis.models.ImportOciCacheFromObjectStorageObject
+    oci.redis.models.MemberCluster
     oci.redis.models.Node
     oci.redis.models.NodeCollection
     oci.redis.models.NodeSummary

@@ -15,6 +15,14 @@ class ReplaceHostDetails(object):
     The details for replacing ESXi host.
     """
 
+    #: A constant which can be used with the initial_fault_domain_host_distribution property of a ReplaceHostDetails.
+    #: This constant has a value of "EVENLY_DISTRIBUTED"
+    INITIAL_FAULT_DOMAIN_HOST_DISTRIBUTION_EVENLY_DISTRIBUTED = "EVENLY_DISTRIBUTED"
+
+    #: A constant which can be used with the initial_fault_domain_host_distribution property of a ReplaceHostDetails.
+    #: This constant has a value of "UNEVENLY_DISTRIBUTED"
+    INITIAL_FAULT_DOMAIN_HOST_DISTRIBUTION_UNEVENLY_DISTRIBUTED = "UNEVENLY_DISTRIBUTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ReplaceHostDetails object with values from keyword arguments.
@@ -24,6 +32,11 @@ class ReplaceHostDetails(object):
             The value to assign to the esxi_software_version property of this ReplaceHostDetails.
         :type esxi_software_version: str
 
+        :param initial_fault_domain_host_distribution:
+            The value to assign to the initial_fault_domain_host_distribution property of this ReplaceHostDetails.
+            Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"
+        :type initial_fault_domain_host_distribution: str
+
         :param vcf_byol_allocation_id:
             The value to assign to the vcf_byol_allocation_id property of this ReplaceHostDetails.
         :type vcf_byol_allocation_id: str
@@ -31,13 +44,16 @@ class ReplaceHostDetails(object):
         """
         self.swagger_types = {
             'esxi_software_version': 'str',
+            'initial_fault_domain_host_distribution': 'str',
             'vcf_byol_allocation_id': 'str'
         }
         self.attribute_map = {
             'esxi_software_version': 'esxiSoftwareVersion',
+            'initial_fault_domain_host_distribution': 'initialFaultDomainHostDistribution',
             'vcf_byol_allocation_id': 'vcfByolAllocationId'
         }
         self._esxi_software_version = None
+        self._initial_fault_domain_host_distribution = None
         self._vcf_byol_allocation_id = None
 
     @property
@@ -69,6 +85,37 @@ class ReplaceHostDetails(object):
         :type: str
         """
         self._esxi_software_version = esxi_software_version
+
+    @property
+    def initial_fault_domain_host_distribution(self):
+        """
+        Gets the initial_fault_domain_host_distribution of this ReplaceHostDetails.
+        Initial Fault Domain Host distribution mode for the ESXi host.
+
+        Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"
+
+
+        :return: The initial_fault_domain_host_distribution of this ReplaceHostDetails.
+        :rtype: str
+        """
+        return self._initial_fault_domain_host_distribution
+
+    @initial_fault_domain_host_distribution.setter
+    def initial_fault_domain_host_distribution(self, initial_fault_domain_host_distribution):
+        """
+        Sets the initial_fault_domain_host_distribution of this ReplaceHostDetails.
+        Initial Fault Domain Host distribution mode for the ESXi host.
+
+
+        :param initial_fault_domain_host_distribution: The initial_fault_domain_host_distribution of this ReplaceHostDetails.
+        :type: str
+        """
+        allowed_values = ["EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"]
+        if not value_allowed_none_or_none_sentinel(initial_fault_domain_host_distribution, allowed_values):
+            raise ValueError(
+                f"Invalid value for `initial_fault_domain_host_distribution`, must be None or one of {allowed_values}"
+            )
+        self._initial_fault_domain_host_distribution = initial_fault_domain_host_distribution
 
     @property
     def vcf_byol_allocation_id(self):

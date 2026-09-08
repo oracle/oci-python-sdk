@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class QueueSuccessDestinationDetails(SuccessDestinationDetails):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     The destination queue or channel in the Queue service to which to send the response of the successful detached function invocation.
 
     Example: `{\"kind\": \"QUEUE\", \"queueId\": \"queue_OCID\", \"channelId\": \"channel_Id\"}`

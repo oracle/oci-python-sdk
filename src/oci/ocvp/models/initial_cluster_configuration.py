@@ -39,6 +39,14 @@ class InitialClusterConfiguration(object):
     #: This constant has a value of "THREE_YEARS"
     INITIAL_COMMITMENT_THREE_YEARS = "THREE_YEARS"
 
+    #: A constant which can be used with the initial_fault_domain_host_distribution property of a InitialClusterConfiguration.
+    #: This constant has a value of "EVENLY_DISTRIBUTED"
+    INITIAL_FAULT_DOMAIN_HOST_DISTRIBUTION_EVENLY_DISTRIBUTED = "EVENLY_DISTRIBUTED"
+
+    #: A constant which can be used with the initial_fault_domain_host_distribution property of a InitialClusterConfiguration.
+    #: This constant has a value of "UNEVENLY_DISTRIBUTED"
+    INITIAL_FAULT_DOMAIN_HOST_DISTRIBUTION_UNEVENLY_DISTRIBUTED = "UNEVENLY_DISTRIBUTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InitialClusterConfiguration object with values from keyword arguments.
@@ -104,6 +112,12 @@ class InitialClusterConfiguration(object):
             The value to assign to the datastore_cluster_ids property of this InitialClusterConfiguration.
         :type datastore_cluster_ids: list[str]
 
+        :param initial_fault_domain_host_distribution:
+            The value to assign to the initial_fault_domain_host_distribution property of this InitialClusterConfiguration.
+            Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type initial_fault_domain_host_distribution: str
+
         :param cluster_byol_allocation_details:
             The value to assign to the cluster_byol_allocation_details property of this InitialClusterConfiguration.
         :type cluster_byol_allocation_details: oci.ocvp.models.ClusterByolAllocationDetails
@@ -128,6 +142,7 @@ class InitialClusterConfiguration(object):
             'capacity_reservation_id': 'str',
             'datastores': 'list[DatastoreInfo]',
             'datastore_cluster_ids': 'list[str]',
+            'initial_fault_domain_host_distribution': 'str',
             'cluster_byol_allocation_details': 'ClusterByolAllocationDetails',
             'initial_vcf_byol_allocation_id': 'str'
         }
@@ -146,6 +161,7 @@ class InitialClusterConfiguration(object):
             'capacity_reservation_id': 'capacityReservationId',
             'datastores': 'datastores',
             'datastore_cluster_ids': 'datastoreClusterIds',
+            'initial_fault_domain_host_distribution': 'initialFaultDomainHostDistribution',
             'cluster_byol_allocation_details': 'clusterByolAllocationDetails',
             'initial_vcf_byol_allocation_id': 'initialVcfByolAllocationId'
         }
@@ -163,6 +179,7 @@ class InitialClusterConfiguration(object):
         self._capacity_reservation_id = None
         self._datastores = None
         self._datastore_cluster_ids = None
+        self._initial_fault_domain_host_distribution = None
         self._cluster_byol_allocation_details = None
         self._initial_vcf_byol_allocation_id = None
 
@@ -547,6 +564,36 @@ class InitialClusterConfiguration(object):
         :type: list[str]
         """
         self._datastore_cluster_ids = datastore_cluster_ids
+
+    @property
+    def initial_fault_domain_host_distribution(self):
+        """
+        Gets the initial_fault_domain_host_distribution of this InitialClusterConfiguration.
+        Initial Fault Domain Host distribution mode for the Cluster.
+
+        Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The initial_fault_domain_host_distribution of this InitialClusterConfiguration.
+        :rtype: str
+        """
+        return self._initial_fault_domain_host_distribution
+
+    @initial_fault_domain_host_distribution.setter
+    def initial_fault_domain_host_distribution(self, initial_fault_domain_host_distribution):
+        """
+        Sets the initial_fault_domain_host_distribution of this InitialClusterConfiguration.
+        Initial Fault Domain Host distribution mode for the Cluster.
+
+
+        :param initial_fault_domain_host_distribution: The initial_fault_domain_host_distribution of this InitialClusterConfiguration.
+        :type: str
+        """
+        allowed_values = ["EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"]
+        if not value_allowed_none_or_none_sentinel(initial_fault_domain_host_distribution, allowed_values):
+            initial_fault_domain_host_distribution = 'UNKNOWN_ENUM_VALUE'
+        self._initial_fault_domain_host_distribution = initial_fault_domain_host_distribution
 
     @property
     def cluster_byol_allocation_details(self):

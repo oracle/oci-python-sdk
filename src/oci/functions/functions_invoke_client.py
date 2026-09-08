@@ -127,7 +127,8 @@ class FunctionsInvokeClient(object):
 
     def invoke_function(self, function_id, **kwargs):
         """
-        Invokes a function
+        Note: Deprecated. Use the new operation instead.
+        \"Invokes a function\"
 
 
         :param str function_id: (required)

@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FunctionSourceDetails(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     The source details for the Function. The function can be created from various sources.
     """
 
