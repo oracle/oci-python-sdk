@@ -13,7 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class Include(object):
     """
     Criteria to determine whether a target database should be included in the target database group.
-    If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags or systemTags criteria then it qualifies for inclusion in the target database group.
+    If the database satisfies any of compartments, targetDatabaseIds, freeformTags, definedTags, freeformTagsIn or systemTags criteria then it qualifies for inclusion in the target database group.
     """
 
     def __init__(self, **kwargs):
@@ -37,23 +37,37 @@ class Include(object):
             The value to assign to the defined_tags property of this Include.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param freeform_tags_in:
+            The value to assign to the freeform_tags_in property of this Include.
+        :type freeform_tags_in: dict(str, object)
+
+        :param system_tags:
+            The value to assign to the system_tags property of this Include.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'compartments': 'list[Compartments]',
             'target_database_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'freeform_tags_in': 'dict(str, object)',
+            'system_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'compartments': 'compartments',
             'target_database_ids': 'targetDatabaseIds',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'freeform_tags_in': 'freeformTagsIn',
+            'system_tags': 'systemTags'
         }
         self._compartments = None
         self._target_database_ids = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._freeform_tags_in = None
+        self._system_tags = None
 
     @property
     def compartments(self):
@@ -164,6 +178,54 @@ class Include(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def freeform_tags_in(self):
+        """
+        Gets the freeform_tags_in of this Include.
+        Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+
+
+        :return: The freeform_tags_in of this Include.
+        :rtype: dict(str, object)
+        """
+        return self._freeform_tags_in
+
+    @freeform_tags_in.setter
+    def freeform_tags_in(self, freeform_tags_in):
+        """
+        Sets the freeform_tags_in of this Include.
+        Map of freeform tag filters. Each key maps to an array of strings. Target database matches the key if it's tag value equals any of the values in the array.
+
+
+        :param freeform_tags_in: The freeform_tags_in of this Include.
+        :type: dict(str, object)
+        """
+        self._freeform_tags_in = freeform_tags_in
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Include.
+        Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+
+
+        :return: The system_tags of this Include.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Include.
+        Map of system tag filters. Target database matches when for each specified namespace.key and the tag value equals any of the values in the array.
+
+
+        :param system_tags: The system_tags of this Include.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

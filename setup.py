@@ -44,6 +44,7 @@ requires = [
     "urllib3>=2.6.3; python_version >= '3.10.0'",
     "PyJWT==2.4.0; python_version < '3.9'",
     "PyJWT>=2.12.0; python_version >= '3.9'",
+    "python-pkcs11==0.9.4; python_version >= '3.9'",
     "crc32c==2.5; python_version == '3.6'",
     "crc32c==2.8.0; python_version >= '3.7'",
     "aiohttp>=3.8.3,<3.9; python_version == '3.6'",

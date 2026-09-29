@@ -91,6 +91,14 @@ class DrgAttachment(object):
             The value to assign to the vcn_id property of this DrgAttachment.
         :type vcn_id: str
 
+        :param drg_nat_policy_id:
+            The value to assign to the drg_nat_policy_id property of this DrgAttachment.
+        :type drg_nat_policy_id: str
+
+        :param does_preserve_original_routes_with_nat:
+            The value to assign to the does_preserve_original_routes_with_nat property of this DrgAttachment.
+        :type does_preserve_original_routes_with_nat: bool
+
         :param export_drg_route_distribution_id:
             The value to assign to the export_drg_route_distribution_id property of this DrgAttachment.
         :type export_drg_route_distribution_id: str
@@ -113,6 +121,8 @@ class DrgAttachment(object):
             'freeform_tags': 'dict(str, str)',
             'route_table_id': 'str',
             'vcn_id': 'str',
+            'drg_nat_policy_id': 'str',
+            'does_preserve_original_routes_with_nat': 'bool',
             'export_drg_route_distribution_id': 'str',
             'is_cross_tenancy': 'bool'
         }
@@ -129,6 +139,8 @@ class DrgAttachment(object):
             'freeform_tags': 'freeformTags',
             'route_table_id': 'routeTableId',
             'vcn_id': 'vcnId',
+            'drg_nat_policy_id': 'drgNatPolicyId',
+            'does_preserve_original_routes_with_nat': 'doesPreserveOriginalRoutesWithNat',
             'export_drg_route_distribution_id': 'exportDrgRouteDistributionId',
             'is_cross_tenancy': 'isCrossTenancy'
         }
@@ -144,6 +156,8 @@ class DrgAttachment(object):
         self._freeform_tags = None
         self._route_table_id = None
         self._vcn_id = None
+        self._drg_nat_policy_id = None
+        self._does_preserve_original_routes_with_nat = None
         self._export_drg_route_distribution_id = None
         self._is_cross_tenancy = None
 
@@ -518,6 +532,62 @@ class DrgAttachment(object):
         :type: str
         """
         self._vcn_id = vcn_id
+
+    @property
+    def drg_nat_policy_id(self):
+        """
+        Gets the drg_nat_policy_id of this DrgAttachment.
+        The `OCID`__ of the DRG attachment's DRG NAT policy.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The drg_nat_policy_id of this DrgAttachment.
+        :rtype: str
+        """
+        return self._drg_nat_policy_id
+
+    @drg_nat_policy_id.setter
+    def drg_nat_policy_id(self, drg_nat_policy_id):
+        """
+        Sets the drg_nat_policy_id of this DrgAttachment.
+        The `OCID`__ of the DRG attachment's DRG NAT policy.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param drg_nat_policy_id: The drg_nat_policy_id of this DrgAttachment.
+        :type: str
+        """
+        self._drg_nat_policy_id = drg_nat_policy_id
+
+    @property
+    def does_preserve_original_routes_with_nat(self):
+        """
+        Gets the does_preserve_original_routes_with_nat of this DrgAttachment.
+        By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to prevent
+        routing complications. Enable this option to also preserve original CIDRs. The original source CIDRs is not advertised if this value is set to false, else it is advertised.
+        default: `false`
+
+
+        :return: The does_preserve_original_routes_with_nat of this DrgAttachment.
+        :rtype: bool
+        """
+        return self._does_preserve_original_routes_with_nat
+
+    @does_preserve_original_routes_with_nat.setter
+    def does_preserve_original_routes_with_nat(self, does_preserve_original_routes_with_nat):
+        """
+        Sets the does_preserve_original_routes_with_nat of this DrgAttachment.
+        By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to prevent
+        routing complications. Enable this option to also preserve original CIDRs. The original source CIDRs is not advertised if this value is set to false, else it is advertised.
+        default: `false`
+
+
+        :param does_preserve_original_routes_with_nat: The does_preserve_original_routes_with_nat of this DrgAttachment.
+        :type: bool
+        """
+        self._does_preserve_original_routes_with_nat = does_preserve_original_routes_with_nat
 
     @property
     def export_drg_route_distribution_id(self):

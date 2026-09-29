@@ -24,6 +24,8 @@ Core Services
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.core.models.AddDrgNatRuleDetails
+    oci.core.models.AddDrgNatRulesDetails
     oci.core.models.AddDrgRouteDistributionStatementDetails
     oci.core.models.AddDrgRouteDistributionStatementsDetails
     oci.core.models.AddDrgRouteRuleDetails
@@ -145,6 +147,7 @@ Core Services
     oci.core.models.ChangeDedicatedVmHostCompartmentDetails
     oci.core.models.ChangeDhcpOptionsCompartmentDetails
     oci.core.models.ChangeDrgCompartmentDetails
+    oci.core.models.ChangeDrgNatPolicyCompartmentDetails
     oci.core.models.ChangeIPSecConnectionCompartmentDetails
     oci.core.models.ChangeImageCompartmentDetails
     oci.core.models.ChangeInstanceCompartmentDetails
@@ -260,6 +263,7 @@ Core Services
     oci.core.models.CreateDhcpDetails
     oci.core.models.CreateDrgAttachmentDetails
     oci.core.models.CreateDrgDetails
+    oci.core.models.CreateDrgNatPolicyDetails
     oci.core.models.CreateDrgRouteDistributionDetails
     oci.core.models.CreateDrgRouteTableDetails
     oci.core.models.CreateGmcConfigurationDetails
@@ -340,6 +344,8 @@ Core Services
     oci.core.models.DrgAttachmentTypeDrgRouteDistributionMatchCriteria
     oci.core.models.DrgCustomer
     oci.core.models.DrgCustomerResource
+    oci.core.models.DrgNatPolicy
+    oci.core.models.DrgNatRule
     oci.core.models.DrgPromotionStatusResponse
     oci.core.models.DrgRedundancyStatus
     oci.core.models.DrgRouteDistribution
@@ -552,6 +558,7 @@ Core Services
     oci.core.models.RecycleDetails
     oci.core.models.RemotePeeringConnection
     oci.core.models.RemotePeeringConnectionDrgAttachmentNetworkDetails
+    oci.core.models.RemoveDrgNatRulesDetails
     oci.core.models.RemoveDrgRouteDistributionStatementsDetails
     oci.core.models.RemoveDrgRouteRulesDetails
     oci.core.models.RemoveIpv4SubnetCidrDetails
@@ -637,6 +644,9 @@ Core Services
     oci.core.models.UpdateDhcpDetails
     oci.core.models.UpdateDrgAttachmentDetails
     oci.core.models.UpdateDrgDetails
+    oci.core.models.UpdateDrgNatPolicyDetails
+    oci.core.models.UpdateDrgNatRuleDetails
+    oci.core.models.UpdateDrgNatRulesDetails
     oci.core.models.UpdateDrgRouteDistributionDetails
     oci.core.models.UpdateDrgRouteDistributionStatementDetails
     oci.core.models.UpdateDrgRouteDistributionStatementsDetails

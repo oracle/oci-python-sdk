@@ -24,6 +24,14 @@ class UpdateDrgAttachmentDetails(object):
             The value to assign to the display_name property of this UpdateDrgAttachmentDetails.
         :type display_name: str
 
+        :param drg_nat_policy_id:
+            The value to assign to the drg_nat_policy_id property of this UpdateDrgAttachmentDetails.
+        :type drg_nat_policy_id: str
+
+        :param does_preserve_original_routes_with_nat:
+            The value to assign to the does_preserve_original_routes_with_nat property of this UpdateDrgAttachmentDetails.
+        :type does_preserve_original_routes_with_nat: bool
+
         :param drg_route_table_id:
             The value to assign to the drg_route_table_id property of this UpdateDrgAttachmentDetails.
         :type drg_route_table_id: str
@@ -51,6 +59,8 @@ class UpdateDrgAttachmentDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'drg_nat_policy_id': 'str',
+            'does_preserve_original_routes_with_nat': 'bool',
             'drg_route_table_id': 'str',
             'network_details': 'DrgAttachmentNetworkUpdateDetails',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -60,6 +70,8 @@ class UpdateDrgAttachmentDetails(object):
         }
         self.attribute_map = {
             'display_name': 'displayName',
+            'drg_nat_policy_id': 'drgNatPolicyId',
+            'does_preserve_original_routes_with_nat': 'doesPreserveOriginalRoutesWithNat',
             'drg_route_table_id': 'drgRouteTableId',
             'network_details': 'networkDetails',
             'defined_tags': 'definedTags',
@@ -68,6 +80,8 @@ class UpdateDrgAttachmentDetails(object):
             'route_table_id': 'routeTableId'
         }
         self._display_name = None
+        self._drg_nat_policy_id = None
+        self._does_preserve_original_routes_with_nat = None
         self._drg_route_table_id = None
         self._network_details = None
         self._defined_tags = None
@@ -100,6 +114,62 @@ class UpdateDrgAttachmentDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def drg_nat_policy_id(self):
+        """
+        Gets the drg_nat_policy_id of this UpdateDrgAttachmentDetails.
+        The `OCID`__ of the DRG attachment's DRG NAT policy.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The drg_nat_policy_id of this UpdateDrgAttachmentDetails.
+        :rtype: str
+        """
+        return self._drg_nat_policy_id
+
+    @drg_nat_policy_id.setter
+    def drg_nat_policy_id(self, drg_nat_policy_id):
+        """
+        Sets the drg_nat_policy_id of this UpdateDrgAttachmentDetails.
+        The `OCID`__ of the DRG attachment's DRG NAT policy.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param drg_nat_policy_id: The drg_nat_policy_id of this UpdateDrgAttachmentDetails.
+        :type: str
+        """
+        self._drg_nat_policy_id = drg_nat_policy_id
+
+    @property
+    def does_preserve_original_routes_with_nat(self):
+        """
+        Gets the does_preserve_original_routes_with_nat of this UpdateDrgAttachmentDetails.
+        By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to prevent
+        routing complications. Enable this option to also preserve original CIDRs. The original source CIDRs is not advertised if this value is set to false, else it is advertised.
+        default: `false`
+
+
+        :return: The does_preserve_original_routes_with_nat of this UpdateDrgAttachmentDetails.
+        :rtype: bool
+        """
+        return self._does_preserve_original_routes_with_nat
+
+    @does_preserve_original_routes_with_nat.setter
+    def does_preserve_original_routes_with_nat(self, does_preserve_original_routes_with_nat):
+        """
+        Sets the does_preserve_original_routes_with_nat of this UpdateDrgAttachmentDetails.
+        By default, only translated DrgNatRule CIDRs are imported into the DrgRouteTable to prevent
+        routing complications. Enable this option to also preserve original CIDRs. The original source CIDRs is not advertised if this value is set to false, else it is advertised.
+        default: `false`
+
+
+        :param does_preserve_original_routes_with_nat: The does_preserve_original_routes_with_nat of this UpdateDrgAttachmentDetails.
+        :type: bool
+        """
+        self._does_preserve_original_routes_with_nat = does_preserve_original_routes_with_nat
 
     @property
     def drg_route_table_id(self):

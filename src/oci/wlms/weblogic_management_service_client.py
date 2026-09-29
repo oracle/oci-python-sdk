@@ -183,7 +183,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_wls_domain_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ChangeWlsDomainCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -312,7 +312,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/agreementRecords"
         method = "POST"
         operation_name = "create_agreement_record"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/CreateAgreementRecord"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -440,7 +440,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}"
         method = "DELETE"
         operation_name = "delete_wls_domain"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/DeleteWlsDomain"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -545,7 +545,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/agreement"
         method = "GET"
         operation_name = "get_agreement"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/Agreement/GetAgreement"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -640,7 +640,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/managedInstances/{managedInstanceId}"
         method = "GET"
         operation_name = "get_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/GetManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -754,7 +754,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/servers/{serverId}"
         method = "GET"
         operation_name = "get_managed_instance_server"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/GetManagedInstanceServer"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -862,7 +862,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}"
         method = "GET"
         operation_name = "get_wls_domain"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/GetWlsDomain"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -974,7 +974,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/credentials/{credentialType}"
         method = "GET"
         operation_name = "get_wls_domain_credential"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/GetWlsDomainCredential"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1089,7 +1089,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/servers/{serverId}"
         method = "GET"
         operation_name = "get_wls_domain_server"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/GetWlsDomainServer"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1211,7 +1211,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/servers/{serverId}/backups/{backupId}"
         method = "GET"
         operation_name = "get_wls_domain_server_backup"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/GetWlsDomainServerBackup"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1334,7 +1334,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/servers/{serverId}/backups/{backupId}/content"
         method = "GET"
         operation_name = "get_wls_domain_server_backup_content"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/GetWlsDomainServerBackupContent"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1443,7 +1443,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WorkRequest/GetWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1567,7 +1567,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/actions/installLatestPatches"
         method = "POST"
         operation_name = "install_latest_patches_on_wls_domain"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/InstallLatestPatchesOnWlsDomain"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1698,7 +1698,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/agreementRecords"
         method = "GET"
         operation_name = "list_agreement_records"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListAgreementRecords"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1858,7 +1858,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/applicablePatches"
         method = "GET"
         operation_name = "list_applicable_patches"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListApplicablePatches"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2023,7 +2023,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/scanResults"
         method = "GET"
         operation_name = "list_managed_instance_scan_results"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/ListManagedInstanceScanResults"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2187,7 +2187,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/servers/{serverId}/installedPatches"
         method = "GET"
         operation_name = "list_managed_instance_server_installed_patches"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/ListManagedInstanceServerInstalledPatches"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2352,7 +2352,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/servers"
         method = "GET"
         operation_name = "list_managed_instance_servers"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/ListManagedInstanceServers"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2530,7 +2530,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/managedInstances"
         method = "GET"
         operation_name = "list_managed_instances"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/ListManagedInstances"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2666,7 +2666,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/requiredPolicies"
         method = "GET"
         operation_name = "list_required_policies"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/RequiredPolicyCollection/ListRequiredPolicies"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2768,7 +2768,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/credentials"
         method = "GET"
         operation_name = "list_wls_domain_credentials"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainCredentials"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2900,7 +2900,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/scanResults"
         method = "GET"
         operation_name = "list_wls_domain_scan_results"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainScanResults"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3062,7 +3062,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/servers/{serverId}/backups"
         method = "GET"
         operation_name = "list_wls_domain_server_backups"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainServerBackups"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3223,7 +3223,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/servers/{serverId}/installedPatches"
         method = "GET"
         operation_name = "list_wls_domain_server_installed_patches"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainServerInstalledPatches"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3388,7 +3388,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/servers"
         method = "GET"
         operation_name = "list_wls_domain_servers"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainServers"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3582,7 +3582,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains"
         method = "GET"
         operation_name = "list_wls_domains"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomains"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3769,7 +3769,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/wlsDomainsSharingMiddleware"
         method = "GET"
         operation_name = "list_wls_domains_sharing_middlewares"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ListWlsDomainsSharingMiddlewares"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3920,7 +3920,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WorkRequest/ListWorkRequestErrors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4071,7 +4071,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WorkRequest/ListWorkRequestLogs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4236,7 +4236,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WorkRequest/ListWorkRequests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4391,7 +4391,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/actions/restart"
         method = "POST"
         operation_name = "restart_wls_domain"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/RestartWlsDomain"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4520,7 +4520,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/actions/restore"
         method = "POST"
         operation_name = "restore_wls_domain"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/RestoreWlsDomain"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4646,7 +4646,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/managedInstances/{managedInstanceId}/actions/scan"
         method = "POST"
         operation_name = "scan_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/ScanManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4770,7 +4770,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/actions/scan"
         method = "POST"
         operation_name = "scan_wls_domain"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/ScanWlsDomain"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4897,7 +4897,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/actions/setRestartOrder"
         method = "POST"
         operation_name = "set_restart_order"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/SetRestartOrder"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5025,7 +5025,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/actions/start"
         method = "POST"
         operation_name = "start_wls_domain"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/StartWlsDomain"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5152,7 +5152,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/actions/stop"
         method = "POST"
         operation_name = "stop_wls_domain"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/StopWlsDomain"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5263,7 +5263,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/resourceInventory"
         method = "GET"
         operation_name = "summarize_resource_inventory"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ResourceInventory/SummarizeResourceInventory"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5382,7 +5382,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/managedInstances/{managedInstanceId}"
         method = "PUT"
         operation_name = "update_managed_instance"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/ManagedInstance/UpdateManagedInstance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5506,7 +5506,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}"
         method = "PUT"
         operation_name = "update_wls_domain"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/UpdateWlsDomain"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5632,7 +5632,7 @@ class WeblogicManagementServiceClient(object):
         resource_path = "/wlsDomains/{wlsDomainId}/credentials/{credentialType}"
         method = "PUT"
         operation_name = "update_wls_domain_credential"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/WlsDomain/UpdateWlsDomainCredential"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

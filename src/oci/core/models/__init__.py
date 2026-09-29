@@ -6,6 +6,8 @@
 
 from __future__ import absolute_import
 
+from .add_drg_nat_rule_details import AddDrgNatRuleDetails
+from .add_drg_nat_rules_details import AddDrgNatRulesDetails
 from .add_drg_route_distribution_statement_details import AddDrgRouteDistributionStatementDetails
 from .add_drg_route_distribution_statements_details import AddDrgRouteDistributionStatementsDetails
 from .add_drg_route_rule_details import AddDrgRouteRuleDetails
@@ -127,6 +129,7 @@ from .change_cross_connect_group_compartment_details import ChangeCrossConnectGr
 from .change_dedicated_vm_host_compartment_details import ChangeDedicatedVmHostCompartmentDetails
 from .change_dhcp_options_compartment_details import ChangeDhcpOptionsCompartmentDetails
 from .change_drg_compartment_details import ChangeDrgCompartmentDetails
+from .change_drg_nat_policy_compartment_details import ChangeDrgNatPolicyCompartmentDetails
 from .change_ip_sec_connection_compartment_details import ChangeIPSecConnectionCompartmentDetails
 from .change_image_compartment_details import ChangeImageCompartmentDetails
 from .change_instance_compartment_details import ChangeInstanceCompartmentDetails
@@ -242,6 +245,7 @@ from .create_dedicated_vm_host_details import CreateDedicatedVmHostDetails
 from .create_dhcp_details import CreateDhcpDetails
 from .create_drg_attachment_details import CreateDrgAttachmentDetails
 from .create_drg_details import CreateDrgDetails
+from .create_drg_nat_policy_details import CreateDrgNatPolicyDetails
 from .create_drg_route_distribution_details import CreateDrgRouteDistributionDetails
 from .create_drg_route_table_details import CreateDrgRouteTableDetails
 from .create_gmc_configuration_details import CreateGmcConfigurationDetails
@@ -322,6 +326,8 @@ from .drg_attachment_network_update_details import DrgAttachmentNetworkUpdateDet
 from .drg_attachment_type_drg_route_distribution_match_criteria import DrgAttachmentTypeDrgRouteDistributionMatchCriteria
 from .drg_customer import DrgCustomer
 from .drg_customer_resource import DrgCustomerResource
+from .drg_nat_policy import DrgNatPolicy
+from .drg_nat_rule import DrgNatRule
 from .drg_promotion_status_response import DrgPromotionStatusResponse
 from .drg_redundancy_status import DrgRedundancyStatus
 from .drg_route_distribution import DrgRouteDistribution
@@ -534,6 +540,7 @@ from .reboot_migrate_action_details import RebootMigrateActionDetails
 from .recycle_details import RecycleDetails
 from .remote_peering_connection import RemotePeeringConnection
 from .remote_peering_connection_drg_attachment_network_details import RemotePeeringConnectionDrgAttachmentNetworkDetails
+from .remove_drg_nat_rules_details import RemoveDrgNatRulesDetails
 from .remove_drg_route_distribution_statements_details import RemoveDrgRouteDistributionStatementsDetails
 from .remove_drg_route_rules_details import RemoveDrgRouteRulesDetails
 from .remove_ipv4_subnet_cidr_details import RemoveIpv4SubnetCidrDetails
@@ -619,6 +626,9 @@ from .update_dedicated_vm_host_details import UpdateDedicatedVmHostDetails
 from .update_dhcp_details import UpdateDhcpDetails
 from .update_drg_attachment_details import UpdateDrgAttachmentDetails
 from .update_drg_details import UpdateDrgDetails
+from .update_drg_nat_policy_details import UpdateDrgNatPolicyDetails
+from .update_drg_nat_rule_details import UpdateDrgNatRuleDetails
+from .update_drg_nat_rules_details import UpdateDrgNatRulesDetails
 from .update_drg_route_distribution_details import UpdateDrgRouteDistributionDetails
 from .update_drg_route_distribution_statement_details import UpdateDrgRouteDistributionStatementDetails
 from .update_drg_route_distribution_statements_details import UpdateDrgRouteDistributionStatementsDetails
@@ -721,6 +731,8 @@ from .vtap_capture_filter_rule_details import VtapCaptureFilterRuleDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
+    "AddDrgNatRuleDetails": AddDrgNatRuleDetails,
+    "AddDrgNatRulesDetails": AddDrgNatRulesDetails,
     "AddDrgRouteDistributionStatementDetails": AddDrgRouteDistributionStatementDetails,
     "AddDrgRouteDistributionStatementsDetails": AddDrgRouteDistributionStatementsDetails,
     "AddDrgRouteRuleDetails": AddDrgRouteRuleDetails,
@@ -842,6 +854,7 @@ core_type_mapping = {
     "ChangeDedicatedVmHostCompartmentDetails": ChangeDedicatedVmHostCompartmentDetails,
     "ChangeDhcpOptionsCompartmentDetails": ChangeDhcpOptionsCompartmentDetails,
     "ChangeDrgCompartmentDetails": ChangeDrgCompartmentDetails,
+    "ChangeDrgNatPolicyCompartmentDetails": ChangeDrgNatPolicyCompartmentDetails,
     "ChangeIPSecConnectionCompartmentDetails": ChangeIPSecConnectionCompartmentDetails,
     "ChangeImageCompartmentDetails": ChangeImageCompartmentDetails,
     "ChangeInstanceCompartmentDetails": ChangeInstanceCompartmentDetails,
@@ -957,6 +970,7 @@ core_type_mapping = {
     "CreateDhcpDetails": CreateDhcpDetails,
     "CreateDrgAttachmentDetails": CreateDrgAttachmentDetails,
     "CreateDrgDetails": CreateDrgDetails,
+    "CreateDrgNatPolicyDetails": CreateDrgNatPolicyDetails,
     "CreateDrgRouteDistributionDetails": CreateDrgRouteDistributionDetails,
     "CreateDrgRouteTableDetails": CreateDrgRouteTableDetails,
     "CreateGmcConfigurationDetails": CreateGmcConfigurationDetails,
@@ -1037,6 +1051,8 @@ core_type_mapping = {
     "DrgAttachmentTypeDrgRouteDistributionMatchCriteria": DrgAttachmentTypeDrgRouteDistributionMatchCriteria,
     "DrgCustomer": DrgCustomer,
     "DrgCustomerResource": DrgCustomerResource,
+    "DrgNatPolicy": DrgNatPolicy,
+    "DrgNatRule": DrgNatRule,
     "DrgPromotionStatusResponse": DrgPromotionStatusResponse,
     "DrgRedundancyStatus": DrgRedundancyStatus,
     "DrgRouteDistribution": DrgRouteDistribution,
@@ -1249,6 +1265,7 @@ core_type_mapping = {
     "RecycleDetails": RecycleDetails,
     "RemotePeeringConnection": RemotePeeringConnection,
     "RemotePeeringConnectionDrgAttachmentNetworkDetails": RemotePeeringConnectionDrgAttachmentNetworkDetails,
+    "RemoveDrgNatRulesDetails": RemoveDrgNatRulesDetails,
     "RemoveDrgRouteDistributionStatementsDetails": RemoveDrgRouteDistributionStatementsDetails,
     "RemoveDrgRouteRulesDetails": RemoveDrgRouteRulesDetails,
     "RemoveIpv4SubnetCidrDetails": RemoveIpv4SubnetCidrDetails,
@@ -1334,6 +1351,9 @@ core_type_mapping = {
     "UpdateDhcpDetails": UpdateDhcpDetails,
     "UpdateDrgAttachmentDetails": UpdateDrgAttachmentDetails,
     "UpdateDrgDetails": UpdateDrgDetails,
+    "UpdateDrgNatPolicyDetails": UpdateDrgNatPolicyDetails,
+    "UpdateDrgNatRuleDetails": UpdateDrgNatRuleDetails,
+    "UpdateDrgNatRulesDetails": UpdateDrgNatRulesDetails,
     "UpdateDrgRouteDistributionDetails": UpdateDrgRouteDistributionDetails,
     "UpdateDrgRouteDistributionStatementDetails": UpdateDrgRouteDistributionStatementDetails,
     "UpdateDrgRouteDistributionStatementsDetails": UpdateDrgRouteDistributionStatementsDetails,
