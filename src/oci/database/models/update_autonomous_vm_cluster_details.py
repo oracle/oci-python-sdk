@@ -65,6 +65,14 @@ class UpdateAutonomousVmClusterDetails(object):
             The value to assign to the total_container_databases property of this UpdateAutonomousVmClusterDetails.
         :type total_container_databases: int
 
+        :param memory_per_oracle_compute_unit_in_gbs:
+            The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this UpdateAutonomousVmClusterDetails.
+        :type memory_per_oracle_compute_unit_in_gbs: int
+
+        :param sga_percentage:
+            The value to assign to the sga_percentage property of this UpdateAutonomousVmClusterDetails.
+        :type sga_percentage: float
+
         :param time_zone:
             The value to assign to the time_zone property of this UpdateAutonomousVmClusterDetails.
         :type time_zone: str
@@ -95,6 +103,8 @@ class UpdateAutonomousVmClusterDetails(object):
             'autonomous_data_storage_size_in_tbs': 'float',
             'cpu_core_count_per_node': 'int',
             'total_container_databases': 'int',
+            'memory_per_oracle_compute_unit_in_gbs': 'int',
+            'sga_percentage': 'float',
             'time_zone': 'str',
             'scan_listener_port_tls': 'int',
             'scan_listener_port_non_tls': 'int',
@@ -109,6 +119,8 @@ class UpdateAutonomousVmClusterDetails(object):
             'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
             'cpu_core_count_per_node': 'cpuCoreCountPerNode',
             'total_container_databases': 'totalContainerDatabases',
+            'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
+            'sga_percentage': 'sgaPercentage',
             'time_zone': 'timeZone',
             'scan_listener_port_tls': 'scanListenerPortTls',
             'scan_listener_port_non_tls': 'scanListenerPortNonTls',
@@ -122,6 +134,8 @@ class UpdateAutonomousVmClusterDetails(object):
         self._autonomous_data_storage_size_in_tbs = None
         self._cpu_core_count_per_node = None
         self._total_container_databases = None
+        self._memory_per_oracle_compute_unit_in_gbs = None
+        self._sga_percentage = None
         self._time_zone = None
         self._scan_listener_port_tls = None
         self._scan_listener_port_non_tls = None
@@ -314,6 +328,54 @@ class UpdateAutonomousVmClusterDetails(object):
         :type: int
         """
         self._total_container_databases = total_container_databases
+
+    @property
+    def memory_per_oracle_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_oracle_compute_unit_in_gbs of this UpdateAutonomousVmClusterDetails.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :return: The memory_per_oracle_compute_unit_in_gbs of this UpdateAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._memory_per_oracle_compute_unit_in_gbs
+
+    @memory_per_oracle_compute_unit_in_gbs.setter
+    def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
+        """
+        Sets the memory_per_oracle_compute_unit_in_gbs of this UpdateAutonomousVmClusterDetails.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+
+
+        :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this UpdateAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
+
+    @property
+    def sga_percentage(self):
+        """
+        Gets the sga_percentage of this UpdateAutonomousVmClusterDetails.
+        The new value of percentage of ECPU memory allocated for SGA(System Global Area).
+
+
+        :return: The sga_percentage of this UpdateAutonomousVmClusterDetails.
+        :rtype: float
+        """
+        return self._sga_percentage
+
+    @sga_percentage.setter
+    def sga_percentage(self, sga_percentage):
+        """
+        Sets the sga_percentage of this UpdateAutonomousVmClusterDetails.
+        The new value of percentage of ECPU memory allocated for SGA(System Global Area).
+
+
+        :param sga_percentage: The sga_percentage of this UpdateAutonomousVmClusterDetails.
+        :type: float
+        """
+        self._sga_percentage = sga_percentage
 
     @property
     def time_zone(self):

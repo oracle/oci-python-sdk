@@ -1,0 +1,11 @@
+ChangeSubsettingPolicyCompartmentDetails
+========================================
+
+.. currentmodule:: oci.data_safe.models
+
+.. autoclass:: ChangeSubsettingPolicyCompartmentDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

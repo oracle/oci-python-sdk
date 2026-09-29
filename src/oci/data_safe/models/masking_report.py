@@ -73,6 +73,10 @@ class MaskingReport(object):
             The value to assign to the masking_policy_id property of this MaskingReport.
         :type masking_policy_id: str
 
+        :param subsetting_report_id:
+            The value to assign to the subsetting_report_id property of this MaskingReport.
+        :type subsetting_report_id: str
+
         :param target_id:
             The value to assign to the target_id property of this MaskingReport.
         :type target_id: str
@@ -155,6 +159,7 @@ class MaskingReport(object):
             'compartment_id': 'str',
             'masking_work_request_id': 'str',
             'masking_policy_id': 'str',
+            'subsetting_report_id': 'str',
             'target_id': 'str',
             'total_masked_sensitive_types': 'int',
             'total_masked_schemas': 'int',
@@ -179,6 +184,7 @@ class MaskingReport(object):
             'compartment_id': 'compartmentId',
             'masking_work_request_id': 'maskingWorkRequestId',
             'masking_policy_id': 'maskingPolicyId',
+            'subsetting_report_id': 'subsettingReportId',
             'target_id': 'targetId',
             'total_masked_sensitive_types': 'totalMaskedSensitiveTypes',
             'total_masked_schemas': 'totalMaskedSchemas',
@@ -202,6 +208,7 @@ class MaskingReport(object):
         self._compartment_id = None
         self._masking_work_request_id = None
         self._masking_policy_id = None
+        self._subsetting_report_id = None
         self._target_id = None
         self._total_masked_sensitive_types = None
         self._total_masked_schemas = None
@@ -316,6 +323,30 @@ class MaskingReport(object):
         :type: str
         """
         self._masking_policy_id = masking_policy_id
+
+    @property
+    def subsetting_report_id(self):
+        """
+        Gets the subsetting_report_id of this MaskingReport.
+        The OCID of the subsetting report associated with this masking report
+
+
+        :return: The subsetting_report_id of this MaskingReport.
+        :rtype: str
+        """
+        return self._subsetting_report_id
+
+    @subsetting_report_id.setter
+    def subsetting_report_id(self, subsetting_report_id):
+        """
+        Sets the subsetting_report_id of this MaskingReport.
+        The OCID of the subsetting report associated with this masking report
+
+
+        :param subsetting_report_id: The subsetting_report_id of this MaskingReport.
+        :type: str
+        """
+        self._subsetting_report_id = subsetting_report_id
 
     @property
     def target_id(self):

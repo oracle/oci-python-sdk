@@ -80,6 +80,7 @@ from .change_library_masking_format_compartment_details import ChangeLibraryMask
 from .change_masking_policy_compartment_details import ChangeMaskingPolicyCompartmentDetails
 from .change_masking_policy_health_report_compartment_details import ChangeMaskingPolicyHealthReportCompartmentDetails
 from .change_on_prem_connector_compartment_details import ChangeOnPremConnectorCompartmentDetails
+from .change_registration_policy_compartment_details import ChangeRegistrationPolicyCompartmentDetails
 from .change_report_compartment_details import ChangeReportCompartmentDetails
 from .change_report_definition_compartment_details import ChangeReportDefinitionCompartmentDetails
 from .change_retention_details import ChangeRetentionDetails
@@ -94,6 +95,8 @@ from .change_sensitive_type_group_compartment_details import ChangeSensitiveType
 from .change_sensitive_types_export_compartment_details import ChangeSensitiveTypesExportCompartmentDetails
 from .change_sql_collection_compartment_details import ChangeSqlCollectionCompartmentDetails
 from .change_sql_firewall_policy_compartment_details import ChangeSqlFirewallPolicyCompartmentDetails
+from .change_subsetting_policy_compartment_details import ChangeSubsettingPolicyCompartmentDetails
+from .change_subsetting_policy_health_report_compartment_details import ChangeSubsettingPolicyHealthReportCompartmentDetails
 from .change_target_alert_policy_association_compartment_details import ChangeTargetAlertPolicyAssociationCompartmentDetails
 from .change_target_database_compartment_details import ChangeTargetDatabaseCompartmentDetails
 from .change_target_database_group_compartment_details import ChangeTargetDatabaseGroupCompartmentDetails
@@ -118,6 +121,7 @@ from .compare_user_assessment_details import CompareUserAssessmentDetails
 from .compartments import Compartments
 from .compatible_formats_for_data_types import CompatibleFormatsForDataTypes
 from .compatible_formats_for_sensitive_types import CompatibleFormatsForSensitiveTypes
+from .condition_subset_rule_entry import ConditionSubsetRuleEntry
 from .connection_option import ConnectionOption
 from .create_alert_policy_details import CreateAlertPolicyDetails
 from .create_alert_policy_rule_details import CreateAlertPolicyRuleDetails
@@ -135,7 +139,11 @@ from .create_masking_policy_details import CreateMaskingPolicyDetails
 from .create_on_prem_connector_details import CreateOnPremConnectorDetails
 from .create_peer_target_database_details import CreatePeerTargetDatabaseDetails
 from .create_referential_relation_details import CreateReferentialRelationDetails
+from .create_registration_policy_details import CreateRegistrationPolicyDetails
 from .create_report_definition_details import CreateReportDefinitionDetails
+from .create_schema_source_details import CreateSchemaSourceDetails
+from .create_schema_source_from_sdm_details import CreateSchemaSourceFromSdmDetails
+from .create_schema_source_from_target_details import CreateSchemaSourceFromTargetDetails
 from .create_sdm_masking_policy_difference_details import CreateSdmMaskingPolicyDifferenceDetails
 from .create_security_assessment_details import CreateSecurityAssessmentDetails
 from .create_security_policy_config_details import CreateSecurityPolicyConfigDetails
@@ -149,6 +157,9 @@ from .create_sensitive_type_group_details import CreateSensitiveTypeGroupDetails
 from .create_sensitive_type_pattern_details import CreateSensitiveTypePatternDetails
 from .create_sensitive_types_export_details import CreateSensitiveTypesExportDetails
 from .create_sql_collection_details import CreateSqlCollectionDetails
+from .create_subsetting_policy_details import CreateSubsettingPolicyDetails
+from .create_subsetting_rule_details import CreateSubsettingRuleDetails
+from .create_subsetting_schema_relation_details import CreateSubsettingSchemaRelationDetails
 from .create_target_alert_policy_association_details import CreateTargetAlertPolicyAssociationDetails
 from .create_target_database_details import CreateTargetDatabaseDetails
 from .create_target_database_group_details import CreateTargetDatabaseGroupDetails
@@ -224,10 +235,14 @@ from .download_masking_report_details import DownloadMaskingReportDetails
 from .download_security_assessment_report_details import DownloadSecurityAssessmentReportDetails
 from .download_sensitive_data_model_details import DownloadSensitiveDataModelDetails
 from .download_sensitive_types_export_details import DownloadSensitiveTypesExportDetails
+from .download_subsetting_log_details import DownloadSubsettingLogDetails
+from .download_subsetting_policy_details import DownloadSubsettingPolicyDetails
+from .download_subsetting_report_details import DownloadSubsettingReportDetails
 from .download_user_assessment_report_details import DownloadUserAssessmentReportDetails
 from .enable_conditions import EnableConditions
 from .enable_data_safe_configuration_details import EnableDataSafeConfigurationDetails
 from .entry_details import EntryDetails
+from .estimate_table_sizes_details import EstimateTableSizesDetails
 from .exclude import Exclude
 from .finding import Finding
 from .finding_analytics_collection import FindingAnalyticsCollection
@@ -254,6 +269,9 @@ from .generate_on_prem_connector_configuration_details import GenerateOnPremConn
 from .generate_report_details import GenerateReportDetails
 from .generate_security_assessment_report_details import GenerateSecurityAssessmentReportDetails
 from .generate_sensitive_data_model_for_download_details import GenerateSensitiveDataModelForDownloadDetails
+from .generate_subsetting_health_report_details import GenerateSubsettingHealthReportDetails
+from .generate_subsetting_policy_for_download_details import GenerateSubsettingPolicyForDownloadDetails
+from .generate_subsetting_report_for_download_details import GenerateSubsettingReportForDownloadDetails
 from .generate_user_assessment_report_details import GenerateUserAssessmentReportDetails
 from .global_settings import GlobalSettings
 from .grant_summary import GrantSummary
@@ -268,6 +286,7 @@ from .library_masking_format_collection import LibraryMaskingFormatCollection
 from .library_masking_format_entry import LibraryMaskingFormatEntry
 from .library_masking_format_summary import LibraryMaskingFormatSummary
 from .list_selection_mode import ListSelectionMode
+from .manage_privileges_details import ManagePrivilegesDetails
 from .mask_data_details import MaskDataDetails
 from .masked_column_collection import MaskedColumnCollection
 from .masked_column_summary import MaskedColumnSummary
@@ -306,6 +325,7 @@ from .on_prem_connector import OnPremConnector
 from .on_prem_connector_summary import OnPremConnectorSummary
 from .on_premise_connector import OnPremiseConnector
 from .ppf_format_entry import PPFFormatEntry
+from .partition_subset_rule_entry import PartitionSubsetRuleEntry
 from .patch_alert_policy_rule_details import PatchAlertPolicyRuleDetails
 from .patch_alerts_details import PatchAlertsDetails
 from .patch_checks_details import PatchChecksDetails
@@ -320,12 +340,15 @@ from .patch_remove_instruction import PatchRemoveInstruction
 from .patch_sdm_masking_policy_difference_columns_details import PatchSdmMaskingPolicyDifferenceColumnsDetails
 from .patch_sensitive_column_details import PatchSensitiveColumnDetails
 from .patch_sql_firewall_allowed_sql_details import PatchSqlFirewallAllowedSqlDetails
+from .patch_subsetting_rules_details import PatchSubsettingRulesDetails
 from .patch_target_alert_policy_association_details import PatchTargetAlertPolicyAssociationDetails
 from .pattern_format_entry import PatternFormatEntry
 from .peer_target_database import PeerTargetDatabase
 from .peer_target_database_collection import PeerTargetDatabaseCollection
 from .peer_target_database_summary import PeerTargetDatabaseSummary
+from .percent_subset_rule_entry import PercentSubsetRuleEntry
 from .policy_condition import PolicyCondition
+from .policy_connection_option import PolicyConnectionOption
 from .preserve_original_data_format_entry import PreserveOriginalDataFormatEntry
 from .private_endpoint import PrivateEndpoint
 from .profile import Profile
@@ -345,6 +368,11 @@ from .references import References
 from .referential_relation import ReferentialRelation
 from .referential_relation_collection import ReferentialRelationCollection
 from .referential_relation_summary import ReferentialRelationSummary
+from .registration_policy import RegistrationPolicy
+from .registration_policy_collection import RegistrationPolicyCollection
+from .registration_policy_summary import RegistrationPolicySummary
+from .registration_policy_target_database_summary import RegistrationPolicyTargetDatabaseSummary
+from .registration_policy_target_database_summary_collection import RegistrationPolicyTargetDatabaseSummaryCollection
 from .regular_expression_format_entry import RegularExpressionFormatEntry
 from .report import Report
 from .report_collection import ReportCollection
@@ -363,6 +391,12 @@ from .run_user_assessment_details import RunUserAssessmentDetails
 from .sql_expression_format_entry import SQLExpressionFormatEntry
 from .schedule_audit_report_details import ScheduleAuditReportDetails
 from .schedule_report_details import ScheduleReportDetails
+from .schema_source_details import SchemaSourceDetails
+from .schema_source_for_summary import SchemaSourceForSummary
+from .schema_source_from_sdm_details import SchemaSourceFromSdmDetails
+from .schema_source_from_sdm_for_summary import SchemaSourceFromSdmForSummary
+from .schema_source_from_target_details import SchemaSourceFromTargetDetails
+from .schema_source_from_target_for_summary import SchemaSourceFromTargetForSummary
 from .schema_summary import SchemaSummary
 from .scim_query_selection_mode import ScimQuerySelectionMode
 from .sdm_masking_policy_difference import SdmMaskingPolicyDifference
@@ -454,8 +488,45 @@ from .sql_firewall_violation_analytics_collection import SqlFirewallViolationAna
 from .sql_firewall_violation_summary import SqlFirewallViolationSummary
 from .sql_firewall_violations_collection import SqlFirewallViolationsCollection
 from .start_audit_trail_details import StartAuditTrailDetails
+from .subset_data_details import SubsetDataDetails
+from .subset_rule_entry import SubsetRuleEntry
+from .subset_scope import SubsetScope
+from .subset_scope_for_all_objects import SubsetScopeForAllObjects
+from .subset_scope_for_specific_objects import SubsetScopeForSpecificObjects
+from .subsetted_object_collection import SubsettedObjectCollection
+from .subsetted_object_summary import SubsettedObjectSummary
+from .subsetting_analytics_collection import SubsettingAnalyticsCollection
+from .subsetting_analytics_dimensions import SubsettingAnalyticsDimensions
+from .subsetting_analytics_summary import SubsettingAnalyticsSummary
+from .subsetting_error_collection import SubsettingErrorCollection
+from .subsetting_error_summary import SubsettingErrorSummary
+from .subsetting_policy import SubsettingPolicy
+from .subsetting_policy_collection import SubsettingPolicyCollection
+from .subsetting_policy_health_report import SubsettingPolicyHealthReport
+from .subsetting_policy_health_report_collection import SubsettingPolicyHealthReportCollection
+from .subsetting_policy_health_report_log_collection import SubsettingPolicyHealthReportLogCollection
+from .subsetting_policy_health_report_log_summary import SubsettingPolicyHealthReportLogSummary
+from .subsetting_policy_health_report_summary import SubsettingPolicyHealthReportSummary
+from .subsetting_policy_summary import SubsettingPolicySummary
+from .subsetting_report import SubsettingReport
+from .subsetting_report_collection import SubsettingReportCollection
+from .subsetting_report_summary import SubsettingReportSummary
+from .subsetting_rule import SubsettingRule
+from .subsetting_rule_collection import SubsettingRuleCollection
+from .subsetting_rule_processing_chain_object_summary import SubsettingRuleProcessingChainObjectSummary
+from .subsetting_rule_processing_chain_objects_collection import SubsettingRuleProcessingChainObjectsCollection
+from .subsetting_rule_summary import SubsettingRuleSummary
+from .subsetting_schema_collection import SubsettingSchemaCollection
+from .subsetting_schema_object_collection import SubsettingSchemaObjectCollection
+from .subsetting_schema_object_summary import SubsettingSchemaObjectSummary
+from .subsetting_schema_relation import SubsettingSchemaRelation
+from .subsetting_schema_relation_collection import SubsettingSchemaRelationCollection
+from .subsetting_schema_relation_summary import SubsettingSchemaRelationSummary
+from .subsetting_schema_summary import SubsettingSchemaSummary
 from .substring_format_entry import SubstringFormatEntry
 from .summary import Summary
+from .table_estimate_collection import TableEstimateCollection
+from .table_estimate_summary import TableEstimateSummary
 from .table_summary import TableSummary
 from .tables_for_discovery import TablesForDiscovery
 from .target_alert_policy_association import TargetAlertPolicyAssociation
@@ -512,8 +583,13 @@ from .update_masking_policy_details import UpdateMaskingPolicyDetails
 from .update_on_prem_connector_details import UpdateOnPremConnectorDetails
 from .update_on_prem_connector_wallet_details import UpdateOnPremConnectorWalletDetails
 from .update_peer_target_database_details import UpdatePeerTargetDatabaseDetails
+from .update_processing_chain_object_details import UpdateProcessingChainObjectDetails
+from .update_registration_policy_details import UpdateRegistrationPolicyDetails
 from .update_report_definition_details import UpdateReportDefinitionDetails
 from .update_report_details import UpdateReportDetails
+from .update_schema_source_details import UpdateSchemaSourceDetails
+from .update_schema_source_from_sdm_details import UpdateSchemaSourceFromSdmDetails
+from .update_schema_source_from_target_details import UpdateSchemaSourceFromTargetDetails
 from .update_sdm_masking_policy_difference_details import UpdateSdmMaskingPolicyDifferenceDetails
 from .update_security_assessment_details import UpdateSecurityAssessmentDetails
 from .update_security_policy_config_details import UpdateSecurityPolicyConfigDetails
@@ -529,6 +605,8 @@ from .update_sensitive_types_export_details import UpdateSensitiveTypesExportDet
 from .update_sql_collection_details import UpdateSqlCollectionDetails
 from .update_sql_firewall_config_details import UpdateSqlFirewallConfigDetails
 from .update_sql_firewall_policy_details import UpdateSqlFirewallPolicyDetails
+from .update_subsetting_policy_details import UpdateSubsettingPolicyDetails
+from .update_subsetting_rule_details import UpdateSubsettingRuleDetails
 from .update_target_alert_policy_association_details import UpdateTargetAlertPolicyAssociationDetails
 from .update_target_database_details import UpdateTargetDatabaseDetails
 from .update_target_database_group_details import UpdateTargetDatabaseGroupDetails
@@ -627,6 +705,7 @@ data_safe_type_mapping = {
     "ChangeMaskingPolicyCompartmentDetails": ChangeMaskingPolicyCompartmentDetails,
     "ChangeMaskingPolicyHealthReportCompartmentDetails": ChangeMaskingPolicyHealthReportCompartmentDetails,
     "ChangeOnPremConnectorCompartmentDetails": ChangeOnPremConnectorCompartmentDetails,
+    "ChangeRegistrationPolicyCompartmentDetails": ChangeRegistrationPolicyCompartmentDetails,
     "ChangeReportCompartmentDetails": ChangeReportCompartmentDetails,
     "ChangeReportDefinitionCompartmentDetails": ChangeReportDefinitionCompartmentDetails,
     "ChangeRetentionDetails": ChangeRetentionDetails,
@@ -641,6 +720,8 @@ data_safe_type_mapping = {
     "ChangeSensitiveTypesExportCompartmentDetails": ChangeSensitiveTypesExportCompartmentDetails,
     "ChangeSqlCollectionCompartmentDetails": ChangeSqlCollectionCompartmentDetails,
     "ChangeSqlFirewallPolicyCompartmentDetails": ChangeSqlFirewallPolicyCompartmentDetails,
+    "ChangeSubsettingPolicyCompartmentDetails": ChangeSubsettingPolicyCompartmentDetails,
+    "ChangeSubsettingPolicyHealthReportCompartmentDetails": ChangeSubsettingPolicyHealthReportCompartmentDetails,
     "ChangeTargetAlertPolicyAssociationCompartmentDetails": ChangeTargetAlertPolicyAssociationCompartmentDetails,
     "ChangeTargetDatabaseCompartmentDetails": ChangeTargetDatabaseCompartmentDetails,
     "ChangeTargetDatabaseGroupCompartmentDetails": ChangeTargetDatabaseGroupCompartmentDetails,
@@ -665,6 +746,7 @@ data_safe_type_mapping = {
     "Compartments": Compartments,
     "CompatibleFormatsForDataTypes": CompatibleFormatsForDataTypes,
     "CompatibleFormatsForSensitiveTypes": CompatibleFormatsForSensitiveTypes,
+    "ConditionSubsetRuleEntry": ConditionSubsetRuleEntry,
     "ConnectionOption": ConnectionOption,
     "CreateAlertPolicyDetails": CreateAlertPolicyDetails,
     "CreateAlertPolicyRuleDetails": CreateAlertPolicyRuleDetails,
@@ -682,7 +764,11 @@ data_safe_type_mapping = {
     "CreateOnPremConnectorDetails": CreateOnPremConnectorDetails,
     "CreatePeerTargetDatabaseDetails": CreatePeerTargetDatabaseDetails,
     "CreateReferentialRelationDetails": CreateReferentialRelationDetails,
+    "CreateRegistrationPolicyDetails": CreateRegistrationPolicyDetails,
     "CreateReportDefinitionDetails": CreateReportDefinitionDetails,
+    "CreateSchemaSourceDetails": CreateSchemaSourceDetails,
+    "CreateSchemaSourceFromSdmDetails": CreateSchemaSourceFromSdmDetails,
+    "CreateSchemaSourceFromTargetDetails": CreateSchemaSourceFromTargetDetails,
     "CreateSdmMaskingPolicyDifferenceDetails": CreateSdmMaskingPolicyDifferenceDetails,
     "CreateSecurityAssessmentDetails": CreateSecurityAssessmentDetails,
     "CreateSecurityPolicyConfigDetails": CreateSecurityPolicyConfigDetails,
@@ -696,6 +782,9 @@ data_safe_type_mapping = {
     "CreateSensitiveTypePatternDetails": CreateSensitiveTypePatternDetails,
     "CreateSensitiveTypesExportDetails": CreateSensitiveTypesExportDetails,
     "CreateSqlCollectionDetails": CreateSqlCollectionDetails,
+    "CreateSubsettingPolicyDetails": CreateSubsettingPolicyDetails,
+    "CreateSubsettingRuleDetails": CreateSubsettingRuleDetails,
+    "CreateSubsettingSchemaRelationDetails": CreateSubsettingSchemaRelationDetails,
     "CreateTargetAlertPolicyAssociationDetails": CreateTargetAlertPolicyAssociationDetails,
     "CreateTargetDatabaseDetails": CreateTargetDatabaseDetails,
     "CreateTargetDatabaseGroupDetails": CreateTargetDatabaseGroupDetails,
@@ -771,10 +860,14 @@ data_safe_type_mapping = {
     "DownloadSecurityAssessmentReportDetails": DownloadSecurityAssessmentReportDetails,
     "DownloadSensitiveDataModelDetails": DownloadSensitiveDataModelDetails,
     "DownloadSensitiveTypesExportDetails": DownloadSensitiveTypesExportDetails,
+    "DownloadSubsettingLogDetails": DownloadSubsettingLogDetails,
+    "DownloadSubsettingPolicyDetails": DownloadSubsettingPolicyDetails,
+    "DownloadSubsettingReportDetails": DownloadSubsettingReportDetails,
     "DownloadUserAssessmentReportDetails": DownloadUserAssessmentReportDetails,
     "EnableConditions": EnableConditions,
     "EnableDataSafeConfigurationDetails": EnableDataSafeConfigurationDetails,
     "EntryDetails": EntryDetails,
+    "EstimateTableSizesDetails": EstimateTableSizesDetails,
     "Exclude": Exclude,
     "Finding": Finding,
     "FindingAnalyticsCollection": FindingAnalyticsCollection,
@@ -801,6 +894,9 @@ data_safe_type_mapping = {
     "GenerateReportDetails": GenerateReportDetails,
     "GenerateSecurityAssessmentReportDetails": GenerateSecurityAssessmentReportDetails,
     "GenerateSensitiveDataModelForDownloadDetails": GenerateSensitiveDataModelForDownloadDetails,
+    "GenerateSubsettingHealthReportDetails": GenerateSubsettingHealthReportDetails,
+    "GenerateSubsettingPolicyForDownloadDetails": GenerateSubsettingPolicyForDownloadDetails,
+    "GenerateSubsettingReportForDownloadDetails": GenerateSubsettingReportForDownloadDetails,
     "GenerateUserAssessmentReportDetails": GenerateUserAssessmentReportDetails,
     "GlobalSettings": GlobalSettings,
     "GrantSummary": GrantSummary,
@@ -815,6 +911,7 @@ data_safe_type_mapping = {
     "LibraryMaskingFormatEntry": LibraryMaskingFormatEntry,
     "LibraryMaskingFormatSummary": LibraryMaskingFormatSummary,
     "ListSelectionMode": ListSelectionMode,
+    "ManagePrivilegesDetails": ManagePrivilegesDetails,
     "MaskDataDetails": MaskDataDetails,
     "MaskedColumnCollection": MaskedColumnCollection,
     "MaskedColumnSummary": MaskedColumnSummary,
@@ -853,6 +950,7 @@ data_safe_type_mapping = {
     "OnPremConnectorSummary": OnPremConnectorSummary,
     "OnPremiseConnector": OnPremiseConnector,
     "PPFFormatEntry": PPFFormatEntry,
+    "PartitionSubsetRuleEntry": PartitionSubsetRuleEntry,
     "PatchAlertPolicyRuleDetails": PatchAlertPolicyRuleDetails,
     "PatchAlertsDetails": PatchAlertsDetails,
     "PatchChecksDetails": PatchChecksDetails,
@@ -867,12 +965,15 @@ data_safe_type_mapping = {
     "PatchSdmMaskingPolicyDifferenceColumnsDetails": PatchSdmMaskingPolicyDifferenceColumnsDetails,
     "PatchSensitiveColumnDetails": PatchSensitiveColumnDetails,
     "PatchSqlFirewallAllowedSqlDetails": PatchSqlFirewallAllowedSqlDetails,
+    "PatchSubsettingRulesDetails": PatchSubsettingRulesDetails,
     "PatchTargetAlertPolicyAssociationDetails": PatchTargetAlertPolicyAssociationDetails,
     "PatternFormatEntry": PatternFormatEntry,
     "PeerTargetDatabase": PeerTargetDatabase,
     "PeerTargetDatabaseCollection": PeerTargetDatabaseCollection,
     "PeerTargetDatabaseSummary": PeerTargetDatabaseSummary,
+    "PercentSubsetRuleEntry": PercentSubsetRuleEntry,
     "PolicyCondition": PolicyCondition,
+    "PolicyConnectionOption": PolicyConnectionOption,
     "PreserveOriginalDataFormatEntry": PreserveOriginalDataFormatEntry,
     "PrivateEndpoint": PrivateEndpoint,
     "Profile": Profile,
@@ -892,6 +993,11 @@ data_safe_type_mapping = {
     "ReferentialRelation": ReferentialRelation,
     "ReferentialRelationCollection": ReferentialRelationCollection,
     "ReferentialRelationSummary": ReferentialRelationSummary,
+    "RegistrationPolicy": RegistrationPolicy,
+    "RegistrationPolicyCollection": RegistrationPolicyCollection,
+    "RegistrationPolicySummary": RegistrationPolicySummary,
+    "RegistrationPolicyTargetDatabaseSummary": RegistrationPolicyTargetDatabaseSummary,
+    "RegistrationPolicyTargetDatabaseSummaryCollection": RegistrationPolicyTargetDatabaseSummaryCollection,
     "RegularExpressionFormatEntry": RegularExpressionFormatEntry,
     "Report": Report,
     "ReportCollection": ReportCollection,
@@ -910,6 +1016,12 @@ data_safe_type_mapping = {
     "SQLExpressionFormatEntry": SQLExpressionFormatEntry,
     "ScheduleAuditReportDetails": ScheduleAuditReportDetails,
     "ScheduleReportDetails": ScheduleReportDetails,
+    "SchemaSourceDetails": SchemaSourceDetails,
+    "SchemaSourceForSummary": SchemaSourceForSummary,
+    "SchemaSourceFromSdmDetails": SchemaSourceFromSdmDetails,
+    "SchemaSourceFromSdmForSummary": SchemaSourceFromSdmForSummary,
+    "SchemaSourceFromTargetDetails": SchemaSourceFromTargetDetails,
+    "SchemaSourceFromTargetForSummary": SchemaSourceFromTargetForSummary,
     "SchemaSummary": SchemaSummary,
     "ScimQuerySelectionMode": ScimQuerySelectionMode,
     "SdmMaskingPolicyDifference": SdmMaskingPolicyDifference,
@@ -1001,8 +1113,45 @@ data_safe_type_mapping = {
     "SqlFirewallViolationSummary": SqlFirewallViolationSummary,
     "SqlFirewallViolationsCollection": SqlFirewallViolationsCollection,
     "StartAuditTrailDetails": StartAuditTrailDetails,
+    "SubsetDataDetails": SubsetDataDetails,
+    "SubsetRuleEntry": SubsetRuleEntry,
+    "SubsetScope": SubsetScope,
+    "SubsetScopeForAllObjects": SubsetScopeForAllObjects,
+    "SubsetScopeForSpecificObjects": SubsetScopeForSpecificObjects,
+    "SubsettedObjectCollection": SubsettedObjectCollection,
+    "SubsettedObjectSummary": SubsettedObjectSummary,
+    "SubsettingAnalyticsCollection": SubsettingAnalyticsCollection,
+    "SubsettingAnalyticsDimensions": SubsettingAnalyticsDimensions,
+    "SubsettingAnalyticsSummary": SubsettingAnalyticsSummary,
+    "SubsettingErrorCollection": SubsettingErrorCollection,
+    "SubsettingErrorSummary": SubsettingErrorSummary,
+    "SubsettingPolicy": SubsettingPolicy,
+    "SubsettingPolicyCollection": SubsettingPolicyCollection,
+    "SubsettingPolicyHealthReport": SubsettingPolicyHealthReport,
+    "SubsettingPolicyHealthReportCollection": SubsettingPolicyHealthReportCollection,
+    "SubsettingPolicyHealthReportLogCollection": SubsettingPolicyHealthReportLogCollection,
+    "SubsettingPolicyHealthReportLogSummary": SubsettingPolicyHealthReportLogSummary,
+    "SubsettingPolicyHealthReportSummary": SubsettingPolicyHealthReportSummary,
+    "SubsettingPolicySummary": SubsettingPolicySummary,
+    "SubsettingReport": SubsettingReport,
+    "SubsettingReportCollection": SubsettingReportCollection,
+    "SubsettingReportSummary": SubsettingReportSummary,
+    "SubsettingRule": SubsettingRule,
+    "SubsettingRuleCollection": SubsettingRuleCollection,
+    "SubsettingRuleProcessingChainObjectSummary": SubsettingRuleProcessingChainObjectSummary,
+    "SubsettingRuleProcessingChainObjectsCollection": SubsettingRuleProcessingChainObjectsCollection,
+    "SubsettingRuleSummary": SubsettingRuleSummary,
+    "SubsettingSchemaCollection": SubsettingSchemaCollection,
+    "SubsettingSchemaObjectCollection": SubsettingSchemaObjectCollection,
+    "SubsettingSchemaObjectSummary": SubsettingSchemaObjectSummary,
+    "SubsettingSchemaRelation": SubsettingSchemaRelation,
+    "SubsettingSchemaRelationCollection": SubsettingSchemaRelationCollection,
+    "SubsettingSchemaRelationSummary": SubsettingSchemaRelationSummary,
+    "SubsettingSchemaSummary": SubsettingSchemaSummary,
     "SubstringFormatEntry": SubstringFormatEntry,
     "Summary": Summary,
+    "TableEstimateCollection": TableEstimateCollection,
+    "TableEstimateSummary": TableEstimateSummary,
     "TableSummary": TableSummary,
     "TablesForDiscovery": TablesForDiscovery,
     "TargetAlertPolicyAssociation": TargetAlertPolicyAssociation,
@@ -1059,8 +1208,13 @@ data_safe_type_mapping = {
     "UpdateOnPremConnectorDetails": UpdateOnPremConnectorDetails,
     "UpdateOnPremConnectorWalletDetails": UpdateOnPremConnectorWalletDetails,
     "UpdatePeerTargetDatabaseDetails": UpdatePeerTargetDatabaseDetails,
+    "UpdateProcessingChainObjectDetails": UpdateProcessingChainObjectDetails,
+    "UpdateRegistrationPolicyDetails": UpdateRegistrationPolicyDetails,
     "UpdateReportDefinitionDetails": UpdateReportDefinitionDetails,
     "UpdateReportDetails": UpdateReportDetails,
+    "UpdateSchemaSourceDetails": UpdateSchemaSourceDetails,
+    "UpdateSchemaSourceFromSdmDetails": UpdateSchemaSourceFromSdmDetails,
+    "UpdateSchemaSourceFromTargetDetails": UpdateSchemaSourceFromTargetDetails,
     "UpdateSdmMaskingPolicyDifferenceDetails": UpdateSdmMaskingPolicyDifferenceDetails,
     "UpdateSecurityAssessmentDetails": UpdateSecurityAssessmentDetails,
     "UpdateSecurityPolicyConfigDetails": UpdateSecurityPolicyConfigDetails,
@@ -1076,6 +1230,8 @@ data_safe_type_mapping = {
     "UpdateSqlCollectionDetails": UpdateSqlCollectionDetails,
     "UpdateSqlFirewallConfigDetails": UpdateSqlFirewallConfigDetails,
     "UpdateSqlFirewallPolicyDetails": UpdateSqlFirewallPolicyDetails,
+    "UpdateSubsettingPolicyDetails": UpdateSubsettingPolicyDetails,
+    "UpdateSubsettingRuleDetails": UpdateSubsettingRuleDetails,
     "UpdateTargetAlertPolicyAssociationDetails": UpdateTargetAlertPolicyAssociationDetails,
     "UpdateTargetDatabaseDetails": UpdateTargetDatabaseDetails,
     "UpdateTargetDatabaseGroupDetails": UpdateTargetDatabaseGroupDetails,

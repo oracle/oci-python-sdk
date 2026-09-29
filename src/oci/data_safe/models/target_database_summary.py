@@ -126,6 +126,10 @@ class TargetDatabaseSummary(object):
             The value to assign to the time_created property of this TargetDatabaseSummary.
         :type time_created: datetime
 
+        :param features:
+            The value to assign to the features property of this TargetDatabaseSummary.
+        :type features: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this TargetDatabaseSummary.
         :type freeform_tags: dict(str, str)
@@ -150,6 +154,7 @@ class TargetDatabaseSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
+            'features': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -165,6 +170,7 @@ class TargetDatabaseSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
+            'features': 'features',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -179,6 +185,7 @@ class TargetDatabaseSummary(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_created = None
+        self._features = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -440,6 +447,30 @@ class TargetDatabaseSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def features(self):
+        """
+        Gets the features of this TargetDatabaseSummary.
+        List of enabled features based on granted ORA_DSCS_* roles in target database
+
+
+        :return: The features of this TargetDatabaseSummary.
+        :rtype: list[str]
+        """
+        return self._features
+
+    @features.setter
+    def features(self, features):
+        """
+        Sets the features of this TargetDatabaseSummary.
+        List of enabled features based on granted ORA_DSCS_* roles in target database
+
+
+        :param features: The features of this TargetDatabaseSummary.
+        :type: list[str]
+        """
+        self._features = features
 
     @property
     def freeform_tags(self):

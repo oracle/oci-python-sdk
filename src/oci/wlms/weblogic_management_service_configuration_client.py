@@ -165,7 +165,7 @@ class WeblogicManagementServiceConfigurationClient(object):
         resource_path = "/configuration"
         method = "GET"
         operation_name = "get_configuration"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/Configuration/GetConfiguration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -283,7 +283,7 @@ class WeblogicManagementServiceConfigurationClient(object):
         resource_path = "/configuration"
         method = "PUT"
         operation_name = "update_configuration"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/wlms/20241101/Configuration/UpdateConfiguration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
