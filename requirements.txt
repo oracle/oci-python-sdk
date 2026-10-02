@@ -6,8 +6,6 @@ cryptography>=3.2.1,<51.0.0; python_version >= '3.8' and python_full_version != 
 flake8>=3.6.0,<6
 mock==2.0.0
 pbr==4.1.0; python_version == '3.6'
-pyOpenSSL>=17.5.0,<22.0.0; python_version <= '3.7'
-pyOpenSSL>=26.2.0,<27.0.0; python_version >= '3.8'
 pytest==4.6.10; python_version <= '3.9'
 pytest==7.1.2; python_version >= '3.10'
 pytest-cov==2.6.1
