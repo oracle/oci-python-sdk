@@ -416,9 +416,8 @@ def launch_instance_and_wait_for_work_request(compute_client_composite_operation
 
 def terminate_instance(compute_client_composite_operations, instance):
     print('Terminating Instance: {}'.format(instance.id))
-    compute_client_composite_operations.terminate_instance_and_wait_for_state(
-        instance.id,
-        wait_for_states=[oci.core.models.Instance.LIFECYCLE_STATE_TERMINATED]
+    compute_client_composite_operations.terminate_instance_and_wait_for_work_request(
+        instance.id
     )
 
     print('Terminated Instance: {}'.format(instance.id))
