@@ -20,6 +20,10 @@ class InboundAuthConfig(object):
     #: This constant has a value of "IDCS_AUTH_CONFIG"
     INBOUND_AUTH_CONFIG_TYPE_IDCS_AUTH_CONFIG = "IDCS_AUTH_CONFIG"
 
+    #: A constant which can be used with the inbound_auth_config_type property of a InboundAuthConfig.
+    #: This constant has a value of "IDCS_SESSION_AUTH_CONFIG"
+    INBOUND_AUTH_CONFIG_TYPE_IDCS_SESSION_AUTH_CONFIG = "IDCS_SESSION_AUTH_CONFIG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InboundAuthConfig object with values from keyword arguments.
@@ -27,7 +31,7 @@ class InboundAuthConfig(object):
 
         :param inbound_auth_config_type:
             The value to assign to the inbound_auth_config_type property of this InboundAuthConfig.
-            Allowed values for this property are: "IDCS_AUTH_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IDCS_AUTH_CONFIG", "IDCS_SESSION_AUTH_CONFIG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type inbound_auth_config_type: str
 
@@ -53,7 +57,7 @@ class InboundAuthConfig(object):
         **[Required]** Gets the inbound_auth_config_type of this InboundAuthConfig.
         The inbound authentication configuration type for the Hosted Application.
 
-        Allowed values for this property are: "IDCS_AUTH_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IDCS_AUTH_CONFIG", "IDCS_SESSION_AUTH_CONFIG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -72,7 +76,7 @@ class InboundAuthConfig(object):
         :param inbound_auth_config_type: The inbound_auth_config_type of this InboundAuthConfig.
         :type: str
         """
-        allowed_values = ["IDCS_AUTH_CONFIG"]
+        allowed_values = ["IDCS_AUTH_CONFIG", "IDCS_SESSION_AUTH_CONFIG"]
         if not value_allowed_none_or_none_sentinel(inbound_auth_config_type, allowed_values):
             inbound_auth_config_type = 'UNKNOWN_ENUM_VALUE'
         self._inbound_auth_config_type = inbound_auth_config_type

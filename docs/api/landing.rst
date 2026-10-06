@@ -249,6 +249,9 @@ API Reference
 * :doc:`Privileged Api Control <apiaccesscontrol/client/oci.apiaccesscontrol.PrivilegedApiControlClient>`
 * :doc:`Privileged Api Requests <apiaccesscontrol/client/oci.apiaccesscontrol.PrivilegedApiRequestsClient>`
 * :doc:`Privileged Api Work Request <apiaccesscontrol/client/oci.apiaccesscontrol.PrivilegedApiWorkRequestClient>`
+* :doc:`Product <oci_product_catalog/client/oci.oci_product_catalog.ProductClient>`
+* :doc:`Product Admin <oci_product_catalog/client/oci.oci_product_catalog.ProductAdminClient>`
+* :doc:`Product Internal <oci_product_catalog/client/oci.oci_product_catalog.ProductInternalClient>`
 * :doc:`Query <apm_traces/client/oci.apm_traces.QueryClient>`
 * :doc:`Queue <queue/client/oci.queue.QueueClient>`
 * :doc:`Queue Admin <queue/client/oci.queue.QueueAdminClient>`
@@ -467,6 +470,7 @@ API Reference
     object_storage
     oce
     oci_control_center
+    oci_product_catalog
     ocvp
     oda
     onesubscription

@@ -24,6 +24,10 @@ class CreateHostedApplicationDetails(object):
             The value to assign to the inbound_auth_config property of this CreateHostedApplicationDetails.
         :type inbound_auth_config: oci.generative_ai.models.InboundAuthConfig
 
+        :param public_access_path_patterns:
+            The value to assign to the public_access_path_patterns property of this CreateHostedApplicationDetails.
+        :type public_access_path_patterns: list[str]
+
         :param display_name:
             The value to assign to the display_name property of this CreateHostedApplicationDetails.
         :type display_name: str
@@ -63,6 +67,7 @@ class CreateHostedApplicationDetails(object):
         """
         self.swagger_types = {
             'inbound_auth_config': 'InboundAuthConfig',
+            'public_access_path_patterns': 'list[str]',
             'display_name': 'str',
             'compartment_id': 'str',
             'description': 'str',
@@ -75,6 +80,7 @@ class CreateHostedApplicationDetails(object):
         }
         self.attribute_map = {
             'inbound_auth_config': 'inboundAuthConfig',
+            'public_access_path_patterns': 'publicAccessPathPatterns',
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
             'description': 'description',
@@ -86,6 +92,7 @@ class CreateHostedApplicationDetails(object):
             'defined_tags': 'definedTags'
         }
         self._inbound_auth_config = None
+        self._public_access_path_patterns = None
         self._display_name = None
         self._compartment_id = None
         self._description = None
@@ -115,6 +122,34 @@ class CreateHostedApplicationDetails(object):
         :type: oci.generative_ai.models.InboundAuthConfig
         """
         self._inbound_auth_config = inbound_auth_config
+
+    @property
+    def public_access_path_patterns(self):
+        """
+        Gets the public_access_path_patterns of this CreateHostedApplicationDetails.
+        A list of hosted application path patterns that can be accessed without
+        inbound authentication. Values can be exact paths such as `/health` or `/callback`,
+        or wildcard paths such as `/assets/*` or `/public/*`.
+
+
+        :return: The public_access_path_patterns of this CreateHostedApplicationDetails.
+        :rtype: list[str]
+        """
+        return self._public_access_path_patterns
+
+    @public_access_path_patterns.setter
+    def public_access_path_patterns(self, public_access_path_patterns):
+        """
+        Sets the public_access_path_patterns of this CreateHostedApplicationDetails.
+        A list of hosted application path patterns that can be accessed without
+        inbound authentication. Values can be exact paths such as `/health` or `/callback`,
+        or wildcard paths such as `/assets/*` or `/public/*`.
+
+
+        :param public_access_path_patterns: The public_access_path_patterns of this CreateHostedApplicationDetails.
+        :type: list[str]
+        """
+        self._public_access_path_patterns = public_access_path_patterns
 
     @property
     def display_name(self):

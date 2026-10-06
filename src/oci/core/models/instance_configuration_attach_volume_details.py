@@ -22,6 +22,7 @@ class InstanceConfigurationAttachVolumeDetails(object):
 
         * :class:`~oci.core.models.InstanceConfigurationIscsiAttachVolumeDetails`
         * :class:`~oci.core.models.InstanceConfigurationParavirtualizedAttachVolumeDetails`
+        * :class:`~oci.core.models.InstanceConfigurationNvmeAttachVolumeDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -79,6 +80,9 @@ class InstanceConfigurationAttachVolumeDetails(object):
 
         if type == 'paravirtualized':
             return 'InstanceConfigurationParavirtualizedAttachVolumeDetails'
+
+        if type == 'nvme':
+            return 'InstanceConfigurationNvmeAttachVolumeDetails'
         else:
             return 'InstanceConfigurationAttachVolumeDetails'
 
@@ -190,7 +194,7 @@ class InstanceConfigurationAttachVolumeDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this InstanceConfigurationAttachVolumeDetails.
-        The type of volume. The only supported values are \"iscsi\" and \"paravirtualized\".
+        The type of volume. The only supported values are \"iscsi\", \"paravirtualized\", and \"nvme\".
 
 
         :return: The type of this InstanceConfigurationAttachVolumeDetails.
@@ -202,7 +206,7 @@ class InstanceConfigurationAttachVolumeDetails(object):
     def type(self, type):
         """
         Sets the type of this InstanceConfigurationAttachVolumeDetails.
-        The type of volume. The only supported values are \"iscsi\" and \"paravirtualized\".
+        The type of volume. The only supported values are \"iscsi\", \"paravirtualized\", and \"nvme\".
 
 
         :param type: The type of this InstanceConfigurationAttachVolumeDetails.

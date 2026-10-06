@@ -139,6 +139,10 @@ class Shape(object):
             The value to assign to the platform_config_options property of this Shape.
         :type platform_config_options: oci.core.models.ShapePlatformConfigOptions
 
+        :param bs_nvme_attachments_config:
+            The value to assign to the bs_nvme_attachments_config property of this Shape.
+        :type bs_nvme_attachments_config: oci.core.models.BsNvmeAttachmentsConfig
+
         :param is_billed_for_stopped_instance:
             The value to assign to the is_billed_for_stopped_instance property of this Shape.
         :type is_billed_for_stopped_instance: bool
@@ -197,6 +201,7 @@ class Shape(object):
             'networking_bandwidth_options': 'ShapeNetworkingBandwidthOptions',
             'max_vnic_attachment_options': 'ShapeMaxVnicAttachmentOptions',
             'platform_config_options': 'ShapePlatformConfigOptions',
+            'bs_nvme_attachments_config': 'BsNvmeAttachmentsConfig',
             'is_billed_for_stopped_instance': 'bool',
             'billing_type': 'str',
             'quota_names': 'list[str]',
@@ -229,6 +234,7 @@ class Shape(object):
             'networking_bandwidth_options': 'networkingBandwidthOptions',
             'max_vnic_attachment_options': 'maxVnicAttachmentOptions',
             'platform_config_options': 'platformConfigOptions',
+            'bs_nvme_attachments_config': 'bsNvmeAttachmentsConfig',
             'is_billed_for_stopped_instance': 'isBilledForStoppedInstance',
             'billing_type': 'billingType',
             'quota_names': 'quotaNames',
@@ -260,6 +266,7 @@ class Shape(object):
         self._networking_bandwidth_options = None
         self._max_vnic_attachment_options = None
         self._platform_config_options = None
+        self._bs_nvme_attachments_config = None
         self._is_billed_for_stopped_instance = None
         self._billing_type = None
         self._quota_names = None
@@ -804,6 +811,26 @@ class Shape(object):
         :type: oci.core.models.ShapePlatformConfigOptions
         """
         self._platform_config_options = platform_config_options
+
+    @property
+    def bs_nvme_attachments_config(self):
+        """
+        Gets the bs_nvme_attachments_config of this Shape.
+
+        :return: The bs_nvme_attachments_config of this Shape.
+        :rtype: oci.core.models.BsNvmeAttachmentsConfig
+        """
+        return self._bs_nvme_attachments_config
+
+    @bs_nvme_attachments_config.setter
+    def bs_nvme_attachments_config(self, bs_nvme_attachments_config):
+        """
+        Sets the bs_nvme_attachments_config of this Shape.
+
+        :param bs_nvme_attachments_config: The bs_nvme_attachments_config of this Shape.
+        :type: oci.core.models.BsNvmeAttachmentsConfig
+        """
+        self._bs_nvme_attachments_config = bs_nvme_attachments_config
 
     @property
     def is_billed_for_stopped_instance(self):
