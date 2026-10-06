@@ -23,6 +23,10 @@ class UpdateLaunchOptions(object):
     #: This constant has a value of "PARAVIRTUALIZED"
     BOOT_VOLUME_TYPE_PARAVIRTUALIZED = "PARAVIRTUALIZED"
 
+    #: A constant which can be used with the boot_volume_type property of a UpdateLaunchOptions.
+    #: This constant has a value of "NVME"
+    BOOT_VOLUME_TYPE_NVME = "NVME"
+
     #: A constant which can be used with the network_type property of a UpdateLaunchOptions.
     #: This constant has a value of "VFIO"
     NETWORK_TYPE_VFIO = "VFIO"
@@ -42,7 +46,7 @@ class UpdateLaunchOptions(object):
 
         :param boot_volume_type:
             The value to assign to the boot_volume_type property of this UpdateLaunchOptions.
-            Allowed values for this property are: "ISCSI", "PARAVIRTUALIZED"
+            Allowed values for this property are: "ISCSI", "PARAVIRTUALIZED", "NVME"
         :type boot_volume_type: str
 
         :param network_type:
@@ -77,6 +81,7 @@ class UpdateLaunchOptions(object):
         * `ISCSI` - ISCSI attached block storage device.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
         storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
 
         Before you change the boot volume attachment type, detach all block volumes and VNICs except for
         the boot volume and the primary VNIC.
@@ -87,7 +92,7 @@ class UpdateLaunchOptions(object):
         the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
         as expected, the changes are not supported. Revert the instance to the original boot volume attachment type.
 
-        Allowed values for this property are: "ISCSI", "PARAVIRTUALIZED"
+        Allowed values for this property are: "ISCSI", "PARAVIRTUALIZED", "NVME"
 
 
         :return: The boot_volume_type of this UpdateLaunchOptions.
@@ -103,6 +108,7 @@ class UpdateLaunchOptions(object):
         * `ISCSI` - ISCSI attached block storage device.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
         storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
 
         Before you change the boot volume attachment type, detach all block volumes and VNICs except for
         the boot volume and the primary VNIC.
@@ -117,7 +123,7 @@ class UpdateLaunchOptions(object):
         :param boot_volume_type: The boot_volume_type of this UpdateLaunchOptions.
         :type: str
         """
-        allowed_values = ["ISCSI", "PARAVIRTUALIZED"]
+        allowed_values = ["ISCSI", "PARAVIRTUALIZED", "NVME"]
         if not value_allowed_none_or_none_sentinel(boot_volume_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `boot_volume_type`, must be None or one of {allowed_values}"

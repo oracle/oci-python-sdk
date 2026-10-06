@@ -56,7 +56,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -100,7 +100,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -144,7 +144,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -188,7 +188,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -232,7 +232,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -276,7 +276,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -320,7 +320,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -527,7 +527,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -566,7 +566,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -605,7 +605,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -646,7 +646,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -939,7 +939,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -988,7 +988,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1037,7 +1037,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1269,7 +1269,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1313,7 +1313,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1357,7 +1357,7 @@ class IotClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )

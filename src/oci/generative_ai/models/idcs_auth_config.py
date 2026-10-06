@@ -13,8 +13,10 @@ from oci.decorators import init_model_state_from_kwargs
 class IdcsAuthConfig(object):
     """
     Oracle Identity Cloud Service (IDCS) configuration used
-    when inboundAuthConfigType is set to IDCS_AUTH_CONFIG.
-    This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+    when inboundAuthConfigType is set to IDCS_AUTH_CONFIG or IDCS_SESSION_AUTH_CONFIG.
+    This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG or IDCS_SESSION_AUTH_CONFIG.
+    When inboundAuthConfigType is IDCS_SESSION_AUTH_CONFIG, this configuration supports
+    OAuth 2.1 Authorization Code flow with PKCE.
     """
 
     def __init__(self, **kwargs):
@@ -34,20 +36,34 @@ class IdcsAuthConfig(object):
             The value to assign to the audience property of this IdcsAuthConfig.
         :type audience: str
 
+        :param client_id:
+            The value to assign to the client_id property of this IdcsAuthConfig.
+        :type client_id: str
+
+        :param client_secret_vault_id:
+            The value to assign to the client_secret_vault_id property of this IdcsAuthConfig.
+        :type client_secret_vault_id: str
+
         """
         self.swagger_types = {
             'domain_url': 'str',
             'scope': 'str',
-            'audience': 'str'
+            'audience': 'str',
+            'client_id': 'str',
+            'client_secret_vault_id': 'str'
         }
         self.attribute_map = {
             'domain_url': 'domainUrl',
             'scope': 'scope',
-            'audience': 'audience'
+            'audience': 'audience',
+            'client_id': 'clientId',
+            'client_secret_vault_id': 'clientSecretVaultId'
         }
         self._domain_url = None
         self._scope = None
         self._audience = None
+        self._client_id = None
+        self._client_secret_vault_id = None
 
     @property
     def domain_url(self):
@@ -120,6 +136,54 @@ class IdcsAuthConfig(object):
         :type: str
         """
         self._audience = audience
+
+    @property
+    def client_id(self):
+        """
+        Gets the client_id of this IdcsAuthConfig.
+        Optional OAuth client ID for the IDCS application. Applicable only when inboundAuthConfigType is IDCS_SESSION_AUTH_CONFIG.
+
+
+        :return: The client_id of this IdcsAuthConfig.
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """
+        Sets the client_id of this IdcsAuthConfig.
+        Optional OAuth client ID for the IDCS application. Applicable only when inboundAuthConfigType is IDCS_SESSION_AUTH_CONFIG.
+
+
+        :param client_id: The client_id of this IdcsAuthConfig.
+        :type: str
+        """
+        self._client_id = client_id
+
+    @property
+    def client_secret_vault_id(self):
+        """
+        Gets the client_secret_vault_id of this IdcsAuthConfig.
+        Optional OCI Vault secret OCID containing the OAuth client secret. Applicable only when inboundAuthConfigType is IDCS_SESSION_AUTH_CONFIG.
+
+
+        :return: The client_secret_vault_id of this IdcsAuthConfig.
+        :rtype: str
+        """
+        return self._client_secret_vault_id
+
+    @client_secret_vault_id.setter
+    def client_secret_vault_id(self, client_secret_vault_id):
+        """
+        Sets the client_secret_vault_id of this IdcsAuthConfig.
+        Optional OCI Vault secret OCID containing the OAuth client secret. Applicable only when inboundAuthConfigType is IDCS_SESSION_AUTH_CONFIG.
+
+
+        :param client_secret_vault_id: The client_secret_vault_id of this IdcsAuthConfig.
+        :type: str
+        """
+        self._client_secret_vault_id = client_secret_vault_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

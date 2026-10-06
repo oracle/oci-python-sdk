@@ -83,6 +83,10 @@ class IScsiVolumeAttachment(VolumeAttachment):
             The value to assign to the is_pv_encryption_in_transit_enabled property of this IScsiVolumeAttachment.
         :type is_pv_encryption_in_transit_enabled: bool
 
+        :param is_encryption_in_transit_enabled:
+            The value to assign to the is_encryption_in_transit_enabled property of this IScsiVolumeAttachment.
+        :type is_encryption_in_transit_enabled: bool
+
         :param is_multipath:
             The value to assign to the is_multipath property of this IScsiVolumeAttachment.
         :type is_multipath: bool
@@ -150,6 +154,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'time_created': 'datetime',
             'volume_id': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool',
+            'is_encryption_in_transit_enabled': 'bool',
             'is_multipath': 'bool',
             'iscsi_login_state': 'str',
             'is_volume_created_during_launch': 'bool',
@@ -177,6 +182,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'time_created': 'timeCreated',
             'volume_id': 'volumeId',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'is_encryption_in_transit_enabled': 'isEncryptionInTransitEnabled',
             'is_multipath': 'isMultipath',
             'iscsi_login_state': 'iscsiLoginState',
             'is_volume_created_during_launch': 'isVolumeCreatedDuringLaunch',
@@ -203,6 +209,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._time_created = None
         self._volume_id = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._is_encryption_in_transit_enabled = None
         self._is_multipath = None
         self._iscsi_login_state = None
         self._is_volume_created_during_launch = None
@@ -425,8 +432,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def encryption_in_transit_type(self):
         """
         Gets the encryption_in_transit_type of this IScsiVolumeAttachment.
-        Refer the top-level definition of encryptionInTransitType.
-        The default value is NONE.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
 
         Allowed values for this property are: "NONE", "BM_ENCRYPTION_IN_TRANSIT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -441,8 +447,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def encryption_in_transit_type(self, encryption_in_transit_type):
         """
         Sets the encryption_in_transit_type of this IScsiVolumeAttachment.
-        Refer the top-level definition of encryptionInTransitType.
-        The default value is NONE.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
 
 
         :param encryption_in_transit_type: The encryption_in_transit_type of this IScsiVolumeAttachment.

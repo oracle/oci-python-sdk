@@ -89,6 +89,10 @@ class BootVolumeAttachment(object):
             The value to assign to the is_pv_encryption_in_transit_enabled property of this BootVolumeAttachment.
         :type is_pv_encryption_in_transit_enabled: bool
 
+        :param is_encryption_in_transit_enabled:
+            The value to assign to the is_encryption_in_transit_enabled property of this BootVolumeAttachment.
+        :type is_encryption_in_transit_enabled: bool
+
         :param encryption_in_transit_type:
             The value to assign to the encryption_in_transit_type property of this BootVolumeAttachment.
             Allowed values for this property are: "NONE", "BM_ENCRYPTION_IN_TRANSIT", 'UNKNOWN_ENUM_VALUE'.
@@ -107,6 +111,7 @@ class BootVolumeAttachment(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'is_pv_encryption_in_transit_enabled': 'bool',
+            'is_encryption_in_transit_enabled': 'bool',
             'encryption_in_transit_type': 'str'
         }
         self.attribute_map = {
@@ -120,6 +125,7 @@ class BootVolumeAttachment(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'is_encryption_in_transit_enabled': 'isEncryptionInTransitEnabled',
             'encryption_in_transit_type': 'encryptionInTransitType'
         }
         self._availability_domain = None
@@ -132,6 +138,7 @@ class BootVolumeAttachment(object):
         self._time_created = None
         self._time_updated = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._is_encryption_in_transit_enabled = None
         self._encryption_in_transit_type = None
 
     @property
@@ -382,7 +389,7 @@ class BootVolumeAttachment(object):
     def is_pv_encryption_in_transit_enabled(self):
         """
         Gets the is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.
-        Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
 
 
         :return: The is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.
@@ -394,7 +401,7 @@ class BootVolumeAttachment(object):
     def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
         """
         Sets the is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.
-        Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
 
 
         :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this BootVolumeAttachment.
@@ -403,11 +410,34 @@ class BootVolumeAttachment(object):
         self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
 
     @property
+    def is_encryption_in_transit_enabled(self):
+        """
+        Gets the is_encryption_in_transit_enabled of this BootVolumeAttachment.
+        Specifies whether in-transit encryption is enabled for the boot volume's attachment.
+
+
+        :return: The is_encryption_in_transit_enabled of this BootVolumeAttachment.
+        :rtype: bool
+        """
+        return self._is_encryption_in_transit_enabled
+
+    @is_encryption_in_transit_enabled.setter
+    def is_encryption_in_transit_enabled(self, is_encryption_in_transit_enabled):
+        """
+        Sets the is_encryption_in_transit_enabled of this BootVolumeAttachment.
+        Specifies whether in-transit encryption is enabled for the boot volume's attachment.
+
+
+        :param is_encryption_in_transit_enabled: The is_encryption_in_transit_enabled of this BootVolumeAttachment.
+        :type: bool
+        """
+        self._is_encryption_in_transit_enabled = is_encryption_in_transit_enabled
+
+    @property
     def encryption_in_transit_type(self):
         """
         Gets the encryption_in_transit_type of this BootVolumeAttachment.
-        Refer the top-level definition of encryptionInTransitType.
-        The default value is NONE.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
 
         Allowed values for this property are: "NONE", "BM_ENCRYPTION_IN_TRANSIT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -422,8 +452,7 @@ class BootVolumeAttachment(object):
     def encryption_in_transit_type(self, encryption_in_transit_type):
         """
         Sets the encryption_in_transit_type of this BootVolumeAttachment.
-        Refer the top-level definition of encryptionInTransitType.
-        The default value is NONE.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
 
 
         :param encryption_in_transit_type: The encryption_in_transit_type of this BootVolumeAttachment.

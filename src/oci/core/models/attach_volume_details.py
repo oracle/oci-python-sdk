@@ -23,6 +23,7 @@ class AttachVolumeDetails(object):
         * :class:`~oci.core.models.AttachServiceDeterminedVolumeDetails`
         * :class:`~oci.core.models.AttachEmulatedVolumeDetails`
         * :class:`~oci.core.models.AttachIScsiVolumeDetails`
+        * :class:`~oci.core.models.AttachNvmeVolumeDetails`
         * :class:`~oci.core.models.AttachParavirtualizedVolumeDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -98,6 +99,9 @@ class AttachVolumeDetails(object):
 
         if type == 'iscsi':
             return 'AttachIScsiVolumeDetails'
+
+        if type == 'nvme':
+            return 'AttachNvmeVolumeDetails'
 
         if type == 'paravirtualized':
             return 'AttachParavirtualizedVolumeDetails'
@@ -238,7 +242,7 @@ class AttachVolumeDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this AttachVolumeDetails.
-        The type of volume. The only supported values are \"iscsi\" and \"paravirtualized\".
+        The type of volume. The only supported values are \"iscsi\", \"paravirtualized\", \"nvme\" and \"service_determined\" .
 
 
         :return: The type of this AttachVolumeDetails.
@@ -250,7 +254,7 @@ class AttachVolumeDetails(object):
     def type(self, type):
         """
         Sets the type of this AttachVolumeDetails.
-        The type of volume. The only supported values are \"iscsi\" and \"paravirtualized\".
+        The type of volume. The only supported values are \"iscsi\", \"paravirtualized\", \"nvme\" and \"service_determined\" .
 
 
         :param type: The type of this AttachVolumeDetails.

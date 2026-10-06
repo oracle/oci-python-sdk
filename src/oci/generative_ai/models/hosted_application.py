@@ -54,6 +54,14 @@ class HostedApplication(object):
             The value to assign to the inbound_auth_config property of this HostedApplication.
         :type inbound_auth_config: oci.generative_ai.models.InboundAuthConfig
 
+        :param application_endpoint:
+            The value to assign to the application_endpoint property of this HostedApplication.
+        :type application_endpoint: str
+
+        :param public_access_path_patterns:
+            The value to assign to the public_access_path_patterns property of this HostedApplication.
+        :type public_access_path_patterns: list[str]
+
         :param id:
             The value to assign to the id property of this HostedApplication.
         :type id: str
@@ -119,6 +127,8 @@ class HostedApplication(object):
         """
         self.swagger_types = {
             'inbound_auth_config': 'InboundAuthConfig',
+            'application_endpoint': 'str',
+            'public_access_path_patterns': 'list[str]',
             'id': 'str',
             'display_name': 'str',
             'description': 'str',
@@ -137,6 +147,8 @@ class HostedApplication(object):
         }
         self.attribute_map = {
             'inbound_auth_config': 'inboundAuthConfig',
+            'application_endpoint': 'applicationEndpoint',
+            'public_access_path_patterns': 'publicAccessPathPatterns',
             'id': 'id',
             'display_name': 'displayName',
             'description': 'description',
@@ -154,6 +166,8 @@ class HostedApplication(object):
             'system_tags': 'systemTags'
         }
         self._inbound_auth_config = None
+        self._application_endpoint = None
+        self._public_access_path_patterns = None
         self._id = None
         self._display_name = None
         self._description = None
@@ -189,6 +203,60 @@ class HostedApplication(object):
         :type: oci.generative_ai.models.InboundAuthConfig
         """
         self._inbound_auth_config = inbound_auth_config
+
+    @property
+    def application_endpoint(self):
+        """
+        Gets the application_endpoint of this HostedApplication.
+        Fully qualified domain name for invoking the hosted application over the dual-stack endpoint.
+        This value is output-only and is present only after the service has generated an application DNS label.
+
+
+        :return: The application_endpoint of this HostedApplication.
+        :rtype: str
+        """
+        return self._application_endpoint
+
+    @application_endpoint.setter
+    def application_endpoint(self, application_endpoint):
+        """
+        Sets the application_endpoint of this HostedApplication.
+        Fully qualified domain name for invoking the hosted application over the dual-stack endpoint.
+        This value is output-only and is present only after the service has generated an application DNS label.
+
+
+        :param application_endpoint: The application_endpoint of this HostedApplication.
+        :type: str
+        """
+        self._application_endpoint = application_endpoint
+
+    @property
+    def public_access_path_patterns(self):
+        """
+        Gets the public_access_path_patterns of this HostedApplication.
+        A list of hosted application path patterns that can be accessed without
+        inbound authentication. Values can be exact paths such as `/health` or `/callback`,
+        or wildcard paths such as `/assets/*` or `/public/*`.
+
+
+        :return: The public_access_path_patterns of this HostedApplication.
+        :rtype: list[str]
+        """
+        return self._public_access_path_patterns
+
+    @public_access_path_patterns.setter
+    def public_access_path_patterns(self, public_access_path_patterns):
+        """
+        Sets the public_access_path_patterns of this HostedApplication.
+        A list of hosted application path patterns that can be accessed without
+        inbound authentication. Values can be exact paths such as `/health` or `/callback`,
+        or wildcard paths such as `/assets/*` or `/public/*`.
+
+
+        :param public_access_path_patterns: The public_access_path_patterns of this HostedApplication.
+        :type: list[str]
+        """
+        self._public_access_path_patterns = public_access_path_patterns
 
     @property
     def id(self):

@@ -36,6 +36,10 @@ class InstanceConfigurationLaunchOptions(object):
     #: This constant has a value of "PARAVIRTUALIZED"
     BOOT_VOLUME_TYPE_PARAVIRTUALIZED = "PARAVIRTUALIZED"
 
+    #: A constant which can be used with the boot_volume_type property of a InstanceConfigurationLaunchOptions.
+    #: This constant has a value of "NVME"
+    BOOT_VOLUME_TYPE_NVME = "NVME"
+
     #: A constant which can be used with the firmware property of a InstanceConfigurationLaunchOptions.
     #: This constant has a value of "BIOS"
     FIRMWARE_BIOS = "BIOS"
@@ -80,6 +84,10 @@ class InstanceConfigurationLaunchOptions(object):
     #: This constant has a value of "PARAVIRTUALIZED"
     REMOTE_DATA_VOLUME_TYPE_PARAVIRTUALIZED = "PARAVIRTUALIZED"
 
+    #: A constant which can be used with the remote_data_volume_type property of a InstanceConfigurationLaunchOptions.
+    #: This constant has a value of "NVME"
+    REMOTE_DATA_VOLUME_TYPE_NVME = "NVME"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InstanceConfigurationLaunchOptions object with values from keyword arguments.
@@ -87,7 +95,7 @@ class InstanceConfigurationLaunchOptions(object):
 
         :param boot_volume_type:
             The value to assign to the boot_volume_type property of this InstanceConfigurationLaunchOptions.
-            Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", "NVME", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type boot_volume_type: str
 
@@ -105,13 +113,17 @@ class InstanceConfigurationLaunchOptions(object):
 
         :param remote_data_volume_type:
             The value to assign to the remote_data_volume_type property of this InstanceConfigurationLaunchOptions.
-            Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", "NVME", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type remote_data_volume_type: str
 
         :param is_pv_encryption_in_transit_enabled:
             The value to assign to the is_pv_encryption_in_transit_enabled property of this InstanceConfigurationLaunchOptions.
         :type is_pv_encryption_in_transit_enabled: bool
+
+        :param is_encryption_in_transit_enabled:
+            The value to assign to the is_encryption_in_transit_enabled property of this InstanceConfigurationLaunchOptions.
+        :type is_encryption_in_transit_enabled: bool
 
         :param is_consistent_volume_naming_enabled:
             The value to assign to the is_consistent_volume_naming_enabled property of this InstanceConfigurationLaunchOptions.
@@ -124,6 +136,7 @@ class InstanceConfigurationLaunchOptions(object):
             'network_type': 'str',
             'remote_data_volume_type': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool',
+            'is_encryption_in_transit_enabled': 'bool',
             'is_consistent_volume_naming_enabled': 'bool'
         }
         self.attribute_map = {
@@ -132,6 +145,7 @@ class InstanceConfigurationLaunchOptions(object):
             'network_type': 'networkType',
             'remote_data_volume_type': 'remoteDataVolumeType',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'is_encryption_in_transit_enabled': 'isEncryptionInTransitEnabled',
             'is_consistent_volume_naming_enabled': 'isConsistentVolumeNamingEnabled'
         }
         self._boot_volume_type = None
@@ -139,6 +153,7 @@ class InstanceConfigurationLaunchOptions(object):
         self._network_type = None
         self._remote_data_volume_type = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._is_encryption_in_transit_enabled = None
         self._is_consistent_volume_naming_enabled = None
 
     @property
@@ -153,8 +168,9 @@ class InstanceConfigurationLaunchOptions(object):
         volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
         storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
 
-        Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", "NVME", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -175,12 +191,13 @@ class InstanceConfigurationLaunchOptions(object):
         volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
         storage volumes on platform images.
+        * `NVME` - NVMe attached remote block storage device.
 
 
         :param boot_volume_type: The boot_volume_type of this InstanceConfigurationLaunchOptions.
         :type: str
         """
-        allowed_values = ["ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED"]
+        allowed_values = ["ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", "NVME"]
         if not value_allowed_none_or_none_sentinel(boot_volume_type, allowed_values):
             boot_volume_type = 'UNKNOWN_ENUM_VALUE'
         self._boot_volume_type = boot_volume_type
@@ -275,8 +292,9 @@ class InstanceConfigurationLaunchOptions(object):
         volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
         storage volumes on platform images.
+          * `NVME` - NVMe attached remote block storage device.
 
-        Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", "NVME", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -297,12 +315,13 @@ class InstanceConfigurationLaunchOptions(object):
         volumes on platform images.
         * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
         storage volumes on platform images.
+          * `NVME` - NVMe attached remote block storage device.
 
 
         :param remote_data_volume_type: The remote_data_volume_type of this InstanceConfigurationLaunchOptions.
         :type: str
         """
-        allowed_values = ["ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED"]
+        allowed_values = ["ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", "NVME"]
         if not value_allowed_none_or_none_sentinel(remote_data_volume_type, allowed_values):
             remote_data_volume_type = 'UNKNOWN_ENUM_VALUE'
         self._remote_data_volume_type = remote_data_volume_type
@@ -311,8 +330,7 @@ class InstanceConfigurationLaunchOptions(object):
     def is_pv_encryption_in_transit_enabled(self):
         """
         Gets the is_pv_encryption_in_transit_enabled of this InstanceConfigurationLaunchOptions.
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in
-        :func:`instance_configuration_launch_instance_details`.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
 
 
         :return: The is_pv_encryption_in_transit_enabled of this InstanceConfigurationLaunchOptions.
@@ -324,14 +342,37 @@ class InstanceConfigurationLaunchOptions(object):
     def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
         """
         Sets the is_pv_encryption_in_transit_enabled of this InstanceConfigurationLaunchOptions.
-        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in
-        :func:`instance_configuration_launch_instance_details`.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
 
 
         :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this InstanceConfigurationLaunchOptions.
         :type: bool
         """
         self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
+
+    @property
+    def is_encryption_in_transit_enabled(self):
+        """
+        Gets the is_encryption_in_transit_enabled of this InstanceConfigurationLaunchOptions.
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+
+
+        :return: The is_encryption_in_transit_enabled of this InstanceConfigurationLaunchOptions.
+        :rtype: bool
+        """
+        return self._is_encryption_in_transit_enabled
+
+    @is_encryption_in_transit_enabled.setter
+    def is_encryption_in_transit_enabled(self, is_encryption_in_transit_enabled):
+        """
+        Sets the is_encryption_in_transit_enabled of this InstanceConfigurationLaunchOptions.
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+
+
+        :param is_encryption_in_transit_enabled: The is_encryption_in_transit_enabled of this InstanceConfigurationLaunchOptions.
+        :type: bool
+        """
+        self._is_encryption_in_transit_enabled = is_encryption_in_transit_enabled
 
     @property
     def is_consistent_volume_naming_enabled(self):

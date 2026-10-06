@@ -76,6 +76,7 @@ class VolumeAttachment(object):
 
         * :class:`~oci.core.models.IScsiVolumeAttachment`
         * :class:`~oci.core.models.EmulatedVolumeAttachment`
+        * :class:`~oci.core.models.NvmeVolumeAttachment`
         * :class:`~oci.core.models.ParavirtualizedVolumeAttachment`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -134,6 +135,10 @@ class VolumeAttachment(object):
             The value to assign to the is_pv_encryption_in_transit_enabled property of this VolumeAttachment.
         :type is_pv_encryption_in_transit_enabled: bool
 
+        :param is_encryption_in_transit_enabled:
+            The value to assign to the is_encryption_in_transit_enabled property of this VolumeAttachment.
+        :type is_encryption_in_transit_enabled: bool
+
         :param is_multipath:
             The value to assign to the is_multipath property of this VolumeAttachment.
         :type is_multipath: bool
@@ -163,6 +168,7 @@ class VolumeAttachment(object):
             'time_created': 'datetime',
             'volume_id': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool',
+            'is_encryption_in_transit_enabled': 'bool',
             'is_multipath': 'bool',
             'iscsi_login_state': 'str',
             'is_volume_created_during_launch': 'bool'
@@ -181,6 +187,7 @@ class VolumeAttachment(object):
             'time_created': 'timeCreated',
             'volume_id': 'volumeId',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'is_encryption_in_transit_enabled': 'isEncryptionInTransitEnabled',
             'is_multipath': 'isMultipath',
             'iscsi_login_state': 'iscsiLoginState',
             'is_volume_created_during_launch': 'isVolumeCreatedDuringLaunch'
@@ -198,6 +205,7 @@ class VolumeAttachment(object):
         self._time_created = None
         self._volume_id = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._is_encryption_in_transit_enabled = None
         self._is_multipath = None
         self._iscsi_login_state = None
         self._is_volume_created_during_launch = None
@@ -215,6 +223,9 @@ class VolumeAttachment(object):
 
         if type == 'emulated':
             return 'EmulatedVolumeAttachment'
+
+        if type == 'nvme':
+            return 'NvmeVolumeAttachment'
 
         if type == 'paravirtualized':
             return 'ParavirtualizedVolumeAttachment'
@@ -539,7 +550,7 @@ class VolumeAttachment(object):
     def is_pv_encryption_in_transit_enabled(self):
         """
         Gets the is_pv_encryption_in_transit_enabled of this VolumeAttachment.
-        Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
 
 
         :return: The is_pv_encryption_in_transit_enabled of this VolumeAttachment.
@@ -551,13 +562,37 @@ class VolumeAttachment(object):
     def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
         """
         Sets the is_pv_encryption_in_transit_enabled of this VolumeAttachment.
-        Whether in-transit encryption for the data volume's paravirtualized attachment is enabled or not.
+        Deprecated. Use `isEncryptionInTransitEnabled` instead.
 
 
         :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this VolumeAttachment.
         :type: bool
         """
         self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
+
+    @property
+    def is_encryption_in_transit_enabled(self):
+        """
+        Gets the is_encryption_in_transit_enabled of this VolumeAttachment.
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+
+
+        :return: The is_encryption_in_transit_enabled of this VolumeAttachment.
+        :rtype: bool
+        """
+        return self._is_encryption_in_transit_enabled
+
+    @is_encryption_in_transit_enabled.setter
+    def is_encryption_in_transit_enabled(self, is_encryption_in_transit_enabled):
+        """
+        Sets the is_encryption_in_transit_enabled of this VolumeAttachment.
+        Whether in-transit encryption for the data volume's attachment is enabled or not.
+
+
+        :param is_encryption_in_transit_enabled: The is_encryption_in_transit_enabled of this VolumeAttachment.
+        :type: bool
+        """
+        self._is_encryption_in_transit_enabled = is_encryption_in_transit_enabled
 
     @property
     def is_multipath(self):

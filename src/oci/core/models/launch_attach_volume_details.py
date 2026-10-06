@@ -20,6 +20,7 @@ class LaunchAttachVolumeDetails(object):
         Initializes a new LaunchAttachVolumeDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.core.models.LaunchAttachNvmeVolumeDetails`
         * :class:`~oci.core.models.LaunchAttachParavirtualizedVolumeDetails`
         * :class:`~oci.core.models.LaunchAttachIScsiVolumeDetails`
 
@@ -87,6 +88,9 @@ class LaunchAttachVolumeDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['type']
+
+        if type == 'nvme':
+            return 'LaunchAttachNvmeVolumeDetails'
 
         if type == 'paravirtualized':
             return 'LaunchAttachParavirtualizedVolumeDetails'
@@ -204,7 +208,7 @@ class LaunchAttachVolumeDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this LaunchAttachVolumeDetails.
-        The type of volume attachment. Currently, the only supported values are \"iscsi\" and \"paravirtualized\".
+        The type of volume attachment. Currently, the only supported values are \"iscsi\", \"paravirtualized\", and \"nvme\".
 
 
         :return: The type of this LaunchAttachVolumeDetails.
@@ -216,7 +220,7 @@ class LaunchAttachVolumeDetails(object):
     def type(self, type):
         """
         Sets the type of this LaunchAttachVolumeDetails.
-        The type of volume attachment. Currently, the only supported values are \"iscsi\" and \"paravirtualized\".
+        The type of volume attachment. Currently, the only supported values are \"iscsi\", \"paravirtualized\", and \"nvme\".
 
 
         :param type: The type of this LaunchAttachVolumeDetails.

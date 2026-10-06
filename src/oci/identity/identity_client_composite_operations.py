@@ -228,7 +228,7 @@ class IdentityClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -240,14 +240,14 @@ class IdentityClientCompositeOperations(object):
 
     def bulk_delete_tags_and_wait_for_state(self, bulk_delete_tags_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.identity.IdentityClient.bulk_delete_tags` and waits for the :py:class:`~oci.identity.models.WorkRequest`
+        Calls :py:func:`~oci.identity.IdentityClient.bulk_delete_tags` and waits for the :py:class:`~oci.identity.models.TaggingWorkRequest`
         to enter the given state(s).
 
         :param oci.identity.models.BulkDeleteTagsDetails bulk_delete_tags_details: (required)
             Request object for deleting tags in bulk.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.TaggingWorkRequest.status`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.identity.IdentityClient.bulk_delete_tags`
@@ -267,7 +267,7 @@ class IdentityClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_tagging_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -279,11 +279,11 @@ class IdentityClientCompositeOperations(object):
 
     def bulk_edit_tags_and_wait_for_state(self, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.identity.IdentityClient.bulk_edit_tags` and waits for the :py:class:`~oci.identity.models.WorkRequest`
+        Calls :py:func:`~oci.identity.IdentityClient.bulk_edit_tags` and waits for the :py:class:`~oci.identity.models.TaggingWorkRequest`
         to enter the given state(s).
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.TaggingWorkRequest.status`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.identity.IdentityClient.bulk_edit_tags`
@@ -303,7 +303,7 @@ class IdentityClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_tagging_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -345,7 +345,7 @@ class IdentityClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -357,14 +357,14 @@ class IdentityClientCompositeOperations(object):
 
     def cascade_delete_tag_namespace_and_wait_for_state(self, tag_namespace_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.identity.IdentityClient.cascade_delete_tag_namespace` and waits for the :py:class:`~oci.identity.models.WorkRequest`
+        Calls :py:func:`~oci.identity.IdentityClient.cascade_delete_tag_namespace` and waits for the :py:class:`~oci.identity.models.TaggingWorkRequest`
         to enter the given state(s).
 
         :param str tag_namespace_id: (required)
             The OCID of the tag namespace.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.TaggingWorkRequest.status`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.identity.IdentityClient.cascade_delete_tag_namespace`
@@ -384,7 +384,7 @@ class IdentityClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_tagging_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1061,7 +1061,7 @@ class IdentityClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1356,7 +1356,7 @@ class IdentityClientCompositeOperations(object):
 
     def delete_tag_and_wait_for_state(self, tag_namespace_id, tag_name, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.identity.IdentityClient.delete_tag` and waits for the :py:class:`~oci.identity.models.WorkRequest`
+        Calls :py:func:`~oci.identity.IdentityClient.delete_tag` and waits for the :py:class:`~oci.identity.models.TaggingWorkRequest`
         to enter the given state(s).
 
         :param str tag_namespace_id: (required)
@@ -1366,7 +1366,7 @@ class IdentityClientCompositeOperations(object):
             The name of the tag.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.TaggingWorkRequest.status`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.identity.IdentityClient.delete_tag`
@@ -1394,7 +1394,7 @@ class IdentityClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_tagging_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1670,11 +1670,11 @@ class IdentityClientCompositeOperations(object):
 
     def import_standard_tags_and_wait_for_state(self, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.identity.IdentityClient.import_standard_tags` and waits for the :py:class:`~oci.identity.models.WorkRequest`
+        Calls :py:func:`~oci.identity.IdentityClient.import_standard_tags` and waits for the :py:class:`~oci.identity.models.TaggingWorkRequest`
         to enter the given state(s).
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.TaggingWorkRequest.status`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.identity.IdentityClient.import_standard_tags`
@@ -1694,7 +1694,7 @@ class IdentityClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_tagging_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1736,7 +1736,7 @@ class IdentityClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )

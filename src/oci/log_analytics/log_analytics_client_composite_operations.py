@@ -27,7 +27,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
     def append_lookup_data_and_wait_for_state(self, namespace_name, lookup_name, append_lookup_file_body, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.append_lookup_data` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.append_lookup_data` and waits for the :py:class:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
@@ -40,7 +40,7 @@ class LogAnalyticsClientCompositeOperations(object):
             The file to append.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest.lifecycle_state`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.append_lookup_data`
@@ -60,8 +60,8 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
-                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                self.client.get_config_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
@@ -72,7 +72,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
     def assign_encryption_key_and_wait_for_state(self, namespace_name, assign_encryption_key_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.assign_encryption_key` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.assign_encryption_key` and waits for the :py:class:`~oci.log_analytics.models.StorageWorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
@@ -82,7 +82,7 @@ class LogAnalyticsClientCompositeOperations(object):
             This is the input to assign customer encryption key.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.StorageWorkRequest.status`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.assign_encryption_key`
@@ -102,7 +102,7 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_storage_work_request(work_request_id=wait_for_resource_id, namespace_name=namespace_name),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -339,7 +339,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
     def delete_associations_and_wait_for_state(self, namespace_name, delete_log_analytics_association_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.delete_associations` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.delete_associations` and waits for the :py:class:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
@@ -349,7 +349,7 @@ class LogAnalyticsClientCompositeOperations(object):
             details for association
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest.lifecycle_state`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.delete_associations`
@@ -369,8 +369,8 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
-                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                self.client.get_config_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
@@ -381,7 +381,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
     def delete_lookup_and_wait_for_state(self, namespace_name, lookup_name, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.delete_lookup` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.delete_lookup` and waits for the :py:class:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
@@ -391,7 +391,7 @@ class LogAnalyticsClientCompositeOperations(object):
             The name of the lookup to operate on.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest.lifecycle_state`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.delete_lookup`
@@ -419,8 +419,8 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
-                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                self.client.get_config_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
@@ -464,7 +464,7 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -476,7 +476,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
     def disable_ingest_time_rule_and_wait_for_state(self, namespace_name, ingest_time_rule_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.disable_ingest_time_rule` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.disable_ingest_time_rule` and waits for the :py:class:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
@@ -486,7 +486,7 @@ class LogAnalyticsClientCompositeOperations(object):
             Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest.lifecycle_state`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.disable_ingest_time_rule`
@@ -506,8 +506,8 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
-                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                self.client.get_config_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
@@ -551,7 +551,7 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -563,7 +563,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
     def enable_ingest_time_rule_and_wait_for_state(self, namespace_name, ingest_time_rule_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.enable_ingest_time_rule` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.enable_ingest_time_rule` and waits for the :py:class:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
@@ -573,7 +573,7 @@ class LogAnalyticsClientCompositeOperations(object):
             Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest.lifecycle_state`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.enable_ingest_time_rule`
@@ -593,8 +593,8 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
-                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                self.client.get_config_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
@@ -632,7 +632,7 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -671,7 +671,7 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -729,7 +729,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
     def purge_storage_data_and_wait_for_state(self, namespace_name, purge_storage_data_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.purge_storage_data` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.purge_storage_data` and waits for the :py:class:`~oci.log_analytics.models.StorageWorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
@@ -739,7 +739,7 @@ class LogAnalyticsClientCompositeOperations(object):
             This is the input to purge old data.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.StorageWorkRequest.status`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.purge_storage_data`
@@ -759,7 +759,7 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_storage_work_request(work_request_id=wait_for_resource_id, namespace_name=namespace_name),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -771,7 +771,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
     def query_and_wait_for_state(self, namespace_name, query_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.query` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.query` and waits for the :py:class:`~oci.log_analytics.models.QueryWorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
@@ -781,7 +781,7 @@ class LogAnalyticsClientCompositeOperations(object):
             Query to be executed.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.QueryWorkRequest.status`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.query`
@@ -801,7 +801,7 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_query_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -813,7 +813,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
     def recall_archived_data_and_wait_for_state(self, namespace_name, recall_archived_data_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.recall_archived_data` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.recall_archived_data` and waits for the :py:class:`~oci.log_analytics.models.StorageWorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
@@ -823,7 +823,7 @@ class LogAnalyticsClientCompositeOperations(object):
             This is the input to recall archived data.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.StorageWorkRequest.status`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.recall_archived_data`
@@ -843,7 +843,7 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_storage_work_request(work_request_id=wait_for_resource_id, namespace_name=namespace_name),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -855,7 +855,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
     def release_recalled_data_and_wait_for_state(self, namespace_name, release_recalled_data_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.release_recalled_data` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.release_recalled_data` and waits for the :py:class:`~oci.log_analytics.models.StorageWorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
@@ -865,7 +865,7 @@ class LogAnalyticsClientCompositeOperations(object):
             This is the input to release recalled data
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.StorageWorkRequest.status`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.release_recalled_data`
@@ -885,7 +885,7 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_storage_work_request(work_request_id=wait_for_resource_id, namespace_name=namespace_name),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1170,7 +1170,7 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self.client.get_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1232,7 +1232,7 @@ class LogAnalyticsClientCompositeOperations(object):
 
     def upsert_associations_and_wait_for_state(self, namespace_name, upsert_log_analytics_association_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.upsert_associations` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.upsert_associations` and waits for the :py:class:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest`
         to enter the given state(s).
 
         :param str namespace_name: (required)
@@ -1242,7 +1242,7 @@ class LogAnalyticsClientCompositeOperations(object):
             list of association details
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest.lifecycle_state`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.upsert_associations`
@@ -1262,8 +1262,8 @@ class LogAnalyticsClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_work_request(wait_for_resource_id),
-                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                self.client.get_config_work_request(namespace_name=namespace_name, work_request_id=wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result

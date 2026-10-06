@@ -66,6 +66,7 @@ Core Services
     oci.core.models.AttachIScsiVolumeDetails
     oci.core.models.AttachInstancePoolInstanceDetails
     oci.core.models.AttachLoadBalancerDetails
+    oci.core.models.AttachNvmeVolumeDetails
     oci.core.models.AttachParavirtualizedVolumeDetails
     oci.core.models.AttachServiceDeterminedVolumeDetails
     oci.core.models.AttachVnicDetails
@@ -88,6 +89,7 @@ Core Services
     oci.core.models.BootVolumeSourceFromBootVolumeBackupDetails
     oci.core.models.BootVolumeSourceFromBootVolumeDetails
     oci.core.models.BootVolumeSourceFromBootVolumeReplicaDetails
+    oci.core.models.BsNvmeAttachmentsConfig
     oci.core.models.BulkAddVirtualCircuitPublicPrefixesDetails
     oci.core.models.BulkCreateIpv6sDetails
     oci.core.models.BulkCreateIpv6sItem
@@ -433,6 +435,7 @@ Core Services
     oci.core.models.InstanceConfigurationLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationLaunchInstanceShapeConfigDetails
     oci.core.models.InstanceConfigurationLaunchOptions
+    oci.core.models.InstanceConfigurationNvmeAttachVolumeDetails
     oci.core.models.InstanceConfigurationParavirtualizedAttachVolumeDetails
     oci.core.models.InstanceConfigurationPerformanceBasedAutotunePolicy
     oci.core.models.InstanceConfigurationPlacementConstraintDetails
@@ -497,6 +500,7 @@ Core Services
     oci.core.models.Ipv6
     oci.core.models.Ipv6AddressIpv6SubnetCidrPairDetails
     oci.core.models.LaunchAttachIScsiVolumeDetails
+    oci.core.models.LaunchAttachNvmeVolumeDetails
     oci.core.models.LaunchAttachParavirtualizedVolumeDetails
     oci.core.models.LaunchAttachVolumeDetails
     oci.core.models.LaunchCreateVolumeDetails
@@ -529,6 +533,7 @@ Core Services
     oci.core.models.NetworkSecurityGroup
     oci.core.models.NetworkSecurityGroupVnic
     oci.core.models.NetworkingTopology
+    oci.core.models.NvmeVolumeAttachment
     oci.core.models.ParavirtualizedVolumeAttachment
     oci.core.models.PatchSubnetDetails
     oci.core.models.PatchSubnetInstruction

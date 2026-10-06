@@ -48,6 +48,7 @@ from .attach_emulated_volume_details import AttachEmulatedVolumeDetails
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
 from .attach_instance_pool_instance_details import AttachInstancePoolInstanceDetails
 from .attach_load_balancer_details import AttachLoadBalancerDetails
+from .attach_nvme_volume_details import AttachNvmeVolumeDetails
 from .attach_paravirtualized_volume_details import AttachParavirtualizedVolumeDetails
 from .attach_service_determined_volume_details import AttachServiceDeterminedVolumeDetails
 from .attach_vnic_details import AttachVnicDetails
@@ -70,6 +71,7 @@ from .boot_volume_source_from_boot_volume_backup_delta_details import BootVolume
 from .boot_volume_source_from_boot_volume_backup_details import BootVolumeSourceFromBootVolumeBackupDetails
 from .boot_volume_source_from_boot_volume_details import BootVolumeSourceFromBootVolumeDetails
 from .boot_volume_source_from_boot_volume_replica_details import BootVolumeSourceFromBootVolumeReplicaDetails
+from .bs_nvme_attachments_config import BsNvmeAttachmentsConfig
 from .bulk_add_virtual_circuit_public_prefixes_details import BulkAddVirtualCircuitPublicPrefixesDetails
 from .bulk_create_ipv6s_details import BulkCreateIpv6sDetails
 from .bulk_create_ipv6s_item import BulkCreateIpv6sItem
@@ -415,6 +417,7 @@ from .instance_configuration_launch_instance_details import InstanceConfiguratio
 from .instance_configuration_launch_instance_platform_config import InstanceConfigurationLaunchInstancePlatformConfig
 from .instance_configuration_launch_instance_shape_config_details import InstanceConfigurationLaunchInstanceShapeConfigDetails
 from .instance_configuration_launch_options import InstanceConfigurationLaunchOptions
+from .instance_configuration_nvme_attach_volume_details import InstanceConfigurationNvmeAttachVolumeDetails
 from .instance_configuration_paravirtualized_attach_volume_details import InstanceConfigurationParavirtualizedAttachVolumeDetails
 from .instance_configuration_performance_based_autotune_policy import InstanceConfigurationPerformanceBasedAutotunePolicy
 from .instance_configuration_placement_constraint_details import InstanceConfigurationPlacementConstraintDetails
@@ -479,6 +482,7 @@ from .ipsec_tunnel_drg_attachment_network_details import IpsecTunnelDrgAttachmen
 from .ipv6 import Ipv6
 from .ipv6_address_ipv6_subnet_cidr_pair_details import Ipv6AddressIpv6SubnetCidrPairDetails
 from .launch_attach_i_scsi_volume_details import LaunchAttachIScsiVolumeDetails
+from .launch_attach_nvme_volume_details import LaunchAttachNvmeVolumeDetails
 from .launch_attach_paravirtualized_volume_details import LaunchAttachParavirtualizedVolumeDetails
 from .launch_attach_volume_details import LaunchAttachVolumeDetails
 from .launch_create_volume_details import LaunchCreateVolumeDetails
@@ -511,6 +515,7 @@ from .nat_gateway import NatGateway
 from .network_security_group import NetworkSecurityGroup
 from .network_security_group_vnic import NetworkSecurityGroupVnic
 from .networking_topology import NetworkingTopology
+from .nvme_volume_attachment import NvmeVolumeAttachment
 from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
 from .patch_subnet_details import PatchSubnetDetails
 from .patch_subnet_instruction import PatchSubnetInstruction
@@ -773,6 +778,7 @@ core_type_mapping = {
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
     "AttachInstancePoolInstanceDetails": AttachInstancePoolInstanceDetails,
     "AttachLoadBalancerDetails": AttachLoadBalancerDetails,
+    "AttachNvmeVolumeDetails": AttachNvmeVolumeDetails,
     "AttachParavirtualizedVolumeDetails": AttachParavirtualizedVolumeDetails,
     "AttachServiceDeterminedVolumeDetails": AttachServiceDeterminedVolumeDetails,
     "AttachVnicDetails": AttachVnicDetails,
@@ -795,6 +801,7 @@ core_type_mapping = {
     "BootVolumeSourceFromBootVolumeBackupDetails": BootVolumeSourceFromBootVolumeBackupDetails,
     "BootVolumeSourceFromBootVolumeDetails": BootVolumeSourceFromBootVolumeDetails,
     "BootVolumeSourceFromBootVolumeReplicaDetails": BootVolumeSourceFromBootVolumeReplicaDetails,
+    "BsNvmeAttachmentsConfig": BsNvmeAttachmentsConfig,
     "BulkAddVirtualCircuitPublicPrefixesDetails": BulkAddVirtualCircuitPublicPrefixesDetails,
     "BulkCreateIpv6sDetails": BulkCreateIpv6sDetails,
     "BulkCreateIpv6sItem": BulkCreateIpv6sItem,
@@ -1140,6 +1147,7 @@ core_type_mapping = {
     "InstanceConfigurationLaunchInstancePlatformConfig": InstanceConfigurationLaunchInstancePlatformConfig,
     "InstanceConfigurationLaunchInstanceShapeConfigDetails": InstanceConfigurationLaunchInstanceShapeConfigDetails,
     "InstanceConfigurationLaunchOptions": InstanceConfigurationLaunchOptions,
+    "InstanceConfigurationNvmeAttachVolumeDetails": InstanceConfigurationNvmeAttachVolumeDetails,
     "InstanceConfigurationParavirtualizedAttachVolumeDetails": InstanceConfigurationParavirtualizedAttachVolumeDetails,
     "InstanceConfigurationPerformanceBasedAutotunePolicy": InstanceConfigurationPerformanceBasedAutotunePolicy,
     "InstanceConfigurationPlacementConstraintDetails": InstanceConfigurationPlacementConstraintDetails,
@@ -1204,6 +1212,7 @@ core_type_mapping = {
     "Ipv6": Ipv6,
     "Ipv6AddressIpv6SubnetCidrPairDetails": Ipv6AddressIpv6SubnetCidrPairDetails,
     "LaunchAttachIScsiVolumeDetails": LaunchAttachIScsiVolumeDetails,
+    "LaunchAttachNvmeVolumeDetails": LaunchAttachNvmeVolumeDetails,
     "LaunchAttachParavirtualizedVolumeDetails": LaunchAttachParavirtualizedVolumeDetails,
     "LaunchAttachVolumeDetails": LaunchAttachVolumeDetails,
     "LaunchCreateVolumeDetails": LaunchCreateVolumeDetails,
@@ -1236,6 +1245,7 @@ core_type_mapping = {
     "NetworkSecurityGroup": NetworkSecurityGroup,
     "NetworkSecurityGroupVnic": NetworkSecurityGroupVnic,
     "NetworkingTopology": NetworkingTopology,
+    "NvmeVolumeAttachment": NvmeVolumeAttachment,
     "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
     "PatchSubnetDetails": PatchSubnetDetails,
     "PatchSubnetInstruction": PatchSubnetInstruction,
