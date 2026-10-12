@@ -13,7 +13,7 @@ from . import test_config_container
 
 
 def pytest_addoption(parser):
-    parser.addoption("--config-file", action="store", help="location of the config file",
+    parser.addoption("--config", action="store", help="location of the config file",
                      default=get_resource_path('config'))
     parser.addoption("--config-profile", action="store",
                      help="profile to use from the config file",
@@ -30,7 +30,7 @@ def pytest_configure(config):
 
 @pytest.fixture(scope="session")
 def config_file(request):
-    return request.config.getoption("--config-file")
+    return request.config.getoption("--config")
 
 
 @pytest.fixture(scope="session")
