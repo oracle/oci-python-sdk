@@ -36,6 +36,10 @@ class DbVersionSummary(object):
             The value to assign to the supports_pdb property of this DbVersionSummary.
         :type supports_pdb: bool
 
+        :param is_older_version_acknowledgment_required:
+            The value to assign to the is_older_version_acknowledgment_required property of this DbVersionSummary.
+        :type is_older_version_acknowledgment_required: bool
+
         :param is_preview_db_version:
             The value to assign to the is_preview_db_version property of this DbVersionSummary.
         :type is_preview_db_version: bool
@@ -49,6 +53,7 @@ class DbVersionSummary(object):
             'version': 'str',
             'is_latest_for_major_version': 'bool',
             'supports_pdb': 'bool',
+            'is_older_version_acknowledgment_required': 'bool',
             'is_preview_db_version': 'bool',
             'is_upgrade_supported': 'bool'
         }
@@ -56,12 +61,14 @@ class DbVersionSummary(object):
             'version': 'version',
             'is_latest_for_major_version': 'isLatestForMajorVersion',
             'supports_pdb': 'supportsPdb',
+            'is_older_version_acknowledgment_required': 'isOlderVersionAcknowledgmentRequired',
             'is_preview_db_version': 'isPreviewDbVersion',
             'is_upgrade_supported': 'isUpgradeSupported'
         }
         self._version = None
         self._is_latest_for_major_version = None
         self._supports_pdb = None
+        self._is_older_version_acknowledgment_required = None
         self._is_preview_db_version = None
         self._is_upgrade_supported = None
 
@@ -136,6 +143,30 @@ class DbVersionSummary(object):
         :type: bool
         """
         self._supports_pdb = supports_pdb
+
+    @property
+    def is_older_version_acknowledgment_required(self):
+        """
+        Gets the is_older_version_acknowledgment_required of this DbVersionSummary.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :return: The is_older_version_acknowledgment_required of this DbVersionSummary.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledgment_required
+
+    @is_older_version_acknowledgment_required.setter
+    def is_older_version_acknowledgment_required(self, is_older_version_acknowledgment_required):
+        """
+        Sets the is_older_version_acknowledgment_required of this DbVersionSummary.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :param is_older_version_acknowledgment_required: The is_older_version_acknowledgment_required of this DbVersionSummary.
+        :type: bool
+        """
+        self._is_older_version_acknowledgment_required = is_older_version_acknowledgment_required
 
     @property
     def is_preview_db_version(self):

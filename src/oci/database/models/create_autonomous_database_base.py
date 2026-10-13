@@ -1269,7 +1269,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
-        Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
 
 
         :return: The is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
@@ -1281,7 +1281,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
-        Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
+        Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `FALSE`.
 
 
         :param is_auto_scaling_enabled: The is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
@@ -1852,6 +1852,8 @@ class CreateAutonomousDatabaseBase(object):
         When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
         For new databases, it is recommended to use either 19c or 26ai.
 
+        The default database version is the Oracle-recommended version. You can retrieve the default DB version by calling the :func:`list_autonomous_db_versions` operation.
+
         **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
 
 
@@ -1868,6 +1870,8 @@ class CreateAutonomousDatabaseBase(object):
         When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
         When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
         For new databases, it is recommended to use either 19c or 26ai.
+
+        The default database version is the Oracle-recommended version. You can retrieve the default DB version by calling the :func:`list_autonomous_db_versions` operation.
 
         **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
 

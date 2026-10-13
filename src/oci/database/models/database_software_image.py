@@ -158,6 +158,10 @@ class DatabaseSoftwareImage(object):
             The value to assign to the is_upgrade_supported property of this DatabaseSoftwareImage.
         :type is_upgrade_supported: bool
 
+        :param is_older_version_acknowledgment_required:
+            The value to assign to the is_older_version_acknowledgment_required property of this DatabaseSoftwareImage.
+        :type is_older_version_acknowledgment_required: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -177,7 +181,8 @@ class DatabaseSoftwareImage(object):
             'included_patches_summary': 'str',
             'database_software_image_one_off_patches': 'list[str]',
             'ls_inventory': 'str',
-            'is_upgrade_supported': 'bool'
+            'is_upgrade_supported': 'bool',
+            'is_older_version_acknowledgment_required': 'bool'
         }
         self.attribute_map = {
             'id': 'id',
@@ -197,7 +202,8 @@ class DatabaseSoftwareImage(object):
             'included_patches_summary': 'includedPatchesSummary',
             'database_software_image_one_off_patches': 'databaseSoftwareImageOneOffPatches',
             'ls_inventory': 'lsInventory',
-            'is_upgrade_supported': 'isUpgradeSupported'
+            'is_upgrade_supported': 'isUpgradeSupported',
+            'is_older_version_acknowledgment_required': 'isOlderVersionAcknowledgmentRequired'
         }
         self._id = None
         self._compartment_id = None
@@ -217,6 +223,7 @@ class DatabaseSoftwareImage(object):
         self._database_software_image_one_off_patches = None
         self._ls_inventory = None
         self._is_upgrade_supported = None
+        self._is_older_version_acknowledgment_required = None
 
     @property
     def id(self):
@@ -697,6 +704,30 @@ class DatabaseSoftwareImage(object):
         :type: bool
         """
         self._is_upgrade_supported = is_upgrade_supported
+
+    @property
+    def is_older_version_acknowledgment_required(self):
+        """
+        Gets the is_older_version_acknowledgment_required of this DatabaseSoftwareImage.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :return: The is_older_version_acknowledgment_required of this DatabaseSoftwareImage.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledgment_required
+
+    @is_older_version_acknowledgment_required.setter
+    def is_older_version_acknowledgment_required(self, is_older_version_acknowledgment_required):
+        """
+        Sets the is_older_version_acknowledgment_required of this DatabaseSoftwareImage.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :param is_older_version_acknowledgment_required: The is_older_version_acknowledgment_required of this DatabaseSoftwareImage.
+        :type: bool
+        """
+        self._is_older_version_acknowledgment_required = is_older_version_acknowledgment_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

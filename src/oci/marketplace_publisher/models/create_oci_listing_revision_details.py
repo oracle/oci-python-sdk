@@ -114,10 +114,6 @@ class CreateOciListingRevisionDetails(CreateListingRevisionDetails):
             The value to assign to the term_id property of this CreateOciListingRevisionDetails.
         :type term_id: str
 
-        :param vanity_url:
-            The value to assign to the vanity_url property of this CreateOciListingRevisionDetails.
-        :type vanity_url: str
-
         :param recommended_service_provider_listing_ids:
             The value to assign to the recommended_service_provider_listing_ids property of this CreateOciListingRevisionDetails.
         :type recommended_service_provider_listing_ids: list[str]
@@ -129,6 +125,10 @@ class CreateOciListingRevisionDetails(CreateListingRevisionDetails):
         :param is_rover_exportable:
             The value to assign to the is_rover_exportable property of this CreateOciListingRevisionDetails.
         :type is_rover_exportable: bool
+
+        :param vanity_url:
+            The value to assign to the vanity_url property of this CreateOciListingRevisionDetails.
+        :type vanity_url: str
 
         :param demo_url:
             The value to assign to the demo_url property of this CreateOciListingRevisionDetails.
@@ -163,10 +163,10 @@ class CreateOciListingRevisionDetails(CreateListingRevisionDetails):
             'pricing_plans': 'list[PricingPlan]',
             'partner_registration_url': 'str',
             'term_id': 'str',
-            'vanity_url': 'str',
             'recommended_service_provider_listing_ids': 'list[str]',
             'availability_and_pricing_policy': 'str',
             'is_rover_exportable': 'bool',
+            'vanity_url': 'str',
             'demo_url': 'str',
             'self_paced_training_url': 'str'
         }
@@ -194,10 +194,10 @@ class CreateOciListingRevisionDetails(CreateListingRevisionDetails):
             'pricing_plans': 'pricingPlans',
             'partner_registration_url': 'partnerRegistrationUrl',
             'term_id': 'termId',
-            'vanity_url': 'vanityUrl',
             'recommended_service_provider_listing_ids': 'recommendedServiceProviderListingIds',
             'availability_and_pricing_policy': 'availabilityAndPricingPolicy',
             'is_rover_exportable': 'isRoverExportable',
+            'vanity_url': 'vanityUrl',
             'demo_url': 'demoUrl',
             'self_paced_training_url': 'selfPacedTrainingUrl'
         }
@@ -224,10 +224,10 @@ class CreateOciListingRevisionDetails(CreateListingRevisionDetails):
         self._pricing_plans = None
         self._partner_registration_url = None
         self._term_id = None
-        self._vanity_url = None
         self._recommended_service_provider_listing_ids = None
         self._availability_and_pricing_policy = None
         self._is_rover_exportable = None
+        self._vanity_url = None
         self._demo_url = None
         self._self_paced_training_url = None
         self._listing_type = 'OCI_APPLICATION'
@@ -397,30 +397,6 @@ class CreateOciListingRevisionDetails(CreateListingRevisionDetails):
         self._term_id = term_id
 
     @property
-    def vanity_url(self):
-        """
-        Gets the vanity_url of this CreateOciListingRevisionDetails.
-        Custom link to the listing
-
-
-        :return: The vanity_url of this CreateOciListingRevisionDetails.
-        :rtype: str
-        """
-        return self._vanity_url
-
-    @vanity_url.setter
-    def vanity_url(self, vanity_url):
-        """
-        Sets the vanity_url of this CreateOciListingRevisionDetails.
-        Custom link to the listing
-
-
-        :param vanity_url: The vanity_url of this CreateOciListingRevisionDetails.
-        :type: str
-        """
-        self._vanity_url = vanity_url
-
-    @property
     def recommended_service_provider_listing_ids(self):
         """
         Gets the recommended_service_provider_listing_ids of this CreateOciListingRevisionDetails.
@@ -491,6 +467,30 @@ class CreateOciListingRevisionDetails(CreateListingRevisionDetails):
         :type: bool
         """
         self._is_rover_exportable = is_rover_exportable
+
+    @property
+    def vanity_url(self):
+        """
+        Gets the vanity_url of this CreateOciListingRevisionDetails.
+        Custom link to the listing
+
+
+        :return: The vanity_url of this CreateOciListingRevisionDetails.
+        :rtype: str
+        """
+        return self._vanity_url
+
+    @vanity_url.setter
+    def vanity_url(self, vanity_url):
+        """
+        Sets the vanity_url of this CreateOciListingRevisionDetails.
+        Custom link to the listing
+
+
+        :param vanity_url: The vanity_url of this CreateOciListingRevisionDetails.
+        :type: str
+        """
+        self._vanity_url = vanity_url
 
     @property
     def demo_url(self):

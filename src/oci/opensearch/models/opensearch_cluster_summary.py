@@ -106,6 +106,10 @@ class OpensearchClusterSummary(object):
             The value to assign to the load_balancer_config property of this OpensearchClusterSummary.
         :type load_balancer_config: oci.opensearch.models.LoadBalancerConfig
 
+        :param remote_reindex_trust_config:
+            The value to assign to the remote_reindex_trust_config property of this OpensearchClusterSummary.
+        :type remote_reindex_trust_config: oci.opensearch.models.RemoteReindexTrustConfig
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -125,7 +129,8 @@ class OpensearchClusterSummary(object):
             'security_mode': 'str',
             'backup_policy': 'BackupPolicy',
             'outbound_cluster_config': 'OutboundClusterConfig',
-            'load_balancer_config': 'LoadBalancerConfig'
+            'load_balancer_config': 'LoadBalancerConfig',
+            'remote_reindex_trust_config': 'RemoteReindexTrustConfig'
         }
         self.attribute_map = {
             'id': 'id',
@@ -145,7 +150,8 @@ class OpensearchClusterSummary(object):
             'security_mode': 'securityMode',
             'backup_policy': 'backupPolicy',
             'outbound_cluster_config': 'outboundClusterConfig',
-            'load_balancer_config': 'loadBalancerConfig'
+            'load_balancer_config': 'loadBalancerConfig',
+            'remote_reindex_trust_config': 'remoteReindexTrustConfig'
         }
         self._id = None
         self._display_name = None
@@ -165,6 +171,7 @@ class OpensearchClusterSummary(object):
         self._backup_policy = None
         self._outbound_cluster_config = None
         self._load_balancer_config = None
+        self._remote_reindex_trust_config = None
 
     @property
     def id(self):
@@ -619,6 +626,26 @@ class OpensearchClusterSummary(object):
         :type: oci.opensearch.models.LoadBalancerConfig
         """
         self._load_balancer_config = load_balancer_config
+
+    @property
+    def remote_reindex_trust_config(self):
+        """
+        Gets the remote_reindex_trust_config of this OpensearchClusterSummary.
+
+        :return: The remote_reindex_trust_config of this OpensearchClusterSummary.
+        :rtype: oci.opensearch.models.RemoteReindexTrustConfig
+        """
+        return self._remote_reindex_trust_config
+
+    @remote_reindex_trust_config.setter
+    def remote_reindex_trust_config(self, remote_reindex_trust_config):
+        """
+        Sets the remote_reindex_trust_config of this OpensearchClusterSummary.
+
+        :param remote_reindex_trust_config: The remote_reindex_trust_config of this OpensearchClusterSummary.
+        :type: oci.opensearch.models.RemoteReindexTrustConfig
+        """
+        self._remote_reindex_trust_config = remote_reindex_trust_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

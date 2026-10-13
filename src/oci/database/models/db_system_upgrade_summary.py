@@ -46,20 +46,27 @@ class DbSystemUpgradeSummary(object):
             The value to assign to the gi_version property of this DbSystemUpgradeSummary.
         :type gi_version: str
 
+        :param is_older_version_acknowledgment_required:
+            The value to assign to the is_older_version_acknowledgment_required property of this DbSystemUpgradeSummary.
+        :type is_older_version_acknowledgment_required: bool
+
         """
         self.swagger_types = {
             'component': 'str',
             'os_version': 'str',
-            'gi_version': 'str'
+            'gi_version': 'str',
+            'is_older_version_acknowledgment_required': 'bool'
         }
         self.attribute_map = {
             'component': 'component',
             'os_version': 'osVersion',
-            'gi_version': 'giVersion'
+            'gi_version': 'giVersion',
+            'is_older_version_acknowledgment_required': 'isOlderVersionAcknowledgmentRequired'
         }
         self._component = None
         self._os_version = None
         self._gi_version = None
+        self._is_older_version_acknowledgment_required = None
 
     @property
     def component(self):
@@ -138,6 +145,30 @@ class DbSystemUpgradeSummary(object):
         :type: str
         """
         self._gi_version = gi_version
+
+    @property
+    def is_older_version_acknowledgment_required(self):
+        """
+        Gets the is_older_version_acknowledgment_required of this DbSystemUpgradeSummary.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :return: The is_older_version_acknowledgment_required of this DbSystemUpgradeSummary.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledgment_required
+
+    @is_older_version_acknowledgment_required.setter
+    def is_older_version_acknowledgment_required(self, is_older_version_acknowledgment_required):
+        """
+        Sets the is_older_version_acknowledgment_required of this DbSystemUpgradeSummary.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :param is_older_version_acknowledgment_required: The is_older_version_acknowledgment_required of this DbSystemUpgradeSummary.
+        :type: bool
+        """
+        self._is_older_version_acknowledgment_required = is_older_version_acknowledgment_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -25,6 +25,10 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
             The value to assign to the database_software_image_id property of this CreateDataGuardAssociationToExistingVmClusterDetails.
         :type database_software_image_id: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this CreateDataGuardAssociationToExistingVmClusterDetails.
+        :type is_older_version_acknowledged: bool
+
         :param database_admin_password:
             The value to assign to the database_admin_password property of this CreateDataGuardAssociationToExistingVmClusterDetails.
         :type database_admin_password: str
@@ -70,6 +74,7 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
         """
         self.swagger_types = {
             'database_software_image_id': 'str',
+            'is_older_version_acknowledged': 'bool',
             'database_admin_password': 'str',
             'source_encryption_key_location_details': 'EncryptionKeyLocationDetails',
             'protection_mode': 'str',
@@ -83,6 +88,7 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
         }
         self.attribute_map = {
             'database_software_image_id': 'databaseSoftwareImageId',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'database_admin_password': 'databaseAdminPassword',
             'source_encryption_key_location_details': 'sourceEncryptionKeyLocationDetails',
             'protection_mode': 'protectionMode',
@@ -95,6 +101,7 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
             'peer_db_home_id': 'peerDbHomeId'
         }
         self._database_software_image_id = None
+        self._is_older_version_acknowledged = None
         self._database_admin_password = None
         self._source_encryption_key_location_details = None
         self._protection_mode = None

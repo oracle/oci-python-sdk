@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+26.09.29 - 26.09.29
+=====================
+* Added Network Firewall shape, lifecycle details, system tags, and security attributes
+* Added Network Firewall policy descriptions, lifecycle details, and system tags; retained the attached firewall count column as empty when unavailable
+* Added full policy security rules, NAT rules, URL lists, and address lists using paginated list calls and per-object GET requests, preserving rule priority
+* Added policy CSV collection counts, status, and errors, with support for previously saved nested reports
+
+=====================
 26.08.19 - 26.08.19
 =====================
 * Added Cloud Guard problems, managed lists, and data mask rules

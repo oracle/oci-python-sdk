@@ -29,6 +29,10 @@ class CreateGiHomeDetails(object):
             The value to assign to the gi_image_id property of this CreateGiHomeDetails.
         :type gi_image_id: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this CreateGiHomeDetails.
+        :type is_older_version_acknowledged: bool
+
         :param db_system_id:
             The value to assign to the db_system_id property of this CreateGiHomeDetails.
         :type db_system_id: str
@@ -45,6 +49,7 @@ class CreateGiHomeDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'gi_image_id': 'str',
+            'is_older_version_acknowledged': 'bool',
             'db_system_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -52,12 +57,14 @@ class CreateGiHomeDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'gi_image_id': 'giImageId',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'db_system_id': 'dbSystemId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
         self._gi_image_id = None
+        self._is_older_version_acknowledged = None
         self._db_system_id = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -113,6 +120,30 @@ class CreateGiHomeDetails(object):
         :type: str
         """
         self._gi_image_id = gi_image_id
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this CreateGiHomeDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this CreateGiHomeDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this CreateGiHomeDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this CreateGiHomeDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def db_system_id(self):

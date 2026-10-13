@@ -41,27 +41,27 @@ class TaskDetailsResponse(object):
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this TaskDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this TaskDetailsResponse.
             Allowed values for this property are: "function", "logRule", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type kind: str
 
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this TaskDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
+
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
-            'kind': 'str'
+            'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
-            'kind': 'kind'
+            'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -78,26 +78,6 @@ class TaskDetailsResponse(object):
             return 'FunctionTaskDetailsResponse'
         else:
             return 'TaskDetailsResponse'
-
-    @property
-    def private_endpoint_metadata(self):
-        """
-        Gets the private_endpoint_metadata of this TaskDetailsResponse.
-
-        :return: The private_endpoint_metadata of this TaskDetailsResponse.
-        :rtype: oci.sch.models.PrivateEndpointMetadata
-        """
-        return self._private_endpoint_metadata
-
-    @private_endpoint_metadata.setter
-    def private_endpoint_metadata(self, private_endpoint_metadata):
-        """
-        Sets the private_endpoint_metadata of this TaskDetailsResponse.
-
-        :param private_endpoint_metadata: The private_endpoint_metadata of this TaskDetailsResponse.
-        :type: oci.sch.models.PrivateEndpointMetadata
-        """
-        self._private_endpoint_metadata = private_endpoint_metadata
 
     @property
     def kind(self):
@@ -128,6 +108,26 @@ class TaskDetailsResponse(object):
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             kind = 'UNKNOWN_ENUM_VALUE'
         self._kind = kind
+
+    @property
+    def private_endpoint_metadata(self):
+        """
+        Gets the private_endpoint_metadata of this TaskDetailsResponse.
+
+        :return: The private_endpoint_metadata of this TaskDetailsResponse.
+        :rtype: oci.sch.models.PrivateEndpointMetadata
+        """
+        return self._private_endpoint_metadata
+
+    @private_endpoint_metadata.setter
+    def private_endpoint_metadata(self, private_endpoint_metadata):
+        """
+        Sets the private_endpoint_metadata of this TaskDetailsResponse.
+
+        :param private_endpoint_metadata: The private_endpoint_metadata of this TaskDetailsResponse.
+        :type: oci.sch.models.PrivateEndpointMetadata
+        """
+        self._private_endpoint_metadata = private_endpoint_metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

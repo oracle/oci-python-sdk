@@ -25,6 +25,7 @@ from .change_ml_application_compartment_details import ChangeMlApplicationCompar
 from .change_ml_application_implementation_compartment_details import ChangeMlApplicationImplementationCompartmentDetails
 from .change_ml_application_instance_compartment_details import ChangeMlApplicationInstanceCompartmentDetails
 from .change_ml_application_instance_view_compartment_details import ChangeMlApplicationInstanceViewCompartmentDetails
+from .change_model_artifact_signature_compartment_details import ChangeModelArtifactSignatureCompartmentDetails
 from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_model_deployment_compartment_details import ChangeModelDeploymentCompartmentDetails
 from .change_model_group_compartment_details import ChangeModelGroupCompartmentDetails
@@ -57,6 +58,7 @@ from .create_job_run_schedule_action_details import CreateJobRunScheduleActionDe
 from .create_ml_application_details import CreateMlApplicationDetails
 from .create_ml_application_implementation_details import CreateMlApplicationImplementationDetails
 from .create_ml_application_instance_details import CreateMlApplicationInstanceDetails
+from .create_model_artifact_signature_details import CreateModelArtifactSignatureDetails
 from .create_model_deployment_details import CreateModelDeploymentDetails
 from .create_model_details import CreateModelDetails
 from .create_model_group_details import CreateModelGroupDetails
@@ -179,6 +181,8 @@ from .ml_application_package_arguments import MlApplicationPackageArguments
 from .ml_application_summary import MlApplicationSummary
 from .model import Model
 from .model_artifact_reference_details import ModelArtifactReferenceDetails
+from .model_artifact_signature import ModelArtifactSignature
+from .model_artifact_signature_summary import ModelArtifactSignatureSummary
 from .model_configuration_details import ModelConfigurationDetails
 from .model_deploy_infrastructure_configuration_details import ModelDeployInfrastructureConfigurationDetails
 from .model_deploy_workload_configuration_details import ModelDeployWorkloadConfigurationDetails
@@ -316,6 +320,7 @@ from .update_ml_application_implementation_details import UpdateMlApplicationImp
 from .update_ml_application_implementation_version_details import UpdateMlApplicationImplementationVersionDetails
 from .update_ml_application_instance_details import UpdateMlApplicationInstanceDetails
 from .update_ml_application_instance_view_details import UpdateMlApplicationInstanceViewDetails
+from .update_model_artifact_signature_details import UpdateModelArtifactSignatureDetails
 from .update_model_configuration_details import UpdateModelConfigurationDetails
 from .update_model_deploy_infrastructure_configuration_details import UpdateModelDeployInfrastructureConfigurationDetails
 from .update_model_deployment_configuration_details import UpdateModelDeploymentConfigurationDetails
@@ -365,6 +370,7 @@ data_science_type_mapping = {
     "ChangeMlApplicationImplementationCompartmentDetails": ChangeMlApplicationImplementationCompartmentDetails,
     "ChangeMlApplicationInstanceCompartmentDetails": ChangeMlApplicationInstanceCompartmentDetails,
     "ChangeMlApplicationInstanceViewCompartmentDetails": ChangeMlApplicationInstanceViewCompartmentDetails,
+    "ChangeModelArtifactSignatureCompartmentDetails": ChangeModelArtifactSignatureCompartmentDetails,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
     "ChangeModelDeploymentCompartmentDetails": ChangeModelDeploymentCompartmentDetails,
     "ChangeModelGroupCompartmentDetails": ChangeModelGroupCompartmentDetails,
@@ -397,6 +403,7 @@ data_science_type_mapping = {
     "CreateMlApplicationDetails": CreateMlApplicationDetails,
     "CreateMlApplicationImplementationDetails": CreateMlApplicationImplementationDetails,
     "CreateMlApplicationInstanceDetails": CreateMlApplicationInstanceDetails,
+    "CreateModelArtifactSignatureDetails": CreateModelArtifactSignatureDetails,
     "CreateModelDeploymentDetails": CreateModelDeploymentDetails,
     "CreateModelDetails": CreateModelDetails,
     "CreateModelGroupDetails": CreateModelGroupDetails,
@@ -519,6 +526,8 @@ data_science_type_mapping = {
     "MlApplicationSummary": MlApplicationSummary,
     "Model": Model,
     "ModelArtifactReferenceDetails": ModelArtifactReferenceDetails,
+    "ModelArtifactSignature": ModelArtifactSignature,
+    "ModelArtifactSignatureSummary": ModelArtifactSignatureSummary,
     "ModelConfigurationDetails": ModelConfigurationDetails,
     "ModelDeployInfrastructureConfigurationDetails": ModelDeployInfrastructureConfigurationDetails,
     "ModelDeployWorkloadConfigurationDetails": ModelDeployWorkloadConfigurationDetails,
@@ -656,6 +665,7 @@ data_science_type_mapping = {
     "UpdateMlApplicationImplementationVersionDetails": UpdateMlApplicationImplementationVersionDetails,
     "UpdateMlApplicationInstanceDetails": UpdateMlApplicationInstanceDetails,
     "UpdateMlApplicationInstanceViewDetails": UpdateMlApplicationInstanceViewDetails,
+    "UpdateModelArtifactSignatureDetails": UpdateModelArtifactSignatureDetails,
     "UpdateModelConfigurationDetails": UpdateModelConfigurationDetails,
     "UpdateModelDeployInfrastructureConfigurationDetails": UpdateModelDeployInfrastructureConfigurationDetails,
     "UpdateModelDeploymentConfigurationDetails": UpdateModelDeploymentConfigurationDetails,

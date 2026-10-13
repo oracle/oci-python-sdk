@@ -78,26 +78,33 @@ class UpdateDetails(object):
             The value to assign to the gi_software_image_id property of this UpdateDetails.
         :type gi_software_image_id: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this UpdateDetails.
+        :type is_older_version_acknowledged: bool
+
         """
         self.swagger_types = {
             'update_id': 'str',
             'gi_home_id': 'str',
             'update_action': 'str',
             'update_mode': 'str',
-            'gi_software_image_id': 'str'
+            'gi_software_image_id': 'str',
+            'is_older_version_acknowledged': 'bool'
         }
         self.attribute_map = {
             'update_id': 'updateId',
             'gi_home_id': 'giHomeId',
             'update_action': 'updateAction',
             'update_mode': 'updateMode',
-            'gi_software_image_id': 'giSoftwareImageId'
+            'gi_software_image_id': 'giSoftwareImageId',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged'
         }
         self._update_id = None
         self._gi_home_id = None
         self._update_action = None
         self._update_mode = None
         self._gi_software_image_id = None
+        self._is_older_version_acknowledged = None
 
     @property
     def update_id(self):
@@ -248,6 +255,30 @@ class UpdateDetails(object):
         :type: str
         """
         self._gi_software_image_id = gi_software_image_id
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this UpdateDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this UpdateDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this UpdateDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this UpdateDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     def __repr__(self):
         return formatted_flat_dict(self)

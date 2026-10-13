@@ -25,14 +25,14 @@ class MonitoringTargetDetailsResponse(TargetDetailsResponse):
         of this class is ``monitoring`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this MonitoringTargetDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this MonitoringTargetDetailsResponse.
             Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"
         :type kind: str
+
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this MonitoringTargetDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
 
         :param compartment_id:
             The value to assign to the compartment_id property of this MonitoringTargetDetailsResponse.
@@ -52,23 +52,23 @@ class MonitoringTargetDetailsResponse(TargetDetailsResponse):
 
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'compartment_id': 'str',
             'metric_namespace': 'str',
             'metric': 'str',
             'dimensions': 'list[DimensionDetails]'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
             'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata',
             'compartment_id': 'compartmentId',
             'metric_namespace': 'metricNamespace',
             'metric': 'metric',
             'dimensions': 'dimensions'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
         self._compartment_id = None
         self._metric_namespace = None
         self._metric = None

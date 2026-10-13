@@ -76,6 +76,10 @@ class CreateDatabaseSoftwareImageDetails(object):
             The value to assign to the patch_set property of this CreateDatabaseSoftwareImageDetails.
         :type patch_set: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this CreateDatabaseSoftwareImageDetails.
+        :type is_older_version_acknowledged: bool
+
         :param database_software_image_one_off_patches:
             The value to assign to the database_software_image_one_off_patches property of this CreateDatabaseSoftwareImageDetails.
         :type database_software_image_one_off_patches: list[str]
@@ -108,6 +112,7 @@ class CreateDatabaseSoftwareImageDetails(object):
             'image_shape_family': 'str',
             'image_type': 'str',
             'patch_set': 'str',
+            'is_older_version_acknowledged': 'bool',
             'database_software_image_one_off_patches': 'list[str]',
             'ls_inventory': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -122,6 +127,7 @@ class CreateDatabaseSoftwareImageDetails(object):
             'image_shape_family': 'imageShapeFamily',
             'image_type': 'imageType',
             'patch_set': 'patchSet',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'database_software_image_one_off_patches': 'databaseSoftwareImageOneOffPatches',
             'ls_inventory': 'lsInventory',
             'freeform_tags': 'freeformTags',
@@ -135,6 +141,7 @@ class CreateDatabaseSoftwareImageDetails(object):
         self._image_shape_family = None
         self._image_type = None
         self._patch_set = None
+        self._is_older_version_acknowledged = None
         self._database_software_image_one_off_patches = None
         self._ls_inventory = None
         self._freeform_tags = None
@@ -303,6 +310,30 @@ class CreateDatabaseSoftwareImageDetails(object):
         :type: str
         """
         self._patch_set = patch_set
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this CreateDatabaseSoftwareImageDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this CreateDatabaseSoftwareImageDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this CreateDatabaseSoftwareImageDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this CreateDatabaseSoftwareImageDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def database_software_image_one_off_patches(self):

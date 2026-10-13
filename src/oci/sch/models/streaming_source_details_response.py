@@ -24,14 +24,14 @@ class StreamingSourceDetailsResponse(SourceDetailsResponse):
         of this class is ``streaming`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this StreamingSourceDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this StreamingSourceDetailsResponse.
             Allowed values for this property are: "logging", "monitoring", "streaming", "plugin"
         :type kind: str
+
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this StreamingSourceDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
 
         :param stream_id:
             The value to assign to the stream_id property of this StreamingSourceDetailsResponse.
@@ -43,19 +43,19 @@ class StreamingSourceDetailsResponse(SourceDetailsResponse):
 
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'stream_id': 'str',
             'cursor': 'StreamingCursorDetails'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
             'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata',
             'stream_id': 'streamId',
             'cursor': 'cursor'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
         self._stream_id = None
         self._cursor = None
         self._kind = 'streaming'

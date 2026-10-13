@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseConnectionUrls(object):
     """
-    The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on `dedicated Exadata infrastructure`__.
+    The URLs for accessing various Autonomous AI Database built-in tools (like Oracle Application Express (APEX), SQL Developer Web etc) with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are also available through the `Autonomous AI Databases`__ console.
 
     Example: `{\"sqlDevWebUrl\": \"https://<hostname>/ords...\", \"apexUrl\", \"https://<hostname>/ords...\"}`
 
@@ -56,6 +56,10 @@ class AutonomousDatabaseConnectionUrls(object):
             The value to assign to the database_transforms_url property of this AutonomousDatabaseConnectionUrls.
         :type database_transforms_url: str
 
+        :param essbase_url:
+            The value to assign to the essbase_url property of this AutonomousDatabaseConnectionUrls.
+        :type essbase_url: str
+
         :param spatial_studio_url:
             The value to assign to the spatial_studio_url property of this AutonomousDatabaseConnectionUrls.
         :type spatial_studio_url: str
@@ -70,6 +74,7 @@ class AutonomousDatabaseConnectionUrls(object):
             'machine_learning_notebook_url': 'str',
             'ords_url': 'str',
             'database_transforms_url': 'str',
+            'essbase_url': 'str',
             'spatial_studio_url': 'str'
         }
         self.attribute_map = {
@@ -81,6 +86,7 @@ class AutonomousDatabaseConnectionUrls(object):
             'machine_learning_notebook_url': 'machineLearningNotebookUrl',
             'ords_url': 'ordsUrl',
             'database_transforms_url': 'databaseTransformsUrl',
+            'essbase_url': 'essbaseUrl',
             'spatial_studio_url': 'spatialStudioUrl'
         }
         self._sql_dev_web_url = None
@@ -91,6 +97,7 @@ class AutonomousDatabaseConnectionUrls(object):
         self._machine_learning_notebook_url = None
         self._ords_url = None
         self._database_transforms_url = None
+        self._essbase_url = None
         self._spatial_studio_url = None
 
     @property
@@ -145,7 +152,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def machine_learning_user_management_url(self):
         """
         Gets the machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
-        Oracle Machine Learning user management URL.
+        Oracle Machine Learning user management URL. Applicable to Autonomous AI Database Serverless only.
 
 
         :return: The machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
@@ -157,7 +164,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def machine_learning_user_management_url(self, machine_learning_user_management_url):
         """
         Sets the machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
-        Oracle Machine Learning user management URL.
+        Oracle Machine Learning user management URL. Applicable to Autonomous AI Database Serverless only.
 
 
         :param machine_learning_user_management_url: The machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
@@ -169,7 +176,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def graph_studio_url(self):
         """
         Gets the graph_studio_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Graph Studio for the Autonomous AI Database.
+        The URL of the Graph Studio for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
 
 
         :return: The graph_studio_url of this AutonomousDatabaseConnectionUrls.
@@ -181,7 +188,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def graph_studio_url(self, graph_studio_url):
         """
         Sets the graph_studio_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Graph Studio for the Autonomous AI Database.
+        The URL of the Graph Studio for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
 
 
         :param graph_studio_url: The graph_studio_url of this AutonomousDatabaseConnectionUrls.
@@ -217,7 +224,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def machine_learning_notebook_url(self):
         """
         Gets the machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database.
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
 
 
         :return: The machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
@@ -229,7 +236,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def machine_learning_notebook_url(self, machine_learning_notebook_url):
         """
         Sets the machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database.
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
 
 
         :param machine_learning_notebook_url: The machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
@@ -265,7 +272,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def database_transforms_url(self):
         """
         Gets the database_transforms_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Database Transforms for the Autonomous AI Database.
+        The URL of the Database Transforms for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
 
 
         :return: The database_transforms_url of this AutonomousDatabaseConnectionUrls.
@@ -277,7 +284,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def database_transforms_url(self, database_transforms_url):
         """
         Sets the database_transforms_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Database Transforms for the Autonomous AI Database.
+        The URL of the Database Transforms for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
 
 
         :param database_transforms_url: The database_transforms_url of this AutonomousDatabaseConnectionUrls.
@@ -286,10 +293,34 @@ class AutonomousDatabaseConnectionUrls(object):
         self._database_transforms_url = database_transforms_url
 
     @property
+    def essbase_url(self):
+        """
+        Gets the essbase_url of this AutonomousDatabaseConnectionUrls.
+        Essbase URL for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+
+
+        :return: The essbase_url of this AutonomousDatabaseConnectionUrls.
+        :rtype: str
+        """
+        return self._essbase_url
+
+    @essbase_url.setter
+    def essbase_url(self, essbase_url):
+        """
+        Sets the essbase_url of this AutonomousDatabaseConnectionUrls.
+        Essbase URL for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
+
+
+        :param essbase_url: The essbase_url of this AutonomousDatabaseConnectionUrls.
+        :type: str
+        """
+        self._essbase_url = essbase_url
+
+    @property
     def spatial_studio_url(self):
         """
         Gets the spatial_studio_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Spatial Studio for the Autonomous AI Database.
+        The URL of the Spatial Studio for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
 
 
         :return: The spatial_studio_url of this AutonomousDatabaseConnectionUrls.
@@ -301,7 +332,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def spatial_studio_url(self, spatial_studio_url):
         """
         Sets the spatial_studio_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Spatial Studio for the Autonomous AI Database.
+        The URL of the Spatial Studio for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
 
 
         :param spatial_studio_url: The spatial_studio_url of this AutonomousDatabaseConnectionUrls.

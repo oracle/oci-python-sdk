@@ -56,6 +56,10 @@ class CreateDataGuardAssociationDetails(object):
             The value to assign to the database_software_image_id property of this CreateDataGuardAssociationDetails.
         :type database_software_image_id: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this CreateDataGuardAssociationDetails.
+        :type is_older_version_acknowledged: bool
+
         :param database_admin_password:
             The value to assign to the database_admin_password property of this CreateDataGuardAssociationDetails.
         :type database_admin_password: str
@@ -93,6 +97,7 @@ class CreateDataGuardAssociationDetails(object):
         """
         self.swagger_types = {
             'database_software_image_id': 'str',
+            'is_older_version_acknowledged': 'bool',
             'database_admin_password': 'str',
             'source_encryption_key_location_details': 'EncryptionKeyLocationDetails',
             'protection_mode': 'str',
@@ -104,6 +109,7 @@ class CreateDataGuardAssociationDetails(object):
         }
         self.attribute_map = {
             'database_software_image_id': 'databaseSoftwareImageId',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'database_admin_password': 'databaseAdminPassword',
             'source_encryption_key_location_details': 'sourceEncryptionKeyLocationDetails',
             'protection_mode': 'protectionMode',
@@ -114,6 +120,7 @@ class CreateDataGuardAssociationDetails(object):
             'peer_sid_prefix': 'peerSidPrefix'
         }
         self._database_software_image_id = None
+        self._is_older_version_acknowledged = None
         self._database_admin_password = None
         self._source_encryption_key_location_details = None
         self._protection_mode = None
@@ -169,6 +176,30 @@ class CreateDataGuardAssociationDetails(object):
         :type: str
         """
         self._database_software_image_id = database_software_image_id
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this CreateDataGuardAssociationDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this CreateDataGuardAssociationDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this CreateDataGuardAssociationDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this CreateDataGuardAssociationDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def database_admin_password(self):

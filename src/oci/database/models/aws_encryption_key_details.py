@@ -30,17 +30,24 @@ class AwsEncryptionKeyDetails(EncryptionKeyLocationDetails):
             The value to assign to the aws_encryption_key_id property of this AwsEncryptionKeyDetails.
         :type aws_encryption_key_id: str
 
+        :param aws_encryption_key_pool_id:
+            The value to assign to the aws_encryption_key_pool_id property of this AwsEncryptionKeyDetails.
+        :type aws_encryption_key_pool_id: str
+
         """
         self.swagger_types = {
             'provider_type': 'str',
-            'aws_encryption_key_id': 'str'
+            'aws_encryption_key_id': 'str',
+            'aws_encryption_key_pool_id': 'str'
         }
         self.attribute_map = {
             'provider_type': 'providerType',
-            'aws_encryption_key_id': 'awsEncryptionKeyId'
+            'aws_encryption_key_id': 'awsEncryptionKeyId',
+            'aws_encryption_key_pool_id': 'awsEncryptionKeyPoolId'
         }
         self._provider_type = None
         self._aws_encryption_key_id = None
+        self._aws_encryption_key_pool_id = None
         self._provider_type = 'AWS'
 
     @property
@@ -66,6 +73,30 @@ class AwsEncryptionKeyDetails(EncryptionKeyLocationDetails):
         :type: str
         """
         self._aws_encryption_key_id = aws_encryption_key_id
+
+    @property
+    def aws_encryption_key_pool_id(self):
+        """
+        Gets the aws_encryption_key_pool_id of this AwsEncryptionKeyDetails.
+        Provide the key pool OCID of a registered AWS key.
+
+
+        :return: The aws_encryption_key_pool_id of this AwsEncryptionKeyDetails.
+        :rtype: str
+        """
+        return self._aws_encryption_key_pool_id
+
+    @aws_encryption_key_pool_id.setter
+    def aws_encryption_key_pool_id(self, aws_encryption_key_pool_id):
+        """
+        Sets the aws_encryption_key_pool_id of this AwsEncryptionKeyDetails.
+        Provide the key pool OCID of a registered AWS key.
+
+
+        :param aws_encryption_key_pool_id: The aws_encryption_key_pool_id of this AwsEncryptionKeyDetails.
+        :type: str
+        """
+        self._aws_encryption_key_pool_id = aws_encryption_key_pool_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

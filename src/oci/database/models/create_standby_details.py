@@ -98,6 +98,10 @@ class CreateStandbyDetails(object):
             The value to assign to the auto_failover_configuration property of this CreateStandbyDetails.
         :type auto_failover_configuration: oci.database.models.AutoFailoverConfiguration
 
+        :param data_safe_registration_details:
+            The value to assign to the data_safe_registration_details property of this CreateStandbyDetails.
+        :type data_safe_registration_details: oci.database.models.DataSafeRegistrationRequestDetails
+
         """
         self.swagger_types = {
             'source_database_id': 'str',
@@ -112,7 +116,8 @@ class CreateStandbyDetails(object):
             'storage_size_details': 'DatabaseStorageSizeDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'auto_failover_configuration': 'AutoFailoverConfiguration'
+            'auto_failover_configuration': 'AutoFailoverConfiguration',
+            'data_safe_registration_details': 'DataSafeRegistrationRequestDetails'
         }
         self.attribute_map = {
             'source_database_id': 'sourceDatabaseId',
@@ -127,7 +132,8 @@ class CreateStandbyDetails(object):
             'storage_size_details': 'storageSizeDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'auto_failover_configuration': 'autoFailoverConfiguration'
+            'auto_failover_configuration': 'autoFailoverConfiguration',
+            'data_safe_registration_details': 'dataSafeRegistrationDetails'
         }
         self._redacted_field_paths = [
             ['database_admin_password'],
@@ -146,6 +152,7 @@ class CreateStandbyDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._auto_failover_configuration = None
+        self._data_safe_registration_details = None
 
     @property
     def source_database_id(self):
@@ -516,6 +523,26 @@ class CreateStandbyDetails(object):
         :type: oci.database.models.AutoFailoverConfiguration
         """
         self._auto_failover_configuration = auto_failover_configuration
+
+    @property
+    def data_safe_registration_details(self):
+        """
+        Gets the data_safe_registration_details of this CreateStandbyDetails.
+
+        :return: The data_safe_registration_details of this CreateStandbyDetails.
+        :rtype: oci.database.models.DataSafeRegistrationRequestDetails
+        """
+        return self._data_safe_registration_details
+
+    @data_safe_registration_details.setter
+    def data_safe_registration_details(self, data_safe_registration_details):
+        """
+        Sets the data_safe_registration_details of this CreateStandbyDetails.
+
+        :param data_safe_registration_details: The data_safe_registration_details of this CreateStandbyDetails.
+        :type: oci.database.models.DataSafeRegistrationRequestDetails
+        """
+        self._data_safe_registration_details = data_safe_registration_details
 
     def __repr__(self):
         as_dict = to_dict(self)

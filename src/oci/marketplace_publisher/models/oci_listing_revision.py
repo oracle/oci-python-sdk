@@ -191,10 +191,6 @@ class OciListingRevision(ListingRevision):
             The value to assign to the allowed_tenancies property of this OciListingRevision.
         :type allowed_tenancies: list[str]
 
-        :param vanity_url:
-            The value to assign to the vanity_url property of this OciListingRevision.
-        :type vanity_url: str
-
         :param recommended_service_provider_listing_ids:
             The value to assign to the recommended_service_provider_listing_ids property of this OciListingRevision.
         :type recommended_service_provider_listing_ids: list[str]
@@ -206,6 +202,10 @@ class OciListingRevision(ListingRevision):
         :param is_rover_exportable:
             The value to assign to the is_rover_exportable property of this OciListingRevision.
         :type is_rover_exportable: bool
+
+        :param vanity_url:
+            The value to assign to the vanity_url property of this OciListingRevision.
+        :type vanity_url: str
 
         :param demo_url:
             The value to assign to the demo_url property of this OciListingRevision.
@@ -254,10 +254,10 @@ class OciListingRevision(ListingRevision):
             'pricing_plans': 'list[PricingPlan]',
             'availability_and_pricing_policy': 'str',
             'allowed_tenancies': 'list[str]',
-            'vanity_url': 'str',
             'recommended_service_provider_listing_ids': 'list[str]',
             'are_internal_tenancy_launch_allowed': 'bool',
             'is_rover_exportable': 'bool',
+            'vanity_url': 'str',
             'demo_url': 'str',
             'self_paced_training_url': 'str'
         }
@@ -299,10 +299,10 @@ class OciListingRevision(ListingRevision):
             'pricing_plans': 'pricingPlans',
             'availability_and_pricing_policy': 'availabilityAndPricingPolicy',
             'allowed_tenancies': 'allowedTenancies',
-            'vanity_url': 'vanityUrl',
             'recommended_service_provider_listing_ids': 'recommendedServiceProviderListingIds',
             'are_internal_tenancy_launch_allowed': 'areInternalTenancyLaunchAllowed',
             'is_rover_exportable': 'isRoverExportable',
+            'vanity_url': 'vanityUrl',
             'demo_url': 'demoUrl',
             'self_paced_training_url': 'selfPacedTrainingUrl'
         }
@@ -343,10 +343,10 @@ class OciListingRevision(ListingRevision):
         self._pricing_plans = None
         self._availability_and_pricing_policy = None
         self._allowed_tenancies = None
-        self._vanity_url = None
         self._recommended_service_provider_listing_ids = None
         self._are_internal_tenancy_launch_allowed = None
         self._is_rover_exportable = None
+        self._vanity_url = None
         self._demo_url = None
         self._self_paced_training_url = None
         self._listing_type = 'OCI_APPLICATION'
@@ -570,30 +570,6 @@ class OciListingRevision(ListingRevision):
         self._allowed_tenancies = allowed_tenancies
 
     @property
-    def vanity_url(self):
-        """
-        Gets the vanity_url of this OciListingRevision.
-        Custom link to the listing
-
-
-        :return: The vanity_url of this OciListingRevision.
-        :rtype: str
-        """
-        return self._vanity_url
-
-    @vanity_url.setter
-    def vanity_url(self, vanity_url):
-        """
-        Sets the vanity_url of this OciListingRevision.
-        Custom link to the listing
-
-
-        :param vanity_url: The vanity_url of this OciListingRevision.
-        :type: str
-        """
-        self._vanity_url = vanity_url
-
-    @property
     def recommended_service_provider_listing_ids(self):
         """
         Gets the recommended_service_provider_listing_ids of this OciListingRevision.
@@ -664,6 +640,30 @@ class OciListingRevision(ListingRevision):
         :type: bool
         """
         self._is_rover_exportable = is_rover_exportable
+
+    @property
+    def vanity_url(self):
+        """
+        Gets the vanity_url of this OciListingRevision.
+        Custom link to the listing
+
+
+        :return: The vanity_url of this OciListingRevision.
+        :rtype: str
+        """
+        return self._vanity_url
+
+    @vanity_url.setter
+    def vanity_url(self, vanity_url):
+        """
+        Sets the vanity_url of this OciListingRevision.
+        Custom link to the listing
+
+
+        :param vanity_url: The vanity_url of this OciListingRevision.
+        :type: str
+        """
+        self._vanity_url = vanity_url
 
     @property
     def demo_url(self):

@@ -265,6 +265,8 @@ Database
     oci.database.models.DataGuardGroup
     oci.database.models.DataGuardGroupMember
     oci.database.models.DataPatchOptions
+    oci.database.models.DataSafeRegistrationDetails
+    oci.database.models.DataSafeRegistrationRequestDetails
     oci.database.models.Database
     oci.database.models.DatabaseConnectionCredentials
     oci.database.models.DatabaseConnectionCredentialsByDetails

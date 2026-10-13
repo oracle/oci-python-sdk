@@ -24,6 +24,10 @@ class UpdateOracleDbAwsKeyDetails(object):
             The value to assign to the display_name property of this UpdateOracleDbAwsKeyDetails.
         :type display_name: str
 
+        :param oracle_db_aws_key_pool_id:
+            The value to assign to the oracle_db_aws_key_pool_id property of this UpdateOracleDbAwsKeyDetails.
+        :type oracle_db_aws_key_pool_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateOracleDbAwsKeyDetails.
         :type freeform_tags: dict(str, str)
@@ -35,15 +39,18 @@ class UpdateOracleDbAwsKeyDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'oracle_db_aws_key_pool_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'display_name': 'displayName',
+            'oracle_db_aws_key_pool_id': 'oracleDbAwsKeyPoolId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._display_name = None
+        self._oracle_db_aws_key_pool_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -70,6 +77,34 @@ class UpdateOracleDbAwsKeyDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def oracle_db_aws_key_pool_id(self):
+        """
+        Gets the oracle_db_aws_key_pool_id of this UpdateOracleDbAwsKeyDetails.
+        The `OCID`__ of the Oracle DB AWS Key Pool resource.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The oracle_db_aws_key_pool_id of this UpdateOracleDbAwsKeyDetails.
+        :rtype: str
+        """
+        return self._oracle_db_aws_key_pool_id
+
+    @oracle_db_aws_key_pool_id.setter
+    def oracle_db_aws_key_pool_id(self, oracle_db_aws_key_pool_id):
+        """
+        Sets the oracle_db_aws_key_pool_id of this UpdateOracleDbAwsKeyDetails.
+        The `OCID`__ of the Oracle DB AWS Key Pool resource.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param oracle_db_aws_key_pool_id: The oracle_db_aws_key_pool_id of this UpdateOracleDbAwsKeyDetails.
+        :type: str
+        """
+        self._oracle_db_aws_key_pool_id = oracle_db_aws_key_pool_id
 
     @property
     def freeform_tags(self):

@@ -168,6 +168,10 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             The value to assign to the compute_count property of this LaunchDbSystemFromDbSystemDetails.
         :type compute_count: int
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this LaunchDbSystemFromDbSystemDetails.
+        :type is_older_version_acknowledged: bool
+
         :param source_db_system_id:
             The value to assign to the source_db_system_id property of this LaunchDbSystemFromDbSystemDetails.
         :type source_db_system_id: str
@@ -217,6 +221,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             'data_collection_options': 'DataCollectionOptions',
             'compute_model': 'str',
             'compute_count': 'int',
+            'is_older_version_acknowledged': 'bool',
             'source_db_system_id': 'str',
             'db_home': 'CreateDbHomeFromDbSystemDetails',
             'license_model': 'str'
@@ -256,6 +261,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             'data_collection_options': 'dataCollectionOptions',
             'compute_model': 'computeModel',
             'compute_count': 'computeCount',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'source_db_system_id': 'sourceDbSystemId',
             'db_home': 'dbHome',
             'license_model': 'licenseModel'
@@ -294,6 +300,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
         self._data_collection_options = None
         self._compute_model = None
         self._compute_count = None
+        self._is_older_version_acknowledged = None
         self._source_db_system_id = None
         self._db_home = None
         self._license_model = None

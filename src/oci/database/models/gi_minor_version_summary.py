@@ -32,17 +32,24 @@ class GiMinorVersionSummary(object):
             The value to assign to the grid_image_id property of this GiMinorVersionSummary.
         :type grid_image_id: str
 
+        :param is_older_version_acknowledgment_required:
+            The value to assign to the is_older_version_acknowledgment_required property of this GiMinorVersionSummary.
+        :type is_older_version_acknowledgment_required: bool
+
         """
         self.swagger_types = {
             'version': 'str',
-            'grid_image_id': 'str'
+            'grid_image_id': 'str',
+            'is_older_version_acknowledgment_required': 'bool'
         }
         self.attribute_map = {
             'version': 'version',
-            'grid_image_id': 'gridImageId'
+            'grid_image_id': 'gridImageId',
+            'is_older_version_acknowledgment_required': 'isOlderVersionAcknowledgmentRequired'
         }
         self._version = None
         self._grid_image_id = None
+        self._is_older_version_acknowledgment_required = None
 
     @property
     def version(self):
@@ -91,6 +98,30 @@ class GiMinorVersionSummary(object):
         :type: str
         """
         self._grid_image_id = grid_image_id
+
+    @property
+    def is_older_version_acknowledgment_required(self):
+        """
+        Gets the is_older_version_acknowledgment_required of this GiMinorVersionSummary.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :return: The is_older_version_acknowledgment_required of this GiMinorVersionSummary.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledgment_required
+
+    @is_older_version_acknowledgment_required.setter
+    def is_older_version_acknowledgment_required(self, is_older_version_acknowledgment_required):
+        """
+        Sets the is_older_version_acknowledgment_required of this GiMinorVersionSummary.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :param is_older_version_acknowledgment_required: The is_older_version_acknowledgment_required of this GiMinorVersionSummary.
+        :type: bool
+        """
+        self._is_older_version_acknowledgment_required = is_older_version_acknowledgment_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

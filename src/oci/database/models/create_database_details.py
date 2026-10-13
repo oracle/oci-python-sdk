@@ -115,6 +115,10 @@ class CreateDatabaseDetails(object):
             The value to assign to the vm_cluster_id property of this CreateDatabaseDetails.
         :type vm_cluster_id: str
 
+        :param data_safe_registration_details:
+            The value to assign to the data_safe_registration_details property of this CreateDatabaseDetails.
+        :type data_safe_registration_details: oci.database.models.DataSafeRegistrationRequestDetails
+
         """
         self.swagger_types = {
             'db_name': 'str',
@@ -137,7 +141,8 @@ class CreateDatabaseDetails(object):
             'encryption_key_location_details': 'EncryptionKeyLocationDetails',
             'storage_size_details': 'DatabaseStorageSizeDetails',
             'managed_software_update_details': 'ManagedSoftwareUpdateInputDetails',
-            'vm_cluster_id': 'str'
+            'vm_cluster_id': 'str',
+            'data_safe_registration_details': 'DataSafeRegistrationRequestDetails'
         }
         self.attribute_map = {
             'db_name': 'dbName',
@@ -160,7 +165,8 @@ class CreateDatabaseDetails(object):
             'encryption_key_location_details': 'encryptionKeyLocationDetails',
             'storage_size_details': 'storageSizeDetails',
             'managed_software_update_details': 'managedSoftwareUpdateDetails',
-            'vm_cluster_id': 'vmClusterId'
+            'vm_cluster_id': 'vmClusterId',
+            'data_safe_registration_details': 'dataSafeRegistrationDetails'
         }
         self._redacted_field_paths = [
             ['tde_wallet_password'],
@@ -186,6 +192,7 @@ class CreateDatabaseDetails(object):
         self._storage_size_details = None
         self._managed_software_update_details = None
         self._vm_cluster_id = None
+        self._data_safe_registration_details = None
 
     @property
     def db_name(self):
@@ -727,6 +734,26 @@ class CreateDatabaseDetails(object):
         :type: str
         """
         self._vm_cluster_id = vm_cluster_id
+
+    @property
+    def data_safe_registration_details(self):
+        """
+        Gets the data_safe_registration_details of this CreateDatabaseDetails.
+
+        :return: The data_safe_registration_details of this CreateDatabaseDetails.
+        :rtype: oci.database.models.DataSafeRegistrationRequestDetails
+        """
+        return self._data_safe_registration_details
+
+    @data_safe_registration_details.setter
+    def data_safe_registration_details(self, data_safe_registration_details):
+        """
+        Sets the data_safe_registration_details of this CreateDatabaseDetails.
+
+        :param data_safe_registration_details: The data_safe_registration_details of this CreateDatabaseDetails.
+        :type: oci.database.models.DataSafeRegistrationRequestDetails
+        """
+        self._data_safe_registration_details = data_safe_registration_details
 
     def __repr__(self):
         as_dict = to_dict(self)

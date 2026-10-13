@@ -630,7 +630,10 @@ class BaseccVmClusterSummary(object):
     def cpus_enabled(self):
         """
         **[Required]** Gets the cpus_enabled of this BaseccVmClusterSummary.
-        Total CPU cores for the BaseDB C@C VM cluster.
+        The number of ECPUs to enable per VM for the BaseDB C@C VM cluster.
+        Minimum: 8 ECPUs per VM for Enterprise Edition Extreme Performance VM clusters, and 4 ECPUs per VM for other editions.
+        Maximum: 32 ECPUs per VM for Standard Edition, and 240 ECPUs per VM for other editions.
+        For a two-VM Enterprise Edition Extreme Performance VM Cluster, the maximum is 480 total ECPUs (240 ECPUs per VM).
 
 
         :return: The cpus_enabled of this BaseccVmClusterSummary.
@@ -642,7 +645,10 @@ class BaseccVmClusterSummary(object):
     def cpus_enabled(self, cpus_enabled):
         """
         Sets the cpus_enabled of this BaseccVmClusterSummary.
-        Total CPU cores for the BaseDB C@C VM cluster.
+        The number of ECPUs to enable per VM for the BaseDB C@C VM cluster.
+        Minimum: 8 ECPUs per VM for Enterprise Edition Extreme Performance VM clusters, and 4 ECPUs per VM for other editions.
+        Maximum: 32 ECPUs per VM for Standard Edition, and 240 ECPUs per VM for other editions.
+        For a two-VM Enterprise Edition Extreme Performance VM Cluster, the maximum is 480 total ECPUs (240 ECPUs per VM).
 
 
         :param cpus_enabled: The cpus_enabled of this BaseccVmClusterSummary.
@@ -998,7 +1004,9 @@ class BaseccVmClusterSummary(object):
     def memory_size_in_gbs(self):
         """
         Gets the memory_size_in_gbs of this BaseccVmClusterSummary.
-        The total memory to be allocated, in GBs, for the Base Database Service on Cloud@Customer (BaseDB-C@C) VM cluster. The minimum is 11GB for every 4 ECPU.
+        The total memory to be allocated, in GBs, for the Base Database Service on Cloud@Customer (BaseDB-C@C) VM cluster.
+        Minimum for Extreme Performance Edition 1-node or 2-node systems is 16 GB per VM.
+        Minimum for all other editions is 11 GB.
 
 
         :return: The memory_size_in_gbs of this BaseccVmClusterSummary.
@@ -1010,7 +1018,9 @@ class BaseccVmClusterSummary(object):
     def memory_size_in_gbs(self, memory_size_in_gbs):
         """
         Sets the memory_size_in_gbs of this BaseccVmClusterSummary.
-        The total memory to be allocated, in GBs, for the Base Database Service on Cloud@Customer (BaseDB-C@C) VM cluster. The minimum is 11GB for every 4 ECPU.
+        The total memory to be allocated, in GBs, for the Base Database Service on Cloud@Customer (BaseDB-C@C) VM cluster.
+        Minimum for Extreme Performance Edition 1-node or 2-node systems is 16 GB per VM.
+        Minimum for all other editions is 11 GB.
 
 
         :param memory_size_in_gbs: The memory_size_in_gbs of this BaseccVmClusterSummary.

@@ -26,14 +26,14 @@ class FunctionTaskDetailsResponse(TaskDetailsResponse):
         of this class is ``function`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this FunctionTaskDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this FunctionTaskDetailsResponse.
             Allowed values for this property are: "function", "logRule"
         :type kind: str
+
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this FunctionTaskDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
 
         :param function_id:
             The value to assign to the function_id property of this FunctionTaskDetailsResponse.
@@ -49,21 +49,21 @@ class FunctionTaskDetailsResponse(TaskDetailsResponse):
 
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'function_id': 'str',
             'batch_size_in_kbs': 'int',
             'batch_time_in_sec': 'int'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
             'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata',
             'function_id': 'functionId',
             'batch_size_in_kbs': 'batchSizeInKbs',
             'batch_time_in_sec': 'batchTimeInSec'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
         self._function_id = None
         self._batch_size_in_kbs = None
         self._batch_time_in_sec = None

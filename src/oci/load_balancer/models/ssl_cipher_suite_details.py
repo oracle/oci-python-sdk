@@ -263,83 +263,25 @@ class SSLCipherSuiteDetails(object):
         Initializes a new SSLCipherSuiteDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param name:
-            The value to assign to the name property of this SSLCipherSuiteDetails.
-        :type name: str
-
         :param ciphers:
             The value to assign to the ciphers property of this SSLCipherSuiteDetails.
         :type ciphers: list[str]
 
+        :param name:
+            The value to assign to the name property of this SSLCipherSuiteDetails.
+        :type name: str
+
         """
         self.swagger_types = {
-            'name': 'str',
-            'ciphers': 'list[str]'
+            'ciphers': 'list[str]',
+            'name': 'str'
         }
         self.attribute_map = {
-            'name': 'name',
-            'ciphers': 'ciphers'
+            'ciphers': 'ciphers',
+            'name': 'name'
         }
-        self._name = None
         self._ciphers = None
-
-    @property
-    def name(self):
-        """
-        **[Required]** Gets the name of this SSLCipherSuiteDetails.
-        A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
-
-        **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or
-                  reserved SSL cipher suite names:
-
-        * oci-default-ssl-cipher-suite-v1
-        * oci-modern-ssl-cipher-suite-v1
-        * oci-compatible-ssl-cipher-suite-v1
-        * oci-wider-compatible-ssl-cipher-suite-v1
-        * oci-customized-ssl-cipher-suite
-        * oci-default-http2-ssl-cipher-suite-v1
-        * oci-default-http2-tls-13-ssl-cipher-suite-v1
-        * oci-default-http2-tls-12-13-ssl-cipher-suite-v1
-        * oci-tls-13-recommended-ssl-cipher-suite-v1
-        * oci-tls-12-13-wider-ssl-cipher-suite-v1
-        * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
-
-        example: `example_cipher_suite`
-
-
-        :return: The name of this SSLCipherSuiteDetails.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this SSLCipherSuiteDetails.
-        A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
-
-        **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or
-                  reserved SSL cipher suite names:
-
-        * oci-default-ssl-cipher-suite-v1
-        * oci-modern-ssl-cipher-suite-v1
-        * oci-compatible-ssl-cipher-suite-v1
-        * oci-wider-compatible-ssl-cipher-suite-v1
-        * oci-customized-ssl-cipher-suite
-        * oci-default-http2-ssl-cipher-suite-v1
-        * oci-default-http2-tls-13-ssl-cipher-suite-v1
-        * oci-default-http2-tls-12-13-ssl-cipher-suite-v1
-        * oci-tls-13-recommended-ssl-cipher-suite-v1
-        * oci-tls-12-13-wider-ssl-cipher-suite-v1
-        * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
-
-        example: `example_cipher_suite`
-
-
-        :param name: The name of this SSLCipherSuiteDetails.
-        :type: str
-        """
-        self._name = name
+        self._name = None
 
     @property
     def ciphers(self):
@@ -590,6 +532,64 @@ class SSLCipherSuiteDetails(object):
         :type: list[str]
         """
         self._ciphers = ciphers
+
+    @property
+    def name(self):
+        """
+        **[Required]** Gets the name of this SSLCipherSuiteDetails.
+        A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+
+        **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or
+                  reserved SSL cipher suite names:
+
+        * oci-default-ssl-cipher-suite-v1
+        * oci-modern-ssl-cipher-suite-v1
+        * oci-compatible-ssl-cipher-suite-v1
+        * oci-wider-compatible-ssl-cipher-suite-v1
+        * oci-customized-ssl-cipher-suite
+        * oci-default-http2-ssl-cipher-suite-v1
+        * oci-default-http2-tls-13-ssl-cipher-suite-v1
+        * oci-default-http2-tls-12-13-ssl-cipher-suite-v1
+        * oci-tls-13-recommended-ssl-cipher-suite-v1
+        * oci-tls-12-13-wider-ssl-cipher-suite-v1
+        * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
+
+        example: `example_cipher_suite`
+
+
+        :return: The name of this SSLCipherSuiteDetails.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this SSLCipherSuiteDetails.
+        A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
+
+        **Note:** The name of your user-defined cipher suite must not be the same as any of Oracle's predefined or
+                  reserved SSL cipher suite names:
+
+        * oci-default-ssl-cipher-suite-v1
+        * oci-modern-ssl-cipher-suite-v1
+        * oci-compatible-ssl-cipher-suite-v1
+        * oci-wider-compatible-ssl-cipher-suite-v1
+        * oci-customized-ssl-cipher-suite
+        * oci-default-http2-ssl-cipher-suite-v1
+        * oci-default-http2-tls-13-ssl-cipher-suite-v1
+        * oci-default-http2-tls-12-13-ssl-cipher-suite-v1
+        * oci-tls-13-recommended-ssl-cipher-suite-v1
+        * oci-tls-12-13-wider-ssl-cipher-suite-v1
+        * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
+
+        example: `example_cipher_suite`
+
+
+        :param name: The name of this SSLCipherSuiteDetails.
+        :type: str
+        """
+        self._name = name
 
     def __repr__(self):
         return formatted_flat_dict(self)

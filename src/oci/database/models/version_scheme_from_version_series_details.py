@@ -53,20 +53,27 @@ class VersionSchemeFromVersionSeriesDetails(VersionSchemeDetails):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type version_preference: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this VersionSchemeFromVersionSeriesDetails.
+        :type is_older_version_acknowledged: bool
+
         """
         self.swagger_types = {
             'source': 'str',
             'major_version': 'str',
-            'version_preference': 'str'
+            'version_preference': 'str',
+            'is_older_version_acknowledged': 'bool'
         }
         self.attribute_map = {
             'source': 'source',
             'major_version': 'majorVersion',
-            'version_preference': 'versionPreference'
+            'version_preference': 'versionPreference',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged'
         }
         self._source = None
         self._major_version = None
         self._version_preference = None
+        self._is_older_version_acknowledged = None
         self._source = 'VERSION_SERIES'
 
     @property
@@ -140,6 +147,30 @@ class VersionSchemeFromVersionSeriesDetails(VersionSchemeDetails):
         if not value_allowed_none_or_none_sentinel(version_preference, allowed_values):
             version_preference = 'UNKNOWN_ENUM_VALUE'
         self._version_preference = version_preference
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this VersionSchemeFromVersionSeriesDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this VersionSchemeFromVersionSeriesDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this VersionSchemeFromVersionSeriesDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this VersionSchemeFromVersionSeriesDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     def __repr__(self):
         return formatted_flat_dict(self)

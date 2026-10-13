@@ -133,6 +133,10 @@ class CreateExadbVmClusterDetails(object):
             The value to assign to the system_version property of this CreateExadbVmClusterDetails.
         :type system_version: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this CreateExadbVmClusterDetails.
+        :type is_older_version_acknowledged: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateExadbVmClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -184,6 +188,7 @@ class CreateExadbVmClusterDetails(object):
             'backup_network_nsg_ids': 'list[str]',
             'grid_image_id': 'str',
             'system_version': 'str',
+            'is_older_version_acknowledged': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'security_attributes': 'dict(str, dict(str, object))',
@@ -216,6 +221,7 @@ class CreateExadbVmClusterDetails(object):
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'grid_image_id': 'gridImageId',
             'system_version': 'systemVersion',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'security_attributes': 'securityAttributes',
@@ -247,6 +253,7 @@ class CreateExadbVmClusterDetails(object):
         self._backup_network_nsg_ids = None
         self._grid_image_id = None
         self._system_version = None
+        self._is_older_version_acknowledged = None
         self._freeform_tags = None
         self._defined_tags = None
         self._security_attributes = None
@@ -892,6 +899,30 @@ class CreateExadbVmClusterDetails(object):
         :type: str
         """
         self._system_version = system_version
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this CreateExadbVmClusterDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this CreateExadbVmClusterDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this CreateExadbVmClusterDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this CreateExadbVmClusterDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def freeform_tags(self):

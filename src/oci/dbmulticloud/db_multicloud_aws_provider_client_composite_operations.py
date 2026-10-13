@@ -113,6 +113,50 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def change_oracle_db_aws_key_pool_compartment_and_wait_for_state(self, oracle_db_aws_key_pool_id, change_oracle_db_aws_key_pool_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.change_oracle_db_aws_key_pool_compartment` and waits for the :py:class:`~oci.dbmulticloud.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str oracle_db_aws_key_pool_id: (required)
+            The `OCID`__ of the Oracle DB AWS Key Pool resource.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.dbmulticloud.models.ChangeOracleDbAwsKeyPoolCompartmentDetails change_oracle_db_aws_key_pool_compartment_details: (required)
+            Moves the AWS Key Pool resource into a different compartment.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.change_oracle_db_aws_key_pool_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_oracle_db_aws_key_pool_compartment(oracle_db_aws_key_pool_id, change_oracle_db_aws_key_pool_compartment_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_oracle_db_aws_identity_connector_and_wait_for_state(self, create_oracle_db_aws_identity_connector_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.create_oracle_db_aws_identity_connector` and waits for the :py:class:`~oci.dbmulticloud.models.WorkRequest`
@@ -171,6 +215,45 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.create_oracle_db_aws_key(create_oracle_db_aws_key_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_oracle_db_aws_key_pool_and_wait_for_state(self, create_oracle_db_aws_key_pool_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.create_oracle_db_aws_key_pool` and waits for the :py:class:`~oci.dbmulticloud.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.dbmulticloud.models.CreateOracleDbAwsKeyPoolDetails create_oracle_db_aws_key_pool_details: (required)
+            Details to create AWS Key Pool details.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.create_oracle_db_aws_key_pool`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_oracle_db_aws_key_pool(create_oracle_db_aws_key_pool_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
@@ -263,6 +346,55 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
         operation_result = None
         try:
             operation_result = self.client.delete_oracle_db_aws_key(oracle_db_aws_key_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_oracle_db_aws_key_pool_and_wait_for_state(self, oracle_db_aws_key_pool_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.delete_oracle_db_aws_key_pool` and waits for the :py:class:`~oci.dbmulticloud.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str oracle_db_aws_key_pool_id: (required)
+            The `OCID`__ of the Oracle DB AWS Key Pool resource.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.delete_oracle_db_aws_key_pool`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_oracle_db_aws_key_pool(oracle_db_aws_key_pool_id, **operation_kwargs)
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
                 return WAIT_RESOURCE_NOT_FOUND
@@ -418,6 +550,50 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def replicate_oracle_db_aws_key_pool_and_wait_for_state(self, oracle_db_aws_key_pool_id, replicate_oracle_db_aws_key_pool_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.replicate_oracle_db_aws_key_pool` and waits for the :py:class:`~oci.dbmulticloud.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str oracle_db_aws_key_pool_id: (required)
+            The `OCID`__ of the Oracle DB AWS Key Pool resource.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.dbmulticloud.models.ReplicateOracleDbAwsKeyPoolDetails replicate_oracle_db_aws_key_pool_details: (required)
+            Details for to replicate Oracle DB AWS Key to target region.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.replicate_oracle_db_aws_key_pool`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.replicate_oracle_db_aws_key_pool(oracle_db_aws_key_pool_id, replicate_oracle_db_aws_key_pool_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_oracle_db_aws_identity_connector_and_wait_for_state(self, oracle_db_aws_identity_connector_id, update_oracle_db_aws_identity_connector_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.update_oracle_db_aws_identity_connector` and waits for the :py:class:`~oci.dbmulticloud.models.WorkRequest`
@@ -486,6 +662,50 @@ class DbMulticloudAwsProviderClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_oracle_db_aws_key(oracle_db_aws_key_id, update_oracle_db_aws_key_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_oracle_db_aws_key_pool_and_wait_for_state(self, oracle_db_aws_key_pool_id, update_oracle_db_aws_key_pool_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.update_oracle_db_aws_key_pool` and waits for the :py:class:`~oci.dbmulticloud.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str oracle_db_aws_key_pool_id: (required)
+            The `OCID`__ of the Oracle DB AWS Key Pool resource.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.dbmulticloud.models.UpdateOracleDbAwsKeyPoolDetails update_oracle_db_aws_key_pool_details: (required)
+            Details for to update OracleDbAwsKeyPool.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.dbmulticloud.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.dbmulticloud.DbMulticloudAwsProviderClient.update_oracle_db_aws_key_pool`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_oracle_db_aws_key_pool(oracle_db_aws_key_pool_id, update_oracle_db_aws_key_pool_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]

@@ -28,6 +28,10 @@ class CreateOracleDbAwsKeyDetails(object):
             The value to assign to the oracle_db_connector_id property of this CreateOracleDbAwsKeyDetails.
         :type oracle_db_connector_id: str
 
+        :param oracle_db_aws_key_pool_id:
+            The value to assign to the oracle_db_aws_key_pool_id property of this CreateOracleDbAwsKeyDetails.
+        :type oracle_db_aws_key_pool_id: str
+
         :param display_name:
             The value to assign to the display_name property of this CreateOracleDbAwsKeyDetails.
         :type display_name: str
@@ -68,6 +72,7 @@ class CreateOracleDbAwsKeyDetails(object):
         self.swagger_types = {
             'compartment_id': 'str',
             'oracle_db_connector_id': 'str',
+            'oracle_db_aws_key_pool_id': 'str',
             'display_name': 'str',
             'aws_key_arn': 'str',
             'aws_account_id': 'str',
@@ -81,6 +86,7 @@ class CreateOracleDbAwsKeyDetails(object):
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'oracle_db_connector_id': 'oracleDbConnectorId',
+            'oracle_db_aws_key_pool_id': 'oracleDbAwsKeyPoolId',
             'display_name': 'displayName',
             'aws_key_arn': 'awsKeyArn',
             'aws_account_id': 'awsAccountId',
@@ -93,6 +99,7 @@ class CreateOracleDbAwsKeyDetails(object):
         }
         self._compartment_id = None
         self._oracle_db_connector_id = None
+        self._oracle_db_aws_key_pool_id = None
         self._display_name = None
         self._aws_key_arn = None
         self._aws_account_id = None
@@ -158,6 +165,34 @@ class CreateOracleDbAwsKeyDetails(object):
         :type: str
         """
         self._oracle_db_connector_id = oracle_db_connector_id
+
+    @property
+    def oracle_db_aws_key_pool_id(self):
+        """
+        Gets the oracle_db_aws_key_pool_id of this CreateOracleDbAwsKeyDetails.
+        The `OCID`__ of the Oracle DB AWS Key Pool resource.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The oracle_db_aws_key_pool_id of this CreateOracleDbAwsKeyDetails.
+        :rtype: str
+        """
+        return self._oracle_db_aws_key_pool_id
+
+    @oracle_db_aws_key_pool_id.setter
+    def oracle_db_aws_key_pool_id(self, oracle_db_aws_key_pool_id):
+        """
+        Sets the oracle_db_aws_key_pool_id of this CreateOracleDbAwsKeyDetails.
+        The `OCID`__ of the Oracle DB AWS Key Pool resource.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param oracle_db_aws_key_pool_id: The oracle_db_aws_key_pool_id of this CreateOracleDbAwsKeyDetails.
+        :type: str
+        """
+        self._oracle_db_aws_key_pool_id = oracle_db_aws_key_pool_id
 
     @property
     def display_name(self):

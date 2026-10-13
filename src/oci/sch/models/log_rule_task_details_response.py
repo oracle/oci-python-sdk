@@ -25,14 +25,14 @@ class LogRuleTaskDetailsResponse(TaskDetailsResponse):
         of this class is ``logRule`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this LogRuleTaskDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this LogRuleTaskDetailsResponse.
             Allowed values for this property are: "function", "logRule"
         :type kind: str
+
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this LogRuleTaskDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
 
         :param condition:
             The value to assign to the condition property of this LogRuleTaskDetailsResponse.
@@ -40,17 +40,17 @@ class LogRuleTaskDetailsResponse(TaskDetailsResponse):
 
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'condition': 'str'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
             'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata',
             'condition': 'condition'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
         self._condition = None
         self._kind = 'logRule'
 

@@ -41,6 +41,7 @@ Dbmulticloud
     oci.dbmulticloud.models.ChangeMultiCloudResourceDiscoveryCompartmentDetails
     oci.dbmulticloud.models.ChangeOracleDbAwsIdentityConnectorCompartmentDetails
     oci.dbmulticloud.models.ChangeOracleDbAwsKeyCompartmentDetails
+    oci.dbmulticloud.models.ChangeOracleDbAwsKeyPoolCompartmentDetails
     oci.dbmulticloud.models.ChangeOracleDbAzureBlobContainerCompartmentDetails
     oci.dbmulticloud.models.ChangeOracleDbAzureBlobMountCompartmentDetails
     oci.dbmulticloud.models.ChangeOracleDbAzureConnectorCompartmentDetails
@@ -51,6 +52,7 @@ Dbmulticloud
     oci.dbmulticloud.models.CreateMultiCloudResourceDiscoveryDetails
     oci.dbmulticloud.models.CreateOracleDbAwsIdentityConnectorDetails
     oci.dbmulticloud.models.CreateOracleDbAwsKeyDetails
+    oci.dbmulticloud.models.CreateOracleDbAwsKeyPoolDetails
     oci.dbmulticloud.models.CreateOracleDbAzureBlobContainerDetails
     oci.dbmulticloud.models.CreateOracleDbAzureBlobMountDetails
     oci.dbmulticloud.models.CreateOracleDbAzureConnectorDetails
@@ -66,6 +68,9 @@ Dbmulticloud
     oci.dbmulticloud.models.OracleDbAwsIdentityConnectorSummary
     oci.dbmulticloud.models.OracleDbAwsIdentityConnectorSummaryCollection
     oci.dbmulticloud.models.OracleDbAwsKey
+    oci.dbmulticloud.models.OracleDbAwsKeyPool
+    oci.dbmulticloud.models.OracleDbAwsKeyPoolCollection
+    oci.dbmulticloud.models.OracleDbAwsKeyPoolSummary
     oci.dbmulticloud.models.OracleDbAwsKeySummary
     oci.dbmulticloud.models.OracleDbAwsKeySummaryCollection
     oci.dbmulticloud.models.OracleDbAzureBlobContainer
@@ -100,6 +105,7 @@ Dbmulticloud
     oci.dbmulticloud.models.RefreshOracleDbAzureVaultDetails
     oci.dbmulticloud.models.RefreshOracleDbGcpKeyRingDetails
     oci.dbmulticloud.models.ReplicateOracleDbAwsKeyDetails
+    oci.dbmulticloud.models.ReplicateOracleDbAwsKeyPoolDetails
     oci.dbmulticloud.models.ReplicateOracleDbAzureVaultDetails
     oci.dbmulticloud.models.ReplicateOracleDbGcpKeyRingDetails
     oci.dbmulticloud.models.ReplicationDetails
@@ -110,6 +116,7 @@ Dbmulticloud
     oci.dbmulticloud.models.UpdateMultiCloudResourceDiscoveryDetails
     oci.dbmulticloud.models.UpdateOracleDbAwsIdentityConnectorDetails
     oci.dbmulticloud.models.UpdateOracleDbAwsKeyDetails
+    oci.dbmulticloud.models.UpdateOracleDbAwsKeyPoolDetails
     oci.dbmulticloud.models.UpdateOracleDbAzureBlobContainerDetails
     oci.dbmulticloud.models.UpdateOracleDbAzureBlobMountDetails
     oci.dbmulticloud.models.UpdateOracleDbAzureConnectorDetails

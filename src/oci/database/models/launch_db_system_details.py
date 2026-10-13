@@ -196,6 +196,10 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             The value to assign to the compute_count property of this LaunchDbSystemDetails.
         :type compute_count: int
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this LaunchDbSystemDetails.
+        :type is_older_version_acknowledged: bool
+
         :param db_home:
             The value to assign to the db_home property of this LaunchDbSystemDetails.
         :type db_home: oci.database.models.CreateDbHomeDetails
@@ -255,6 +259,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'data_collection_options': 'DataCollectionOptions',
             'compute_model': 'str',
             'compute_count': 'int',
+            'is_older_version_acknowledged': 'bool',
             'db_home': 'CreateDbHomeDetails',
             'database_edition': 'str',
             'disk_redundancy': 'str',
@@ -296,6 +301,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'data_collection_options': 'dataCollectionOptions',
             'compute_model': 'computeModel',
             'compute_count': 'computeCount',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'db_home': 'dbHome',
             'database_edition': 'databaseEdition',
             'disk_redundancy': 'diskRedundancy',
@@ -339,6 +345,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         self._data_collection_options = None
         self._compute_model = None
         self._compute_count = None
+        self._is_older_version_acknowledged = None
         self._db_home = None
         self._database_edition = None
         self._disk_redundancy = None

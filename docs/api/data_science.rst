@@ -37,6 +37,7 @@ Data Science
     oci.data_science.models.ChangeMlApplicationImplementationCompartmentDetails
     oci.data_science.models.ChangeMlApplicationInstanceCompartmentDetails
     oci.data_science.models.ChangeMlApplicationInstanceViewCompartmentDetails
+    oci.data_science.models.ChangeModelArtifactSignatureCompartmentDetails
     oci.data_science.models.ChangeModelCompartmentDetails
     oci.data_science.models.ChangeModelDeploymentCompartmentDetails
     oci.data_science.models.ChangeModelGroupCompartmentDetails
@@ -69,6 +70,7 @@ Data Science
     oci.data_science.models.CreateMlApplicationDetails
     oci.data_science.models.CreateMlApplicationImplementationDetails
     oci.data_science.models.CreateMlApplicationInstanceDetails
+    oci.data_science.models.CreateModelArtifactSignatureDetails
     oci.data_science.models.CreateModelDeploymentDetails
     oci.data_science.models.CreateModelDetails
     oci.data_science.models.CreateModelGroupDetails
@@ -191,6 +193,8 @@ Data Science
     oci.data_science.models.MlApplicationSummary
     oci.data_science.models.Model
     oci.data_science.models.ModelArtifactReferenceDetails
+    oci.data_science.models.ModelArtifactSignature
+    oci.data_science.models.ModelArtifactSignatureSummary
     oci.data_science.models.ModelConfigurationDetails
     oci.data_science.models.ModelDeployInfrastructureConfigurationDetails
     oci.data_science.models.ModelDeployWorkloadConfigurationDetails
@@ -328,6 +332,7 @@ Data Science
     oci.data_science.models.UpdateMlApplicationImplementationVersionDetails
     oci.data_science.models.UpdateMlApplicationInstanceDetails
     oci.data_science.models.UpdateMlApplicationInstanceViewDetails
+    oci.data_science.models.UpdateModelArtifactSignatureDetails
     oci.data_science.models.UpdateModelConfigurationDetails
     oci.data_science.models.UpdateModelDeployInfrastructureConfigurationDetails
     oci.data_science.models.UpdateModelDeploymentConfigurationDetails

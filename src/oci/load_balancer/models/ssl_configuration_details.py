@@ -30,30 +30,6 @@ class SSLConfigurationDetails(object):
         Initializes a new SSLConfigurationDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param verify_depth:
-            The value to assign to the verify_depth property of this SSLConfigurationDetails.
-        :type verify_depth: int
-
-        :param verify_peer_certificate:
-            The value to assign to the verify_peer_certificate property of this SSLConfigurationDetails.
-        :type verify_peer_certificate: bool
-
-        :param has_session_resumption:
-            The value to assign to the has_session_resumption property of this SSLConfigurationDetails.
-        :type has_session_resumption: bool
-
-        :param trusted_certificate_authority_ids:
-            The value to assign to the trusted_certificate_authority_ids property of this SSLConfigurationDetails.
-        :type trusted_certificate_authority_ids: list[str]
-
-        :param certificate_ids:
-            The value to assign to the certificate_ids property of this SSLConfigurationDetails.
-        :type certificate_ids: list[str]
-
-        :param certificate_name:
-            The value to assign to the certificate_name property of this SSLConfigurationDetails.
-        :type certificate_name: str
-
         :param protocols:
             The value to assign to the protocols property of this SSLConfigurationDetails.
         :type protocols: list[str]
@@ -67,216 +43,62 @@ class SSLConfigurationDetails(object):
             Allowed values for this property are: "ENABLED", "DISABLED"
         :type server_order_preference: str
 
+        :param certificate_name:
+            The value to assign to the certificate_name property of this SSLConfigurationDetails.
+        :type certificate_name: str
+
+        :param certificate_ids:
+            The value to assign to the certificate_ids property of this SSLConfigurationDetails.
+        :type certificate_ids: list[str]
+
+        :param trusted_certificate_authority_ids:
+            The value to assign to the trusted_certificate_authority_ids property of this SSLConfigurationDetails.
+        :type trusted_certificate_authority_ids: list[str]
+
+        :param has_session_resumption:
+            The value to assign to the has_session_resumption property of this SSLConfigurationDetails.
+        :type has_session_resumption: bool
+
+        :param verify_peer_certificate:
+            The value to assign to the verify_peer_certificate property of this SSLConfigurationDetails.
+        :type verify_peer_certificate: bool
+
+        :param verify_depth:
+            The value to assign to the verify_depth property of this SSLConfigurationDetails.
+        :type verify_depth: int
+
         """
         self.swagger_types = {
-            'verify_depth': 'int',
-            'verify_peer_certificate': 'bool',
-            'has_session_resumption': 'bool',
-            'trusted_certificate_authority_ids': 'list[str]',
-            'certificate_ids': 'list[str]',
-            'certificate_name': 'str',
             'protocols': 'list[str]',
             'cipher_suite_name': 'str',
-            'server_order_preference': 'str'
+            'server_order_preference': 'str',
+            'certificate_name': 'str',
+            'certificate_ids': 'list[str]',
+            'trusted_certificate_authority_ids': 'list[str]',
+            'has_session_resumption': 'bool',
+            'verify_peer_certificate': 'bool',
+            'verify_depth': 'int'
         }
         self.attribute_map = {
-            'verify_depth': 'verifyDepth',
-            'verify_peer_certificate': 'verifyPeerCertificate',
-            'has_session_resumption': 'hasSessionResumption',
-            'trusted_certificate_authority_ids': 'trustedCertificateAuthorityIds',
-            'certificate_ids': 'certificateIds',
-            'certificate_name': 'certificateName',
             'protocols': 'protocols',
             'cipher_suite_name': 'cipherSuiteName',
-            'server_order_preference': 'serverOrderPreference'
+            'server_order_preference': 'serverOrderPreference',
+            'certificate_name': 'certificateName',
+            'certificate_ids': 'certificateIds',
+            'trusted_certificate_authority_ids': 'trustedCertificateAuthorityIds',
+            'has_session_resumption': 'hasSessionResumption',
+            'verify_peer_certificate': 'verifyPeerCertificate',
+            'verify_depth': 'verifyDepth'
         }
-        self._verify_depth = None
-        self._verify_peer_certificate = None
-        self._has_session_resumption = None
-        self._trusted_certificate_authority_ids = None
-        self._certificate_ids = None
-        self._certificate_name = None
         self._protocols = None
         self._cipher_suite_name = None
         self._server_order_preference = None
-
-    @property
-    def verify_depth(self):
-        """
-        Gets the verify_depth of this SSLConfigurationDetails.
-        The maximum depth for peer certificate chain verification.
-
-        Example: `3`
-
-
-        :return: The verify_depth of this SSLConfigurationDetails.
-        :rtype: int
-        """
-        return self._verify_depth
-
-    @verify_depth.setter
-    def verify_depth(self, verify_depth):
-        """
-        Sets the verify_depth of this SSLConfigurationDetails.
-        The maximum depth for peer certificate chain verification.
-
-        Example: `3`
-
-
-        :param verify_depth: The verify_depth of this SSLConfigurationDetails.
-        :type: int
-        """
-        self._verify_depth = verify_depth
-
-    @property
-    def verify_peer_certificate(self):
-        """
-        Gets the verify_peer_certificate of this SSLConfigurationDetails.
-        Whether the load balancer listener should verify peer certificates.
-
-        Example: `true`
-
-
-        :return: The verify_peer_certificate of this SSLConfigurationDetails.
-        :rtype: bool
-        """
-        return self._verify_peer_certificate
-
-    @verify_peer_certificate.setter
-    def verify_peer_certificate(self, verify_peer_certificate):
-        """
-        Sets the verify_peer_certificate of this SSLConfigurationDetails.
-        Whether the load balancer listener should verify peer certificates.
-
-        Example: `true`
-
-
-        :param verify_peer_certificate: The verify_peer_certificate of this SSLConfigurationDetails.
-        :type: bool
-        """
-        self._verify_peer_certificate = verify_peer_certificate
-
-    @property
-    def has_session_resumption(self):
-        """
-        Gets the has_session_resumption of this SSLConfigurationDetails.
-        Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again.
-        If \"true\", the service resumes the previous TLS encrypted session.
-        If \"false\", the service starts a new TLS encrypted session.
-        Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.
-
-        Example: `true`
-
-
-        :return: The has_session_resumption of this SSLConfigurationDetails.
-        :rtype: bool
-        """
-        return self._has_session_resumption
-
-    @has_session_resumption.setter
-    def has_session_resumption(self, has_session_resumption):
-        """
-        Sets the has_session_resumption of this SSLConfigurationDetails.
-        Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again.
-        If \"true\", the service resumes the previous TLS encrypted session.
-        If \"false\", the service starts a new TLS encrypted session.
-        Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.
-
-        Example: `true`
-
-
-        :param has_session_resumption: The has_session_resumption of this SSLConfigurationDetails.
-        :type: bool
-        """
-        self._has_session_resumption = has_session_resumption
-
-    @property
-    def trusted_certificate_authority_ids(self):
-        """
-        Gets the trusted_certificate_authority_ids of this SSLConfigurationDetails.
-        Ids for OCI certificates service CA or CA bundles for the load balancer to trust.
-
-        Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
-
-
-        :return: The trusted_certificate_authority_ids of this SSLConfigurationDetails.
-        :rtype: list[str]
-        """
-        return self._trusted_certificate_authority_ids
-
-    @trusted_certificate_authority_ids.setter
-    def trusted_certificate_authority_ids(self, trusted_certificate_authority_ids):
-        """
-        Sets the trusted_certificate_authority_ids of this SSLConfigurationDetails.
-        Ids for OCI certificates service CA or CA bundles for the load balancer to trust.
-
-        Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
-
-
-        :param trusted_certificate_authority_ids: The trusted_certificate_authority_ids of this SSLConfigurationDetails.
-        :type: list[str]
-        """
-        self._trusted_certificate_authority_ids = trusted_certificate_authority_ids
-
-    @property
-    def certificate_ids(self):
-        """
-        Gets the certificate_ids of this SSLConfigurationDetails.
-        Ids for OCI certificates service certificates. Currently only a single Id may be passed.
-
-        Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
-
-
-        :return: The certificate_ids of this SSLConfigurationDetails.
-        :rtype: list[str]
-        """
-        return self._certificate_ids
-
-    @certificate_ids.setter
-    def certificate_ids(self, certificate_ids):
-        """
-        Sets the certificate_ids of this SSLConfigurationDetails.
-        Ids for OCI certificates service certificates. Currently only a single Id may be passed.
-
-        Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
-
-
-        :param certificate_ids: The certificate_ids of this SSLConfigurationDetails.
-        :type: list[str]
-        """
-        self._certificate_ids = certificate_ids
-
-    @property
-    def certificate_name(self):
-        """
-        Gets the certificate_name of this SSLConfigurationDetails.
-        A friendly name for the certificate bundle. It must be unique and it cannot be changed.
-        Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
-        Certificate bundle names cannot contain spaces. Avoid entering confidential information.
-
-        Example: `example_certificate_bundle`
-
-
-        :return: The certificate_name of this SSLConfigurationDetails.
-        :rtype: str
-        """
-        return self._certificate_name
-
-    @certificate_name.setter
-    def certificate_name(self, certificate_name):
-        """
-        Sets the certificate_name of this SSLConfigurationDetails.
-        A friendly name for the certificate bundle. It must be unique and it cannot be changed.
-        Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
-        Certificate bundle names cannot contain spaces. Avoid entering confidential information.
-
-        Example: `example_certificate_bundle`
-
-
-        :param certificate_name: The certificate_name of this SSLConfigurationDetails.
-        :type: str
-        """
-        self._certificate_name = certificate_name
+        self._certificate_name = None
+        self._certificate_ids = None
+        self._trusted_certificate_authority_ids = None
+        self._has_session_resumption = None
+        self._verify_peer_certificate = None
+        self._verify_depth = None
 
     @property
     def protocols(self):
@@ -460,6 +282,184 @@ class SSLConfigurationDetails(object):
                 f"Invalid value for `server_order_preference`, must be None or one of {allowed_values}"
             )
         self._server_order_preference = server_order_preference
+
+    @property
+    def certificate_name(self):
+        """
+        Gets the certificate_name of this SSLConfigurationDetails.
+        A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+        Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+        Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+
+        Example: `example_certificate_bundle`
+
+
+        :return: The certificate_name of this SSLConfigurationDetails.
+        :rtype: str
+        """
+        return self._certificate_name
+
+    @certificate_name.setter
+    def certificate_name(self, certificate_name):
+        """
+        Sets the certificate_name of this SSLConfigurationDetails.
+        A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+        Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+        Certificate bundle names cannot contain spaces. Avoid entering confidential information.
+
+        Example: `example_certificate_bundle`
+
+
+        :param certificate_name: The certificate_name of this SSLConfigurationDetails.
+        :type: str
+        """
+        self._certificate_name = certificate_name
+
+    @property
+    def certificate_ids(self):
+        """
+        Gets the certificate_ids of this SSLConfigurationDetails.
+        Ids for OCI certificates service certificates. Currently only a single Id may be passed.
+
+        Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
+
+
+        :return: The certificate_ids of this SSLConfigurationDetails.
+        :rtype: list[str]
+        """
+        return self._certificate_ids
+
+    @certificate_ids.setter
+    def certificate_ids(self, certificate_ids):
+        """
+        Sets the certificate_ids of this SSLConfigurationDetails.
+        Ids for OCI certificates service certificates. Currently only a single Id may be passed.
+
+        Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
+
+
+        :param certificate_ids: The certificate_ids of this SSLConfigurationDetails.
+        :type: list[str]
+        """
+        self._certificate_ids = certificate_ids
+
+    @property
+    def trusted_certificate_authority_ids(self):
+        """
+        Gets the trusted_certificate_authority_ids of this SSLConfigurationDetails.
+        Ids for OCI certificates service CA or CA bundles for the load balancer to trust.
+
+        Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
+
+
+        :return: The trusted_certificate_authority_ids of this SSLConfigurationDetails.
+        :rtype: list[str]
+        """
+        return self._trusted_certificate_authority_ids
+
+    @trusted_certificate_authority_ids.setter
+    def trusted_certificate_authority_ids(self, trusted_certificate_authority_ids):
+        """
+        Sets the trusted_certificate_authority_ids of this SSLConfigurationDetails.
+        Ids for OCI certificates service CA or CA bundles for the load balancer to trust.
+
+        Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
+
+
+        :param trusted_certificate_authority_ids: The trusted_certificate_authority_ids of this SSLConfigurationDetails.
+        :type: list[str]
+        """
+        self._trusted_certificate_authority_ids = trusted_certificate_authority_ids
+
+    @property
+    def has_session_resumption(self):
+        """
+        Gets the has_session_resumption of this SSLConfigurationDetails.
+        Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again.
+        If \"true\", the service resumes the previous TLS encrypted session.
+        If \"false\", the service starts a new TLS encrypted session.
+        Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.
+
+        Example: `true`
+
+
+        :return: The has_session_resumption of this SSLConfigurationDetails.
+        :rtype: bool
+        """
+        return self._has_session_resumption
+
+    @has_session_resumption.setter
+    def has_session_resumption(self, has_session_resumption):
+        """
+        Sets the has_session_resumption of this SSLConfigurationDetails.
+        Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again.
+        If \"true\", the service resumes the previous TLS encrypted session.
+        If \"false\", the service starts a new TLS encrypted session.
+        Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.
+
+        Example: `true`
+
+
+        :param has_session_resumption: The has_session_resumption of this SSLConfigurationDetails.
+        :type: bool
+        """
+        self._has_session_resumption = has_session_resumption
+
+    @property
+    def verify_peer_certificate(self):
+        """
+        Gets the verify_peer_certificate of this SSLConfigurationDetails.
+        Whether the load balancer listener should verify peer certificates.
+
+        Example: `true`
+
+
+        :return: The verify_peer_certificate of this SSLConfigurationDetails.
+        :rtype: bool
+        """
+        return self._verify_peer_certificate
+
+    @verify_peer_certificate.setter
+    def verify_peer_certificate(self, verify_peer_certificate):
+        """
+        Sets the verify_peer_certificate of this SSLConfigurationDetails.
+        Whether the load balancer listener should verify peer certificates.
+
+        Example: `true`
+
+
+        :param verify_peer_certificate: The verify_peer_certificate of this SSLConfigurationDetails.
+        :type: bool
+        """
+        self._verify_peer_certificate = verify_peer_certificate
+
+    @property
+    def verify_depth(self):
+        """
+        Gets the verify_depth of this SSLConfigurationDetails.
+        The maximum depth for peer certificate chain verification.
+
+        Example: `3`
+
+
+        :return: The verify_depth of this SSLConfigurationDetails.
+        :rtype: int
+        """
+        return self._verify_depth
+
+    @verify_depth.setter
+    def verify_depth(self, verify_depth):
+        """
+        Sets the verify_depth of this SSLConfigurationDetails.
+        The maximum depth for peer certificate chain verification.
+
+        Example: `3`
+
+
+        :param verify_depth: The verify_depth of this SSLConfigurationDetails.
+        :type: int
+        """
+        self._verify_depth = verify_depth
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -305,6 +305,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Gets the id of this BackupDestinationConfigurationSummary.
         The `OCID`__ of the backup destination.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -319,6 +320,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Sets the id of this BackupDestinationConfigurationSummary.
         The `OCID`__ of the backup destination.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -333,6 +335,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Gets the vpc_user of this BackupDestinationConfigurationSummary.
         For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster.
 
 
         :return: The vpc_user of this BackupDestinationConfigurationSummary.
@@ -345,6 +348,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Sets the vpc_user of this BackupDestinationConfigurationSummary.
         For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster.
 
 
         :param vpc_user: The vpc_user of this BackupDestinationConfigurationSummary.
@@ -357,6 +361,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Gets the vpc_password of this BackupDestinationConfigurationSummary.
         For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster.
 
 
         :return: The vpc_password of this BackupDestinationConfigurationSummary.
@@ -369,6 +374,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Sets the vpc_password of this BackupDestinationConfigurationSummary.
         For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster.
 
 
         :param vpc_password: The vpc_password of this BackupDestinationConfigurationSummary.
@@ -381,6 +387,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Gets the is_zero_data_loss_enabled of this BackupDestinationConfigurationSummary.
         Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster.
 
 
         :return: The is_zero_data_loss_enabled of this BackupDestinationConfigurationSummary.
@@ -393,6 +400,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Sets the is_zero_data_loss_enabled of this BackupDestinationConfigurationSummary.
         Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster.
 
 
         :param is_zero_data_loss_enabled: The is_zero_data_loss_enabled of this BackupDestinationConfigurationSummary.
@@ -405,6 +413,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Gets the internet_proxy of this BackupDestinationConfigurationSummary.
         Proxy URL to connect to object store.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster.
 
 
         :return: The internet_proxy of this BackupDestinationConfigurationSummary.
@@ -417,6 +426,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Sets the internet_proxy of this BackupDestinationConfigurationSummary.
         Proxy URL to connect to object store.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster.
 
 
         :param internet_proxy: The internet_proxy of this BackupDestinationConfigurationSummary.
@@ -429,6 +439,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Gets the dbrs_policy_id of this BackupDestinationConfigurationSummary.
         The `OCID`__ of the DBRS policy used for backup.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster and Autonomous VM Cluster.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -443,6 +454,7 @@ class BackupDestinationConfigurationSummary(object):
         """
         Sets the dbrs_policy_id of this BackupDestinationConfigurationSummary.
         The `OCID`__ of the DBRS policy used for backup.
+        Not applicable for Autonomous Container Databases on Cloud Autonomous VM Cluster and Autonomous VM Cluster.
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

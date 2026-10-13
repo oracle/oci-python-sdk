@@ -67,6 +67,10 @@ Developed by Adi Zohar, 2018-2025, Contributors: Olaf Heimburger
 
 ### Modules Included
 
+Network Firewall policy reporting includes security rules, NAT rules, URL lists, and address lists. Each object type has a dedicated loader with explicit fixed fields. All four collections use paginated list calls followed by one GET request per object for full details. Decryption rules and profiles, tunnel inspection rules, applications and application groups, mapped secrets, services, and service lists are excluded from collection and reporting.
+Policy JSON stores each collection directly on the policy with corresponding `<collection>_status` and `<collection>_error` fields. Successful collections have status `complete`; failed detail requests retain the object summary and mark the collection `partial`. Objects have `collection_status: complete` when enriched, or `summary_only` for failed detail requests. Failed or unsupported list operations have status `unavailable` or `unsupported`. A successfully collected empty collection is `[]`; an unavailable collection is `null`. Previously saved nested data for retained collections remains supported by console and CSV output.
+Console output shows only collection totals and status, without individual rules or list contents. CSV output adds policy counts and status, plus a separate `network_firewalls_<category>` file for each retained collection containing objects. Rows include policy, compartment, and region identifiers. Reports use explicit fixed fields, with missing CSV values left empty. Rule conditions, positions, URL patterns, and address list contents are populated by detail requests. Attached firewall counts remain unknown without a policy detail request. New SDK fields require explicit loader and CSV changes. Unavailable collections and errors remain visible in the main policy CSV; successfully collected empty collections have a count of zero.
+
 - oci.core.VirtualNetworkClient
 - oci.core.ComputeClient
 - oci.core.ComputeManagementClient

@@ -58,6 +58,10 @@ class CreateDatabaseForStandbyDbSystemDetails(object):
             The value to assign to the database_software_image_id property of this CreateDatabaseForStandbyDbSystemDetails.
         :type database_software_image_id: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this CreateDatabaseForStandbyDbSystemDetails.
+        :type is_older_version_acknowledged: bool
+
         :param is_active_data_guard_enabled:
             The value to assign to the is_active_data_guard_enabled property of this CreateDatabaseForStandbyDbSystemDetails.
         :type is_active_data_guard_enabled: bool
@@ -105,6 +109,7 @@ class CreateDatabaseForStandbyDbSystemDetails(object):
             'admin_password': 'str',
             'tde_wallet_password': 'str',
             'database_software_image_id': 'str',
+            'is_older_version_acknowledged': 'bool',
             'is_active_data_guard_enabled': 'bool',
             'db_domain': 'str',
             'sid_prefix': 'str',
@@ -120,6 +125,7 @@ class CreateDatabaseForStandbyDbSystemDetails(object):
             'admin_password': 'adminPassword',
             'tde_wallet_password': 'tdeWalletPassword',
             'database_software_image_id': 'databaseSoftwareImageId',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'is_active_data_guard_enabled': 'isActiveDataGuardEnabled',
             'db_domain': 'dbDomain',
             'sid_prefix': 'sidPrefix',
@@ -137,6 +143,7 @@ class CreateDatabaseForStandbyDbSystemDetails(object):
         self._admin_password = None
         self._tde_wallet_password = None
         self._database_software_image_id = None
+        self._is_older_version_acknowledged = None
         self._is_active_data_guard_enabled = None
         self._db_domain = None
         self._sid_prefix = None
@@ -223,6 +230,30 @@ class CreateDatabaseForStandbyDbSystemDetails(object):
         :type: str
         """
         self._database_software_image_id = database_software_image_id
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this CreateDatabaseForStandbyDbSystemDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this CreateDatabaseForStandbyDbSystemDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this CreateDatabaseForStandbyDbSystemDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this CreateDatabaseForStandbyDbSystemDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def is_active_data_guard_enabled(self):

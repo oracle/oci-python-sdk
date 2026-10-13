@@ -253,6 +253,8 @@ from .data_guard_association_summary import DataGuardAssociationSummary
 from .data_guard_group import DataGuardGroup
 from .data_guard_group_member import DataGuardGroupMember
 from .data_patch_options import DataPatchOptions
+from .data_safe_registration_details import DataSafeRegistrationDetails
+from .data_safe_registration_request_details import DataSafeRegistrationRequestDetails
 from .database import Database
 from .database_connection_credentials import DatabaseConnectionCredentials
 from .database_connection_credentials_by_details import DatabaseConnectionCredentialsByDetails
@@ -843,6 +845,8 @@ database_type_mapping = {
     "DataGuardGroup": DataGuardGroup,
     "DataGuardGroupMember": DataGuardGroupMember,
     "DataPatchOptions": DataPatchOptions,
+    "DataSafeRegistrationDetails": DataSafeRegistrationDetails,
+    "DataSafeRegistrationRequestDetails": DataSafeRegistrationRequestDetails,
     "Database": Database,
     "DatabaseConnectionCredentials": DatabaseConnectionCredentials,
     "DatabaseConnectionCredentialsByDetails": DatabaseConnectionCredentialsByDetails,

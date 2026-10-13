@@ -43,6 +43,10 @@ class DatabaseUpgradeSourceBase(object):
             Allowed values for this property are: "DB_HOME", "DB_VERSION", "DB_SOFTWARE_IMAGE"
         :type source: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this DatabaseUpgradeSourceBase.
+        :type is_older_version_acknowledged: bool
+
         :param options:
             The value to assign to the options property of this DatabaseUpgradeSourceBase.
         :type options: str
@@ -50,13 +54,16 @@ class DatabaseUpgradeSourceBase(object):
         """
         self.swagger_types = {
             'source': 'str',
+            'is_older_version_acknowledged': 'bool',
             'options': 'str'
         }
         self.attribute_map = {
             'source': 'source',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'options': 'options'
         }
         self._source = None
+        self._is_older_version_acknowledged = None
         self._options = None
 
     @staticmethod
@@ -118,6 +125,30 @@ class DatabaseUpgradeSourceBase(object):
                 f"Invalid value for `source`, must be None or one of {allowed_values}"
             )
         self._source = source
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this DatabaseUpgradeSourceBase.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this DatabaseUpgradeSourceBase.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this DatabaseUpgradeSourceBase.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this DatabaseUpgradeSourceBase.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def options(self):
