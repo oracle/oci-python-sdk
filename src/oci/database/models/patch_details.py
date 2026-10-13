@@ -38,6 +38,10 @@ class PatchDetails(object):
             The value to assign to the database_software_image_id property of this PatchDetails.
         :type database_software_image_id: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this PatchDetails.
+        :type is_older_version_acknowledged: bool
+
         :param action:
             The value to assign to the action property of this PatchDetails.
             Allowed values for this property are: "APPLY", "PRECHECK"
@@ -51,17 +55,20 @@ class PatchDetails(object):
         self.swagger_types = {
             'patch_id': 'str',
             'database_software_image_id': 'str',
+            'is_older_version_acknowledged': 'bool',
             'action': 'str',
             'patch_options': 'PatchOptions'
         }
         self.attribute_map = {
             'patch_id': 'patchId',
             'database_software_image_id': 'databaseSoftwareImageId',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'action': 'action',
             'patch_options': 'patchOptions'
         }
         self._patch_id = None
         self._database_software_image_id = None
+        self._is_older_version_acknowledged = None
         self._action = None
         self._patch_options = None
 
@@ -120,6 +127,30 @@ class PatchDetails(object):
         :type: str
         """
         self._database_software_image_id = database_software_image_id
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this PatchDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this PatchDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this PatchDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this PatchDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def action(self):

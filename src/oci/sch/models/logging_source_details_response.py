@@ -25,14 +25,14 @@ class LoggingSourceDetailsResponse(SourceDetailsResponse):
         of this class is ``logging`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this LoggingSourceDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this LoggingSourceDetailsResponse.
             Allowed values for this property are: "logging", "monitoring", "streaming", "plugin"
         :type kind: str
+
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this LoggingSourceDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
 
         :param log_sources:
             The value to assign to the log_sources property of this LoggingSourceDetailsResponse.
@@ -40,17 +40,17 @@ class LoggingSourceDetailsResponse(SourceDetailsResponse):
 
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'log_sources': 'list[LogSource]'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
             'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata',
             'log_sources': 'logSources'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
         self._log_sources = None
         self._kind = 'logging'
 

@@ -24,6 +24,10 @@ class ModelConfigurationDetails(object):
             The value to assign to the model_id property of this ModelConfigurationDetails.
         :type model_id: str
 
+        :param model_artifact_signature_id:
+            The value to assign to the model_artifact_signature_id property of this ModelConfigurationDetails.
+        :type model_artifact_signature_id: str
+
         :param instance_configuration:
             The value to assign to the instance_configuration property of this ModelConfigurationDetails.
         :type instance_configuration: oci.data_science.models.InstanceConfiguration
@@ -43,6 +47,7 @@ class ModelConfigurationDetails(object):
         """
         self.swagger_types = {
             'model_id': 'str',
+            'model_artifact_signature_id': 'str',
             'instance_configuration': 'InstanceConfiguration',
             'scaling_policy': 'ScalingPolicy',
             'bandwidth_mbps': 'int',
@@ -50,12 +55,14 @@ class ModelConfigurationDetails(object):
         }
         self.attribute_map = {
             'model_id': 'modelId',
+            'model_artifact_signature_id': 'modelArtifactSignatureId',
             'instance_configuration': 'instanceConfiguration',
             'scaling_policy': 'scalingPolicy',
             'bandwidth_mbps': 'bandwidthMbps',
             'maximum_bandwidth_mbps': 'maximumBandwidthMbps'
         }
         self._model_id = None
+        self._model_artifact_signature_id = None
         self._instance_configuration = None
         self._scaling_policy = None
         self._bandwidth_mbps = None
@@ -84,6 +91,34 @@ class ModelConfigurationDetails(object):
         :type: str
         """
         self._model_id = model_id
+
+    @property
+    def model_artifact_signature_id(self):
+        """
+        Gets the model_artifact_signature_id of this ModelConfigurationDetails.
+        The `OCID`__ of a model artifact signature.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The model_artifact_signature_id of this ModelConfigurationDetails.
+        :rtype: str
+        """
+        return self._model_artifact_signature_id
+
+    @model_artifact_signature_id.setter
+    def model_artifact_signature_id(self, model_artifact_signature_id):
+        """
+        Sets the model_artifact_signature_id of this ModelConfigurationDetails.
+        The `OCID`__ of a model artifact signature.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param model_artifact_signature_id: The model_artifact_signature_id of this ModelConfigurationDetails.
+        :type: str
+        """
+        self._model_artifact_signature_id = model_artifact_signature_id
 
     @property
     def instance_configuration(self):

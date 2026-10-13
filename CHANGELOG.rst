@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.188.0 - 2026-10-13
+====================
+
+Added 
+----- 
+* Support for the Continuous Consumption Discount Offers service 
+* Support for key pool for DB@AWS in the Database MultiCloud service 
+* Support for cluster master-user authentication with a plain-text password or vault secret in the OpenSearch service 
+* Support for artifact signature and integrity verification of models in the Data Science service 
+* Support for the spatial studio tool in the Autonomous Database service 
+* Support for self-service acknowledgment for older database versions in the Database service 
+* Support for seamless integration of Exadata databases with Data Safe in the Database service 
+* Support for AWS encryption keys during database creation, data guard association creation, and encryption key location changes in the Database service  
+
+Breaking 
+-------- 
+* The property `model_deployment_resource_configuration` was made required in the model `ManagedComputeClusterModelDeployInfrastructureConfigDetails` in the Data Science service  
+
+====================
 2.187.2 - 2026-10-06
 ====================
 

@@ -130,6 +130,10 @@ class CreateVmClusterDetails(object):
             The value to assign to the gi_version property of this CreateVmClusterDetails.
         :type gi_version: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this CreateVmClusterDetails.
+        :type is_older_version_acknowledged: bool
+
         :param db_servers:
             The value to assign to the db_servers property of this CreateVmClusterDetails.
         :type db_servers: list[str]
@@ -198,6 +202,7 @@ class CreateVmClusterDetails(object):
             'is_local_backup_enabled': 'bool',
             'time_zone': 'str',
             'gi_version': 'str',
+            'is_older_version_acknowledged': 'bool',
             'db_servers': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -230,6 +235,7 @@ class CreateVmClusterDetails(object):
             'is_local_backup_enabled': 'isLocalBackupEnabled',
             'time_zone': 'timeZone',
             'gi_version': 'giVersion',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'db_servers': 'dbServers',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -261,6 +267,7 @@ class CreateVmClusterDetails(object):
         self._is_local_backup_enabled = None
         self._time_zone = None
         self._gi_version = None
+        self._is_older_version_acknowledged = None
         self._db_servers = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -763,6 +770,30 @@ class CreateVmClusterDetails(object):
         :type: str
         """
         self._gi_version = gi_version
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this CreateVmClusterDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this CreateVmClusterDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this CreateVmClusterDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this CreateVmClusterDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def db_servers(self):

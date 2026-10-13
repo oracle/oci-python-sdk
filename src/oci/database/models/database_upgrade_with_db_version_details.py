@@ -26,6 +26,10 @@ class DatabaseUpgradeWithDbVersionDetails(DatabaseUpgradeSourceBase):
             Allowed values for this property are: "DB_HOME", "DB_VERSION", "DB_SOFTWARE_IMAGE"
         :type source: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this DatabaseUpgradeWithDbVersionDetails.
+        :type is_older_version_acknowledged: bool
+
         :param options:
             The value to assign to the options property of this DatabaseUpgradeWithDbVersionDetails.
         :type options: str
@@ -37,15 +41,18 @@ class DatabaseUpgradeWithDbVersionDetails(DatabaseUpgradeSourceBase):
         """
         self.swagger_types = {
             'source': 'str',
+            'is_older_version_acknowledged': 'bool',
             'options': 'str',
             'db_version': 'str'
         }
         self.attribute_map = {
             'source': 'source',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'options': 'options',
             'db_version': 'dbVersion'
         }
         self._source = None
+        self._is_older_version_acknowledged = None
         self._options = None
         self._db_version = None
         self._source = 'DB_VERSION'

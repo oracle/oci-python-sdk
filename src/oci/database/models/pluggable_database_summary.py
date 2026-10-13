@@ -88,6 +88,18 @@ class PluggableDatabaseSummary(object):
     #: This constant has a value of "MIGRATE"
     OPEN_MODE_MIGRATE = "MIGRATE"
 
+    #: A constant which can be used with the data_safe_state property of a PluggableDatabaseSummary.
+    #: This constant has a value of "ENABLED"
+    DATA_SAFE_STATE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the data_safe_state property of a PluggableDatabaseSummary.
+    #: This constant has a value of "DISABLED"
+    DATA_SAFE_STATE_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the data_safe_state property of a PluggableDatabaseSummary.
+    #: This constant has a value of "FAILED"
+    DATA_SAFE_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PluggableDatabaseSummary object with values from keyword arguments.
@@ -173,6 +185,12 @@ class PluggableDatabaseSummary(object):
             The value to assign to the patch_version property of this PluggableDatabaseSummary.
         :type patch_version: str
 
+        :param data_safe_state:
+            The value to assign to the data_safe_state property of this PluggableDatabaseSummary.
+            Allowed values for this property are: "ENABLED", "DISABLED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type data_safe_state: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -193,7 +211,8 @@ class PluggableDatabaseSummary(object):
             'kms_key_version_id': 'str',
             'refreshable_clone_config': 'PluggableDatabaseRefreshableCloneConfig',
             'pdb_node_level_details': 'list[PluggableDatabaseNodeLevelDetails]',
-            'patch_version': 'str'
+            'patch_version': 'str',
+            'data_safe_state': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -214,7 +233,8 @@ class PluggableDatabaseSummary(object):
             'kms_key_version_id': 'kmsKeyVersionId',
             'refreshable_clone_config': 'refreshableCloneConfig',
             'pdb_node_level_details': 'pdbNodeLevelDetails',
-            'patch_version': 'patchVersion'
+            'patch_version': 'patchVersion',
+            'data_safe_state': 'dataSafeState'
         }
         self._id = None
         self._container_database_id = None
@@ -235,6 +255,7 @@ class PluggableDatabaseSummary(object):
         self._refreshable_clone_config = None
         self._pdb_node_level_details = None
         self._patch_version = None
+        self._data_safe_state = None
 
     @property
     def id(self):
@@ -731,6 +752,36 @@ class PluggableDatabaseSummary(object):
         :type: str
         """
         self._patch_version = patch_version
+
+    @property
+    def data_safe_state(self):
+        """
+        Gets the data_safe_state of this PluggableDatabaseSummary.
+        The Data Safe status of the pluggable database.
+
+        Allowed values for this property are: "ENABLED", "DISABLED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The data_safe_state of this PluggableDatabaseSummary.
+        :rtype: str
+        """
+        return self._data_safe_state
+
+    @data_safe_state.setter
+    def data_safe_state(self, data_safe_state):
+        """
+        Sets the data_safe_state of this PluggableDatabaseSummary.
+        The Data Safe status of the pluggable database.
+
+
+        :param data_safe_state: The data_safe_state of this PluggableDatabaseSummary.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(data_safe_state, allowed_values):
+            data_safe_state = 'UNKNOWN_ENUM_VALUE'
+        self._data_safe_state = data_safe_state
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -108,6 +108,10 @@ class UpdateDatabaseDetails(object):
             The value to assign to the auto_failover_configuration property of this UpdateDatabaseDetails.
         :type auto_failover_configuration: oci.database.models.AutoFailoverConfiguration
 
+        :param data_safe_registration_details:
+            The value to assign to the data_safe_registration_details property of this UpdateDatabaseDetails.
+        :type data_safe_registration_details: oci.database.models.DataSafeRegistrationRequestDetails
+
         """
         self.swagger_types = {
             'db_backup_config': 'DbBackupConfig',
@@ -124,7 +128,8 @@ class UpdateDatabaseDetails(object):
             'protection_mode': 'str',
             'transport_type': 'str',
             'is_active_data_guard_enabled': 'bool',
-            'auto_failover_configuration': 'AutoFailoverConfiguration'
+            'auto_failover_configuration': 'AutoFailoverConfiguration',
+            'data_safe_registration_details': 'DataSafeRegistrationRequestDetails'
         }
         self.attribute_map = {
             'db_backup_config': 'dbBackupConfig',
@@ -141,7 +146,8 @@ class UpdateDatabaseDetails(object):
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
             'is_active_data_guard_enabled': 'isActiveDataGuardEnabled',
-            'auto_failover_configuration': 'autoFailoverConfiguration'
+            'auto_failover_configuration': 'autoFailoverConfiguration',
+            'data_safe_registration_details': 'dataSafeRegistrationDetails'
         }
         self._redacted_field_paths = [
             ['new_admin_password'],
@@ -164,6 +170,7 @@ class UpdateDatabaseDetails(object):
         self._transport_type = None
         self._is_active_data_guard_enabled = None
         self._auto_failover_configuration = None
+        self._data_safe_registration_details = None
 
     @property
     def db_backup_config(self):
@@ -574,6 +581,26 @@ class UpdateDatabaseDetails(object):
         :type: oci.database.models.AutoFailoverConfiguration
         """
         self._auto_failover_configuration = auto_failover_configuration
+
+    @property
+    def data_safe_registration_details(self):
+        """
+        Gets the data_safe_registration_details of this UpdateDatabaseDetails.
+
+        :return: The data_safe_registration_details of this UpdateDatabaseDetails.
+        :rtype: oci.database.models.DataSafeRegistrationRequestDetails
+        """
+        return self._data_safe_registration_details
+
+    @data_safe_registration_details.setter
+    def data_safe_registration_details(self, data_safe_registration_details):
+        """
+        Sets the data_safe_registration_details of this UpdateDatabaseDetails.
+
+        :param data_safe_registration_details: The data_safe_registration_details of this UpdateDatabaseDetails.
+        :type: oci.database.models.DataSafeRegistrationRequestDetails
+        """
+        self._data_safe_registration_details = data_safe_registration_details
 
     def __repr__(self):
         as_dict = to_dict(self)

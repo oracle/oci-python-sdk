@@ -27,6 +27,7 @@ from __future__ import print_function
 import oci
 import time
 import datetime
+import hashlib
 import os
 import platform
 import sys
@@ -39,7 +40,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "26.08.19"
+    version = "26.09.29"
     oci_compatible_version = "2.165.1"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -835,6 +836,13 @@ class ShowOCIService(object):
 
         except Exception as e:
             self.__print_error(e)
+
+    ##########################################################################
+    # Get a detail value, falling back to the matching summary value.
+    ##########################################################################
+    def get_detail_or_summary_value(self, detail, summary, attribute):
+        detail_value = getattr(detail, attribute, None)
+        return detail_value if detail_value is not None else getattr(summary, attribute, None)
 
     ##################################################################################
     # get values
@@ -5073,6 +5081,10 @@ class ShowOCIService(object):
                         'ipv6_address': self.get_value(arr.ipv6_address),
                         'network_firewall_policy_id': self.get_value(arr.network_firewall_policy_id),
                         'network_firewall_policy_name': "",
+                        'shape': self.get_value(getattr(arr, 'shape', None)),
+                        'lifecycle_details': self.get_value(getattr(arr, 'lifecycle_details', None)),
+                        'system_tags': getattr(arr, 'system_tags', None) or {},
+                        'security_attributes': getattr(arr, 'security_attributes', None) or {},
                         'time_created': self.get_date(arr.time_created),
                         'time_updated': self.get_date(arr.time_updated),
                         'lifecycle_state': self.get_value(arr.lifecycle_state),
@@ -5125,6 +5137,225 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # Load policy security rules with full object details.
+    ##########################################################################
+    def __load_core_network_firewall_policy_security_rules(self, client, policy_id):
+        if not callable(getattr(client, 'list_security_rules', None)):
+            return None, 'unsupported', 'List operation unavailable in installed OCI SDK'
+        try:
+            summaries = oci.pagination.list_call_get_all_results(
+                client.list_security_rules,
+                policy_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+            items = []
+            status = 'complete'
+            for summary in summaries:
+                detail = None
+                detail_error = ''
+                try:
+                    detail = client.get_security_rule(
+                        policy_id, summary.name,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+                    if detail is None:
+                        raise ValueError('Empty detail response')
+                except Exception as e:
+                    detail_error = str(e)
+                    status = 'partial'
+                condition = getattr(detail, 'condition', None)
+                position = getattr(detail, 'position', None)
+                items.append({
+                    'name': self.get_detail_or_summary_value(detail, summary, 'name'),
+                    'action': self.get_detail_or_summary_value(detail, summary, 'action'),
+                    'inspection': self.get_detail_or_summary_value(detail, summary, 'inspection'),
+                    'priority_order': self.get_detail_or_summary_value(detail, summary, 'priority_order'),
+                    'parent_resource_id': self.get_detail_or_summary_value(detail, summary, 'parent_resource_id'),
+                    'description': self.get_detail_or_summary_value(detail, summary, 'description'),
+                    'condition': {
+                        'source_address': getattr(condition, 'source_address', None),
+                        'destination_address': getattr(condition, 'destination_address', None),
+                        'application': getattr(condition, 'application', None),
+                        'service': getattr(condition, 'service', None),
+                        'url': getattr(condition, 'url', None),
+                    } if condition is not None else None,
+                    'position': {
+                        'before_rule': getattr(position, 'before_rule', None),
+                        'after_rule': getattr(position, 'after_rule', None),
+                    } if position is not None else None,
+                    'collection_status': 'summary_only' if detail_error else 'complete',
+                    'collection_error': detail_error,
+                })
+            items.sort(key=lambda item: (
+                item['priority_order'] is None,
+                item['priority_order'] if item['priority_order'] is not None else 0
+            ))
+            error = 'One or more detail requests failed; see object collection_error' if status == 'partial' else ''
+            return items, status, error
+        except Exception as e:
+            return None, 'unavailable', str(e)
+
+    ##########################################################################
+    # Load policy nat rules with full object details.
+    ##########################################################################
+    def __load_core_network_firewall_policy_nat_rules(self, client, policy_id):
+        if not callable(getattr(client, 'list_nat_rules', None)):
+            return None, 'unsupported', 'List operation unavailable in installed OCI SDK'
+        try:
+            summaries = oci.pagination.list_call_get_all_results(
+                client.list_nat_rules, policy_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+            items = []
+            status = 'complete'
+            for summary in summaries:
+                detail = None
+                detail_error = ''
+                try:
+                    detail = client.get_nat_rule(
+                        policy_id, summary.name,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+                    if detail is None:
+                        raise ValueError('Empty detail response')
+                except Exception as e:
+                    detail_error = str(e)
+                    status = 'partial'
+                condition = getattr(detail, 'condition', None)
+                position = getattr(detail, 'position', None)
+                items.append({
+                    'name': self.get_detail_or_summary_value(detail, summary, 'name'),
+                    'type': self.get_detail_or_summary_value(detail, summary, 'type'),
+                    'description': self.get_detail_or_summary_value(detail, summary, 'description'),
+                    'priority_order': self.get_detail_or_summary_value(detail, summary, 'priority_order'),
+                    'parent_resource_id': self.get_detail_or_summary_value(detail, summary, 'parent_resource_id'),
+                    'position': {
+                        'before_rule': getattr(position, 'before_rule', None),
+                        'after_rule': getattr(position, 'after_rule', None),
+                    } if position is not None else None,
+                    'condition': {
+                        'source_address': getattr(condition, 'source_address', None),
+                        'destination_address': getattr(condition, 'destination_address', None),
+                        'service': getattr(condition, 'service', None),
+                    } if condition is not None else None,
+                    'action': getattr(detail, 'action', None),
+                    'collection_status': 'summary_only' if detail_error else 'complete',
+                    'collection_error': detail_error,
+                })
+            items.sort(key=lambda item: (
+                item['priority_order'] is None,
+                item['priority_order'] if item['priority_order'] is not None else 0
+            ))
+            error = 'One or more detail requests failed; see object collection_error' if status == 'partial' else ''
+            return items, status, error
+        except Exception as e:
+            return None, 'unavailable', str(e)
+
+    ##########################################################################
+    # Load policy address lists with full object details.
+    ##########################################################################
+    def __load_core_network_firewall_policy_address_lists(self, client, policy_id,
+                                                          seen_address_list_content=None):
+        if not callable(getattr(client, 'list_address_lists', None)):
+            return None, 'unsupported', 'List operation unavailable in installed OCI SDK'
+        try:
+            summaries = oci.pagination.list_call_get_all_results(
+                client.list_address_lists, policy_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+            items = []
+            if seen_address_list_content is None:
+                seen_address_list_content = {}
+            status = 'complete'
+
+            for summary in summaries:
+                detail = None
+                detail_error = ''
+                try:
+                    detail = client.get_address_list(
+                        policy_id, summary.name,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+                    if detail is None:
+                        raise ValueError('Empty detail response')
+                except Exception as e:
+                    detail_error = str(e)
+                    status = 'partial'
+
+                name = self.get_detail_or_summary_value(detail, summary, 'name')
+
+                addresses = getattr(detail, 'addresses', None)
+                if addresses is not None:
+                    address_hash = hashlib.sha256()
+                    for address in addresses:
+                        encoded_address = str(address).encode('utf-8')
+                        address_hash.update(len(encoded_address).to_bytes(8, byteorder='big'))
+                        address_hash.update(encoded_address)
+                    known_addresses = seen_address_list_content.setdefault(name, set())
+                    if address_hash.digest() in known_addresses:
+                        addresses = 'Duplicate, Check other ' + str(name)
+                    else:
+                        known_addresses.add(address_hash.digest())
+
+                items.append({
+                    'name': name,
+                    'type': self.get_detail_or_summary_value(detail, summary, 'type'),
+                    'total_addresses': self.get_detail_or_summary_value(detail, summary, 'total_addresses'),
+                    'parent_resource_id': self.get_detail_or_summary_value(detail, summary, 'parent_resource_id'),
+                    'description': self.get_detail_or_summary_value(detail, summary, 'description'),
+                    'addresses': addresses,
+                    'collection_status': 'summary_only' if detail_error else 'complete',
+                    'collection_error': detail_error,
+                })
+            error = 'One or more detail requests failed; see object collection_error' if status == 'partial' else ''
+            return items, status, error
+        except Exception as e:
+            return None, 'unavailable', str(e)
+
+    ##########################################################################
+    # Load policy url lists with full object details.
+    ##########################################################################
+    def __load_core_network_firewall_policy_url_lists(self, client, policy_id):
+        if not callable(getattr(client, 'list_url_lists', None)):
+            return None, 'unsupported', 'List operation unavailable in installed OCI SDK'
+        try:
+            summaries = oci.pagination.list_call_get_all_results(
+                client.list_url_lists, policy_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+            items = []
+            status = 'complete'
+            for summary in summaries:
+                detail = None
+                detail_error = ''
+                try:
+                    detail = client.get_url_list(
+                        policy_id, summary.name,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+                    if detail is None:
+                        raise ValueError('Empty detail response')
+                except Exception as e:
+                    detail_error = str(e)
+                    status = 'partial'
+                items.append({
+                    'name': self.get_detail_or_summary_value(detail, summary, 'name'),
+                    'total_urls': self.get_detail_or_summary_value(detail, summary, 'total_urls'),
+                    'parent_resource_id': self.get_detail_or_summary_value(detail, summary, 'parent_resource_id'),
+                    'description': self.get_detail_or_summary_value(detail, summary, 'description'),
+                    'urls': [
+                        {'type': getattr(url, 'type', None), 'pattern': getattr(url, 'pattern', None)}
+                        for url in detail.urls
+                    ] if detail is not None and detail.urls is not None else None,
+                    'collection_status': 'summary_only' if detail_error else 'complete',
+                    'collection_error': detail_error,
+                })
+            error = 'One or more detail requests failed; see object collection_error' if status == 'partial' else ''
+            return items, status, error
+        except Exception as e:
+            return None, 'unavailable', str(e)
+
+    ##########################################################################
     # load network FW policies
     ##########################################################################
     def __load_core_network_firewall_policy(self, network_firewall_client, compartments):
@@ -5142,6 +5373,11 @@ class ShowOCIService(object):
             if not network_firewall_client:
                 self.__load_print_thread_exclude(header)
                 return data
+
+            # Retain only a compact fingerprint for each address-list name and
+            # address collection. This prevents repeated large payloads from
+            # being retained in the service data.
+            seen_address_list_content = {}
 
             # loop on all compartments
             for compartment in compartments:
@@ -5180,6 +5416,10 @@ class ShowOCIService(object):
 
                     val = {'id': str(arr.id),
                            'display_name': str(arr.display_name),
+                           'description': self.get_value(getattr(arr, 'description', None)),
+                           'lifecycle_details': self.get_value(getattr(arr, 'lifecycle_details', None)),
+                           'system_tags': getattr(arr, 'system_tags', None) or {},
+                           'attached_network_firewall_count': None,
                            'time_created': self.get_date(arr.time_created),
                            'time_updated': self.get_date(arr.time_updated),
                            'lifecycle_state': self.get_value(arr.lifecycle_state),
@@ -5190,6 +5430,19 @@ class ShowOCIService(object):
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'region_name': str(self.config['region'])
                            }
+
+                    # Enrich each retained collection with detail requests
+                    val['security_rules'], val['security_rules_status'], val['security_rules_error'] = self.__load_core_network_firewall_policy_security_rules(network_firewall_client, arr.id)
+                    val['nat_rules'], val['nat_rules_status'], val['nat_rules_error'] = self.__load_core_network_firewall_policy_nat_rules(network_firewall_client, arr.id)
+                    val['address_lists'], val['address_lists_status'], val['address_lists_error'] = self.__load_core_network_firewall_policy_address_lists(
+                        network_firewall_client, arr.id, seen_address_list_content)
+                    val['url_lists'], val['url_lists_status'], val['url_lists_error'] = self.__load_core_network_firewall_policy_url_lists(network_firewall_client, arr.id)
+
+                    if (val['security_rules_status'] != 'complete' or
+                            val['nat_rules_status'] != 'complete' or
+                            val['address_lists_status'] != 'complete' or
+                            val['url_lists_status'] != 'complete'):
+                        errstr += "e"
 
                     data.append(val)
                     cnt += 1

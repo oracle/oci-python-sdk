@@ -63,6 +63,18 @@ class Database(object):
     #: This constant has a value of "CUSTOMER_MANAGED"
     HOME_TYPE_CUSTOMER_MANAGED = "CUSTOMER_MANAGED"
 
+    #: A constant which can be used with the data_safe_state property of a Database.
+    #: This constant has a value of "ENABLED"
+    DATA_SAFE_STATE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the data_safe_state property of a Database.
+    #: This constant has a value of "DISABLED"
+    DATA_SAFE_STATE_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the data_safe_state property of a Database.
+    #: This constant has a value of "FAILED"
+    DATA_SAFE_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Database object with values from keyword arguments.
@@ -224,6 +236,16 @@ class Database(object):
             The value to assign to the patch_version property of this Database.
         :type patch_version: str
 
+        :param data_safe_state:
+            The value to assign to the data_safe_state property of this Database.
+            Allowed values for this property are: "ENABLED", "DISABLED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type data_safe_state: str
+
+        :param data_safe_registration_details:
+            The value to assign to the data_safe_registration_details property of this Database.
+        :type data_safe_registration_details: oci.database.models.DataSafeRegistrationDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -263,7 +285,9 @@ class Database(object):
             'storage_size_details': 'DatabaseStorageSizeResponseDetails',
             'managed_software_update_details': 'ManagedSoftwareUpdateDetails',
             'home_type': 'str',
-            'patch_version': 'str'
+            'patch_version': 'str',
+            'data_safe_state': 'str',
+            'data_safe_registration_details': 'DataSafeRegistrationDetails'
         }
         self.attribute_map = {
             'id': 'id',
@@ -303,7 +327,9 @@ class Database(object):
             'storage_size_details': 'storageSizeDetails',
             'managed_software_update_details': 'managedSoftwareUpdateDetails',
             'home_type': 'homeType',
-            'patch_version': 'patchVersion'
+            'patch_version': 'patchVersion',
+            'data_safe_state': 'dataSafeState',
+            'data_safe_registration_details': 'dataSafeRegistrationDetails'
         }
         self._id = None
         self._compartment_id = None
@@ -343,6 +369,8 @@ class Database(object):
         self._managed_software_update_details = None
         self._home_type = None
         self._patch_version = None
+        self._data_safe_state = None
+        self._data_safe_registration_details = None
 
     @property
     def id(self):
@@ -1309,6 +1337,56 @@ class Database(object):
         :type: str
         """
         self._patch_version = patch_version
+
+    @property
+    def data_safe_state(self):
+        """
+        Gets the data_safe_state of this Database.
+        The Data Safe status of the database.
+
+        Allowed values for this property are: "ENABLED", "DISABLED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The data_safe_state of this Database.
+        :rtype: str
+        """
+        return self._data_safe_state
+
+    @data_safe_state.setter
+    def data_safe_state(self, data_safe_state):
+        """
+        Sets the data_safe_state of this Database.
+        The Data Safe status of the database.
+
+
+        :param data_safe_state: The data_safe_state of this Database.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(data_safe_state, allowed_values):
+            data_safe_state = 'UNKNOWN_ENUM_VALUE'
+        self._data_safe_state = data_safe_state
+
+    @property
+    def data_safe_registration_details(self):
+        """
+        Gets the data_safe_registration_details of this Database.
+
+        :return: The data_safe_registration_details of this Database.
+        :rtype: oci.database.models.DataSafeRegistrationDetails
+        """
+        return self._data_safe_registration_details
+
+    @data_safe_registration_details.setter
+    def data_safe_registration_details(self, data_safe_registration_details):
+        """
+        Sets the data_safe_registration_details of this Database.
+
+        :param data_safe_registration_details: The data_safe_registration_details of this Database.
+        :type: oci.database.models.DataSafeRegistrationDetails
+        """
+        self._data_safe_registration_details = data_safe_registration_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

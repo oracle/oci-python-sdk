@@ -45,6 +45,8 @@ API Reference
 * :doc:`Byol <ocvp/client/oci.ocvp.ByolClient>`
 * :doc:`Byol Allocation <ocvp/client/oci.ocvp.ByolAllocationClient>`
 * :doc:`Capacity Management <capacity_management/client/oci.capacity_management.CapacityManagementClient>`
+* :doc:`Ccd Commitments <ccd_offers/client/oci.ccd_offers.CcdCommitmentsClient>`
+* :doc:`Ccd Offers <ccd_offers/client/oci.ccd_offers.CcdOffersClient>`
 * :doc:`Certificates <certificates/client/oci.certificates.CertificatesClient>`
 * :doc:`Certificates Management <certificates_management/client/oci.certificates_management.CertificatesManagementClient>`
 * :doc:`Channels <mysql/client/oci.mysql.ChannelsClient>`
@@ -374,6 +376,7 @@ API Reference
     blockchain
     budget
     capacity_management
+    ccd_offers
     certificates
     certificates_management
     cims

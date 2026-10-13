@@ -25,14 +25,14 @@ class PluginSourceDetailsResponse(SourceDetailsResponse):
         of this class is ``plugin`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this PluginSourceDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this PluginSourceDetailsResponse.
             Allowed values for this property are: "logging", "monitoring", "streaming", "plugin"
         :type kind: str
+
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this PluginSourceDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
 
         :param plugin_name:
             The value to assign to the plugin_name property of this PluginSourceDetailsResponse.
@@ -44,19 +44,19 @@ class PluginSourceDetailsResponse(SourceDetailsResponse):
 
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'plugin_name': 'str',
             'config_map': 'object'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
             'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata',
             'plugin_name': 'pluginName',
             'config_map': 'configMap'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
         self._plugin_name = None
         self._config_map = None
         self._kind = 'plugin'

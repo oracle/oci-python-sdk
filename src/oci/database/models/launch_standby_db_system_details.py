@@ -168,6 +168,10 @@ class LaunchStandbyDbSystemDetails(LaunchDbSystemBase):
             The value to assign to the compute_count property of this LaunchStandbyDbSystemDetails.
         :type compute_count: int
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this LaunchStandbyDbSystemDetails.
+        :type is_older_version_acknowledged: bool
+
         :param primary_db_system_id:
             The value to assign to the primary_db_system_id property of this LaunchStandbyDbSystemDetails.
         :type primary_db_system_id: str
@@ -217,6 +221,7 @@ class LaunchStandbyDbSystemDetails(LaunchDbSystemBase):
             'data_collection_options': 'DataCollectionOptions',
             'compute_model': 'str',
             'compute_count': 'int',
+            'is_older_version_acknowledged': 'bool',
             'primary_db_system_id': 'str',
             'db_home': 'CreateDbHomeForStandbyDbSystem',
             'license_model': 'str'
@@ -256,6 +261,7 @@ class LaunchStandbyDbSystemDetails(LaunchDbSystemBase):
             'data_collection_options': 'dataCollectionOptions',
             'compute_model': 'computeModel',
             'compute_count': 'computeCount',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'primary_db_system_id': 'primaryDbSystemId',
             'db_home': 'dbHome',
             'license_model': 'licenseModel'
@@ -297,6 +303,7 @@ class LaunchStandbyDbSystemDetails(LaunchDbSystemBase):
         self._data_collection_options = None
         self._compute_model = None
         self._compute_count = None
+        self._is_older_version_acknowledged = None
         self._primary_db_system_id = None
         self._db_home = None
         self._license_model = None

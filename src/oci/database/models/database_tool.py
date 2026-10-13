@@ -47,6 +47,10 @@ class DatabaseTool(object):
     #: This constant has a value of "SPATIAL_STUDIO"
     NAME_SPATIAL_STUDIO = "SPATIAL_STUDIO"
 
+    #: A constant which can be used with the name property of a DatabaseTool.
+    #: This constant has a value of "ESSBASE"
+    NAME_ESSBASE = "ESSBASE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseTool object with values from keyword arguments.
@@ -54,7 +58,7 @@ class DatabaseTool(object):
 
         :param name:
             The value to assign to the name property of this DatabaseTool.
-            Allowed values for this property are: "APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO", "ESSBASE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type name: str
 
@@ -94,7 +98,7 @@ class DatabaseTool(object):
         **[Required]** Gets the name of this DatabaseTool.
         Name of database tool.
 
-        Allowed values for this property are: "APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO", "ESSBASE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -113,7 +117,7 @@ class DatabaseTool(object):
         :param name: The name of this DatabaseTool.
         :type: str
         """
-        allowed_values = ["APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO"]
+        allowed_values = ["APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO", "ESSBASE"]
         if not value_allowed_none_or_none_sentinel(name, allowed_values):
             name = 'UNKNOWN_ENUM_VALUE'
         self._name = name

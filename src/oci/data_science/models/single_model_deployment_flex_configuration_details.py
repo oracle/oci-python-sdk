@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SingleModelDeploymentFlexConfigurationDetails(ModelDeploymentConfigurationDetails):
     """
-    The single model model deployment flex configuration details.
+    The configuration details for a single-model deployment with flexible, decoupled infrastructure and model configuration.
     """
 
     def __init__(self, **kwargs):

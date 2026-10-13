@@ -25,14 +25,14 @@ class ObjectStorageTargetDetailsResponse(TargetDetailsResponse):
         of this class is ``objectStorage`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this ObjectStorageTargetDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this ObjectStorageTargetDetailsResponse.
             Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"
         :type kind: str
+
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this ObjectStorageTargetDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
 
         :param namespace:
             The value to assign to the namespace property of this ObjectStorageTargetDetailsResponse.
@@ -56,8 +56,8 @@ class ObjectStorageTargetDetailsResponse(TargetDetailsResponse):
 
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'namespace': 'str',
             'bucket_name': 'str',
             'object_name_prefix': 'str',
@@ -65,16 +65,16 @@ class ObjectStorageTargetDetailsResponse(TargetDetailsResponse):
             'batch_rollover_time_in_ms': 'int'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
             'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata',
             'namespace': 'namespace',
             'bucket_name': 'bucketName',
             'object_name_prefix': 'objectNamePrefix',
             'batch_rollover_size_in_mbs': 'batchRolloverSizeInMBs',
             'batch_rollover_time_in_ms': 'batchRolloverTimeInMs'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
         self._namespace = None
         self._bucket_name = None
         self._object_name_prefix = None

@@ -110,6 +110,10 @@ class UpdateExadbVmClusterDetails(object):
             Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK"
         :type update_action: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this UpdateExadbVmClusterDetails.
+        :type is_older_version_acknowledged: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -127,7 +131,8 @@ class UpdateExadbVmClusterDetails(object):
             'data_collection_options': 'DataCollectionOptions',
             'system_version': 'str',
             'grid_image_id': 'str',
-            'update_action': 'str'
+            'update_action': 'str',
+            'is_older_version_acknowledged': 'bool'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -145,7 +150,8 @@ class UpdateExadbVmClusterDetails(object):
             'data_collection_options': 'dataCollectionOptions',
             'system_version': 'systemVersion',
             'grid_image_id': 'gridImageId',
-            'update_action': 'updateAction'
+            'update_action': 'updateAction',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged'
         }
         self._display_name = None
         self._total_e_cpu_count = None
@@ -163,6 +169,7 @@ class UpdateExadbVmClusterDetails(object):
         self._system_version = None
         self._grid_image_id = None
         self._update_action = None
+        self._is_older_version_acknowledged = None
 
     @property
     def display_name(self):
@@ -599,6 +606,30 @@ class UpdateExadbVmClusterDetails(object):
                 f"Invalid value for `update_action`, must be None or one of {allowed_values}"
             )
         self._update_action = update_action
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this UpdateExadbVmClusterDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this UpdateExadbVmClusterDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this UpdateExadbVmClusterDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this UpdateExadbVmClusterDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     def __repr__(self):
         return formatted_flat_dict(self)

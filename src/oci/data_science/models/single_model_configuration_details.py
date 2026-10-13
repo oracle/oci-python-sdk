@@ -24,14 +24,21 @@ class SingleModelConfigurationDetails(object):
             The value to assign to the model_id property of this SingleModelConfigurationDetails.
         :type model_id: str
 
+        :param model_artifact_signature_id:
+            The value to assign to the model_artifact_signature_id property of this SingleModelConfigurationDetails.
+        :type model_artifact_signature_id: str
+
         """
         self.swagger_types = {
-            'model_id': 'str'
+            'model_id': 'str',
+            'model_artifact_signature_id': 'str'
         }
         self.attribute_map = {
-            'model_id': 'modelId'
+            'model_id': 'modelId',
+            'model_artifact_signature_id': 'modelArtifactSignatureId'
         }
         self._model_id = None
+        self._model_artifact_signature_id = None
 
     @property
     def model_id(self):
@@ -60,6 +67,34 @@ class SingleModelConfigurationDetails(object):
         :type: str
         """
         self._model_id = model_id
+
+    @property
+    def model_artifact_signature_id(self):
+        """
+        Gets the model_artifact_signature_id of this SingleModelConfigurationDetails.
+        The `OCID`__ of a model artifact signature.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The model_artifact_signature_id of this SingleModelConfigurationDetails.
+        :rtype: str
+        """
+        return self._model_artifact_signature_id
+
+    @model_artifact_signature_id.setter
+    def model_artifact_signature_id(self, model_artifact_signature_id):
+        """
+        Sets the model_artifact_signature_id of this SingleModelConfigurationDetails.
+        The `OCID`__ of a model artifact signature.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param model_artifact_signature_id: The model_artifact_signature_id of this SingleModelConfigurationDetails.
+        :type: str
+        """
+        self._model_artifact_signature_id = model_artifact_signature_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

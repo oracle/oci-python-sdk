@@ -52,6 +52,18 @@ class OracleDbAwsKey(object):
             The value to assign to the oracle_db_connector_id property of this OracleDbAwsKey.
         :type oracle_db_connector_id: str
 
+        :param oracle_db_aws_key_pool_id:
+            The value to assign to the oracle_db_aws_key_pool_id property of this OracleDbAwsKey.
+        :type oracle_db_aws_key_pool_id: str
+
+        :param is_oracle_aws_key_used:
+            The value to assign to the is_oracle_aws_key_used property of this OracleDbAwsKey.
+        :type is_oracle_aws_key_used: bool
+
+        :param ref_count:
+            The value to assign to the ref_count property of this OracleDbAwsKey.
+        :type ref_count: int
+
         :param display_name:
             The value to assign to the display_name property of this OracleDbAwsKey.
         :type display_name: str
@@ -122,6 +134,9 @@ class OracleDbAwsKey(object):
         self.swagger_types = {
             'id': 'str',
             'oracle_db_connector_id': 'str',
+            'oracle_db_aws_key_pool_id': 'str',
+            'is_oracle_aws_key_used': 'bool',
+            'ref_count': 'int',
             'display_name': 'str',
             'aws_key_arn': 'str',
             'aws_account_id': 'str',
@@ -142,6 +157,9 @@ class OracleDbAwsKey(object):
         self.attribute_map = {
             'id': 'id',
             'oracle_db_connector_id': 'oracleDbConnectorId',
+            'oracle_db_aws_key_pool_id': 'oracleDbAwsKeyPoolId',
+            'is_oracle_aws_key_used': 'isOracleAwsKeyUsed',
+            'ref_count': 'refCount',
             'display_name': 'displayName',
             'aws_key_arn': 'awsKeyArn',
             'aws_account_id': 'awsAccountId',
@@ -161,6 +179,9 @@ class OracleDbAwsKey(object):
         }
         self._id = None
         self._oracle_db_connector_id = None
+        self._oracle_db_aws_key_pool_id = None
+        self._is_oracle_aws_key_used = None
+        self._ref_count = None
         self._display_name = None
         self._aws_key_arn = None
         self._aws_account_id = None
@@ -233,6 +254,82 @@ class OracleDbAwsKey(object):
         :type: str
         """
         self._oracle_db_connector_id = oracle_db_connector_id
+
+    @property
+    def oracle_db_aws_key_pool_id(self):
+        """
+        Gets the oracle_db_aws_key_pool_id of this OracleDbAwsKey.
+        The `OCID`__ of the Oracle DB AWS Key Pool resource.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The oracle_db_aws_key_pool_id of this OracleDbAwsKey.
+        :rtype: str
+        """
+        return self._oracle_db_aws_key_pool_id
+
+    @oracle_db_aws_key_pool_id.setter
+    def oracle_db_aws_key_pool_id(self, oracle_db_aws_key_pool_id):
+        """
+        Sets the oracle_db_aws_key_pool_id of this OracleDbAwsKey.
+        The `OCID`__ of the Oracle DB AWS Key Pool resource.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param oracle_db_aws_key_pool_id: The oracle_db_aws_key_pool_id of this OracleDbAwsKey.
+        :type: str
+        """
+        self._oracle_db_aws_key_pool_id = oracle_db_aws_key_pool_id
+
+    @property
+    def is_oracle_aws_key_used(self):
+        """
+        Gets the is_oracle_aws_key_used of this OracleDbAwsKey.
+        Indicates whether the Oracle AWS Key resource is currently in use.
+
+
+        :return: The is_oracle_aws_key_used of this OracleDbAwsKey.
+        :rtype: bool
+        """
+        return self._is_oracle_aws_key_used
+
+    @is_oracle_aws_key_used.setter
+    def is_oracle_aws_key_used(self, is_oracle_aws_key_used):
+        """
+        Sets the is_oracle_aws_key_used of this OracleDbAwsKey.
+        Indicates whether the Oracle AWS Key resource is currently in use.
+
+
+        :param is_oracle_aws_key_used: The is_oracle_aws_key_used of this OracleDbAwsKey.
+        :type: bool
+        """
+        self._is_oracle_aws_key_used = is_oracle_aws_key_used
+
+    @property
+    def ref_count(self):
+        """
+        Gets the ref_count of this OracleDbAwsKey.
+        The number of active references to the Oracle AWS Key resource.
+
+
+        :return: The ref_count of this OracleDbAwsKey.
+        :rtype: int
+        """
+        return self._ref_count
+
+    @ref_count.setter
+    def ref_count(self, ref_count):
+        """
+        Sets the ref_count of this OracleDbAwsKey.
+        The number of active references to the Oracle AWS Key resource.
+
+
+        :param ref_count: The ref_count of this OracleDbAwsKey.
+        :type: int
+        """
+        self._ref_count = ref_count
 
     @property
     def display_name(self):

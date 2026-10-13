@@ -18,11 +18,12 @@
 ##########################################################################
 from __future__ import print_function
 import csv
+import json
 import sys
 
 
 class ShowOCIOutput(object):
-    version = "26.08.19"
+    version = "26.09.29"
 
     ##########################################################################
     # spaces for align
@@ -905,6 +906,10 @@ class ShowOCIOutput(object):
                 print(self.tabs + "Subnet: " + arr['subnet_name'])
                 print(self.tabs + "NSGs  : " + arr['nsg_names'])
                 print(self.tabs + "Policy: " + arr['network_firewall_policy_name'])
+                if arr.get('shape'):
+                    print(self.tabs + "Shape : " + arr['shape'])
+                if arr.get('lifecycle_details'):
+                    print(self.tabs + "State details: " + arr['lifecycle_details'])
 
         except Exception as e:
             self.__print_error("__print_core_network_firewall", e)
@@ -923,9 +928,39 @@ class ShowOCIOutput(object):
 
             for arr in nfws:
                 print(self.taba + arr['display_name'] + " - " + arr['lifecycle_state'])
+                if arr.get('description'):
+                    print(self.tabs + "Description: " + arr['description'])
+                if arr.get('lifecycle_details'):
+                    print(self.tabs + "State details: " + arr['lifecycle_details'])
+                if arr.get('attached_network_firewall_count') is not None:
+                    print(self.tabs + "Attached firewalls: " + str(arr['attached_network_firewall_count']))
+                if arr.get('policy_details_error'):
+                    print(self.tabs + "Policy details unavailable: " + arr['policy_details_error'])
+                self.__print_core_network_firewall_policy_total(arr, 'security_rules', 'Security rules')
+                self.__print_core_network_firewall_policy_total(arr, 'nat_rules', 'Nat rules')
+                self.__print_core_network_firewall_policy_total(arr, 'address_lists', 'Address lists')
+                self.__print_core_network_firewall_policy_total(arr, 'url_lists', 'Url lists')
 
         except Exception as e:
             self.__print_error("__print_core_network_firewall_policies", e)
+
+    ##########################################################################
+    # Print the total and collection status without object details.
+    ##########################################################################
+    def __print_core_network_firewall_policy_total(self, policy, key, label):
+        if key in policy:
+            items = policy[key]
+            status = policy.get(key + '_status', 'unknown')
+        elif key in (policy.get('configuration') or {}):
+            items = policy['configuration'][key]
+            saved_status = (policy.get('configuration_status') or {}).get(key, {})
+            status = saved_status.get('status', 'unknown')
+        else:
+            return
+        if status == 'not_collected':
+            return
+        count = 'unavailable' if items is None else str(len(items))
+        print(self.tabs + label + ": " + count + " (" + status + ")")
 
     ##########################################################################
     # print network dns resolvers
@@ -4612,6 +4647,10 @@ class ShowOCICSV(object):
     csv_network_dhcp_options = []
     csv_network_firewall = []
     csv_network_firewall_policies = []
+    csv_network_firewall_security_rules = []
+    csv_network_firewall_nat_rules = []
+    csv_network_firewall_address_lists = []
+    csv_network_firewall_url_lists = []
     csv_file_storage = []
     csv_load_balancer = []
     csv_load_balancer_listeners = []
@@ -4621,6 +4660,7 @@ class ShowOCICSV(object):
     csv_security_logging = []
     csv_security_log_unified_agents = []
     csv_security_log_analytics_namespace = []
+    csv_security_log_analytics_namespace_ids = set()
     csv_security_log_analytics = []
     csv_security_kms_vault = []
     csv_security_kms_key = []
@@ -4676,7 +4716,6 @@ class ShowOCICSV(object):
     ############################################
     def __init__(self, start_time):
         self.start_time = start_time
-        self.csv_security_log_analytics_namespace_ids = set()
 
     ##########################################################################
     # get errors
@@ -4804,6 +4843,10 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("network_dhcp_options", self.csv_network_dhcp_options)
             self.__export_to_csv_file("network_firewalls", self.csv_network_firewall)
             self.__export_to_csv_file("network_firewalls_policies", self.csv_network_firewall_policies)
+            self.__export_to_csv_file("network_firewalls_security_rules", self.csv_network_firewall_security_rules)
+            self.__export_to_csv_file("network_firewalls_nat_rules", self.csv_network_firewall_nat_rules)
+            self.__export_to_csv_file("network_firewalls_address_lists", self.csv_network_firewall_address_lists)
+            self.__export_to_csv_file("network_firewalls_url_lists", self.csv_network_firewall_url_lists)
             self.__export_to_csv_file("database", self.csv_database)
             self.__export_to_csv_file("database_backups", self.csv_database_backups)
             self.__export_to_csv_file("database_autonomous", self.csv_db_autonomous)
@@ -6493,6 +6536,10 @@ class ShowOCICSV(object):
                     'ipv6_address': arr['ipv6_address'],
                     'network_firewall_policy_id': arr['network_firewall_policy_id'],
                     'network_firewall_policy_name': arr['network_firewall_policy_name'],
+                    'shape': arr.get('shape', ''),
+                    'lifecycle_details': arr.get('lifecycle_details', ''),
+                    'system_tags': json.dumps(arr.get('system_tags') or {}, sort_keys=True),
+                    'security_attributes': json.dumps(arr.get('security_attributes') or {}, sort_keys=True),
                     'nat_must_enable_private_nat': arr['nat_must_enable_private_nat'],
                     'nat_nat_ip_address_list': self.__csv_list_to_str(arr['nat_nat_ip_address_list']),
                     'nsg_ids': self.__csv_list_to_str(arr['nsg_ids']),
@@ -6518,23 +6565,175 @@ class ShowOCICSV(object):
                 return
 
             for arr in network_firewalls_policies:
+                security_rules = arr.get('security_rules', (arr.get('configuration') or {}).get('security_rules'))
+                nat_rules = arr.get('nat_rules', (arr.get('configuration') or {}).get('nat_rules'))
+                address_lists = arr.get('address_lists', (arr.get('configuration') or {}).get('address_lists'))
+                url_lists = arr.get('url_lists', (arr.get('configuration') or {}).get('url_lists'))
                 data = {
                     'region_name': region_name,
                     'compartment_name': arr['compartment_name'],
                     'compartment_path': arr['compartment_path'],
                     'compartment_id': arr['compartment_id'],
                     'name': arr['display_name'],
+                    'description': arr.get('description', ''),
+                    'lifecycle_details': arr.get('lifecycle_details', ''),
+                    'system_tags': json.dumps(arr.get('system_tags') or {}, sort_keys=True),
+                    'attached_network_firewall_count': arr.get('attached_network_firewall_count'),
+                    'policy_details_error': arr.get('policy_details_error', ''),
                     'lifecycle_state': arr['lifecycle_state'],
                     'time_created': arr['time_created'],
                     'time_updated': arr['time_updated'],
                     'id': arr['id'],
                     'freeform_tags': self.__get_freeform_tags(arr['freeform_tags']),
-                    'defined_tags': self.__get_defined_tags(arr['defined_tags'])
+                    'defined_tags': self.__get_defined_tags(arr['defined_tags']),
+                    'security_rules_count': '' if security_rules is None else len(security_rules),
+                    'security_rules_status': arr.get('security_rules_status', (arr.get('configuration_status') or {}).get('security_rules', {}).get('status', '')),
+                    'security_rules_error': arr.get('security_rules_error', (arr.get('configuration_status') or {}).get('security_rules', {}).get('error', '')),
+                    'nat_rules_count': '' if nat_rules is None else len(nat_rules),
+                    'nat_rules_status': arr.get('nat_rules_status', (arr.get('configuration_status') or {}).get('nat_rules', {}).get('status', '')),
+                    'nat_rules_error': arr.get('nat_rules_error', (arr.get('configuration_status') or {}).get('nat_rules', {}).get('error', '')),
+                    'address_lists_count': '' if address_lists is None else len(address_lists),
+                    'address_lists_status': arr.get('address_lists_status', (arr.get('configuration_status') or {}).get('address_lists', {}).get('status', '')),
+                    'address_lists_error': arr.get('address_lists_error', (arr.get('configuration_status') or {}).get('address_lists', {}).get('error', '')),
+                    'url_lists_count': '' if url_lists is None else len(url_lists),
+                    'url_lists_status': arr.get('url_lists_status', (arr.get('configuration_status') or {}).get('url_lists', {}).get('status', '')),
+                    'url_lists_error': arr.get('url_lists_error', (arr.get('configuration_status') or {}).get('url_lists', {}).get('error', '')),
                 }
+
+                # Adding definition for the network firewall csvs
+                self.__csv_core_network_firewall_policy_security_rules(region_name, arr)
+                self.__csv_core_network_firewall_policy_nat_rules(region_name, arr)
+                self.__csv_core_network_firewall_policy_address_lists(region_name, arr)
+                self.__csv_core_network_firewall_policy_url_lists(region_name, arr)
                 self.csv_network_firewall_policies.append(data)
 
         except Exception as e:
             self.__print_error("__csv_core_network_firewall_policies", e)
+
+    ##########################################################################
+    # CSV Network Firewall Policy Security Rules
+    ##########################################################################
+    def __csv_core_network_firewall_policy_security_rules(self, region_name, policy):
+        try:
+            items = policy.get('security_rules', (policy.get('configuration') or {}).get('security_rules'))
+            for item in items or []:
+                condition = item.get('condition') or {}
+                position = item.get('position') or {}
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': policy['compartment_name'],
+                    'compartment_path': policy['compartment_path'],
+                    'compartment_id': policy['compartment_id'],
+                    'policy_id': policy['id'],
+                    'policy_name': policy['display_name'],
+                    'name': '' if item.get('name') is None else item.get('name'),
+                    'description': '' if item.get('description') is None else item.get('description'),
+                    'condition_source_address': '' if condition.get('source_address') is None else json.dumps(condition.get('source_address'), sort_keys=True),
+                    'condition_destination_address': '' if condition.get('destination_address') is None else json.dumps(condition.get('destination_address'), sort_keys=True),
+                    'condition_application': '' if condition.get('application') is None else json.dumps(condition.get('application'), sort_keys=True),
+                    'condition_service': '' if condition.get('service') is None else json.dumps(condition.get('service'), sort_keys=True),
+                    'condition_url': '' if condition.get('url') is None else json.dumps(condition.get('url'), sort_keys=True),
+                    'action': '' if item.get('action') is None else item.get('action'),
+                    'inspection': '' if item.get('inspection') is None else item.get('inspection'),
+                    'position_before_rule': '' if position.get('before_rule') is None else position.get('before_rule'),
+                    'position_after_rule': '' if position.get('after_rule') is None else position.get('after_rule'),
+                    'parent_resource_id': '' if item.get('parent_resource_id') is None else item.get('parent_resource_id'),
+                    'priority_order': '' if item.get('priority_order') is None else item.get('priority_order'),
+                    'collection_status': '' if item.get('collection_status') is None else item.get('collection_status'),
+                    'collection_error': '' if item.get('collection_error') is None else item.get('collection_error'),
+                }
+                self.csv_network_firewall_security_rules.append(data)
+        except Exception as e:
+            self.__print_error("__csv_core_network_firewall_policy_security_rules", e)
+
+    ##########################################################################
+    # CSV Network Firewall Policy Nat Rules
+    ##########################################################################
+    def __csv_core_network_firewall_policy_nat_rules(self, region_name, policy):
+        try:
+            items = policy.get('nat_rules', (policy.get('configuration') or {}).get('nat_rules'))
+            for item in items or []:
+                condition = item.get('condition') or {}
+                position = item.get('position') or {}
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': policy['compartment_name'],
+                    'compartment_path': policy['compartment_path'],
+                    'compartment_id': policy['compartment_id'],
+                    'policy_id': policy['id'],
+                    'policy_name': policy['display_name'],
+                    'name': '' if item.get('name') is None else item.get('name'),
+                    'description': '' if item.get('description') is None else item.get('description'),
+                    'type': '' if item.get('type') is None else item.get('type'),
+                    'priority_order': '' if item.get('priority_order') is None else item.get('priority_order'),
+                    'position_before_rule': '' if position.get('before_rule') is None else position.get('before_rule'),
+                    'position_after_rule': '' if position.get('after_rule') is None else position.get('after_rule'),
+                    'parent_resource_id': '' if item.get('parent_resource_id') is None else item.get('parent_resource_id'),
+                    'condition_source_address': '' if condition.get('source_address') is None else json.dumps(condition.get('source_address'), sort_keys=True),
+                    'condition_destination_address': '' if condition.get('destination_address') is None else json.dumps(condition.get('destination_address'), sort_keys=True),
+                    'condition_service': '' if condition.get('service') is None else condition.get('service'),
+                    'action': '' if item.get('action') is None else item.get('action'),
+                    'collection_status': '' if item.get('collection_status') is None else item.get('collection_status'),
+                    'collection_error': '' if item.get('collection_error') is None else item.get('collection_error'),
+                }
+                self.csv_network_firewall_nat_rules.append(data)
+        except Exception as e:
+            self.__print_error("__csv_core_network_firewall_policy_nat_rules", e)
+
+    ##########################################################################
+    # CSV Network Firewall Policy Address Lists
+    ##########################################################################
+    def __csv_core_network_firewall_policy_address_lists(self, region_name, policy):
+        try:
+            items = policy.get('address_lists', (policy.get('configuration') or {}).get('address_lists'))
+            for item in items or []:
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': policy['compartment_name'],
+                    'compartment_path': policy['compartment_path'],
+                    'compartment_id': policy['compartment_id'],
+                    'policy_id': policy['id'],
+                    'policy_name': policy['display_name'],
+                    'name': '' if item.get('name') is None else item.get('name'),
+                    'description': '' if item.get('description') is None else item.get('description'),
+                    'type': '' if item.get('type') is None else item.get('type'),
+                    'addresses': '' if item.get('addresses') is None else (
+                        item.get('addresses') if isinstance(item.get('addresses'), str)
+                        else json.dumps(item.get('addresses'), sort_keys=True)),
+                    'total_addresses': '' if item.get('total_addresses') is None else item.get('total_addresses'),
+                    'parent_resource_id': '' if item.get('parent_resource_id') is None else item.get('parent_resource_id'),
+                    'collection_status': '' if item.get('collection_status') is None else item.get('collection_status'),
+                    'collection_error': '' if item.get('collection_error') is None else item.get('collection_error'),
+                }
+                self.csv_network_firewall_address_lists.append(data)
+        except Exception as e:
+            self.__print_error("__csv_core_network_firewall_policy_address_lists", e)
+
+    ##########################################################################
+    # CSV Network Firewall Policy Url Lists
+    ##########################################################################
+    def __csv_core_network_firewall_policy_url_lists(self, region_name, policy):
+        try:
+            items = policy.get('url_lists', (policy.get('configuration') or {}).get('url_lists'))
+            for item in items or []:
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': policy['compartment_name'],
+                    'compartment_path': policy['compartment_path'],
+                    'compartment_id': policy['compartment_id'],
+                    'policy_id': policy['id'],
+                    'policy_name': policy['display_name'],
+                    'name': '' if item.get('name') is None else item.get('name'),
+                    'description': '' if item.get('description') is None else item.get('description'),
+                    'urls': '' if item.get('urls') is None else json.dumps(item.get('urls'), sort_keys=True),
+                    'total_urls': '' if item.get('total_urls') is None else item.get('total_urls'),
+                    'parent_resource_id': '' if item.get('parent_resource_id') is None else item.get('parent_resource_id'),
+                    'collection_status': '' if item.get('collection_status') is None else item.get('collection_status'),
+                    'collection_error': '' if item.get('collection_error') is None else item.get('collection_error'),
+                }
+                self.csv_network_firewall_url_lists.append(data)
+        except Exception as e:
+            self.__print_error("__csv_core_network_firewall_policy_url_lists", e)
 
     ##########################################################################
     # CSV for  Network vcn security group

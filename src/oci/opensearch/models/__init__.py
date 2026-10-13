@@ -42,13 +42,19 @@ from .opensearch_versions_collection import OpensearchVersionsCollection
 from .opensearch_versions_summary import OpensearchVersionsSummary
 from .outbound_cluster_config import OutboundClusterConfig
 from .outbound_cluster_summary import OutboundClusterSummary
+from .plain_password_security_user_password_details import PlainPasswordSecurityUserPasswordDetails
 from .reclaim_cluster_details import ReclaimClusterDetails
+from .remote_reindex_source_details import RemoteReindexSourceDetails
+from .remote_reindex_trust_config import RemoteReindexTrustConfig
 from .resize_opensearch_cluster_horizontal_details import ResizeOpensearchClusterHorizontalDetails
 from .resize_opensearch_cluster_vertical_details import ResizeOpensearchClusterVerticalDetails
 from .restore_opensearch_cluster_backup_details import RestoreOpensearchClusterBackupDetails
 from .restore_opensearch_cluster_details import RestoreOpensearchClusterDetails
 from .reverse_connection_endpoint import ReverseConnectionEndpoint
 from .security_saml_config import SecuritySamlConfig
+from .security_user_authentication_details import SecurityUserAuthenticationDetails
+from .security_user_details import SecurityUserDetails
+from .security_user_password_details import SecurityUserPasswordDetails
 from .shapes_details import ShapesDetails
 from .update_checkin_details import UpdateCheckinDetails
 from .update_cluster_hardened_image_details import UpdateClusterHardenedImageDetails
@@ -60,6 +66,7 @@ from .update_opensearch_cluster_details import UpdateOpensearchClusterDetails
 from .update_opensearch_cluster_pipeline_details import UpdateOpensearchClusterPipelineDetails
 from .update_pipeline_status_details import UpdatePipelineStatusDetails
 from .upgrade_open_search_cluster_details import UpgradeOpenSearchClusterDetails
+from .vault_secret_security_user_password_details import VaultSecretSecurityUserPasswordDetails
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -106,13 +113,19 @@ opensearch_type_mapping = {
     "OpensearchVersionsSummary": OpensearchVersionsSummary,
     "OutboundClusterConfig": OutboundClusterConfig,
     "OutboundClusterSummary": OutboundClusterSummary,
+    "PlainPasswordSecurityUserPasswordDetails": PlainPasswordSecurityUserPasswordDetails,
     "ReclaimClusterDetails": ReclaimClusterDetails,
+    "RemoteReindexSourceDetails": RemoteReindexSourceDetails,
+    "RemoteReindexTrustConfig": RemoteReindexTrustConfig,
     "ResizeOpensearchClusterHorizontalDetails": ResizeOpensearchClusterHorizontalDetails,
     "ResizeOpensearchClusterVerticalDetails": ResizeOpensearchClusterVerticalDetails,
     "RestoreOpensearchClusterBackupDetails": RestoreOpensearchClusterBackupDetails,
     "RestoreOpensearchClusterDetails": RestoreOpensearchClusterDetails,
     "ReverseConnectionEndpoint": ReverseConnectionEndpoint,
     "SecuritySamlConfig": SecuritySamlConfig,
+    "SecurityUserAuthenticationDetails": SecurityUserAuthenticationDetails,
+    "SecurityUserDetails": SecurityUserDetails,
+    "SecurityUserPasswordDetails": SecurityUserPasswordDetails,
     "ShapesDetails": ShapesDetails,
     "UpdateCheckinDetails": UpdateCheckinDetails,
     "UpdateClusterHardenedImageDetails": UpdateClusterHardenedImageDetails,
@@ -124,6 +137,7 @@ opensearch_type_mapping = {
     "UpdateOpensearchClusterPipelineDetails": UpdateOpensearchClusterPipelineDetails,
     "UpdatePipelineStatusDetails": UpdatePipelineStatusDetails,
     "UpgradeOpenSearchClusterDetails": UpgradeOpenSearchClusterDetails,
+    "VaultSecretSecurityUserPasswordDetails": VaultSecretSecurityUserPasswordDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

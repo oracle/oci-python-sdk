@@ -205,6 +205,10 @@ class LaunchDbSystemBase(object):
             The value to assign to the compute_count property of this LaunchDbSystemBase.
         :type compute_count: int
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this LaunchDbSystemBase.
+        :type is_older_version_acknowledged: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -240,7 +244,8 @@ class LaunchDbSystemBase(object):
             'subscription_id': 'str',
             'data_collection_options': 'DataCollectionOptions',
             'compute_model': 'str',
-            'compute_count': 'int'
+            'compute_count': 'int',
+            'is_older_version_acknowledged': 'bool'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -276,7 +281,8 @@ class LaunchDbSystemBase(object):
             'subscription_id': 'subscriptionId',
             'data_collection_options': 'dataCollectionOptions',
             'compute_model': 'computeModel',
-            'compute_count': 'computeCount'
+            'compute_count': 'computeCount',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged'
         }
         self._compartment_id = None
         self._fault_domains = None
@@ -312,6 +318,7 @@ class LaunchDbSystemBase(object):
         self._data_collection_options = None
         self._compute_model = None
         self._compute_count = None
+        self._is_older_version_acknowledged = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -1354,6 +1361,30 @@ class LaunchDbSystemBase(object):
         :type: int
         """
         self._compute_count = compute_count
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this LaunchDbSystemBase.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this LaunchDbSystemBase.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this LaunchDbSystemBase.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this LaunchDbSystemBase.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     def __repr__(self):
         return formatted_flat_dict(self)

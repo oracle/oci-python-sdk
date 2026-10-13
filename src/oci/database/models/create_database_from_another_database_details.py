@@ -80,6 +80,10 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
             The value to assign to the recovery_appliance_vpc_password property of this CreateDatabaseFromAnotherDatabaseDetails.
         :type recovery_appliance_vpc_password: str
 
+        :param data_safe_registration_details:
+            The value to assign to the data_safe_registration_details property of this CreateDatabaseFromAnotherDatabaseDetails.
+        :type data_safe_registration_details: oci.database.models.DataSafeRegistrationRequestDetails
+
         """
         self.swagger_types = {
             'database_id': 'str',
@@ -96,7 +100,8 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
             'storage_size_details': 'DatabaseStorageSizeDetails',
             'managed_software_update_details': 'ManagedSoftwareUpdateInputDetails',
             'vm_cluster_id': 'str',
-            'recovery_appliance_vpc_password': 'str'
+            'recovery_appliance_vpc_password': 'str',
+            'data_safe_registration_details': 'DataSafeRegistrationRequestDetails'
         }
         self.attribute_map = {
             'database_id': 'databaseId',
@@ -113,7 +118,8 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
             'storage_size_details': 'storageSizeDetails',
             'managed_software_update_details': 'managedSoftwareUpdateDetails',
             'vm_cluster_id': 'vmClusterId',
-            'recovery_appliance_vpc_password': 'recoveryApplianceVpcPassword'
+            'recovery_appliance_vpc_password': 'recoveryApplianceVpcPassword',
+            'data_safe_registration_details': 'dataSafeRegistrationDetails'
         }
         self._redacted_field_paths = [
             ['recovery_appliance_vpc_password'],
@@ -133,6 +139,7 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
         self._managed_software_update_details = None
         self._vm_cluster_id = None
         self._recovery_appliance_vpc_password = None
+        self._data_safe_registration_details = None
 
     @property
     def database_id(self):
@@ -505,6 +512,26 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
         :type: str
         """
         self._recovery_appliance_vpc_password = recovery_appliance_vpc_password
+
+    @property
+    def data_safe_registration_details(self):
+        """
+        Gets the data_safe_registration_details of this CreateDatabaseFromAnotherDatabaseDetails.
+
+        :return: The data_safe_registration_details of this CreateDatabaseFromAnotherDatabaseDetails.
+        :rtype: oci.database.models.DataSafeRegistrationRequestDetails
+        """
+        return self._data_safe_registration_details
+
+    @data_safe_registration_details.setter
+    def data_safe_registration_details(self, data_safe_registration_details):
+        """
+        Sets the data_safe_registration_details of this CreateDatabaseFromAnotherDatabaseDetails.
+
+        :param data_safe_registration_details: The data_safe_registration_details of this CreateDatabaseFromAnotherDatabaseDetails.
+        :type: oci.database.models.DataSafeRegistrationRequestDetails
+        """
+        self._data_safe_registration_details = data_safe_registration_details
 
     def __repr__(self):
         as_dict = to_dict(self)

@@ -32,20 +32,27 @@ class SystemVersionSummary(object):
             The value to assign to the system_versions property of this SystemVersionSummary.
         :type system_versions: list[str]
 
+        :param system_version_details:
+            The value to assign to the system_version_details property of this SystemVersionSummary.
+        :type system_version_details: list[oci.database.models.SystemVersionMinorVersionSummary]
+
         """
         self.swagger_types = {
             'shape': 'str',
             'gi_version': 'str',
-            'system_versions': 'list[str]'
+            'system_versions': 'list[str]',
+            'system_version_details': 'list[SystemVersionMinorVersionSummary]'
         }
         self.attribute_map = {
             'shape': 'shape',
             'gi_version': 'giVersion',
-            'system_versions': 'systemVersions'
+            'system_versions': 'systemVersions',
+            'system_version_details': 'systemVersionDetails'
         }
         self._shape = None
         self._gi_version = None
         self._system_versions = None
+        self._system_version_details = None
 
     @property
     def shape(self):
@@ -118,6 +125,30 @@ class SystemVersionSummary(object):
         :type: list[str]
         """
         self._system_versions = system_versions
+
+    @property
+    def system_version_details(self):
+        """
+        Gets the system_version_details of this SystemVersionSummary.
+        Compatible Exadata system versions with their individual older-version acknowledgment requirements.
+
+
+        :return: The system_version_details of this SystemVersionSummary.
+        :rtype: list[oci.database.models.SystemVersionMinorVersionSummary]
+        """
+        return self._system_version_details
+
+    @system_version_details.setter
+    def system_version_details(self, system_version_details):
+        """
+        Sets the system_version_details of this SystemVersionSummary.
+        Compatible Exadata system versions with their individual older-version acknowledgment requirements.
+
+
+        :param system_version_details: The system_version_details of this SystemVersionSummary.
+        :type: list[oci.database.models.SystemVersionMinorVersionSummary]
+        """
+        self._system_version_details = system_version_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

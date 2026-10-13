@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateOpensearchClusterPipelineDetails(object):
     """
-    The configuration to update on an existing OpenSearch cluster pipeline. You can only edit capacity limits and pipeline configurations. You can't edit its network settings.
+    The configuration to update on an existing OpenSearch cluster pipeline.
+    You can only edit capacity limits and pipeline configurations. You can't edit its network settings.
     """
 
     def __init__(self, **kwargs):

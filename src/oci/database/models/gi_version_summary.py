@@ -13,7 +13,6 @@ from oci.decorators import init_model_state_from_kwargs
 class GiVersionSummary(object):
     """
     The Oracle Grid Infrastructure (GI) version.
-
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
 
     __ https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
@@ -28,14 +27,21 @@ class GiVersionSummary(object):
             The value to assign to the version property of this GiVersionSummary.
         :type version: str
 
+        :param is_older_version_acknowledgment_required:
+            The value to assign to the is_older_version_acknowledgment_required property of this GiVersionSummary.
+        :type is_older_version_acknowledgment_required: bool
+
         """
         self.swagger_types = {
-            'version': 'str'
+            'version': 'str',
+            'is_older_version_acknowledgment_required': 'bool'
         }
         self.attribute_map = {
-            'version': 'version'
+            'version': 'version',
+            'is_older_version_acknowledgment_required': 'isOlderVersionAcknowledgmentRequired'
         }
         self._version = None
+        self._is_older_version_acknowledgment_required = None
 
     @property
     def version(self):
@@ -60,6 +66,30 @@ class GiVersionSummary(object):
         :type: str
         """
         self._version = version
+
+    @property
+    def is_older_version_acknowledgment_required(self):
+        """
+        Gets the is_older_version_acknowledgment_required of this GiVersionSummary.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :return: The is_older_version_acknowledgment_required of this GiVersionSummary.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledgment_required
+
+    @is_older_version_acknowledgment_required.setter
+    def is_older_version_acknowledgment_required(self, is_older_version_acknowledgment_required):
+        """
+        Sets the is_older_version_acknowledgment_required of this GiVersionSummary.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :param is_older_version_acknowledgment_required: The is_older_version_acknowledgment_required of this GiVersionSummary.
+        :type: bool
+        """
+        self._is_older_version_acknowledgment_required = is_older_version_acknowledgment_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

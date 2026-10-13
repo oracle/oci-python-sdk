@@ -88,6 +88,10 @@ class CreateDbHomeBase(object):
             The value to assign to the is_desupported_version property of this CreateDbHomeBase.
         :type is_desupported_version: bool
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this CreateDbHomeBase.
+        :type is_older_version_acknowledged: bool
+
         :param is_unified_auditing_enabled:
             The value to assign to the is_unified_auditing_enabled property of this CreateDbHomeBase.
         :type is_unified_auditing_enabled: bool
@@ -102,6 +106,7 @@ class CreateDbHomeBase(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
             'is_desupported_version': 'bool',
+            'is_older_version_acknowledged': 'bool',
             'is_unified_auditing_enabled': 'bool'
         }
         self.attribute_map = {
@@ -113,6 +118,7 @@ class CreateDbHomeBase(object):
             'defined_tags': 'definedTags',
             'source': 'source',
             'is_desupported_version': 'isDesupportedVersion',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled'
         }
         self._display_name = None
@@ -123,6 +129,7 @@ class CreateDbHomeBase(object):
         self._defined_tags = None
         self._source = None
         self._is_desupported_version = None
+        self._is_older_version_acknowledged = None
         self._is_unified_auditing_enabled = None
 
     @staticmethod
@@ -371,6 +378,30 @@ class CreateDbHomeBase(object):
         :type: bool
         """
         self._is_desupported_version = is_desupported_version
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this CreateDbHomeBase.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this CreateDbHomeBase.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this CreateDbHomeBase.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this CreateDbHomeBase.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def is_unified_auditing_enabled(self):

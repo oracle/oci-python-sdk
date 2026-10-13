@@ -51,27 +51,27 @@ class SourceDetailsResponse(object):
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this SourceDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this SourceDetailsResponse.
             Allowed values for this property are: "logging", "monitoring", "streaming", "plugin", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type kind: str
 
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this SourceDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
+
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
-            'kind': 'str'
+            'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
-            'kind': 'kind'
+            'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -94,26 +94,6 @@ class SourceDetailsResponse(object):
             return 'PluginSourceDetailsResponse'
         else:
             return 'SourceDetailsResponse'
-
-    @property
-    def private_endpoint_metadata(self):
-        """
-        Gets the private_endpoint_metadata of this SourceDetailsResponse.
-
-        :return: The private_endpoint_metadata of this SourceDetailsResponse.
-        :rtype: oci.sch.models.PrivateEndpointMetadata
-        """
-        return self._private_endpoint_metadata
-
-    @private_endpoint_metadata.setter
-    def private_endpoint_metadata(self, private_endpoint_metadata):
-        """
-        Sets the private_endpoint_metadata of this SourceDetailsResponse.
-
-        :param private_endpoint_metadata: The private_endpoint_metadata of this SourceDetailsResponse.
-        :type: oci.sch.models.PrivateEndpointMetadata
-        """
-        self._private_endpoint_metadata = private_endpoint_metadata
 
     @property
     def kind(self):
@@ -144,6 +124,26 @@ class SourceDetailsResponse(object):
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             kind = 'UNKNOWN_ENUM_VALUE'
         self._kind = kind
+
+    @property
+    def private_endpoint_metadata(self):
+        """
+        Gets the private_endpoint_metadata of this SourceDetailsResponse.
+
+        :return: The private_endpoint_metadata of this SourceDetailsResponse.
+        :rtype: oci.sch.models.PrivateEndpointMetadata
+        """
+        return self._private_endpoint_metadata
+
+    @private_endpoint_metadata.setter
+    def private_endpoint_metadata(self, private_endpoint_metadata):
+        """
+        Sets the private_endpoint_metadata of this SourceDetailsResponse.
+
+        :param private_endpoint_metadata: The private_endpoint_metadata of this SourceDetailsResponse.
+        :type: oci.sch.models.PrivateEndpointMetadata
+        """
+        self._private_endpoint_metadata = private_endpoint_metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

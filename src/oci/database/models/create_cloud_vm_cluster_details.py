@@ -189,6 +189,10 @@ class CreateCloudVmClusterDetails(object):
             The value to assign to the system_version property of this CreateCloudVmClusterDetails.
         :type system_version: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this CreateCloudVmClusterDetails.
+        :type is_older_version_acknowledged: bool
+
         :param file_system_configuration_details:
             The value to assign to the file_system_configuration_details property of this CreateCloudVmClusterDetails.
         :type file_system_configuration_details: list[oci.database.models.FileSystemConfigurationDetail]
@@ -252,6 +256,7 @@ class CreateCloudVmClusterDetails(object):
             'security_attributes': 'dict(str, dict(str, object))',
             'data_collection_options': 'DataCollectionOptions',
             'system_version': 'str',
+            'is_older_version_acknowledged': 'bool',
             'file_system_configuration_details': 'list[FileSystemConfigurationDetail]',
             'cloud_automation_update_details': 'CloudAutomationUpdateDetails',
             'exascale_db_storage_vault_id': 'str',
@@ -294,6 +299,7 @@ class CreateCloudVmClusterDetails(object):
             'security_attributes': 'securityAttributes',
             'data_collection_options': 'dataCollectionOptions',
             'system_version': 'systemVersion',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'file_system_configuration_details': 'fileSystemConfigurationDetails',
             'cloud_automation_update_details': 'cloudAutomationUpdateDetails',
             'exascale_db_storage_vault_id': 'exascaleDbStorageVaultId',
@@ -335,6 +341,7 @@ class CreateCloudVmClusterDetails(object):
         self._security_attributes = None
         self._data_collection_options = None
         self._system_version = None
+        self._is_older_version_acknowledged = None
         self._file_system_configuration_details = None
         self._cloud_automation_update_details = None
         self._exascale_db_storage_vault_id = None
@@ -1292,6 +1299,30 @@ class CreateCloudVmClusterDetails(object):
         :type: str
         """
         self._system_version = system_version
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this CreateCloudVmClusterDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this CreateCloudVmClusterDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this CreateCloudVmClusterDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this CreateCloudVmClusterDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def file_system_configuration_details(self):

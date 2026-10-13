@@ -25,14 +25,14 @@ class LoggingAnalyticsTargetDetailsResponse(TargetDetailsResponse):
         of this class is ``loggingAnalytics`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this LoggingAnalyticsTargetDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this LoggingAnalyticsTargetDetailsResponse.
             Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"
         :type kind: str
+
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this LoggingAnalyticsTargetDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
 
         :param log_group_id:
             The value to assign to the log_group_id property of this LoggingAnalyticsTargetDetailsResponse.
@@ -44,19 +44,19 @@ class LoggingAnalyticsTargetDetailsResponse(TargetDetailsResponse):
 
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'log_group_id': 'str',
             'log_source_identifier': 'str'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
             'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata',
             'log_group_id': 'logGroupId',
             'log_source_identifier': 'logSourceIdentifier'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
         self._log_group_id = None
         self._log_source_identifier = None
         self._kind = 'loggingAnalytics'

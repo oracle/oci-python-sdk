@@ -76,6 +76,10 @@ class CreateDatabaseFromBackupDetails(object):
             The value to assign to the recovery_appliance_vpc_password property of this CreateDatabaseFromBackupDetails.
         :type recovery_appliance_vpc_password: str
 
+        :param data_safe_registration_details:
+            The value to assign to the data_safe_registration_details property of this CreateDatabaseFromBackupDetails.
+        :type data_safe_registration_details: oci.database.models.DataSafeRegistrationRequestDetails
+
         """
         self.swagger_types = {
             'backup_id': 'str',
@@ -91,7 +95,8 @@ class CreateDatabaseFromBackupDetails(object):
             'vm_cluster_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'recovery_appliance_vpc_password': 'str'
+            'recovery_appliance_vpc_password': 'str',
+            'data_safe_registration_details': 'DataSafeRegistrationRequestDetails'
         }
         self.attribute_map = {
             'backup_id': 'backupId',
@@ -107,7 +112,8 @@ class CreateDatabaseFromBackupDetails(object):
             'vm_cluster_id': 'vmClusterId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'recovery_appliance_vpc_password': 'recoveryApplianceVpcPassword'
+            'recovery_appliance_vpc_password': 'recoveryApplianceVpcPassword',
+            'data_safe_registration_details': 'dataSafeRegistrationDetails'
         }
         self._redacted_field_paths = [
             ['recovery_appliance_vpc_password'],
@@ -126,6 +132,7 @@ class CreateDatabaseFromBackupDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._recovery_appliance_vpc_password = None
+        self._data_safe_registration_details = None
 
     @property
     def backup_id(self):
@@ -474,6 +481,26 @@ class CreateDatabaseFromBackupDetails(object):
         :type: str
         """
         self._recovery_appliance_vpc_password = recovery_appliance_vpc_password
+
+    @property
+    def data_safe_registration_details(self):
+        """
+        Gets the data_safe_registration_details of this CreateDatabaseFromBackupDetails.
+
+        :return: The data_safe_registration_details of this CreateDatabaseFromBackupDetails.
+        :rtype: oci.database.models.DataSafeRegistrationRequestDetails
+        """
+        return self._data_safe_registration_details
+
+    @data_safe_registration_details.setter
+    def data_safe_registration_details(self, data_safe_registration_details):
+        """
+        Sets the data_safe_registration_details of this CreateDatabaseFromBackupDetails.
+
+        :param data_safe_registration_details: The data_safe_registration_details of this CreateDatabaseFromBackupDetails.
+        :type: oci.database.models.DataSafeRegistrationRequestDetails
+        """
+        self._data_safe_registration_details = data_safe_registration_details
 
     def __repr__(self):
         as_dict = to_dict(self)

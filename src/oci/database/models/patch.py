@@ -90,6 +90,10 @@ class Patch(object):
             The value to assign to the version property of this Patch.
         :type version: str
 
+        :param is_older_version_acknowledgment_required:
+            The value to assign to the is_older_version_acknowledgment_required property of this Patch.
+        :type is_older_version_acknowledgment_required: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -99,7 +103,8 @@ class Patch(object):
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
             'time_released': 'datetime',
-            'version': 'str'
+            'version': 'str',
+            'is_older_version_acknowledgment_required': 'bool'
         }
         self.attribute_map = {
             'id': 'id',
@@ -109,7 +114,8 @@ class Patch(object):
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
             'time_released': 'timeReleased',
-            'version': 'version'
+            'version': 'version',
+            'is_older_version_acknowledgment_required': 'isOlderVersionAcknowledgmentRequired'
         }
         self._id = None
         self._description = None
@@ -119,6 +125,7 @@ class Patch(object):
         self._lifecycle_state = None
         self._time_released = None
         self._version = None
+        self._is_older_version_acknowledgment_required = None
 
     @property
     def id(self):
@@ -335,6 +342,30 @@ class Patch(object):
         :type: str
         """
         self._version = version
+
+    @property
+    def is_older_version_acknowledgment_required(self):
+        """
+        Gets the is_older_version_acknowledgment_required of this Patch.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :return: The is_older_version_acknowledgment_required of this Patch.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledgment_required
+
+    @is_older_version_acknowledgment_required.setter
+    def is_older_version_acknowledgment_required(self, is_older_version_acknowledgment_required):
+        """
+        Sets the is_older_version_acknowledgment_required of this Patch.
+        True when selecting or applying this DB, Grid Infrastructure, or operating system software version requires older-version acknowledgment.
+
+
+        :param is_older_version_acknowledgment_required: The is_older_version_acknowledgment_required of this Patch.
+        :type: bool
+        """
+        self._is_older_version_acknowledgment_required = is_older_version_acknowledgment_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

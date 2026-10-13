@@ -88,7 +88,7 @@ class ManagedComputeClusterModelDeployInfrastructureConfigDetails(ModelDeployInf
     @property
     def model_deployment_resource_configuration(self):
         """
-        Gets the model_deployment_resource_configuration of this ManagedComputeClusterModelDeployInfrastructureConfigDetails.
+        **[Required]** Gets the model_deployment_resource_configuration of this ManagedComputeClusterModelDeployInfrastructureConfigDetails.
 
         :return: The model_deployment_resource_configuration of this ManagedComputeClusterModelDeployInfrastructureConfigDetails.
         :rtype: oci.data_science.models.ManagedComputeClusterModelDeploymentResourceConfiguration

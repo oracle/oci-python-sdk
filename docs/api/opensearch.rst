@@ -58,13 +58,19 @@ Opensearch
     oci.opensearch.models.OpensearchVersionsSummary
     oci.opensearch.models.OutboundClusterConfig
     oci.opensearch.models.OutboundClusterSummary
+    oci.opensearch.models.PlainPasswordSecurityUserPasswordDetails
     oci.opensearch.models.ReclaimClusterDetails
+    oci.opensearch.models.RemoteReindexSourceDetails
+    oci.opensearch.models.RemoteReindexTrustConfig
     oci.opensearch.models.ResizeOpensearchClusterHorizontalDetails
     oci.opensearch.models.ResizeOpensearchClusterVerticalDetails
     oci.opensearch.models.RestoreOpensearchClusterBackupDetails
     oci.opensearch.models.RestoreOpensearchClusterDetails
     oci.opensearch.models.ReverseConnectionEndpoint
     oci.opensearch.models.SecuritySamlConfig
+    oci.opensearch.models.SecurityUserAuthenticationDetails
+    oci.opensearch.models.SecurityUserDetails
+    oci.opensearch.models.SecurityUserPasswordDetails
     oci.opensearch.models.ShapesDetails
     oci.opensearch.models.UpdateCheckinDetails
     oci.opensearch.models.UpdateClusterHardenedImageDetails
@@ -76,6 +82,7 @@ Opensearch
     oci.opensearch.models.UpdateOpensearchClusterPipelineDetails
     oci.opensearch.models.UpdatePipelineStatusDetails
     oci.opensearch.models.UpgradeOpenSearchClusterDetails
+    oci.opensearch.models.VaultSecretSecurityUserPasswordDetails
     oci.opensearch.models.WorkRequest
     oci.opensearch.models.WorkRequestCollection
     oci.opensearch.models.WorkRequestError

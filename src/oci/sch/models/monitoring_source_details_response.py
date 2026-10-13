@@ -25,14 +25,14 @@ class MonitoringSourceDetailsResponse(SourceDetailsResponse):
         of this class is ``monitoring`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this MonitoringSourceDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this MonitoringSourceDetailsResponse.
             Allowed values for this property are: "logging", "monitoring", "streaming", "plugin"
         :type kind: str
+
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this MonitoringSourceDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
 
         :param monitoring_sources:
             The value to assign to the monitoring_sources property of this MonitoringSourceDetailsResponse.
@@ -40,17 +40,17 @@ class MonitoringSourceDetailsResponse(SourceDetailsResponse):
 
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'monitoring_sources': 'list[MonitoringSource]'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
             'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata',
             'monitoring_sources': 'monitoringSources'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
         self._monitoring_sources = None
         self._kind = 'monitoring'
 

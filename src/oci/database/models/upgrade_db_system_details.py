@@ -53,6 +53,10 @@ class UpgradeDbSystemDetails(object):
             The value to assign to the new_os_version property of this UpgradeDbSystemDetails.
         :type new_os_version: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this UpgradeDbSystemDetails.
+        :type is_older_version_acknowledged: bool
+
         :param is_snapshot_retention_days_force_updated:
             The value to assign to the is_snapshot_retention_days_force_updated property of this UpgradeDbSystemDetails.
         :type is_snapshot_retention_days_force_updated: bool
@@ -63,6 +67,7 @@ class UpgradeDbSystemDetails(object):
             'snapshot_retention_period_in_days': 'int',
             'new_gi_version': 'str',
             'new_os_version': 'str',
+            'is_older_version_acknowledged': 'bool',
             'is_snapshot_retention_days_force_updated': 'bool'
         }
         self.attribute_map = {
@@ -70,12 +75,14 @@ class UpgradeDbSystemDetails(object):
             'snapshot_retention_period_in_days': 'snapshotRetentionPeriodInDays',
             'new_gi_version': 'newGiVersion',
             'new_os_version': 'newOsVersion',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'is_snapshot_retention_days_force_updated': 'isSnapshotRetentionDaysForceUpdated'
         }
         self._action = None
         self._snapshot_retention_period_in_days = None
         self._new_gi_version = None
         self._new_os_version = None
+        self._is_older_version_acknowledged = None
         self._is_snapshot_retention_days_force_updated = None
 
     @property
@@ -180,6 +187,30 @@ class UpgradeDbSystemDetails(object):
         :type: str
         """
         self._new_os_version = new_os_version
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this UpgradeDbSystemDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :return: The is_older_version_acknowledged of this UpgradeDbSystemDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this UpgradeDbSystemDetails.
+        If true, the caller acknowledges selecting or applying an older DB, Grid Infrastructure, or operating system software version that is outside the latest default version window.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this UpgradeDbSystemDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def is_snapshot_retention_days_force_updated(self):

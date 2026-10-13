@@ -762,6 +762,8 @@ class AutonomousDatabaseBackup(object):
         When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
         For new databases, it is recommended to use either 19c or 26ai.
 
+        The default database version is the Oracle-recommended version. You can retrieve the default DB version by calling the :func:`list_autonomous_db_versions` operation.
+
         **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
 
 
@@ -778,6 +780,8 @@ class AutonomousDatabaseBackup(object):
         When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai.
         When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected.
         For new databases, it is recommended to use either 19c or 26ai.
+
+        The default database version is the Oracle-recommended version. You can retrieve the default DB version by calling the :func:`list_autonomous_db_versions` operation.
 
         **Note** Starting December 2026, 23ai will not be supported as a valid value for this parameter.
 

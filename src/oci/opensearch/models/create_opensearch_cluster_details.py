@@ -242,6 +242,10 @@ class CreateOpensearchClusterDetails(object):
             The value to assign to the security_master_user_password_hash property of this CreateOpensearchClusterDetails.
         :type security_master_user_password_hash: str
 
+        :param security_master_user_auth_details:
+            The value to assign to the security_master_user_auth_details property of this CreateOpensearchClusterDetails.
+        :type security_master_user_auth_details: oci.opensearch.models.SecurityUserAuthenticationDetails
+
         :param security_saml_config:
             The value to assign to the security_saml_config property of this CreateOpensearchClusterDetails.
         :type security_saml_config: oci.opensearch.models.SecuritySamlConfig
@@ -277,6 +281,10 @@ class CreateOpensearchClusterDetails(object):
         :param certificate_config:
             The value to assign to the certificate_config property of this CreateOpensearchClusterDetails.
         :type certificate_config: oci.opensearch.models.CertificateConfig
+
+        :param remote_reindex_trust_config:
+            The value to assign to the remote_reindex_trust_config property of this CreateOpensearchClusterDetails.
+        :type remote_reindex_trust_config: oci.opensearch.models.RemoteReindexTrustConfig
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateOpensearchClusterDetails.
@@ -340,6 +348,7 @@ class CreateOpensearchClusterDetails(object):
             'security_mode': 'str',
             'security_master_user_name': 'str',
             'security_master_user_password_hash': 'str',
+            'security_master_user_auth_details': 'SecurityUserAuthenticationDetails',
             'security_saml_config': 'SecuritySamlConfig',
             'backup_policy': 'BackupPolicy',
             'nsg_id': 'str',
@@ -349,6 +358,7 @@ class CreateOpensearchClusterDetails(object):
             'maintenance_details': 'CreateMaintenanceDetails',
             'load_balancer_config': 'LoadBalancerConfig',
             'certificate_config': 'CertificateConfig',
+            'remote_reindex_trust_config': 'RemoteReindexTrustConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -399,6 +409,7 @@ class CreateOpensearchClusterDetails(object):
             'security_mode': 'securityMode',
             'security_master_user_name': 'securityMasterUserName',
             'security_master_user_password_hash': 'securityMasterUserPasswordHash',
+            'security_master_user_auth_details': 'securityMasterUserAuthDetails',
             'security_saml_config': 'securitySamlConfig',
             'backup_policy': 'backupPolicy',
             'nsg_id': 'nsgId',
@@ -408,6 +419,7 @@ class CreateOpensearchClusterDetails(object):
             'maintenance_details': 'maintenanceDetails',
             'load_balancer_config': 'loadBalancerConfig',
             'certificate_config': 'certificateConfig',
+            'remote_reindex_trust_config': 'remoteReindexTrustConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -457,6 +469,7 @@ class CreateOpensearchClusterDetails(object):
         self._security_mode = None
         self._security_master_user_name = None
         self._security_master_user_password_hash = None
+        self._security_master_user_auth_details = None
         self._security_saml_config = None
         self._backup_policy = None
         self._nsg_id = None
@@ -466,6 +479,7 @@ class CreateOpensearchClusterDetails(object):
         self._maintenance_details = None
         self._load_balancer_config = None
         self._certificate_config = None
+        self._remote_reindex_trust_config = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -1570,6 +1584,26 @@ class CreateOpensearchClusterDetails(object):
         self._security_master_user_password_hash = security_master_user_password_hash
 
     @property
+    def security_master_user_auth_details(self):
+        """
+        Gets the security_master_user_auth_details of this CreateOpensearchClusterDetails.
+
+        :return: The security_master_user_auth_details of this CreateOpensearchClusterDetails.
+        :rtype: oci.opensearch.models.SecurityUserAuthenticationDetails
+        """
+        return self._security_master_user_auth_details
+
+    @security_master_user_auth_details.setter
+    def security_master_user_auth_details(self, security_master_user_auth_details):
+        """
+        Sets the security_master_user_auth_details of this CreateOpensearchClusterDetails.
+
+        :param security_master_user_auth_details: The security_master_user_auth_details of this CreateOpensearchClusterDetails.
+        :type: oci.opensearch.models.SecurityUserAuthenticationDetails
+        """
+        self._security_master_user_auth_details = security_master_user_auth_details
+
+    @property
     def security_saml_config(self):
         """
         Gets the security_saml_config of this CreateOpensearchClusterDetails.
@@ -1760,6 +1794,26 @@ class CreateOpensearchClusterDetails(object):
         :type: oci.opensearch.models.CertificateConfig
         """
         self._certificate_config = certificate_config
+
+    @property
+    def remote_reindex_trust_config(self):
+        """
+        Gets the remote_reindex_trust_config of this CreateOpensearchClusterDetails.
+
+        :return: The remote_reindex_trust_config of this CreateOpensearchClusterDetails.
+        :rtype: oci.opensearch.models.RemoteReindexTrustConfig
+        """
+        return self._remote_reindex_trust_config
+
+    @remote_reindex_trust_config.setter
+    def remote_reindex_trust_config(self, remote_reindex_trust_config):
+        """
+        Sets the remote_reindex_trust_config of this CreateOpensearchClusterDetails.
+
+        :param remote_reindex_trust_config: The remote_reindex_trust_config of this CreateOpensearchClusterDetails.
+        :type: oci.opensearch.models.RemoteReindexTrustConfig
+        """
+        self._remote_reindex_trust_config = remote_reindex_trust_config
 
     @property
     def freeform_tags(self):

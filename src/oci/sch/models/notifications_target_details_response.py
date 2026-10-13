@@ -25,14 +25,14 @@ class NotificationsTargetDetailsResponse(TargetDetailsResponse):
         of this class is ``notifications`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param private_endpoint_metadata:
-            The value to assign to the private_endpoint_metadata property of this NotificationsTargetDetailsResponse.
-        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
-
         :param kind:
             The value to assign to the kind property of this NotificationsTargetDetailsResponse.
             Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming"
         :type kind: str
+
+        :param private_endpoint_metadata:
+            The value to assign to the private_endpoint_metadata property of this NotificationsTargetDetailsResponse.
+        :type private_endpoint_metadata: oci.sch.models.PrivateEndpointMetadata
 
         :param topic_id:
             The value to assign to the topic_id property of this NotificationsTargetDetailsResponse.
@@ -44,19 +44,19 @@ class NotificationsTargetDetailsResponse(TargetDetailsResponse):
 
         """
         self.swagger_types = {
-            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'kind': 'str',
+            'private_endpoint_metadata': 'PrivateEndpointMetadata',
             'topic_id': 'str',
             'enable_formatted_messaging': 'bool'
         }
         self.attribute_map = {
-            'private_endpoint_metadata': 'privateEndpointMetadata',
             'kind': 'kind',
+            'private_endpoint_metadata': 'privateEndpointMetadata',
             'topic_id': 'topicId',
             'enable_formatted_messaging': 'enableFormattedMessaging'
         }
-        self._private_endpoint_metadata = None
         self._kind = None
+        self._private_endpoint_metadata = None
         self._topic_id = None
         self._enable_formatted_messaging = None
         self._kind = 'notifications'
