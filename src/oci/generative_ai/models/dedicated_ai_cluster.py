@@ -402,6 +402,10 @@ class DedicatedAiCluster(object):
     UNIT_SHAPE_H200_X8 = "H200_X8"
 
     #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "OAI_H100_X4"
+    UNIT_SHAPE_OAI_H100_X4 = "OAI_H100_X4"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
     #: This constant has a value of "OAI_A10_X2"
     UNIT_SHAPE_OAI_A10_X2 = "OAI_A10_X2"
 
@@ -600,9 +604,13 @@ class DedicatedAiCluster(object):
 
         :param unit_shape:
             The value to assign to the unit_shape property of this DedicatedAiCluster.
-            Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "COHERE_A100_40G_X2", "COHERE_A100_40G_X4", "COHERE_A100_40G_X8", "COHERE_A100_80G_X2", "COHERE_A100_80G_X4", "COHERE_A100_80G_X8", "COHERE_H100_X2", "COHERE_H100_X4", "COHERE_H100_X8", "COHERE_H200_X1", "COHERE_H200_X2", "COHERE_H200_X4", "COHERE_H200_X8", "COHERE_B200_X1", "COHERE_B200_X2", "COHERE_B200_X4", "COHERE_B200_X8", "META_A100_40G_X1", "META_A100_40G_X2", "META_A100_40G_X4", "META_A100_40G_X8", "META_A100_80G_X1", "META_A100_80G_X2", "META_A100_80G_X4", "META_A100_80G_X8", "META_H100_X1", "META_H100_X2", "META_H100_X4", "META_H100_X8", "META_H200_X1", "META_H200_X2", "META_H200_X4", "META_H200_X8", "META_B200_X1", "META_B200_X2", "META_B200_X4", "META_B200_X8", "COHERE_B300_X1", "META_B300_X1", "OAI_B300_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H100_X16", "H100_X32", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4", "B200_X1", "B200_X2", "B200_X4", "B200_X8", "OAI_B200_X1", "OAI_B200_X2", "OAI_B200_X4", "OAI_B200_X8", "SB_B200_X1", "B200_X16", "B200_X32", "B300_X1", "B300_X2", "B300_X4", "B300_X8", "B300_X16", "B300_X32", "L40S_X1", "L40S_X2", "L40S_X4", "L40S_X8", "L40S_X16", "L40S_X32", "MI300X_X1", "MI300X_X2", "MI300X_X4", "MI300X_X8", "MI300X_X16", "MI300X_X32", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "COHERE_A100_40G_X2", "COHERE_A100_40G_X4", "COHERE_A100_40G_X8", "COHERE_A100_80G_X2", "COHERE_A100_80G_X4", "COHERE_A100_80G_X8", "COHERE_H100_X2", "COHERE_H100_X4", "COHERE_H100_X8", "COHERE_H200_X1", "COHERE_H200_X2", "COHERE_H200_X4", "COHERE_H200_X8", "COHERE_B200_X1", "COHERE_B200_X2", "COHERE_B200_X4", "COHERE_B200_X8", "META_A100_40G_X1", "META_A100_40G_X2", "META_A100_40G_X4", "META_A100_40G_X8", "META_A100_80G_X1", "META_A100_80G_X2", "META_A100_80G_X4", "META_A100_80G_X8", "META_H100_X1", "META_H100_X2", "META_H100_X4", "META_H100_X8", "META_H200_X1", "META_H200_X2", "META_H200_X4", "META_H200_X8", "META_B200_X1", "META_B200_X2", "META_B200_X4", "META_B200_X8", "COHERE_B300_X1", "META_B300_X1", "OAI_B300_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H100_X16", "H100_X32", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_H100_X4", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4", "B200_X1", "B200_X2", "B200_X4", "B200_X8", "OAI_B200_X1", "OAI_B200_X2", "OAI_B200_X4", "OAI_B200_X8", "SB_B200_X1", "B200_X16", "B200_X32", "B300_X1", "B300_X2", "B300_X4", "B300_X8", "B300_X16", "B300_X32", "L40S_X1", "L40S_X2", "L40S_X4", "L40S_X8", "L40S_X16", "L40S_X32", "MI300X_X1", "MI300X_X2", "MI300X_X4", "MI300X_X8", "MI300X_X16", "MI300X_X32", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type unit_shape: str
+
+        :param capacity_reservation_id:
+            The value to assign to the capacity_reservation_id property of this DedicatedAiCluster.
+        :type capacity_reservation_id: str
 
         :param capacity:
             The value to assign to the capacity property of this DedicatedAiCluster.
@@ -637,6 +645,7 @@ class DedicatedAiCluster(object):
             'lifecycle_details': 'str',
             'unit_count': 'int',
             'unit_shape': 'str',
+            'capacity_reservation_id': 'str',
             'capacity': 'DedicatedAiClusterCapacity',
             'previous_state': 'DedicatedAiCluster',
             'freeform_tags': 'dict(str, str)',
@@ -655,6 +664,7 @@ class DedicatedAiCluster(object):
             'lifecycle_details': 'lifecycleDetails',
             'unit_count': 'unitCount',
             'unit_shape': 'unitShape',
+            'capacity_reservation_id': 'capacityReservationId',
             'capacity': 'capacity',
             'previous_state': 'previousState',
             'freeform_tags': 'freeformTags',
@@ -672,6 +682,7 @@ class DedicatedAiCluster(object):
         self._lifecycle_details = None
         self._unit_count = None
         self._unit_shape = None
+        self._capacity_reservation_id = None
         self._capacity = None
         self._previous_state = None
         self._freeform_tags = None
@@ -940,7 +951,7 @@ class DedicatedAiCluster(object):
         **[Required]** Gets the unit_shape of this DedicatedAiCluster.
         The shape of dedicated unit in this AI cluster.
 
-        Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "COHERE_A100_40G_X2", "COHERE_A100_40G_X4", "COHERE_A100_40G_X8", "COHERE_A100_80G_X2", "COHERE_A100_80G_X4", "COHERE_A100_80G_X8", "COHERE_H100_X2", "COHERE_H100_X4", "COHERE_H100_X8", "COHERE_H200_X1", "COHERE_H200_X2", "COHERE_H200_X4", "COHERE_H200_X8", "COHERE_B200_X1", "COHERE_B200_X2", "COHERE_B200_X4", "COHERE_B200_X8", "META_A100_40G_X1", "META_A100_40G_X2", "META_A100_40G_X4", "META_A100_40G_X8", "META_A100_80G_X1", "META_A100_80G_X2", "META_A100_80G_X4", "META_A100_80G_X8", "META_H100_X1", "META_H100_X2", "META_H100_X4", "META_H100_X8", "META_H200_X1", "META_H200_X2", "META_H200_X4", "META_H200_X8", "META_B200_X1", "META_B200_X2", "META_B200_X4", "META_B200_X8", "COHERE_B300_X1", "META_B300_X1", "OAI_B300_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H100_X16", "H100_X32", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4", "B200_X1", "B200_X2", "B200_X4", "B200_X8", "OAI_B200_X1", "OAI_B200_X2", "OAI_B200_X4", "OAI_B200_X8", "SB_B200_X1", "B200_X16", "B200_X32", "B300_X1", "B300_X2", "B300_X4", "B300_X8", "B300_X16", "B300_X32", "L40S_X1", "L40S_X2", "L40S_X4", "L40S_X8", "L40S_X16", "L40S_X32", "MI300X_X1", "MI300X_X2", "MI300X_X4", "MI300X_X8", "MI300X_X16", "MI300X_X32", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "COHERE_A100_40G_X2", "COHERE_A100_40G_X4", "COHERE_A100_40G_X8", "COHERE_A100_80G_X2", "COHERE_A100_80G_X4", "COHERE_A100_80G_X8", "COHERE_H100_X2", "COHERE_H100_X4", "COHERE_H100_X8", "COHERE_H200_X1", "COHERE_H200_X2", "COHERE_H200_X4", "COHERE_H200_X8", "COHERE_B200_X1", "COHERE_B200_X2", "COHERE_B200_X4", "COHERE_B200_X8", "META_A100_40G_X1", "META_A100_40G_X2", "META_A100_40G_X4", "META_A100_40G_X8", "META_A100_80G_X1", "META_A100_80G_X2", "META_A100_80G_X4", "META_A100_80G_X8", "META_H100_X1", "META_H100_X2", "META_H100_X4", "META_H100_X8", "META_H200_X1", "META_H200_X2", "META_H200_X4", "META_H200_X8", "META_B200_X1", "META_B200_X2", "META_B200_X4", "META_B200_X8", "COHERE_B300_X1", "META_B300_X1", "OAI_B300_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H100_X16", "H100_X32", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_H100_X4", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4", "B200_X1", "B200_X2", "B200_X4", "B200_X8", "OAI_B200_X1", "OAI_B200_X2", "OAI_B200_X4", "OAI_B200_X8", "SB_B200_X1", "B200_X16", "B200_X32", "B300_X1", "B300_X2", "B300_X4", "B300_X8", "B300_X16", "B300_X32", "L40S_X1", "L40S_X2", "L40S_X4", "L40S_X8", "L40S_X16", "L40S_X32", "MI300X_X1", "MI300X_X2", "MI300X_X4", "MI300X_X8", "MI300X_X16", "MI300X_X32", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -959,10 +970,34 @@ class DedicatedAiCluster(object):
         :param unit_shape: The unit_shape of this DedicatedAiCluster.
         :type: str
         """
-        allowed_values = ["LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "COHERE_A100_40G_X2", "COHERE_A100_40G_X4", "COHERE_A100_40G_X8", "COHERE_A100_80G_X2", "COHERE_A100_80G_X4", "COHERE_A100_80G_X8", "COHERE_H100_X2", "COHERE_H100_X4", "COHERE_H100_X8", "COHERE_H200_X1", "COHERE_H200_X2", "COHERE_H200_X4", "COHERE_H200_X8", "COHERE_B200_X1", "COHERE_B200_X2", "COHERE_B200_X4", "COHERE_B200_X8", "META_A100_40G_X1", "META_A100_40G_X2", "META_A100_40G_X4", "META_A100_40G_X8", "META_A100_80G_X1", "META_A100_80G_X2", "META_A100_80G_X4", "META_A100_80G_X8", "META_H100_X1", "META_H100_X2", "META_H100_X4", "META_H100_X8", "META_H200_X1", "META_H200_X2", "META_H200_X4", "META_H200_X8", "META_B200_X1", "META_B200_X2", "META_B200_X4", "META_B200_X8", "COHERE_B300_X1", "META_B300_X1", "OAI_B300_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H100_X16", "H100_X32", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4", "B200_X1", "B200_X2", "B200_X4", "B200_X8", "OAI_B200_X1", "OAI_B200_X2", "OAI_B200_X4", "OAI_B200_X8", "SB_B200_X1", "B200_X16", "B200_X32", "B300_X1", "B300_X2", "B300_X4", "B300_X8", "B300_X16", "B300_X32", "L40S_X1", "L40S_X2", "L40S_X4", "L40S_X8", "L40S_X16", "L40S_X32", "MI300X_X1", "MI300X_X2", "MI300X_X4", "MI300X_X8", "MI300X_X16", "MI300X_X32"]
+        allowed_values = ["LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", "LARGE_GENERIC_V3", "LARGE_GENERIC_V4", "LARGE_GENERIC_V5", "COHERE_H100_X1", "COHERE_A100_80G_X1", "COHERE_A100_40G_X1", "COHERE_A10_X1", "COHERE_A100_40G_X2", "COHERE_A100_40G_X4", "COHERE_A100_40G_X8", "COHERE_A100_80G_X2", "COHERE_A100_80G_X4", "COHERE_A100_80G_X8", "COHERE_H100_X2", "COHERE_H100_X4", "COHERE_H100_X8", "COHERE_H200_X1", "COHERE_H200_X2", "COHERE_H200_X4", "COHERE_H200_X8", "COHERE_B200_X1", "COHERE_B200_X2", "COHERE_B200_X4", "COHERE_B200_X8", "META_A100_40G_X1", "META_A100_40G_X2", "META_A100_40G_X4", "META_A100_40G_X8", "META_A100_80G_X1", "META_A100_80G_X2", "META_A100_80G_X4", "META_A100_80G_X8", "META_H100_X1", "META_H100_X2", "META_H100_X4", "META_H100_X8", "META_H200_X1", "META_H200_X2", "META_H200_X4", "META_H200_X8", "META_B200_X1", "META_B200_X2", "META_B200_X4", "META_B200_X8", "COHERE_B300_X1", "META_B300_X1", "OAI_B300_X1", "LARGE_COHERE_V3", "RERANK_COHERE", "SMALL_GENERIC_V1", "MEDIUM_GENERIC_V1", "LARGE_GENERIC_V1", "A10_X1", "A10_X2", "A10_X4", "A100_40G_X1", "A100_40G_X2", "A100_40G_X4", "A100_40G_X8", "A100_80G_X1", "A100_80G_X2", "A100_80G_X4", "A100_80G_X8", "H100_X1", "H100_X2", "H100_X4", "H100_X8", "H100_X16", "H100_X32", "H200_X1", "H200_X2", "H200_X4", "H200_X8", "OAI_H100_X4", "OAI_A10_X2", "OAI_H100_X1", "OAI_H100_X2", "OAI_H200_X1", "OAI_A100_80G_X1", "OAI_A100_80G_X2", "OAI_A100_40G_X1", "OAI_A100_40G_X4", "B200_X1", "B200_X2", "B200_X4", "B200_X8", "OAI_B200_X1", "OAI_B200_X2", "OAI_B200_X4", "OAI_B200_X8", "SB_B200_X1", "B200_X16", "B200_X32", "B300_X1", "B300_X2", "B300_X4", "B300_X8", "B300_X16", "B300_X32", "L40S_X1", "L40S_X2", "L40S_X4", "L40S_X8", "L40S_X16", "L40S_X32", "MI300X_X1", "MI300X_X2", "MI300X_X4", "MI300X_X8", "MI300X_X16", "MI300X_X32"]
         if not value_allowed_none_or_none_sentinel(unit_shape, allowed_values):
             unit_shape = 'UNKNOWN_ENUM_VALUE'
         self._unit_shape = unit_shape
+
+    @property
+    def capacity_reservation_id(self):
+        """
+        Gets the capacity_reservation_id of this DedicatedAiCluster.
+        The OCID of the capacity reservation.
+
+
+        :return: The capacity_reservation_id of this DedicatedAiCluster.
+        :rtype: str
+        """
+        return self._capacity_reservation_id
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, capacity_reservation_id):
+        """
+        Sets the capacity_reservation_id of this DedicatedAiCluster.
+        The OCID of the capacity reservation.
+
+
+        :param capacity_reservation_id: The capacity_reservation_id of this DedicatedAiCluster.
+        :type: str
+        """
+        self._capacity_reservation_id = capacity_reservation_id
 
     @property
     def capacity(self):

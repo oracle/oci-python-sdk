@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemoteReindexSourceDetails(object):
     """
-    Connection and certificate details for a remote cluster.
+    Connection and CA bundle trust details for a remote cluster.
     """
 
     def __init__(self, **kwargs):
@@ -28,24 +28,24 @@ class RemoteReindexSourceDetails(object):
             The value to assign to the endpoint_resolution_ip property of this RemoteReindexSourceDetails.
         :type endpoint_resolution_ip: str
 
-        :param certificate_id:
-            The value to assign to the certificate_id property of this RemoteReindexSourceDetails.
-        :type certificate_id: str
+        :param ca_bundle_id:
+            The value to assign to the ca_bundle_id property of this RemoteReindexSourceDetails.
+        :type ca_bundle_id: str
 
         """
         self.swagger_types = {
             'endpoint': 'str',
             'endpoint_resolution_ip': 'str',
-            'certificate_id': 'str'
+            'ca_bundle_id': 'str'
         }
         self.attribute_map = {
             'endpoint': 'endpoint',
             'endpoint_resolution_ip': 'endpointResolutionIp',
-            'certificate_id': 'certificateId'
+            'ca_bundle_id': 'caBundleId'
         }
         self._endpoint = None
         self._endpoint_resolution_ip = None
-        self._certificate_id = None
+        self._ca_bundle_id = None
 
     @property
     def endpoint(self):
@@ -96,28 +96,28 @@ class RemoteReindexSourceDetails(object):
         self._endpoint_resolution_ip = endpoint_resolution_ip
 
     @property
-    def certificate_id(self):
+    def ca_bundle_id(self):
         """
-        **[Required]** Gets the certificate_id of this RemoteReindexSourceDetails.
-        OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        **[Required]** Gets the ca_bundle_id of this RemoteReindexSourceDetails.
+        OCID of the OCI Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
 
 
-        :return: The certificate_id of this RemoteReindexSourceDetails.
+        :return: The ca_bundle_id of this RemoteReindexSourceDetails.
         :rtype: str
         """
-        return self._certificate_id
+        return self._ca_bundle_id
 
-    @certificate_id.setter
-    def certificate_id(self, certificate_id):
+    @ca_bundle_id.setter
+    def ca_bundle_id(self, ca_bundle_id):
         """
-        Sets the certificate_id of this RemoteReindexSourceDetails.
-        OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        Sets the ca_bundle_id of this RemoteReindexSourceDetails.
+        OCID of the OCI Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
 
 
-        :param certificate_id: The certificate_id of this RemoteReindexSourceDetails.
+        :param ca_bundle_id: The ca_bundle_id of this RemoteReindexSourceDetails.
         :type: str
         """
-        self._certificate_id = certificate_id
+        self._ca_bundle_id = ca_bundle_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

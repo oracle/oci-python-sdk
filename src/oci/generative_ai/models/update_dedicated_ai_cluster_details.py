@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDedicatedAiClusterDetails(object):
     """
-    The data to update a dedicated AI cluster.
+    The data to update a dedicated AI cluster. Properties not defined by this schema are rejected.
     """
 
     def __init__(self, **kwargs):

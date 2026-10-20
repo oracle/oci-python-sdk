@@ -23,7 +23,7 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateSnowflakeConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL"
         :type connection_type: str
 
         :param display_name:
@@ -266,6 +266,10 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
         Deprecated: This field is deprecated and replaced by \"passwordSecretId\".
         This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
         https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        Snowflake is phasing out password authentication for legacy service users.
+        Oracle GoldenGate Snowflake connections will support only key-pair authentication.
+        See the Snowflake documentation for details:
+        https://docs.snowflake.com/en/user-guide/security-mfa-rollout
 
 
         :return: The password of this UpdateSnowflakeConnectionDetails.
@@ -281,6 +285,10 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
         Deprecated: This field is deprecated and replaced by \"passwordSecretId\".
         This change follows the GoldenGate \"Plain Text Fields in Connections\" deprecation:
         https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        Snowflake is phasing out password authentication for legacy service users.
+        Oracle GoldenGate Snowflake connections will support only key-pair authentication.
+        See the Snowflake documentation for details:
+        https://docs.snowflake.com/en/user-guide/security-mfa-rollout
 
 
         :param password: The password of this UpdateSnowflakeConnectionDetails.
@@ -294,6 +302,10 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
         Gets the password_secret_id of this UpdateSnowflakeConnectionDetails.
         The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
         Note: When provided, 'password' field must not be provided.
+        Deprecated: Snowflake is phasing out password authentication for legacy service users.
+        Oracle GoldenGate Snowflake connections will support only key-pair authentication.
+        See the Snowflake documentation for details:
+        https://docs.snowflake.com/en/user-guide/security-mfa-rollout
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -309,6 +321,10 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
         Sets the password_secret_id of this UpdateSnowflakeConnectionDetails.
         The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
         Note: When provided, 'password' field must not be provided.
+        Deprecated: Snowflake is phasing out password authentication for legacy service users.
+        Oracle GoldenGate Snowflake connections will support only key-pair authentication.
+        See the Snowflake documentation for details:
+        https://docs.snowflake.com/en/user-guide/security-mfa-rollout
 
         __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

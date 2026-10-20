@@ -129,6 +129,7 @@ from .change_scheduling_plan_compartment_details import ChangeSchedulingPlanComp
 from .change_scheduling_policy_compartment_details import ChangeSchedulingPolicyCompartmentDetails
 from .change_subscription_details import ChangeSubscriptionDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
+from .clone_database_details import CloneDatabaseDetails
 from .cloud_automation_apply_update_time_preference import CloudAutomationApplyUpdateTimePreference
 from .cloud_automation_freeze_period import CloudAutomationFreezePeriod
 from .cloud_automation_update_details import CloudAutomationUpdateDetails
@@ -178,6 +179,7 @@ from .create_autonomous_vm_cluster_details import CreateAutonomousVmClusterDetai
 from .create_backup_destination_details import CreateBackupDestinationDetails
 from .create_backup_details import CreateBackupDetails
 from .create_basecc_vm_cluster_details import CreateBaseccVmClusterDetails
+from .create_clone_database_from_database import CreateCloneDatabaseFromDatabase
 from .create_cloud_autonomous_vm_cluster_details import CreateCloudAutonomousVmClusterDetails
 from .create_cloud_exadata_infrastructure_details import CreateCloudExadataInfrastructureDetails
 from .create_cloud_vm_cluster_details import CreateCloudVmClusterDetails
@@ -198,6 +200,9 @@ from .create_database_from_backup import CreateDatabaseFromBackup
 from .create_database_from_backup_details import CreateDatabaseFromBackupDetails
 from .create_database_from_database import CreateDatabaseFromDatabase
 from .create_database_from_db_system_details import CreateDatabaseFromDbSystemDetails
+from .create_database_from_snapshot import CreateDatabaseFromSnapshot
+from .create_database_from_snapshot_details import CreateDatabaseFromSnapshotDetails
+from .create_database_snapshot_details import CreateDatabaseSnapshotDetails
 from .create_database_software_image_details import CreateDatabaseSoftwareImageDetails
 from .create_db_connection_bundle_details import CreateDbConnectionBundleDetails
 from .create_db_home_base import CreateDbHomeBase
@@ -264,6 +269,9 @@ from .database_connection_string_profile import DatabaseConnectionStringProfile
 from .database_connection_strings import DatabaseConnectionStrings
 from .database_credential_details import DatabaseCredentialDetails
 from .database_management_config import DatabaseManagementConfig
+from .database_snapshot import DatabaseSnapshot
+from .database_snapshot_collection import DatabaseSnapshotCollection
+from .database_snapshot_summary import DatabaseSnapshotSummary
 from .database_software_image import DatabaseSoftwareImage
 from .database_software_image_summary import DatabaseSoftwareImageSummary
 from .database_ssl_connection_credentials import DatabaseSslConnectionCredentials
@@ -545,6 +553,7 @@ from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_data_guard_association_details import UpdateDataGuardAssociationDetails
 from .update_data_guard_details import UpdateDataGuardDetails
 from .update_database_details import UpdateDatabaseDetails
+from .update_database_snapshot_details import UpdateDatabaseSnapshotDetails
 from .update_database_software_image_details import UpdateDatabaseSoftwareImageDetails
 from .update_db_connection_bundle_details import UpdateDbConnectionBundleDetails
 from .update_db_home_details import UpdateDbHomeDetails
@@ -721,6 +730,7 @@ database_type_mapping = {
     "ChangeSchedulingPolicyCompartmentDetails": ChangeSchedulingPolicyCompartmentDetails,
     "ChangeSubscriptionDetails": ChangeSubscriptionDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
+    "CloneDatabaseDetails": CloneDatabaseDetails,
     "CloudAutomationApplyUpdateTimePreference": CloudAutomationApplyUpdateTimePreference,
     "CloudAutomationFreezePeriod": CloudAutomationFreezePeriod,
     "CloudAutomationUpdateDetails": CloudAutomationUpdateDetails,
@@ -770,6 +780,7 @@ database_type_mapping = {
     "CreateBackupDestinationDetails": CreateBackupDestinationDetails,
     "CreateBackupDetails": CreateBackupDetails,
     "CreateBaseccVmClusterDetails": CreateBaseccVmClusterDetails,
+    "CreateCloneDatabaseFromDatabase": CreateCloneDatabaseFromDatabase,
     "CreateCloudAutonomousVmClusterDetails": CreateCloudAutonomousVmClusterDetails,
     "CreateCloudExadataInfrastructureDetails": CreateCloudExadataInfrastructureDetails,
     "CreateCloudVmClusterDetails": CreateCloudVmClusterDetails,
@@ -790,6 +801,9 @@ database_type_mapping = {
     "CreateDatabaseFromBackupDetails": CreateDatabaseFromBackupDetails,
     "CreateDatabaseFromDatabase": CreateDatabaseFromDatabase,
     "CreateDatabaseFromDbSystemDetails": CreateDatabaseFromDbSystemDetails,
+    "CreateDatabaseFromSnapshot": CreateDatabaseFromSnapshot,
+    "CreateDatabaseFromSnapshotDetails": CreateDatabaseFromSnapshotDetails,
+    "CreateDatabaseSnapshotDetails": CreateDatabaseSnapshotDetails,
     "CreateDatabaseSoftwareImageDetails": CreateDatabaseSoftwareImageDetails,
     "CreateDbConnectionBundleDetails": CreateDbConnectionBundleDetails,
     "CreateDbHomeBase": CreateDbHomeBase,
@@ -856,6 +870,9 @@ database_type_mapping = {
     "DatabaseConnectionStrings": DatabaseConnectionStrings,
     "DatabaseCredentialDetails": DatabaseCredentialDetails,
     "DatabaseManagementConfig": DatabaseManagementConfig,
+    "DatabaseSnapshot": DatabaseSnapshot,
+    "DatabaseSnapshotCollection": DatabaseSnapshotCollection,
+    "DatabaseSnapshotSummary": DatabaseSnapshotSummary,
     "DatabaseSoftwareImage": DatabaseSoftwareImage,
     "DatabaseSoftwareImageSummary": DatabaseSoftwareImageSummary,
     "DatabaseSslConnectionCredentials": DatabaseSslConnectionCredentials,
@@ -1137,6 +1154,7 @@ database_type_mapping = {
     "UpdateDataGuardAssociationDetails": UpdateDataGuardAssociationDetails,
     "UpdateDataGuardDetails": UpdateDataGuardDetails,
     "UpdateDatabaseDetails": UpdateDatabaseDetails,
+    "UpdateDatabaseSnapshotDetails": UpdateDatabaseSnapshotDetails,
     "UpdateDatabaseSoftwareImageDetails": UpdateDatabaseSoftwareImageDetails,
     "UpdateDbConnectionBundleDetails": UpdateDbConnectionBundleDetails,
     "UpdateDbHomeDetails": UpdateDbHomeDetails,

@@ -44,6 +44,14 @@ class Shape(object):
     #: This constant has a value of "PAID"
     BILLING_TYPE_PAID = "PAID"
 
+    #: A constant which can be used with the supported_resource_management property of a Shape.
+    #: This constant has a value of "DYNAMIC"
+    SUPPORTED_RESOURCE_MANAGEMENT_DYNAMIC = "DYNAMIC"
+
+    #: A constant which can be used with the supported_resource_management property of a Shape.
+    #: This constant has a value of "STATIC"
+    SUPPORTED_RESOURCE_MANAGEMENT_STATIC = "STATIC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Shape object with values from keyword arguments.
@@ -165,6 +173,12 @@ class Shape(object):
             The value to assign to the is_flexible property of this Shape.
         :type is_flexible: bool
 
+        :param supported_resource_management:
+            The value to assign to the supported_resource_management property of this Shape.
+            Allowed values for items in this list are: "DYNAMIC", "STATIC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type supported_resource_management: list[str]
+
         :param resize_compatible_shapes:
             The value to assign to the resize_compatible_shapes property of this Shape.
         :type resize_compatible_shapes: list[str]
@@ -207,6 +221,7 @@ class Shape(object):
             'quota_names': 'list[str]',
             'is_subcore': 'bool',
             'is_flexible': 'bool',
+            'supported_resource_management': 'list[str]',
             'resize_compatible_shapes': 'list[str]',
             'recommended_alternatives': 'list[ShapeAlternativeObject]',
             'platform_names': 'list[str]'
@@ -240,6 +255,7 @@ class Shape(object):
             'quota_names': 'quotaNames',
             'is_subcore': 'isSubcore',
             'is_flexible': 'isFlexible',
+            'supported_resource_management': 'supportedResourceManagement',
             'resize_compatible_shapes': 'resizeCompatibleShapes',
             'recommended_alternatives': 'recommendedAlternatives',
             'platform_names': 'platformNames'
@@ -272,6 +288,7 @@ class Shape(object):
         self._quota_names = None
         self._is_subcore = None
         self._is_flexible = None
+        self._supported_resource_management = None
         self._resize_compatible_shapes = None
         self._recommended_alternatives = None
         self._platform_names = None
@@ -971,6 +988,36 @@ class Shape(object):
         :type: bool
         """
         self._is_flexible = is_flexible
+
+    @property
+    def supported_resource_management(self):
+        """
+        Gets the supported_resource_management of this Shape.
+        The resource management modes supported by this shape.
+
+        Allowed values for items in this list are: "DYNAMIC", "STATIC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The supported_resource_management of this Shape.
+        :rtype: list[str]
+        """
+        return self._supported_resource_management
+
+    @supported_resource_management.setter
+    def supported_resource_management(self, supported_resource_management):
+        """
+        Sets the supported_resource_management of this Shape.
+        The resource management modes supported by this shape.
+
+
+        :param supported_resource_management: The supported_resource_management of this Shape.
+        :type: list[str]
+        """
+        allowed_values = ["DYNAMIC", "STATIC"]
+        if supported_resource_management:
+            supported_resource_management[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_resource_management]
+        self._supported_resource_management = supported_resource_management
 
     @property
     def resize_compatible_shapes(self):

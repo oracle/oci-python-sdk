@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InvoicingOrganization(object):
     """
-    Organization details
+    Organization details.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class InvoicingOrganization(object):
     def name(self):
         """
         **[Required]** Gets the name of this InvoicingOrganization.
-        Organization name
+        Organization name.
 
 
         :return: The name of this InvoicingOrganization.
@@ -56,7 +56,7 @@ class InvoicingOrganization(object):
     def name(self, name):
         """
         Sets the name of this InvoicingOrganization.
-        Organization name
+        Organization name.
 
 
         :param name: The name of this InvoicingOrganization.
@@ -68,7 +68,7 @@ class InvoicingOrganization(object):
     def number(self):
         """
         **[Required]** Gets the number of this InvoicingOrganization.
-        Organization ID
+        Organization ID.
 
 
         :return: The number of this InvoicingOrganization.
@@ -80,7 +80,7 @@ class InvoicingOrganization(object):
     def number(self, number):
         """
         Sets the number of this InvoicingOrganization.
-        Organization ID
+        Organization ID.
 
 
         :param number: The number of this InvoicingOrganization.

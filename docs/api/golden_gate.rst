@@ -27,6 +27,8 @@ Golden Gate
     oci.golden_gate.models.AiModelConnectionSummary
     oci.golden_gate.models.AiModelSummary
     oci.golden_gate.models.AiProviderCollection
+    oci.golden_gate.models.AiProviderConnection
+    oci.golden_gate.models.AiProviderConnectionSummary
     oci.golden_gate.models.AiProviderSummary
     oci.golden_gate.models.AmazonKinesisConnection
     oci.golden_gate.models.AmazonKinesisConnectionSummary
@@ -40,6 +42,8 @@ Golden Gate
     oci.golden_gate.models.ApiKeyAiModelAuthDetailsSummary
     oci.golden_gate.models.AzureDataLakeStorageConnection
     oci.golden_gate.models.AzureDataLakeStorageConnectionSummary
+    oci.golden_gate.models.AzureDataLakeStorageDatabricksEngineArtifactLocation
+    oci.golden_gate.models.AzureDataLakeStorageDatabricksEngineArtifactLocationSummary
     oci.golden_gate.models.AzureDataLakeStorageIcebergStorage
     oci.golden_gate.models.AzureDataLakeStorageIcebergStorageSummary
     oci.golden_gate.models.AzureSynapseConnection
@@ -71,12 +75,14 @@ Golden Gate
     oci.golden_gate.models.CopyDeploymentBackupDetails
     oci.golden_gate.models.CreateAiModelAuthDetails
     oci.golden_gate.models.CreateAiModelConnectionDetails
+    oci.golden_gate.models.CreateAiProviderConnectionDetails
     oci.golden_gate.models.CreateAmazonKinesisConnectionDetails
     oci.golden_gate.models.CreateAmazonRedshiftConnectionDetails
     oci.golden_gate.models.CreateAmazonS3ConnectionDetails
     oci.golden_gate.models.CreateAmazonS3IcebergStorageDetails
     oci.golden_gate.models.CreateApiKeyAiModelAuthDetails
     oci.golden_gate.models.CreateAzureDataLakeStorageConnectionDetails
+    oci.golden_gate.models.CreateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails
     oci.golden_gate.models.CreateAzureDataLakeStorageIcebergStorageDetails
     oci.golden_gate.models.CreateAzureSynapseConnectionDetails
     oci.golden_gate.models.CreateBackupScheduleDetails
@@ -85,6 +91,13 @@ Golden Gate
     oci.golden_gate.models.CreateConnectionDetails
     oci.golden_gate.models.CreateDatabaseRegistrationDetails
     oci.golden_gate.models.CreateDatabricksConnectionDetails
+    oci.golden_gate.models.CreateDatabricksEngineArtifactLocationDetails
+    oci.golden_gate.models.CreateDatabricksEngineConnectionDetails
+    oci.golden_gate.models.CreateDatabricksEngineOciObjectStorageConfigDetails
+    oci.golden_gate.models.CreateDatabricksEngineParOciObjectStorageConfigDetails
+    oci.golden_gate.models.CreateDatabricksEngineResourcePrincipalOciObjectStorageConfigDetails
+    oci.golden_gate.models.CreateDatabricksEngineSecretKeyOciObjectStorageConfigDetails
+    oci.golden_gate.models.CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
     oci.golden_gate.models.CreateDb2ConnectionDetails
     oci.golden_gate.models.CreateDeploymentBackupDetails
     oci.golden_gate.models.CreateDeploymentDetails
@@ -115,9 +128,12 @@ Golden Gate
     oci.golden_gate.models.CreateNoIcebergStorageDetails
     oci.golden_gate.models.CreateOciGenAiModelAuthDetails
     oci.golden_gate.models.CreateOciObjectStorageConnectionDetails
+    oci.golden_gate.models.CreateOciObjectStorageDatabricksEngineArtifactLocationDetails
     oci.golden_gate.models.CreateOciObjectStorageS3ApiIcebergStorageDetails
+    oci.golden_gate.models.CreateOciObjectStorageSparkArtifactLocationDetails
     oci.golden_gate.models.CreateOggDeploymentDetails
     oci.golden_gate.models.CreateOracleAiDataPlatformConnectionDetails
+    oci.golden_gate.models.CreateOracleAiDataPlatformEngineConnectionDetails
     oci.golden_gate.models.CreateOracleConnectionDetails
     oci.golden_gate.models.CreateOracleNosqlConnectionDetails
     oci.golden_gate.models.CreatePipelineDetails
@@ -126,12 +142,29 @@ Golden Gate
     oci.golden_gate.models.CreateRedisConnectionDetails
     oci.golden_gate.models.CreateRestIcebergCatalogDetails
     oci.golden_gate.models.CreateSnowflakeConnectionDetails
+    oci.golden_gate.models.CreateSparkArtifactLocationDetails
+    oci.golden_gate.models.CreateSparkConnectionDetails
+    oci.golden_gate.models.CreateSparkOciObjectStorageConfigDetails
+    oci.golden_gate.models.CreateSparkParOciObjectStorageConfigDetails
+    oci.golden_gate.models.CreateSparkResourcePrincipalOciObjectStorageConfigDetails
+    oci.golden_gate.models.CreateSparkSecretKeyOciObjectStorageConfigDetails
+    oci.golden_gate.models.CreateSparkUserPrincipalOciObjectStorageConfigDetails
+    oci.golden_gate.models.CreateUcVolumeDatabricksEngineArtifactLocationDetails
     oci.golden_gate.models.CreateZeroEtlPipelineDetails
     oci.golden_gate.models.DatabaseRegistration
     oci.golden_gate.models.DatabaseRegistrationCollection
     oci.golden_gate.models.DatabaseRegistrationSummary
     oci.golden_gate.models.DatabricksConnection
     oci.golden_gate.models.DatabricksConnectionSummary
+    oci.golden_gate.models.DatabricksEngineArtifactLocation
+    oci.golden_gate.models.DatabricksEngineArtifactLocationSummary
+    oci.golden_gate.models.DatabricksEngineConnection
+    oci.golden_gate.models.DatabricksEngineConnectionSummary
+    oci.golden_gate.models.DatabricksEngineOciObjectStorageConfig
+    oci.golden_gate.models.DatabricksEngineParOciObjectStorageConfig
+    oci.golden_gate.models.DatabricksEngineResourcePrincipalOciObjectStorageConfig
+    oci.golden_gate.models.DatabricksEngineSecretKeyOciObjectStorageConfig
+    oci.golden_gate.models.DatabricksEngineUserPrincipalOciObjectStorageConfig
     oci.golden_gate.models.Db2Connection
     oci.golden_gate.models.Db2ConnectionSummary
     oci.golden_gate.models.DefaultCancelDeploymentBackupDetails
@@ -242,11 +275,17 @@ Golden Gate
     oci.golden_gate.models.OciGenAiModelAuthDetailsSummary
     oci.golden_gate.models.OciObjectStorageConnection
     oci.golden_gate.models.OciObjectStorageConnectionSummary
+    oci.golden_gate.models.OciObjectStorageDatabricksEngineArtifactLocation
+    oci.golden_gate.models.OciObjectStorageDatabricksEngineArtifactLocationSummary
     oci.golden_gate.models.OciObjectStorageS3ApiIcebergStorage
     oci.golden_gate.models.OciObjectStorageS3ApiIcebergStorageSummary
+    oci.golden_gate.models.OciObjectStorageSparkArtifactLocation
+    oci.golden_gate.models.OciObjectStorageSparkArtifactLocationSummary
     oci.golden_gate.models.OggDeployment
     oci.golden_gate.models.OracleAiDataPlatformConnection
     oci.golden_gate.models.OracleAiDataPlatformConnectionSummary
+    oci.golden_gate.models.OracleAiDataPlatformEngineConnection
+    oci.golden_gate.models.OracleAiDataPlatformEngineConnectionSummary
     oci.golden_gate.models.OracleConnection
     oci.golden_gate.models.OracleConnectionSummary
     oci.golden_gate.models.OracleNosqlConnection
@@ -289,6 +328,15 @@ Golden Gate
     oci.golden_gate.models.SnowflakeConnection
     oci.golden_gate.models.SnowflakeConnectionSummary
     oci.golden_gate.models.SourcePipelineConnectionDetails
+    oci.golden_gate.models.SparkArtifactLocation
+    oci.golden_gate.models.SparkArtifactLocationSummary
+    oci.golden_gate.models.SparkConnection
+    oci.golden_gate.models.SparkConnectionSummary
+    oci.golden_gate.models.SparkOciObjectStorageConfig
+    oci.golden_gate.models.SparkParOciObjectStorageConfig
+    oci.golden_gate.models.SparkResourcePrincipalOciObjectStorageConfig
+    oci.golden_gate.models.SparkSecretKeyOciObjectStorageConfig
+    oci.golden_gate.models.SparkUserPrincipalOciObjectStorageConfig
     oci.golden_gate.models.StartDeploymentDetails
     oci.golden_gate.models.StartPipelineDetails
     oci.golden_gate.models.StepMessage
@@ -306,20 +354,31 @@ Golden Gate
     oci.golden_gate.models.TrailFileSummary
     oci.golden_gate.models.TrailSequenceCollection
     oci.golden_gate.models.TrailSequenceSummary
+    oci.golden_gate.models.UcVolumeDatabricksEngineArtifactLocation
+    oci.golden_gate.models.UcVolumeDatabricksEngineArtifactLocationSummary
     oci.golden_gate.models.UpdateAiModelAuthDetails
     oci.golden_gate.models.UpdateAiModelConnectionDetails
+    oci.golden_gate.models.UpdateAiProviderConnectionDetails
     oci.golden_gate.models.UpdateAmazonKinesisConnectionDetails
     oci.golden_gate.models.UpdateAmazonRedshiftConnectionDetails
     oci.golden_gate.models.UpdateAmazonS3ConnectionDetails
     oci.golden_gate.models.UpdateAmazonS3IcebergStorageDetails
     oci.golden_gate.models.UpdateApiKeyAiModelAuthDetails
     oci.golden_gate.models.UpdateAzureDataLakeStorageConnectionDetails
+    oci.golden_gate.models.UpdateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails
     oci.golden_gate.models.UpdateAzureDataLakeStorageIcebergStorageDetails
     oci.golden_gate.models.UpdateAzureSynapseConnectionDetails
     oci.golden_gate.models.UpdateBackupScheduleDetails
     oci.golden_gate.models.UpdateConnectionDetails
     oci.golden_gate.models.UpdateDatabaseRegistrationDetails
     oci.golden_gate.models.UpdateDatabricksConnectionDetails
+    oci.golden_gate.models.UpdateDatabricksEngineArtifactLocationDetails
+    oci.golden_gate.models.UpdateDatabricksEngineConnectionDetails
+    oci.golden_gate.models.UpdateDatabricksEngineOciObjectStorageConfigDetails
+    oci.golden_gate.models.UpdateDatabricksEngineParOciObjectStorageConfigDetails
+    oci.golden_gate.models.UpdateDatabricksEngineResourcePrincipalOciObjectStorageConfigDetails
+    oci.golden_gate.models.UpdateDatabricksEngineSecretKeyOciObjectStorageConfigDetails
+    oci.golden_gate.models.UpdateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
     oci.golden_gate.models.UpdateDb2ConnectionDetails
     oci.golden_gate.models.UpdateDeploymentBackupDetails
     oci.golden_gate.models.UpdateDeploymentDetails
@@ -350,9 +409,12 @@ Golden Gate
     oci.golden_gate.models.UpdateNoIcebergStorageDetails
     oci.golden_gate.models.UpdateOciGenAiModelAuthDetails
     oci.golden_gate.models.UpdateOciObjectStorageConnectionDetails
+    oci.golden_gate.models.UpdateOciObjectStorageDatabricksEngineArtifactLocationDetails
     oci.golden_gate.models.UpdateOciObjectStorageS3ApiIcebergStorageDetails
+    oci.golden_gate.models.UpdateOciObjectStorageSparkArtifactLocationDetails
     oci.golden_gate.models.UpdateOggDeploymentDetails
     oci.golden_gate.models.UpdateOracleAiDataPlatformConnectionDetails
+    oci.golden_gate.models.UpdateOracleAiDataPlatformEngineConnectionDetails
     oci.golden_gate.models.UpdateOracleConnectionDetails
     oci.golden_gate.models.UpdateOracleNosqlConnectionDetails
     oci.golden_gate.models.UpdatePipelineDetails
@@ -361,6 +423,14 @@ Golden Gate
     oci.golden_gate.models.UpdateRedisConnectionDetails
     oci.golden_gate.models.UpdateRestIcebergCatalogDetails
     oci.golden_gate.models.UpdateSnowflakeConnectionDetails
+    oci.golden_gate.models.UpdateSparkArtifactLocationDetails
+    oci.golden_gate.models.UpdateSparkConnectionDetails
+    oci.golden_gate.models.UpdateSparkOciObjectStorageConfigDetails
+    oci.golden_gate.models.UpdateSparkParOciObjectStorageConfigDetails
+    oci.golden_gate.models.UpdateSparkResourcePrincipalOciObjectStorageConfigDetails
+    oci.golden_gate.models.UpdateSparkSecretKeyOciObjectStorageConfigDetails
+    oci.golden_gate.models.UpdateSparkUserPrincipalOciObjectStorageConfigDetails
+    oci.golden_gate.models.UpdateUcVolumeDatabricksEngineArtifactLocationDetails
     oci.golden_gate.models.UpdateZeroEtlPipelineDetails
     oci.golden_gate.models.UpgradeDeploymentCurrentReleaseDetails
     oci.golden_gate.models.UpgradeDeploymentDetails

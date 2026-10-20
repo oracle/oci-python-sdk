@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InvoicelineComputedUsageSummary(object):
     """
-    Computed Usage Summary object
+    Computed usage summary object.
     """
 
     #: A constant which can be used with the type property of a InvoicelineComputedUsageSummary.
@@ -172,7 +172,7 @@ class InvoicelineComputedUsageSummary(object):
     def quantity(self):
         """
         **[Required]** Gets the quantity of this InvoicelineComputedUsageSummary.
-        Total Quantity that was used for computation
+        Total quantity that was used for computation.
 
 
         :return: The quantity of this InvoicelineComputedUsageSummary.
@@ -184,7 +184,7 @@ class InvoicelineComputedUsageSummary(object):
     def quantity(self, quantity):
         """
         Sets the quantity of this InvoicelineComputedUsageSummary.
-        Total Quantity that was used for computation
+        Total quantity that was used for computation.
 
 
         :param quantity: The quantity of this InvoicelineComputedUsageSummary.
@@ -196,7 +196,7 @@ class InvoicelineComputedUsageSummary(object):
     def net_unit_price(self):
         """
         **[Required]** Gets the net_unit_price of this InvoicelineComputedUsageSummary.
-        Net Unit Price for the product in consideration, price actual.
+        Net unit price for the product in consideration, price actual.
 
 
         :return: The net_unit_price of this InvoicelineComputedUsageSummary.
@@ -208,7 +208,7 @@ class InvoicelineComputedUsageSummary(object):
     def net_unit_price(self, net_unit_price):
         """
         Sets the net_unit_price of this InvoicelineComputedUsageSummary.
-        Net Unit Price for the product in consideration, price actual.
+        Net unit price for the product in consideration, price actual.
 
 
         :param net_unit_price: The net_unit_price of this InvoicelineComputedUsageSummary.
@@ -220,7 +220,7 @@ class InvoicelineComputedUsageSummary(object):
     def time_metered_on(self):
         """
         **[Required]** Gets the time_metered_on of this InvoicelineComputedUsageSummary.
-        Metered Service date.
+        Metered service date.
 
 
         :return: The time_metered_on of this InvoicelineComputedUsageSummary.
@@ -232,7 +232,7 @@ class InvoicelineComputedUsageSummary(object):
     def time_metered_on(self, time_metered_on):
         """
         Sets the time_metered_on of this InvoicelineComputedUsageSummary.
-        Metered Service date.
+        Metered service date.
 
 
         :param time_metered_on: The time_metered_on of this InvoicelineComputedUsageSummary.
@@ -244,7 +244,7 @@ class InvoicelineComputedUsageSummary(object):
     def type(self):
         """
         **[Required]** Gets the type of this InvoicelineComputedUsageSummary.
-        Usage compute type in SPM.
+        Usage compute type in SPM (Subscription Plan Management).
 
         Allowed values for this property are: "PROMOTION", "DO_NOT_BILL", "USAGE", "COMMIT", "OVERAGE", "PAY_AS_YOU_GO", "MONTHLY_MINIMUM", "DELAYED_USAGE_INVOICE_TIMING", "DELAYED_USAGE_COMMITMENT_EXP", "ON_ACCOUNT_CREDIT", "SERVICE_CREDIT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -259,7 +259,7 @@ class InvoicelineComputedUsageSummary(object):
     def type(self, type):
         """
         Sets the type of this InvoicelineComputedUsageSummary.
-        Usage compute type in SPM.
+        Usage compute type in SPM (Subscription Plan Management).
 
 
         :param type: The type of this InvoicelineComputedUsageSummary.
@@ -274,7 +274,7 @@ class InvoicelineComputedUsageSummary(object):
     def cost(self):
         """
         Gets the cost of this InvoicelineComputedUsageSummary.
-        Sum of Usage/Service Billing Line net Amount
+        Sum of usage/service billing line net amount.
 
 
         :return: The cost of this InvoicelineComputedUsageSummary.
@@ -286,7 +286,7 @@ class InvoicelineComputedUsageSummary(object):
     def cost(self, cost):
         """
         Sets the cost of this InvoicelineComputedUsageSummary.
-        Sum of Usage/Service Billing Line net Amount
+        Sum of usage/service billing line net amount.
 
 
         :param cost: The cost of this InvoicelineComputedUsageSummary.
@@ -298,7 +298,7 @@ class InvoicelineComputedUsageSummary(object):
     def cost_rounded(self):
         """
         **[Required]** Gets the cost_rounded of this InvoicelineComputedUsageSummary.
-        Computed Line Amount rounded.
+        Computed rounded line amount.
 
 
         :return: The cost_rounded of this InvoicelineComputedUsageSummary.
@@ -310,7 +310,7 @@ class InvoicelineComputedUsageSummary(object):
     def cost_rounded(self, cost_rounded):
         """
         Sets the cost_rounded of this InvoicelineComputedUsageSummary.
-        Computed Line Amount rounded.
+        Computed rounded line amount.
 
 
         :param cost_rounded: The cost_rounded of this InvoicelineComputedUsageSummary.

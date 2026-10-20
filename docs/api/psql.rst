@@ -127,6 +127,7 @@ Psql
     oci.psql.models.UpdateNetworkDetails
     oci.psql.models.UpdateReplicationConfigDetails
     oci.psql.models.UpdateStorageDetailsParams
+    oci.psql.models.UpgradeDbSystemDetails
     oci.psql.models.VaultSecretPasswordDetails
     oci.psql.models.WeeklyBackupPolicy
     oci.psql.models.WorkRequest

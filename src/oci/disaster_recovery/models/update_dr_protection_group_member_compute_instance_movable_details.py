@@ -27,8 +27,12 @@ class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails(UpdateDrProtect
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberComputeInstanceMovableDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "POSTGRESQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
         :type member_type: str
+
+        :param dr_drill_properties:
+            The value to assign to the dr_drill_properties property of this UpdateDrProtectionGroupMemberComputeInstanceMovableDetails.
+        :type dr_drill_properties: oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceDrillPropertiesDetails
 
         :param is_retain_fault_domain:
             The value to assign to the is_retain_fault_domain property of this UpdateDrProtectionGroupMemberComputeInstanceMovableDetails.
@@ -58,6 +62,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails(UpdateDrProtect
         self.swagger_types = {
             'member_id': 'str',
             'member_type': 'str',
+            'dr_drill_properties': 'UpdateDrProtectionGroupMemberComputeInstanceDrillPropertiesDetails',
             'is_retain_fault_domain': 'bool',
             'destination_capacity_reservation_id': 'str',
             'vnic_mappings': 'list[ComputeInstanceMovableVnicMappingDetails]',
@@ -68,6 +73,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails(UpdateDrProtect
         self.attribute_map = {
             'member_id': 'memberId',
             'member_type': 'memberType',
+            'dr_drill_properties': 'drDrillProperties',
             'is_retain_fault_domain': 'isRetainFaultDomain',
             'destination_capacity_reservation_id': 'destinationCapacityReservationId',
             'vnic_mappings': 'vnicMappings',
@@ -77,6 +83,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails(UpdateDrProtect
         }
         self._member_id = None
         self._member_type = None
+        self._dr_drill_properties = None
         self._is_retain_fault_domain = None
         self._destination_capacity_reservation_id = None
         self._vnic_mappings = None
@@ -84,6 +91,26 @@ class UpdateDrProtectionGroupMemberComputeInstanceMovableDetails(UpdateDrProtect
         self._destination_dedicated_vm_host_id = None
         self._file_system_operations = None
         self._member_type = 'COMPUTE_INSTANCE_MOVABLE'
+
+    @property
+    def dr_drill_properties(self):
+        """
+        Gets the dr_drill_properties of this UpdateDrProtectionGroupMemberComputeInstanceMovableDetails.
+
+        :return: The dr_drill_properties of this UpdateDrProtectionGroupMemberComputeInstanceMovableDetails.
+        :rtype: oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceDrillPropertiesDetails
+        """
+        return self._dr_drill_properties
+
+    @dr_drill_properties.setter
+    def dr_drill_properties(self, dr_drill_properties):
+        """
+        Sets the dr_drill_properties of this UpdateDrProtectionGroupMemberComputeInstanceMovableDetails.
+
+        :param dr_drill_properties: The dr_drill_properties of this UpdateDrProtectionGroupMemberComputeInstanceMovableDetails.
+        :type: oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceDrillPropertiesDetails
+        """
+        self._dr_drill_properties = dr_drill_properties
 
     @property
     def is_retain_fault_domain(self):

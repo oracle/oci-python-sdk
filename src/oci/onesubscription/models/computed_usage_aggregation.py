@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputedUsageAggregation(object):
     """
-    Computed Usage Aggregation object
+    Computed usage aggregation object.
     """
 
     #: A constant which can be used with the type property of a ComputedUsageAggregation.
@@ -148,7 +148,7 @@ class ComputedUsageAggregation(object):
     def quantity(self):
         """
         Gets the quantity of this ComputedUsageAggregation.
-        Total Quantity that was used for computation
+        Total quantity that was used for computation.
 
 
         :return: The quantity of this ComputedUsageAggregation.
@@ -160,7 +160,7 @@ class ComputedUsageAggregation(object):
     def quantity(self, quantity):
         """
         Sets the quantity of this ComputedUsageAggregation.
-        Total Quantity that was used for computation
+        Total quantity that was used for computation.
 
 
         :param quantity: The quantity of this ComputedUsageAggregation.
@@ -192,7 +192,7 @@ class ComputedUsageAggregation(object):
     def data_center(self):
         """
         Gets the data_center of this ComputedUsageAggregation.
-        Data Center Attribute as sent by MQS to SPM.
+        Data center attribute as sent by the meterering system to SPM (Subscription Plan Management).
 
 
         :return: The data_center of this ComputedUsageAggregation.
@@ -204,7 +204,7 @@ class ComputedUsageAggregation(object):
     def data_center(self, data_center):
         """
         Sets the data_center of this ComputedUsageAggregation.
-        Data Center Attribute as sent by MQS to SPM.
+        Data center attribute as sent by the meterering system to SPM (Subscription Plan Management).
 
 
         :param data_center: The data_center of this ComputedUsageAggregation.
@@ -216,7 +216,7 @@ class ComputedUsageAggregation(object):
     def time_metered_on(self):
         """
         Gets the time_metered_on of this ComputedUsageAggregation.
-        Metered Service date , expressed in RFC 3339 timestamp format.
+        Metered service date, expressed in RFC 3339 timestamp format.
 
 
         :return: The time_metered_on of this ComputedUsageAggregation.
@@ -228,7 +228,7 @@ class ComputedUsageAggregation(object):
     def time_metered_on(self, time_metered_on):
         """
         Sets the time_metered_on of this ComputedUsageAggregation.
-        Metered Service date , expressed in RFC 3339 timestamp format.
+        Metered service date, expressed in RFC 3339 timestamp format.
 
 
         :param time_metered_on: The time_metered_on of this ComputedUsageAggregation.
@@ -240,7 +240,7 @@ class ComputedUsageAggregation(object):
     def net_unit_price(self):
         """
         Gets the net_unit_price of this ComputedUsageAggregation.
-        Net Unit Price for the product in consideration.
+        Net unit price for the product in consideration.
 
 
         :return: The net_unit_price of this ComputedUsageAggregation.
@@ -252,7 +252,7 @@ class ComputedUsageAggregation(object):
     def net_unit_price(self, net_unit_price):
         """
         Sets the net_unit_price of this ComputedUsageAggregation.
-        Net Unit Price for the product in consideration.
+        Net unit price for the product in consideration.
 
 
         :param net_unit_price: The net_unit_price of this ComputedUsageAggregation.
@@ -264,7 +264,7 @@ class ComputedUsageAggregation(object):
     def cost_unrounded(self):
         """
         Gets the cost_unrounded of this ComputedUsageAggregation.
-        Sum of Computed Line Amount unrounded
+        Sum of unrounded computed line amount.
 
 
         :return: The cost_unrounded of this ComputedUsageAggregation.
@@ -276,7 +276,7 @@ class ComputedUsageAggregation(object):
     def cost_unrounded(self, cost_unrounded):
         """
         Sets the cost_unrounded of this ComputedUsageAggregation.
-        Sum of Computed Line Amount unrounded
+        Sum of unrounded computed line amount.
 
 
         :param cost_unrounded: The cost_unrounded of this ComputedUsageAggregation.
@@ -288,7 +288,7 @@ class ComputedUsageAggregation(object):
     def cost(self):
         """
         Gets the cost of this ComputedUsageAggregation.
-        Sum of Computed Line Amount rounded
+        Sum of rounded computed line amount.
 
 
         :return: The cost of this ComputedUsageAggregation.
@@ -300,7 +300,7 @@ class ComputedUsageAggregation(object):
     def cost(self, cost):
         """
         Sets the cost of this ComputedUsageAggregation.
-        Sum of Computed Line Amount rounded
+        Sum of rounded computed line amount.
 
 
         :param cost: The cost of this ComputedUsageAggregation.

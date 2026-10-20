@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BillingScheduleProduct(object):
     """
-    Product description
+    Product description.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class BillingScheduleProduct(object):
     def part_number(self):
         """
         **[Required]** Gets the part_number of this BillingScheduleProduct.
-        Indicates the associated AR Invoice Number
+        Indicates the associated accounts receivable invoice number.
 
 
         :return: The part_number of this BillingScheduleProduct.
@@ -56,7 +56,7 @@ class BillingScheduleProduct(object):
     def part_number(self, part_number):
         """
         Sets the part_number of this BillingScheduleProduct.
-        Indicates the associated AR Invoice Number
+        Indicates the associated accounts receivable invoice number.
 
 
         :param part_number: The part_number of this BillingScheduleProduct.
@@ -68,7 +68,7 @@ class BillingScheduleProduct(object):
     def name(self):
         """
         **[Required]** Gets the name of this BillingScheduleProduct.
-        Product name
+        Product name.
 
 
         :return: The name of this BillingScheduleProduct.
@@ -80,7 +80,7 @@ class BillingScheduleProduct(object):
     def name(self, name):
         """
         Sets the name of this BillingScheduleProduct.
-        Product name
+        Product name.
 
 
         :param name: The name of this BillingScheduleProduct.

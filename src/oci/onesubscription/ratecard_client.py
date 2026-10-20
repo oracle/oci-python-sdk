@@ -126,24 +126,24 @@ class RatecardClient(object):
 
     def list_rate_cards(self, subscription_id, compartment_id, **kwargs):
         """
-        List API that returns all ratecards for given Subscription Id and Account ID (if provided) and
-        for a particular date range
+        Returns all rate cards for a given subscription ID and account ID (if provided), and
+        for a particular date range.
 
 
         :param str subscription_id: (required)
-            Line level Subscription Id
+            Line-level subscription ID.
 
         :param str compartment_id: (required)
             The OCID of the root compartment.
 
         :param datetime time_from: (optional)
-            This param is used to get the rate card(s) whose effective start date starts on or after a particular date
+            Gets the rate cards whose effective start date starts on or after a particular date.
 
         :param datetime time_to: (optional)
-            This param is used to get the rate card(s) whose effective end date ends on or before a particular date
+            Gets the rate cards whose effective end date ends on or before a particular date.
 
         :param str part_number: (optional)
-            This param is used to get the rate card(s) filterd by the partNumber
+            Gets the rate cards filterd by the part number.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call. Default: (`50`)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CommitmentService(object):
     """
-    Subscribed service commitment details
+    Subscribed service commitment details.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class CommitmentService(object):
     def time_start(self):
         """
         Gets the time_start of this CommitmentService.
-        Commitment start date
+        Commitment start date.
 
 
         :return: The time_start of this CommitmentService.
@@ -84,7 +84,7 @@ class CommitmentService(object):
     def time_start(self, time_start):
         """
         Sets the time_start of this CommitmentService.
-        Commitment start date
+        Commitment start date.
 
 
         :param time_start: The time_start of this CommitmentService.
@@ -96,7 +96,7 @@ class CommitmentService(object):
     def time_end(self):
         """
         Gets the time_end of this CommitmentService.
-        Commitment end date
+        Commitment end date.
 
 
         :return: The time_end of this CommitmentService.
@@ -108,7 +108,7 @@ class CommitmentService(object):
     def time_end(self, time_end):
         """
         Sets the time_end of this CommitmentService.
-        Commitment end date
+        Commitment end date.
 
 
         :param time_end: The time_end of this CommitmentService.
@@ -120,7 +120,7 @@ class CommitmentService(object):
     def quantity(self):
         """
         Gets the quantity of this CommitmentService.
-        Commitment quantity
+        Commitment quantity.
 
 
         :return: The quantity of this CommitmentService.
@@ -132,7 +132,7 @@ class CommitmentService(object):
     def quantity(self, quantity):
         """
         Sets the quantity of this CommitmentService.
-        Commitment quantity
+        Commitment quantity.
 
 
         :param quantity: The quantity of this CommitmentService.
@@ -144,7 +144,7 @@ class CommitmentService(object):
     def available_amount(self):
         """
         Gets the available_amount of this CommitmentService.
-        Commitment available amount
+        Commitment available amount.
 
 
         :return: The available_amount of this CommitmentService.
@@ -156,7 +156,7 @@ class CommitmentService(object):
     def available_amount(self, available_amount):
         """
         Sets the available_amount of this CommitmentService.
-        Commitment available amount
+        Commitment available amount.
 
 
         :param available_amount: The available_amount of this CommitmentService.
@@ -168,7 +168,7 @@ class CommitmentService(object):
     def line_net_amount(self):
         """
         Gets the line_net_amount of this CommitmentService.
-        Commitment line net amount
+        Commitment line net amount.
 
 
         :return: The line_net_amount of this CommitmentService.
@@ -180,7 +180,7 @@ class CommitmentService(object):
     def line_net_amount(self, line_net_amount):
         """
         Sets the line_net_amount of this CommitmentService.
-        Commitment line net amount
+        Commitment line net amount.
 
 
         :param line_net_amount: The line_net_amount of this CommitmentService.
@@ -192,7 +192,7 @@ class CommitmentService(object):
     def funded_allocation_value(self):
         """
         Gets the funded_allocation_value of this CommitmentService.
-        Funded Allocation line value
+        Funded allocation line value.
 
 
         :return: The funded_allocation_value of this CommitmentService.
@@ -204,7 +204,7 @@ class CommitmentService(object):
     def funded_allocation_value(self, funded_allocation_value):
         """
         Sets the funded_allocation_value of this CommitmentService.
-        Funded Allocation line value
+        Funded allocation line value.
 
 
         :param funded_allocation_value: The funded_allocation_value of this CommitmentService.

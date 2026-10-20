@@ -126,11 +126,11 @@ class CommitmentClient(object):
 
     def get_commitment(self, commitment_id, **kwargs):
         """
-        This API returns the commitment details corresponding to the id provided
+        Returns the commitment details corresponding to the provided ID.
 
 
         :param str commitment_id: (required)
-            The Commitment Id
+            The commitment ID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -229,11 +229,11 @@ class CommitmentClient(object):
 
     def list_commitments(self, subscribed_service_id, compartment_id, **kwargs):
         """
-        This list API returns all commitments for a particular Subscribed Service
+        Returns all commitments for a particular subscribed service.
 
 
         :param str subscribed_service_id: (required)
-            This param is used to get the commitments for a particular subscribed service
+            Obtains the commitments for a particular subscribed service.
 
         :param str compartment_id: (required)
             The OCID of the root compartment.

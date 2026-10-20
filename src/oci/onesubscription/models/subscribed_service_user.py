@@ -110,7 +110,7 @@ class SubscribedServiceUser(object):
     def username(self):
         """
         Gets the username of this SubscribedServiceUser.
-        Username.
+        User name.
 
 
         :return: The username of this SubscribedServiceUser.
@@ -122,7 +122,7 @@ class SubscribedServiceUser(object):
     def username(self, username):
         """
         Sets the username of this SubscribedServiceUser.
-        Username.
+        User name.
 
 
         :param username: The username of this SubscribedServiceUser.
@@ -206,7 +206,7 @@ class SubscribedServiceUser(object):
     def tca_contact_id(self):
         """
         Gets the tca_contact_id of this SubscribedServiceUser.
-        TCA contact ID.
+        TCA (Trading Community Architecture) contact ID.
 
 
         :return: The tca_contact_id of this SubscribedServiceUser.
@@ -218,7 +218,7 @@ class SubscribedServiceUser(object):
     def tca_contact_id(self, tca_contact_id):
         """
         Sets the tca_contact_id of this SubscribedServiceUser.
-        TCA contact ID.
+        TCA (Trading Community Architecture) contact ID.
 
 
         :param tca_contact_id: The tca_contact_id of this SubscribedServiceUser.

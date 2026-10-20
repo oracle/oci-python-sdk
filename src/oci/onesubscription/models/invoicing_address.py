@@ -209,7 +209,7 @@ class InvoicingAddress(object):
     def bill_site_use_id(self):
         """
         Gets the bill_site_use_id of this InvoicingAddress.
-        Bill to site use Id.
+        Bill to site use ID.
 
 
         :return: The bill_site_use_id of this InvoicingAddress.
@@ -221,7 +221,7 @@ class InvoicingAddress(object):
     def bill_site_use_id(self, bill_site_use_id):
         """
         Sets the bill_site_use_id of this InvoicingAddress.
-        Bill to site use Id.
+        Bill to site use ID.
 
 
         :param bill_site_use_id: The bill_site_use_id of this InvoicingAddress.
@@ -233,7 +233,7 @@ class InvoicingAddress(object):
     def service2_site_use_id(self):
         """
         Gets the service2_site_use_id of this InvoicingAddress.
-        Service to site use Id.
+        Service to site use ID.
 
 
         :return: The service2_site_use_id of this InvoicingAddress.
@@ -245,7 +245,7 @@ class InvoicingAddress(object):
     def service2_site_use_id(self, service2_site_use_id):
         """
         Sets the service2_site_use_id of this InvoicingAddress.
-        Service to site use Id.
+        Service to site use ID.
 
 
         :param service2_site_use_id: The service2_site_use_id of this InvoicingAddress.
@@ -257,7 +257,7 @@ class InvoicingAddress(object):
     def tca_cust_acct_site_id(self):
         """
         Gets the tca_cust_acct_site_id of this InvoicingAddress.
-        TCA customer account site Id.
+        TCA (Trading Community Architecture) customer account site ID.
 
 
         :return: The tca_cust_acct_site_id of this InvoicingAddress.
@@ -269,7 +269,7 @@ class InvoicingAddress(object):
     def tca_cust_acct_site_id(self, tca_cust_acct_site_id):
         """
         Sets the tca_cust_acct_site_id of this InvoicingAddress.
-        TCA customer account site Id.
+        TCA (Trading Community Architecture) customer account site ID.
 
 
         :param tca_cust_acct_site_id: The tca_cust_acct_site_id of this InvoicingAddress.

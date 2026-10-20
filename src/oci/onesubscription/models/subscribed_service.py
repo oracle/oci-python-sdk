@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SubscribedService(object):
     """
-    Subscribed service contract details
+    Subscribed service contract details.
     """
 
     def __init__(self, **kwargs):
@@ -807,7 +807,7 @@ class SubscribedService(object):
     def id(self):
         """
         Gets the id of this SubscribedService.
-        SPM internal Subscribed Service ID
+        SPM (Subscription Plan Management) internal Subscribed Service ID
 
 
         :return: The id of this SubscribedService.
@@ -819,7 +819,7 @@ class SubscribedService(object):
     def id(self, id):
         """
         Sets the id of this SubscribedService.
-        SPM internal Subscribed Service ID
+        SPM (Subscription Plan Management) internal Subscribed Service ID
 
 
         :param id: The id of this SubscribedService.
@@ -831,7 +831,7 @@ class SubscribedService(object):
     def type(self):
         """
         Gets the type of this SubscribedService.
-        Subscribed Service line type
+        Subscribed service line type.
 
 
         :return: The type of this SubscribedService.
@@ -843,7 +843,7 @@ class SubscribedService(object):
     def type(self, type):
         """
         Sets the type of this SubscribedService.
-        Subscribed Service line type
+        Subscribed service line type.
 
 
         :param type: The type of this SubscribedService.
@@ -855,7 +855,7 @@ class SubscribedService(object):
     def serial_number(self):
         """
         Gets the serial_number of this SubscribedService.
-        Subscribed service line number
+        Subscribed service line number.
 
 
         :return: The serial_number of this SubscribedService.
@@ -867,7 +867,7 @@ class SubscribedService(object):
     def serial_number(self, serial_number):
         """
         Sets the serial_number of this SubscribedService.
-        Subscribed service line number
+        Subscribed service line number.
 
 
         :param serial_number: The serial_number of this SubscribedService.
@@ -879,7 +879,7 @@ class SubscribedService(object):
     def subscription_id(self):
         """
         Gets the subscription_id of this SubscribedService.
-        Subscription ID associated to the subscribed service
+        Subscription ID associated with the subscribed service.
 
 
         :return: The subscription_id of this SubscribedService.
@@ -891,7 +891,7 @@ class SubscribedService(object):
     def subscription_id(self, subscription_id):
         """
         Sets the subscription_id of this SubscribedService.
-        Subscription ID associated to the subscribed service
+        Subscription ID associated with the subscribed service.
 
 
         :param subscription_id: The subscription_id of this SubscribedService.
@@ -923,7 +923,7 @@ class SubscribedService(object):
     def time_start(self):
         """
         Gets the time_start of this SubscribedService.
-        Subscribed service start date
+        Subscribed service start date.
 
 
         :return: The time_start of this SubscribedService.
@@ -935,7 +935,7 @@ class SubscribedService(object):
     def time_start(self, time_start):
         """
         Sets the time_start of this SubscribedService.
-        Subscribed service start date
+        Subscribed service start date.
 
 
         :param time_start: The time_start of this SubscribedService.
@@ -947,7 +947,7 @@ class SubscribedService(object):
     def time_end(self):
         """
         Gets the time_end of this SubscribedService.
-        Subscribed service end date
+        Subscribed service end date.
 
 
         :return: The time_end of this SubscribedService.
@@ -959,7 +959,7 @@ class SubscribedService(object):
     def time_end(self, time_end):
         """
         Sets the time_end of this SubscribedService.
-        Subscribed service end date
+        Subscribed service end date.
 
 
         :param time_end: The time_end of this SubscribedService.
@@ -971,7 +971,7 @@ class SubscribedService(object):
     def quantity(self):
         """
         Gets the quantity of this SubscribedService.
-        Subscribed service quantity
+        Subscribed service quantity.
 
 
         :return: The quantity of this SubscribedService.
@@ -983,7 +983,7 @@ class SubscribedService(object):
     def quantity(self, quantity):
         """
         Sets the quantity of this SubscribedService.
-        Subscribed service quantity
+        Subscribed service quantity.
 
 
         :param quantity: The quantity of this SubscribedService.
@@ -995,7 +995,7 @@ class SubscribedService(object):
     def status(self):
         """
         Gets the status of this SubscribedService.
-        Subscribed service status
+        Subscribed service status.
 
 
         :return: The status of this SubscribedService.
@@ -1007,7 +1007,7 @@ class SubscribedService(object):
     def status(self, status):
         """
         Sets the status of this SubscribedService.
-        Subscribed service status
+        Subscribed service status.
 
 
         :param status: The status of this SubscribedService.
@@ -1019,7 +1019,7 @@ class SubscribedService(object):
     def operation_type(self):
         """
         Gets the operation_type of this SubscribedService.
-        Subscribed service operation type
+        Subscribed service operation type.
 
 
         :return: The operation_type of this SubscribedService.
@@ -1031,7 +1031,7 @@ class SubscribedService(object):
     def operation_type(self, operation_type):
         """
         Sets the operation_type of this SubscribedService.
-        Subscribed service operation type
+        Subscribed service operation type.
 
 
         :param operation_type: The operation_type of this SubscribedService.
@@ -1043,7 +1043,7 @@ class SubscribedService(object):
     def net_unit_price(self):
         """
         Gets the net_unit_price of this SubscribedService.
-        Subscribed service net unit price
+        Subscribed service net unit price.
 
 
         :return: The net_unit_price of this SubscribedService.
@@ -1055,7 +1055,7 @@ class SubscribedService(object):
     def net_unit_price(self, net_unit_price):
         """
         Sets the net_unit_price of this SubscribedService.
-        Subscribed service net unit price
+        Subscribed service net unit price.
 
 
         :param net_unit_price: The net_unit_price of this SubscribedService.
@@ -1067,7 +1067,7 @@ class SubscribedService(object):
     def price_period(self):
         """
         Gets the price_period of this SubscribedService.
-        Indicates the period for which the commitment amount can be utilised exceeding which the amount lapses. Also used in calculation of total contract line value
+        Indicates the period for which the commitment amount can be utilized, exceeding which, the amount lapses. Also used in calculation of total contract line value.
 
 
         :return: The price_period of this SubscribedService.
@@ -1079,7 +1079,7 @@ class SubscribedService(object):
     def price_period(self, price_period):
         """
         Sets the price_period of this SubscribedService.
-        Indicates the period for which the commitment amount can be utilised exceeding which the amount lapses. Also used in calculation of total contract line value
+        Indicates the period for which the commitment amount can be utilized, exceeding which, the amount lapses. Also used in calculation of total contract line value.
 
 
         :param price_period: The price_period of this SubscribedService.
@@ -1091,7 +1091,7 @@ class SubscribedService(object):
     def line_net_amount(self):
         """
         Gets the line_net_amount of this SubscribedService.
-        Subscribed service line net amount
+        Subscribed service line net amount.
 
 
         :return: The line_net_amount of this SubscribedService.
@@ -1103,7 +1103,7 @@ class SubscribedService(object):
     def line_net_amount(self, line_net_amount):
         """
         Sets the line_net_amount of this SubscribedService.
-        Subscribed service line net amount
+        Subscribed service line net amount.
 
 
         :param line_net_amount: The line_net_amount of this SubscribedService.
@@ -1115,7 +1115,7 @@ class SubscribedService(object):
     def is_variable_commitment(self):
         """
         Gets the is_variable_commitment of this SubscribedService.
-        Indicates if the commitment lines can have different quantities
+        Indicates if the commitment lines can have different quantities.
 
 
         :return: The is_variable_commitment of this SubscribedService.
@@ -1127,7 +1127,7 @@ class SubscribedService(object):
     def is_variable_commitment(self, is_variable_commitment):
         """
         Sets the is_variable_commitment of this SubscribedService.
-        Indicates if the commitment lines can have different quantities
+        Indicates if the commitment lines can have different quantities.
 
 
         :param is_variable_commitment: The is_variable_commitment of this SubscribedService.
@@ -1139,7 +1139,7 @@ class SubscribedService(object):
     def is_allowance(self):
         """
         Gets the is_allowance of this SubscribedService.
-        Indicates if a service can recieve usages and consequently have available amounts computed
+        Indicates if a service can recieve usages and consequently have the available amounts computed.
 
 
         :return: The is_allowance of this SubscribedService.
@@ -1151,7 +1151,7 @@ class SubscribedService(object):
     def is_allowance(self, is_allowance):
         """
         Sets the is_allowance of this SubscribedService.
-        Indicates if a service can recieve usages and consequently have available amounts computed
+        Indicates if a service can recieve usages and consequently have the available amounts computed.
 
 
         :param is_allowance: The is_allowance of this SubscribedService.
@@ -1163,7 +1163,7 @@ class SubscribedService(object):
     def used_amount(self):
         """
         Gets the used_amount of this SubscribedService.
-        Subscribed service used amount
+        Subscribed service used amount.
 
 
         :return: The used_amount of this SubscribedService.
@@ -1175,7 +1175,7 @@ class SubscribedService(object):
     def used_amount(self, used_amount):
         """
         Sets the used_amount of this SubscribedService.
-        Subscribed service used amount
+        Subscribed service used amount.
 
 
         :param used_amount: The used_amount of this SubscribedService.
@@ -1187,7 +1187,7 @@ class SubscribedService(object):
     def available_amount(self):
         """
         Gets the available_amount of this SubscribedService.
-        Subscribed sercice available or remaining amount
+        Subscribed sercice available or remaining amount.
 
 
         :return: The available_amount of this SubscribedService.
@@ -1199,7 +1199,7 @@ class SubscribedService(object):
     def available_amount(self, available_amount):
         """
         Sets the available_amount of this SubscribedService.
-        Subscribed sercice available or remaining amount
+        Subscribed sercice available or remaining amount.
 
 
         :param available_amount: The available_amount of this SubscribedService.
@@ -1211,8 +1211,8 @@ class SubscribedService(object):
     def funded_allocation_value(self):
         """
         Gets the funded_allocation_value of this SubscribedService.
-        Funded Allocation line value
-        example: 12000.00
+        Funded allocation line value.
+        Example: 12000.00
 
 
         :return: The funded_allocation_value of this SubscribedService.
@@ -1224,8 +1224,8 @@ class SubscribedService(object):
     def funded_allocation_value(self, funded_allocation_value):
         """
         Sets the funded_allocation_value of this SubscribedService.
-        Funded Allocation line value
-        example: 12000.00
+        Funded allocation line value.
+        Example: 12000.00
 
 
         :param funded_allocation_value: The funded_allocation_value of this SubscribedService.
@@ -1237,7 +1237,7 @@ class SubscribedService(object):
     def is_having_usage(self):
         """
         Gets the is_having_usage of this SubscribedService.
-        Indicator on whether or not there has been usage for the subscribed service
+        Indicates whether or not there has been usage for the subscribed service.
 
 
         :return: The is_having_usage of this SubscribedService.
@@ -1249,7 +1249,7 @@ class SubscribedService(object):
     def is_having_usage(self, is_having_usage):
         """
         Sets the is_having_usage of this SubscribedService.
-        Indicator on whether or not there has been usage for the subscribed service
+        Indicates whether or not there has been usage for the subscribed service.
 
 
         :param is_having_usage: The is_having_usage of this SubscribedService.
@@ -1261,7 +1261,7 @@ class SubscribedService(object):
     def is_cap_to_price_list(self):
         """
         Gets the is_cap_to_price_list of this SubscribedService.
-        If true compares rate between ratecard and the active pricelist and minimum rate would be fetched
+        If true compares rate between the rate card and the active price list, and the minimum rate would be fetched.
 
 
         :return: The is_cap_to_price_list of this SubscribedService.
@@ -1273,7 +1273,7 @@ class SubscribedService(object):
     def is_cap_to_price_list(self, is_cap_to_price_list):
         """
         Sets the is_cap_to_price_list of this SubscribedService.
-        If true compares rate between ratecard and the active pricelist and minimum rate would be fetched
+        If true compares rate between the rate card and the active price list, and the minimum rate would be fetched.
 
 
         :param is_cap_to_price_list: The is_cap_to_price_list of this SubscribedService.
@@ -1285,7 +1285,7 @@ class SubscribedService(object):
     def credit_percentage(self):
         """
         Gets the credit_percentage of this SubscribedService.
-        Subscribed service credit percentage
+        Subscribed service credit percentage.
 
 
         :return: The credit_percentage of this SubscribedService.
@@ -1297,7 +1297,7 @@ class SubscribedService(object):
     def credit_percentage(self, credit_percentage):
         """
         Sets the credit_percentage of this SubscribedService.
-        Subscribed service credit percentage
+        Subscribed service credit percentage.
 
 
         :param credit_percentage: The credit_percentage of this SubscribedService.
@@ -1309,7 +1309,7 @@ class SubscribedService(object):
     def partner_transaction_type(self):
         """
         Gets the partner_transaction_type of this SubscribedService.
-        This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
+        Contains the name of the partner to which the subscription belongs, however depending on which subscription, the invoicing can differ.
 
 
         :return: The partner_transaction_type of this SubscribedService.
@@ -1321,7 +1321,7 @@ class SubscribedService(object):
     def partner_transaction_type(self, partner_transaction_type):
         """
         Sets the partner_transaction_type of this SubscribedService.
-        This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
+        Contains the name of the partner to which the subscription belongs, however depending on which subscription, the invoicing can differ.
 
 
         :param partner_transaction_type: The partner_transaction_type of this SubscribedService.
@@ -1333,7 +1333,7 @@ class SubscribedService(object):
     def is_credit_enabled(self):
         """
         Gets the is_credit_enabled of this SubscribedService.
-        Used in context of service credit lines
+        Used in context of service credit lines.
 
 
         :return: The is_credit_enabled of this SubscribedService.
@@ -1345,7 +1345,7 @@ class SubscribedService(object):
     def is_credit_enabled(self, is_credit_enabled):
         """
         Sets the is_credit_enabled of this SubscribedService.
-        Used in context of service credit lines
+        Used in context of service credit lines.
 
 
         :param is_credit_enabled: The is_credit_enabled of this SubscribedService.
@@ -1357,7 +1357,7 @@ class SubscribedService(object):
     def overage_policy(self):
         """
         Gets the overage_policy of this SubscribedService.
-        Overage Policy of Subscribed Service
+        Overage policy of subscribed service.
 
 
         :return: The overage_policy of this SubscribedService.
@@ -1369,7 +1369,7 @@ class SubscribedService(object):
     def overage_policy(self, overage_policy):
         """
         Sets the overage_policy of this SubscribedService.
-        Overage Policy of Subscribed Service
+        Overage policy of subscribed service.
 
 
         :param overage_policy: The overage_policy of this SubscribedService.
@@ -1381,7 +1381,7 @@ class SubscribedService(object):
     def overage_bill_to(self):
         """
         Gets the overage_bill_to of this SubscribedService.
-        Overage Bill To of Subscribed Service
+        Overage bill to of subscribed service.
 
 
         :return: The overage_bill_to of this SubscribedService.
@@ -1393,7 +1393,7 @@ class SubscribedService(object):
     def overage_bill_to(self, overage_bill_to):
         """
         Sets the overage_bill_to of this SubscribedService.
-        Overage Bill To of Subscribed Service
+        Overage bill to of subscribed service.
 
 
         :param overage_bill_to: The overage_bill_to of this SubscribedService.
@@ -1405,7 +1405,7 @@ class SubscribedService(object):
     def payg_policy(self):
         """
         Gets the payg_policy of this SubscribedService.
-        Pay As You Go policy of Subscribed Service (Can be null - indicating no payg policy)
+        Pay As You Go policy of the subscribed service. Can be null, indicating no PAYG policy.
 
 
         :return: The payg_policy of this SubscribedService.
@@ -1417,7 +1417,7 @@ class SubscribedService(object):
     def payg_policy(self, payg_policy):
         """
         Sets the payg_policy of this SubscribedService.
-        Pay As You Go policy of Subscribed Service (Can be null - indicating no payg policy)
+        Pay As You Go policy of the subscribed service. Can be null, indicating no PAYG policy.
 
 
         :param payg_policy: The payg_policy of this SubscribedService.
@@ -1429,7 +1429,7 @@ class SubscribedService(object):
     def promo_order_line_id(self):
         """
         Gets the promo_order_line_id of this SubscribedService.
-        Not null if this service has an associated promotion line in SPM. Contains the line identifier from Order Management of
+        Not null if this service has an associated promotion line in SPM (Subscription Plan Management). Contains the line identifier from order management of
         the associated promo line.
 
 
@@ -1442,7 +1442,7 @@ class SubscribedService(object):
     def promo_order_line_id(self, promo_order_line_id):
         """
         Sets the promo_order_line_id of this SubscribedService.
-        Not null if this service has an associated promotion line in SPM. Contains the line identifier from Order Management of
+        Not null if this service has an associated promotion line in SPM (Subscription Plan Management). Contains the line identifier from order management of
         the associated promo line.
 
 
@@ -1455,7 +1455,7 @@ class SubscribedService(object):
     def promotion_pricing_type(self):
         """
         Gets the promotion_pricing_type of this SubscribedService.
-        Promotion Pricing Type of Subscribed Service (Can be null - indicating no promotion pricing)
+        Promotion pricing type of subscribed service. Can be null, indicating no promotional pricing.
 
 
         :return: The promotion_pricing_type of this SubscribedService.
@@ -1467,7 +1467,7 @@ class SubscribedService(object):
     def promotion_pricing_type(self, promotion_pricing_type):
         """
         Sets the promotion_pricing_type of this SubscribedService.
-        Promotion Pricing Type of Subscribed Service (Can be null - indicating no promotion pricing)
+        Promotion pricing type of subscribed service. Can be null, indicating no promotional pricing.
 
 
         :param promotion_pricing_type: The promotion_pricing_type of this SubscribedService.
@@ -1479,7 +1479,7 @@ class SubscribedService(object):
     def rate_card_discount_percentage(self):
         """
         Gets the rate_card_discount_percentage of this SubscribedService.
-        Subscribed service Rate Card Discount Percentage
+        Subscribed service rate card discount percentage.
 
 
         :return: The rate_card_discount_percentage of this SubscribedService.
@@ -1491,7 +1491,7 @@ class SubscribedService(object):
     def rate_card_discount_percentage(self, rate_card_discount_percentage):
         """
         Sets the rate_card_discount_percentage of this SubscribedService.
-        Subscribed service Rate Card Discount Percentage
+        Subscribed service rate card discount percentage.
 
 
         :param rate_card_discount_percentage: The rate_card_discount_percentage of this SubscribedService.
@@ -1503,7 +1503,7 @@ class SubscribedService(object):
     def overage_discount_percentage(self):
         """
         Gets the overage_discount_percentage of this SubscribedService.
-        Subscribed service Overage Discount Percentage
+        Subscribed service overage discount percentage.
 
 
         :return: The overage_discount_percentage of this SubscribedService.
@@ -1515,7 +1515,7 @@ class SubscribedService(object):
     def overage_discount_percentage(self, overage_discount_percentage):
         """
         Sets the overage_discount_percentage of this SubscribedService.
-        Subscribed service Overage Discount Percentage
+        Subscribed service overage discount percentage.
 
 
         :param overage_discount_percentage: The overage_discount_percentage of this SubscribedService.
@@ -1587,7 +1587,7 @@ class SubscribedService(object):
     def payment_number(self):
         """
         Gets the payment_number of this SubscribedService.
-        Payment Number of Subscribed Service
+        Payment number of the subscribed service.
 
 
         :return: The payment_number of this SubscribedService.
@@ -1599,7 +1599,7 @@ class SubscribedService(object):
     def payment_number(self, payment_number):
         """
         Sets the payment_number of this SubscribedService.
-        Payment Number of Subscribed Service
+        Payment number of the subscribed service.
 
 
         :param payment_number: The payment_number of this SubscribedService.
@@ -1611,7 +1611,7 @@ class SubscribedService(object):
     def time_payment_expiry(self):
         """
         Gets the time_payment_expiry of this SubscribedService.
-        Subscribed service payment expiry date
+        Subscribed service payment expiration date.
 
 
         :return: The time_payment_expiry of this SubscribedService.
@@ -1623,7 +1623,7 @@ class SubscribedService(object):
     def time_payment_expiry(self, time_payment_expiry):
         """
         Sets the time_payment_expiry of this SubscribedService.
-        Subscribed service payment expiry date
+        Subscribed service payment expiration date.
 
 
         :param time_payment_expiry: The time_payment_expiry of this SubscribedService.
@@ -1655,7 +1655,7 @@ class SubscribedService(object):
     def payment_method(self):
         """
         Gets the payment_method of this SubscribedService.
-        Payment Method of Subscribed Service
+        Payment method of the subscribed service.
 
 
         :return: The payment_method of this SubscribedService.
@@ -1667,7 +1667,7 @@ class SubscribedService(object):
     def payment_method(self, payment_method):
         """
         Sets the payment_method of this SubscribedService.
-        Payment Method of Subscribed Service
+        Payment method of the subscribed service.
 
 
         :param payment_method: The payment_method of this SubscribedService.
@@ -1679,7 +1679,7 @@ class SubscribedService(object):
     def transaction_extension_id(self):
         """
         Gets the transaction_extension_id of this SubscribedService.
-        Subscribed service Transaction Extension Id
+        Subscribed service transaction extension ID.
 
 
         :return: The transaction_extension_id of this SubscribedService.
@@ -1691,7 +1691,7 @@ class SubscribedService(object):
     def transaction_extension_id(self, transaction_extension_id):
         """
         Sets the transaction_extension_id of this SubscribedService.
-        Subscribed service Transaction Extension Id
+        Subscribed service transaction extension ID.
 
 
         :param transaction_extension_id: The transaction_extension_id of this SubscribedService.
@@ -1703,7 +1703,7 @@ class SubscribedService(object):
     def sales_channel(self):
         """
         Gets the sales_channel of this SubscribedService.
-        Sales Channel of Subscribed Service
+        Sales channel of the subscribed service.
 
 
         :return: The sales_channel of this SubscribedService.
@@ -1715,7 +1715,7 @@ class SubscribedService(object):
     def sales_channel(self, sales_channel):
         """
         Sets the sales_channel of this SubscribedService.
-        Sales Channel of Subscribed Service
+        Sales channel of the subscribed service.
 
 
         :param sales_channel: The sales_channel of this SubscribedService.
@@ -1727,7 +1727,7 @@ class SubscribedService(object):
     def eligible_to_renew(self):
         """
         Gets the eligible_to_renew of this SubscribedService.
-        Subscribed service eligible to renew field
+        Subscribed service eligible to renew field.
 
 
         :return: The eligible_to_renew of this SubscribedService.
@@ -1739,7 +1739,7 @@ class SubscribedService(object):
     def eligible_to_renew(self, eligible_to_renew):
         """
         Sets the eligible_to_renew of this SubscribedService.
-        Subscribed service eligible to renew field
+        Subscribed service eligible to renew field.
 
 
         :param eligible_to_renew: The eligible_to_renew of this SubscribedService.
@@ -1751,7 +1751,7 @@ class SubscribedService(object):
     def renewed_subscribed_service_id(self):
         """
         Gets the renewed_subscribed_service_id of this SubscribedService.
-        SPM renewed Subscription ID
+        SPM (Subscription Plan Management) renewed subscription ID.
 
 
         :return: The renewed_subscribed_service_id of this SubscribedService.
@@ -1763,7 +1763,7 @@ class SubscribedService(object):
     def renewed_subscribed_service_id(self, renewed_subscribed_service_id):
         """
         Sets the renewed_subscribed_service_id of this SubscribedService.
-        SPM renewed Subscription ID
+        SPM (Subscription Plan Management) renewed subscription ID.
 
 
         :param renewed_subscribed_service_id: The renewed_subscribed_service_id of this SubscribedService.
@@ -1775,7 +1775,7 @@ class SubscribedService(object):
     def term_value(self):
         """
         Gets the term_value of this SubscribedService.
-        Term value in Months
+        Term value in months.
 
 
         :return: The term_value of this SubscribedService.
@@ -1787,7 +1787,7 @@ class SubscribedService(object):
     def term_value(self, term_value):
         """
         Sets the term_value of this SubscribedService.
-        Term value in Months
+        Term value in months.
 
 
         :param term_value: The term_value of this SubscribedService.
@@ -1799,7 +1799,7 @@ class SubscribedService(object):
     def term_value_uom(self):
         """
         Gets the term_value_uom of this SubscribedService.
-        Term value UOM
+        Term value UOM (Unit of Measure).
 
 
         :return: The term_value_uom of this SubscribedService.
@@ -1811,7 +1811,7 @@ class SubscribedService(object):
     def term_value_uom(self, term_value_uom):
         """
         Sets the term_value_uom of this SubscribedService.
-        Term value UOM
+        Term value UOM (Unit of Measure).
 
 
         :param term_value_uom: The term_value_uom of this SubscribedService.
@@ -1823,7 +1823,7 @@ class SubscribedService(object):
     def renewal_opty_id(self):
         """
         Gets the renewal_opty_id of this SubscribedService.
-        Subscribed service Opportunity Id
+        Subscribed service opportunity ID.
 
 
         :return: The renewal_opty_id of this SubscribedService.
@@ -1835,7 +1835,7 @@ class SubscribedService(object):
     def renewal_opty_id(self, renewal_opty_id):
         """
         Sets the renewal_opty_id of this SubscribedService.
-        Subscribed service Opportunity Id
+        Subscribed service opportunity ID.
 
 
         :param renewal_opty_id: The renewal_opty_id of this SubscribedService.
@@ -1847,7 +1847,7 @@ class SubscribedService(object):
     def renewal_opty_number(self):
         """
         Gets the renewal_opty_number of this SubscribedService.
-        Renewal Opportunity Number of Subscribed Service
+        Renewal opportunity number of the subscribed service.
 
 
         :return: The renewal_opty_number of this SubscribedService.
@@ -1859,7 +1859,7 @@ class SubscribedService(object):
     def renewal_opty_number(self, renewal_opty_number):
         """
         Sets the renewal_opty_number of this SubscribedService.
-        Renewal Opportunity Number of Subscribed Service
+        Renewal opportunity number of the subscribed service.
 
 
         :param renewal_opty_number: The renewal_opty_number of this SubscribedService.
@@ -1871,7 +1871,7 @@ class SubscribedService(object):
     def renewal_opty_type(self):
         """
         Gets the renewal_opty_type of this SubscribedService.
-        Renewal Opportunity Type of Subscribed Service
+        Renewal opportunity type of the subscribed service.
 
 
         :return: The renewal_opty_type of this SubscribedService.
@@ -1883,7 +1883,7 @@ class SubscribedService(object):
     def renewal_opty_type(self, renewal_opty_type):
         """
         Sets the renewal_opty_type of this SubscribedService.
-        Renewal Opportunity Type of Subscribed Service
+        Renewal opportunity type of the subscribed service.
 
 
         :param renewal_opty_type: The renewal_opty_type of this SubscribedService.
@@ -1895,7 +1895,7 @@ class SubscribedService(object):
     def booking_opty_number(self):
         """
         Gets the booking_opty_number of this SubscribedService.
-        Booking Opportunity Number of Subscribed Service
+        Booking opportunity number of the subscribed service.
 
 
         :return: The booking_opty_number of this SubscribedService.
@@ -1907,7 +1907,7 @@ class SubscribedService(object):
     def booking_opty_number(self, booking_opty_number):
         """
         Sets the booking_opty_number of this SubscribedService.
-        Booking Opportunity Number of Subscribed Service
+        Booking opportunity number of the subscribed service.
 
 
         :param booking_opty_number: The booking_opty_number of this SubscribedService.
@@ -1919,7 +1919,7 @@ class SubscribedService(object):
     def revenue_line_id(self):
         """
         Gets the revenue_line_id of this SubscribedService.
-        Subscribed service Revenue Line Id
+        Subscribed service revenue line ID.
 
 
         :return: The revenue_line_id of this SubscribedService.
@@ -1931,7 +1931,7 @@ class SubscribedService(object):
     def revenue_line_id(self, revenue_line_id):
         """
         Sets the revenue_line_id of this SubscribedService.
-        Subscribed service Revenue Line Id
+        Subscribed service revenue line ID.
 
 
         :param revenue_line_id: The revenue_line_id of this SubscribedService.
@@ -1943,7 +1943,7 @@ class SubscribedService(object):
     def revenue_line_number(self):
         """
         Gets the revenue_line_number of this SubscribedService.
-        Revenue Line NUmber of Subscribed Service
+        Revenue line number of the subscribed service.
 
 
         :return: The revenue_line_number of this SubscribedService.
@@ -1955,7 +1955,7 @@ class SubscribedService(object):
     def revenue_line_number(self, revenue_line_number):
         """
         Sets the revenue_line_number of this SubscribedService.
-        Revenue Line NUmber of Subscribed Service
+        Revenue line number of the subscribed service.
 
 
         :param revenue_line_number: The revenue_line_number of this SubscribedService.
@@ -1967,7 +1967,7 @@ class SubscribedService(object):
     def major_set(self):
         """
         Gets the major_set of this SubscribedService.
-        Subscribed service Major Set
+        Subscribed service major set.
 
 
         :return: The major_set of this SubscribedService.
@@ -1979,7 +1979,7 @@ class SubscribedService(object):
     def major_set(self, major_set):
         """
         Sets the major_set of this SubscribedService.
-        Subscribed service Major Set
+        Subscribed service major set.
 
 
         :param major_set: The major_set of this SubscribedService.
@@ -1991,7 +1991,7 @@ class SubscribedService(object):
     def time_majorset_start(self):
         """
         Gets the time_majorset_start of this SubscribedService.
-        Subscribed service Major Set Start date
+        Subscribed service major set start date.
 
 
         :return: The time_majorset_start of this SubscribedService.
@@ -2003,7 +2003,7 @@ class SubscribedService(object):
     def time_majorset_start(self, time_majorset_start):
         """
         Sets the time_majorset_start of this SubscribedService.
-        Subscribed service Major Set Start date
+        Subscribed service major set start date.
 
 
         :param time_majorset_start: The time_majorset_start of this SubscribedService.
@@ -2015,7 +2015,7 @@ class SubscribedService(object):
     def time_majorset_end(self):
         """
         Gets the time_majorset_end of this SubscribedService.
-        Subscribed service Major Set End date
+        Subscribed service major set end date.
 
 
         :return: The time_majorset_end of this SubscribedService.
@@ -2027,7 +2027,7 @@ class SubscribedService(object):
     def time_majorset_end(self, time_majorset_end):
         """
         Sets the time_majorset_end of this SubscribedService.
-        Subscribed service Major Set End date
+        Subscribed service major set end date.
 
 
         :param time_majorset_end: The time_majorset_end of this SubscribedService.
@@ -2039,7 +2039,7 @@ class SubscribedService(object):
     def system_arr_in_lc(self):
         """
         Gets the system_arr_in_lc of this SubscribedService.
-        Subscribed service System ARR
+        Subscribed service system ARR (Annualized Recurring Revenue).
 
 
         :return: The system_arr_in_lc of this SubscribedService.
@@ -2051,7 +2051,7 @@ class SubscribedService(object):
     def system_arr_in_lc(self, system_arr_in_lc):
         """
         Sets the system_arr_in_lc of this SubscribedService.
-        Subscribed service System ARR
+        Subscribed service system ARR (Annualized Recurring Revenue).
 
 
         :param system_arr_in_lc: The system_arr_in_lc of this SubscribedService.
@@ -2063,7 +2063,7 @@ class SubscribedService(object):
     def system_arr_in_sc(self):
         """
         Gets the system_arr_in_sc of this SubscribedService.
-        Subscribed service System ARR in Standard Currency
+        Subscribed service system ARR in standard currency.
 
 
         :return: The system_arr_in_sc of this SubscribedService.
@@ -2075,7 +2075,7 @@ class SubscribedService(object):
     def system_arr_in_sc(self, system_arr_in_sc):
         """
         Sets the system_arr_in_sc of this SubscribedService.
-        Subscribed service System ARR in Standard Currency
+        Subscribed service system ARR in standard currency.
 
 
         :param system_arr_in_sc: The system_arr_in_sc of this SubscribedService.
@@ -2087,7 +2087,7 @@ class SubscribedService(object):
     def system_atr_arr_in_lc(self):
         """
         Gets the system_atr_arr_in_lc of this SubscribedService.
-        Subscribed service System ATR-ARR
+        Subscribed service system ATR-ARR (Annualized Recurring Revenue - Available to Renew).
 
 
         :return: The system_atr_arr_in_lc of this SubscribedService.
@@ -2099,7 +2099,7 @@ class SubscribedService(object):
     def system_atr_arr_in_lc(self, system_atr_arr_in_lc):
         """
         Sets the system_atr_arr_in_lc of this SubscribedService.
-        Subscribed service System ATR-ARR
+        Subscribed service system ATR-ARR (Annualized Recurring Revenue - Available to Renew).
 
 
         :param system_atr_arr_in_lc: The system_atr_arr_in_lc of this SubscribedService.
@@ -2111,7 +2111,7 @@ class SubscribedService(object):
     def system_atr_arr_in_sc(self):
         """
         Gets the system_atr_arr_in_sc of this SubscribedService.
-        Subscribed service System ATR-ARR in Standard Currency
+        Subscribed service system ATR-ARR in standard currency.
 
 
         :return: The system_atr_arr_in_sc of this SubscribedService.
@@ -2123,7 +2123,7 @@ class SubscribedService(object):
     def system_atr_arr_in_sc(self, system_atr_arr_in_sc):
         """
         Sets the system_atr_arr_in_sc of this SubscribedService.
-        Subscribed service System ATR-ARR in Standard Currency
+        Subscribed service system ATR-ARR in standard currency.
 
 
         :param system_atr_arr_in_sc: The system_atr_arr_in_sc of this SubscribedService.
@@ -2135,7 +2135,7 @@ class SubscribedService(object):
     def revised_arr_in_lc(self):
         """
         Gets the revised_arr_in_lc of this SubscribedService.
-        Subscribed service Revised ARR
+        Subscribed service revised ARR.
 
 
         :return: The revised_arr_in_lc of this SubscribedService.
@@ -2147,7 +2147,7 @@ class SubscribedService(object):
     def revised_arr_in_lc(self, revised_arr_in_lc):
         """
         Sets the revised_arr_in_lc of this SubscribedService.
-        Subscribed service Revised ARR
+        Subscribed service revised ARR.
 
 
         :param revised_arr_in_lc: The revised_arr_in_lc of this SubscribedService.
@@ -2159,7 +2159,7 @@ class SubscribedService(object):
     def revised_arr_in_sc(self):
         """
         Gets the revised_arr_in_sc of this SubscribedService.
-        Subscribed service Revised ARR in Standard Currency
+        Subscribed service revised ARR in standard currency.
 
 
         :return: The revised_arr_in_sc of this SubscribedService.
@@ -2171,7 +2171,7 @@ class SubscribedService(object):
     def revised_arr_in_sc(self, revised_arr_in_sc):
         """
         Sets the revised_arr_in_sc of this SubscribedService.
-        Subscribed service Revised ARR in Standard Currency
+        Subscribed service revised ARR in standard currency.
 
 
         :param revised_arr_in_sc: The revised_arr_in_sc of this SubscribedService.
@@ -2183,7 +2183,7 @@ class SubscribedService(object):
     def total_value(self):
         """
         Gets the total_value of this SubscribedService.
-        Subscribed service total value
+        Subscribed service total value.
 
 
         :return: The total_value of this SubscribedService.
@@ -2195,7 +2195,7 @@ class SubscribedService(object):
     def total_value(self, total_value):
         """
         Sets the total_value of this SubscribedService.
-        Subscribed service total value
+        Subscribed service total value.
 
 
         :param total_value: The total_value of this SubscribedService.
@@ -2207,7 +2207,7 @@ class SubscribedService(object):
     def original_promo_amount(self):
         """
         Gets the original_promo_amount of this SubscribedService.
-        Subscribed service Promotion Amount
+        Subscribed service promotion amount.
 
 
         :return: The original_promo_amount of this SubscribedService.
@@ -2219,7 +2219,7 @@ class SubscribedService(object):
     def original_promo_amount(self, original_promo_amount):
         """
         Sets the original_promo_amount of this SubscribedService.
-        Subscribed service Promotion Amount
+        Subscribed service promotion amount.
 
 
         :param original_promo_amount: The original_promo_amount of this SubscribedService.
@@ -2231,7 +2231,7 @@ class SubscribedService(object):
     def order_header_id(self):
         """
         Gets the order_header_id of this SubscribedService.
-        Sales Order Header associated to the subscribed service
+        Sales order header associated to the subscribed service.
 
 
         :return: The order_header_id of this SubscribedService.
@@ -2243,7 +2243,7 @@ class SubscribedService(object):
     def order_header_id(self, order_header_id):
         """
         Sets the order_header_id of this SubscribedService.
-        Sales Order Header associated to the subscribed service
+        Sales order header associated to the subscribed service.
 
 
         :param order_header_id: The order_header_id of this SubscribedService.
@@ -2255,7 +2255,7 @@ class SubscribedService(object):
     def order_number(self):
         """
         Gets the order_number of this SubscribedService.
-        Sales Order Number associated to the subscribed service
+        Sales order number associated to the subscribed service.
 
 
         :return: The order_number of this SubscribedService.
@@ -2267,7 +2267,7 @@ class SubscribedService(object):
     def order_number(self, order_number):
         """
         Sets the order_number of this SubscribedService.
-        Sales Order Number associated to the subscribed service
+        Sales order number associated to the subscribed service.
 
 
         :param order_number: The order_number of this SubscribedService.
@@ -2279,7 +2279,7 @@ class SubscribedService(object):
     def order_type(self):
         """
         Gets the order_type of this SubscribedService.
-        Order Type of Subscribed Service
+        Order type of subscribed service.
 
 
         :return: The order_type of this SubscribedService.
@@ -2291,7 +2291,7 @@ class SubscribedService(object):
     def order_type(self, order_type):
         """
         Sets the order_type of this SubscribedService.
-        Order Type of Subscribed Service
+        Order type of subscribed service.
 
 
         :param order_type: The order_type of this SubscribedService.
@@ -2303,7 +2303,7 @@ class SubscribedService(object):
     def order_line_id(self):
         """
         Gets the order_line_id of this SubscribedService.
-        Sales Order Line Id associated to the subscribed service
+        Sales order line ID associated with the subscribed service.
 
 
         :return: The order_line_id of this SubscribedService.
@@ -2315,7 +2315,7 @@ class SubscribedService(object):
     def order_line_id(self, order_line_id):
         """
         Sets the order_line_id of this SubscribedService.
-        Sales Order Line Id associated to the subscribed service
+        Sales order line ID associated with the subscribed service.
 
 
         :param order_line_id: The order_line_id of this SubscribedService.
@@ -2327,7 +2327,7 @@ class SubscribedService(object):
     def order_line_number(self):
         """
         Gets the order_line_number of this SubscribedService.
-        Sales Order Line Number associated to the subscribed service
+        Sales order line number associated with the subscribed service.
 
 
         :return: The order_line_number of this SubscribedService.
@@ -2339,7 +2339,7 @@ class SubscribedService(object):
     def order_line_number(self, order_line_number):
         """
         Sets the order_line_number of this SubscribedService.
-        Sales Order Line Number associated to the subscribed service
+        Sales order line number associated with the subscribed service.
 
 
         :param order_line_number: The order_line_number of this SubscribedService.
@@ -2351,7 +2351,7 @@ class SubscribedService(object):
     def commitment_schedule_id(self):
         """
         Gets the commitment_schedule_id of this SubscribedService.
-        Subscribed service commitment schedule Id
+        Subscribed service commitment schedule ID.
 
 
         :return: The commitment_schedule_id of this SubscribedService.
@@ -2363,7 +2363,7 @@ class SubscribedService(object):
     def commitment_schedule_id(self, commitment_schedule_id):
         """
         Sets the commitment_schedule_id of this SubscribedService.
-        Subscribed service commitment schedule Id
+        Subscribed service commitment schedule ID.
 
 
         :param commitment_schedule_id: The commitment_schedule_id of this SubscribedService.
@@ -2375,7 +2375,7 @@ class SubscribedService(object):
     def sales_account_party_id(self):
         """
         Gets the sales_account_party_id of this SubscribedService.
-        Subscribed service sales account party id
+        Subscribed service sales account party ID.
 
 
         :return: The sales_account_party_id of this SubscribedService.
@@ -2387,7 +2387,7 @@ class SubscribedService(object):
     def sales_account_party_id(self, sales_account_party_id):
         """
         Sets the sales_account_party_id of this SubscribedService.
-        Subscribed service sales account party id
+        Subscribed service sales account party ID.
 
 
         :param sales_account_party_id: The sales_account_party_id of this SubscribedService.
@@ -2399,7 +2399,7 @@ class SubscribedService(object):
     def data_center(self):
         """
         Gets the data_center of this SubscribedService.
-        Subscribed service data center
+        Subscribed service data center.
 
 
         :return: The data_center of this SubscribedService.
@@ -2411,7 +2411,7 @@ class SubscribedService(object):
     def data_center(self, data_center):
         """
         Sets the data_center of this SubscribedService.
-        Subscribed service data center
+        Subscribed service data center.
 
 
         :param data_center: The data_center of this SubscribedService.
@@ -2423,7 +2423,7 @@ class SubscribedService(object):
     def data_center_region(self):
         """
         Gets the data_center_region of this SubscribedService.
-        Subscribed service data center region
+        Subscribed service data center region.
 
 
         :return: The data_center_region of this SubscribedService.
@@ -2435,7 +2435,7 @@ class SubscribedService(object):
     def data_center_region(self, data_center_region):
         """
         Sets the data_center_region of this SubscribedService.
-        Subscribed service data center region
+        Subscribed service data center region.
 
 
         :param data_center_region: The data_center_region of this SubscribedService.
@@ -2447,7 +2447,7 @@ class SubscribedService(object):
     def admin_email(self):
         """
         Gets the admin_email of this SubscribedService.
-        Subscribed service admin email id
+        Subscribed service admin email ID.
 
 
         :return: The admin_email of this SubscribedService.
@@ -2459,7 +2459,7 @@ class SubscribedService(object):
     def admin_email(self, admin_email):
         """
         Sets the admin_email of this SubscribedService.
-        Subscribed service admin email id
+        Subscribed service admin email ID.
 
 
         :param admin_email: The admin_email of this SubscribedService.
@@ -2471,7 +2471,7 @@ class SubscribedService(object):
     def buyer_email(self):
         """
         Gets the buyer_email of this SubscribedService.
-        Subscribed service buyer email id
+        Subscribed service buyer email ID.
 
 
         :return: The buyer_email of this SubscribedService.
@@ -2483,7 +2483,7 @@ class SubscribedService(object):
     def buyer_email(self, buyer_email):
         """
         Sets the buyer_email of this SubscribedService.
-        Subscribed service buyer email id
+        Subscribed service buyer email ID.
 
 
         :param buyer_email: The buyer_email of this SubscribedService.
@@ -2495,7 +2495,7 @@ class SubscribedService(object):
     def subscription_source(self):
         """
         Gets the subscription_source of this SubscribedService.
-        Subscribed service source
+        Subscribed service source.
 
 
         :return: The subscription_source of this SubscribedService.
@@ -2507,7 +2507,7 @@ class SubscribedService(object):
     def subscription_source(self, subscription_source):
         """
         Sets the subscription_source of this SubscribedService.
-        Subscribed service source
+        Subscribed service source.
 
 
         :param subscription_source: The subscription_source of this SubscribedService.
@@ -2519,7 +2519,7 @@ class SubscribedService(object):
     def provisioning_source(self):
         """
         Gets the provisioning_source of this SubscribedService.
-        Subscribed service provisioning source
+        Subscribed service provisioning source.
 
 
         :return: The provisioning_source of this SubscribedService.
@@ -2531,7 +2531,7 @@ class SubscribedService(object):
     def provisioning_source(self, provisioning_source):
         """
         Sets the provisioning_source of this SubscribedService.
-        Subscribed service provisioning source
+        Subscribed service provisioning source.
 
 
         :param provisioning_source: The provisioning_source of this SubscribedService.
@@ -2543,7 +2543,7 @@ class SubscribedService(object):
     def fulfillment_set(self):
         """
         Gets the fulfillment_set of this SubscribedService.
-        Subscribed service fulfillment set
+        Subscribed service fulfillment set.
 
 
         :return: The fulfillment_set of this SubscribedService.
@@ -2555,7 +2555,7 @@ class SubscribedService(object):
     def fulfillment_set(self, fulfillment_set):
         """
         Sets the fulfillment_set of this SubscribedService.
-        Subscribed service fulfillment set
+        Subscribed service fulfillment set.
 
 
         :param fulfillment_set: The fulfillment_set of this SubscribedService.
@@ -2567,7 +2567,7 @@ class SubscribedService(object):
     def is_intent_to_pay(self):
         """
         Gets the is_intent_to_pay of this SubscribedService.
-        Subscribed service intent to pay flag
+        Subscribed service intent to pay parameter.
 
 
         :return: The is_intent_to_pay of this SubscribedService.
@@ -2579,7 +2579,7 @@ class SubscribedService(object):
     def is_intent_to_pay(self, is_intent_to_pay):
         """
         Sets the is_intent_to_pay of this SubscribedService.
-        Subscribed service intent to pay flag
+        Subscribed service intent to pay parameter.
 
 
         :param is_intent_to_pay: The is_intent_to_pay of this SubscribedService.
@@ -2591,7 +2591,7 @@ class SubscribedService(object):
     def is_payg(self):
         """
         Gets the is_payg of this SubscribedService.
-        Subscribed service payg flag
+        Subscribed service PAYG parameter.
 
 
         :return: The is_payg of this SubscribedService.
@@ -2603,7 +2603,7 @@ class SubscribedService(object):
     def is_payg(self, is_payg):
         """
         Sets the is_payg of this SubscribedService.
-        Subscribed service payg flag
+        Subscribed service PAYG parameter.
 
 
         :param is_payg: The is_payg of this SubscribedService.
@@ -2615,7 +2615,7 @@ class SubscribedService(object):
     def pricing_model(self):
         """
         Gets the pricing_model of this SubscribedService.
-        Subscribed service pricing model
+        Subscribed service pricing model.
 
 
         :return: The pricing_model of this SubscribedService.
@@ -2627,7 +2627,7 @@ class SubscribedService(object):
     def pricing_model(self, pricing_model):
         """
         Sets the pricing_model of this SubscribedService.
-        Subscribed service pricing model
+        Subscribed service pricing model.
 
 
         :param pricing_model: The pricing_model of this SubscribedService.
@@ -2639,7 +2639,7 @@ class SubscribedService(object):
     def program_type(self):
         """
         Gets the program_type of this SubscribedService.
-        Subscribed service program type
+        Subscribed service program type.
 
 
         :return: The program_type of this SubscribedService.
@@ -2651,7 +2651,7 @@ class SubscribedService(object):
     def program_type(self, program_type):
         """
         Sets the program_type of this SubscribedService.
-        Subscribed service program type
+        Subscribed service program type.
 
 
         :param program_type: The program_type of this SubscribedService.
@@ -2663,7 +2663,7 @@ class SubscribedService(object):
     def start_date_type(self):
         """
         Gets the start_date_type of this SubscribedService.
-        Subscribed service start date type
+        Subscribed service start date type.
 
 
         :return: The start_date_type of this SubscribedService.
@@ -2675,7 +2675,7 @@ class SubscribedService(object):
     def start_date_type(self, start_date_type):
         """
         Sets the start_date_type of this SubscribedService.
-        Subscribed service start date type
+        Subscribed service start date type.
 
 
         :param start_date_type: The start_date_type of this SubscribedService.
@@ -2687,7 +2687,7 @@ class SubscribedService(object):
     def time_provisioned(self):
         """
         Gets the time_provisioned of this SubscribedService.
-        Subscribed service provisioning date
+        Subscribed service provisioning date.
 
 
         :return: The time_provisioned of this SubscribedService.
@@ -2699,7 +2699,7 @@ class SubscribedService(object):
     def time_provisioned(self, time_provisioned):
         """
         Sets the time_provisioned of this SubscribedService.
-        Subscribed service provisioning date
+        Subscribed service provisioning date.
 
 
         :param time_provisioned: The time_provisioned of this SubscribedService.
@@ -2711,7 +2711,7 @@ class SubscribedService(object):
     def promo_type(self):
         """
         Gets the promo_type of this SubscribedService.
-        Subscribed service promotion type
+        Subscribed service promotion type.
 
 
         :return: The promo_type of this SubscribedService.
@@ -2723,7 +2723,7 @@ class SubscribedService(object):
     def promo_type(self, promo_type):
         """
         Sets the promo_type of this SubscribedService.
-        Subscribed service promotion type
+        Subscribed service promotion type.
 
 
         :param promo_type: The promo_type of this SubscribedService.
@@ -2955,7 +2955,7 @@ class SubscribedService(object):
     def csi(self):
         """
         Gets the csi of this SubscribedService.
-        Subscribed service CSI number
+        Subscribed service CSI number.
 
 
         :return: The csi of this SubscribedService.
@@ -2967,7 +2967,7 @@ class SubscribedService(object):
     def csi(self, csi):
         """
         Sets the csi of this SubscribedService.
-        Subscribed service CSI number
+        Subscribed service CSI number.
 
 
         :param csi: The csi of this SubscribedService.
@@ -2979,7 +2979,7 @@ class SubscribedService(object):
     def customer_transaction_reference(self):
         """
         Gets the customer_transaction_reference of this SubscribedService.
-        Identifier for a customer's transactions for purchase of ay oracle services
+        Identifier for a customer's transactions, for purchase of any Oracle services.
 
 
         :return: The customer_transaction_reference of this SubscribedService.
@@ -2991,7 +2991,7 @@ class SubscribedService(object):
     def customer_transaction_reference(self, customer_transaction_reference):
         """
         Sets the customer_transaction_reference of this SubscribedService.
-        Identifier for a customer's transactions for purchase of ay oracle services
+        Identifier for a customer's transactions, for purchase of any Oracle services.
 
 
         :param customer_transaction_reference: The customer_transaction_reference of this SubscribedService.
@@ -3003,7 +3003,7 @@ class SubscribedService(object):
     def partner_credit_amount(self):
         """
         Gets the partner_credit_amount of this SubscribedService.
-        Subscribed service partner credit amount
+        Subscribed service partner credit amount.
 
 
         :return: The partner_credit_amount of this SubscribedService.
@@ -3015,7 +3015,7 @@ class SubscribedService(object):
     def partner_credit_amount(self, partner_credit_amount):
         """
         Sets the partner_credit_amount of this SubscribedService.
-        Subscribed service partner credit amount
+        Subscribed service partner credit amount.
 
 
         :param partner_credit_amount: The partner_credit_amount of this SubscribedService.
@@ -3027,7 +3027,7 @@ class SubscribedService(object):
     def is_single_rate_card(self):
         """
         Gets the is_single_rate_card of this SubscribedService.
-        Indicates if the Subscribed service has a single ratecard
+        Indicates if the subscribed service has a single rate card.
 
 
         :return: The is_single_rate_card of this SubscribedService.
@@ -3039,7 +3039,7 @@ class SubscribedService(object):
     def is_single_rate_card(self, is_single_rate_card):
         """
         Sets the is_single_rate_card of this SubscribedService.
-        Indicates if the Subscribed service has a single ratecard
+        Indicates if the subscribed service has a single rate card.
 
 
         :param is_single_rate_card: The is_single_rate_card of this SubscribedService.
@@ -3051,7 +3051,7 @@ class SubscribedService(object):
     def agreement_id(self):
         """
         Gets the agreement_id of this SubscribedService.
-        Subscribed service agreement ID
+        Subscribed service agreement ID.
 
 
         :return: The agreement_id of this SubscribedService.
@@ -3063,7 +3063,7 @@ class SubscribedService(object):
     def agreement_id(self, agreement_id):
         """
         Sets the agreement_id of this SubscribedService.
-        Subscribed service agreement ID
+        Subscribed service agreement ID.
 
 
         :param agreement_id: The agreement_id of this SubscribedService.
@@ -3075,7 +3075,7 @@ class SubscribedService(object):
     def agreement_name(self):
         """
         Gets the agreement_name of this SubscribedService.
-        Subscribed service agrrement name
+        Subscribed service agreement name.
 
 
         :return: The agreement_name of this SubscribedService.
@@ -3087,7 +3087,7 @@ class SubscribedService(object):
     def agreement_name(self, agreement_name):
         """
         Sets the agreement_name of this SubscribedService.
-        Subscribed service agrrement name
+        Subscribed service agreement name.
 
 
         :param agreement_name: The agreement_name of this SubscribedService.
@@ -3099,7 +3099,7 @@ class SubscribedService(object):
     def agreement_type(self):
         """
         Gets the agreement_type of this SubscribedService.
-        Subscribed service agrrement type
+        Subscribed service agreement type.
 
 
         :return: The agreement_type of this SubscribedService.
@@ -3111,7 +3111,7 @@ class SubscribedService(object):
     def agreement_type(self, agreement_type):
         """
         Sets the agreement_type of this SubscribedService.
-        Subscribed service agrrement type
+        Subscribed service agreement type.
 
 
         :param agreement_type: The agreement_type of this SubscribedService.
@@ -3123,7 +3123,7 @@ class SubscribedService(object):
     def billing_frequency(self):
         """
         Gets the billing_frequency of this SubscribedService.
-        Subscribed service invoice frequency
+        Subscribed service invoice frequency.
 
 
         :return: The billing_frequency of this SubscribedService.
@@ -3135,7 +3135,7 @@ class SubscribedService(object):
     def billing_frequency(self, billing_frequency):
         """
         Sets the billing_frequency of this SubscribedService.
-        Subscribed service invoice frequency
+        Subscribed service invoice frequency.
 
 
         :param billing_frequency: The billing_frequency of this SubscribedService.
@@ -3147,7 +3147,7 @@ class SubscribedService(object):
     def time_welcome_email_sent(self):
         """
         Gets the time_welcome_email_sent of this SubscribedService.
-        Subscribed service welcome email sent date
+        Subscribed service welcome email sent date.
 
 
         :return: The time_welcome_email_sent of this SubscribedService.
@@ -3159,7 +3159,7 @@ class SubscribedService(object):
     def time_welcome_email_sent(self, time_welcome_email_sent):
         """
         Sets the time_welcome_email_sent of this SubscribedService.
-        Subscribed service welcome email sent date
+        Subscribed service welcome email sent date.
 
 
         :param time_welcome_email_sent: The time_welcome_email_sent of this SubscribedService.
@@ -3171,7 +3171,7 @@ class SubscribedService(object):
     def time_service_configuration_email_sent(self):
         """
         Gets the time_service_configuration_email_sent of this SubscribedService.
-        Subscribed service service configuration email sent date
+        Subscribed service configuration email sent date.
 
 
         :return: The time_service_configuration_email_sent of this SubscribedService.
@@ -3183,7 +3183,7 @@ class SubscribedService(object):
     def time_service_configuration_email_sent(self, time_service_configuration_email_sent):
         """
         Sets the time_service_configuration_email_sent of this SubscribedService.
-        Subscribed service service configuration email sent date
+        Subscribed service configuration email sent date.
 
 
         :param time_service_configuration_email_sent: The time_service_configuration_email_sent of this SubscribedService.
@@ -3195,7 +3195,7 @@ class SubscribedService(object):
     def time_customer_config(self):
         """
         Gets the time_customer_config of this SubscribedService.
-        Subscribed service customer config date
+        Subscribed service customer configuration date.
 
 
         :return: The time_customer_config of this SubscribedService.
@@ -3207,7 +3207,7 @@ class SubscribedService(object):
     def time_customer_config(self, time_customer_config):
         """
         Sets the time_customer_config of this SubscribedService.
-        Subscribed service customer config date
+        Subscribed service customer configuration date.
 
 
         :param time_customer_config: The time_customer_config of this SubscribedService.
@@ -3219,7 +3219,7 @@ class SubscribedService(object):
     def time_agreement_end(self):
         """
         Gets the time_agreement_end of this SubscribedService.
-        Subscribed service agrrement end date
+        Subscribed service agreement end date.
 
 
         :return: The time_agreement_end of this SubscribedService.
@@ -3231,7 +3231,7 @@ class SubscribedService(object):
     def time_agreement_end(self, time_agreement_end):
         """
         Sets the time_agreement_end of this SubscribedService.
-        Subscribed service agrrement end date
+        Subscribed service agreement end date.
 
 
         :param time_agreement_end: The time_agreement_end of this SubscribedService.
@@ -3243,7 +3243,7 @@ class SubscribedService(object):
     def commitment_services(self):
         """
         Gets the commitment_services of this SubscribedService.
-        List of Commitment services of a line
+        List of commitment services of a line.
 
 
         :return: The commitment_services of this SubscribedService.
@@ -3255,7 +3255,7 @@ class SubscribedService(object):
     def commitment_services(self, commitment_services):
         """
         Sets the commitment_services of this SubscribedService.
-        List of Commitment services of a line
+        List of commitment services of a line.
 
 
         :param commitment_services: The commitment_services of this SubscribedService.
@@ -3267,7 +3267,7 @@ class SubscribedService(object):
     def rate_cards(self):
         """
         Gets the rate_cards of this SubscribedService.
-        List of Rate Cards of a Subscribed Service
+        List of rate cards of a subscribed service.
 
 
         :return: The rate_cards of this SubscribedService.
@@ -3279,7 +3279,7 @@ class SubscribedService(object):
     def rate_cards(self, rate_cards):
         """
         Sets the rate_cards of this SubscribedService.
-        List of Rate Cards of a Subscribed Service
+        List of rate cards of a subscribed service.
 
 
         :param rate_cards: The rate_cards of this SubscribedService.
@@ -3291,7 +3291,7 @@ class SubscribedService(object):
     def time_created(self):
         """
         Gets the time_created of this SubscribedService.
-        Subscribed service creation date
+        Subscribed service creation date.
 
 
         :return: The time_created of this SubscribedService.
@@ -3303,7 +3303,7 @@ class SubscribedService(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SubscribedService.
-        Subscribed service creation date
+        Subscribed service creation date.
 
 
         :param time_created: The time_created of this SubscribedService.
@@ -3315,7 +3315,7 @@ class SubscribedService(object):
     def created_by(self):
         """
         Gets the created_by of this SubscribedService.
-        User that created the subscribed service
+        User that created the subscribed service.
 
 
         :return: The created_by of this SubscribedService.
@@ -3327,7 +3327,7 @@ class SubscribedService(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this SubscribedService.
-        User that created the subscribed service
+        User that created the subscribed service.
 
 
         :param created_by: The created_by of this SubscribedService.
@@ -3339,7 +3339,7 @@ class SubscribedService(object):
     def time_updated(self):
         """
         Gets the time_updated of this SubscribedService.
-        Subscribed service last update date
+        Subscribed service last update date.
 
 
         :return: The time_updated of this SubscribedService.
@@ -3351,7 +3351,7 @@ class SubscribedService(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this SubscribedService.
-        Subscribed service last update date
+        Subscribed service last update date.
 
 
         :param time_updated: The time_updated of this SubscribedService.
@@ -3363,7 +3363,7 @@ class SubscribedService(object):
     def updated_by(self):
         """
         Gets the updated_by of this SubscribedService.
-        User that updated the subscribed service
+        User that updated the subscribed service.
 
 
         :return: The updated_by of this SubscribedService.
@@ -3375,7 +3375,7 @@ class SubscribedService(object):
     def updated_by(self, updated_by):
         """
         Sets the updated_by of this SubscribedService.
-        User that updated the subscribed service
+        User that updated the subscribed service.
 
 
         :param updated_by: The updated_by of this SubscribedService.
@@ -3387,7 +3387,7 @@ class SubscribedService(object):
     def ratecard_type(self):
         """
         Gets the ratecard_type of this SubscribedService.
-        SPM Ratecard Type
+        SPM (Subscription Plan Management) rate card type.
 
 
         :return: The ratecard_type of this SubscribedService.
@@ -3399,7 +3399,7 @@ class SubscribedService(object):
     def ratecard_type(self, ratecard_type):
         """
         Sets the ratecard_type of this SubscribedService.
-        SPM Ratecard Type
+        SPM (Subscription Plan Management) rate card type.
 
 
         :param ratecard_type: The ratecard_type of this SubscribedService.

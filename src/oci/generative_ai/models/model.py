@@ -86,6 +86,18 @@ class Model(object):
     #: This constant has a value of "TEXT_TO_VIDEO"
     CAPABILITIES_TEXT_TO_VIDEO = "TEXT_TO_VIDEO"
 
+    #: A constant which can be used with the capabilities property of a Model.
+    #: This constant has a value of "AUDIO_TEXT_TO_TEXT"
+    CAPABILITIES_AUDIO_TEXT_TO_TEXT = "AUDIO_TEXT_TO_TEXT"
+
+    #: A constant which can be used with the capabilities property of a Model.
+    #: This constant has a value of "AUDIO_TRANSLATION"
+    CAPABILITIES_AUDIO_TRANSLATION = "AUDIO_TRANSLATION"
+
+    #: A constant which can be used with the capabilities property of a Model.
+    #: This constant has a value of "VIDEO_TEXT_TO_TEXT"
+    CAPABILITIES_VIDEO_TEXT_TO_TEXT = "VIDEO_TEXT_TO_TEXT"
+
     #: A constant which can be used with the lifecycle_state property of a Model.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -133,7 +145,7 @@ class Model(object):
 
         :param capabilities:
             The value to assign to the capabilities property of this Model.
-            Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_TEXT", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_TEXT", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", "AUDIO_TEXT_TO_TEXT", "AUDIO_TRANSLATION", "VIDEO_TEXT_TO_TEXT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type capabilities: list[str]
 
@@ -370,7 +382,7 @@ class Model(object):
         **[Required]** Gets the capabilities of this Model.
         Describes what this model can be used for.
 
-        Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_TEXT", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_TEXT", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", "AUDIO_TEXT_TO_TEXT", "AUDIO_TRANSLATION", "VIDEO_TEXT_TO_TEXT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -389,7 +401,7 @@ class Model(object):
         :param capabilities: The capabilities of this Model.
         :type: list[str]
         """
-        allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_TEXT", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO"]
+        allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", "TEXT_RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_TEXT", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", "AUDIO_TEXT_TO_TEXT", "AUDIO_TRANSLATION", "VIDEO_TEXT_TO_TEXT"]
         if capabilities:
             capabilities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in capabilities]
         self._capabilities = capabilities

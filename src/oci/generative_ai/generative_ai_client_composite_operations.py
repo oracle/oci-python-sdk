@@ -678,6 +678,48 @@ class GenerativeAiClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_sandbox_warm_pool_and_wait_for_state(self, project_id, create_sandbox_warm_pool_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.generative_ai.GenerativeAiClient.create_sandbox_warm_pool` and waits for the :py:class:`~oci.generative_ai.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str project_id: (required)
+            Owning Generative AI Project OCID. Resolve parent compartment for authorization.
+
+        :param oci.generative_ai.models.CreateSandboxWarmPoolDetails create_sandbox_warm_pool_details: (required)
+            Desired warm-pool configuration to persist.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.generative_ai.GenerativeAiClient.create_sandbox_warm_pool`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_sandbox_warm_pool(project_id, create_sandbox_warm_pool_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_semantic_store_and_wait_for_state(self, create_semantic_store_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.generative_ai.GenerativeAiClient.create_semantic_store` and waits for the :py:class:`~oci.generative_ai.models.WorkRequest`
@@ -1453,6 +1495,56 @@ class GenerativeAiClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_sandbox_warm_pool_and_wait_for_state(self, project_id, name, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.generative_ai.GenerativeAiClient.delete_sandbox_warm_pool` and waits for the :py:class:`~oci.generative_ai.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str project_id: (required)
+            Owning Generative AI Project OCID. Resolve parent compartment for authorization.
+
+        :param str name: (required)
+            Immutable name within the Project.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.generative_ai.GenerativeAiClient.delete_sandbox_warm_pool`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_sandbox_warm_pool(project_id, name, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_semantic_store_and_wait_for_state(self, semantic_store_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.generative_ai.GenerativeAiClient.delete_semantic_store` and waits for the :py:class:`~oci.generative_ai.models.WorkRequest`
@@ -2129,6 +2221,51 @@ class GenerativeAiClientCompositeOperations(object):
                 e.args = ('',)
             e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_sandbox_warm_pool_and_wait_for_state(self, project_id, name, update_sandbox_warm_pool_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.generative_ai.GenerativeAiClient.update_sandbox_warm_pool` and waits for the :py:class:`~oci.generative_ai.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str project_id: (required)
+            Owning Generative AI Project OCID. Resolve parent compartment for authorization.
+
+        :param str name: (required)
+            Immutable name within the Project.
+
+        :param oci.generative_ai.models.UpdateSandboxWarmPoolDetails update_sandbox_warm_pool_details: (required)
+            Replacement desired capacity to persist.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.generative_ai.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.generative_ai.GenerativeAiClient.update_sandbox_warm_pool`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_sandbox_warm_pool(project_id, name, update_sandbox_warm_pool_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(work_request_id=wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 

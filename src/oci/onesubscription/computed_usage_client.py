@@ -126,19 +126,19 @@ class ComputedUsageClient(object):
 
     def get_computed_usage(self, computed_usage_id, compartment_id, **kwargs):
         """
-        This is an API which returns Computed Usage corresponding to the id passed
+        Returns computed usage corresponding to the passed ID.
 
 
         :param str computed_usage_id: (required)
-            The Computed Usage Id
+            The computed usage ID.
 
         :param str compartment_id: (required)
             The OCID of the root compartment.
 
         :param list[str] fields: (optional)
             Partial response refers to an optimization technique offered
-            by the RESTful web APIs to return only the information
-            (fields) required by the client. This parameter is used to control what fields to
+            by the RESTful web APIs, to return only the information
+            (fields) required by the client. This parameter controls which fields to
             return.
 
         :param str opc_request_id: (optional)
@@ -247,32 +247,32 @@ class ComputedUsageClient(object):
 
     def list_aggregated_computed_usages(self, compartment_id, subscription_id, time_from, time_to, **kwargs):
         """
-        This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
+        Collection API that returns a list of aggregated computed usage details (there can be multiple parent products under a given SubID, each of which is represented under the subscription service line # in SPM).
 
 
         :param str compartment_id: (required)
             The OCID of the root compartment.
 
         :param str subscription_id: (required)
-            Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
+            Subscription ID is an identifier associated with the service, used for filtering the computed usage in SPM.
 
         :param datetime time_from: (required)
-            Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+            Initial date to filter computed usage data in SPM. For non-aggregated data, the time period between fromDate and toDate, expressed in RFC 3339 timestamp format.
 
         :param datetime time_to: (required)
-            Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+            Final date to filter computed usage data in SPM, expressed in RFC 3339 timestamp format.
 
         :param str parent_product: (optional)
-            Product part number for subscribed service line, called parent product.
+            Product part number for the subscribed service line, referred to as the parent product.
 
         :param str grouping: (optional)
-            Grouping criteria to use for aggregate the computed Usage, either hourly (`HOURLY`), daily (`DAILY`), monthly(`MONTHLY`) or none (`NONE`) to not follow a grouping criteria by date.
+            Grouping criteria to use for aggregating the computed usage, whether hourly (`HOURLY`), daily (`DAILY`), monthly (`MONTHLY`), or none (`NONE`), so as not to follow a grouping criteria by date.
 
             Allowed values are: "HOURLY", "DAILY", "MONTHLY", "NONE"
 
         :param int limit: (optional)
-            The maximum number aggregatedComputedUsages of items to return within the Subscription \"List\" call, this
-            counts the overall count across all items
+            The maximum number of aggregatedComputedUsages items to return within the Subscription \"List\" call, this
+            counts the overall count across all items.
             Example: `500`
 
         :param str page: (optional)
@@ -388,26 +388,26 @@ class ComputedUsageClient(object):
 
     def list_computed_usages(self, compartment_id, subscription_id, time_from, time_to, **kwargs):
         """
-        This is a collection API which returns a list of Computed Usages for given filters.
+        Collection API that returns a list of computed usages for the given filters.
 
 
         :param str compartment_id: (required)
             The OCID of the root compartment.
 
         :param str subscription_id: (required)
-            Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
+            Subscription ID is an identifier associated with the service, used for filtering the computed usage in SPM.
 
         :param datetime time_from: (required)
-            Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+            Initial date to filter computed usage data in SPM. For non-aggregated data, the time period between fromDate and toDate, expressed in RFC 3339 timestamp format.
 
         :param datetime time_to: (required)
-            Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+            Final date to filter computed usage data in SPM, expressed in RFC 3339 timestamp format.
 
         :param str parent_product: (optional)
-            Product part number for subscribed service line, called parent product.
+            Product part number for the subscribed service line, called the parent product.
 
         :param str computed_product: (optional)
-            Product part number for Computed Usage .
+            Product part number for the computed usage.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call. Default: (`50`)

@@ -44,6 +44,10 @@ class CreateDedicatedAiClusterDetails(object):
             The value to assign to the unit_shape property of this CreateDedicatedAiClusterDetails.
         :type unit_shape: str
 
+        :param capacity_reservation_id:
+            The value to assign to the capacity_reservation_id property of this CreateDedicatedAiClusterDetails.
+        :type capacity_reservation_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDedicatedAiClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -60,6 +64,7 @@ class CreateDedicatedAiClusterDetails(object):
             'compartment_id': 'str',
             'unit_count': 'int',
             'unit_shape': 'str',
+            'capacity_reservation_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -70,6 +75,7 @@ class CreateDedicatedAiClusterDetails(object):
             'compartment_id': 'compartmentId',
             'unit_count': 'unitCount',
             'unit_shape': 'unitShape',
+            'capacity_reservation_id': 'capacityReservationId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -79,6 +85,7 @@ class CreateDedicatedAiClusterDetails(object):
         self._compartment_id = None
         self._unit_count = None
         self._unit_shape = None
+        self._capacity_reservation_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -268,6 +275,7 @@ class CreateDedicatedAiClusterDetails(object):
         - B300_X1, B300_X2, B300_X4, B300_X8, B300_X16, B300_X32
         - L40S_X1, L40S_X2, L40S_X4, L40S_X8, L40S_X16, L40S_X32
         - MI300X_X1, MI300X_X2, MI300X_X4, MI300X_X8, MI300X_X16, MI300X_X32
+        - OAI_H100_X4
         - OAI_A10_X2
         - OAI_H100_X1
         - OAI_H100_X2
@@ -373,6 +381,7 @@ class CreateDedicatedAiClusterDetails(object):
         - B300_X1, B300_X2, B300_X4, B300_X8, B300_X16, B300_X32
         - L40S_X1, L40S_X2, L40S_X4, L40S_X8, L40S_X16, L40S_X32
         - MI300X_X1, MI300X_X2, MI300X_X4, MI300X_X8, MI300X_X16, MI300X_X32
+        - OAI_H100_X4
         - OAI_A10_X2
         - OAI_H100_X1
         - OAI_H100_X2
@@ -419,6 +428,30 @@ class CreateDedicatedAiClusterDetails(object):
         :type: str
         """
         self._unit_shape = unit_shape
+
+    @property
+    def capacity_reservation_id(self):
+        """
+        Gets the capacity_reservation_id of this CreateDedicatedAiClusterDetails.
+        The OCID of the capacity reservation.
+
+
+        :return: The capacity_reservation_id of this CreateDedicatedAiClusterDetails.
+        :rtype: str
+        """
+        return self._capacity_reservation_id
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, capacity_reservation_id):
+        """
+        Sets the capacity_reservation_id of this CreateDedicatedAiClusterDetails.
+        The OCID of the capacity reservation.
+
+
+        :param capacity_reservation_id: The capacity_reservation_id of this CreateDedicatedAiClusterDetails.
+        :type: str
+        """
+        self._capacity_reservation_id = capacity_reservation_id
 
     @property
     def freeform_tags(self):
