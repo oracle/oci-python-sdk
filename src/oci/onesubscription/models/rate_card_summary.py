@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RateCardSummary(object):
     """
-    Rate Card Summary
+    Rate card summary.
     """
 
     def __init__(self, **kwargs):
@@ -100,7 +100,7 @@ class RateCardSummary(object):
     def subscribed_service_id(self):
         """
         Gets the subscribed_service_id of this RateCardSummary.
-        SPM internal Subscribed Service ID
+        SPM (Subscription Plan Management) internal subscribed service ID.
 
 
         :return: The subscribed_service_id of this RateCardSummary.
@@ -112,7 +112,7 @@ class RateCardSummary(object):
     def subscribed_service_id(self, subscribed_service_id):
         """
         Sets the subscribed_service_id of this RateCardSummary.
-        SPM internal Subscribed Service ID
+        SPM (Subscription Plan Management) internal subscribed service ID.
 
 
         :param subscribed_service_id: The subscribed_service_id of this RateCardSummary.
@@ -144,7 +144,7 @@ class RateCardSummary(object):
     def time_start(self):
         """
         Gets the time_start of this RateCardSummary.
-        Rate card start date
+        Rate card start date.
 
 
         :return: The time_start of this RateCardSummary.
@@ -156,7 +156,7 @@ class RateCardSummary(object):
     def time_start(self, time_start):
         """
         Sets the time_start of this RateCardSummary.
-        Rate card start date
+        Rate card start date.
 
 
         :param time_start: The time_start of this RateCardSummary.
@@ -168,7 +168,7 @@ class RateCardSummary(object):
     def time_end(self):
         """
         Gets the time_end of this RateCardSummary.
-        Rate card end date
+        Rate card end date.
 
 
         :return: The time_end of this RateCardSummary.
@@ -180,7 +180,7 @@ class RateCardSummary(object):
     def time_end(self, time_end):
         """
         Sets the time_end of this RateCardSummary.
-        Rate card end date
+        Rate card end date.
 
 
         :param time_end: The time_end of this RateCardSummary.
@@ -192,7 +192,7 @@ class RateCardSummary(object):
     def net_unit_price(self):
         """
         **[Required]** Gets the net_unit_price of this RateCardSummary.
-        Rate card net unit price
+        Rate card net unit price.
 
 
         :return: The net_unit_price of this RateCardSummary.
@@ -204,7 +204,7 @@ class RateCardSummary(object):
     def net_unit_price(self, net_unit_price):
         """
         Sets the net_unit_price of this RateCardSummary.
-        Rate card net unit price
+        Rate card net unit price.
 
 
         :param net_unit_price: The net_unit_price of this RateCardSummary.
@@ -216,7 +216,7 @@ class RateCardSummary(object):
     def discretionary_discount_percentage(self):
         """
         Gets the discretionary_discount_percentage of this RateCardSummary.
-        Rate card discretionary discount percentage
+        Rate card discretionary discount percentage.
 
 
         :return: The discretionary_discount_percentage of this RateCardSummary.
@@ -228,7 +228,7 @@ class RateCardSummary(object):
     def discretionary_discount_percentage(self, discretionary_discount_percentage):
         """
         Sets the discretionary_discount_percentage of this RateCardSummary.
-        Rate card discretionary discount percentage
+        Rate card discretionary discount percentage.
 
 
         :param discretionary_discount_percentage: The discretionary_discount_percentage of this RateCardSummary.
@@ -240,7 +240,7 @@ class RateCardSummary(object):
     def overage_price(self):
         """
         **[Required]** Gets the overage_price of this RateCardSummary.
-        Rate card overage price
+        Rate card overage price.
 
 
         :return: The overage_price of this RateCardSummary.
@@ -252,7 +252,7 @@ class RateCardSummary(object):
     def overage_price(self, overage_price):
         """
         Sets the overage_price of this RateCardSummary.
-        Rate card overage price
+        Rate card overage price.
 
 
         :param overage_price: The overage_price of this RateCardSummary.
@@ -264,7 +264,7 @@ class RateCardSummary(object):
     def is_tier(self):
         """
         Gets the is_tier of this RateCardSummary.
-        Rate card price tier flag
+        Rate card price tier parameter.
 
 
         :return: The is_tier of this RateCardSummary.
@@ -276,7 +276,7 @@ class RateCardSummary(object):
     def is_tier(self, is_tier):
         """
         Sets the is_tier of this RateCardSummary.
-        Rate card price tier flag
+        Rate card price tier parameter.
 
 
         :param is_tier: The is_tier of this RateCardSummary.
@@ -308,7 +308,7 @@ class RateCardSummary(object):
     def rate_card_tiers(self):
         """
         Gets the rate_card_tiers of this RateCardSummary.
-        List of tiered rate card prices
+        List of tiered rate card prices.
 
 
         :return: The rate_card_tiers of this RateCardSummary.
@@ -320,7 +320,7 @@ class RateCardSummary(object):
     def rate_card_tiers(self, rate_card_tiers):
         """
         Sets the rate_card_tiers of this RateCardSummary.
-        List of tiered rate card prices
+        List of tiered rate card prices.
 
 
         :param rate_card_tiers: The rate_card_tiers of this RateCardSummary.

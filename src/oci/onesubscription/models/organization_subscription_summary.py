@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OrganizationSubscriptionSummary(object):
     """
-    Subscription summary
+    Subscription summary.
     """
 
     def __init__(self, **kwargs):
@@ -86,7 +86,7 @@ class OrganizationSubscriptionSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this OrganizationSubscriptionSummary.
-        SPM internal Subscription ID
+        SPM (Subscription Plan Management) internal subscription ID.
 
 
         :return: The id of this OrganizationSubscriptionSummary.
@@ -98,7 +98,7 @@ class OrganizationSubscriptionSummary(object):
     def id(self, id):
         """
         Sets the id of this OrganizationSubscriptionSummary.
-        SPM internal Subscription ID
+        SPM (Subscription Plan Management) internal subscription ID.
 
 
         :param id: The id of this OrganizationSubscriptionSummary.
@@ -110,7 +110,7 @@ class OrganizationSubscriptionSummary(object):
     def service_name(self):
         """
         Gets the service_name of this OrganizationSubscriptionSummary.
-        Customer friendly service name provided by PRG
+        Customer-friendly service name provided by the PRG (Product Release Group).
 
 
         :return: The service_name of this OrganizationSubscriptionSummary.
@@ -122,7 +122,7 @@ class OrganizationSubscriptionSummary(object):
     def service_name(self, service_name):
         """
         Sets the service_name of this OrganizationSubscriptionSummary.
-        Customer friendly service name provided by PRG
+        Customer-friendly service name provided by the PRG (Product Release Group).
 
 
         :param service_name: The service_name of this OrganizationSubscriptionSummary.
@@ -134,7 +134,7 @@ class OrganizationSubscriptionSummary(object):
     def type(self):
         """
         Gets the type of this OrganizationSubscriptionSummary.
-        Subscription Type i.e. IAAS,SAAS,PAAS
+        Subscription type, whether IaaS, SaaS, PaaS.
 
 
         :return: The type of this OrganizationSubscriptionSummary.
@@ -146,7 +146,7 @@ class OrganizationSubscriptionSummary(object):
     def type(self, type):
         """
         Sets the type of this OrganizationSubscriptionSummary.
-        Subscription Type i.e. IAAS,SAAS,PAAS
+        Subscription type, whether IaaS, SaaS, PaaS.
 
 
         :param type: The type of this OrganizationSubscriptionSummary.
@@ -158,7 +158,7 @@ class OrganizationSubscriptionSummary(object):
     def status(self):
         """
         Gets the status of this OrganizationSubscriptionSummary.
-        Status of the plan
+        Plan status.
 
 
         :return: The status of this OrganizationSubscriptionSummary.
@@ -170,7 +170,7 @@ class OrganizationSubscriptionSummary(object):
     def status(self, status):
         """
         Sets the status of this OrganizationSubscriptionSummary.
-        Status of the plan
+        Plan status.
 
 
         :param status: The status of this OrganizationSubscriptionSummary.
@@ -182,7 +182,7 @@ class OrganizationSubscriptionSummary(object):
     def time_start(self):
         """
         Gets the time_start of this OrganizationSubscriptionSummary.
-        Represents the date when the first service of the subscription was activated
+        The date when the first service of the subscription was activated.
 
 
         :return: The time_start of this OrganizationSubscriptionSummary.
@@ -194,7 +194,7 @@ class OrganizationSubscriptionSummary(object):
     def time_start(self, time_start):
         """
         Sets the time_start of this OrganizationSubscriptionSummary.
-        Represents the date when the first service of the subscription was activated
+        The date when the first service of the subscription was activated.
 
 
         :param time_start: The time_start of this OrganizationSubscriptionSummary.
@@ -206,7 +206,7 @@ class OrganizationSubscriptionSummary(object):
     def time_end(self):
         """
         Gets the time_end of this OrganizationSubscriptionSummary.
-        Represents the date when the last service of the subscription ends
+        The date when the last service of the subscription ends.
 
 
         :return: The time_end of this OrganizationSubscriptionSummary.
@@ -218,7 +218,7 @@ class OrganizationSubscriptionSummary(object):
     def time_end(self, time_end):
         """
         Sets the time_end of this OrganizationSubscriptionSummary.
-        Represents the date when the last service of the subscription ends
+        The date when the last service of the subscription ends.
 
 
         :param time_end: The time_end of this OrganizationSubscriptionSummary.
@@ -250,7 +250,7 @@ class OrganizationSubscriptionSummary(object):
     def total_value(self):
         """
         Gets the total_value of this OrganizationSubscriptionSummary.
-        Total aggregate TCLV of all lines for the subscription including expired, active, and signed
+        Total aggregate TCLV of all lines for the subscription, including expired, active, and signed.
 
 
         :return: The total_value of this OrganizationSubscriptionSummary.
@@ -262,7 +262,7 @@ class OrganizationSubscriptionSummary(object):
     def total_value(self, total_value):
         """
         Sets the total_value of this OrganizationSubscriptionSummary.
-        Total aggregate TCLV of all lines for the subscription including expired, active, and signed
+        Total aggregate TCLV of all lines for the subscription, including expired, active, and signed.
 
 
         :param total_value: The total_value of this OrganizationSubscriptionSummary.

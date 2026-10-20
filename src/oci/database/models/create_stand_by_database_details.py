@@ -33,7 +33,7 @@ class CreateStandByDatabaseDetails(CreateDatabaseBase):
 
         :param source:
             The value to assign to the source property of this CreateStandByDatabaseDetails.
-            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DATAGUARD"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DATAGUARD", "DB_SNAPSHOT", "DB_CLONE"
         :type source: str
 
         :param kms_key_id:

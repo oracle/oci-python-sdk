@@ -115,6 +115,7 @@ from .update_db_system_details import UpdateDbSystemDetails
 from .update_network_details import UpdateNetworkDetails
 from .update_replication_config_details import UpdateReplicationConfigDetails
 from .update_storage_details_params import UpdateStorageDetailsParams
+from .upgrade_db_system_details import UpgradeDbSystemDetails
 from .vault_secret_password_details import VaultSecretPasswordDetails
 from .weekly_backup_policy import WeeklyBackupPolicy
 from .work_request import WorkRequest
@@ -237,6 +238,7 @@ psql_type_mapping = {
     "UpdateNetworkDetails": UpdateNetworkDetails,
     "UpdateReplicationConfigDetails": UpdateReplicationConfigDetails,
     "UpdateStorageDetailsParams": UpdateStorageDetailsParams,
+    "UpgradeDbSystemDetails": UpgradeDbSystemDetails,
     "VaultSecretPasswordDetails": VaultSecretPasswordDetails,
     "WeeklyBackupPolicy": WeeklyBackupPolicy,
     "WorkRequest": WorkRequest,

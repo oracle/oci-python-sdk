@@ -141,6 +141,7 @@ Database
     oci.database.models.ChangeSchedulingPolicyCompartmentDetails
     oci.database.models.ChangeSubscriptionDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
+    oci.database.models.CloneDatabaseDetails
     oci.database.models.CloudAutomationApplyUpdateTimePreference
     oci.database.models.CloudAutomationFreezePeriod
     oci.database.models.CloudAutomationUpdateDetails
@@ -190,6 +191,7 @@ Database
     oci.database.models.CreateBackupDestinationDetails
     oci.database.models.CreateBackupDetails
     oci.database.models.CreateBaseccVmClusterDetails
+    oci.database.models.CreateCloneDatabaseFromDatabase
     oci.database.models.CreateCloudAutonomousVmClusterDetails
     oci.database.models.CreateCloudExadataInfrastructureDetails
     oci.database.models.CreateCloudVmClusterDetails
@@ -210,6 +212,9 @@ Database
     oci.database.models.CreateDatabaseFromBackupDetails
     oci.database.models.CreateDatabaseFromDatabase
     oci.database.models.CreateDatabaseFromDbSystemDetails
+    oci.database.models.CreateDatabaseFromSnapshot
+    oci.database.models.CreateDatabaseFromSnapshotDetails
+    oci.database.models.CreateDatabaseSnapshotDetails
     oci.database.models.CreateDatabaseSoftwareImageDetails
     oci.database.models.CreateDbConnectionBundleDetails
     oci.database.models.CreateDbHomeBase
@@ -276,6 +281,9 @@ Database
     oci.database.models.DatabaseConnectionStrings
     oci.database.models.DatabaseCredentialDetails
     oci.database.models.DatabaseManagementConfig
+    oci.database.models.DatabaseSnapshot
+    oci.database.models.DatabaseSnapshotCollection
+    oci.database.models.DatabaseSnapshotSummary
     oci.database.models.DatabaseSoftwareImage
     oci.database.models.DatabaseSoftwareImageSummary
     oci.database.models.DatabaseSslConnectionCredentials
@@ -557,6 +565,7 @@ Database
     oci.database.models.UpdateDataGuardAssociationDetails
     oci.database.models.UpdateDataGuardDetails
     oci.database.models.UpdateDatabaseDetails
+    oci.database.models.UpdateDatabaseSnapshotDetails
     oci.database.models.UpdateDatabaseSoftwareImageDetails
     oci.database.models.UpdateDbConnectionBundleDetails
     oci.database.models.UpdateDbHomeDetails

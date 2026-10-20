@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SubscriptionSummary(object):
     """
-    Subscription summary
+    Subscription summary.
     """
 
     def __init__(self, **kwargs):
@@ -86,7 +86,7 @@ class SubscriptionSummary(object):
     def status(self):
         """
         Gets the status of this SubscriptionSummary.
-        Status of the plan
+        Plan status.
 
 
         :return: The status of this SubscriptionSummary.
@@ -98,7 +98,7 @@ class SubscriptionSummary(object):
     def status(self, status):
         """
         Sets the status of this SubscriptionSummary.
-        Status of the plan
+        Plan status.
 
 
         :param status: The status of this SubscriptionSummary.
@@ -110,7 +110,7 @@ class SubscriptionSummary(object):
     def time_start(self):
         """
         Gets the time_start of this SubscriptionSummary.
-        Represents the date when the first service of the subscription was activated
+        The date when the first service of the subscription was activated.
 
 
         :return: The time_start of this SubscriptionSummary.
@@ -122,7 +122,7 @@ class SubscriptionSummary(object):
     def time_start(self, time_start):
         """
         Sets the time_start of this SubscriptionSummary.
-        Represents the date when the first service of the subscription was activated
+        The date when the first service of the subscription was activated.
 
 
         :param time_start: The time_start of this SubscriptionSummary.
@@ -134,7 +134,7 @@ class SubscriptionSummary(object):
     def time_end(self):
         """
         Gets the time_end of this SubscriptionSummary.
-        Represents the date when the last service of the subscription ends
+        The date when the last service of the subscription ends.
 
 
         :return: The time_end of this SubscriptionSummary.
@@ -146,7 +146,7 @@ class SubscriptionSummary(object):
     def time_end(self, time_end):
         """
         Sets the time_end of this SubscriptionSummary.
-        Represents the date when the last service of the subscription ends
+        The date when the last service of the subscription ends.
 
 
         :param time_end: The time_end of this SubscriptionSummary.
@@ -178,7 +178,7 @@ class SubscriptionSummary(object):
     def service_name(self):
         """
         Gets the service_name of this SubscriptionSummary.
-        Customer friendly service name provided by PRG
+        Customer-friendly service name provided by the PRG (Product Release Group).
 
 
         :return: The service_name of this SubscriptionSummary.
@@ -190,7 +190,7 @@ class SubscriptionSummary(object):
     def service_name(self, service_name):
         """
         Sets the service_name of this SubscriptionSummary.
-        Customer friendly service name provided by PRG
+        Customer-friendly service name provided by the PRG (Product Release Group).
 
 
         :param service_name: The service_name of this SubscriptionSummary.
@@ -202,7 +202,7 @@ class SubscriptionSummary(object):
     def hold_reason(self):
         """
         Gets the hold_reason of this SubscriptionSummary.
-        Hold reason of the plan
+        Hold reason of the plan.
 
 
         :return: The hold_reason of this SubscriptionSummary.
@@ -214,7 +214,7 @@ class SubscriptionSummary(object):
     def hold_reason(self, hold_reason):
         """
         Sets the hold_reason of this SubscriptionSummary.
-        Hold reason of the plan
+        Hold reason of the plan.
 
 
         :param hold_reason: The hold_reason of this SubscriptionSummary.
@@ -226,7 +226,7 @@ class SubscriptionSummary(object):
     def time_hold_release_eta(self):
         """
         Gets the time_hold_release_eta of this SubscriptionSummary.
-        Represents the date of the hold release
+        The date of the hold release.
 
 
         :return: The time_hold_release_eta of this SubscriptionSummary.
@@ -238,7 +238,7 @@ class SubscriptionSummary(object):
     def time_hold_release_eta(self, time_hold_release_eta):
         """
         Sets the time_hold_release_eta of this SubscriptionSummary.
-        Represents the date of the hold release
+        The date of the hold release.
 
 
         :param time_hold_release_eta: The time_hold_release_eta of this SubscriptionSummary.
@@ -250,7 +250,7 @@ class SubscriptionSummary(object):
     def subscribed_services(self):
         """
         Gets the subscribed_services of this SubscriptionSummary.
-        List of Subscribed Services of the plan
+        List of plan's subscribed services.
 
 
         :return: The subscribed_services of this SubscriptionSummary.
@@ -262,7 +262,7 @@ class SubscriptionSummary(object):
     def subscribed_services(self, subscribed_services):
         """
         Sets the subscribed_services of this SubscriptionSummary.
-        List of Subscribed Services of the plan
+        List of plan's subscribed services.
 
 
         :param subscribed_services: The subscribed_services of this SubscriptionSummary.

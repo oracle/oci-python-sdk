@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AggregatedComputedUsageSummary(object):
     """
-    Subscribed Service Contract details
+    Subscribed service contract details.
     """
 
     #: A constant which can be used with the pricing_model property of a AggregatedComputedUsageSummary.
@@ -122,7 +122,7 @@ class AggregatedComputedUsageSummary(object):
     def subscription_id(self):
         """
         **[Required]** Gets the subscription_id of this AggregatedComputedUsageSummary.
-        Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
+        Subscription ID is an identifier associated with the service used for filtering the computed usage in SPM (Subscription Plan Management).
 
 
         :return: The subscription_id of this AggregatedComputedUsageSummary.
@@ -134,7 +134,7 @@ class AggregatedComputedUsageSummary(object):
     def subscription_id(self, subscription_id):
         """
         Sets the subscription_id of this AggregatedComputedUsageSummary.
-        Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM
+        Subscription ID is an identifier associated with the service used for filtering the computed usage in SPM (Subscription Plan Management).
 
 
         :param subscription_id: The subscription_id of this AggregatedComputedUsageSummary.
@@ -146,7 +146,7 @@ class AggregatedComputedUsageSummary(object):
     def parent_subscribed_service_id(self):
         """
         Gets the parent_subscribed_service_id of this AggregatedComputedUsageSummary.
-        Subscribed service line parent id
+        Subscribed service line parent ID.
 
 
         :return: The parent_subscribed_service_id of this AggregatedComputedUsageSummary.
@@ -158,7 +158,7 @@ class AggregatedComputedUsageSummary(object):
     def parent_subscribed_service_id(self, parent_subscribed_service_id):
         """
         Sets the parent_subscribed_service_id of this AggregatedComputedUsageSummary.
-        Subscribed service line parent id
+        Subscribed service line parent ID.
 
 
         :param parent_subscribed_service_id: The parent_subscribed_service_id of this AggregatedComputedUsageSummary.
@@ -262,7 +262,7 @@ class AggregatedComputedUsageSummary(object):
     def currency_code(self):
         """
         Gets the currency_code of this AggregatedComputedUsageSummary.
-        Currency code
+        Currency code.
 
 
         :return: The currency_code of this AggregatedComputedUsageSummary.
@@ -274,7 +274,7 @@ class AggregatedComputedUsageSummary(object):
     def currency_code(self, currency_code):
         """
         Sets the currency_code of this AggregatedComputedUsageSummary.
-        Currency code
+        Currency code.
 
 
         :param currency_code: The currency_code of this AggregatedComputedUsageSummary.
@@ -286,7 +286,7 @@ class AggregatedComputedUsageSummary(object):
     def rate_card_id(self):
         """
         Gets the rate_card_id of this AggregatedComputedUsageSummary.
-        Inernal SPM Ratecard Id at line level
+        Inernal SPM rate card ID at line level.
 
 
         :return: The rate_card_id of this AggregatedComputedUsageSummary.
@@ -298,7 +298,7 @@ class AggregatedComputedUsageSummary(object):
     def rate_card_id(self, rate_card_id):
         """
         Sets the rate_card_id of this AggregatedComputedUsageSummary.
-        Inernal SPM Ratecard Id at line level
+        Inernal SPM rate card ID at line level.
 
 
         :param rate_card_id: The rate_card_id of this AggregatedComputedUsageSummary.
@@ -310,7 +310,7 @@ class AggregatedComputedUsageSummary(object):
     def pricing_model(self):
         """
         Gets the pricing_model of this AggregatedComputedUsageSummary.
-        Subscribed services pricing model
+        Subscribed services pricing model.
 
         Allowed values for this property are: "PAY_AS_YOU_GO", "MONTHLY", "ANNUAL", "PREPAID", "FUNDED_ALLOCATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -325,7 +325,7 @@ class AggregatedComputedUsageSummary(object):
     def pricing_model(self, pricing_model):
         """
         Sets the pricing_model of this AggregatedComputedUsageSummary.
-        Subscribed services pricing model
+        Subscribed services pricing model.
 
 
         :param pricing_model: The pricing_model of this AggregatedComputedUsageSummary.

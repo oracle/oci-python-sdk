@@ -127,6 +127,7 @@ class UpdateRunObjectStoreScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedSt
         """
         Gets the script_command of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
         The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.
+
         Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env \"production\" --max-connections 200 --log-level \"INFO\"`
 
 
@@ -140,6 +141,7 @@ class UpdateRunObjectStoreScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedSt
         """
         Sets the script_command of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
         The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.
+
         Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env \"production\" --max-connections 200 --log-level \"INFO\"`
 
 
@@ -153,6 +155,7 @@ class UpdateRunObjectStoreScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedSt
         """
         Gets the run_as_user of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
         The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.
+
         Example: `opc`
 
 
@@ -166,6 +169,7 @@ class UpdateRunObjectStoreScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedSt
         """
         Sets the run_as_user of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
         The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.
+
         Example: `opc`
 
 

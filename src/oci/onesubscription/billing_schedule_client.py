@@ -126,18 +126,18 @@ class BillingScheduleClient(object):
 
     def list_billing_schedules(self, compartment_id, subscription_id, **kwargs):
         """
-        This list API returns all billing schedules for given subscription id and
-        for a particular Subscribed Service if provided
+        This list API returns all billing schedules for a given subscription ID, and
+        for a particular subscribed service if provided.
 
 
         :param str compartment_id: (required)
             The OCID of the root compartment.
 
         :param str subscription_id: (required)
-            This param is used to get only the billing schedules for a particular Subscription Id
+            This parameter gets the billing schedules for a particular subscription ID.
 
         :param str subscribed_service_id: (optional)
-            This param is used to get only the billing schedules for a particular Subscribed Service
+            This parameter gets the billing schedules for a particular subscribed service.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call. Default: (`50`)

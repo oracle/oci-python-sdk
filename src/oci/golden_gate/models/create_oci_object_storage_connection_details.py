@@ -23,7 +23,7 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateOciObjectStorageConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL"
         :type connection_type: str
 
         :param display_name:
@@ -273,7 +273,7 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
         """
         Gets the region of this CreateOciObjectStorageConnectionDetails.
         The name of the region. e.g.: us-ashburn-1
-        If the region is not provided, backend will default to the default region.
+        If the region is not provided, backend will default to the current region.
 
 
         :return: The region of this CreateOciObjectStorageConnectionDetails.
@@ -286,7 +286,7 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
         """
         Sets the region of this CreateOciObjectStorageConnectionDetails.
         The name of the region. e.g.: us-ashburn-1
-        If the region is not provided, backend will default to the default region.
+        If the region is not provided, backend will default to the current region.
 
 
         :param region: The region of this CreateOciObjectStorageConnectionDetails.

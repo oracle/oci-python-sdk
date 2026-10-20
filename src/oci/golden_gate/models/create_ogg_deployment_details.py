@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateOggDeploymentDetails(object):
     """
-    Deployment Data for creating an OggDeployment
+    Deployment Data for creating an OggDeployment.
     """
 
     #: A constant which can be used with the credential_store property of a CreateOggDeploymentDetails.
@@ -122,7 +122,10 @@ class CreateOggDeploymentDetails(object):
         Gets the deployment_name of this CreateOggDeploymentDetails.
         The name given to the GoldenGate service deployment.
         The name must contain only alphanumeric characters and must start with a letter.
+        If not provided, the service derives this value from the deployment display name.
         For standby deployment the deployment name is inherited from primary.
+        Deprecated: This field is deprecated and will be removed after the date provided in the announcement:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
 
         :return: The deployment_name of this CreateOggDeploymentDetails.
@@ -136,7 +139,10 @@ class CreateOggDeploymentDetails(object):
         Sets the deployment_name of this CreateOggDeploymentDetails.
         The name given to the GoldenGate service deployment.
         The name must contain only alphanumeric characters and must start with a letter.
+        If not provided, the service derives this value from the deployment display name.
         For standby deployment the deployment name is inherited from primary.
+        Deprecated: This field is deprecated and will be removed after the date provided in the announcement:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
 
         :param deployment_name: The deployment_name of this CreateOggDeploymentDetails.

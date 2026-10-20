@@ -1,0 +1,11 @@
+CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
+================================================================
+
+.. currentmodule:: oci.golden_gate.models
+
+.. autoclass:: CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

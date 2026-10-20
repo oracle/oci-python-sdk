@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InvoiceLineSummary(object):
     """
-    Invoice Line
+    Invoice line.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class InvoiceLineSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this InvoiceLineSummary.
-        SPM Invoice Line internal identifier
+        SPM (Subscription Plan Management) invoice line internal identifier.
 
 
         :return: The id of this InvoiceLineSummary.
@@ -84,7 +84,7 @@ class InvoiceLineSummary(object):
     def id(self, id):
         """
         Sets the id of this InvoiceLineSummary.
-        SPM Invoice Line internal identifier
+        SPM (Subscription Plan Management) invoice line internal identifier.
 
 
         :param id: The id of this InvoiceLineSummary.
@@ -116,7 +116,7 @@ class InvoiceLineSummary(object):
     def ar_invoice_number(self):
         """
         Gets the ar_invoice_number of this InvoiceLineSummary.
-        AR Invoice Number for Invoice Line
+        Accounts receivable invoice number for invoice line.
 
 
         :return: The ar_invoice_number of this InvoiceLineSummary.
@@ -128,7 +128,7 @@ class InvoiceLineSummary(object):
     def ar_invoice_number(self, ar_invoice_number):
         """
         Sets the ar_invoice_number of this InvoiceLineSummary.
-        AR Invoice Number for Invoice Line
+        Accounts receivable invoice number for invoice line.
 
 
         :param ar_invoice_number: The ar_invoice_number of this InvoiceLineSummary.
@@ -140,7 +140,7 @@ class InvoiceLineSummary(object):
     def data_center(self):
         """
         **[Required]** Gets the data_center of this InvoiceLineSummary.
-        Data Center Attribute.
+        Data center attribute.
 
 
         :return: The data_center of this InvoiceLineSummary.
@@ -152,7 +152,7 @@ class InvoiceLineSummary(object):
     def data_center(self, data_center):
         """
         Sets the data_center of this InvoiceLineSummary.
-        Data Center Attribute.
+        Data center attribute.
 
 
         :param data_center: The data_center of this InvoiceLineSummary.
@@ -164,7 +164,7 @@ class InvoiceLineSummary(object):
     def time_start(self):
         """
         **[Required]** Gets the time_start of this InvoiceLineSummary.
-        Usage start time
+        Usage start time.
 
 
         :return: The time_start of this InvoiceLineSummary.
@@ -176,7 +176,7 @@ class InvoiceLineSummary(object):
     def time_start(self, time_start):
         """
         Sets the time_start of this InvoiceLineSummary.
-        Usage start time
+        Usage start time.
 
 
         :param time_start: The time_start of this InvoiceLineSummary.
@@ -188,7 +188,7 @@ class InvoiceLineSummary(object):
     def time_end(self):
         """
         **[Required]** Gets the time_end of this InvoiceLineSummary.
-        Usage end time
+        Usage end time.
 
 
         :return: The time_end of this InvoiceLineSummary.
@@ -200,7 +200,7 @@ class InvoiceLineSummary(object):
     def time_end(self, time_end):
         """
         Sets the time_end of this InvoiceLineSummary.
-        Usage end time
+        Usage end time.
 
 
         :param time_end: The time_end of this InvoiceLineSummary.

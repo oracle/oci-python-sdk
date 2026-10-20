@@ -124,28 +124,130 @@ class SubscriptionClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def get_subscription_details(self, subscription_id, compartment_id, **kwargs):
+        """
+        Returns the commitment summary for a subscription.
+
+
+        :param str subscription_id: (required)
+            Subscription identifier.
+
+        :param str compartment_id: (required)
+            The OCID of the root compartment.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.onesubscription.models.SubscriptionDetails`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/onesubscription/get_subscription_details.py.html>`__ to see an example of how to use get_subscription_details API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'compartmentId']
+        resource_path = "/subscriptionDetails"
+        method = "GET"
+        operation_name = "get_subscription_details"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_subscription_details got unknown kwargs: {extra_kwargs!r}")
+
+        query_params = {
+            "subscriptionId": subscription_id,
+            "compartmentId": compartment_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SubscriptionDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SubscriptionDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_subscriptions(self, compartment_id, **kwargs):
         """
-        This list API returns all subscriptions for a given plan number or subscription id or buyer email
-        and provides additional parameters to include ratecard and commitment details.
-        This API expects exactly one of the above mentioned parameters as input. If more than one parameters are provided the API will throw
-        a 400 - invalid parameters exception and if no parameters are provided it will throw a 400 - missing parameter exception
+        Returns all subscriptions for a given plan number, subscription ID, or buyer email,
+        and provides additional parameters, to include rate card and commitment details.
+        Exactly one of the these parameters is expected as input. If more than one parameter is provided,
+        a 400 - invalid parameters exception is thrown, and if no parameters are provided, a 400 - missing parameter exception is thrown.
 
 
         :param str compartment_id: (required)
             The OCID of the root compartment.
 
         :param str plan_number: (optional)
-            The Plan Number
+            The plan number.
 
         :param str subscription_id: (optional)
-            Line level Subscription Id
+            Line level subscription ID.
 
         :param str buyer_email: (optional)
-            Buyer Email Id
+            Buyer email ID.
 
         :param bool is_commit_info_required: (optional)
-            Boolean value to decide whether commitment services will be shown
+            Boolean value to determine whether commitment services are shown.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call. Default: (`50`)
@@ -279,6 +381,171 @@ class SubscriptionClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[SubscriptionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_usage_ledgers(self, subscription_id, compartment_id, **kwargs):
+        """
+        Returns revenue invoice consumption details for authorization orders that draw down from the
+        requested subscription. It includes authorization-order subscription IDs but excludes the requested
+        subscription ID itself.
+
+
+        :param str subscription_id: (required)
+            Subscription identifier.
+
+        :param str compartment_id: (required)
+            The OCID of the root compartment.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call. Default: (`50`)
+
+            Example: '500'
+
+        :param str page: (optional)
+            The value of the 'opc-next-page' response header from the previous \"List\" call.
+
+        :param str sort_order: (optional)
+            The usage-ledger sort order to use, either ascending ('ASC') or descending ('DESC').
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The usage-ledger field to sort by. You can provide one sort order ('sortOrder').
+
+            Allowed values are: "timeConsumption", "consumptionAmount"
+
+        :param datetime time_consumption_greater_than_or_equal_to: (optional)
+            The lower bound of the consumption-date range, expressed in RFC 3339 timestamp format. The value is inclusive (>=).
+
+        :param datetime time_consumption_less_than: (optional)
+            The upper bound of the consumption-date range, expressed in RFC 3339 timestamp format. The value is exclusive (<).
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.onesubscription.models.UsageLedgerSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/onesubscription/list_usage_ledgers.py.html>`__ to see an example of how to use list_usage_ledgers API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'compartmentId']
+        resource_path = "/subscriptionDetails/{subscriptionId}/usageLedger"
+        method = "GET"
+        operation_name = "list_usage_ledgers"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "time_consumption_greater_than_or_equal_to",
+            "time_consumption_less_than",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_usage_ledgers got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "subscriptionId": subscription_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeConsumption", "consumptionAmount"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "timeConsumptionGreaterThanOrEqualTo": kwargs.get("time_consumption_greater_than_or_equal_to", missing),
+            "timeConsumptionLessThan": kwargs.get("time_consumption_less_than", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[UsageLedgerSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[UsageLedgerSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,

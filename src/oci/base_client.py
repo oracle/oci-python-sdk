@@ -270,6 +270,9 @@ class OCIConnection(BaseHTTPSConnection):
         return rval
 
     def _send_output(self, message_body=None, *args, **kwargs):
+        # An early Expect response may have saved the previous request's status.
+        # Restore the normal parser before reading this request's response.
+        self.response_class = self._original_response_cls
         self._buffer.extend((b"", b""))
         msg = _to_bytes(self._buffer)
         del self._buffer[:]

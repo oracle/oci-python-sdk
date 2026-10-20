@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InvoicingProduct(object):
     """
-    Product description
+    Product description.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class InvoicingProduct(object):
     def part_number(self):
         """
         **[Required]** Gets the part_number of this InvoicingProduct.
-        Product part number
+        Product part number.
 
 
         :return: The part_number of this InvoicingProduct.
@@ -84,7 +84,7 @@ class InvoicingProduct(object):
     def part_number(self, part_number):
         """
         Sets the part_number of this InvoicingProduct.
-        Product part number
+        Product part number.
 
 
         :param part_number: The part_number of this InvoicingProduct.
@@ -96,7 +96,7 @@ class InvoicingProduct(object):
     def name(self):
         """
         **[Required]** Gets the name of this InvoicingProduct.
-        Product name
+        Product name.
 
 
         :return: The name of this InvoicingProduct.
@@ -108,7 +108,7 @@ class InvoicingProduct(object):
     def name(self, name):
         """
         Sets the name of this InvoicingProduct.
-        Product name
+        Product name.
 
 
         :param name: The name of this InvoicingProduct.
@@ -120,7 +120,7 @@ class InvoicingProduct(object):
     def unit_of_measure(self):
         """
         **[Required]** Gets the unit_of_measure of this InvoicingProduct.
-        Unit of Measure
+        Unit of measure.
 
 
         :return: The unit_of_measure of this InvoicingProduct.
@@ -132,7 +132,7 @@ class InvoicingProduct(object):
     def unit_of_measure(self, unit_of_measure):
         """
         Sets the unit_of_measure of this InvoicingProduct.
-        Unit of Measure
+        Unit of measure.
 
 
         :param unit_of_measure: The unit_of_measure of this InvoicingProduct.
@@ -144,7 +144,7 @@ class InvoicingProduct(object):
     def billing_category(self):
         """
         Gets the billing_category of this InvoicingProduct.
-        Metered service billing category
+        Metered service billing category.
 
 
         :return: The billing_category of this InvoicingProduct.
@@ -156,7 +156,7 @@ class InvoicingProduct(object):
     def billing_category(self, billing_category):
         """
         Sets the billing_category of this InvoicingProduct.
-        Metered service billing category
+        Metered service billing category.
 
 
         :param billing_category: The billing_category of this InvoicingProduct.
@@ -168,7 +168,7 @@ class InvoicingProduct(object):
     def product_category(self):
         """
         Gets the product_category of this InvoicingProduct.
-        Product category
+        Product category.
 
 
         :return: The product_category of this InvoicingProduct.
@@ -180,7 +180,7 @@ class InvoicingProduct(object):
     def product_category(self, product_category):
         """
         Sets the product_category of this InvoicingProduct.
-        Product category
+        Product category.
 
 
         :param product_category: The product_category of this InvoicingProduct.
@@ -192,7 +192,7 @@ class InvoicingProduct(object):
     def ucm_rate_card_part_type(self):
         """
         **[Required]** Gets the ucm_rate_card_part_type of this InvoicingProduct.
-        Rate card part type of Product
+        Rate card part type of product.
 
 
         :return: The ucm_rate_card_part_type of this InvoicingProduct.
@@ -204,7 +204,7 @@ class InvoicingProduct(object):
     def ucm_rate_card_part_type(self, ucm_rate_card_part_type):
         """
         Sets the ucm_rate_card_part_type of this InvoicingProduct.
-        Rate card part type of Product
+        Rate card part type of product.
 
 
         :param ucm_rate_card_part_type: The ucm_rate_card_part_type of this InvoicingProduct.

@@ -126,22 +126,22 @@ class SubscribedServiceClient(object):
 
     def get_subscribed_service(self, subscribed_service_id, **kwargs):
         """
-        This API returns the subscribed service details corresponding to the id provided
+        Returns the subscribed service details corresponding to the provided ID.
 
 
         :param str subscribed_service_id: (required)
-            The Subscribed Service Id
+            The subscribed service ID.
 
         :param list[str] fields: (optional)
             Partial response refers to an optimization technique offered
-            by the RESTful web APIs to return only the information
+            by the RESTful web APIs, to return only the information
             (fields) required by the client. In this mechanism, the client
             sends the required field names as the query parameters for
             an API to the server, and the server trims down the default
             response content by removing the fields that are not required
-            by the client. The parameter used to control what fields to
-            return should be a query string parameter called \"fields\" of
-            type array, and usecollectionFormat
+            by the client. The parameter used to control which fields to
+            return should be a query string parameter called \"fields\", of
+            an array type, and use collectionFormat.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -248,20 +248,20 @@ class SubscribedServiceClient(object):
 
     def list_subscribed_services(self, compartment_id, subscription_id, **kwargs):
         """
-        This list API returns all subscribed services for given Subscription ID
+        Returns all subscribed services for a given Subscription ID.
 
 
         :param str compartment_id: (required)
             The OCID of the root compartment.
 
         :param str subscription_id: (required)
-            Line level Subscription Id
+            Line level subscription ID.
 
         :param int order_line_id: (optional)
-            Order Line identifier at subscribed service level . This identifier is originated in Order Management module. Default is null.
+            Order line identifier at subscribed service level. This identifier originates from the order management module. Default is null.
 
         :param str status: (optional)
-            This param is used to filter subscribed services based on its status
+            This parameter filters subscribed services based on its status.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call. Default: (`50`)

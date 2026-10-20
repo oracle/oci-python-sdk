@@ -223,7 +223,7 @@ class InvoicingLocation(object):
     def tca_location_id(self):
         """
         Gets the tca_location_id of this InvoicingLocation.
-        TCA Location identifier.
+        TCA (Trading Community Architecture) location identifier.
 
 
         :return: The tca_location_id of this InvoicingLocation.
@@ -235,7 +235,7 @@ class InvoicingLocation(object):
     def tca_location_id(self, tca_location_id):
         """
         Sets the tca_location_id of this InvoicingLocation.
-        TCA Location identifier.
+        TCA (Trading Community Architecture) location identifier.
 
 
         :param tca_location_id: The tca_location_id of this InvoicingLocation.

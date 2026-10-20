@@ -126,7 +126,7 @@ class OrganizationSubscriptionClient(object):
 
     def list_organization_subscriptions(self, compartment_id, **kwargs):
         """
-        API that returns data for the list of subscription ids returned from Organizations API
+        Returns data for the list of subscription IDs returned from the Organizations API.
 
 
         :param str compartment_id: (required)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputedUsage(object):
     """
-    Computed Usage Summary object
+    Computed usage summary object.
     """
 
     #: A constant which can be used with the type property of a ComputedUsage.
@@ -267,7 +267,7 @@ class ComputedUsage(object):
     def time_created(self):
         """
         Gets the time_created of this ComputedUsage.
-        Computed Usage created time, expressed in RFC 3339 timestamp format.
+        Computed usage created time, expressed in RFC 3339 timestamp format.
 
 
         :return: The time_created of this ComputedUsage.
@@ -279,7 +279,7 @@ class ComputedUsage(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ComputedUsage.
-        Computed Usage created time, expressed in RFC 3339 timestamp format.
+        Computed usage created time, expressed in RFC 3339 timestamp format.
 
 
         :param time_created: The time_created of this ComputedUsage.
@@ -291,7 +291,7 @@ class ComputedUsage(object):
     def time_updated(self):
         """
         Gets the time_updated of this ComputedUsage.
-        Computed Usage updated time, expressed in RFC 3339 timestamp format.
+        Computed usage updated time, expressed in RFC 3339 timestamp format.
 
 
         :return: The time_updated of this ComputedUsage.
@@ -303,7 +303,7 @@ class ComputedUsage(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ComputedUsage.
-        Computed Usage updated time, expressed in RFC 3339 timestamp format.
+        Computed usage updated time, expressed in RFC 3339 timestamp format.
 
 
         :param time_updated: The time_updated of this ComputedUsage.
@@ -315,7 +315,7 @@ class ComputedUsage(object):
     def parent_subscribed_service_id(self):
         """
         Gets the parent_subscribed_service_id of this ComputedUsage.
-        Subscribed service line parent id
+        Subscribed service line parent ID.
 
 
         :return: The parent_subscribed_service_id of this ComputedUsage.
@@ -327,7 +327,7 @@ class ComputedUsage(object):
     def parent_subscribed_service_id(self, parent_subscribed_service_id):
         """
         Sets the parent_subscribed_service_id of this ComputedUsage.
-        Subscribed service line parent id
+        Subscribed service line parent ID.
 
 
         :param parent_subscribed_service_id: The parent_subscribed_service_id of this ComputedUsage.
@@ -359,7 +359,7 @@ class ComputedUsage(object):
     def plan_number(self):
         """
         Gets the plan_number of this ComputedUsage.
-        Subscription plan number
+        Subscription plan number.
 
 
         :return: The plan_number of this ComputedUsage.
@@ -371,7 +371,7 @@ class ComputedUsage(object):
     def plan_number(self, plan_number):
         """
         Sets the plan_number of this ComputedUsage.
-        Subscription plan number
+        Subscription plan number.
 
 
         :param plan_number: The plan_number of this ComputedUsage.
@@ -383,7 +383,7 @@ class ComputedUsage(object):
     def currency_code(self):
         """
         Gets the currency_code of this ComputedUsage.
-        Currency code
+        Currency code.
 
 
         :return: The currency_code of this ComputedUsage.
@@ -395,7 +395,7 @@ class ComputedUsage(object):
     def currency_code(self, currency_code):
         """
         Sets the currency_code of this ComputedUsage.
-        Currency code
+        Currency code.
 
 
         :param currency_code: The currency_code of this ComputedUsage.
@@ -407,7 +407,7 @@ class ComputedUsage(object):
     def rate_card_tierd_id(self):
         """
         Gets the rate_card_tierd_id of this ComputedUsage.
-        References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
+        References the tier in the rate card for the associated usage (OCI uses the same reference to cross-reference for correctness in CSV Usage Reports), obtained from the OBSCNTR_IPT_PRODUCTTIER entity.
 
 
         :return: The rate_card_tierd_id of this ComputedUsage.
@@ -419,7 +419,7 @@ class ComputedUsage(object):
     def rate_card_tierd_id(self, rate_card_tierd_id):
         """
         Sets the rate_card_tierd_id of this ComputedUsage.
-        References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
+        References the tier in the rate card for the associated usage (OCI uses the same reference to cross-reference for correctness in CSV Usage Reports), obtained from the OBSCNTR_IPT_PRODUCTTIER entity.
 
 
         :param rate_card_tierd_id: The rate_card_tierd_id of this ComputedUsage.
@@ -431,7 +431,7 @@ class ComputedUsage(object):
     def rate_card_id(self):
         """
         Gets the rate_card_id of this ComputedUsage.
-        Ratecard Id at subscribed service level
+        Ratecard ID at subscribed service level.
 
 
         :return: The rate_card_id of this ComputedUsage.
@@ -443,7 +443,7 @@ class ComputedUsage(object):
     def rate_card_id(self, rate_card_id):
         """
         Sets the rate_card_id of this ComputedUsage.
-        Ratecard Id at subscribed service level
+        Ratecard ID at subscribed service level.
 
 
         :param rate_card_id: The rate_card_id of this ComputedUsage.
@@ -455,7 +455,7 @@ class ComputedUsage(object):
     def compute_source(self):
         """
         Gets the compute_source of this ComputedUsage.
-        SPM Internal compute records source .
+        SPM (Subscription Plan Management) internal compute records source.
 
 
         :return: The compute_source of this ComputedUsage.
@@ -467,7 +467,7 @@ class ComputedUsage(object):
     def compute_source(self, compute_source):
         """
         Sets the compute_source of this ComputedUsage.
-        SPM Internal compute records source .
+        SPM (Subscription Plan Management) internal compute records source.
 
 
         :param compute_source: The compute_source of this ComputedUsage.
@@ -479,7 +479,7 @@ class ComputedUsage(object):
     def data_center(self):
         """
         Gets the data_center of this ComputedUsage.
-        Data Center Attribute as sent by MQS to SPM.
+        Data center attribute as sent by the meterering system to SPM.
 
 
         :return: The data_center of this ComputedUsage.
@@ -491,7 +491,7 @@ class ComputedUsage(object):
     def data_center(self, data_center):
         """
         Sets the data_center of this ComputedUsage.
-        Data Center Attribute as sent by MQS to SPM.
+        Data center attribute as sent by the meterering system to SPM.
 
 
         :param data_center: The data_center of this ComputedUsage.
@@ -503,7 +503,7 @@ class ComputedUsage(object):
     def mqs_message_id(self):
         """
         Gets the mqs_message_id of this ComputedUsage.
-        MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
+        The meterering system identfier sent to SPM. SPM does not transform this attribute and is received as-is.
 
 
         :return: The mqs_message_id of this ComputedUsage.
@@ -515,7 +515,7 @@ class ComputedUsage(object):
     def mqs_message_id(self, mqs_message_id):
         """
         Sets the mqs_message_id of this ComputedUsage.
-        MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
+        The meterering system identfier sent to SPM. SPM does not transform this attribute and is received as-is.
 
 
         :param mqs_message_id: The mqs_message_id of this ComputedUsage.
@@ -527,7 +527,7 @@ class ComputedUsage(object):
     def id(self):
         """
         **[Required]** Gets the id of this ComputedUsage.
-        SPM Internal computed usage Id , 32 character string
+        SPM internal computed usage ID, which is a 32-character string.
 
 
         :return: The id of this ComputedUsage.
@@ -539,7 +539,7 @@ class ComputedUsage(object):
     def id(self, id):
         """
         Sets the id of this ComputedUsage.
-        SPM Internal computed usage Id , 32 character string
+        SPM internal computed usage ID, which is a 32-character string.
 
 
         :param id: The id of this ComputedUsage.
@@ -551,7 +551,7 @@ class ComputedUsage(object):
     def quantity(self):
         """
         Gets the quantity of this ComputedUsage.
-        Total Quantity that was used for computation
+        Total quantity that was used for computation.
 
 
         :return: The quantity of this ComputedUsage.
@@ -563,7 +563,7 @@ class ComputedUsage(object):
     def quantity(self, quantity):
         """
         Sets the quantity of this ComputedUsage.
-        Total Quantity that was used for computation
+        Total quantity that was used for computation.
 
 
         :param quantity: The quantity of this ComputedUsage.
@@ -575,7 +575,7 @@ class ComputedUsage(object):
     def usage_number(self):
         """
         Gets the usage_number of this ComputedUsage.
-        SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
+        SPM internal usage line number identifier in SPM, originating from the metered services entity.
 
 
         :return: The usage_number of this ComputedUsage.
@@ -587,7 +587,7 @@ class ComputedUsage(object):
     def usage_number(self, usage_number):
         """
         Sets the usage_number of this ComputedUsage.
-        SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
+        SPM internal usage line number identifier in SPM, originating from the metered services entity.
 
 
         :param usage_number: The usage_number of this ComputedUsage.
@@ -599,7 +599,7 @@ class ComputedUsage(object):
     def original_usage_number(self):
         """
         Gets the original_usage_number of this ComputedUsage.
-        SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
+        SPM internal original usage line number identifier in SPM, originating from the metered services entity.
 
 
         :return: The original_usage_number of this ComputedUsage.
@@ -611,7 +611,7 @@ class ComputedUsage(object):
     def original_usage_number(self, original_usage_number):
         """
         Sets the original_usage_number of this ComputedUsage.
-        SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
+        SPM internal original usage line number identifier in SPM, originating from the metered services entity.
 
 
         :param original_usage_number: The original_usage_number of this ComputedUsage.
@@ -623,7 +623,7 @@ class ComputedUsage(object):
     def commitment_service_id(self):
         """
         Gets the commitment_service_id of this ComputedUsage.
-        Subscribed service commitmentId.
+        Subscribed service commitment ID.
 
 
         :return: The commitment_service_id of this ComputedUsage.
@@ -635,7 +635,7 @@ class ComputedUsage(object):
     def commitment_service_id(self, commitment_service_id):
         """
         Sets the commitment_service_id of this ComputedUsage.
-        Subscribed service commitmentId.
+        Subscribed service commitment ID.
 
 
         :param commitment_service_id: The commitment_service_id of this ComputedUsage.
@@ -647,7 +647,7 @@ class ComputedUsage(object):
     def is_invoiced(self):
         """
         Gets the is_invoiced of this ComputedUsage.
-        Invoicing status for the aggregated compute usage
+        Invoicing status for the aggregated compute usage.
 
 
         :return: The is_invoiced of this ComputedUsage.
@@ -659,7 +659,7 @@ class ComputedUsage(object):
     def is_invoiced(self, is_invoiced):
         """
         Sets the is_invoiced of this ComputedUsage.
-        Invoicing status for the aggregated compute usage
+        Invoicing status for the aggregated compute usage.
 
 
         :param is_invoiced: The is_invoiced of this ComputedUsage.
@@ -701,7 +701,7 @@ class ComputedUsage(object):
     def time_of_arrival(self):
         """
         Gets the time_of_arrival of this ComputedUsage.
-        Usae computation date, expressed in RFC 3339 timestamp format.
+        Usage computation date, expressed in RFC 3339 timestamp format.
 
 
         :return: The time_of_arrival of this ComputedUsage.
@@ -713,7 +713,7 @@ class ComputedUsage(object):
     def time_of_arrival(self, time_of_arrival):
         """
         Sets the time_of_arrival of this ComputedUsage.
-        Usae computation date, expressed in RFC 3339 timestamp format.
+        Usage computation date, expressed in RFC 3339 timestamp format.
 
 
         :param time_of_arrival: The time_of_arrival of this ComputedUsage.
@@ -725,7 +725,7 @@ class ComputedUsage(object):
     def time_metered_on(self):
         """
         Gets the time_metered_on of this ComputedUsage.
-        Metered Service date, expressed in RFC 3339 timestamp format.
+        Metered service date, expressed in RFC 3339 timestamp format.
 
 
         :return: The time_metered_on of this ComputedUsage.
@@ -737,7 +737,7 @@ class ComputedUsage(object):
     def time_metered_on(self, time_metered_on):
         """
         Sets the time_metered_on of this ComputedUsage.
-        Metered Service date, expressed in RFC 3339 timestamp format.
+        Metered service date, expressed in RFC 3339 timestamp format.
 
 
         :param time_metered_on: The time_metered_on of this ComputedUsage.
@@ -749,7 +749,7 @@ class ComputedUsage(object):
     def net_unit_price(self):
         """
         Gets the net_unit_price of this ComputedUsage.
-        Net Unit Price for the product in consideration, price actual.
+        Net unit price for the product in consideration, price actual.
 
 
         :return: The net_unit_price of this ComputedUsage.
@@ -761,7 +761,7 @@ class ComputedUsage(object):
     def net_unit_price(self, net_unit_price):
         """
         Sets the net_unit_price of this ComputedUsage.
-        Net Unit Price for the product in consideration, price actual.
+        Net unit price for the product in consideration, price actual.
 
 
         :param net_unit_price: The net_unit_price of this ComputedUsage.
@@ -773,7 +773,7 @@ class ComputedUsage(object):
     def cost_rounded(self):
         """
         Gets the cost_rounded of this ComputedUsage.
-        Computed Line Amount rounded.
+        Computed rounded line amount.
 
 
         :return: The cost_rounded of this ComputedUsage.
@@ -785,7 +785,7 @@ class ComputedUsage(object):
     def cost_rounded(self, cost_rounded):
         """
         Sets the cost_rounded of this ComputedUsage.
-        Computed Line Amount rounded.
+        Computed rounded line amount.
 
 
         :param cost_rounded: The cost_rounded of this ComputedUsage.
@@ -797,7 +797,7 @@ class ComputedUsage(object):
     def cost(self):
         """
         Gets the cost of this ComputedUsage.
-        Computed Line Amount not rounded
+        Computed unrounded line Amount.
 
 
         :return: The cost of this ComputedUsage.
@@ -809,7 +809,7 @@ class ComputedUsage(object):
     def cost(self, cost):
         """
         Sets the cost of this ComputedUsage.
-        Computed Line Amount not rounded
+        Computed unrounded line Amount.
 
 
         :param cost: The cost of this ComputedUsage.
@@ -841,7 +841,7 @@ class ComputedUsage(object):
     def unit_of_measure(self):
         """
         Gets the unit_of_measure of this ComputedUsage.
-        Unit of Messure
+        Unit of measure.
 
 
         :return: The unit_of_measure of this ComputedUsage.
@@ -853,7 +853,7 @@ class ComputedUsage(object):
     def unit_of_measure(self, unit_of_measure):
         """
         Sets the unit_of_measure of this ComputedUsage.
-        Unit of Messure
+        Unit of measure.
 
 
         :param unit_of_measure: The unit_of_measure of this ComputedUsage.

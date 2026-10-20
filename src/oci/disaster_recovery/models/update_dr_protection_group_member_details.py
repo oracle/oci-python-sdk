@@ -68,6 +68,10 @@ class UpdateDrProtectionGroupMemberDetails(object):
     MEMBER_TYPE_MYSQL_DB_SYSTEM = "MYSQL_DB_SYSTEM"
 
     #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "POSTGRESQL_DB_SYSTEM"
+    MEMBER_TYPE_POSTGRESQL_DB_SYSTEM = "POSTGRESQL_DB_SYSTEM"
+
+    #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
     #: This constant has a value of "INTEGRATION_INSTANCE"
     MEMBER_TYPE_INTEGRATION_INSTANCE = "INTEGRATION_INSTANCE"
 
@@ -85,6 +89,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberVolumeGroupDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberLoadBalancerDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberDatabaseDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberPostgresqlDbSystemDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberOkeClusterDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberAutonomousContainerDatabaseDetails`
@@ -99,7 +104,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "POSTGRESQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
         :type member_type: str
 
         """
@@ -148,6 +153,9 @@ class UpdateDrProtectionGroupMemberDetails(object):
 
         if type == 'DATABASE':
             return 'UpdateDrProtectionGroupMemberDatabaseDetails'
+
+        if type == 'POSTGRESQL_DB_SYSTEM':
+            return 'UpdateDrProtectionGroupMemberPostgresqlDbSystemDetails'
 
         if type == 'OKE_CLUSTER':
             return 'UpdateDrProtectionGroupMemberOkeClusterDetails'
@@ -200,7 +208,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_type of this UpdateDrProtectionGroupMemberDetails.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "POSTGRESQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
 
 
         :return: The member_type of this UpdateDrProtectionGroupMemberDetails.
@@ -218,7 +226,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         :param member_type: The member_type of this UpdateDrProtectionGroupMemberDetails.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "POSTGRESQL_DB_SYSTEM", "INTEGRATION_INSTANCE"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `member_type`, must be None or one of {allowed_values}"

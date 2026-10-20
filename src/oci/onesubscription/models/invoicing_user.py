@@ -110,7 +110,7 @@ class InvoicingUser(object):
     def user_name(self):
         """
         Gets the user_name of this InvoicingUser.
-        userName.
+        User name.
 
 
         :return: The user_name of this InvoicingUser.
@@ -122,7 +122,7 @@ class InvoicingUser(object):
     def user_name(self, user_name):
         """
         Sets the user_name of this InvoicingUser.
-        userName.
+        User name.
 
 
         :param user_name: The user_name of this InvoicingUser.
@@ -206,7 +206,7 @@ class InvoicingUser(object):
     def tca_contact_id(self):
         """
         Gets the tca_contact_id of this InvoicingUser.
-        TCA contact ID.
+        TCA (Trading Community Architecture) contact ID.
 
 
         :return: The tca_contact_id of this InvoicingUser.
@@ -218,7 +218,7 @@ class InvoicingUser(object):
     def tca_contact_id(self, tca_contact_id):
         """
         Sets the tca_contact_id of this InvoicingUser.
-        TCA contact ID.
+        TCA (Trading Community Architecture) contact ID.
 
 
         :param tca_contact_id: The tca_contact_id of this InvoicingUser.

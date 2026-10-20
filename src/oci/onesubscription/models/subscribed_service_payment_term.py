@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SubscribedServicePaymentTerm(object):
     """
-    Payment Term details
+    Payment term details.
     """
 
     def __init__(self, **kwargs):
@@ -86,7 +86,7 @@ class SubscribedServicePaymentTerm(object):
     def name(self):
         """
         Gets the name of this SubscribedServicePaymentTerm.
-        Payment Term name
+        Payment term name.
 
 
         :return: The name of this SubscribedServicePaymentTerm.
@@ -98,7 +98,7 @@ class SubscribedServicePaymentTerm(object):
     def name(self, name):
         """
         Sets the name of this SubscribedServicePaymentTerm.
-        Payment Term name
+        Payment term name.
 
 
         :param name: The name of this SubscribedServicePaymentTerm.
@@ -110,7 +110,7 @@ class SubscribedServicePaymentTerm(object):
     def value(self):
         """
         Gets the value of this SubscribedServicePaymentTerm.
-        Payment Term value
+        Payment term value.
 
 
         :return: The value of this SubscribedServicePaymentTerm.
@@ -122,7 +122,7 @@ class SubscribedServicePaymentTerm(object):
     def value(self, value):
         """
         Sets the value of this SubscribedServicePaymentTerm.
-        Payment Term value
+        Payment term value.
 
 
         :param value: The value of this SubscribedServicePaymentTerm.
@@ -134,7 +134,7 @@ class SubscribedServicePaymentTerm(object):
     def description(self):
         """
         Gets the description of this SubscribedServicePaymentTerm.
-        Payment term Description
+        Payment term description.
 
 
         :return: The description of this SubscribedServicePaymentTerm.
@@ -146,7 +146,7 @@ class SubscribedServicePaymentTerm(object):
     def description(self, description):
         """
         Sets the description of this SubscribedServicePaymentTerm.
-        Payment term Description
+        Payment term description.
 
 
         :param description: The description of this SubscribedServicePaymentTerm.
@@ -158,7 +158,7 @@ class SubscribedServicePaymentTerm(object):
     def is_active(self):
         """
         Gets the is_active of this SubscribedServicePaymentTerm.
-        Payment term active flag
+        Payment term active parameter.
 
 
         :return: The is_active of this SubscribedServicePaymentTerm.
@@ -170,7 +170,7 @@ class SubscribedServicePaymentTerm(object):
     def is_active(self, is_active):
         """
         Sets the is_active of this SubscribedServicePaymentTerm.
-        Payment term active flag
+        Payment term active parameter.
 
 
         :param is_active: The is_active of this SubscribedServicePaymentTerm.
@@ -182,7 +182,7 @@ class SubscribedServicePaymentTerm(object):
     def time_created(self):
         """
         Gets the time_created of this SubscribedServicePaymentTerm.
-        Payment term last update date
+        Payment term last update date.
 
 
         :return: The time_created of this SubscribedServicePaymentTerm.
@@ -194,7 +194,7 @@ class SubscribedServicePaymentTerm(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SubscribedServicePaymentTerm.
-        Payment term last update date
+        Payment term last update date.
 
 
         :param time_created: The time_created of this SubscribedServicePaymentTerm.
@@ -206,7 +206,7 @@ class SubscribedServicePaymentTerm(object):
     def created_by(self):
         """
         Gets the created_by of this SubscribedServicePaymentTerm.
-        User that created the Payment term
+        User that created the payment term.
 
 
         :return: The created_by of this SubscribedServicePaymentTerm.
@@ -218,7 +218,7 @@ class SubscribedServicePaymentTerm(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this SubscribedServicePaymentTerm.
-        User that created the Payment term
+        User that created the payment term.
 
 
         :param created_by: The created_by of this SubscribedServicePaymentTerm.
@@ -230,7 +230,7 @@ class SubscribedServicePaymentTerm(object):
     def time_updated(self):
         """
         Gets the time_updated of this SubscribedServicePaymentTerm.
-        Payment term last update date
+        Payment term last update date.
 
 
         :return: The time_updated of this SubscribedServicePaymentTerm.
@@ -242,7 +242,7 @@ class SubscribedServicePaymentTerm(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this SubscribedServicePaymentTerm.
-        Payment term last update date
+        Payment term last update date.
 
 
         :param time_updated: The time_updated of this SubscribedServicePaymentTerm.
@@ -254,7 +254,7 @@ class SubscribedServicePaymentTerm(object):
     def updated_by(self):
         """
         Gets the updated_by of this SubscribedServicePaymentTerm.
-        User that updated the Payment term
+        User that updated the payment term.
 
 
         :return: The updated_by of this SubscribedServicePaymentTerm.
@@ -266,7 +266,7 @@ class SubscribedServicePaymentTerm(object):
     def updated_by(self, updated_by):
         """
         Sets the updated_by of this SubscribedServicePaymentTerm.
-        User that updated the Payment term
+        User that updated the payment term.
 
 
         :param updated_by: The updated_by of this SubscribedServicePaymentTerm.

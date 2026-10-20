@@ -27,7 +27,7 @@ class DrProtectionGroupMemberComputeInstanceMovable(DrProtectionGroupMember):
 
         :param member_type:
             The value to assign to the member_type property of this DrProtectionGroupMemberComputeInstanceMovable.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OKE_CLUSTER", "OBJECT_STORAGE_BUCKET", "MYSQL_DB_SYSTEM", "POSTGRESQL_DB_SYSTEM", "INTEGRATION_INSTANCE"
         :type member_type: str
 
         :param is_retain_fault_domain:
@@ -41,6 +41,10 @@ class DrProtectionGroupMemberComputeInstanceMovable(DrProtectionGroupMember):
         :param vnic_mappings:
             The value to assign to the vnic_mappings property of this DrProtectionGroupMemberComputeInstanceMovable.
         :type vnic_mappings: list[oci.disaster_recovery.models.ComputeInstanceMovableVnicMapping]
+
+        :param dr_drill_properties:
+            The value to assign to the dr_drill_properties property of this DrProtectionGroupMemberComputeInstanceMovable.
+        :type dr_drill_properties: oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceDrillProperties
 
         :param destination_compartment_id:
             The value to assign to the destination_compartment_id property of this DrProtectionGroupMemberComputeInstanceMovable.
@@ -61,6 +65,7 @@ class DrProtectionGroupMemberComputeInstanceMovable(DrProtectionGroupMember):
             'is_retain_fault_domain': 'bool',
             'destination_capacity_reservation_id': 'str',
             'vnic_mappings': 'list[ComputeInstanceMovableVnicMapping]',
+            'dr_drill_properties': 'DrProtectionGroupMemberComputeInstanceDrillProperties',
             'destination_compartment_id': 'str',
             'destination_dedicated_vm_host_id': 'str',
             'file_system_operations': 'list[ComputeInstanceMovableFileSystemOperation]'
@@ -71,6 +76,7 @@ class DrProtectionGroupMemberComputeInstanceMovable(DrProtectionGroupMember):
             'is_retain_fault_domain': 'isRetainFaultDomain',
             'destination_capacity_reservation_id': 'destinationCapacityReservationId',
             'vnic_mappings': 'vnicMappings',
+            'dr_drill_properties': 'drDrillProperties',
             'destination_compartment_id': 'destinationCompartmentId',
             'destination_dedicated_vm_host_id': 'destinationDedicatedVmHostId',
             'file_system_operations': 'fileSystemOperations'
@@ -80,6 +86,7 @@ class DrProtectionGroupMemberComputeInstanceMovable(DrProtectionGroupMember):
         self._is_retain_fault_domain = None
         self._destination_capacity_reservation_id = None
         self._vnic_mappings = None
+        self._dr_drill_properties = None
         self._destination_compartment_id = None
         self._destination_dedicated_vm_host_id = None
         self._file_system_operations = None
@@ -170,6 +177,26 @@ class DrProtectionGroupMemberComputeInstanceMovable(DrProtectionGroupMember):
         :type: list[oci.disaster_recovery.models.ComputeInstanceMovableVnicMapping]
         """
         self._vnic_mappings = vnic_mappings
+
+    @property
+    def dr_drill_properties(self):
+        """
+        Gets the dr_drill_properties of this DrProtectionGroupMemberComputeInstanceMovable.
+
+        :return: The dr_drill_properties of this DrProtectionGroupMemberComputeInstanceMovable.
+        :rtype: oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceDrillProperties
+        """
+        return self._dr_drill_properties
+
+    @dr_drill_properties.setter
+    def dr_drill_properties(self, dr_drill_properties):
+        """
+        Sets the dr_drill_properties of this DrProtectionGroupMemberComputeInstanceMovable.
+
+        :param dr_drill_properties: The dr_drill_properties of this DrProtectionGroupMemberComputeInstanceMovable.
+        :type: oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceDrillProperties
+        """
+        self._dr_drill_properties = dr_drill_properties
 
     @property
     def destination_compartment_id(self):

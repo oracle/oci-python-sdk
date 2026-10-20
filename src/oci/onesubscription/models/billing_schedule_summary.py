@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BillingScheduleSummary(object):
     """
-    Billing schedule details related to Subscription Id
+    Billing schedule details related to subscription ID.
     """
 
     #: A constant which can be used with the invoice_status property of a BillingScheduleSummary.
@@ -131,7 +131,7 @@ class BillingScheduleSummary(object):
     def subscribed_service_id(self):
         """
         Gets the subscribed_service_id of this BillingScheduleSummary.
-        SPM internal Subscribed Service ID
+        SPM (Subscription Plan Management) internal subscribed service ID.
 
 
         :return: The subscribed_service_id of this BillingScheduleSummary.
@@ -143,7 +143,7 @@ class BillingScheduleSummary(object):
     def subscribed_service_id(self, subscribed_service_id):
         """
         Sets the subscribed_service_id of this BillingScheduleSummary.
-        SPM internal Subscribed Service ID
+        SPM (Subscription Plan Management) internal subscribed service ID.
 
 
         :param subscribed_service_id: The subscribed_service_id of this BillingScheduleSummary.
@@ -155,7 +155,7 @@ class BillingScheduleSummary(object):
     def time_start(self):
         """
         Gets the time_start of this BillingScheduleSummary.
-        Billing schedule start date
+        Billing schedule start date.
 
 
         :return: The time_start of this BillingScheduleSummary.
@@ -167,7 +167,7 @@ class BillingScheduleSummary(object):
     def time_start(self, time_start):
         """
         Sets the time_start of this BillingScheduleSummary.
-        Billing schedule start date
+        Billing schedule start date.
 
 
         :param time_start: The time_start of this BillingScheduleSummary.
@@ -179,7 +179,7 @@ class BillingScheduleSummary(object):
     def time_end(self):
         """
         Gets the time_end of this BillingScheduleSummary.
-        Billing schedule end date
+        Billing schedule end date.
 
 
         :return: The time_end of this BillingScheduleSummary.
@@ -191,7 +191,7 @@ class BillingScheduleSummary(object):
     def time_end(self, time_end):
         """
         Sets the time_end of this BillingScheduleSummary.
-        Billing schedule end date
+        Billing schedule end date.
 
 
         :param time_end: The time_end of this BillingScheduleSummary.
@@ -203,7 +203,7 @@ class BillingScheduleSummary(object):
     def time_invoicing(self):
         """
         Gets the time_invoicing of this BillingScheduleSummary.
-        Billing schedule invoicing date
+        Billing schedule invoicing date.
 
 
         :return: The time_invoicing of this BillingScheduleSummary.
@@ -215,7 +215,7 @@ class BillingScheduleSummary(object):
     def time_invoicing(self, time_invoicing):
         """
         Sets the time_invoicing of this BillingScheduleSummary.
-        Billing schedule invoicing date
+        Billing schedule invoicing date.
 
 
         :param time_invoicing: The time_invoicing of this BillingScheduleSummary.
@@ -227,7 +227,7 @@ class BillingScheduleSummary(object):
     def invoice_status(self):
         """
         Gets the invoice_status of this BillingScheduleSummary.
-        Billing schedule invoice status
+        Billing schedule invoice status.
 
         Allowed values for this property are: "INVOICED", "NOT_INVOICED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -242,7 +242,7 @@ class BillingScheduleSummary(object):
     def invoice_status(self, invoice_status):
         """
         Sets the invoice_status of this BillingScheduleSummary.
-        Billing schedule invoice status
+        Billing schedule invoice status.
 
 
         :param invoice_status: The invoice_status of this BillingScheduleSummary.
@@ -257,7 +257,7 @@ class BillingScheduleSummary(object):
     def quantity(self):
         """
         Gets the quantity of this BillingScheduleSummary.
-        Billing schedule quantity
+        Billing schedule quantity.
 
 
         :return: The quantity of this BillingScheduleSummary.
@@ -269,7 +269,7 @@ class BillingScheduleSummary(object):
     def quantity(self, quantity):
         """
         Sets the quantity of this BillingScheduleSummary.
-        Billing schedule quantity
+        Billing schedule quantity.
 
 
         :param quantity: The quantity of this BillingScheduleSummary.
@@ -281,7 +281,7 @@ class BillingScheduleSummary(object):
     def net_unit_price(self):
         """
         Gets the net_unit_price of this BillingScheduleSummary.
-        Billing schedule net unit price
+        Billing schedule net unit price.
 
 
         :return: The net_unit_price of this BillingScheduleSummary.
@@ -293,7 +293,7 @@ class BillingScheduleSummary(object):
     def net_unit_price(self, net_unit_price):
         """
         Sets the net_unit_price of this BillingScheduleSummary.
-        Billing schedule net unit price
+        Billing schedule net unit price.
 
 
         :param net_unit_price: The net_unit_price of this BillingScheduleSummary.
@@ -305,7 +305,7 @@ class BillingScheduleSummary(object):
     def amount(self):
         """
         Gets the amount of this BillingScheduleSummary.
-        Billing schedule line net amount
+        Billing schedule line net amount.
 
 
         :return: The amount of this BillingScheduleSummary.
@@ -317,7 +317,7 @@ class BillingScheduleSummary(object):
     def amount(self, amount):
         """
         Sets the amount of this BillingScheduleSummary.
-        Billing schedule line net amount
+        Billing schedule line net amount.
 
 
         :param amount: The amount of this BillingScheduleSummary.
@@ -329,7 +329,7 @@ class BillingScheduleSummary(object):
     def billing_frequency(self):
         """
         Gets the billing_frequency of this BillingScheduleSummary.
-        Billing frequency
+        Billing frequency.
 
 
         :return: The billing_frequency of this BillingScheduleSummary.
@@ -341,7 +341,7 @@ class BillingScheduleSummary(object):
     def billing_frequency(self, billing_frequency):
         """
         Sets the billing_frequency of this BillingScheduleSummary.
-        Billing frequency
+        Billing frequency.
 
 
         :param billing_frequency: The billing_frequency of this BillingScheduleSummary.
@@ -353,7 +353,7 @@ class BillingScheduleSummary(object):
     def ar_invoice_number(self):
         """
         Gets the ar_invoice_number of this BillingScheduleSummary.
-        Indicates the associated AR Invoice Number
+        Indicates the associated accounts receivable invoice number.
 
 
         :return: The ar_invoice_number of this BillingScheduleSummary.
@@ -365,7 +365,7 @@ class BillingScheduleSummary(object):
     def ar_invoice_number(self, ar_invoice_number):
         """
         Sets the ar_invoice_number of this BillingScheduleSummary.
-        Indicates the associated AR Invoice Number
+        Indicates the associated accounts receivable invoice number.
 
 
         :param ar_invoice_number: The ar_invoice_number of this BillingScheduleSummary.
@@ -377,7 +377,7 @@ class BillingScheduleSummary(object):
     def ar_customer_transaction_id(self):
         """
         Gets the ar_customer_transaction_id of this BillingScheduleSummary.
-        Indicates the associated AR Customer transaction id a unique identifier existing on AR.
+        Indicates the associated accounts receivable customer transaction ID, which is a unique identifier existing on the accounts receivable.
 
 
         :return: The ar_customer_transaction_id of this BillingScheduleSummary.
@@ -389,7 +389,7 @@ class BillingScheduleSummary(object):
     def ar_customer_transaction_id(self, ar_customer_transaction_id):
         """
         Sets the ar_customer_transaction_id of this BillingScheduleSummary.
-        Indicates the associated AR Customer transaction id a unique identifier existing on AR.
+        Indicates the associated accounts receivable customer transaction ID, which is a unique identifier existing on the accounts receivable.
 
 
         :param ar_customer_transaction_id: The ar_customer_transaction_id of this BillingScheduleSummary.
@@ -401,7 +401,7 @@ class BillingScheduleSummary(object):
     def order_number(self):
         """
         Gets the order_number of this BillingScheduleSummary.
-        Order number associated with the Subscribed Service
+        Order number associated with the subscribed service.
 
 
         :return: The order_number of this BillingScheduleSummary.
@@ -413,7 +413,7 @@ class BillingScheduleSummary(object):
     def order_number(self, order_number):
         """
         Sets the order_number of this BillingScheduleSummary.
-        Order number associated with the Subscribed Service
+        Order number associated with the subscribed service.
 
 
         :param order_number: The order_number of this BillingScheduleSummary.

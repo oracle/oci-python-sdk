@@ -44,6 +44,10 @@ class CreateGenerativeAiProjectDetails(object):
             The value to assign to the short_term_memory_optimization_config property of this CreateGenerativeAiProjectDetails.
         :type short_term_memory_optimization_config: oci.generative_ai.models.ShortTermMemoryOptimizationConfig
 
+        :param sandbox_config:
+            The value to assign to the sandbox_config property of this CreateGenerativeAiProjectDetails.
+        :type sandbox_config: oci.generative_ai.models.SandboxConfig
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateGenerativeAiProjectDetails.
         :type freeform_tags: dict(str, str)
@@ -60,6 +64,7 @@ class CreateGenerativeAiProjectDetails(object):
             'conversation_config': 'ConversationConfig',
             'long_term_memory_config': 'LongTermMemoryConfig',
             'short_term_memory_optimization_config': 'ShortTermMemoryOptimizationConfig',
+            'sandbox_config': 'SandboxConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -70,6 +75,7 @@ class CreateGenerativeAiProjectDetails(object):
             'conversation_config': 'conversationConfig',
             'long_term_memory_config': 'longTermMemoryConfig',
             'short_term_memory_optimization_config': 'shortTermMemoryOptimizationConfig',
+            'sandbox_config': 'sandboxConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -79,6 +85,7 @@ class CreateGenerativeAiProjectDetails(object):
         self._conversation_config = None
         self._long_term_memory_config = None
         self._short_term_memory_optimization_config = None
+        self._sandbox_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -213,6 +220,26 @@ class CreateGenerativeAiProjectDetails(object):
         :type: oci.generative_ai.models.ShortTermMemoryOptimizationConfig
         """
         self._short_term_memory_optimization_config = short_term_memory_optimization_config
+
+    @property
+    def sandbox_config(self):
+        """
+        Gets the sandbox_config of this CreateGenerativeAiProjectDetails.
+
+        :return: The sandbox_config of this CreateGenerativeAiProjectDetails.
+        :rtype: oci.generative_ai.models.SandboxConfig
+        """
+        return self._sandbox_config
+
+    @sandbox_config.setter
+    def sandbox_config(self, sandbox_config):
+        """
+        Sets the sandbox_config of this CreateGenerativeAiProjectDetails.
+
+        :param sandbox_config: The sandbox_config of this CreateGenerativeAiProjectDetails.
+        :type: oci.generative_ai.models.SandboxConfig
+        """
+        self._sandbox_config = sandbox_config
 
     @property
     def freeform_tags(self):
