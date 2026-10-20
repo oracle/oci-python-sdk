@@ -33,6 +33,14 @@ class CreateDatabaseBase(object):
     #: This constant has a value of "DATAGUARD"
     SOURCE_DATAGUARD = "DATAGUARD"
 
+    #: A constant which can be used with the source property of a CreateDatabaseBase.
+    #: This constant has a value of "DB_SNAPSHOT"
+    SOURCE_DB_SNAPSHOT = "DB_SNAPSHOT"
+
+    #: A constant which can be used with the source property of a CreateDatabaseBase.
+    #: This constant has a value of "DB_CLONE"
+    SOURCE_DB_CLONE = "DB_CLONE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDatabaseBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -40,7 +48,9 @@ class CreateDatabaseBase(object):
 
         * :class:`~oci.database.models.CreateNewDatabaseDetails`
         * :class:`~oci.database.models.CreateStandByDatabaseDetails`
+        * :class:`~oci.database.models.CreateCloneDatabaseFromDatabase`
         * :class:`~oci.database.models.CreateDatabaseFromDatabase`
+        * :class:`~oci.database.models.CreateDatabaseFromSnapshot`
         * :class:`~oci.database.models.CreateDatabaseFromBackup`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -55,7 +65,7 @@ class CreateDatabaseBase(object):
 
         :param source:
             The value to assign to the source property of this CreateDatabaseBase.
-            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DATAGUARD"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DATAGUARD", "DB_SNAPSHOT", "DB_CLONE"
         :type source: str
 
         :param kms_key_id:
@@ -101,8 +111,14 @@ class CreateDatabaseBase(object):
         if type == 'DATAGUARD':
             return 'CreateStandByDatabaseDetails'
 
+        if type == 'DB_CLONE':
+            return 'CreateCloneDatabaseFromDatabase'
+
         if type == 'DATABASE':
             return 'CreateDatabaseFromDatabase'
+
+        if type == 'DB_SNAPSHOT':
+            return 'CreateDatabaseFromSnapshot'
 
         if type == 'DB_BACKUP':
             return 'CreateDatabaseFromBackup'
@@ -173,9 +189,11 @@ class CreateDatabaseBase(object):
         Use `NONE` for creating a new database.
         Use `DB_BACKUP` for creating a new database by restoring from a backup.
         Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup..
+        Use `DB_SNAPSHOT` for creating a new database by cloning from snapshot.
+        Use `DB_CLONE` for creating a new database by cloning from another database.
         The default is `NONE`.
 
-        Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DATAGUARD"
+        Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DATAGUARD", "DB_SNAPSHOT", "DB_CLONE"
 
 
         :return: The source of this CreateDatabaseBase.
@@ -191,13 +209,15 @@ class CreateDatabaseBase(object):
         Use `NONE` for creating a new database.
         Use `DB_BACKUP` for creating a new database by restoring from a backup.
         Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup..
+        Use `DB_SNAPSHOT` for creating a new database by cloning from snapshot.
+        Use `DB_CLONE` for creating a new database by cloning from another database.
         The default is `NONE`.
 
 
         :param source: The source of this CreateDatabaseBase.
         :type: str
         """
-        allowed_values = ["NONE", "DB_BACKUP", "DATABASE", "DATAGUARD"]
+        allowed_values = ["NONE", "DB_BACKUP", "DATABASE", "DATAGUARD", "DB_SNAPSHOT", "DB_CLONE"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 f"Invalid value for `source`, must be None or one of {allowed_values}"

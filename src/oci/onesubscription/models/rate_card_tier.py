@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RateCardTier(object):
     """
-    Rate Card Tier details
+    Rate card tier details.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class RateCardTier(object):
     def up_to_quantity(self):
         """
         Gets the up_to_quantity of this RateCardTier.
-        Rate card tier quantity range
+        Rate card tier quantity range.
 
 
         :return: The up_to_quantity of this RateCardTier.
@@ -63,7 +63,7 @@ class RateCardTier(object):
     def up_to_quantity(self, up_to_quantity):
         """
         Sets the up_to_quantity of this RateCardTier.
-        Rate card tier quantity range
+        Rate card tier quantity range.
 
 
         :param up_to_quantity: The up_to_quantity of this RateCardTier.
@@ -75,7 +75,7 @@ class RateCardTier(object):
     def net_unit_price(self):
         """
         Gets the net_unit_price of this RateCardTier.
-        Rate card tier net unit price
+        Rate card tier net unit price.
 
 
         :return: The net_unit_price of this RateCardTier.
@@ -87,7 +87,7 @@ class RateCardTier(object):
     def net_unit_price(self, net_unit_price):
         """
         Sets the net_unit_price of this RateCardTier.
-        Rate card tier net unit price
+        Rate card tier net unit price.
 
 
         :param net_unit_price: The net_unit_price of this RateCardTier.
@@ -99,7 +99,7 @@ class RateCardTier(object):
     def overage_price(self):
         """
         Gets the overage_price of this RateCardTier.
-        Rate card tier overage price
+        Rate card tier overage price.
 
 
         :return: The overage_price of this RateCardTier.
@@ -111,7 +111,7 @@ class RateCardTier(object):
     def overage_price(self, overage_price):
         """
         Sets the overage_price of this RateCardTier.
-        Rate card tier overage price
+        Rate card tier overage price.
 
 
         :param overage_price: The overage_price of this RateCardTier.

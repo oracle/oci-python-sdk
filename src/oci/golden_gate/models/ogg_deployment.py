@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OggDeployment(object):
     """
-    Deployment Data for an OggDeployment
+    Deployment Data for an OggDeployment.
     """
 
     #: A constant which can be used with the credential_store property of a OggDeployment.
@@ -105,6 +105,9 @@ class OggDeployment(object):
         **[Required]** Gets the deployment_name of this OggDeployment.
         The name given to the GoldenGate service deployment.
         The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        For non-data-replication deployment types that do not use a GoldenGate deployment name, this property is `NONE`.
+        Deprecated: This field is deprecated and will be removed after the date provided in the announcement:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
 
         :return: The deployment_name of this OggDeployment.
@@ -118,6 +121,9 @@ class OggDeployment(object):
         Sets the deployment_name of this OggDeployment.
         The name given to the GoldenGate service deployment.
         The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        For non-data-replication deployment types that do not use a GoldenGate deployment name, this property is `NONE`.
+        Deprecated: This field is deprecated and will be removed after the date provided in the announcement:
+        https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 
 
         :param deployment_name: The deployment_name of this OggDeployment.

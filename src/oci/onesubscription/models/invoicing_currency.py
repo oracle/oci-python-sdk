@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InvoicingCurrency(object):
     """
-    Currency details
+    Currency details.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class InvoicingCurrency(object):
     def name(self):
         """
         Gets the name of this InvoicingCurrency.
-        Currency name
+        Currency name.
 
 
         :return: The name of this InvoicingCurrency.
@@ -63,7 +63,7 @@ class InvoicingCurrency(object):
     def name(self, name):
         """
         Sets the name of this InvoicingCurrency.
-        Currency name
+        Currency name.
 
 
         :param name: The name of this InvoicingCurrency.
@@ -75,7 +75,7 @@ class InvoicingCurrency(object):
     def iso_code(self):
         """
         **[Required]** Gets the iso_code of this InvoicingCurrency.
-        Currency Code
+        Currency code.
 
 
         :return: The iso_code of this InvoicingCurrency.
@@ -87,7 +87,7 @@ class InvoicingCurrency(object):
     def iso_code(self, iso_code):
         """
         Sets the iso_code of this InvoicingCurrency.
-        Currency Code
+        Currency code.
 
 
         :param iso_code: The iso_code of this InvoicingCurrency.
@@ -99,7 +99,7 @@ class InvoicingCurrency(object):
     def std_precision(self):
         """
         Gets the std_precision of this InvoicingCurrency.
-        Standard Precision of the Currency
+        Standard precision of the currency.
 
 
         :return: The std_precision of this InvoicingCurrency.
@@ -111,7 +111,7 @@ class InvoicingCurrency(object):
     def std_precision(self, std_precision):
         """
         Sets the std_precision of this InvoicingCurrency.
-        Standard Precision of the Currency
+        Standard precision of the currency.
 
 
         :param std_precision: The std_precision of this InvoicingCurrency.

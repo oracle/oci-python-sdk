@@ -39,7 +39,7 @@ class CreateAiModelConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateAiModelConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "ICEBERG", "AI_MODEL"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL"
         :type connection_type: str
 
         :param display_name:
@@ -112,6 +112,10 @@ class CreateAiModelConnectionDetails(CreateConnectionDetails):
             Allowed values for this property are: "OCI_GENERATIVE_AI", "GEMINI", "OPEN_AI", "VOYAGE_AI"
         :type provider_type: str
 
+        :param provider_id:
+            The value to assign to the provider_id property of this CreateAiModelConnectionDetails.
+        :type provider_id: str
+
         :param model_key:
             The value to assign to the model_key property of this CreateAiModelConnectionDetails.
         :type model_key: str
@@ -144,6 +148,7 @@ class CreateAiModelConnectionDetails(CreateConnectionDetails):
             'security_attributes': 'dict(str, dict(str, object))',
             'technology_type': 'str',
             'provider_type': 'str',
+            'provider_id': 'str',
             'model_key': 'str',
             'max_input_chars': 'int',
             'auth_details': 'CreateAiModelAuthDetails'
@@ -167,6 +172,7 @@ class CreateAiModelConnectionDetails(CreateConnectionDetails):
             'security_attributes': 'securityAttributes',
             'technology_type': 'technologyType',
             'provider_type': 'providerType',
+            'provider_id': 'providerId',
             'model_key': 'modelKey',
             'max_input_chars': 'maxInputChars',
             'auth_details': 'authDetails'
@@ -189,6 +195,7 @@ class CreateAiModelConnectionDetails(CreateConnectionDetails):
         self._security_attributes = None
         self._technology_type = None
         self._provider_type = None
+        self._provider_id = None
         self._model_key = None
         self._max_input_chars = None
         self._auth_details = None
@@ -248,6 +255,36 @@ class CreateAiModelConnectionDetails(CreateConnectionDetails):
                 f"Invalid value for `provider_type`, must be None or one of {allowed_values}"
             )
         self._provider_type = provider_type
+
+    @property
+    def provider_id(self):
+        """
+        Gets the provider_id of this CreateAiModelConnectionDetails.
+        Optional identifier of the AI Provider Connection backing this AI Model Connection.
+        When provided, it must reference an existing Active connection of type `AI_PROVIDER`.
+        When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection.
+        When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+
+
+        :return: The provider_id of this CreateAiModelConnectionDetails.
+        :rtype: str
+        """
+        return self._provider_id
+
+    @provider_id.setter
+    def provider_id(self, provider_id):
+        """
+        Sets the provider_id of this CreateAiModelConnectionDetails.
+        Optional identifier of the AI Provider Connection backing this AI Model Connection.
+        When provided, it must reference an existing Active connection of type `AI_PROVIDER`.
+        When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection.
+        When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+
+
+        :param provider_id: The provider_id of this CreateAiModelConnectionDetails.
+        :type: str
+        """
+        self._provider_id = provider_id
 
     @property
     def model_key(self):

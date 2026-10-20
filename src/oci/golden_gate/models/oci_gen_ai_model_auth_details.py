@@ -164,7 +164,7 @@ class OciGenAiModelAuthDetails(AiModelAuthDetails):
         """
         Gets the region of this OciGenAiModelAuthDetails.
         The name of the region. e.g.: us-ashburn-1
-        If the region is not provided, backend will default to the default region.
+        If the region is not provided, backend will default to the current region.
 
 
         :return: The region of this OciGenAiModelAuthDetails.
@@ -177,7 +177,7 @@ class OciGenAiModelAuthDetails(AiModelAuthDetails):
         """
         Sets the region of this OciGenAiModelAuthDetails.
         The name of the region. e.g.: us-ashburn-1
-        If the region is not provided, backend will default to the default region.
+        If the region is not provided, backend will default to the current region.
 
 
         :param region: The region of this OciGenAiModelAuthDetails.

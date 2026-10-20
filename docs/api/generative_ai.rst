@@ -19,6 +19,9 @@ Generative Ai
     :template: autosummary/model_class.rst
 
     oci.generative_ai.models.AddArtifactDetails
+    oci.generative_ai.models.AllocatableGpuCollection
+    oci.generative_ai.models.AllocatableGpuSummary
+    oci.generative_ai.models.AllowedDomain
     oci.generative_ai.models.ApiKey
     oci.generative_ai.models.ApiKeyCollection
     oci.generative_ai.models.ApiKeyItem
@@ -37,6 +40,7 @@ Generative Ai
     oci.generative_ai.models.ChangeRoutingProfileCompartmentDetails
     oci.generative_ai.models.ChangeSemanticStoreCompartmentDetails
     oci.generative_ai.models.ChatModelMetrics
+    oci.generative_ai.models.ComputeCapacityReservation
     oci.generative_ai.models.CondenserConfig
     oci.generative_ai.models.ConnectorConfiguration
     oci.generative_ai.models.ContentModerationConfig
@@ -57,12 +61,14 @@ Generative Ai
     oci.generative_ai.models.CreateImportedModelDetails
     oci.generative_ai.models.CreateModelDetails
     oci.generative_ai.models.CreateRoutingProfileDetails
+    oci.generative_ai.models.CreateSandboxWarmPoolDetails
     oci.generative_ai.models.CreateSchemasDatabaseToolsConnectionDetails
     oci.generative_ai.models.CreateSchemasDetails
     oci.generative_ai.models.CreateSemanticStoreDetails
     oci.generative_ai.models.CreateSingleDockerArtifactDetails
     oci.generative_ai.models.CreateVectorStoreConnectorDetails
     oci.generative_ai.models.CreateVectorStoreConnectorFileSyncDetails
+    oci.generative_ai.models.CustomSandboxOutboundNetworkingConfig
     oci.generative_ai.models.CustomSemanticStoreModelSelection
     oci.generative_ai.models.DataSourceDatabaseToolsConnectionDetails
     oci.generative_ai.models.DataSourceDetails
@@ -91,6 +97,7 @@ Generative Ai
     oci.generative_ai.models.GenerativeAiProject
     oci.generative_ai.models.GenerativeAiProjectCollection
     oci.generative_ai.models.GenerativeAiProjectSummary
+    oci.generative_ai.models.GpuAllocation
     oci.generative_ai.models.HostedApplication
     oci.generative_ai.models.HostedApplicationBase
     oci.generative_ai.models.HostedApplicationCollection
@@ -113,6 +120,7 @@ Generative Ai
     oci.generative_ai.models.LlmSelection
     oci.generative_ai.models.LongTermMemoryConfig
     oci.generative_ai.models.LoraTrainingConfig
+    oci.generative_ai.models.ManagedSandboxOutboundNetworkingConfig
     oci.generative_ai.models.Model
     oci.generative_ai.models.ModelCollection
     oci.generative_ai.models.ModelConfig
@@ -142,6 +150,21 @@ Generative Ai
     oci.generative_ai.models.RoutingProfile
     oci.generative_ai.models.RoutingProfileCollection
     oci.generative_ai.models.RoutingProfileSummary
+    oci.generative_ai.models.SandboxAllowAllNetworkPolicy
+    oci.generative_ai.models.SandboxAllowNetworkPolicy
+    oci.generative_ai.models.SandboxConfig
+    oci.generative_ai.models.SandboxCredentialInjectionHeader
+    oci.generative_ai.models.SandboxCredentialInjectionRule
+    oci.generative_ai.models.SandboxCredentialProfile
+    oci.generative_ai.models.SandboxDenyAllNetworkPolicy
+    oci.generative_ai.models.SandboxHttpHeaderCredentialInjectionRule
+    oci.generative_ai.models.SandboxNetworkPolicy
+    oci.generative_ai.models.SandboxOutboundNetworkingConfig
+    oci.generative_ai.models.SandboxWarmPool
+    oci.generative_ai.models.SandboxWarmPoolCollection
+    oci.generative_ai.models.SandboxWarmPoolConfig
+    oci.generative_ai.models.SandboxWarmPoolRuntimeStatus
+    oci.generative_ai.models.SandboxWarmPoolSummary
     oci.generative_ai.models.ScalingConfig
     oci.generative_ai.models.ScheduleConfig
     oci.generative_ai.models.ScheduleCronConfig
@@ -173,6 +196,7 @@ Generative Ai
     oci.generative_ai.models.UpdateImportedModelDetails
     oci.generative_ai.models.UpdateModelDetails
     oci.generative_ai.models.UpdateRoutingProfileDetails
+    oci.generative_ai.models.UpdateSandboxWarmPoolDetails
     oci.generative_ai.models.UpdateSemanticStoreDetails
     oci.generative_ai.models.UpdateVectorStoreConnectorDetails
     oci.generative_ai.models.VanillaTrainingConfig

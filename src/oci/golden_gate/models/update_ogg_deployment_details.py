@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateOggDeploymentDetails(object):
     """
-    Deployment Details for updating an OggDeployment
+    Deployment Details for updating an OggDeployment.
     """
 
     #: A constant which can be used with the credential_store property of a UpdateOggDeploymentDetails.

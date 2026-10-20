@@ -33,9 +33,11 @@ Onesubscription
     :template: autosummary/model_class.rst
 
     oci.onesubscription.models.AggregatedComputedUsageSummary
+    oci.onesubscription.models.AssociatedSubscriptions
     oci.onesubscription.models.BillingScheduleProduct
     oci.onesubscription.models.BillingScheduleSummary
     oci.onesubscription.models.Commitment
+    oci.onesubscription.models.CommitmentPeriod
     oci.onesubscription.models.CommitmentService
     oci.onesubscription.models.CommitmentSummary
     oci.onesubscription.models.ComputedUsage
@@ -55,6 +57,7 @@ Onesubscription
     oci.onesubscription.models.InvoicingUser
     oci.onesubscription.models.OrganizationSubscriptionSummary
     oci.onesubscription.models.OrgnizationSubsCurrency
+    oci.onesubscription.models.ProductAndService
     oci.onesubscription.models.RateCardProduct
     oci.onesubscription.models.RateCardSummary
     oci.onesubscription.models.RateCardTier
@@ -66,6 +69,8 @@ Onesubscription
     oci.onesubscription.models.SubscribedServiceSummary
     oci.onesubscription.models.SubscribedServiceUser
     oci.onesubscription.models.SubscriptionCurrency
+    oci.onesubscription.models.SubscriptionDetails
     oci.onesubscription.models.SubscriptionProduct
     oci.onesubscription.models.SubscriptionSubscribedService
     oci.onesubscription.models.SubscriptionSummary
+    oci.onesubscription.models.UsageLedgerSummary

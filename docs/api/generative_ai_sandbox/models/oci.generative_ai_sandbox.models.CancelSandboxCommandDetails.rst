@@ -1,0 +1,11 @@
+CancelSandboxCommandDetails
+===========================
+
+.. currentmodule:: oci.generative_ai_sandbox.models
+
+.. autoclass:: CancelSandboxCommandDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

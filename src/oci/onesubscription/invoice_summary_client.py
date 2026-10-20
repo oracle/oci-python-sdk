@@ -126,14 +126,14 @@ class InvoiceSummaryClient(object):
 
     def list_invoiceline_computed_usages(self, compartment_id, invoice_line_id, **kwargs):
         """
-        This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
+        Collection API that returns a list of invoiced computed usages for the given invoice line ID.
 
 
         :param str compartment_id: (required)
             The OCID of the root compartment.
 
         :param str invoice_line_id: (required)
-            Invoice Line Identifier - Primary Key SPM
+            Invoice line identifier - Primary Key SPM (Subscription Plan Management).
 
         :param str sort_order: (optional)
             The sort order to use, either ascending ('ASC') or descending ('DESC').
@@ -141,7 +141,7 @@ class InvoiceSummaryClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by Invoiced Computed Usages. You can provide one sort order (`sortOrder`).
+            The field to sort by invoiced computed usages. You can provide one sort order (`sortOrder`).
 
             Allowed values are: "timeCreated", "meteredOnDate"
 
@@ -155,8 +155,8 @@ class InvoiceSummaryClient(object):
 
         :param list[str] fields: (optional)
             Partial response refers to an optimization technique offered
-            by the RESTful web APIs to return only the information
-            (fields) required by the client. This parameter is used to control what fields to
+            by the RESTful web APIs, to return only the information
+            (fields) required by the client. This parameter controls which fields to
             return.
 
         :param str opc_request_id: (optional)
@@ -276,20 +276,20 @@ class InvoiceSummaryClient(object):
 
     def list_invoices(self, compartment_id, ar_customer_transaction_id, **kwargs):
         """
-        This is a collection API which returns a list of Invoices for given filters.
+        Collection API that returns a list of invoices according to the given filters.
 
 
         :param str compartment_id: (required)
             The OCID of the root compartment.
 
         :param str ar_customer_transaction_id: (required)
-            AR Unique identifier for an invoice .
+            Accounts receivable unique identifier for an invoice.
 
         :param datetime time_from: (optional)
-            Initial date to filter Invoice data in SPM.
+            Initial date to filter invoice data in SPM (Subscription Plan Management).
 
         :param datetime time_to: (optional)
-            Final date to filter Invoice data in SPM.
+            Final date to filter invoice data in SPM (Subscription Plan Management).
 
         :param str sort_order: (optional)
             The sort order to use, either ascending ('ASC') or descending ('DESC').
@@ -311,8 +311,8 @@ class InvoiceSummaryClient(object):
 
         :param list[str] fields: (optional)
             Partial response refers to an optimization technique offered
-            by the RESTful web APIs to return only the information
-            (fields) required by the client. This parameter is used to control what fields to
+            by the RESTful web APIs, to return only the information
+            (fields) required by the client. This parameter controls which fields to
             return.
 
         :param str opc_request_id: (optional)

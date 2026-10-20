@@ -137,6 +137,7 @@ API Reference
 * :doc:`Generative Ai Agent <generative_ai_agent/client/oci.generative_ai_agent.GenerativeAiAgentClient>`
 * :doc:`Generative Ai Agent Runtime <generative_ai_agent_runtime/client/oci.generative_ai_agent_runtime.GenerativeAiAgentRuntimeClient>`
 * :doc:`Generative Ai Inference <generative_ai_inference/client/oci.generative_ai_inference.GenerativeAiInferenceClient>`
+* :doc:`Generative Ai Sandbox <generative_ai_sandbox/client/oci.generative_ai_sandbox.GenerativeAiSandboxClient>`
 * :doc:`Generic Artifacts Content <generic_artifacts_content/client/oci.generic_artifacts_content.GenericArtifactsContentClient>`
 * :doc:`Golden Gate <golden_gate/client/oci.golden_gate.GoldenGateClient>`
 * :doc:`Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.GovernanceClient>`
@@ -146,7 +147,8 @@ API Reference
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
 * :doc:`Identity Domains <identity_domains/client/oci.identity_domains.IdentityDomainsClient>`
 * :doc:`Incident <cims/client/oci.cims.IncidentClient>`
-* :doc:`Instance <ddfs/client/oci.ddfs.InstanceClient>`
+* :doc:`Instance <pss/client/oci.pss.InstanceClient>`
+* :doc:`Instance <pss/client/oci.pss.InstanceClient>`
 * :doc:`Integration Instance <integration/client/oci.integration.IntegrationInstanceClient>`
 * :doc:`Internal Demand Signal <capacity_management/client/oci.capacity_management.InternalDemandSignalClient>`
 * :doc:`Inventory <cloud_bridge/client/oci.cloud_bridge.InventoryClient>`
@@ -432,6 +434,7 @@ API Reference
     generative_ai_agent_runtime
     generative_ai_data
     generative_ai_inference
+    generative_ai_sandbox
     generic_artifacts_content
     golden_gate
     governance_rules_control_plane
@@ -491,6 +494,7 @@ API Reference
     osub_usage
     psa
     psql
+    pss
     queue
     recovery
     redis

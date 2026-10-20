@@ -7,9 +7,11 @@
 from __future__ import absolute_import
 
 from .aggregated_computed_usage_summary import AggregatedComputedUsageSummary
+from .associated_subscriptions import AssociatedSubscriptions
 from .billing_schedule_product import BillingScheduleProduct
 from .billing_schedule_summary import BillingScheduleSummary
 from .commitment import Commitment
+from .commitment_period import CommitmentPeriod
 from .commitment_service import CommitmentService
 from .commitment_summary import CommitmentSummary
 from .computed_usage import ComputedUsage
@@ -29,6 +31,7 @@ from .invoicing_product import InvoicingProduct
 from .invoicing_user import InvoicingUser
 from .organization_subscription_summary import OrganizationSubscriptionSummary
 from .orgnization_subs_currency import OrgnizationSubsCurrency
+from .product_and_service import ProductAndService
 from .rate_card_product import RateCardProduct
 from .rate_card_summary import RateCardSummary
 from .rate_card_tier import RateCardTier
@@ -40,16 +43,20 @@ from .subscribed_service_payment_term import SubscribedServicePaymentTerm
 from .subscribed_service_summary import SubscribedServiceSummary
 from .subscribed_service_user import SubscribedServiceUser
 from .subscription_currency import SubscriptionCurrency
+from .subscription_details import SubscriptionDetails
 from .subscription_product import SubscriptionProduct
 from .subscription_subscribed_service import SubscriptionSubscribedService
 from .subscription_summary import SubscriptionSummary
+from .usage_ledger_summary import UsageLedgerSummary
 
 # Maps type names to classes for onesubscription services.
 onesubscription_type_mapping = {
     "AggregatedComputedUsageSummary": AggregatedComputedUsageSummary,
+    "AssociatedSubscriptions": AssociatedSubscriptions,
     "BillingScheduleProduct": BillingScheduleProduct,
     "BillingScheduleSummary": BillingScheduleSummary,
     "Commitment": Commitment,
+    "CommitmentPeriod": CommitmentPeriod,
     "CommitmentService": CommitmentService,
     "CommitmentSummary": CommitmentSummary,
     "ComputedUsage": ComputedUsage,
@@ -69,6 +76,7 @@ onesubscription_type_mapping = {
     "InvoicingUser": InvoicingUser,
     "OrganizationSubscriptionSummary": OrganizationSubscriptionSummary,
     "OrgnizationSubsCurrency": OrgnizationSubsCurrency,
+    "ProductAndService": ProductAndService,
     "RateCardProduct": RateCardProduct,
     "RateCardSummary": RateCardSummary,
     "RateCardTier": RateCardTier,
@@ -80,7 +88,9 @@ onesubscription_type_mapping = {
     "SubscribedServiceSummary": SubscribedServiceSummary,
     "SubscribedServiceUser": SubscribedServiceUser,
     "SubscriptionCurrency": SubscriptionCurrency,
+    "SubscriptionDetails": SubscriptionDetails,
     "SubscriptionProduct": SubscriptionProduct,
     "SubscriptionSubscribedService": SubscriptionSubscribedService,
-    "SubscriptionSummary": SubscriptionSummary
+    "SubscriptionSummary": SubscriptionSummary,
+    "UsageLedgerSummary": UsageLedgerSummary
 }

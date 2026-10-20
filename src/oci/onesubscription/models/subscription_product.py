@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SubscriptionProduct(object):
     """
-    Product description
+    Product description.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class SubscriptionProduct(object):
     def part_number(self):
         """
         **[Required]** Gets the part_number of this SubscriptionProduct.
-        Product part numner
+        Product part number.
 
 
         :return: The part_number of this SubscriptionProduct.
@@ -70,7 +70,7 @@ class SubscriptionProduct(object):
     def part_number(self, part_number):
         """
         Sets the part_number of this SubscriptionProduct.
-        Product part numner
+        Product part number.
 
 
         :param part_number: The part_number of this SubscriptionProduct.
@@ -82,7 +82,7 @@ class SubscriptionProduct(object):
     def name(self):
         """
         **[Required]** Gets the name of this SubscriptionProduct.
-        Product name
+        Product name.
 
 
         :return: The name of this SubscriptionProduct.
@@ -94,7 +94,7 @@ class SubscriptionProduct(object):
     def name(self, name):
         """
         Sets the name of this SubscriptionProduct.
-        Product name
+        Product name.
 
 
         :param name: The name of this SubscriptionProduct.
@@ -106,7 +106,7 @@ class SubscriptionProduct(object):
     def unit_of_measure(self):
         """
         **[Required]** Gets the unit_of_measure of this SubscriptionProduct.
-        Unit of measure
+        Unit of measure.
 
 
         :return: The unit_of_measure of this SubscriptionProduct.
@@ -118,7 +118,7 @@ class SubscriptionProduct(object):
     def unit_of_measure(self, unit_of_measure):
         """
         Sets the unit_of_measure of this SubscriptionProduct.
-        Unit of measure
+        Unit of measure.
 
 
         :param unit_of_measure: The unit_of_measure of this SubscriptionProduct.
@@ -130,7 +130,7 @@ class SubscriptionProduct(object):
     def provisioning_group(self):
         """
         Gets the provisioning_group of this SubscriptionProduct.
-        Product provisioning group
+        Product provisioning group.
 
 
         :return: The provisioning_group of this SubscriptionProduct.
@@ -142,7 +142,7 @@ class SubscriptionProduct(object):
     def provisioning_group(self, provisioning_group):
         """
         Sets the provisioning_group of this SubscriptionProduct.
-        Product provisioning group
+        Product provisioning group.
 
 
         :param provisioning_group: The provisioning_group of this SubscriptionProduct.

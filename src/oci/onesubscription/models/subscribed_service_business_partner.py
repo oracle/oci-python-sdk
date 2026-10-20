@@ -93,7 +93,7 @@ class SubscribedServiceBusinessPartner(object):
     def name(self):
         """
         Gets the name of this SubscribedServiceBusinessPartner.
-        Commercial name also called customer name.
+        Commercial name, also referred to as customer name.
 
 
         :return: The name of this SubscribedServiceBusinessPartner.
@@ -105,7 +105,7 @@ class SubscribedServiceBusinessPartner(object):
     def name(self, name):
         """
         Sets the name of this SubscribedServiceBusinessPartner.
-        Commercial name also called customer name.
+        Commercial name, also referred to as customer name.
 
 
         :param name: The name of this SubscribedServiceBusinessPartner.
@@ -141,7 +141,7 @@ class SubscribedServiceBusinessPartner(object):
     def tca_cust_account_number(self):
         """
         Gets the tca_cust_account_number of this SubscribedServiceBusinessPartner.
-        TCA customer account number.
+        TCA (Trading Community Architecture) customer account number.
 
 
         :return: The tca_cust_account_number of this SubscribedServiceBusinessPartner.
@@ -153,7 +153,7 @@ class SubscribedServiceBusinessPartner(object):
     def tca_cust_account_number(self, tca_cust_account_number):
         """
         Sets the tca_cust_account_number of this SubscribedServiceBusinessPartner.
-        TCA customer account number.
+        TCA (Trading Community Architecture) customer account number.
 
 
         :param tca_cust_account_number: The tca_cust_account_number of this SubscribedServiceBusinessPartner.
@@ -165,7 +165,7 @@ class SubscribedServiceBusinessPartner(object):
     def is_public_sector(self):
         """
         Gets the is_public_sector of this SubscribedServiceBusinessPartner.
-        The business partner is part of the public sector or not.
+        Specifies whether or not the business partner is part of the public sector.
 
 
         :return: The is_public_sector of this SubscribedServiceBusinessPartner.
@@ -177,7 +177,7 @@ class SubscribedServiceBusinessPartner(object):
     def is_public_sector(self, is_public_sector):
         """
         Sets the is_public_sector of this SubscribedServiceBusinessPartner.
-        The business partner is part of the public sector or not.
+        Specifies whether or not the business partner is part of the public sector.
 
 
         :param is_public_sector: The is_public_sector of this SubscribedServiceBusinessPartner.
@@ -189,7 +189,7 @@ class SubscribedServiceBusinessPartner(object):
     def is_chain_customer(self):
         """
         Gets the is_chain_customer of this SubscribedServiceBusinessPartner.
-        The business partner is chain customer or not.
+        Specifies whether or not the business partner is a chain customer.
 
 
         :return: The is_chain_customer of this SubscribedServiceBusinessPartner.
@@ -201,7 +201,7 @@ class SubscribedServiceBusinessPartner(object):
     def is_chain_customer(self, is_chain_customer):
         """
         Sets the is_chain_customer of this SubscribedServiceBusinessPartner.
-        The business partner is chain customer or not.
+        Specifies whether or not the business partner is a chain customer.
 
 
         :param is_chain_customer: The is_chain_customer of this SubscribedServiceBusinessPartner.

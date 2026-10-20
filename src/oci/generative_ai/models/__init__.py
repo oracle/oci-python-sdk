@@ -7,6 +7,9 @@
 from __future__ import absolute_import
 
 from .add_artifact_details import AddArtifactDetails
+from .allocatable_gpu_collection import AllocatableGpuCollection
+from .allocatable_gpu_summary import AllocatableGpuSummary
+from .allowed_domain import AllowedDomain
 from .api_key import ApiKey
 from .api_key_collection import ApiKeyCollection
 from .api_key_item import ApiKeyItem
@@ -25,6 +28,7 @@ from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_routing_profile_compartment_details import ChangeRoutingProfileCompartmentDetails
 from .change_semantic_store_compartment_details import ChangeSemanticStoreCompartmentDetails
 from .chat_model_metrics import ChatModelMetrics
+from .compute_capacity_reservation import ComputeCapacityReservation
 from .condenser_config import CondenserConfig
 from .connector_configuration import ConnectorConfiguration
 from .content_moderation_config import ContentModerationConfig
@@ -45,12 +49,14 @@ from .create_hosted_deployment_details import CreateHostedDeploymentDetails
 from .create_imported_model_details import CreateImportedModelDetails
 from .create_model_details import CreateModelDetails
 from .create_routing_profile_details import CreateRoutingProfileDetails
+from .create_sandbox_warm_pool_details import CreateSandboxWarmPoolDetails
 from .create_schemas_database_tools_connection_details import CreateSchemasDatabaseToolsConnectionDetails
 from .create_schemas_details import CreateSchemasDetails
 from .create_semantic_store_details import CreateSemanticStoreDetails
 from .create_single_docker_artifact_details import CreateSingleDockerArtifactDetails
 from .create_vector_store_connector_details import CreateVectorStoreConnectorDetails
 from .create_vector_store_connector_file_sync_details import CreateVectorStoreConnectorFileSyncDetails
+from .custom_sandbox_outbound_networking_config import CustomSandboxOutboundNetworkingConfig
 from .custom_semantic_store_model_selection import CustomSemanticStoreModelSelection
 from .data_source_database_tools_connection_details import DataSourceDatabaseToolsConnectionDetails
 from .data_source_details import DataSourceDetails
@@ -79,6 +85,7 @@ from .generative_ai_private_endpoint_summary import GenerativeAiPrivateEndpointS
 from .generative_ai_project import GenerativeAiProject
 from .generative_ai_project_collection import GenerativeAiProjectCollection
 from .generative_ai_project_summary import GenerativeAiProjectSummary
+from .gpu_allocation import GpuAllocation
 from .hosted_application import HostedApplication
 from .hosted_application_base import HostedApplicationBase
 from .hosted_application_collection import HostedApplicationCollection
@@ -101,6 +108,7 @@ from .key_details import KeyDetails
 from .llm_selection import LlmSelection
 from .long_term_memory_config import LongTermMemoryConfig
 from .lora_training_config import LoraTrainingConfig
+from .managed_sandbox_outbound_networking_config import ManagedSandboxOutboundNetworkingConfig
 from .model import Model
 from .model_collection import ModelCollection
 from .model_config import ModelConfig
@@ -130,6 +138,21 @@ from .renew_api_key_details import RenewApiKeyDetails
 from .routing_profile import RoutingProfile
 from .routing_profile_collection import RoutingProfileCollection
 from .routing_profile_summary import RoutingProfileSummary
+from .sandbox_allow_all_network_policy import SandboxAllowAllNetworkPolicy
+from .sandbox_allow_network_policy import SandboxAllowNetworkPolicy
+from .sandbox_config import SandboxConfig
+from .sandbox_credential_injection_header import SandboxCredentialInjectionHeader
+from .sandbox_credential_injection_rule import SandboxCredentialInjectionRule
+from .sandbox_credential_profile import SandboxCredentialProfile
+from .sandbox_deny_all_network_policy import SandboxDenyAllNetworkPolicy
+from .sandbox_http_header_credential_injection_rule import SandboxHttpHeaderCredentialInjectionRule
+from .sandbox_network_policy import SandboxNetworkPolicy
+from .sandbox_outbound_networking_config import SandboxOutboundNetworkingConfig
+from .sandbox_warm_pool import SandboxWarmPool
+from .sandbox_warm_pool_collection import SandboxWarmPoolCollection
+from .sandbox_warm_pool_config import SandboxWarmPoolConfig
+from .sandbox_warm_pool_runtime_status import SandboxWarmPoolRuntimeStatus
+from .sandbox_warm_pool_summary import SandboxWarmPoolSummary
 from .scaling_config import ScalingConfig
 from .schedule_config import ScheduleConfig
 from .schedule_cron_config import ScheduleCronConfig
@@ -161,6 +184,7 @@ from .update_hosted_deployment_details import UpdateHostedDeploymentDetails
 from .update_imported_model_details import UpdateImportedModelDetails
 from .update_model_details import UpdateModelDetails
 from .update_routing_profile_details import UpdateRoutingProfileDetails
+from .update_sandbox_warm_pool_details import UpdateSandboxWarmPoolDetails
 from .update_semantic_store_details import UpdateSemanticStoreDetails
 from .update_vector_store_connector_details import UpdateVectorStoreConnectorDetails
 from .vanilla_training_config import VanillaTrainingConfig
@@ -185,6 +209,9 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 # Maps type names to classes for generative_ai services.
 generative_ai_type_mapping = {
     "AddArtifactDetails": AddArtifactDetails,
+    "AllocatableGpuCollection": AllocatableGpuCollection,
+    "AllocatableGpuSummary": AllocatableGpuSummary,
+    "AllowedDomain": AllowedDomain,
     "ApiKey": ApiKey,
     "ApiKeyCollection": ApiKeyCollection,
     "ApiKeyItem": ApiKeyItem,
@@ -203,6 +230,7 @@ generative_ai_type_mapping = {
     "ChangeRoutingProfileCompartmentDetails": ChangeRoutingProfileCompartmentDetails,
     "ChangeSemanticStoreCompartmentDetails": ChangeSemanticStoreCompartmentDetails,
     "ChatModelMetrics": ChatModelMetrics,
+    "ComputeCapacityReservation": ComputeCapacityReservation,
     "CondenserConfig": CondenserConfig,
     "ConnectorConfiguration": ConnectorConfiguration,
     "ContentModerationConfig": ContentModerationConfig,
@@ -223,12 +251,14 @@ generative_ai_type_mapping = {
     "CreateImportedModelDetails": CreateImportedModelDetails,
     "CreateModelDetails": CreateModelDetails,
     "CreateRoutingProfileDetails": CreateRoutingProfileDetails,
+    "CreateSandboxWarmPoolDetails": CreateSandboxWarmPoolDetails,
     "CreateSchemasDatabaseToolsConnectionDetails": CreateSchemasDatabaseToolsConnectionDetails,
     "CreateSchemasDetails": CreateSchemasDetails,
     "CreateSemanticStoreDetails": CreateSemanticStoreDetails,
     "CreateSingleDockerArtifactDetails": CreateSingleDockerArtifactDetails,
     "CreateVectorStoreConnectorDetails": CreateVectorStoreConnectorDetails,
     "CreateVectorStoreConnectorFileSyncDetails": CreateVectorStoreConnectorFileSyncDetails,
+    "CustomSandboxOutboundNetworkingConfig": CustomSandboxOutboundNetworkingConfig,
     "CustomSemanticStoreModelSelection": CustomSemanticStoreModelSelection,
     "DataSourceDatabaseToolsConnectionDetails": DataSourceDatabaseToolsConnectionDetails,
     "DataSourceDetails": DataSourceDetails,
@@ -257,6 +287,7 @@ generative_ai_type_mapping = {
     "GenerativeAiProject": GenerativeAiProject,
     "GenerativeAiProjectCollection": GenerativeAiProjectCollection,
     "GenerativeAiProjectSummary": GenerativeAiProjectSummary,
+    "GpuAllocation": GpuAllocation,
     "HostedApplication": HostedApplication,
     "HostedApplicationBase": HostedApplicationBase,
     "HostedApplicationCollection": HostedApplicationCollection,
@@ -279,6 +310,7 @@ generative_ai_type_mapping = {
     "LlmSelection": LlmSelection,
     "LongTermMemoryConfig": LongTermMemoryConfig,
     "LoraTrainingConfig": LoraTrainingConfig,
+    "ManagedSandboxOutboundNetworkingConfig": ManagedSandboxOutboundNetworkingConfig,
     "Model": Model,
     "ModelCollection": ModelCollection,
     "ModelConfig": ModelConfig,
@@ -308,6 +340,21 @@ generative_ai_type_mapping = {
     "RoutingProfile": RoutingProfile,
     "RoutingProfileCollection": RoutingProfileCollection,
     "RoutingProfileSummary": RoutingProfileSummary,
+    "SandboxAllowAllNetworkPolicy": SandboxAllowAllNetworkPolicy,
+    "SandboxAllowNetworkPolicy": SandboxAllowNetworkPolicy,
+    "SandboxConfig": SandboxConfig,
+    "SandboxCredentialInjectionHeader": SandboxCredentialInjectionHeader,
+    "SandboxCredentialInjectionRule": SandboxCredentialInjectionRule,
+    "SandboxCredentialProfile": SandboxCredentialProfile,
+    "SandboxDenyAllNetworkPolicy": SandboxDenyAllNetworkPolicy,
+    "SandboxHttpHeaderCredentialInjectionRule": SandboxHttpHeaderCredentialInjectionRule,
+    "SandboxNetworkPolicy": SandboxNetworkPolicy,
+    "SandboxOutboundNetworkingConfig": SandboxOutboundNetworkingConfig,
+    "SandboxWarmPool": SandboxWarmPool,
+    "SandboxWarmPoolCollection": SandboxWarmPoolCollection,
+    "SandboxWarmPoolConfig": SandboxWarmPoolConfig,
+    "SandboxWarmPoolRuntimeStatus": SandboxWarmPoolRuntimeStatus,
+    "SandboxWarmPoolSummary": SandboxWarmPoolSummary,
     "ScalingConfig": ScalingConfig,
     "ScheduleConfig": ScheduleConfig,
     "ScheduleCronConfig": ScheduleCronConfig,
@@ -339,6 +386,7 @@ generative_ai_type_mapping = {
     "UpdateImportedModelDetails": UpdateImportedModelDetails,
     "UpdateModelDetails": UpdateModelDetails,
     "UpdateRoutingProfileDetails": UpdateRoutingProfileDetails,
+    "UpdateSandboxWarmPoolDetails": UpdateSandboxWarmPoolDetails,
     "UpdateSemanticStoreDetails": UpdateSemanticStoreDetails,
     "UpdateVectorStoreConnectorDetails": UpdateVectorStoreConnectorDetails,
     "VanillaTrainingConfig": VanillaTrainingConfig,

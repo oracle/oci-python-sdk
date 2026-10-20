@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Commitment(object):
     """
-    Subscribed Service commitment summary
+    Subscribed service commitment summary.
     """
 
     def __init__(self, **kwargs):
@@ -86,7 +86,7 @@ class Commitment(object):
     def id(self):
         """
         **[Required]** Gets the id of this Commitment.
-        SPM internal Commitment ID
+        SPM (Subscription Plan Management) internal commitment ID.
 
 
         :return: The id of this Commitment.
@@ -98,7 +98,7 @@ class Commitment(object):
     def id(self, id):
         """
         Sets the id of this Commitment.
-        SPM internal Commitment ID
+        SPM (Subscription Plan Management) internal commitment ID.
 
 
         :param id: The id of this Commitment.
@@ -110,7 +110,7 @@ class Commitment(object):
     def subscribed_service_id(self):
         """
         Gets the subscribed_service_id of this Commitment.
-        SPM internal Subscribed Service ID
+        SPM internal subscribed service ID.
 
 
         :return: The subscribed_service_id of this Commitment.
@@ -122,7 +122,7 @@ class Commitment(object):
     def subscribed_service_id(self, subscribed_service_id):
         """
         Sets the subscribed_service_id of this Commitment.
-        SPM internal Subscribed Service ID
+        SPM internal subscribed service ID.
 
 
         :param subscribed_service_id: The subscribed_service_id of this Commitment.
@@ -134,7 +134,7 @@ class Commitment(object):
     def time_start(self):
         """
         Gets the time_start of this Commitment.
-        Commitment start date
+        Commitment start date.
 
 
         :return: The time_start of this Commitment.
@@ -146,7 +146,7 @@ class Commitment(object):
     def time_start(self, time_start):
         """
         Sets the time_start of this Commitment.
-        Commitment start date
+        Commitment start date.
 
 
         :param time_start: The time_start of this Commitment.
@@ -158,7 +158,7 @@ class Commitment(object):
     def time_end(self):
         """
         Gets the time_end of this Commitment.
-        Commitment end date
+        Commitment end date.
 
 
         :return: The time_end of this Commitment.
@@ -170,7 +170,7 @@ class Commitment(object):
     def time_end(self, time_end):
         """
         Sets the time_end of this Commitment.
-        Commitment end date
+        Commitment end date.
 
 
         :param time_end: The time_end of this Commitment.
@@ -182,7 +182,7 @@ class Commitment(object):
     def quantity(self):
         """
         Gets the quantity of this Commitment.
-        Commitment quantity
+        Commitment quantity.
 
 
         :return: The quantity of this Commitment.
@@ -194,7 +194,7 @@ class Commitment(object):
     def quantity(self, quantity):
         """
         Sets the quantity of this Commitment.
-        Commitment quantity
+        Commitment quantity.
 
 
         :param quantity: The quantity of this Commitment.
@@ -206,7 +206,7 @@ class Commitment(object):
     def used_amount(self):
         """
         Gets the used_amount of this Commitment.
-        Commitment used amount
+        Commitment used amount.
 
 
         :return: The used_amount of this Commitment.
@@ -218,7 +218,7 @@ class Commitment(object):
     def used_amount(self, used_amount):
         """
         Sets the used_amount of this Commitment.
-        Commitment used amount
+        Commitment used amount.
 
 
         :param used_amount: The used_amount of this Commitment.
@@ -230,7 +230,7 @@ class Commitment(object):
     def available_amount(self):
         """
         Gets the available_amount of this Commitment.
-        Commitment available amount
+        Commitment available amount.
 
 
         :return: The available_amount of this Commitment.
@@ -242,7 +242,7 @@ class Commitment(object):
     def available_amount(self, available_amount):
         """
         Sets the available_amount of this Commitment.
-        Commitment available amount
+        Commitment available amount.
 
 
         :param available_amount: The available_amount of this Commitment.
@@ -254,8 +254,8 @@ class Commitment(object):
     def funded_allocation_value(self):
         """
         Gets the funded_allocation_value of this Commitment.
-        Funded Allocation line value
-        example: 12000.00
+        Funded allocation line value.
+        Example: 12000.00
 
 
         :return: The funded_allocation_value of this Commitment.
@@ -267,8 +267,8 @@ class Commitment(object):
     def funded_allocation_value(self, funded_allocation_value):
         """
         Sets the funded_allocation_value of this Commitment.
-        Funded Allocation line value
-        example: 12000.00
+        Funded allocation line value.
+        Example: 12000.00
 
 
         :param funded_allocation_value: The funded_allocation_value of this Commitment.

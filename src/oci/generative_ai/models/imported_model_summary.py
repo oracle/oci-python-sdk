@@ -67,6 +67,18 @@ class ImportedModelSummary(object):
     #: This constant has a value of "TEXT_TO_VIDEO"
     CAPABILITIES_TEXT_TO_VIDEO = "TEXT_TO_VIDEO"
 
+    #: A constant which can be used with the capabilities property of a ImportedModelSummary.
+    #: This constant has a value of "AUDIO_TEXT_TO_TEXT"
+    CAPABILITIES_AUDIO_TEXT_TO_TEXT = "AUDIO_TEXT_TO_TEXT"
+
+    #: A constant which can be used with the capabilities property of a ImportedModelSummary.
+    #: This constant has a value of "AUDIO_TRANSLATION"
+    CAPABILITIES_AUDIO_TRANSLATION = "AUDIO_TRANSLATION"
+
+    #: A constant which can be used with the capabilities property of a ImportedModelSummary.
+    #: This constant has a value of "VIDEO_TEXT_TO_TEXT"
+    CAPABILITIES_VIDEO_TEXT_TO_TEXT = "VIDEO_TEXT_TO_TEXT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ImportedModelSummary object with values from keyword arguments.
@@ -90,7 +102,7 @@ class ImportedModelSummary(object):
 
         :param capabilities:
             The value to assign to the capabilities property of this ImportedModelSummary.
-            Allowed values for items in this list are: "TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", "AUDIO_TEXT_TO_TEXT", "AUDIO_TRANSLATION", "VIDEO_TEXT_TO_TEXT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type capabilities: list[str]
 
@@ -287,7 +299,7 @@ class ImportedModelSummary(object):
         Gets the capabilities of this ImportedModelSummary.
         Specifies the intended use or supported capabilities of the imported model.
 
-        Allowed values for items in this list are: "TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", "AUDIO_TEXT_TO_TEXT", "AUDIO_TRANSLATION", "VIDEO_TEXT_TO_TEXT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -306,7 +318,7 @@ class ImportedModelSummary(object):
         :param capabilities: The capabilities of this ImportedModelSummary.
         :type: list[str]
         """
-        allowed_values = ["TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO"]
+        allowed_values = ["TEXT_TO_TEXT", "IMAGE_TEXT_TO_TEXT", "EMBEDDING", "RERANK", "TEXT_TO_IMAGE", "IMAGE_TEXT_TO_IMAGE", "IMAGE_TEXT_TO_VIDEO", "IMAGE_TO_IMAGE", "REALTIME", "AUDIO_TO_AUDIO", "AUDIO_TO_TEXT", "TEXT_TO_AUDIO", "TEXT_TO_VIDEO", "AUDIO_TEXT_TO_TEXT", "AUDIO_TRANSLATION", "VIDEO_TEXT_TO_TEXT"]
         if capabilities:
             capabilities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in capabilities]
         self._capabilities = capabilities

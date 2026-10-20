@@ -5,6 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.189.0 - 2026-10-20
+====================
+
+Added 
+----- 
+* Support for the OCI Public Safety and Security service 
+* Support for container database cloning and snapshots for Exadata Database Service on Exascale Infrastructure in the Database service 
+* Support for sandbox warm pools, outbound network policies, and credential injection in the Generative AI service 
+* Support for sandbox lifecycle and snapshot management, command execution, and file operations in the Generative AI service 
+* Support for no-auth mode for hosted applications in the Generative AI service 
+* Support for customer-provided capacity reservations for dedicated AI clusters in the Generative AI service 
+* Support for listing allocatable GPUs for dedicated AI clusters in the Generative AI service 
+* Support for the OAI_H100_X4 dedicated AI cluster unit shape in the Generative AI service 
+* Support for audio-text-to-text, audio translation, and video-text-to-text model capabilities in the Generative AI service 
+* Support for PostgreSQL database system members in the Disaster Recovery service 
+* Support for dynamic and static resource management modes for compute shapes in the Compute service 
+* Support for retrieving subscription details in the OneSubscription service 
+* Support for listing subscription usage ledgers in the OneSubscription service 
+* Support for remote reindexing trust configurations with CA bundles in the OpenSearch service 
+* Support for AI provider connections in the GoldenGate service 
+* Support for Databricks engine connections with Azure Data Lake Storage, OCI Object Storage, and Unity Catalog artifact locations in the GoldenGate service 
+* Support for Spark connections with OCI Object Storage artifact locations in the GoldenGate service 
+* Support for Oracle AI Data Platform engine connections in the GoldenGate service 
+* Support for in-place major version upgrades of database systems in the PostgreSQL service  
+
+Security 
+-------- 
+* The minimum version of the `PyJWT` dependency was increased from `2.12.0` to `2.15.1` for Python versions >= 3.9 to address security vulnerabilities 
+* The minimum version of the `urllib3` dependency was increased from `2.6.3` to `2.8.0` for Python versions >= 3.10 to address security vulnerabilities  
+
+Breaking 
+-------- 
+* The field `certificate_id` was renamed to `ca_bundle_id` in the model `RemoteReindexSourceDetails` in the OpenSearch service  
+
+====================
 2.188.0 - 2026-10-13
 ====================
 

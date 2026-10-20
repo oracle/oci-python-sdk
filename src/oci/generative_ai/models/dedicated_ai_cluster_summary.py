@@ -64,6 +64,10 @@ class DedicatedAiClusterSummary(object):
             The value to assign to the unit_shape property of this DedicatedAiClusterSummary.
         :type unit_shape: str
 
+        :param capacity_reservation_id:
+            The value to assign to the capacity_reservation_id property of this DedicatedAiClusterSummary.
+        :type capacity_reservation_id: str
+
         :param capacity:
             The value to assign to the capacity property of this DedicatedAiClusterSummary.
         :type capacity: oci.generative_ai.models.DedicatedAiClusterCapacity
@@ -93,6 +97,7 @@ class DedicatedAiClusterSummary(object):
             'lifecycle_details': 'str',
             'unit_count': 'int',
             'unit_shape': 'str',
+            'capacity_reservation_id': 'str',
             'capacity': 'DedicatedAiClusterCapacity',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -110,6 +115,7 @@ class DedicatedAiClusterSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'unit_count': 'unitCount',
             'unit_shape': 'unitShape',
+            'capacity_reservation_id': 'capacityReservationId',
             'capacity': 'capacity',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -126,6 +132,7 @@ class DedicatedAiClusterSummary(object):
         self._lifecycle_details = None
         self._unit_count = None
         self._unit_shape = None
+        self._capacity_reservation_id = None
         self._capacity = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -424,6 +431,30 @@ class DedicatedAiClusterSummary(object):
         :type: str
         """
         self._unit_shape = unit_shape
+
+    @property
+    def capacity_reservation_id(self):
+        """
+        Gets the capacity_reservation_id of this DedicatedAiClusterSummary.
+        The OCID of the capacity reservation.
+
+
+        :return: The capacity_reservation_id of this DedicatedAiClusterSummary.
+        :rtype: str
+        """
+        return self._capacity_reservation_id
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, capacity_reservation_id):
+        """
+        Sets the capacity_reservation_id of this DedicatedAiClusterSummary.
+        The OCID of the capacity reservation.
+
+
+        :param capacity_reservation_id: The capacity_reservation_id of this DedicatedAiClusterSummary.
+        :type: str
+        """
+        self._capacity_reservation_id = capacity_reservation_id
 
     @property
     def capacity(self):

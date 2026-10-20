@@ -15,6 +15,8 @@ from .ai_model_connection import AiModelConnection
 from .ai_model_connection_summary import AiModelConnectionSummary
 from .ai_model_summary import AiModelSummary
 from .ai_provider_collection import AiProviderCollection
+from .ai_provider_connection import AiProviderConnection
+from .ai_provider_connection_summary import AiProviderConnectionSummary
 from .ai_provider_summary import AiProviderSummary
 from .amazon_kinesis_connection import AmazonKinesisConnection
 from .amazon_kinesis_connection_summary import AmazonKinesisConnectionSummary
@@ -28,6 +30,8 @@ from .api_key_ai_model_auth_details import ApiKeyAiModelAuthDetails
 from .api_key_ai_model_auth_details_summary import ApiKeyAiModelAuthDetailsSummary
 from .azure_data_lake_storage_connection import AzureDataLakeStorageConnection
 from .azure_data_lake_storage_connection_summary import AzureDataLakeStorageConnectionSummary
+from .azure_data_lake_storage_databricks_engine_artifact_location import AzureDataLakeStorageDatabricksEngineArtifactLocation
+from .azure_data_lake_storage_databricks_engine_artifact_location_summary import AzureDataLakeStorageDatabricksEngineArtifactLocationSummary
 from .azure_data_lake_storage_iceberg_storage import AzureDataLakeStorageIcebergStorage
 from .azure_data_lake_storage_iceberg_storage_summary import AzureDataLakeStorageIcebergStorageSummary
 from .azure_synapse_connection import AzureSynapseConnection
@@ -59,12 +63,14 @@ from .connection_summary import ConnectionSummary
 from .copy_deployment_backup_details import CopyDeploymentBackupDetails
 from .create_ai_model_auth_details import CreateAiModelAuthDetails
 from .create_ai_model_connection_details import CreateAiModelConnectionDetails
+from .create_ai_provider_connection_details import CreateAiProviderConnectionDetails
 from .create_amazon_kinesis_connection_details import CreateAmazonKinesisConnectionDetails
 from .create_amazon_redshift_connection_details import CreateAmazonRedshiftConnectionDetails
 from .create_amazon_s3_connection_details import CreateAmazonS3ConnectionDetails
 from .create_amazon_s3_iceberg_storage_details import CreateAmazonS3IcebergStorageDetails
 from .create_api_key_ai_model_auth_details import CreateApiKeyAiModelAuthDetails
 from .create_azure_data_lake_storage_connection_details import CreateAzureDataLakeStorageConnectionDetails
+from .create_azure_data_lake_storage_databricks_engine_artifact_location_details import CreateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails
 from .create_azure_data_lake_storage_iceberg_storage_details import CreateAzureDataLakeStorageIcebergStorageDetails
 from .create_azure_synapse_connection_details import CreateAzureSynapseConnectionDetails
 from .create_backup_schedule_details import CreateBackupScheduleDetails
@@ -73,6 +79,13 @@ from .create_connection_assignment_details import CreateConnectionAssignmentDeta
 from .create_connection_details import CreateConnectionDetails
 from .create_database_registration_details import CreateDatabaseRegistrationDetails
 from .create_databricks_connection_details import CreateDatabricksConnectionDetails
+from .create_databricks_engine_artifact_location_details import CreateDatabricksEngineArtifactLocationDetails
+from .create_databricks_engine_connection_details import CreateDatabricksEngineConnectionDetails
+from .create_databricks_engine_oci_object_storage_config_details import CreateDatabricksEngineOciObjectStorageConfigDetails
+from .create_databricks_engine_par_oci_object_storage_config_details import CreateDatabricksEngineParOciObjectStorageConfigDetails
+from .create_databricks_engine_resource_principal_oci_object_storage_config_details import CreateDatabricksEngineResourcePrincipalOciObjectStorageConfigDetails
+from .create_databricks_engine_secret_key_oci_object_storage_config_details import CreateDatabricksEngineSecretKeyOciObjectStorageConfigDetails
+from .create_databricks_engine_user_principal_oci_object_storage_config_details import CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
 from .create_db2_connection_details import CreateDb2ConnectionDetails
 from .create_deployment_backup_details import CreateDeploymentBackupDetails
 from .create_deployment_details import CreateDeploymentDetails
@@ -103,9 +116,12 @@ from .create_nessie_iceberg_catalog_details import CreateNessieIcebergCatalogDet
 from .create_no_iceberg_storage_details import CreateNoIcebergStorageDetails
 from .create_oci_gen_ai_model_auth_details import CreateOciGenAiModelAuthDetails
 from .create_oci_object_storage_connection_details import CreateOciObjectStorageConnectionDetails
+from .create_oci_object_storage_databricks_engine_artifact_location_details import CreateOciObjectStorageDatabricksEngineArtifactLocationDetails
 from .create_oci_object_storage_s3_api_iceberg_storage_details import CreateOciObjectStorageS3ApiIcebergStorageDetails
+from .create_oci_object_storage_spark_artifact_location_details import CreateOciObjectStorageSparkArtifactLocationDetails
 from .create_ogg_deployment_details import CreateOggDeploymentDetails
 from .create_oracle_ai_data_platform_connection_details import CreateOracleAiDataPlatformConnectionDetails
+from .create_oracle_ai_data_platform_engine_connection_details import CreateOracleAiDataPlatformEngineConnectionDetails
 from .create_oracle_connection_details import CreateOracleConnectionDetails
 from .create_oracle_nosql_connection_details import CreateOracleNosqlConnectionDetails
 from .create_pipeline_details import CreatePipelineDetails
@@ -114,12 +130,29 @@ from .create_postgresql_connection_details import CreatePostgresqlConnectionDeta
 from .create_redis_connection_details import CreateRedisConnectionDetails
 from .create_rest_iceberg_catalog_details import CreateRestIcebergCatalogDetails
 from .create_snowflake_connection_details import CreateSnowflakeConnectionDetails
+from .create_spark_artifact_location_details import CreateSparkArtifactLocationDetails
+from .create_spark_connection_details import CreateSparkConnectionDetails
+from .create_spark_oci_object_storage_config_details import CreateSparkOciObjectStorageConfigDetails
+from .create_spark_par_oci_object_storage_config_details import CreateSparkParOciObjectStorageConfigDetails
+from .create_spark_resource_principal_oci_object_storage_config_details import CreateSparkResourcePrincipalOciObjectStorageConfigDetails
+from .create_spark_secret_key_oci_object_storage_config_details import CreateSparkSecretKeyOciObjectStorageConfigDetails
+from .create_spark_user_principal_oci_object_storage_config_details import CreateSparkUserPrincipalOciObjectStorageConfigDetails
+from .create_uc_volume_databricks_engine_artifact_location_details import CreateUcVolumeDatabricksEngineArtifactLocationDetails
 from .create_zero_etl_pipeline_details import CreateZeroEtlPipelineDetails
 from .database_registration import DatabaseRegistration
 from .database_registration_collection import DatabaseRegistrationCollection
 from .database_registration_summary import DatabaseRegistrationSummary
 from .databricks_connection import DatabricksConnection
 from .databricks_connection_summary import DatabricksConnectionSummary
+from .databricks_engine_artifact_location import DatabricksEngineArtifactLocation
+from .databricks_engine_artifact_location_summary import DatabricksEngineArtifactLocationSummary
+from .databricks_engine_connection import DatabricksEngineConnection
+from .databricks_engine_connection_summary import DatabricksEngineConnectionSummary
+from .databricks_engine_oci_object_storage_config import DatabricksEngineOciObjectStorageConfig
+from .databricks_engine_par_oci_object_storage_config import DatabricksEngineParOciObjectStorageConfig
+from .databricks_engine_resource_principal_oci_object_storage_config import DatabricksEngineResourcePrincipalOciObjectStorageConfig
+from .databricks_engine_secret_key_oci_object_storage_config import DatabricksEngineSecretKeyOciObjectStorageConfig
+from .databricks_engine_user_principal_oci_object_storage_config import DatabricksEngineUserPrincipalOciObjectStorageConfig
 from .db2_connection import Db2Connection
 from .db2_connection_summary import Db2ConnectionSummary
 from .default_cancel_deployment_backup_details import DefaultCancelDeploymentBackupDetails
@@ -230,11 +263,17 @@ from .oci_gen_ai_model_auth_details import OciGenAiModelAuthDetails
 from .oci_gen_ai_model_auth_details_summary import OciGenAiModelAuthDetailsSummary
 from .oci_object_storage_connection import OciObjectStorageConnection
 from .oci_object_storage_connection_summary import OciObjectStorageConnectionSummary
+from .oci_object_storage_databricks_engine_artifact_location import OciObjectStorageDatabricksEngineArtifactLocation
+from .oci_object_storage_databricks_engine_artifact_location_summary import OciObjectStorageDatabricksEngineArtifactLocationSummary
 from .oci_object_storage_s3_api_iceberg_storage import OciObjectStorageS3ApiIcebergStorage
 from .oci_object_storage_s3_api_iceberg_storage_summary import OciObjectStorageS3ApiIcebergStorageSummary
+from .oci_object_storage_spark_artifact_location import OciObjectStorageSparkArtifactLocation
+from .oci_object_storage_spark_artifact_location_summary import OciObjectStorageSparkArtifactLocationSummary
 from .ogg_deployment import OggDeployment
 from .oracle_ai_data_platform_connection import OracleAiDataPlatformConnection
 from .oracle_ai_data_platform_connection_summary import OracleAiDataPlatformConnectionSummary
+from .oracle_ai_data_platform_engine_connection import OracleAiDataPlatformEngineConnection
+from .oracle_ai_data_platform_engine_connection_summary import OracleAiDataPlatformEngineConnectionSummary
 from .oracle_connection import OracleConnection
 from .oracle_connection_summary import OracleConnectionSummary
 from .oracle_nosql_connection import OracleNosqlConnection
@@ -277,6 +316,15 @@ from .snooze_deployment_upgrade_details import SnoozeDeploymentUpgradeDetails
 from .snowflake_connection import SnowflakeConnection
 from .snowflake_connection_summary import SnowflakeConnectionSummary
 from .source_pipeline_connection_details import SourcePipelineConnectionDetails
+from .spark_artifact_location import SparkArtifactLocation
+from .spark_artifact_location_summary import SparkArtifactLocationSummary
+from .spark_connection import SparkConnection
+from .spark_connection_summary import SparkConnectionSummary
+from .spark_oci_object_storage_config import SparkOciObjectStorageConfig
+from .spark_par_oci_object_storage_config import SparkParOciObjectStorageConfig
+from .spark_resource_principal_oci_object_storage_config import SparkResourcePrincipalOciObjectStorageConfig
+from .spark_secret_key_oci_object_storage_config import SparkSecretKeyOciObjectStorageConfig
+from .spark_user_principal_oci_object_storage_config import SparkUserPrincipalOciObjectStorageConfig
 from .start_deployment_details import StartDeploymentDetails
 from .start_pipeline_details import StartPipelineDetails
 from .step_message import StepMessage
@@ -294,20 +342,31 @@ from .trail_file_collection import TrailFileCollection
 from .trail_file_summary import TrailFileSummary
 from .trail_sequence_collection import TrailSequenceCollection
 from .trail_sequence_summary import TrailSequenceSummary
+from .uc_volume_databricks_engine_artifact_location import UcVolumeDatabricksEngineArtifactLocation
+from .uc_volume_databricks_engine_artifact_location_summary import UcVolumeDatabricksEngineArtifactLocationSummary
 from .update_ai_model_auth_details import UpdateAiModelAuthDetails
 from .update_ai_model_connection_details import UpdateAiModelConnectionDetails
+from .update_ai_provider_connection_details import UpdateAiProviderConnectionDetails
 from .update_amazon_kinesis_connection_details import UpdateAmazonKinesisConnectionDetails
 from .update_amazon_redshift_connection_details import UpdateAmazonRedshiftConnectionDetails
 from .update_amazon_s3_connection_details import UpdateAmazonS3ConnectionDetails
 from .update_amazon_s3_iceberg_storage_details import UpdateAmazonS3IcebergStorageDetails
 from .update_api_key_ai_model_auth_details import UpdateApiKeyAiModelAuthDetails
 from .update_azure_data_lake_storage_connection_details import UpdateAzureDataLakeStorageConnectionDetails
+from .update_azure_data_lake_storage_databricks_engine_artifact_location_details import UpdateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails
 from .update_azure_data_lake_storage_iceberg_storage_details import UpdateAzureDataLakeStorageIcebergStorageDetails
 from .update_azure_synapse_connection_details import UpdateAzureSynapseConnectionDetails
 from .update_backup_schedule_details import UpdateBackupScheduleDetails
 from .update_connection_details import UpdateConnectionDetails
 from .update_database_registration_details import UpdateDatabaseRegistrationDetails
 from .update_databricks_connection_details import UpdateDatabricksConnectionDetails
+from .update_databricks_engine_artifact_location_details import UpdateDatabricksEngineArtifactLocationDetails
+from .update_databricks_engine_connection_details import UpdateDatabricksEngineConnectionDetails
+from .update_databricks_engine_oci_object_storage_config_details import UpdateDatabricksEngineOciObjectStorageConfigDetails
+from .update_databricks_engine_par_oci_object_storage_config_details import UpdateDatabricksEngineParOciObjectStorageConfigDetails
+from .update_databricks_engine_resource_principal_oci_object_storage_config_details import UpdateDatabricksEngineResourcePrincipalOciObjectStorageConfigDetails
+from .update_databricks_engine_secret_key_oci_object_storage_config_details import UpdateDatabricksEngineSecretKeyOciObjectStorageConfigDetails
+from .update_databricks_engine_user_principal_oci_object_storage_config_details import UpdateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
 from .update_db2_connection_details import UpdateDb2ConnectionDetails
 from .update_deployment_backup_details import UpdateDeploymentBackupDetails
 from .update_deployment_details import UpdateDeploymentDetails
@@ -338,9 +397,12 @@ from .update_nessie_iceberg_catalog_details import UpdateNessieIcebergCatalogDet
 from .update_no_iceberg_storage_details import UpdateNoIcebergStorageDetails
 from .update_oci_gen_ai_model_auth_details import UpdateOciGenAiModelAuthDetails
 from .update_oci_object_storage_connection_details import UpdateOciObjectStorageConnectionDetails
+from .update_oci_object_storage_databricks_engine_artifact_location_details import UpdateOciObjectStorageDatabricksEngineArtifactLocationDetails
 from .update_oci_object_storage_s3_api_iceberg_storage_details import UpdateOciObjectStorageS3ApiIcebergStorageDetails
+from .update_oci_object_storage_spark_artifact_location_details import UpdateOciObjectStorageSparkArtifactLocationDetails
 from .update_ogg_deployment_details import UpdateOggDeploymentDetails
 from .update_oracle_ai_data_platform_connection_details import UpdateOracleAiDataPlatformConnectionDetails
+from .update_oracle_ai_data_platform_engine_connection_details import UpdateOracleAiDataPlatformEngineConnectionDetails
 from .update_oracle_connection_details import UpdateOracleConnectionDetails
 from .update_oracle_nosql_connection_details import UpdateOracleNosqlConnectionDetails
 from .update_pipeline_details import UpdatePipelineDetails
@@ -349,6 +411,14 @@ from .update_postgresql_connection_details import UpdatePostgresqlConnectionDeta
 from .update_redis_connection_details import UpdateRedisConnectionDetails
 from .update_rest_iceberg_catalog_details import UpdateRestIcebergCatalogDetails
 from .update_snowflake_connection_details import UpdateSnowflakeConnectionDetails
+from .update_spark_artifact_location_details import UpdateSparkArtifactLocationDetails
+from .update_spark_connection_details import UpdateSparkConnectionDetails
+from .update_spark_oci_object_storage_config_details import UpdateSparkOciObjectStorageConfigDetails
+from .update_spark_par_oci_object_storage_config_details import UpdateSparkParOciObjectStorageConfigDetails
+from .update_spark_resource_principal_oci_object_storage_config_details import UpdateSparkResourcePrincipalOciObjectStorageConfigDetails
+from .update_spark_secret_key_oci_object_storage_config_details import UpdateSparkSecretKeyOciObjectStorageConfigDetails
+from .update_spark_user_principal_oci_object_storage_config_details import UpdateSparkUserPrincipalOciObjectStorageConfigDetails
+from .update_uc_volume_databricks_engine_artifact_location_details import UpdateUcVolumeDatabricksEngineArtifactLocationDetails
 from .update_zero_etl_pipeline_details import UpdateZeroEtlPipelineDetails
 from .upgrade_deployment_current_release_details import UpgradeDeploymentCurrentReleaseDetails
 from .upgrade_deployment_details import UpgradeDeploymentDetails
@@ -372,6 +442,8 @@ golden_gate_type_mapping = {
     "AiModelConnectionSummary": AiModelConnectionSummary,
     "AiModelSummary": AiModelSummary,
     "AiProviderCollection": AiProviderCollection,
+    "AiProviderConnection": AiProviderConnection,
+    "AiProviderConnectionSummary": AiProviderConnectionSummary,
     "AiProviderSummary": AiProviderSummary,
     "AmazonKinesisConnection": AmazonKinesisConnection,
     "AmazonKinesisConnectionSummary": AmazonKinesisConnectionSummary,
@@ -385,6 +457,8 @@ golden_gate_type_mapping = {
     "ApiKeyAiModelAuthDetailsSummary": ApiKeyAiModelAuthDetailsSummary,
     "AzureDataLakeStorageConnection": AzureDataLakeStorageConnection,
     "AzureDataLakeStorageConnectionSummary": AzureDataLakeStorageConnectionSummary,
+    "AzureDataLakeStorageDatabricksEngineArtifactLocation": AzureDataLakeStorageDatabricksEngineArtifactLocation,
+    "AzureDataLakeStorageDatabricksEngineArtifactLocationSummary": AzureDataLakeStorageDatabricksEngineArtifactLocationSummary,
     "AzureDataLakeStorageIcebergStorage": AzureDataLakeStorageIcebergStorage,
     "AzureDataLakeStorageIcebergStorageSummary": AzureDataLakeStorageIcebergStorageSummary,
     "AzureSynapseConnection": AzureSynapseConnection,
@@ -416,12 +490,14 @@ golden_gate_type_mapping = {
     "CopyDeploymentBackupDetails": CopyDeploymentBackupDetails,
     "CreateAiModelAuthDetails": CreateAiModelAuthDetails,
     "CreateAiModelConnectionDetails": CreateAiModelConnectionDetails,
+    "CreateAiProviderConnectionDetails": CreateAiProviderConnectionDetails,
     "CreateAmazonKinesisConnectionDetails": CreateAmazonKinesisConnectionDetails,
     "CreateAmazonRedshiftConnectionDetails": CreateAmazonRedshiftConnectionDetails,
     "CreateAmazonS3ConnectionDetails": CreateAmazonS3ConnectionDetails,
     "CreateAmazonS3IcebergStorageDetails": CreateAmazonS3IcebergStorageDetails,
     "CreateApiKeyAiModelAuthDetails": CreateApiKeyAiModelAuthDetails,
     "CreateAzureDataLakeStorageConnectionDetails": CreateAzureDataLakeStorageConnectionDetails,
+    "CreateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails": CreateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails,
     "CreateAzureDataLakeStorageIcebergStorageDetails": CreateAzureDataLakeStorageIcebergStorageDetails,
     "CreateAzureSynapseConnectionDetails": CreateAzureSynapseConnectionDetails,
     "CreateBackupScheduleDetails": CreateBackupScheduleDetails,
@@ -430,6 +506,13 @@ golden_gate_type_mapping = {
     "CreateConnectionDetails": CreateConnectionDetails,
     "CreateDatabaseRegistrationDetails": CreateDatabaseRegistrationDetails,
     "CreateDatabricksConnectionDetails": CreateDatabricksConnectionDetails,
+    "CreateDatabricksEngineArtifactLocationDetails": CreateDatabricksEngineArtifactLocationDetails,
+    "CreateDatabricksEngineConnectionDetails": CreateDatabricksEngineConnectionDetails,
+    "CreateDatabricksEngineOciObjectStorageConfigDetails": CreateDatabricksEngineOciObjectStorageConfigDetails,
+    "CreateDatabricksEngineParOciObjectStorageConfigDetails": CreateDatabricksEngineParOciObjectStorageConfigDetails,
+    "CreateDatabricksEngineResourcePrincipalOciObjectStorageConfigDetails": CreateDatabricksEngineResourcePrincipalOciObjectStorageConfigDetails,
+    "CreateDatabricksEngineSecretKeyOciObjectStorageConfigDetails": CreateDatabricksEngineSecretKeyOciObjectStorageConfigDetails,
+    "CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails": CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails,
     "CreateDb2ConnectionDetails": CreateDb2ConnectionDetails,
     "CreateDeploymentBackupDetails": CreateDeploymentBackupDetails,
     "CreateDeploymentDetails": CreateDeploymentDetails,
@@ -460,9 +543,12 @@ golden_gate_type_mapping = {
     "CreateNoIcebergStorageDetails": CreateNoIcebergStorageDetails,
     "CreateOciGenAiModelAuthDetails": CreateOciGenAiModelAuthDetails,
     "CreateOciObjectStorageConnectionDetails": CreateOciObjectStorageConnectionDetails,
+    "CreateOciObjectStorageDatabricksEngineArtifactLocationDetails": CreateOciObjectStorageDatabricksEngineArtifactLocationDetails,
     "CreateOciObjectStorageS3ApiIcebergStorageDetails": CreateOciObjectStorageS3ApiIcebergStorageDetails,
+    "CreateOciObjectStorageSparkArtifactLocationDetails": CreateOciObjectStorageSparkArtifactLocationDetails,
     "CreateOggDeploymentDetails": CreateOggDeploymentDetails,
     "CreateOracleAiDataPlatformConnectionDetails": CreateOracleAiDataPlatformConnectionDetails,
+    "CreateOracleAiDataPlatformEngineConnectionDetails": CreateOracleAiDataPlatformEngineConnectionDetails,
     "CreateOracleConnectionDetails": CreateOracleConnectionDetails,
     "CreateOracleNosqlConnectionDetails": CreateOracleNosqlConnectionDetails,
     "CreatePipelineDetails": CreatePipelineDetails,
@@ -471,12 +557,29 @@ golden_gate_type_mapping = {
     "CreateRedisConnectionDetails": CreateRedisConnectionDetails,
     "CreateRestIcebergCatalogDetails": CreateRestIcebergCatalogDetails,
     "CreateSnowflakeConnectionDetails": CreateSnowflakeConnectionDetails,
+    "CreateSparkArtifactLocationDetails": CreateSparkArtifactLocationDetails,
+    "CreateSparkConnectionDetails": CreateSparkConnectionDetails,
+    "CreateSparkOciObjectStorageConfigDetails": CreateSparkOciObjectStorageConfigDetails,
+    "CreateSparkParOciObjectStorageConfigDetails": CreateSparkParOciObjectStorageConfigDetails,
+    "CreateSparkResourcePrincipalOciObjectStorageConfigDetails": CreateSparkResourcePrincipalOciObjectStorageConfigDetails,
+    "CreateSparkSecretKeyOciObjectStorageConfigDetails": CreateSparkSecretKeyOciObjectStorageConfigDetails,
+    "CreateSparkUserPrincipalOciObjectStorageConfigDetails": CreateSparkUserPrincipalOciObjectStorageConfigDetails,
+    "CreateUcVolumeDatabricksEngineArtifactLocationDetails": CreateUcVolumeDatabricksEngineArtifactLocationDetails,
     "CreateZeroEtlPipelineDetails": CreateZeroEtlPipelineDetails,
     "DatabaseRegistration": DatabaseRegistration,
     "DatabaseRegistrationCollection": DatabaseRegistrationCollection,
     "DatabaseRegistrationSummary": DatabaseRegistrationSummary,
     "DatabricksConnection": DatabricksConnection,
     "DatabricksConnectionSummary": DatabricksConnectionSummary,
+    "DatabricksEngineArtifactLocation": DatabricksEngineArtifactLocation,
+    "DatabricksEngineArtifactLocationSummary": DatabricksEngineArtifactLocationSummary,
+    "DatabricksEngineConnection": DatabricksEngineConnection,
+    "DatabricksEngineConnectionSummary": DatabricksEngineConnectionSummary,
+    "DatabricksEngineOciObjectStorageConfig": DatabricksEngineOciObjectStorageConfig,
+    "DatabricksEngineParOciObjectStorageConfig": DatabricksEngineParOciObjectStorageConfig,
+    "DatabricksEngineResourcePrincipalOciObjectStorageConfig": DatabricksEngineResourcePrincipalOciObjectStorageConfig,
+    "DatabricksEngineSecretKeyOciObjectStorageConfig": DatabricksEngineSecretKeyOciObjectStorageConfig,
+    "DatabricksEngineUserPrincipalOciObjectStorageConfig": DatabricksEngineUserPrincipalOciObjectStorageConfig,
     "Db2Connection": Db2Connection,
     "Db2ConnectionSummary": Db2ConnectionSummary,
     "DefaultCancelDeploymentBackupDetails": DefaultCancelDeploymentBackupDetails,
@@ -587,11 +690,17 @@ golden_gate_type_mapping = {
     "OciGenAiModelAuthDetailsSummary": OciGenAiModelAuthDetailsSummary,
     "OciObjectStorageConnection": OciObjectStorageConnection,
     "OciObjectStorageConnectionSummary": OciObjectStorageConnectionSummary,
+    "OciObjectStorageDatabricksEngineArtifactLocation": OciObjectStorageDatabricksEngineArtifactLocation,
+    "OciObjectStorageDatabricksEngineArtifactLocationSummary": OciObjectStorageDatabricksEngineArtifactLocationSummary,
     "OciObjectStorageS3ApiIcebergStorage": OciObjectStorageS3ApiIcebergStorage,
     "OciObjectStorageS3ApiIcebergStorageSummary": OciObjectStorageS3ApiIcebergStorageSummary,
+    "OciObjectStorageSparkArtifactLocation": OciObjectStorageSparkArtifactLocation,
+    "OciObjectStorageSparkArtifactLocationSummary": OciObjectStorageSparkArtifactLocationSummary,
     "OggDeployment": OggDeployment,
     "OracleAiDataPlatformConnection": OracleAiDataPlatformConnection,
     "OracleAiDataPlatformConnectionSummary": OracleAiDataPlatformConnectionSummary,
+    "OracleAiDataPlatformEngineConnection": OracleAiDataPlatformEngineConnection,
+    "OracleAiDataPlatformEngineConnectionSummary": OracleAiDataPlatformEngineConnectionSummary,
     "OracleConnection": OracleConnection,
     "OracleConnectionSummary": OracleConnectionSummary,
     "OracleNosqlConnection": OracleNosqlConnection,
@@ -634,6 +743,15 @@ golden_gate_type_mapping = {
     "SnowflakeConnection": SnowflakeConnection,
     "SnowflakeConnectionSummary": SnowflakeConnectionSummary,
     "SourcePipelineConnectionDetails": SourcePipelineConnectionDetails,
+    "SparkArtifactLocation": SparkArtifactLocation,
+    "SparkArtifactLocationSummary": SparkArtifactLocationSummary,
+    "SparkConnection": SparkConnection,
+    "SparkConnectionSummary": SparkConnectionSummary,
+    "SparkOciObjectStorageConfig": SparkOciObjectStorageConfig,
+    "SparkParOciObjectStorageConfig": SparkParOciObjectStorageConfig,
+    "SparkResourcePrincipalOciObjectStorageConfig": SparkResourcePrincipalOciObjectStorageConfig,
+    "SparkSecretKeyOciObjectStorageConfig": SparkSecretKeyOciObjectStorageConfig,
+    "SparkUserPrincipalOciObjectStorageConfig": SparkUserPrincipalOciObjectStorageConfig,
     "StartDeploymentDetails": StartDeploymentDetails,
     "StartPipelineDetails": StartPipelineDetails,
     "StepMessage": StepMessage,
@@ -651,20 +769,31 @@ golden_gate_type_mapping = {
     "TrailFileSummary": TrailFileSummary,
     "TrailSequenceCollection": TrailSequenceCollection,
     "TrailSequenceSummary": TrailSequenceSummary,
+    "UcVolumeDatabricksEngineArtifactLocation": UcVolumeDatabricksEngineArtifactLocation,
+    "UcVolumeDatabricksEngineArtifactLocationSummary": UcVolumeDatabricksEngineArtifactLocationSummary,
     "UpdateAiModelAuthDetails": UpdateAiModelAuthDetails,
     "UpdateAiModelConnectionDetails": UpdateAiModelConnectionDetails,
+    "UpdateAiProviderConnectionDetails": UpdateAiProviderConnectionDetails,
     "UpdateAmazonKinesisConnectionDetails": UpdateAmazonKinesisConnectionDetails,
     "UpdateAmazonRedshiftConnectionDetails": UpdateAmazonRedshiftConnectionDetails,
     "UpdateAmazonS3ConnectionDetails": UpdateAmazonS3ConnectionDetails,
     "UpdateAmazonS3IcebergStorageDetails": UpdateAmazonS3IcebergStorageDetails,
     "UpdateApiKeyAiModelAuthDetails": UpdateApiKeyAiModelAuthDetails,
     "UpdateAzureDataLakeStorageConnectionDetails": UpdateAzureDataLakeStorageConnectionDetails,
+    "UpdateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails": UpdateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails,
     "UpdateAzureDataLakeStorageIcebergStorageDetails": UpdateAzureDataLakeStorageIcebergStorageDetails,
     "UpdateAzureSynapseConnectionDetails": UpdateAzureSynapseConnectionDetails,
     "UpdateBackupScheduleDetails": UpdateBackupScheduleDetails,
     "UpdateConnectionDetails": UpdateConnectionDetails,
     "UpdateDatabaseRegistrationDetails": UpdateDatabaseRegistrationDetails,
     "UpdateDatabricksConnectionDetails": UpdateDatabricksConnectionDetails,
+    "UpdateDatabricksEngineArtifactLocationDetails": UpdateDatabricksEngineArtifactLocationDetails,
+    "UpdateDatabricksEngineConnectionDetails": UpdateDatabricksEngineConnectionDetails,
+    "UpdateDatabricksEngineOciObjectStorageConfigDetails": UpdateDatabricksEngineOciObjectStorageConfigDetails,
+    "UpdateDatabricksEngineParOciObjectStorageConfigDetails": UpdateDatabricksEngineParOciObjectStorageConfigDetails,
+    "UpdateDatabricksEngineResourcePrincipalOciObjectStorageConfigDetails": UpdateDatabricksEngineResourcePrincipalOciObjectStorageConfigDetails,
+    "UpdateDatabricksEngineSecretKeyOciObjectStorageConfigDetails": UpdateDatabricksEngineSecretKeyOciObjectStorageConfigDetails,
+    "UpdateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails": UpdateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails,
     "UpdateDb2ConnectionDetails": UpdateDb2ConnectionDetails,
     "UpdateDeploymentBackupDetails": UpdateDeploymentBackupDetails,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
@@ -695,9 +824,12 @@ golden_gate_type_mapping = {
     "UpdateNoIcebergStorageDetails": UpdateNoIcebergStorageDetails,
     "UpdateOciGenAiModelAuthDetails": UpdateOciGenAiModelAuthDetails,
     "UpdateOciObjectStorageConnectionDetails": UpdateOciObjectStorageConnectionDetails,
+    "UpdateOciObjectStorageDatabricksEngineArtifactLocationDetails": UpdateOciObjectStorageDatabricksEngineArtifactLocationDetails,
     "UpdateOciObjectStorageS3ApiIcebergStorageDetails": UpdateOciObjectStorageS3ApiIcebergStorageDetails,
+    "UpdateOciObjectStorageSparkArtifactLocationDetails": UpdateOciObjectStorageSparkArtifactLocationDetails,
     "UpdateOggDeploymentDetails": UpdateOggDeploymentDetails,
     "UpdateOracleAiDataPlatformConnectionDetails": UpdateOracleAiDataPlatformConnectionDetails,
+    "UpdateOracleAiDataPlatformEngineConnectionDetails": UpdateOracleAiDataPlatformEngineConnectionDetails,
     "UpdateOracleConnectionDetails": UpdateOracleConnectionDetails,
     "UpdateOracleNosqlConnectionDetails": UpdateOracleNosqlConnectionDetails,
     "UpdatePipelineDetails": UpdatePipelineDetails,
@@ -706,6 +838,14 @@ golden_gate_type_mapping = {
     "UpdateRedisConnectionDetails": UpdateRedisConnectionDetails,
     "UpdateRestIcebergCatalogDetails": UpdateRestIcebergCatalogDetails,
     "UpdateSnowflakeConnectionDetails": UpdateSnowflakeConnectionDetails,
+    "UpdateSparkArtifactLocationDetails": UpdateSparkArtifactLocationDetails,
+    "UpdateSparkConnectionDetails": UpdateSparkConnectionDetails,
+    "UpdateSparkOciObjectStorageConfigDetails": UpdateSparkOciObjectStorageConfigDetails,
+    "UpdateSparkParOciObjectStorageConfigDetails": UpdateSparkParOciObjectStorageConfigDetails,
+    "UpdateSparkResourcePrincipalOciObjectStorageConfigDetails": UpdateSparkResourcePrincipalOciObjectStorageConfigDetails,
+    "UpdateSparkSecretKeyOciObjectStorageConfigDetails": UpdateSparkSecretKeyOciObjectStorageConfigDetails,
+    "UpdateSparkUserPrincipalOciObjectStorageConfigDetails": UpdateSparkUserPrincipalOciObjectStorageConfigDetails,
+    "UpdateUcVolumeDatabricksEngineArtifactLocationDetails": UpdateUcVolumeDatabricksEngineArtifactLocationDetails,
     "UpdateZeroEtlPipelineDetails": UpdateZeroEtlPipelineDetails,
     "UpgradeDeploymentCurrentReleaseDetails": UpgradeDeploymentCurrentReleaseDetails,
     "UpgradeDeploymentDetails": UpgradeDeploymentDetails,

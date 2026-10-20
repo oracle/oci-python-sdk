@@ -37,7 +37,10 @@ class RemoteReindexTrustConfig(object):
     def remote_sources(self):
         """
         **[Required]** Gets the remote_sources of this RemoteReindexTrustConfig.
-        Remote cluster sources to trust for reindexing.
+        Remote sources trusted for reindexing.
+        When creating a cluster with this configuration, provide at least one source.
+        When updating a cluster, this list replaces the existing sources.
+        Specify an empty list to remove all remote-reindex trust configuration.
 
 
         :return: The remote_sources of this RemoteReindexTrustConfig.
@@ -49,7 +52,10 @@ class RemoteReindexTrustConfig(object):
     def remote_sources(self, remote_sources):
         """
         Sets the remote_sources of this RemoteReindexTrustConfig.
-        Remote cluster sources to trust for reindexing.
+        Remote sources trusted for reindexing.
+        When creating a cluster with this configuration, provide at least one source.
+        When updating a cluster, this list replaces the existing sources.
+        Specify an empty list to remove all remote-reindex trust configuration.
 
 
         :param remote_sources: The remote_sources of this RemoteReindexTrustConfig.

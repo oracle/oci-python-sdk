@@ -162,6 +162,7 @@ class RunObjectStoreScriptUserDefinedStep(DrPlanUserDefinedStep):
         """
         Gets the script_command of this RunObjectStoreScriptUserDefinedStep.
         The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.
+
         Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env \"production\" --max-connections 200 --log-level \"INFO\"`
 
 
@@ -175,6 +176,7 @@ class RunObjectStoreScriptUserDefinedStep(DrPlanUserDefinedStep):
         """
         Sets the script_command of this RunObjectStoreScriptUserDefinedStep.
         The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.
+
         Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env \"production\" --max-connections 200 --log-level \"INFO\"`
 
 
@@ -188,6 +190,7 @@ class RunObjectStoreScriptUserDefinedStep(DrPlanUserDefinedStep):
         """
         Gets the run_as_user of this RunObjectStoreScriptUserDefinedStep.
         The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.
+
         Example: `opc`
 
 
@@ -201,6 +204,7 @@ class RunObjectStoreScriptUserDefinedStep(DrPlanUserDefinedStep):
         """
         Sets the run_as_user of this RunObjectStoreScriptUserDefinedStep.
         The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.
+
         Example: `opc`
 
 

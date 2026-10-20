@@ -539,7 +539,7 @@ class Backup(object):
     @property
     def backup_size(self):
         """
-        **[Required]** Gets the backup_size of this Backup.
+        Gets the backup_size of this Backup.
         The size of the backup, in gigabytes.
 
 

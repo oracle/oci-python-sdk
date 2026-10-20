@@ -36,6 +36,10 @@ class ComputeInstanceMovableVnicMappingDetails(object):
             The value to assign to the destination_primary_private_ip_hostname_label property of this ComputeInstanceMovableVnicMappingDetails.
         :type destination_primary_private_ip_hostname_label: str
 
+        :param destination_reserved_primary_private_ip_id:
+            The value to assign to the destination_reserved_primary_private_ip_id property of this ComputeInstanceMovableVnicMappingDetails.
+        :type destination_reserved_primary_private_ip_id: str
+
         :param destination_reserved_public_ip_id:
             The value to assign to the destination_reserved_public_ip_id property of this ComputeInstanceMovableVnicMappingDetails.
         :type destination_reserved_public_ip_id: str
@@ -50,6 +54,7 @@ class ComputeInstanceMovableVnicMappingDetails(object):
             'destination_subnet_id': 'str',
             'destination_primary_private_ip_address': 'str',
             'destination_primary_private_ip_hostname_label': 'str',
+            'destination_reserved_primary_private_ip_id': 'str',
             'destination_reserved_public_ip_id': 'str',
             'destination_nsg_id_list': 'list[str]'
         }
@@ -58,6 +63,7 @@ class ComputeInstanceMovableVnicMappingDetails(object):
             'destination_subnet_id': 'destinationSubnetId',
             'destination_primary_private_ip_address': 'destinationPrimaryPrivateIpAddress',
             'destination_primary_private_ip_hostname_label': 'destinationPrimaryPrivateIpHostnameLabel',
+            'destination_reserved_primary_private_ip_id': 'destinationReservedPrimaryPrivateIpId',
             'destination_reserved_public_ip_id': 'destinationReservedPublicIpId',
             'destination_nsg_id_list': 'destinationNsgIdList'
         }
@@ -65,6 +71,7 @@ class ComputeInstanceMovableVnicMappingDetails(object):
         self._destination_subnet_id = None
         self._destination_primary_private_ip_address = None
         self._destination_primary_private_ip_hostname_label = None
+        self._destination_reserved_primary_private_ip_id = None
         self._destination_reserved_public_ip_id = None
         self._destination_nsg_id_list = None
 
@@ -128,6 +135,7 @@ class ComputeInstanceMovableVnicMappingDetails(object):
     def destination_primary_private_ip_address(self):
         """
         Gets the destination_primary_private_ip_address of this ComputeInstanceMovableVnicMappingDetails.
+        Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this.
         The primary private IP address to be assigned to the source VNIC in the destination subnet.
         This IP address must belong to the destination subnet.
 
@@ -143,6 +151,7 @@ class ComputeInstanceMovableVnicMappingDetails(object):
     def destination_primary_private_ip_address(self, destination_primary_private_ip_address):
         """
         Sets the destination_primary_private_ip_address of this ComputeInstanceMovableVnicMappingDetails.
+        Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this.
         The primary private IP address to be assigned to the source VNIC in the destination subnet.
         This IP address must belong to the destination subnet.
 
@@ -158,6 +167,7 @@ class ComputeInstanceMovableVnicMappingDetails(object):
     def destination_primary_private_ip_hostname_label(self):
         """
         Gets the destination_primary_private_ip_hostname_label of this ComputeInstanceMovableVnicMappingDetails.
+        Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this.
         The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC.
         This label is the hostname portion of the private IP's fully qualified domain name (FQDN)
         (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').
@@ -174,6 +184,7 @@ class ComputeInstanceMovableVnicMappingDetails(object):
     def destination_primary_private_ip_hostname_label(self, destination_primary_private_ip_hostname_label):
         """
         Sets the destination_primary_private_ip_hostname_label of this ComputeInstanceMovableVnicMappingDetails.
+        Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this.
         The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC.
         This label is the hostname portion of the private IP's fully qualified domain name (FQDN)
         (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').
@@ -185,6 +196,46 @@ class ComputeInstanceMovableVnicMappingDetails(object):
         :type: str
         """
         self._destination_primary_private_ip_hostname_label = destination_primary_private_ip_hostname_label
+
+    @property
+    def destination_reserved_primary_private_ip_id(self):
+        """
+        Gets the destination_reserved_primary_private_ip_id of this ComputeInstanceMovableVnicMappingDetails.
+        The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region.
+        Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`,
+        `destinationPrimaryPrivateIpHostnameLabel`, or the
+        `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+
+        For legacy compatibility, omit this attribute and use either the legacy explicit private-IP
+        fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+
+        Example: `ocid1.privateip.oc1..uniqueID`
+
+
+        :return: The destination_reserved_primary_private_ip_id of this ComputeInstanceMovableVnicMappingDetails.
+        :rtype: str
+        """
+        return self._destination_reserved_primary_private_ip_id
+
+    @destination_reserved_primary_private_ip_id.setter
+    def destination_reserved_primary_private_ip_id(self, destination_reserved_primary_private_ip_id):
+        """
+        Sets the destination_reserved_primary_private_ip_id of this ComputeInstanceMovableVnicMappingDetails.
+        The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region.
+        Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`,
+        `destinationPrimaryPrivateIpHostnameLabel`, or the
+        `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+
+        For legacy compatibility, omit this attribute and use either the legacy explicit private-IP
+        fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+
+        Example: `ocid1.privateip.oc1..uniqueID`
+
+
+        :param destination_reserved_primary_private_ip_id: The destination_reserved_primary_private_ip_id of this ComputeInstanceMovableVnicMappingDetails.
+        :type: str
+        """
+        self._destination_reserved_primary_private_ip_id = destination_reserved_primary_private_ip_id
 
     @property
     def destination_reserved_public_ip_id(self):

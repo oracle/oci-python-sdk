@@ -45,6 +45,7 @@ class UpdateOkeClusterResourceModifierMappingDetails(object):
         """
         **[Required]** Gets the namespace of this UpdateOkeClusterResourceModifierMappingDetails.
         The OKE namespace where the configmap resides.
+
         Example: `bar`
 
 
@@ -58,6 +59,7 @@ class UpdateOkeClusterResourceModifierMappingDetails(object):
         """
         Sets the namespace of this UpdateOkeClusterResourceModifierMappingDetails.
         The OKE namespace where the configmap resides.
+
         Example: `bar`
 
 
@@ -71,6 +73,7 @@ class UpdateOkeClusterResourceModifierMappingDetails(object):
         """
         **[Required]** Gets the config_map of this UpdateOkeClusterResourceModifierMappingDetails.
         The name of the config map containing resource modification details.
+
         Example: `resource-modifier`
 
 
@@ -84,6 +87,7 @@ class UpdateOkeClusterResourceModifierMappingDetails(object):
         """
         Sets the config_map of this UpdateOkeClusterResourceModifierMappingDetails.
         The name of the config map containing resource modification details.
+
         Example: `resource-modifier`
 
 

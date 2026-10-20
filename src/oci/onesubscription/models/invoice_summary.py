@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InvoiceSummary(object):
     """
-    Invoice details
+    Invoice details.
     """
 
     def __init__(self, **kwargs):
@@ -163,7 +163,7 @@ class InvoiceSummary(object):
     def spm_invoice_number(self):
         """
         **[Required]** Gets the spm_invoice_number of this InvoiceSummary.
-        SPM Document Number is an functional identifier for invoice in SPM
+        SPM (Subscription Plan Management) document number is a functional identifier for invoicing in SPM.
 
 
         :return: The spm_invoice_number of this InvoiceSummary.
@@ -175,7 +175,7 @@ class InvoiceSummary(object):
     def spm_invoice_number(self, spm_invoice_number):
         """
         Sets the spm_invoice_number of this InvoiceSummary.
-        SPM Document Number is an functional identifier for invoice in SPM
+        SPM (Subscription Plan Management) document number is a functional identifier for invoicing in SPM.
 
 
         :param spm_invoice_number: The spm_invoice_number of this InvoiceSummary.
@@ -187,7 +187,7 @@ class InvoiceSummary(object):
     def ar_invoices(self):
         """
         Gets the ar_invoices of this InvoiceSummary.
-        AR Invoice Numbers comma separated under one invoice
+        Accounts receivable invoice numbers, comma-separated under one invoice.
 
 
         :return: The ar_invoices of this InvoiceSummary.
@@ -199,7 +199,7 @@ class InvoiceSummary(object):
     def ar_invoices(self, ar_invoices):
         """
         Sets the ar_invoices of this InvoiceSummary.
-        AR Invoice Numbers comma separated under one invoice
+        Accounts receivable invoice numbers, comma-separated under one invoice.
 
 
         :param ar_invoices: The ar_invoices of this InvoiceSummary.
@@ -271,7 +271,7 @@ class InvoiceSummary(object):
     def payment_method(self):
         """
         **[Required]** Gets the payment_method of this InvoiceSummary.
-        Payment Method
+        Payment method.
 
 
         :return: The payment_method of this InvoiceSummary.
@@ -283,7 +283,7 @@ class InvoiceSummary(object):
     def payment_method(self, payment_method):
         """
         Sets the payment_method of this InvoiceSummary.
-        Payment Method
+        Payment method.
 
 
         :param payment_method: The payment_method of this InvoiceSummary.
@@ -315,7 +315,7 @@ class InvoiceSummary(object):
     def receipt_method(self):
         """
         Gets the receipt_method of this InvoiceSummary.
-        Receipt Method of Payment Mode
+        Receipt method of payment mode.
 
 
         :return: The receipt_method of this InvoiceSummary.
@@ -327,7 +327,7 @@ class InvoiceSummary(object):
     def receipt_method(self, receipt_method):
         """
         Sets the receipt_method of this InvoiceSummary.
-        Receipt Method of Payment Mode
+        Receipt method of payment mode.
 
 
         :param receipt_method: The receipt_method of this InvoiceSummary.
@@ -379,7 +379,7 @@ class InvoiceSummary(object):
     def type(self):
         """
         **[Required]** Gets the type of this InvoiceSummary.
-        Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
+        Document type in SPM, such as SPM Invoice, SPM Credit Memo, and so on.
 
 
         :return: The type of this InvoiceSummary.
@@ -391,7 +391,7 @@ class InvoiceSummary(object):
     def type(self, type):
         """
         Sets the type of this InvoiceSummary.
-        Document Type in SPM like SPM Invoice,SPM Credit Memo etc.,
+        Document type in SPM, such as SPM Invoice, SPM Credit Memo, and so on.
 
 
         :param type: The type of this InvoiceSummary.
@@ -403,7 +403,7 @@ class InvoiceSummary(object):
     def status(self):
         """
         **[Required]** Gets the status of this InvoiceSummary.
-        Document Status in SPM which depicts current state of invoice
+        Document status in SPM, which depicts the current invoice state.
 
 
         :return: The status of this InvoiceSummary.
@@ -415,7 +415,7 @@ class InvoiceSummary(object):
     def status(self, status):
         """
         Sets the status of this InvoiceSummary.
-        Document Status in SPM which depicts current state of invoice
+        Document status in SPM, which depicts the current invoice state.
 
 
         :param status: The status of this InvoiceSummary.
@@ -451,7 +451,7 @@ class InvoiceSummary(object):
     def time_invoice_date(self):
         """
         **[Required]** Gets the time_invoice_date of this InvoiceSummary.
-        Invoice Date
+        Invoice date.
 
 
         :return: The time_invoice_date of this InvoiceSummary.
@@ -463,7 +463,7 @@ class InvoiceSummary(object):
     def time_invoice_date(self, time_invoice_date):
         """
         Sets the time_invoice_date of this InvoiceSummary.
-        Invoice Date
+        Invoice date.
 
 
         :param time_invoice_date: The time_invoice_date of this InvoiceSummary.
@@ -475,7 +475,7 @@ class InvoiceSummary(object):
     def time_created(self):
         """
         Gets the time_created of this InvoiceSummary.
-        SPM Invocie creation date
+        SPM invocie creation date.
 
 
         :return: The time_created of this InvoiceSummary.
@@ -487,7 +487,7 @@ class InvoiceSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this InvoiceSummary.
-        SPM Invocie creation date
+        SPM invocie creation date.
 
 
         :param time_created: The time_created of this InvoiceSummary.
@@ -499,7 +499,7 @@ class InvoiceSummary(object):
     def created_by(self):
         """
         Gets the created_by of this InvoiceSummary.
-        User that executed SPM Invoice process
+        User that executed the SPM invoice process.
 
 
         :return: The created_by of this InvoiceSummary.
@@ -511,7 +511,7 @@ class InvoiceSummary(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this InvoiceSummary.
-        User that executed SPM Invoice process
+        User that executed the SPM invoice process.
 
 
         :param created_by: The created_by of this InvoiceSummary.
@@ -523,7 +523,7 @@ class InvoiceSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this InvoiceSummary.
-        SPM Invoice updated date
+        SPM invoice updated date.
 
 
         :return: The time_updated of this InvoiceSummary.
@@ -535,7 +535,7 @@ class InvoiceSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this InvoiceSummary.
-        SPM Invoice updated date
+        SPM invoice updated date.
 
 
         :param time_updated: The time_updated of this InvoiceSummary.
@@ -547,7 +547,7 @@ class InvoiceSummary(object):
     def updated_by(self):
         """
         Gets the updated_by of this InvoiceSummary.
-        User that updated SPM Invoice
+        User that updated the SPM invoice.
 
 
         :return: The updated_by of this InvoiceSummary.
@@ -559,7 +559,7 @@ class InvoiceSummary(object):
     def updated_by(self, updated_by):
         """
         Sets the updated_by of this InvoiceSummary.
-        User that updated SPM Invoice
+        User that updated the SPM invoice.
 
 
         :param updated_by: The updated_by of this InvoiceSummary.
@@ -571,7 +571,7 @@ class InvoiceSummary(object):
     def invoice_lines(self):
         """
         Gets the invoice_lines of this InvoiceSummary.
-        Invoice Lines under particular invoice.
+        Invoice lines under a particular invoice.
 
 
         :return: The invoice_lines of this InvoiceSummary.
@@ -583,7 +583,7 @@ class InvoiceSummary(object):
     def invoice_lines(self, invoice_lines):
         """
         Sets the invoice_lines of this InvoiceSummary.
-        Invoice Lines under particular invoice.
+        Invoice lines under a particular invoice.
 
 
         :param invoice_lines: The invoice_lines of this InvoiceSummary.
