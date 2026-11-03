@@ -123,6 +123,8 @@ class OrganizationClient(object):
         self.base_client = BaseClient("organization", config, signer, tenant_manager_control_plane_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def approve_organization_tenancy_for_transfer(self, compartment_id, organization_tenancy_id, **kwargs):
         """

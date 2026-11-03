@@ -157,6 +157,8 @@ class OracleDBAzureBlobContainerClient(object):
         self.base_client = BaseClient("oracle_db_azure_blob_container", config, signer, dbmulticloud_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def change_oracle_db_azure_blob_container_compartment(self, oracle_db_azure_blob_container_id, change_oracle_db_azure_blob_container_compartment_details, **kwargs):
         """

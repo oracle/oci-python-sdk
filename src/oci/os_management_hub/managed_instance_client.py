@@ -124,6 +124,8 @@ class ManagedInstanceClient(object):
         self.base_client = BaseClient("managed_instance", config, signer, os_management_hub_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def associate_managed_instances_with_management_station(self, management_station_id, associate_managed_instances_with_management_station_details, **kwargs):
         """

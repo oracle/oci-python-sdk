@@ -123,6 +123,8 @@ class FleetAppsManagementMaintenanceWindowClient(object):
         self.base_client = BaseClient("fleet_apps_management_maintenance_window", config, signer, fleet_apps_management_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def create_maintenance_window(self, create_maintenance_window_details, **kwargs):
         """

@@ -123,6 +123,8 @@ class FleetAppsManagementAdminClient(object):
         self.base_client = BaseClient("fleet_apps_management_admin", config, signer, fleet_apps_management_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def change_platform_configuration_compartment(self, platform_configuration_id, change_platform_configuration_compartment_details, **kwargs):
         """

@@ -65,6 +65,10 @@ class CreateSubscriptionUsageRecordDetails(object):
             The value to assign to the marketplace_offer_id property of this CreateSubscriptionUsageRecordDetails.
         :type marketplace_offer_id: str
 
+        :param listing_id:
+            The value to assign to the listing_id property of this CreateSubscriptionUsageRecordDetails.
+        :type listing_id: str
+
         :param billing_type:
             The value to assign to the billing_type property of this CreateSubscriptionUsageRecordDetails.
             Allowed values for this property are: "FLAT_RATE", "USAGE_BASED"
@@ -131,6 +135,7 @@ class CreateSubscriptionUsageRecordDetails(object):
         self.swagger_types = {
             'id': 'str',
             'marketplace_offer_id': 'str',
+            'listing_id': 'str',
             'billing_type': 'str',
             'usage_dimension_name': 'str',
             'consumed_quantity': 'float',
@@ -150,6 +155,7 @@ class CreateSubscriptionUsageRecordDetails(object):
         self.attribute_map = {
             'id': 'id',
             'marketplace_offer_id': 'marketplaceOfferId',
+            'listing_id': 'listingId',
             'billing_type': 'billingType',
             'usage_dimension_name': 'usageDimensionName',
             'consumed_quantity': 'consumedQuantity',
@@ -168,6 +174,7 @@ class CreateSubscriptionUsageRecordDetails(object):
         }
         self._id = None
         self._marketplace_offer_id = None
+        self._listing_id = None
         self._billing_type = None
         self._usage_dimension_name = None
         self._consumed_quantity = None
@@ -235,6 +242,34 @@ class CreateSubscriptionUsageRecordDetails(object):
         :type: str
         """
         self._marketplace_offer_id = marketplace_offer_id
+
+    @property
+    def listing_id(self):
+        """
+        **[Required]** Gets the listing_id of this CreateSubscriptionUsageRecordDetails.
+        The `OCID`__ of the listing that generated this usage.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The listing_id of this CreateSubscriptionUsageRecordDetails.
+        :rtype: str
+        """
+        return self._listing_id
+
+    @listing_id.setter
+    def listing_id(self, listing_id):
+        """
+        Sets the listing_id of this CreateSubscriptionUsageRecordDetails.
+        The `OCID`__ of the listing that generated this usage.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param listing_id: The listing_id of this CreateSubscriptionUsageRecordDetails.
+        :type: str
+        """
+        self._listing_id = listing_id
 
     @property
     def billing_type(self):

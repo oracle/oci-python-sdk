@@ -40,7 +40,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "26.09.29"
+    version = "26.10.27"
     oci_compatible_version = "2.165.1"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -19150,7 +19150,7 @@ class ShowOCIService(object):
                             sort_by="name",
                             retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                         ).data
-                    except oci.exceptions.Exception as e:
+                    except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e):
                             self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
                             errstr += "a"

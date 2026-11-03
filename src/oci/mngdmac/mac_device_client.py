@@ -123,6 +123,8 @@ class MacDeviceClient(object):
         self.base_client = BaseClient("mac_device", config, signer, mngdmac_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def get_mac_device(self, mac_device_id, mac_order_id, **kwargs):
         """

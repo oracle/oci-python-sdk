@@ -128,6 +128,8 @@ class PrivilegedApiControlClient(object):
         self.base_client = BaseClient("privileged_api_control", config, signer, apiaccesscontrol_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def change_privileged_api_control_compartment(self, privileged_api_control_id, change_privileged_api_control_compartment_details, **kwargs):
         """

@@ -123,6 +123,8 @@ class FleetAppsManagementOperationsClient(object):
         self.base_client = BaseClient("fleet_apps_management_operations", config, signer, fleet_apps_management_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def change_patch_compartment(self, patch_id, change_patch_compartment_details, **kwargs):
         """

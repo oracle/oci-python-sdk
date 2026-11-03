@@ -124,6 +124,8 @@ class ClusterClient(object):
         self.base_client = BaseClient("cluster", config, signer, ocvp_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def create_cluster(self, create_cluster_details, **kwargs):
         """

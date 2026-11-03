@@ -123,6 +123,8 @@ class RedirectClient(object):
         self.base_client = BaseClient("redirect", config, signer, waas_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def change_http_redirect_compartment(self, http_redirect_id, change_http_redirect_compartment_details, **kwargs):
         """

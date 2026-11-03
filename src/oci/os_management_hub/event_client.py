@@ -124,6 +124,8 @@ class EventClient(object):
         self.base_client = BaseClient("event", config, signer, os_management_hub_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def change_event_compartment(self, change_event_compartment_details, event_id, **kwargs):
         """

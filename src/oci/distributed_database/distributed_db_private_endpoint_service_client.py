@@ -123,6 +123,8 @@ class DistributedDbPrivateEndpointServiceClient(object):
         self.base_client = BaseClient("distributed_db_private_endpoint_service", config, signer, distributed_database_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def change_distributed_database_private_endpoint_compartment(self, change_distributed_database_private_endpoint_compartment_details, distributed_database_private_endpoint_id, **kwargs):
         """

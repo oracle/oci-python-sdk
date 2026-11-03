@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+26.10.27 - 26.10.27
+=====================
+* Added structured remote peering details to the DRG CSV and a separate network_drg_remote_peerings CSV with RPC, peer, DRG, attachment, peer tenancy, peer region, and route table identifiers
+* Resolve RPC attachment details after collection to avoid missing relationships during threaded loading
+
+=====================
 26.09.29 - 26.09.29
 =====================
 * Added Network Firewall shape, lifecycle details, system tags, and security attributes

@@ -124,6 +124,8 @@ class PartnerIntegerationClient(object):
         self.base_client = BaseClient("partner_integeration", config, signer, self_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def activate_subscription(self, subscription_id, activate_subscription_details, **kwargs):
         """
@@ -1095,7 +1097,7 @@ class PartnerIntegerationClient(object):
 
         :param stream submit_subscription_usage_batch_details: (required)
             UTF-8 CSV file with no more than 30,000 usage records and a maximum size of 50 MB.
-            Required columns are `MarketplaceOfferId`, `Id`, `Amount`, `CurrencyCode`,
+            Required columns are `MarketplaceOfferId`, `ListingId`, `Id`, `Amount`, `CurrencyCode`,
             `UsageStartTime`, `UsageEndTime`, and `UsageDimensionName`.
             Optional columns are `ConsumedQuantity`, `CustomerTenancyId`,
             `BillingIdentifier`, `ProductSku`, `UnitOfMeasure`, `UnitPrice`,

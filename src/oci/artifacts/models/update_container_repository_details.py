@@ -28,6 +28,14 @@ class UpdateContainerRepositoryDetails(object):
             The value to assign to the is_public property of this UpdateContainerRepositoryDetails.
         :type is_public: bool
 
+        :param upstream_username:
+            The value to assign to the upstream_username property of this UpdateContainerRepositoryDetails.
+        :type upstream_username: str
+
+        :param upstream_secret_id:
+            The value to assign to the upstream_secret_id property of this UpdateContainerRepositoryDetails.
+        :type upstream_secret_id: str
+
         :param readme:
             The value to assign to the readme property of this UpdateContainerRepositoryDetails.
         :type readme: oci.artifacts.models.ContainerRepositoryReadme
@@ -44,6 +52,8 @@ class UpdateContainerRepositoryDetails(object):
         self.swagger_types = {
             'is_immutable': 'bool',
             'is_public': 'bool',
+            'upstream_username': 'str',
+            'upstream_secret_id': 'str',
             'readme': 'ContainerRepositoryReadme',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -51,12 +61,16 @@ class UpdateContainerRepositoryDetails(object):
         self.attribute_map = {
             'is_immutable': 'isImmutable',
             'is_public': 'isPublic',
+            'upstream_username': 'upstreamUsername',
+            'upstream_secret_id': 'upstreamSecretId',
             'readme': 'readme',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
         self._is_immutable = None
         self._is_public = None
+        self._upstream_username = None
+        self._upstream_secret_id = None
         self._readme = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -108,6 +122,58 @@ class UpdateContainerRepositoryDetails(object):
         :type: bool
         """
         self._is_public = is_public
+
+    @property
+    def upstream_username(self):
+        """
+        Gets the upstream_username of this UpdateContainerRepositoryDetails.
+        The upstream registry username for a pull-through cache repository.
+
+
+        :return: The upstream_username of this UpdateContainerRepositoryDetails.
+        :rtype: str
+        """
+        return self._upstream_username
+
+    @upstream_username.setter
+    def upstream_username(self, upstream_username):
+        """
+        Sets the upstream_username of this UpdateContainerRepositoryDetails.
+        The upstream registry username for a pull-through cache repository.
+
+
+        :param upstream_username: The upstream_username of this UpdateContainerRepositoryDetails.
+        :type: str
+        """
+        self._upstream_username = upstream_username
+
+    @property
+    def upstream_secret_id(self):
+        """
+        Gets the upstream_secret_id of this UpdateContainerRepositoryDetails.
+        The `OCID`__ of the OCI Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The upstream_secret_id of this UpdateContainerRepositoryDetails.
+        :rtype: str
+        """
+        return self._upstream_secret_id
+
+    @upstream_secret_id.setter
+    def upstream_secret_id(self, upstream_secret_id):
+        """
+        Sets the upstream_secret_id of this UpdateContainerRepositoryDetails.
+        The `OCID`__ of the OCI Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param upstream_secret_id: The upstream_secret_id of this UpdateContainerRepositoryDetails.
+        :type: str
+        """
+        self._upstream_secret_id = upstream_secret_id
 
     @property
     def readme(self):

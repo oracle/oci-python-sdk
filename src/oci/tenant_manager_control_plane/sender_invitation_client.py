@@ -123,6 +123,8 @@ class SenderInvitationClient(object):
         self.base_client = BaseClient("sender_invitation", config, signer, tenant_manager_control_plane_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def cancel_sender_invitation(self, sender_invitation_id, **kwargs):
         """

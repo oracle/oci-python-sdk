@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "26.09.29"
+    version = "26.10.27"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -1176,6 +1176,7 @@ class ShowOCIData(object):
             drgs = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_DRG, 'region_name', region_name, 'compartment_id', compartment['id'])
             for drg in drgs:
                 drg_id = drg['id']
+                rpcs = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_RPC, 'drg_id', drg_id)
                 val = {
                     'id': drg['id'],
                     'name': drg['name'],
@@ -1190,7 +1191,7 @@ class ShowOCIData(object):
                     'drg_route_tables': drg['drg_route_tables'],
                     'ip_sec_connections': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_IPS, 'drg_id', drg_id),
                     'virtual_circuits': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_VC, 'drg_id', drg_id),
-                    'remote_peerings': self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_RPC, 'drg_id', drg_id),
+                    'remote_peerings': [self.__get_core_network_rpc_attachment(rpc) for rpc in rpcs],
                     'vcns': []
                 }
 
@@ -1316,12 +1317,25 @@ class ShowOCIData(object):
     ##########################################################################
     # print network remote peering
     ##########################################################################
+    def __get_core_network_rpc_attachment(self, rpc):
+        # Resolve after collection so threaded RPC loading cannot race attachments.
+        data = dict(rpc)
+        data.setdefault('drg_attachment_id', '')
+        attachment = self.service.search_unique_item(
+            self.service.C_NETWORK, self.service.C_NETWORK_DRG_AT, 'rpc_id', rpc['id'])
+        if attachment:
+            data['drg_attachment_id'] = attachment['id']
+            data['drg_route_table_id'] = attachment.get('drg_route_table_id', '')
+            data['drg_route_table'] = self.__get_core_network_drg_route(data['drg_route_table_id'])
+        return data
+
     def __get_core_network_remote_peering(self, region_name, compartment):
 
         data = []
         try:
             rpcs = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_RPC, 'region_name', region_name, 'compartment_id', compartment['id'])
             for rpc in rpcs:
+                rpc = self.__get_core_network_rpc_attachment(rpc)
                 drg_name = self.__get_core_network_drg_name(rpc['drg_id'])
                 main_data = {
                     'id': str(rpc['id']),
@@ -1329,6 +1343,7 @@ class ShowOCIData(object):
                     'name': str(rpc['name']),
                     'drg': drg_name,
                     'drg_id': rpc['drg_id'],
+                    'drg_attachment_id': rpc['drg_attachment_id'],
                     'is_cross_tenancy_peering': str(rpc['is_cross_tenancy_peering']),
                     'peer_region_name': str(rpc['peer_region_name']),
                     'peer_rfc_name': self.__get_core_network_rpc_name(rpc['peer_id']),
