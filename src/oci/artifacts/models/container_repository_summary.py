@@ -32,6 +32,14 @@ class ContainerRepositorySummary(object):
             The value to assign to the id property of this ContainerRepositorySummary.
         :type id: str
 
+        :param repository_type:
+            The value to assign to the repository_type property of this ContainerRepositorySummary.
+        :type repository_type: str
+
+        :param is_top_level:
+            The value to assign to the is_top_level property of this ContainerRepositorySummary.
+        :type is_top_level: bool
+
         :param image_count:
             The value to assign to the image_count property of this ContainerRepositorySummary.
         :type image_count: int
@@ -81,6 +89,8 @@ class ContainerRepositorySummary(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'id': 'str',
+            'repository_type': 'str',
+            'is_top_level': 'bool',
             'image_count': 'int',
             'is_public': 'bool',
             'layer_count': 'int',
@@ -97,6 +107,8 @@ class ContainerRepositorySummary(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'id': 'id',
+            'repository_type': 'repositoryType',
+            'is_top_level': 'isTopLevel',
             'image_count': 'imageCount',
             'is_public': 'isPublic',
             'layer_count': 'layerCount',
@@ -112,6 +124,8 @@ class ContainerRepositorySummary(object):
         self._compartment_id = None
         self._display_name = None
         self._id = None
+        self._repository_type = None
+        self._is_top_level = None
         self._image_count = None
         self._is_public = None
         self._layer_count = None
@@ -203,6 +217,54 @@ class ContainerRepositorySummary(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def repository_type(self):
+        """
+        Gets the repository_type of this ContainerRepositorySummary.
+        The type of container repository. This determines the repository behavior and required settings.
+
+
+        :return: The repository_type of this ContainerRepositorySummary.
+        :rtype: str
+        """
+        return self._repository_type
+
+    @repository_type.setter
+    def repository_type(self, repository_type):
+        """
+        Sets the repository_type of this ContainerRepositorySummary.
+        The type of container repository. This determines the repository behavior and required settings.
+
+
+        :param repository_type: The repository_type of this ContainerRepositorySummary.
+        :type: str
+        """
+        self._repository_type = repository_type
+
+    @property
+    def is_top_level(self):
+        """
+        Gets the is_top_level of this ContainerRepositorySummary.
+        Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+
+
+        :return: The is_top_level of this ContainerRepositorySummary.
+        :rtype: bool
+        """
+        return self._is_top_level
+
+    @is_top_level.setter
+    def is_top_level(self, is_top_level):
+        """
+        Sets the is_top_level of this ContainerRepositorySummary.
+        Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+
+
+        :param is_top_level: The is_top_level of this ContainerRepositorySummary.
+        :type: bool
+        """
+        self._is_top_level = is_top_level
 
     @property
     def image_count(self):

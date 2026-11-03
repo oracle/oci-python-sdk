@@ -16,14 +16,45 @@ class ManagementClientCompositeOperations(object):
     to enter a given state, you can call a single method in this class to accomplish the same functionality
     """
 
-    def __init__(self, client, **kwargs):
+    def __init__(self, client, work_request_clients=None, **kwargs):
         """
         Creates a new ManagementClientCompositeOperations object
 
         :param ManagementClient client:
             The service client which will be wrapped by this object
+
+        :param dict work_request_clients: (optional)
+            Service-local clients keyed by generated client class name, for example ``{'WorkRequestClient': work_request_client}``.
+            By default, regional clients are created when needed using the wrapped client's signer, endpoint and constructor options.
+
+            Automatically created work-request clients are cached. Before each wait,
+            their endpoint and signer are refreshed from the wrapped client; other
+            client settings and HTTP session changes are not synchronized. Do not
+            modify the wrapped client's endpoint or signer while a wait is in progress.
+
+            Supply a client for non-regional endpoints or customized HTTP sessions. These clients are separate from the shared Work Requests service.
         """
         self.client = client
+        self._work_request_clients = dict(work_request_clients or {})
+        self._auto_work_request_clients = set()
+
+    def _ensure_work_request_client(self, client_class, getter_name, use_source_endpoint):
+        client_name = client_class.__name__
+        client = self._work_request_clients.get(client_name)
+        if client is None:
+            if not use_source_endpoint:
+                raise ValueError('Supply {} in work_request_clients for this endpoint configuration'.format(client_name))
+            kwargs = dict(self.client._kwargs)
+            kwargs['signer'] = self.client.base_client.signer
+            kwargs['service_endpoint'] = self.client.base_client.update_endpoint_template_for_options()
+            client = client_class(self.client._config, **kwargs)
+            self._auto_work_request_clients.add(client_name)
+        elif client_name in self._auto_work_request_clients:
+            client.base_client.endpoint = self.client.base_client.update_endpoint_template_for_options()
+            client.base_client.signer = self.client.base_client.signer
+        if not callable(getattr(client, getter_name, None)):
+            raise ValueError('{} must provide {}'.format(client_name, getter_name))
+        self._work_request_clients[client_name] = client
 
     def bulk_create_skill_entities_and_wait_for_state(self, oda_instance_id, skill_id, bulk_create_skill_entities_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
@@ -58,9 +89,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -100,9 +133,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -144,9 +179,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -231,9 +268,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -270,9 +309,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -309,9 +350,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -353,9 +396,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -395,9 +440,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -537,9 +584,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -586,9 +635,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -638,9 +689,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -683,9 +736,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -728,9 +783,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -770,9 +827,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -995,9 +1054,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1234,9 +1295,11 @@ class ManagementClientCompositeOperations(object):
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
+            self._ensure_work_request_client(
+                oci.oda.OdaClient, 'get_work_request', True)
             waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_work_request(wait_for_resource_id),
+                self._work_request_clients['OdaClient'],
+                self._work_request_clients['OdaClient'].get_work_request(work_request_id=wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )

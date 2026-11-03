@@ -23,7 +23,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "26.09.29"
+    version = "26.10.27"
 
     ##########################################################################
     # spaces for align
@@ -4636,6 +4636,7 @@ class ShowOCICSV(object):
     csv_fsdr = []
     csv_db_postgresql_backups = []
     csv_network_drg = []
+    csv_network_drg_remote_peerings = []
     csv_network_drg_ipsec_tunnels = []
     csv_network_drg_virtual_circuits = []
     csv_network_vcn = []
@@ -4835,6 +4836,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("network_subnet", self.csv_network_subnet)
             self.__export_to_csv_file("network_subnet_prv_ips", self.csv_network_subnet_prv_ips)
             self.__export_to_csv_file("network_drgs", self.csv_network_drg)
+            self.__export_to_csv_file("network_drg_remote_peerings", self.csv_network_drg_remote_peerings)
             self.__export_to_csv_file("network_drg_ipsec_tunnels", self.csv_network_drg_ipsec_tunnels)
             self.__export_to_csv_file("network_drg_virtual_circuits", self.csv_network_drg_virtual_circuits)
             self.__export_to_csv_file("network_routes", self.csv_network_routes)
@@ -6418,10 +6420,56 @@ class ShowOCICSV(object):
                     'defined_tags': self.__get_defined_tags(drg['defined_tags']),
                     'id': drg['id']
                 }
+                data['remote_peering_details'] = json.dumps([
+                    self.__csv_core_network_rpc_details(rpc) for rpc in drg['remote_peerings']
+                ], sort_keys=True)
                 self.csv_network_drg.append(data)
 
         except Exception as e:
             self.__print_error("__csv_core_network_drg", e)
+
+    ##########################################################################
+    # CSV Network remote peering connections
+    ##########################################################################
+    def __csv_core_network_rpc_details(self, rpc):
+        return {
+            'id': rpc.get('id', ''),
+            'name': rpc.get('name', ''),
+            'drg_id': rpc.get('drg_id', ''),
+            'drg_attachment_id': rpc.get('drg_attachment_id', ''),
+            'peer_id': rpc.get('peer_id', ''),
+            'peer_region_name': rpc.get('peer_region_name', ''),
+            'peer_tenancy_id': rpc.get('peer_tenancy_id', ''),
+            'is_cross_tenancy_peering': rpc.get('is_cross_tenancy_peering', ''),
+            'peering_status': rpc.get('peering_status', ''),
+            'drg_route_table_id': rpc.get('drg_route_table_id', ''),
+            'drg_route_table': rpc.get('drg_route_table', '')
+        }
+
+    def __csv_core_network_remote_peering(self, region_name, rpcs):
+        try:
+            for rpc in rpcs:
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': rpc.get('compartment_name', ''),
+                    'compartment_path': rpc.get('compartment_path', ''),
+                    'compartment_id': rpc.get('compartment_id', ''),
+                    'drg': rpc.get('drg', ''),
+                    'id': rpc.get('id', ''),
+                    'name': rpc.get('name', ''),
+                    'drg_id': rpc.get('drg_id', ''),
+                    'drg_attachment_id': rpc.get('drg_attachment_id', ''),
+                    'peer_id': rpc.get('peer_id', ''),
+                    'peer_region_name': rpc.get('peer_region_name', ''),
+                    'peer_tenancy_id': rpc.get('peer_tenancy_id', ''),
+                    'is_cross_tenancy_peering': rpc.get('is_cross_tenancy_peering', ''),
+                    'peering_status': rpc.get('peering_status', ''),
+                    'drg_route_table_id': rpc.get('drg_route_table_id', ''),
+                    'drg_route_table': rpc.get('drg_route_table', '')
+                }
+                self.csv_network_drg_remote_peerings.append(data)
+        except Exception as e:
+            self.__print_error("__csv_core_network_remote_peering", e)
 
     ##########################################################################
     # CSV Network ipsec
@@ -7036,6 +7084,9 @@ class ShowOCICSV(object):
 
             if 'drg' in data:
                 self.__csv_core_network_drg(region_name, data['drg'])
+
+            if 'remote_peering' in data:
+                self.__csv_core_network_remote_peering(region_name, data['remote_peering'])
 
             if 'ipsec' in data:
                 self.__csv_core_network_ipsec_tunnels(region_name, data['ipsec'])

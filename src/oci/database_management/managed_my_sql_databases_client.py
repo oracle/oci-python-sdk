@@ -125,6 +125,8 @@ class ManagedMySqlDatabasesClient(object):
         self.base_client = BaseClient("managed_my_sql_databases", config, signer, database_management_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def change_mysql_database_management_type(self, managed_my_sql_database_id, change_mysql_database_management_type_details, **kwargs):
         """

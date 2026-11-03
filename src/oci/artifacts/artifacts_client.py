@@ -2668,6 +2668,12 @@ class ArtifactsClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
 
+        :param str repository_type: (optional)
+            A filter to return only resources that match the given repository type exactly.
+
+        :param bool is_top_level: (optional)
+            A filter to return resources that match the isTopLevel value.
+
         :param bool is_public: (optional)
             A filter to return resources that match the isPublic value.
 
@@ -2749,6 +2755,8 @@ class ArtifactsClient(object):
             "compartment_id_in_subtree",
             "repository_id",
             "display_name",
+            "repository_type",
+            "is_top_level",
             "is_public",
             "lifecycle_state",
             "limit",
@@ -2781,6 +2789,8 @@ class ArtifactsClient(object):
             "compartmentId": compartment_id,
             "repositoryId": kwargs.get("repository_id", missing),
             "displayName": kwargs.get("display_name", missing),
+            "repositoryType": kwargs.get("repository_type", missing),
+            "isTopLevel": kwargs.get("is_top_level", missing),
             "isPublic": kwargs.get("is_public", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "limit": kwargs.get("limit", missing),

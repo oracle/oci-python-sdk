@@ -123,6 +123,8 @@ class ManagementClient(object):
         self.base_client = BaseClient("management", config, signer, oda_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def bulk_create_skill_entities(self, oda_instance_id, skill_id, bulk_create_skill_entities_details, **kwargs):
         """

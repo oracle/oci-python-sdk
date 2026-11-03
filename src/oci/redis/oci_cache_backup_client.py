@@ -123,6 +123,8 @@ class OciCacheBackupClient(object):
         self.base_client = BaseClient("oci_cache_backup", config, signer, redis_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def change_oci_cache_backup_compartment(self, oci_cache_backup_id, change_oci_cache_backup_compartment_details, **kwargs):
         """

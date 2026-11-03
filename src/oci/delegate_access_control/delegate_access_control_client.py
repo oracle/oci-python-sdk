@@ -127,6 +127,8 @@ class DelegateAccessControlClient(object):
         self.base_client = BaseClient("delegate_access_control", config, signer, delegate_access_control_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def approve_delegated_resource_access_request(self, delegated_resource_access_request_id, approve_delegated_resource_access_request_details, **kwargs):
         """

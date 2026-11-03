@@ -28,6 +28,30 @@ class CreateContainerRepositoryDetails(object):
             The value to assign to the display_name property of this CreateContainerRepositoryDetails.
         :type display_name: str
 
+        :param repository_type:
+            The value to assign to the repository_type property of this CreateContainerRepositoryDetails.
+        :type repository_type: str
+
+        :param is_top_level:
+            The value to assign to the is_top_level property of this CreateContainerRepositoryDetails.
+        :type is_top_level: bool
+
+        :param upstream_url:
+            The value to assign to the upstream_url property of this CreateContainerRepositoryDetails.
+        :type upstream_url: str
+
+        :param upstream_username:
+            The value to assign to the upstream_username property of this CreateContainerRepositoryDetails.
+        :type upstream_username: str
+
+        :param upstream_secret_id:
+            The value to assign to the upstream_secret_id property of this CreateContainerRepositoryDetails.
+        :type upstream_secret_id: str
+
+        :param multi_region_peers:
+            The value to assign to the multi_region_peers property of this CreateContainerRepositoryDetails.
+        :type multi_region_peers: list[str]
+
         :param is_immutable:
             The value to assign to the is_immutable property of this CreateContainerRepositoryDetails.
         :type is_immutable: bool
@@ -52,6 +76,12 @@ class CreateContainerRepositoryDetails(object):
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
+            'repository_type': 'str',
+            'is_top_level': 'bool',
+            'upstream_url': 'str',
+            'upstream_username': 'str',
+            'upstream_secret_id': 'str',
+            'multi_region_peers': 'list[str]',
             'is_immutable': 'bool',
             'is_public': 'bool',
             'readme': 'ContainerRepositoryReadme',
@@ -61,6 +91,12 @@ class CreateContainerRepositoryDetails(object):
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'repository_type': 'repositoryType',
+            'is_top_level': 'isTopLevel',
+            'upstream_url': 'upstreamUrl',
+            'upstream_username': 'upstreamUsername',
+            'upstream_secret_id': 'upstreamSecretId',
+            'multi_region_peers': 'multiRegionPeers',
             'is_immutable': 'isImmutable',
             'is_public': 'isPublic',
             'readme': 'readme',
@@ -69,6 +105,12 @@ class CreateContainerRepositoryDetails(object):
         }
         self._compartment_id = None
         self._display_name = None
+        self._repository_type = None
+        self._is_top_level = None
+        self._upstream_url = None
+        self._upstream_username = None
+        self._upstream_secret_id = None
+        self._multi_region_peers = None
         self._is_immutable = None
         self._is_public = None
         self._readme = None
@@ -128,10 +170,180 @@ class CreateContainerRepositoryDetails(object):
         self._display_name = display_name
 
     @property
+    def repository_type(self):
+        """
+        Gets the repository_type of this CreateContainerRepositoryDetails.
+        The type of container repository. This determines the repository behavior and required settings.
+
+
+        :return: The repository_type of this CreateContainerRepositoryDetails.
+        :rtype: str
+        """
+        return self._repository_type
+
+    @repository_type.setter
+    def repository_type(self, repository_type):
+        """
+        Sets the repository_type of this CreateContainerRepositoryDetails.
+        The type of container repository. This determines the repository behavior and required settings.
+
+
+        :param repository_type: The repository_type of this CreateContainerRepositoryDetails.
+        :type: str
+        """
+        self._repository_type = repository_type
+
+    @property
+    def is_top_level(self):
+        """
+        Gets the is_top_level of this CreateContainerRepositoryDetails.
+        Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+
+
+        :return: The is_top_level of this CreateContainerRepositoryDetails.
+        :rtype: bool
+        """
+        return self._is_top_level
+
+    @is_top_level.setter
+    def is_top_level(self, is_top_level):
+        """
+        Sets the is_top_level of this CreateContainerRepositoryDetails.
+        Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+
+
+        :param is_top_level: The is_top_level of this CreateContainerRepositoryDetails.
+        :type: bool
+        """
+        self._is_top_level = is_top_level
+
+    @property
+    def upstream_url(self):
+        """
+        Gets the upstream_url of this CreateContainerRepositoryDetails.
+        The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+        The value must include the registry endpoint and repository path, and must not include a tag or digest.
+
+        If isTopLevel is false, the value must be an exact upstream image full path.
+        Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+
+        If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix.
+        Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+
+
+        :return: The upstream_url of this CreateContainerRepositoryDetails.
+        :rtype: str
+        """
+        return self._upstream_url
+
+    @upstream_url.setter
+    def upstream_url(self, upstream_url):
+        """
+        Sets the upstream_url of this CreateContainerRepositoryDetails.
+        The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+        The value must include the registry endpoint and repository path, and must not include a tag or digest.
+
+        If isTopLevel is false, the value must be an exact upstream image full path.
+        Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+
+        If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix.
+        Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+
+
+        :param upstream_url: The upstream_url of this CreateContainerRepositoryDetails.
+        :type: str
+        """
+        self._upstream_url = upstream_url
+
+    @property
+    def upstream_username(self):
+        """
+        Gets the upstream_username of this CreateContainerRepositoryDetails.
+        The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+
+
+        :return: The upstream_username of this CreateContainerRepositoryDetails.
+        :rtype: str
+        """
+        return self._upstream_username
+
+    @upstream_username.setter
+    def upstream_username(self, upstream_username):
+        """
+        Sets the upstream_username of this CreateContainerRepositoryDetails.
+        The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+
+
+        :param upstream_username: The upstream_username of this CreateContainerRepositoryDetails.
+        :type: str
+        """
+        self._upstream_username = upstream_username
+
+    @property
+    def upstream_secret_id(self):
+        """
+        Gets the upstream_secret_id of this CreateContainerRepositoryDetails.
+        The `OCID`__ of the OCI Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+
+        Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The upstream_secret_id of this CreateContainerRepositoryDetails.
+        :rtype: str
+        """
+        return self._upstream_secret_id
+
+    @upstream_secret_id.setter
+    def upstream_secret_id(self, upstream_secret_id):
+        """
+        Sets the upstream_secret_id of this CreateContainerRepositoryDetails.
+        The `OCID`__ of the OCI Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+
+        Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param upstream_secret_id: The upstream_secret_id of this CreateContainerRepositoryDetails.
+        :type: str
+        """
+        self._upstream_secret_id = upstream_secret_id
+
+    @property
+    def multi_region_peers(self):
+        """
+        Gets the multi_region_peers of this CreateContainerRepositoryDetails.
+        List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`).
+        The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+        Required when repositoryType is MULTI_REGION.
+
+
+        :return: The multi_region_peers of this CreateContainerRepositoryDetails.
+        :rtype: list[str]
+        """
+        return self._multi_region_peers
+
+    @multi_region_peers.setter
+    def multi_region_peers(self, multi_region_peers):
+        """
+        Sets the multi_region_peers of this CreateContainerRepositoryDetails.
+        List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`).
+        The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+        Required when repositoryType is MULTI_REGION.
+
+
+        :param multi_region_peers: The multi_region_peers of this CreateContainerRepositoryDetails.
+        :type: list[str]
+        """
+        self._multi_region_peers = multi_region_peers
+
+    @property
     def is_immutable(self):
         """
         Gets the is_immutable of this CreateContainerRepositoryDetails.
-        Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
 
 
         :return: The is_immutable of this CreateContainerRepositoryDetails.
@@ -143,7 +355,7 @@ class CreateContainerRepositoryDetails(object):
     def is_immutable(self, is_immutable):
         """
         Sets the is_immutable of this CreateContainerRepositoryDetails.
-        Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
 
 
         :param is_immutable: The is_immutable of this CreateContainerRepositoryDetails.

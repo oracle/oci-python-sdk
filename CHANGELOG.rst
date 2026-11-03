@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.190.0 - 2026-11-03
+====================
+
+Added 
+----- 
+* Support for pull-through caching of container images in the Container Registry service 
+* Support for multi-region container repositories in the Container Registry service 
+* Support for top-level container repositories in the Container Registry service 
+* Support for a global endpoint for US multi-region access in the Container Registry service 
+* Support for filtering container repositories by repository type and top-level status in the Container Registry service 
+* Support for listing-level usage reporting within SaaS private offers and subscriptions in the Service Enablement Lifecycle Framework service 
+* Support for partially succeeded work requests and filtering by this status in the Data Science service  
+
+Breaking 
+-------- 
+* The required field `listing_id` was added to the model `CreateSubscriptionUsageRecordDetails` in the Service Enablement Lifecycle Framework service 
+* The method `update_model_artifact_signature_and_wait_for_state` in `DataScienceClientCompositeOperations` was changed from waiting on `WorkRequest.status` to waiting on `ModelArtifactSignature.lifecycle_state` in the Data Science service  
+
+====================
 2.189.0 - 2026-10-20
 ====================
 

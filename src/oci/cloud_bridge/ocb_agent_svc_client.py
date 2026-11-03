@@ -123,6 +123,8 @@ class OcbAgentSvcClient(object):
         self.base_client = BaseClient("ocb_agent_svc", config, signer, cloud_bridge_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def add_agent_dependency(self, environment_id, add_agent_dependency_details, **kwargs):
         """

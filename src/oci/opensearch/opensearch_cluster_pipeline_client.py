@@ -123,6 +123,8 @@ class OpensearchClusterPipelineClient(object):
         self.base_client = BaseClient("opensearch_cluster_pipeline", config, signer, opensearch_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def create_opensearch_cluster_pipeline(self, create_opensearch_cluster_pipeline_details, **kwargs):
         """

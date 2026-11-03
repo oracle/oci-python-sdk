@@ -157,6 +157,8 @@ class MultiCloudResourceDiscoveryClient(object):
         self.base_client = BaseClient("multi_cloud_resource_discovery", config, signer, dbmulticloud_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def change_multi_cloud_resource_discovery_compartment(self, multi_cloud_resource_discovery_id, change_multi_cloud_resource_discovery_compartment_details, **kwargs):
         """

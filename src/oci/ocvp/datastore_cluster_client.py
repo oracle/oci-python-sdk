@@ -124,6 +124,8 @@ class DatastoreClusterClient(object):
         self.base_client = BaseClient("datastore_cluster", config, signer, ocvp_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def add_datastore_to_datastore_cluster(self, datastore_cluster_id, add_datastore_to_datastore_cluster_details, **kwargs):
         """

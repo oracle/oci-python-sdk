@@ -157,6 +157,8 @@ class OracleDbAzureVaultAssociationClient(object):
         self.base_client = BaseClient("oracle_db_azure_vault_association", config, signer, dbmulticloud_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def cascading_delete_oracle_db_azure_vault_association(self, oracle_db_azure_vault_association_id, **kwargs):
         """

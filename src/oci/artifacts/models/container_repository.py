@@ -27,6 +27,18 @@ class ContainerRepository(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the repository_type property of a ContainerRepository.
+    #: This constant has a value of "STANDARD"
+    REPOSITORY_TYPE_STANDARD = "STANDARD"
+
+    #: A constant which can be used with the repository_type property of a ContainerRepository.
+    #: This constant has a value of "PULL_THROUGH"
+    REPOSITORY_TYPE_PULL_THROUGH = "PULL_THROUGH"
+
+    #: A constant which can be used with the repository_type property of a ContainerRepository.
+    #: This constant has a value of "MULTI_REGION"
+    REPOSITORY_TYPE_MULTI_REGION = "MULTI_REGION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ContainerRepository object with values from keyword arguments.
@@ -94,6 +106,32 @@ class ContainerRepository(object):
             The value to assign to the namespace property of this ContainerRepository.
         :type namespace: str
 
+        :param repository_type:
+            The value to assign to the repository_type property of this ContainerRepository.
+            Allowed values for this property are: "STANDARD", "PULL_THROUGH", "MULTI_REGION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type repository_type: str
+
+        :param is_top_level:
+            The value to assign to the is_top_level property of this ContainerRepository.
+        :type is_top_level: bool
+
+        :param upstream_url:
+            The value to assign to the upstream_url property of this ContainerRepository.
+        :type upstream_url: str
+
+        :param upstream_username:
+            The value to assign to the upstream_username property of this ContainerRepository.
+        :type upstream_username: str
+
+        :param upstream_secret_id:
+            The value to assign to the upstream_secret_id property of this ContainerRepository.
+        :type upstream_secret_id: str
+
+        :param multi_region_peers:
+            The value to assign to the multi_region_peers property of this ContainerRepository.
+        :type multi_region_peers: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ContainerRepository.
         :type freeform_tags: dict(str, str)
@@ -123,6 +161,12 @@ class ContainerRepository(object):
             'time_last_pushed': 'datetime',
             'billable_size_in_gbs': 'int',
             'namespace': 'str',
+            'repository_type': 'str',
+            'is_top_level': 'bool',
+            'upstream_url': 'str',
+            'upstream_username': 'str',
+            'upstream_secret_id': 'str',
+            'multi_region_peers': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -143,6 +187,12 @@ class ContainerRepository(object):
             'time_last_pushed': 'timeLastPushed',
             'billable_size_in_gbs': 'billableSizeInGBs',
             'namespace': 'namespace',
+            'repository_type': 'repositoryType',
+            'is_top_level': 'isTopLevel',
+            'upstream_url': 'upstreamUrl',
+            'upstream_username': 'upstreamUsername',
+            'upstream_secret_id': 'upstreamSecretId',
+            'multi_region_peers': 'multiRegionPeers',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -162,6 +212,12 @@ class ContainerRepository(object):
         self._time_last_pushed = None
         self._billable_size_in_gbs = None
         self._namespace = None
+        self._repository_type = None
+        self._is_top_level = None
+        self._upstream_url = None
+        self._upstream_username = None
+        self._upstream_secret_id = None
+        self._multi_region_peers = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -535,6 +591,162 @@ class ContainerRepository(object):
         :type: str
         """
         self._namespace = namespace
+
+    @property
+    def repository_type(self):
+        """
+        Gets the repository_type of this ContainerRepository.
+        The type of container repository. This determines the repository behavior and required settings.
+
+        Allowed values for this property are: "STANDARD", "PULL_THROUGH", "MULTI_REGION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The repository_type of this ContainerRepository.
+        :rtype: str
+        """
+        return self._repository_type
+
+    @repository_type.setter
+    def repository_type(self, repository_type):
+        """
+        Sets the repository_type of this ContainerRepository.
+        The type of container repository. This determines the repository behavior and required settings.
+
+
+        :param repository_type: The repository_type of this ContainerRepository.
+        :type: str
+        """
+        allowed_values = ["STANDARD", "PULL_THROUGH", "MULTI_REGION"]
+        if not value_allowed_none_or_none_sentinel(repository_type, allowed_values):
+            repository_type = 'UNKNOWN_ENUM_VALUE'
+        self._repository_type = repository_type
+
+    @property
+    def is_top_level(self):
+        """
+        Gets the is_top_level of this ContainerRepository.
+        Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+
+
+        :return: The is_top_level of this ContainerRepository.
+        :rtype: bool
+        """
+        return self._is_top_level
+
+    @is_top_level.setter
+    def is_top_level(self, is_top_level):
+        """
+        Sets the is_top_level of this ContainerRepository.
+        Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+
+
+        :param is_top_level: The is_top_level of this ContainerRepository.
+        :type: bool
+        """
+        self._is_top_level = is_top_level
+
+    @property
+    def upstream_url(self):
+        """
+        Gets the upstream_url of this ContainerRepository.
+        The upstream registry URL for a pull-through cache repository.
+
+
+        :return: The upstream_url of this ContainerRepository.
+        :rtype: str
+        """
+        return self._upstream_url
+
+    @upstream_url.setter
+    def upstream_url(self, upstream_url):
+        """
+        Sets the upstream_url of this ContainerRepository.
+        The upstream registry URL for a pull-through cache repository.
+
+
+        :param upstream_url: The upstream_url of this ContainerRepository.
+        :type: str
+        """
+        self._upstream_url = upstream_url
+
+    @property
+    def upstream_username(self):
+        """
+        Gets the upstream_username of this ContainerRepository.
+        The upstream registry username for a pull-through cache repository.
+
+
+        :return: The upstream_username of this ContainerRepository.
+        :rtype: str
+        """
+        return self._upstream_username
+
+    @upstream_username.setter
+    def upstream_username(self, upstream_username):
+        """
+        Sets the upstream_username of this ContainerRepository.
+        The upstream registry username for a pull-through cache repository.
+
+
+        :param upstream_username: The upstream_username of this ContainerRepository.
+        :type: str
+        """
+        self._upstream_username = upstream_username
+
+    @property
+    def upstream_secret_id(self):
+        """
+        Gets the upstream_secret_id of this ContainerRepository.
+        The `OCID`__ of the OCI Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The upstream_secret_id of this ContainerRepository.
+        :rtype: str
+        """
+        return self._upstream_secret_id
+
+    @upstream_secret_id.setter
+    def upstream_secret_id(self, upstream_secret_id):
+        """
+        Sets the upstream_secret_id of this ContainerRepository.
+        The `OCID`__ of the OCI Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param upstream_secret_id: The upstream_secret_id of this ContainerRepository.
+        :type: str
+        """
+        self._upstream_secret_id = upstream_secret_id
+
+    @property
+    def multi_region_peers(self):
+        """
+        Gets the multi_region_peers of this ContainerRepository.
+        List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1).
+        The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+
+
+        :return: The multi_region_peers of this ContainerRepository.
+        :rtype: list[str]
+        """
+        return self._multi_region_peers
+
+    @multi_region_peers.setter
+    def multi_region_peers(self, multi_region_peers):
+        """
+        Sets the multi_region_peers of this ContainerRepository.
+        List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1).
+        The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+
+
+        :param multi_region_peers: The multi_region_peers of this ContainerRepository.
+        :type: list[str]
+        """
+        self._multi_region_peers = multi_region_peers
 
     @property
     def freeform_tags(self):

@@ -123,6 +123,8 @@ class OpensearchClusterBackupClient(object):
         self.base_client = BaseClient("opensearch_cluster_backup", config, signer, opensearch_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def delete_opensearch_cluster_backup(self, opensearch_cluster_backup_id, **kwargs):
         """

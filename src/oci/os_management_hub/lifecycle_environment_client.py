@@ -124,6 +124,8 @@ class LifecycleEnvironmentClient(object):
         self.base_client = BaseClient("lifecycle_environment", config, signer, os_management_hub_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def attach_managed_instances_to_lifecycle_stage(self, lifecycle_stage_id, attach_managed_instances_to_lifecycle_stage_details, **kwargs):
         """

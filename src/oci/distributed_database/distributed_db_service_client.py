@@ -123,6 +123,8 @@ class DistributedDbServiceClient(object):
         self.base_client = BaseClient("distributed_db_service", config, signer, distributed_database_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+        self._config = dict(config)
+        self._kwargs = dict(kwargs)
 
     def add_distributed_database_gds_control_node(self, distributed_database_id, add_distributed_database_gds_control_node_details, **kwargs):
         """
