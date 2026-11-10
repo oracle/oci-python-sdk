@@ -52,6 +52,10 @@ class FsuGoalVersionDetails(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this FsuGoalVersionDetails.
+        :type is_older_version_acknowledged: bool
+
         :param home_policy:
             The value to assign to the home_policy property of this FsuGoalVersionDetails.
             Allowed values for this property are: "CREATE_NEW", "USE_EXISTING", 'UNKNOWN_ENUM_VALUE'.
@@ -65,15 +69,18 @@ class FsuGoalVersionDetails(object):
         """
         self.swagger_types = {
             'type': 'str',
+            'is_older_version_acknowledged': 'bool',
             'home_policy': 'str',
             'new_home_prefix': 'str'
         }
         self.attribute_map = {
             'type': 'type',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'home_policy': 'homePolicy',
             'new_home_prefix': 'newHomePrefix'
         }
         self._type = None
+        self._is_older_version_acknowledged = None
         self._home_policy = None
         self._new_home_prefix = None
 
@@ -125,6 +132,34 @@ class FsuGoalVersionDetails(object):
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
+
+    @property
+    def is_older_version_acknowledged(self):
+        """
+        Gets the is_older_version_acknowledged of this FsuGoalVersionDetails.
+        Indicates whether the customer acknowledged the risk of selecting an older eligible software version
+        for this Exadata Fleet Update Cycle. This value is used for downstream
+        Database service APIs that requires older-version acknowledgement.
+
+
+        :return: The is_older_version_acknowledged of this FsuGoalVersionDetails.
+        :rtype: bool
+        """
+        return self._is_older_version_acknowledged
+
+    @is_older_version_acknowledged.setter
+    def is_older_version_acknowledged(self, is_older_version_acknowledged):
+        """
+        Sets the is_older_version_acknowledged of this FsuGoalVersionDetails.
+        Indicates whether the customer acknowledged the risk of selecting an older eligible software version
+        for this Exadata Fleet Update Cycle. This value is used for downstream
+        Database service APIs that requires older-version acknowledgement.
+
+
+        :param is_older_version_acknowledged: The is_older_version_acknowledged of this FsuGoalVersionDetails.
+        :type: bool
+        """
+        self._is_older_version_acknowledged = is_older_version_acknowledged
 
     @property
     def home_policy(self):

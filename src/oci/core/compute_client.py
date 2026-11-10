@@ -13808,7 +13808,7 @@ class ComputeClient(object):
         :param str lifecycle_state: (optional)
             A filter to only return resources that match the given lifecycle state.
 
-            Allowed values are: "SCHEDULED", "STARTED", "PROCESSING", "SUCCEEDED", "FAILED", "CANCELED"
+            Allowed values are: "SCHEDULED", "QUEUED", "STARTED", "PROCESSING", "SUCCEEDED", "FAILED", "CANCELED"
 
         :param str correlation_token: (optional)
             A filter to only return resources that have a matching correlationToken.
@@ -13916,7 +13916,7 @@ class ComputeClient(object):
                 f"list_instance_maintenance_events got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["SCHEDULED", "STARTED", "PROCESSING", "SUCCEEDED", "FAILED", "CANCELED"]
+            lifecycle_state_allowed_values = ["SCHEDULED", "QUEUED", "STARTED", "PROCESSING", "SUCCEEDED", "FAILED", "CANCELED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"

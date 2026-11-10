@@ -36,6 +36,10 @@ class CreateJobDetails(object):
             The value to assign to the description property of this CreateJobDetails.
         :type description: str
 
+        :param job_run_retention_period_in_days:
+            The value to assign to the job_run_retention_period_in_days property of this CreateJobDetails.
+        :type job_run_retention_period_in_days: int
+
         :param job_configuration_details:
             The value to assign to the job_configuration_details property of this CreateJobDetails.
         :type job_configuration_details: oci.data_science.models.JobConfigurationDetails
@@ -74,6 +78,7 @@ class CreateJobDetails(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'description': 'str',
+            'job_run_retention_period_in_days': 'int',
             'job_configuration_details': 'JobConfigurationDetails',
             'job_infrastructure_configuration_details': 'JobInfrastructureConfigurationDetails',
             'job_environment_configuration_details': 'JobEnvironmentConfigurationDetails',
@@ -88,6 +93,7 @@ class CreateJobDetails(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'description': 'description',
+            'job_run_retention_period_in_days': 'jobRunRetentionPeriodInDays',
             'job_configuration_details': 'jobConfigurationDetails',
             'job_infrastructure_configuration_details': 'jobInfrastructureConfigurationDetails',
             'job_environment_configuration_details': 'jobEnvironmentConfigurationDetails',
@@ -101,6 +107,7 @@ class CreateJobDetails(object):
         self._compartment_id = None
         self._display_name = None
         self._description = None
+        self._job_run_retention_period_in_days = None
         self._job_configuration_details = None
         self._job_infrastructure_configuration_details = None
         self._job_environment_configuration_details = None
@@ -213,6 +220,30 @@ class CreateJobDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def job_run_retention_period_in_days(self):
+        """
+        Gets the job_run_retention_period_in_days of this CreateJobDetails.
+        Retention period in days for job runs.
+
+
+        :return: The job_run_retention_period_in_days of this CreateJobDetails.
+        :rtype: int
+        """
+        return self._job_run_retention_period_in_days
+
+    @job_run_retention_period_in_days.setter
+    def job_run_retention_period_in_days(self, job_run_retention_period_in_days):
+        """
+        Sets the job_run_retention_period_in_days of this CreateJobDetails.
+        Retention period in days for job runs.
+
+
+        :param job_run_retention_period_in_days: The job_run_retention_period_in_days of this CreateJobDetails.
+        :type: int
+        """
+        self._job_run_retention_period_in_days = job_run_retention_period_in_days
 
     @property
     def job_configuration_details(self):

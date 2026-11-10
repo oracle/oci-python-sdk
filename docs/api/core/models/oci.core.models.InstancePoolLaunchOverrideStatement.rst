@@ -1,9 +1,9 @@
-Instances
-=========
+InstancePoolLaunchOverrideStatement
+===================================
 
 .. currentmodule:: oci.core.models
 
-.. autoclass:: Instances
+.. autoclass:: InstancePoolLaunchOverrideStatement
     :show-inheritance:
     :special-members: __init__
     :members:

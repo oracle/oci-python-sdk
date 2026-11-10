@@ -236,6 +236,10 @@ except AttributeError:
     BaseHTTPSConnection = urllib3.connection.HTTPSConnection
 
 
+class _OCIResponseReceived(Exception):
+    """Stop sending a request body after the server returns a final response."""
+
+
 class OCIConnection(BaseHTTPSConnection):
     """ HTTPConnection with 100 Continue support. """
 
@@ -251,7 +255,28 @@ class OCIConnection(BaseHTTPSConnection):
         self._original_response_cls = self.response_class
         self._response_received = False
         self._using_expect_header = False
+        self._in_urllib3_request = False
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
+
+    def request(self, method, url, body=None, headers=None, *args, **kwargs):
+        # urllib3 2.x sends headers/body itself instead of calling _send_request.
+        # Set Expect state here so both urllib3 request implementations use it.
+        headers = headers or {}
+        self._response_received = False
+        self._using_expect_header = any(
+            key.lower() in ('expect', b'expect') and
+            value.lower() in ('100-continue', b'100-continue')
+            for key, value in headers.items())
+        self._in_urllib3_request = True
+        try:
+            return super(OCIConnection, self).request(
+                method, url, body=body, headers=headers, *args, **kwargs)
+        except _OCIResponseReceived:
+            # getresponse() will read the saved final status and its body.
+            # In particular, don't consume a potentially huge input stream.
+            return
+        finally:
+            self._in_urllib3_request = False
 
     def _send_request(self, method, url, body, headers, *args, **kwargs):
         self._response_received = False
@@ -289,6 +314,8 @@ class OCIConnection(BaseHTTPSConnection):
                 print('Waiting 3 seconds for 100-continue response...')
             if urllib3.util.wait_for_read(self.sock, 3):
                 self._handle_expect_response(message_body)
+                if self._response_received and self._in_urllib3_request:
+                    raise _OCIResponseReceived()
                 return
 
         if message_body is not None:

@@ -434,6 +434,12 @@ from .instance_options import InstanceOptions
 from .instance_pool import InstancePool
 from .instance_pool_instance import InstancePoolInstance
 from .instance_pool_instance_load_balancer_backend import InstancePoolInstanceLoadBalancerBackend
+from .instance_pool_launch_override_details import InstancePoolLaunchOverrideDetails
+from .instance_pool_launch_override_option import InstancePoolLaunchOverrideOption
+from .instance_pool_launch_override_policy import InstancePoolLaunchOverridePolicy
+from .instance_pool_launch_override_selector import InstancePoolLaunchOverrideSelector
+from .instance_pool_launch_override_shape_config_details import InstancePoolLaunchOverrideShapeConfigDetails
+from .instance_pool_launch_override_statement import InstancePoolLaunchOverrideStatement
 from .instance_pool_lifecycle_actions_details import InstancePoolLifecycleActionsDetails
 from .instance_pool_lifecycle_management_details import InstancePoolLifecycleManagementDetails
 from .instance_pool_load_balancer_attachment import InstancePoolLoadBalancerAttachment
@@ -455,7 +461,6 @@ from .instance_source_image_filter_details import InstanceSourceImageFilterDetai
 from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolumeDetails
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .instance_summary import InstanceSummary
-from .instances import Instances
 from .intel_icelake_bm_launch_instance_platform_config import IntelIcelakeBmLaunchInstancePlatformConfig
 from .intel_icelake_bm_platform_config import IntelIcelakeBmPlatformConfig
 from .intel_skylake_bm_launch_instance_platform_config import IntelSkylakeBmLaunchInstancePlatformConfig
@@ -1164,6 +1169,12 @@ core_type_mapping = {
     "InstancePool": InstancePool,
     "InstancePoolInstance": InstancePoolInstance,
     "InstancePoolInstanceLoadBalancerBackend": InstancePoolInstanceLoadBalancerBackend,
+    "InstancePoolLaunchOverrideDetails": InstancePoolLaunchOverrideDetails,
+    "InstancePoolLaunchOverrideOption": InstancePoolLaunchOverrideOption,
+    "InstancePoolLaunchOverridePolicy": InstancePoolLaunchOverridePolicy,
+    "InstancePoolLaunchOverrideSelector": InstancePoolLaunchOverrideSelector,
+    "InstancePoolLaunchOverrideShapeConfigDetails": InstancePoolLaunchOverrideShapeConfigDetails,
+    "InstancePoolLaunchOverrideStatement": InstancePoolLaunchOverrideStatement,
     "InstancePoolLifecycleActionsDetails": InstancePoolLifecycleActionsDetails,
     "InstancePoolLifecycleManagementDetails": InstancePoolLifecycleManagementDetails,
     "InstancePoolLoadBalancerAttachment": InstancePoolLoadBalancerAttachment,
@@ -1185,7 +1196,6 @@ core_type_mapping = {
     "InstanceSourceViaBootVolumeDetails": InstanceSourceViaBootVolumeDetails,
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InstanceSummary": InstanceSummary,
-    "Instances": Instances,
     "IntelIcelakeBmLaunchInstancePlatformConfig": IntelIcelakeBmLaunchInstancePlatformConfig,
     "IntelIcelakeBmPlatformConfig": IntelIcelakeBmPlatformConfig,
     "IntelSkylakeBmLaunchInstancePlatformConfig": IntelSkylakeBmLaunchInstancePlatformConfig,

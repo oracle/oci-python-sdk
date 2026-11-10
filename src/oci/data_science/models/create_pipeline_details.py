@@ -36,6 +36,10 @@ class CreatePipelineDetails(object):
             The value to assign to the description property of this CreatePipelineDetails.
         :type description: str
 
+        :param pipeline_run_retention_period_in_days:
+            The value to assign to the pipeline_run_retention_period_in_days property of this CreatePipelineDetails.
+        :type pipeline_run_retention_period_in_days: int
+
         :param configuration_details:
             The value to assign to the configuration_details property of this CreatePipelineDetails.
         :type configuration_details: oci.data_science.models.PipelineConfigurationDetails
@@ -74,6 +78,7 @@ class CreatePipelineDetails(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'description': 'str',
+            'pipeline_run_retention_period_in_days': 'int',
             'configuration_details': 'PipelineConfigurationDetails',
             'log_configuration_details': 'PipelineLogConfigurationDetails',
             'infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails',
@@ -88,6 +93,7 @@ class CreatePipelineDetails(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'description': 'description',
+            'pipeline_run_retention_period_in_days': 'pipelineRunRetentionPeriodInDays',
             'configuration_details': 'configurationDetails',
             'log_configuration_details': 'logConfigurationDetails',
             'infrastructure_configuration_details': 'infrastructureConfigurationDetails',
@@ -101,6 +107,7 @@ class CreatePipelineDetails(object):
         self._compartment_id = None
         self._display_name = None
         self._description = None
+        self._pipeline_run_retention_period_in_days = None
         self._configuration_details = None
         self._log_configuration_details = None
         self._infrastructure_configuration_details = None
@@ -213,6 +220,30 @@ class CreatePipelineDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def pipeline_run_retention_period_in_days(self):
+        """
+        Gets the pipeline_run_retention_period_in_days of this CreatePipelineDetails.
+        Retention period in days for pipeline runs.
+
+
+        :return: The pipeline_run_retention_period_in_days of this CreatePipelineDetails.
+        :rtype: int
+        """
+        return self._pipeline_run_retention_period_in_days
+
+    @pipeline_run_retention_period_in_days.setter
+    def pipeline_run_retention_period_in_days(self, pipeline_run_retention_period_in_days):
+        """
+        Sets the pipeline_run_retention_period_in_days of this CreatePipelineDetails.
+        Retention period in days for pipeline runs.
+
+
+        :param pipeline_run_retention_period_in_days: The pipeline_run_retention_period_in_days of this CreatePipelineDetails.
+        :type: int
+        """
+        self._pipeline_run_retention_period_in_days = pipeline_run_retention_period_in_days
 
     @property
     def configuration_details(self):

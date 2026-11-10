@@ -167,7 +167,7 @@ class CcdOffersClient(object):
         resource_path = "/ccdOffers/{ccdOfferId}"
         method = "GET"
         operation_name = "get_ccd_offer"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdOffer/GetCcdOffer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -324,7 +324,7 @@ class CcdOffersClient(object):
         resource_path = "/ccdOffers"
         method = "GET"
         operation_name = "list_ccd_offers"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdOfferCollection/ListCcdOffers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
