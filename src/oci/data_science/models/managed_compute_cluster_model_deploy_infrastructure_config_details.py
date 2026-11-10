@@ -38,23 +38,30 @@ class ManagedComputeClusterModelDeployInfrastructureConfigDetails(ModelDeployInf
             The value to assign to the scaling_policy property of this ManagedComputeClusterModelDeployInfrastructureConfigDetails.
         :type scaling_policy: oci.data_science.models.ManagedComputeClusterWorkloadScalingPolicy
 
+        :param network_configuration:
+            The value to assign to the network_configuration property of this ManagedComputeClusterModelDeployInfrastructureConfigDetails.
+        :type network_configuration: oci.data_science.models.ManagedComputeClusterModelDeploymentNetworkConfiguration
+
         """
         self.swagger_types = {
             'infrastructure_type': 'str',
             'compute_target_id': 'str',
             'model_deployment_resource_configuration': 'ManagedComputeClusterModelDeploymentResourceConfiguration',
-            'scaling_policy': 'ManagedComputeClusterWorkloadScalingPolicy'
+            'scaling_policy': 'ManagedComputeClusterWorkloadScalingPolicy',
+            'network_configuration': 'ManagedComputeClusterModelDeploymentNetworkConfiguration'
         }
         self.attribute_map = {
             'infrastructure_type': 'infrastructureType',
             'compute_target_id': 'computeTargetId',
             'model_deployment_resource_configuration': 'modelDeploymentResourceConfiguration',
-            'scaling_policy': 'scalingPolicy'
+            'scaling_policy': 'scalingPolicy',
+            'network_configuration': 'networkConfiguration'
         }
         self._infrastructure_type = None
         self._compute_target_id = None
         self._model_deployment_resource_configuration = None
         self._scaling_policy = None
+        self._network_configuration = None
         self._infrastructure_type = 'MANAGED_COMPUTE_CLUSTER'
 
     @property
@@ -124,6 +131,26 @@ class ManagedComputeClusterModelDeployInfrastructureConfigDetails(ModelDeployInf
         :type: oci.data_science.models.ManagedComputeClusterWorkloadScalingPolicy
         """
         self._scaling_policy = scaling_policy
+
+    @property
+    def network_configuration(self):
+        """
+        Gets the network_configuration of this ManagedComputeClusterModelDeployInfrastructureConfigDetails.
+
+        :return: The network_configuration of this ManagedComputeClusterModelDeployInfrastructureConfigDetails.
+        :rtype: oci.data_science.models.ManagedComputeClusterModelDeploymentNetworkConfiguration
+        """
+        return self._network_configuration
+
+    @network_configuration.setter
+    def network_configuration(self, network_configuration):
+        """
+        Sets the network_configuration of this ManagedComputeClusterModelDeployInfrastructureConfigDetails.
+
+        :param network_configuration: The network_configuration of this ManagedComputeClusterModelDeployInfrastructureConfigDetails.
+        :type: oci.data_science.models.ManagedComputeClusterModelDeploymentNetworkConfiguration
+        """
+        self._network_configuration = network_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

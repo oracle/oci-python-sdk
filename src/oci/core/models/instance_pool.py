@@ -116,6 +116,10 @@ class InstancePool(object):
             The value to assign to the load_balancers property of this InstancePool.
         :type load_balancers: list[oci.core.models.InstancePoolLoadBalancerAttachment]
 
+        :param override_policy:
+            The value to assign to the override_policy property of this InstancePool.
+        :type override_policy: oci.core.models.InstancePoolLaunchOverridePolicy
+
         :param instance_display_name_formatter:
             The value to assign to the instance_display_name_formatter property of this InstancePool.
         :type instance_display_name_formatter: str
@@ -146,6 +150,7 @@ class InstancePool(object):
             'size': 'int',
             'time_created': 'datetime',
             'load_balancers': 'list[InstancePoolLoadBalancerAttachment]',
+            'override_policy': 'InstancePoolLaunchOverridePolicy',
             'instance_display_name_formatter': 'str',
             'instance_hostname_formatter': 'str',
             'lifecycle_management': 'InstancePoolLifecycleManagementDetails',
@@ -164,6 +169,7 @@ class InstancePool(object):
             'size': 'size',
             'time_created': 'timeCreated',
             'load_balancers': 'loadBalancers',
+            'override_policy': 'overridePolicy',
             'instance_display_name_formatter': 'instanceDisplayNameFormatter',
             'instance_hostname_formatter': 'instanceHostnameFormatter',
             'lifecycle_management': 'lifecycleManagement',
@@ -181,6 +187,7 @@ class InstancePool(object):
         self._size = None
         self._time_created = None
         self._load_balancers = None
+        self._override_policy = None
         self._instance_display_name_formatter = None
         self._instance_hostname_formatter = None
         self._lifecycle_management = None
@@ -529,6 +536,26 @@ class InstancePool(object):
         :type: list[oci.core.models.InstancePoolLoadBalancerAttachment]
         """
         self._load_balancers = load_balancers
+
+    @property
+    def override_policy(self):
+        """
+        Gets the override_policy of this InstancePool.
+
+        :return: The override_policy of this InstancePool.
+        :rtype: oci.core.models.InstancePoolLaunchOverridePolicy
+        """
+        return self._override_policy
+
+    @override_policy.setter
+    def override_policy(self, override_policy):
+        """
+        Sets the override_policy of this InstancePool.
+
+        :param override_policy: The override_policy of this InstancePool.
+        :type: oci.core.models.InstancePoolLaunchOverridePolicy
+        """
+        self._override_policy = override_policy
 
     @property
     def instance_display_name_formatter(self):

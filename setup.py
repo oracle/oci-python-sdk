@@ -30,7 +30,8 @@ with open_relative("README.rst") as f:
     readme = f.read()
 
 requires = [
-    "certifi",
+    "certifi; python_version < '3.7'",
+    "certifi>=2026.10.19; python_version >= '3.7'",
     "configparser==4.0.2 ; python_version < '3'",
     "cryptography>=3.2.1,<=37.0.2; python_version <= '3.7'",
     "cryptography>=3.2.1,<51.0.0; python_version >= '3.8'",

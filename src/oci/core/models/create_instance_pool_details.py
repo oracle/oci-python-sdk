@@ -15,6 +15,8 @@ class CreateInstancePoolDetails(object):
     The data to create an instance pool.
     For a GMC-enabled resource pool, the referenced instance configuration must be a GMC configuration and
     the placement configuration must identify the availability domain and compute cluster for the pool.
+    Optionally include `overridePolicy` to define availability domain-scoped
+    launch overrides for future launches. Existing pool members are not modified.
     """
 
     def __init__(self, **kwargs):
@@ -54,6 +56,10 @@ class CreateInstancePoolDetails(object):
             The value to assign to the load_balancers property of this CreateInstancePoolDetails.
         :type load_balancers: list[oci.core.models.AttachLoadBalancerDetails]
 
+        :param override_policy:
+            The value to assign to the override_policy property of this CreateInstancePoolDetails.
+        :type override_policy: oci.core.models.InstancePoolLaunchOverridePolicy
+
         :param instance_display_name_formatter:
             The value to assign to the instance_display_name_formatter property of this CreateInstancePoolDetails.
         :type instance_display_name_formatter: str
@@ -76,6 +82,7 @@ class CreateInstancePoolDetails(object):
             'placement_configurations': 'list[CreateInstancePoolPlacementConfigurationDetails]',
             'size': 'int',
             'load_balancers': 'list[AttachLoadBalancerDetails]',
+            'override_policy': 'InstancePoolLaunchOverridePolicy',
             'instance_display_name_formatter': 'str',
             'instance_hostname_formatter': 'str',
             'lifecycle_management': 'InstancePoolLifecycleManagementDetails'
@@ -89,6 +96,7 @@ class CreateInstancePoolDetails(object):
             'placement_configurations': 'placementConfigurations',
             'size': 'size',
             'load_balancers': 'loadBalancers',
+            'override_policy': 'overridePolicy',
             'instance_display_name_formatter': 'instanceDisplayNameFormatter',
             'instance_hostname_formatter': 'instanceHostnameFormatter',
             'lifecycle_management': 'lifecycleManagement'
@@ -101,6 +109,7 @@ class CreateInstancePoolDetails(object):
         self._placement_configurations = None
         self._size = None
         self._load_balancers = None
+        self._override_policy = None
         self._instance_display_name_formatter = None
         self._instance_hostname_formatter = None
         self._lifecycle_management = None
@@ -342,6 +351,26 @@ class CreateInstancePoolDetails(object):
         :type: list[oci.core.models.AttachLoadBalancerDetails]
         """
         self._load_balancers = load_balancers
+
+    @property
+    def override_policy(self):
+        """
+        Gets the override_policy of this CreateInstancePoolDetails.
+
+        :return: The override_policy of this CreateInstancePoolDetails.
+        :rtype: oci.core.models.InstancePoolLaunchOverridePolicy
+        """
+        return self._override_policy
+
+    @override_policy.setter
+    def override_policy(self, override_policy):
+        """
+        Sets the override_policy of this CreateInstancePoolDetails.
+
+        :param override_policy: The override_policy of this CreateInstancePoolDetails.
+        :type: oci.core.models.InstancePoolLaunchOverridePolicy
+        """
+        self._override_policy = override_policy
 
     @property
     def instance_display_name_formatter(self):

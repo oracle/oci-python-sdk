@@ -82,6 +82,10 @@ class InstancePoolSummary(object):
             The value to assign to the availability_domains property of this InstancePoolSummary.
         :type availability_domains: list[str]
 
+        :param override_policy:
+            The value to assign to the override_policy property of this InstancePoolSummary.
+        :type override_policy: oci.core.models.InstancePoolLaunchOverridePolicy
+
         :param size:
             The value to assign to the size property of this InstancePoolSummary.
         :type size: int
@@ -111,6 +115,7 @@ class InstancePoolSummary(object):
             'pool_type': 'str',
             'lifecycle_state': 'str',
             'availability_domains': 'list[str]',
+            'override_policy': 'InstancePoolLaunchOverridePolicy',
             'size': 'int',
             'time_created': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -125,6 +130,7 @@ class InstancePoolSummary(object):
             'pool_type': 'poolType',
             'lifecycle_state': 'lifecycleState',
             'availability_domains': 'availabilityDomains',
+            'override_policy': 'overridePolicy',
             'size': 'size',
             'time_created': 'timeCreated',
             'defined_tags': 'definedTags',
@@ -138,6 +144,7 @@ class InstancePoolSummary(object):
         self._pool_type = None
         self._lifecycle_state = None
         self._availability_domains = None
+        self._override_policy = None
         self._size = None
         self._time_created = None
         self._defined_tags = None
@@ -319,6 +326,26 @@ class InstancePoolSummary(object):
         :type: list[str]
         """
         self._availability_domains = availability_domains
+
+    @property
+    def override_policy(self):
+        """
+        Gets the override_policy of this InstancePoolSummary.
+
+        :return: The override_policy of this InstancePoolSummary.
+        :rtype: oci.core.models.InstancePoolLaunchOverridePolicy
+        """
+        return self._override_policy
+
+    @override_policy.setter
+    def override_policy(self, override_policy):
+        """
+        Sets the override_policy of this InstancePoolSummary.
+
+        :param override_policy: The override_policy of this InstancePoolSummary.
+        :type: oci.core.models.InstancePoolLaunchOverridePolicy
+        """
+        self._override_policy = override_policy
 
     @property
     def size(self):

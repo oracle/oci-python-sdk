@@ -13,6 +13,9 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateInstancePoolDetails(object):
     """
     The data to update an instance pool.
+    If `overridePolicy` is omitted, the stored launch override policy remains unchanged.
+    A non-null `overridePolicy` replaces the stored policy as a whole, and `null`
+    clears it for future launches.
     """
 
     def __init__(self, **kwargs):
@@ -44,6 +47,10 @@ class UpdateInstancePoolDetails(object):
             The value to assign to the size property of this UpdateInstancePoolDetails.
         :type size: int
 
+        :param override_policy:
+            The value to assign to the override_policy property of this UpdateInstancePoolDetails.
+        :type override_policy: oci.core.models.InstancePoolLaunchOverridePolicy
+
         :param instance_display_name_formatter:
             The value to assign to the instance_display_name_formatter property of this UpdateInstancePoolDetails.
         :type instance_display_name_formatter: str
@@ -64,6 +71,7 @@ class UpdateInstancePoolDetails(object):
             'instance_configuration_id': 'str',
             'placement_configurations': 'list[UpdateInstancePoolPlacementConfigurationDetails]',
             'size': 'int',
+            'override_policy': 'InstancePoolLaunchOverridePolicy',
             'instance_display_name_formatter': 'str',
             'instance_hostname_formatter': 'str',
             'lifecycle_management': 'InstancePoolLifecycleManagementDetails'
@@ -75,6 +83,7 @@ class UpdateInstancePoolDetails(object):
             'instance_configuration_id': 'instanceConfigurationId',
             'placement_configurations': 'placementConfigurations',
             'size': 'size',
+            'override_policy': 'overridePolicy',
             'instance_display_name_formatter': 'instanceDisplayNameFormatter',
             'instance_hostname_formatter': 'instanceHostnameFormatter',
             'lifecycle_management': 'lifecycleManagement'
@@ -85,6 +94,7 @@ class UpdateInstancePoolDetails(object):
         self._instance_configuration_id = None
         self._placement_configurations = None
         self._size = None
+        self._override_policy = None
         self._instance_display_name_formatter = None
         self._instance_hostname_formatter = None
         self._lifecycle_management = None
@@ -280,6 +290,26 @@ class UpdateInstancePoolDetails(object):
         :type: int
         """
         self._size = size
+
+    @property
+    def override_policy(self):
+        """
+        Gets the override_policy of this UpdateInstancePoolDetails.
+
+        :return: The override_policy of this UpdateInstancePoolDetails.
+        :rtype: oci.core.models.InstancePoolLaunchOverridePolicy
+        """
+        return self._override_policy
+
+    @override_policy.setter
+    def override_policy(self, override_policy):
+        """
+        Sets the override_policy of this UpdateInstancePoolDetails.
+
+        :param override_policy: The override_policy of this UpdateInstancePoolDetails.
+        :type: oci.core.models.InstancePoolLaunchOverridePolicy
+        """
+        self._override_policy = override_policy
 
     @property
     def instance_display_name_formatter(self):

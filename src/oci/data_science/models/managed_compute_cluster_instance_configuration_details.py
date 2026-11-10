@@ -36,23 +36,30 @@ class ManagedComputeClusterInstanceConfigurationDetails(object):
             The value to assign to the instance_shape_details property of this ManagedComputeClusterInstanceConfigurationDetails.
         :type instance_shape_details: oci.data_science.models.ManagedComputeClusterInstanceShapeDetails
 
+        :param network_configuration_details:
+            The value to assign to the network_configuration_details property of this ManagedComputeClusterInstanceConfigurationDetails.
+        :type network_configuration_details: oci.data_science.models.ManagedComputeClusterNetworkConfigurationDetails
+
         """
         self.swagger_types = {
             'instance_shape': 'str',
             'capacity_reservation_ids': 'list[str]',
             'boot_volume_size_in_gbs': 'int',
-            'instance_shape_details': 'ManagedComputeClusterInstanceShapeDetails'
+            'instance_shape_details': 'ManagedComputeClusterInstanceShapeDetails',
+            'network_configuration_details': 'ManagedComputeClusterNetworkConfigurationDetails'
         }
         self.attribute_map = {
             'instance_shape': 'instanceShape',
             'capacity_reservation_ids': 'capacityReservationIds',
             'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs',
-            'instance_shape_details': 'instanceShapeDetails'
+            'instance_shape_details': 'instanceShapeDetails',
+            'network_configuration_details': 'networkConfigurationDetails'
         }
         self._instance_shape = None
         self._capacity_reservation_ids = None
         self._boot_volume_size_in_gbs = None
         self._instance_shape_details = None
+        self._network_configuration_details = None
 
     @property
     def instance_shape(self):
@@ -149,6 +156,26 @@ class ManagedComputeClusterInstanceConfigurationDetails(object):
         :type: oci.data_science.models.ManagedComputeClusterInstanceShapeDetails
         """
         self._instance_shape_details = instance_shape_details
+
+    @property
+    def network_configuration_details(self):
+        """
+        Gets the network_configuration_details of this ManagedComputeClusterInstanceConfigurationDetails.
+
+        :return: The network_configuration_details of this ManagedComputeClusterInstanceConfigurationDetails.
+        :rtype: oci.data_science.models.ManagedComputeClusterNetworkConfigurationDetails
+        """
+        return self._network_configuration_details
+
+    @network_configuration_details.setter
+    def network_configuration_details(self, network_configuration_details):
+        """
+        Sets the network_configuration_details of this ManagedComputeClusterInstanceConfigurationDetails.
+
+        :param network_configuration_details: The network_configuration_details of this ManagedComputeClusterInstanceConfigurationDetails.
+        :type: oci.data_science.models.ManagedComputeClusterNetworkConfigurationDetails
+        """
+        self._network_configuration_details = network_configuration_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -92,6 +92,10 @@ class PipelineRun(object):
             The value to assign to the display_name property of this PipelineRun.
         :type display_name: str
 
+        :param pipeline_run_retention_period_in_days_override:
+            The value to assign to the pipeline_run_retention_period_in_days_override property of this PipelineRun.
+        :type pipeline_run_retention_period_in_days_override: int
+
         :param configuration_details:
             The value to assign to the configuration_details property of this PipelineRun.
         :type configuration_details: oci.data_science.models.PipelineConfigurationDetails
@@ -162,6 +166,7 @@ class PipelineRun(object):
             'compartment_id': 'str',
             'pipeline_id': 'str',
             'display_name': 'str',
+            'pipeline_run_retention_period_in_days_override': 'int',
             'configuration_details': 'PipelineConfigurationDetails',
             'configuration_override_details': 'PipelineConfigurationDetails',
             'log_configuration_override_details': 'PipelineLogConfigurationDetails',
@@ -188,6 +193,7 @@ class PipelineRun(object):
             'compartment_id': 'compartmentId',
             'pipeline_id': 'pipelineId',
             'display_name': 'displayName',
+            'pipeline_run_retention_period_in_days_override': 'pipelineRunRetentionPeriodInDaysOverride',
             'configuration_details': 'configurationDetails',
             'configuration_override_details': 'configurationOverrideDetails',
             'log_configuration_override_details': 'logConfigurationOverrideDetails',
@@ -213,6 +219,7 @@ class PipelineRun(object):
         self._compartment_id = None
         self._pipeline_id = None
         self._display_name = None
+        self._pipeline_run_retention_period_in_days_override = None
         self._configuration_details = None
         self._configuration_override_details = None
         self._log_configuration_override_details = None
@@ -503,6 +510,30 @@ class PipelineRun(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def pipeline_run_retention_period_in_days_override(self):
+        """
+        Gets the pipeline_run_retention_period_in_days_override of this PipelineRun.
+        Retention period in days for pipeline run.
+
+
+        :return: The pipeline_run_retention_period_in_days_override of this PipelineRun.
+        :rtype: int
+        """
+        return self._pipeline_run_retention_period_in_days_override
+
+    @pipeline_run_retention_period_in_days_override.setter
+    def pipeline_run_retention_period_in_days_override(self, pipeline_run_retention_period_in_days_override):
+        """
+        Sets the pipeline_run_retention_period_in_days_override of this PipelineRun.
+        Retention period in days for pipeline run.
+
+
+        :param pipeline_run_retention_period_in_days_override: The pipeline_run_retention_period_in_days_override of this PipelineRun.
+        :type: int
+        """
+        self._pipeline_run_retention_period_in_days_override = pipeline_run_retention_period_in_days_override
 
     @property
     def configuration_details(self):
