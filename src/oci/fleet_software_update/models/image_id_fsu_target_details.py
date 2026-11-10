@@ -29,6 +29,10 @@ class ImageIdFsuTargetDetails(FsuGoalVersionDetails):
             Allowed values for this property are: "VERSION", "IMAGE_ID", "EXADB_STACK"
         :type type: str
 
+        :param is_older_version_acknowledged:
+            The value to assign to the is_older_version_acknowledged property of this ImageIdFsuTargetDetails.
+        :type is_older_version_acknowledged: bool
+
         :param home_policy:
             The value to assign to the home_policy property of this ImageIdFsuTargetDetails.
             Allowed values for this property are: "CREATE_NEW", "USE_EXISTING"
@@ -45,17 +49,20 @@ class ImageIdFsuTargetDetails(FsuGoalVersionDetails):
         """
         self.swagger_types = {
             'type': 'str',
+            'is_older_version_acknowledged': 'bool',
             'home_policy': 'str',
             'new_home_prefix': 'str',
             'software_image_id': 'str'
         }
         self.attribute_map = {
             'type': 'type',
+            'is_older_version_acknowledged': 'isOlderVersionAcknowledged',
             'home_policy': 'homePolicy',
             'new_home_prefix': 'newHomePrefix',
             'software_image_id': 'softwareImageId'
         }
         self._type = None
+        self._is_older_version_acknowledged = None
         self._home_policy = None
         self._new_home_prefix = None
         self._software_image_id = None

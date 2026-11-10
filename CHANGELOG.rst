@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.191.0 - 2026-11-10
+====================
+
+Added 
+----- 
+* Support for Service Managed OKE (SM-OKE) enhancements in the Data Science service 
+* Support for job run and pipeline run retention periods and per-run retention overrides in the Data Science service 
+* Support for instance pool launch overrides for shapes, shape configurations, and capacity reservations with ordered fallback in the Compute service 
+* Support for explicit risk acknowledgement when using older allowed Database, Grid Infrastructure, and Guest VM OS versions in the Exadata Fleet Update service  
+
+Breaking 
+-------- 
+* The model `oci.core.models.Instances` has been removed from the Compute service  
+
+====================
 2.190.0 - 2026-11-03
 ====================
 

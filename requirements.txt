@@ -1,4 +1,8 @@
-certifi
+# SDK-8317: the updated CA bundle requires Python 3.7 or newer.
+certifi; python_version < '3.7'
+certifi>=2026.10.19; python_version >= '3.7'
+# pip 26.2.2 requires Python 3.10 or newer (also applies inside tox).
+pip>=26.2.2; python_version >= '3.10'
 coverage==4.5.2
 cryptography>=3.2.1,<=37.0.2; python_version <= '3.7'
 cryptography==42.0.8; python_full_version == '3.9.0' or python_full_version == '3.9.1'
@@ -18,9 +22,11 @@ tox==3.14.3; python_version < '3.12'
 tox==4.0.0; python_version >= '3.12'
 virtualenv==20.0.6; python_version < '3.8'
 virtualenv==20.17.1; python_version == '3.8'
-virtualenv==20.36.1; python_version >= '3.9'
+virtualenv==21.14.12; python_version >= '3.9'
 vcrpy==2.0.1; python_version < '3.9'
-vcrpy==7.0.0; python_version >= '3.9'
+vcrpy==7.0.0; python_version == '3.9'
+# aiohttp 3.14 removed AsyncStreamReaderMixin; VCRpy 8.5 supports its new streams API.
+vcrpy==8.5.0; python_version >= '3.10'
 wheel<=0.39.0
 setuptools==59.6.0; python_version == '3.6'
 setuptools==68.0.0; python_version == '3.7'

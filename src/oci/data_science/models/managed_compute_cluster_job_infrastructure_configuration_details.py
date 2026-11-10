@@ -34,20 +34,27 @@ class ManagedComputeClusterJobInfrastructureConfigurationDetails(JobInfrastructu
             The value to assign to the resource_configuration property of this ManagedComputeClusterJobInfrastructureConfigurationDetails.
         :type resource_configuration: oci.data_science.models.ManagedComputeClusterJobResourceConfiguration
 
+        :param network_configuration:
+            The value to assign to the network_configuration property of this ManagedComputeClusterJobInfrastructureConfigurationDetails.
+        :type network_configuration: oci.data_science.models.ManagedComputeClusterJobNetworkConfiguration
+
         """
         self.swagger_types = {
             'job_infrastructure_type': 'str',
             'compute_target_id': 'str',
-            'resource_configuration': 'ManagedComputeClusterJobResourceConfiguration'
+            'resource_configuration': 'ManagedComputeClusterJobResourceConfiguration',
+            'network_configuration': 'ManagedComputeClusterJobNetworkConfiguration'
         }
         self.attribute_map = {
             'job_infrastructure_type': 'jobInfrastructureType',
             'compute_target_id': 'computeTargetId',
-            'resource_configuration': 'resourceConfiguration'
+            'resource_configuration': 'resourceConfiguration',
+            'network_configuration': 'networkConfiguration'
         }
         self._job_infrastructure_type = None
         self._compute_target_id = None
         self._resource_configuration = None
+        self._network_configuration = None
         self._job_infrastructure_type = 'MANAGED_COMPUTE_CLUSTER'
 
     @property
@@ -97,6 +104,26 @@ class ManagedComputeClusterJobInfrastructureConfigurationDetails(JobInfrastructu
         :type: oci.data_science.models.ManagedComputeClusterJobResourceConfiguration
         """
         self._resource_configuration = resource_configuration
+
+    @property
+    def network_configuration(self):
+        """
+        Gets the network_configuration of this ManagedComputeClusterJobInfrastructureConfigurationDetails.
+
+        :return: The network_configuration of this ManagedComputeClusterJobInfrastructureConfigurationDetails.
+        :rtype: oci.data_science.models.ManagedComputeClusterJobNetworkConfiguration
+        """
+        return self._network_configuration
+
+    @network_configuration.setter
+    def network_configuration(self, network_configuration):
+        """
+        Sets the network_configuration of this ManagedComputeClusterJobInfrastructureConfigurationDetails.
+
+        :param network_configuration: The network_configuration of this ManagedComputeClusterJobInfrastructureConfigurationDetails.
+        :type: oci.data_science.models.ManagedComputeClusterJobNetworkConfiguration
+        """
+        self._network_configuration = network_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

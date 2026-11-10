@@ -36,6 +36,10 @@ class CreateJobRunDetails(object):
             The value to assign to the job_id property of this CreateJobRunDetails.
         :type job_id: str
 
+        :param job_run_retention_period_in_days_override:
+            The value to assign to the job_run_retention_period_in_days_override property of this CreateJobRunDetails.
+        :type job_run_retention_period_in_days_override: int
+
         :param job_configuration_override_details:
             The value to assign to the job_configuration_override_details property of this CreateJobRunDetails.
         :type job_configuration_override_details: oci.data_science.models.JobConfigurationDetails
@@ -74,6 +78,7 @@ class CreateJobRunDetails(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'job_id': 'str',
+            'job_run_retention_period_in_days_override': 'int',
             'job_configuration_override_details': 'JobConfigurationDetails',
             'job_log_configuration_override_details': 'JobLogConfigurationDetails',
             'job_environment_configuration_override_details': 'JobEnvironmentConfigurationDetails',
@@ -88,6 +93,7 @@ class CreateJobRunDetails(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'job_id': 'jobId',
+            'job_run_retention_period_in_days_override': 'jobRunRetentionPeriodInDaysOverride',
             'job_configuration_override_details': 'jobConfigurationOverrideDetails',
             'job_log_configuration_override_details': 'jobLogConfigurationOverrideDetails',
             'job_environment_configuration_override_details': 'jobEnvironmentConfigurationOverrideDetails',
@@ -101,6 +107,7 @@ class CreateJobRunDetails(object):
         self._compartment_id = None
         self._display_name = None
         self._job_id = None
+        self._job_run_retention_period_in_days_override = None
         self._job_configuration_override_details = None
         self._job_log_configuration_override_details = None
         self._job_environment_configuration_override_details = None
@@ -217,6 +224,30 @@ class CreateJobRunDetails(object):
         :type: str
         """
         self._job_id = job_id
+
+    @property
+    def job_run_retention_period_in_days_override(self):
+        """
+        Gets the job_run_retention_period_in_days_override of this CreateJobRunDetails.
+        Retention period in days for job run.
+
+
+        :return: The job_run_retention_period_in_days_override of this CreateJobRunDetails.
+        :rtype: int
+        """
+        return self._job_run_retention_period_in_days_override
+
+    @job_run_retention_period_in_days_override.setter
+    def job_run_retention_period_in_days_override(self, job_run_retention_period_in_days_override):
+        """
+        Sets the job_run_retention_period_in_days_override of this CreateJobRunDetails.
+        Retention period in days for job run.
+
+
+        :param job_run_retention_period_in_days_override: The job_run_retention_period_in_days_override of this CreateJobRunDetails.
+        :type: int
+        """
+        self._job_run_retention_period_in_days_override = job_run_retention_period_in_days_override
 
     @property
     def job_configuration_override_details(self):

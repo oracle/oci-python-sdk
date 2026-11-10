@@ -146,15 +146,24 @@ Data Science
     oci.data_science.models.ManagedComputeClusterComputeConfigurationDetails
     oci.data_science.models.ManagedComputeClusterCustomExpressionQueryScalingConfiguration
     oci.data_science.models.ManagedComputeClusterCustomMetricExpressionRule
+    oci.data_science.models.ManagedComputeClusterCustomNetworkConfigurationDetails
+    oci.data_science.models.ManagedComputeClusterDefaultNetworkConfigurationDetails
     oci.data_science.models.ManagedComputeClusterFixedSizeScalingPolicy
     oci.data_science.models.ManagedComputeClusterInstanceConfigurationDetails
     oci.data_science.models.ManagedComputeClusterInstanceShapeDetails
+    oci.data_science.models.ManagedComputeClusterJobCustomNetworkConfiguration
+    oci.data_science.models.ManagedComputeClusterJobDefaultNetworkConfiguration
     oci.data_science.models.ManagedComputeClusterJobInfrastructureConfigurationDetails
+    oci.data_science.models.ManagedComputeClusterJobNetworkConfiguration
     oci.data_science.models.ManagedComputeClusterJobResourceConfiguration
     oci.data_science.models.ManagedComputeClusterMetricExpressionRule
     oci.data_science.models.ManagedComputeClusterModelDeployInfrastructureConfigDetails
+    oci.data_science.models.ManagedComputeClusterModelDeploymentCustomNetworkConfiguration
+    oci.data_science.models.ManagedComputeClusterModelDeploymentDefaultNetworkConfiguration
+    oci.data_science.models.ManagedComputeClusterModelDeploymentNetworkConfiguration
     oci.data_science.models.ManagedComputeClusterModelDeploymentResourceConfiguration
     oci.data_science.models.ManagedComputeClusterModelDeploymentSystemData
+    oci.data_science.models.ManagedComputeClusterNetworkConfigurationDetails
     oci.data_science.models.ManagedComputeClusterPredefinedExpressionThresholdScalingConfiguration
     oci.data_science.models.ManagedComputeClusterPredefinedMetricExpressionRule
     oci.data_science.models.ManagedComputeClusterScalingConfiguration

@@ -170,7 +170,7 @@ class CcdCommitmentsClient(object):
         resource_path = "/ccdCommitments"
         method = "POST"
         operation_name = "create_ccd_commitment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdCommitment/CreateCcdCommitment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -280,7 +280,7 @@ class CcdCommitmentsClient(object):
         resource_path = "/ccdCommitments/{ccdCommitmentId}"
         method = "DELETE"
         operation_name = "delete_ccd_commitment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdCommitment/DeleteCcdCommitment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -385,7 +385,7 @@ class CcdCommitmentsClient(object):
         resource_path = "/ccdCommitments/{ccdCommitmentId}"
         method = "GET"
         operation_name = "get_ccd_commitment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdCommitment/GetCcdCommitment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -530,7 +530,7 @@ class CcdCommitmentsClient(object):
         resource_path = "/ccdCommitments"
         method = "GET"
         operation_name = "list_ccd_commitments"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdCommitmentCollection/ListCcdCommitments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -690,7 +690,7 @@ class CcdCommitmentsClient(object):
         resource_path = "/ccdCommitments/{ccdCommitmentId}"
         method = "PUT"
         operation_name = "update_ccd_commitment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ccd-offers/20240601/CcdCommitment/UpdateCcdCommitment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

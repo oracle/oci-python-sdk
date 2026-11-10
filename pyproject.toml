@@ -42,7 +42,8 @@ classifiers=[
     "Programming Language :: Python :: 3.13",
 ]
 dependencies = [
-    "certifi",
+    "certifi; python_version < '3.7'",
+    "certifi>=2026.10.19; python_version >= '3.7'",
     "configparser==4.0.2 ; python_version < '3'",
     "cryptography>=3.2.1,<=37.0.2; python_version <= '3.7'",
     "cryptography>=3.2.1,<51.0.0; python_version >= '3.8'",

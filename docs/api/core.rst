@@ -452,6 +452,12 @@ Core Services
     oci.core.models.InstancePool
     oci.core.models.InstancePoolInstance
     oci.core.models.InstancePoolInstanceLoadBalancerBackend
+    oci.core.models.InstancePoolLaunchOverrideDetails
+    oci.core.models.InstancePoolLaunchOverrideOption
+    oci.core.models.InstancePoolLaunchOverridePolicy
+    oci.core.models.InstancePoolLaunchOverrideSelector
+    oci.core.models.InstancePoolLaunchOverrideShapeConfigDetails
+    oci.core.models.InstancePoolLaunchOverrideStatement
     oci.core.models.InstancePoolLifecycleActionsDetails
     oci.core.models.InstancePoolLifecycleManagementDetails
     oci.core.models.InstancePoolLoadBalancerAttachment
@@ -473,7 +479,6 @@ Core Services
     oci.core.models.InstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceSourceViaImageDetails
     oci.core.models.InstanceSummary
-    oci.core.models.Instances
     oci.core.models.IntelIcelakeBmLaunchInstancePlatformConfig
     oci.core.models.IntelIcelakeBmPlatformConfig
     oci.core.models.IntelSkylakeBmLaunchInstancePlatformConfig
