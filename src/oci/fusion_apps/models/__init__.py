@@ -11,7 +11,6 @@ from .additional_egress_rule import AdditionalEgressRule
 from .admin_user_collection import AdminUserCollection
 from .admin_user_summary import AdminUserSummary
 from .allow_rule import AllowRule
-from .application_migration_action import ApplicationMigrationAction
 from .capabilities import Capabilities
 from .certificate_info import CertificateInfo
 from .change_fusion_environment_compartment_details import ChangeFusionEnvironmentCompartmentDetails
@@ -120,7 +119,6 @@ fusion_apps_type_mapping = {
     "AdminUserCollection": AdminUserCollection,
     "AdminUserSummary": AdminUserSummary,
     "AllowRule": AllowRule,
-    "ApplicationMigrationAction": ApplicationMigrationAction,
     "Capabilities": Capabilities,
     "CertificateInfo": CertificateInfo,
     "ChangeFusionEnvironmentCompartmentDetails": ChangeFusionEnvironmentCompartmentDetails,

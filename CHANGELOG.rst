@@ -5,26 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.192.0 - 2026-11-17
-====================
-
-Added 
------ 
-* Support for customer-reserved capacity during rolling upgrades in the VMware Solution service 
-* Support for minor updates using VMware Lifecycle Manager in the VMware Solution service 
-* Support for retrieving rolling upgrade status in the VMware Solution service 
-* Support for estimated concurrent sessions for Graph and Oracle Machine Learning built-in tools in Autonomous Database Serverless in the Database service 
-* Support for Agent-to-Agent (A2A) and Model Context Protocol (MCP) servers as built-in tools for Autonomous Database Serverless in the Database service 
-* Support for configuring SSL inspection when creating Exadata Cloud@Customer infrastructure in the Database service 
-* Support for scheduled activity enhancements for CPQ migration in the Fusion Applications service 
-* Support for dynamic weighted load balancing in the Load Balancer service 
-* Support for policy-based object tiering for Lustre file systems in the Lustre File Storage service  
-
-Breaking 
--------- 
-* The ``compartment_id`` parameter must now be passed by keyword to ``oci.ocvp.DatastoreClient.list_datastores`` and ``oci.ocvp.DatastoreClusterClient.list_datastore_clusters`` in the Oracle Cloud VMware Solution service  
-
-====================
 2.191.0 - 2026-11-10
 ====================
 

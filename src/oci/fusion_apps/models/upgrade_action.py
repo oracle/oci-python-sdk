@@ -27,7 +27,7 @@ class UpgradeAction(Action):
 
         :param action_type:
             The value to assign to the action_type property of this UpgradeAction.
-            Allowed values for this property are: "QUARTERLY_UPGRADE", "PATCH", "VERTEX", "APPLICATION_MIGRATION"
+            Allowed values for this property are: "QUARTERLY_UPGRADE", "PATCH", "VERTEX"
         :type action_type: str
 
         :param state:

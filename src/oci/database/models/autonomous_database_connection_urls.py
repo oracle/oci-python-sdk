@@ -60,14 +60,6 @@ class AutonomousDatabaseConnectionUrls(object):
             The value to assign to the essbase_url property of this AutonomousDatabaseConnectionUrls.
         :type essbase_url: str
 
-        :param a2a_url:
-            The value to assign to the a2a_url property of this AutonomousDatabaseConnectionUrls.
-        :type a2a_url: str
-
-        :param mcp_url:
-            The value to assign to the mcp_url property of this AutonomousDatabaseConnectionUrls.
-        :type mcp_url: str
-
         :param spatial_studio_url:
             The value to assign to the spatial_studio_url property of this AutonomousDatabaseConnectionUrls.
         :type spatial_studio_url: str
@@ -83,8 +75,6 @@ class AutonomousDatabaseConnectionUrls(object):
             'ords_url': 'str',
             'database_transforms_url': 'str',
             'essbase_url': 'str',
-            'a2a_url': 'str',
-            'mcp_url': 'str',
             'spatial_studio_url': 'str'
         }
         self.attribute_map = {
@@ -97,8 +87,6 @@ class AutonomousDatabaseConnectionUrls(object):
             'ords_url': 'ordsUrl',
             'database_transforms_url': 'databaseTransformsUrl',
             'essbase_url': 'essbaseUrl',
-            'a2a_url': 'a2aUrl',
-            'mcp_url': 'mcpUrl',
             'spatial_studio_url': 'spatialStudioUrl'
         }
         self._sql_dev_web_url = None
@@ -110,8 +98,6 @@ class AutonomousDatabaseConnectionUrls(object):
         self._ords_url = None
         self._database_transforms_url = None
         self._essbase_url = None
-        self._a2a_url = None
-        self._mcp_url = None
         self._spatial_studio_url = None
 
     @property
@@ -329,54 +315,6 @@ class AutonomousDatabaseConnectionUrls(object):
         :type: str
         """
         self._essbase_url = essbase_url
-
-    @property
-    def a2a_url(self):
-        """
-        Gets the a2a_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
-
-
-        :return: The a2a_url of this AutonomousDatabaseConnectionUrls.
-        :rtype: str
-        """
-        return self._a2a_url
-
-    @a2a_url.setter
-    def a2a_url(self, a2a_url):
-        """
-        Sets the a2a_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Agent-to-Agent (A2A) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
-
-
-        :param a2a_url: The a2a_url of this AutonomousDatabaseConnectionUrls.
-        :type: str
-        """
-        self._a2a_url = a2a_url
-
-    @property
-    def mcp_url(self):
-        """
-        Gets the mcp_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
-
-
-        :return: The mcp_url of this AutonomousDatabaseConnectionUrls.
-        :rtype: str
-        """
-        return self._mcp_url
-
-    @mcp_url.setter
-    def mcp_url(self, mcp_url):
-        """
-        Sets the mcp_url of this AutonomousDatabaseConnectionUrls.
-        The URL of the Model Context Protocol (MCP) server for the Autonomous AI Database. Applicable to Autonomous AI Database Serverless only.
-
-
-        :param mcp_url: The mcp_url of this AutonomousDatabaseConnectionUrls.
-        :type: str
-        """
-        self._mcp_url = mcp_url
 
     @property
     def spatial_studio_url(self):

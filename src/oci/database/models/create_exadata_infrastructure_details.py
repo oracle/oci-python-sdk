@@ -125,10 +125,6 @@ class CreateExadataInfrastructureDetails(object):
             The value to assign to the defined_tags property of this CreateExadataInfrastructureDetails.
         :type defined_tags: dict(str, dict(str, object))
 
-        :param ssl_inspection_configuration:
-            The value to assign to the ssl_inspection_configuration property of this CreateExadataInfrastructureDetails.
-        :type ssl_inspection_configuration: oci.database.models.SslInspectionConfiguration
-
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -156,8 +152,7 @@ class CreateExadataInfrastructureDetails(object):
             'database_server_type': 'str',
             'storage_server_type': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))',
-            'ssl_inspection_configuration': 'SslInspectionConfiguration'
+            'defined_tags': 'dict(str, dict(str, object))'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -185,8 +180,7 @@ class CreateExadataInfrastructureDetails(object):
             'database_server_type': 'databaseServerType',
             'storage_server_type': 'storageServerType',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags',
-            'ssl_inspection_configuration': 'sslInspectionConfiguration'
+            'defined_tags': 'definedTags'
         }
         self._compartment_id = None
         self._display_name = None
@@ -214,7 +208,6 @@ class CreateExadataInfrastructureDetails(object):
         self._storage_server_type = None
         self._freeform_tags = None
         self._defined_tags = None
-        self._ssl_inspection_configuration = None
 
     @property
     def compartment_id(self):
@@ -857,26 +850,6 @@ class CreateExadataInfrastructureDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
-
-    @property
-    def ssl_inspection_configuration(self):
-        """
-        Gets the ssl_inspection_configuration of this CreateExadataInfrastructureDetails.
-
-        :return: The ssl_inspection_configuration of this CreateExadataInfrastructureDetails.
-        :rtype: oci.database.models.SslInspectionConfiguration
-        """
-        return self._ssl_inspection_configuration
-
-    @ssl_inspection_configuration.setter
-    def ssl_inspection_configuration(self, ssl_inspection_configuration):
-        """
-        Sets the ssl_inspection_configuration of this CreateExadataInfrastructureDetails.
-
-        :param ssl_inspection_configuration: The ssl_inspection_configuration of this CreateExadataInfrastructureDetails.
-        :type: oci.database.models.SslInspectionConfiguration
-        """
-        self._ssl_inspection_configuration = ssl_inspection_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)
