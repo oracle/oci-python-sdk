@@ -88,6 +88,10 @@ class LoadBalancer(object):
             The value to assign to the ip_addresses property of this LoadBalancer.
         :type ip_addresses: list[oci.load_balancer.models.IpAddress]
 
+        :param reserved_ip_addresses:
+            The value to assign to the reserved_ip_addresses property of this LoadBalancer.
+        :type reserved_ip_addresses: list[oci.load_balancer.models.ReservedIP]
+
         :param shape_name:
             The value to assign to the shape_name property of this LoadBalancer.
         :type shape_name: str
@@ -182,6 +186,7 @@ class LoadBalancer(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'ip_addresses': 'list[IpAddress]',
+            'reserved_ip_addresses': 'list[ReservedIP]',
             'shape_name': 'str',
             'shape_details': 'ShapeDetails',
             'is_private': 'bool',
@@ -211,6 +216,7 @@ class LoadBalancer(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'ip_addresses': 'ipAddresses',
+            'reserved_ip_addresses': 'reservedIpAddresses',
             'shape_name': 'shapeName',
             'shape_details': 'shapeDetails',
             'is_private': 'isPrivate',
@@ -239,6 +245,7 @@ class LoadBalancer(object):
         self._lifecycle_state = None
         self._time_created = None
         self._ip_addresses = None
+        self._reserved_ip_addresses = None
         self._shape_name = None
         self._shape_details = None
         self._is_private = None
@@ -426,6 +433,30 @@ class LoadBalancer(object):
         :type: list[oci.load_balancer.models.IpAddress]
         """
         self._ip_addresses = ip_addresses
+
+    @property
+    def reserved_ip_addresses(self):
+        """
+        Gets the reserved_ip_addresses of this LoadBalancer.
+        An array of reservedIP addresses.
+
+
+        :return: The reserved_ip_addresses of this LoadBalancer.
+        :rtype: list[oci.load_balancer.models.ReservedIP]
+        """
+        return self._reserved_ip_addresses
+
+    @reserved_ip_addresses.setter
+    def reserved_ip_addresses(self, reserved_ip_addresses):
+        """
+        Sets the reserved_ip_addresses of this LoadBalancer.
+        An array of reservedIP addresses.
+
+
+        :param reserved_ip_addresses: The reserved_ip_addresses of this LoadBalancer.
+        :type: list[oci.load_balancer.models.ReservedIP]
+        """
+        self._reserved_ip_addresses = reserved_ip_addresses
 
     @property
     def shape_name(self):

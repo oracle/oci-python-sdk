@@ -27,6 +27,10 @@ class Action(object):
     #: This constant has a value of "VERTEX"
     ACTION_TYPE_VERTEX = "VERTEX"
 
+    #: A constant which can be used with the action_type property of a Action.
+    #: This constant has a value of "APPLICATION_MIGRATION"
+    ACTION_TYPE_APPLICATION_MIGRATION = "APPLICATION_MIGRATION"
+
     #: A constant which can be used with the state property of a Action.
     #: This constant has a value of "ACCEPTED"
     STATE_ACCEPTED = "ACCEPTED"
@@ -54,6 +58,7 @@ class Action(object):
 
         * :class:`~oci.fusion_apps.models.PatchAction`
         * :class:`~oci.fusion_apps.models.UpgradeAction`
+        * :class:`~oci.fusion_apps.models.ApplicationMigrationAction`
         * :class:`~oci.fusion_apps.models.VertexAction`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -64,7 +69,7 @@ class Action(object):
 
         :param action_type:
             The value to assign to the action_type property of this Action.
-            Allowed values for this property are: "QUARTERLY_UPGRADE", "PATCH", "VERTEX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "QUARTERLY_UPGRADE", "PATCH", "VERTEX", "APPLICATION_MIGRATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action_type: str
 
@@ -110,6 +115,9 @@ class Action(object):
         if type == 'QUARTERLY_UPGRADE':
             return 'UpgradeAction'
 
+        if type == 'APPLICATION_MIGRATION':
+            return 'ApplicationMigrationAction'
+
         if type == 'VERTEX':
             return 'VertexAction'
         else:
@@ -145,7 +153,7 @@ class Action(object):
         **[Required]** Gets the action_type of this Action.
         Type of action.
 
-        Allowed values for this property are: "QUARTERLY_UPGRADE", "PATCH", "VERTEX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "QUARTERLY_UPGRADE", "PATCH", "VERTEX", "APPLICATION_MIGRATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -164,7 +172,7 @@ class Action(object):
         :param action_type: The action_type of this Action.
         :type: str
         """
-        allowed_values = ["QUARTERLY_UPGRADE", "PATCH", "VERTEX"]
+        allowed_values = ["QUARTERLY_UPGRADE", "PATCH", "VERTEX", "APPLICATION_MIGRATION"]
         if not value_allowed_none_or_none_sentinel(action_type, allowed_values):
             action_type = 'UNKNOWN_ENUM_VALUE'
         self._action_type = action_type

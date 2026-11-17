@@ -1245,14 +1245,15 @@ class DatastoreClusterClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_datastore_clusters(self, compartment_id, **kwargs):
+    def list_datastore_clusters(self, **kwargs):
         """
         List the Datastore Clusters in the specified compartment. The list can be filtered
-        by compartment, Datastore Cluster, Display name and Lifecycle state
+        by compartment, Datastore Cluster, Display name and Lifecycle state. Either
+        compartmentId or datastoreClusterId must be provided.
 
 
-        :param str compartment_id: (required)
-            The `OCID`__ of the compartment.
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment as optional parameter.
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -1333,7 +1334,7 @@ class DatastoreClusterClient(object):
         Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_datastore_clusters.py.html>`__ to see an example of how to use list_datastore_clusters API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['compartmentId']
+        required_arguments = []
         resource_path = "/datastoreClusters"
         method = "GET"
         operation_name = "list_datastore_clusters"
@@ -1344,6 +1345,7 @@ class DatastoreClusterClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "compartment_id",
             "display_name",
             "datastore_cluster_id",
             "cluster_id",
@@ -1381,7 +1383,7 @@ class DatastoreClusterClient(object):
                 )
 
         query_params = {
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
             "displayName": kwargs.get("display_name", missing),
             "datastoreClusterId": kwargs.get("datastore_cluster_id", missing),
             "clusterId": kwargs.get("cluster_id", missing),

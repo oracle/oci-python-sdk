@@ -66,6 +66,7 @@ from .management_appliance_summary import ManagementApplianceSummary
 from .network_configuration import NetworkConfiguration
 from .remove_datastore_from_datastore_cluster_details import RemoveDatastoreFromDatastoreClusterDetails
 from .replace_host_details import ReplaceHostDetails
+from .resource_operation import ResourceOperation
 from .sddc import Sddc
 from .sddc_byol_allocation_details import SddcByolAllocationDetails
 from .sddc_collection import SddcCollection
@@ -161,6 +162,7 @@ ocvp_type_mapping = {
     "NetworkConfiguration": NetworkConfiguration,
     "RemoveDatastoreFromDatastoreClusterDetails": RemoveDatastoreFromDatastoreClusterDetails,
     "ReplaceHostDetails": ReplaceHostDetails,
+    "ResourceOperation": ResourceOperation,
     "Sddc": Sddc,
     "SddcByolAllocationDetails": SddcByolAllocationDetails,
     "SddcCollection": SddcCollection,
