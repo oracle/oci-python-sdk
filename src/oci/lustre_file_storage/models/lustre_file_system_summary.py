@@ -134,6 +134,10 @@ class LustreFileSystemSummary(object):
             The value to assign to the root_squash_configuration property of this LustreFileSystemSummary.
         :type root_squash_configuration: oci.lustre_file_storage.models.RootSquashConfiguration
 
+        :param tiering_configuration:
+            The value to assign to the tiering_configuration property of this LustreFileSystemSummary.
+        :type tiering_configuration: oci.lustre_file_storage.models.TieringConfigurationSummary
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -159,7 +163,8 @@ class LustreFileSystemSummary(object):
             'lnet': 'str',
             'cluster_placement_group_id': 'str',
             'major_version': 'str',
-            'root_squash_configuration': 'RootSquashConfiguration'
+            'root_squash_configuration': 'RootSquashConfiguration',
+            'tiering_configuration': 'TieringConfigurationSummary'
         }
         self.attribute_map = {
             'id': 'id',
@@ -185,7 +190,8 @@ class LustreFileSystemSummary(object):
             'lnet': 'lnet',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'major_version': 'majorVersion',
-            'root_squash_configuration': 'rootSquashConfiguration'
+            'root_squash_configuration': 'rootSquashConfiguration',
+            'tiering_configuration': 'tieringConfiguration'
         }
         self._id = None
         self._compartment_id = None
@@ -211,6 +217,7 @@ class LustreFileSystemSummary(object):
         self._cluster_placement_group_id = None
         self._major_version = None
         self._root_squash_configuration = None
+        self._tiering_configuration = None
 
     @property
     def id(self):
@@ -907,6 +914,26 @@ class LustreFileSystemSummary(object):
         :type: oci.lustre_file_storage.models.RootSquashConfiguration
         """
         self._root_squash_configuration = root_squash_configuration
+
+    @property
+    def tiering_configuration(self):
+        """
+        **[Required]** Gets the tiering_configuration of this LustreFileSystemSummary.
+
+        :return: The tiering_configuration of this LustreFileSystemSummary.
+        :rtype: oci.lustre_file_storage.models.TieringConfigurationSummary
+        """
+        return self._tiering_configuration
+
+    @tiering_configuration.setter
+    def tiering_configuration(self, tiering_configuration):
+        """
+        Sets the tiering_configuration of this LustreFileSystemSummary.
+
+        :param tiering_configuration: The tiering_configuration of this LustreFileSystemSummary.
+        :type: oci.lustre_file_storage.models.TieringConfigurationSummary
+        """
+        self._tiering_configuration = tiering_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

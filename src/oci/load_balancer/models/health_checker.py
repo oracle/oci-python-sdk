@@ -55,6 +55,14 @@ class HealthChecker(object):
             The value to assign to the response_body_regex property of this HealthChecker.
         :type response_body_regex: str
 
+        :param is_dynamic_backend_weight_enabled:
+            The value to assign to the is_dynamic_backend_weight_enabled property of this HealthChecker.
+        :type is_dynamic_backend_weight_enabled: bool
+
+        :param default_weight:
+            The value to assign to the default_weight property of this HealthChecker.
+        :type default_weight: int
+
         :param is_force_plain_text:
             The value to assign to the is_force_plain_text property of this HealthChecker.
         :type is_force_plain_text: bool
@@ -69,6 +77,8 @@ class HealthChecker(object):
             'timeout_in_millis': 'int',
             'interval_in_millis': 'int',
             'response_body_regex': 'str',
+            'is_dynamic_backend_weight_enabled': 'bool',
+            'default_weight': 'int',
             'is_force_plain_text': 'bool'
         }
         self.attribute_map = {
@@ -80,6 +90,8 @@ class HealthChecker(object):
             'timeout_in_millis': 'timeoutInMillis',
             'interval_in_millis': 'intervalInMillis',
             'response_body_regex': 'responseBodyRegex',
+            'is_dynamic_backend_weight_enabled': 'isDynamicBackendWeightEnabled',
+            'default_weight': 'defaultWeight',
             'is_force_plain_text': 'isForcePlainText'
         }
         self._protocol = None
@@ -90,6 +102,8 @@ class HealthChecker(object):
         self._timeout_in_millis = None
         self._interval_in_millis = None
         self._response_body_regex = None
+        self._is_dynamic_backend_weight_enabled = None
+        self._default_weight = None
         self._is_force_plain_text = None
 
     @property
@@ -323,6 +337,94 @@ class HealthChecker(object):
         :type: str
         """
         self._response_body_regex = response_body_regex
+
+    @property
+    def is_dynamic_backend_weight_enabled(self):
+        """
+        Gets the is_dynamic_backend_weight_enabled of this HealthChecker.
+        Indicates whether dynamic backend weights are enabled for HTTP health checks.
+
+        When enabled, the load balancer reads the `X-Dynamic-Backend-Weight`
+        header from each backend's HTTP health check response.
+        The load balancer uses that value as the backend's effective weight
+        when distributing traffic.
+
+        A valid header value is an integer from `0` through `100`.
+
+        If the backend response does not include this header, or includes an invalid
+        value, the load balancer uses `defaultWeight`.
+
+        For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+
+
+        :return: The is_dynamic_backend_weight_enabled of this HealthChecker.
+        :rtype: bool
+        """
+        return self._is_dynamic_backend_weight_enabled
+
+    @is_dynamic_backend_weight_enabled.setter
+    def is_dynamic_backend_weight_enabled(self, is_dynamic_backend_weight_enabled):
+        """
+        Sets the is_dynamic_backend_weight_enabled of this HealthChecker.
+        Indicates whether dynamic backend weights are enabled for HTTP health checks.
+
+        When enabled, the load balancer reads the `X-Dynamic-Backend-Weight`
+        header from each backend's HTTP health check response.
+        The load balancer uses that value as the backend's effective weight
+        when distributing traffic.
+
+        A valid header value is an integer from `0` through `100`.
+
+        If the backend response does not include this header, or includes an invalid
+        value, the load balancer uses `defaultWeight`.
+
+        For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+
+
+        :param is_dynamic_backend_weight_enabled: The is_dynamic_backend_weight_enabled of this HealthChecker.
+        :type: bool
+        """
+        self._is_dynamic_backend_weight_enabled = is_dynamic_backend_weight_enabled
+
+    @property
+    def default_weight(self):
+        """
+        Gets the default_weight of this HealthChecker.
+        The fallback backend weight used when dynamic backend weights are enabled
+        and the backend's HTTP health check response does not include a valid
+        `X-Dynamic-Backend-Weight` header value.
+
+        This value is an integer from `1` through `100`.
+
+        For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+
+        Example: `1`
+
+
+        :return: The default_weight of this HealthChecker.
+        :rtype: int
+        """
+        return self._default_weight
+
+    @default_weight.setter
+    def default_weight(self, default_weight):
+        """
+        Sets the default_weight of this HealthChecker.
+        The fallback backend weight used when dynamic backend weights are enabled
+        and the backend's HTTP health check response does not include a valid
+        `X-Dynamic-Backend-Weight` header value.
+
+        This value is an integer from `1` through `100`.
+
+        For TCP health checks, this field is accepted and stored, but it has no runtime effect.
+
+        Example: `1`
+
+
+        :param default_weight: The default_weight of this HealthChecker.
+        :type: int
+        """
+        self._default_weight = default_weight
 
     @property
     def is_force_plain_text(self):
