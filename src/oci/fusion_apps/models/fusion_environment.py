@@ -1050,7 +1050,9 @@ class FusionEnvironment(object):
     def additional_egress_rules(self):
         """
         Gets the additional_egress_rules of this FusionEnvironment.
-        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see `Securing Network Access to a Fusion Applications Environment`__. If access to a non-standard port is required, however, they can be listed here.
+
+        __ https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache
 
 
         :return: The additional_egress_rules of this FusionEnvironment.
@@ -1062,7 +1064,9 @@ class FusionEnvironment(object):
     def additional_egress_rules(self, additional_egress_rules):
         """
         Sets the additional_egress_rules of this FusionEnvironment.
-        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
+        Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see `Securing Network Access to a Fusion Applications Environment`__. If access to a non-standard port is required, however, they can be listed here.
+
+        __ https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment.htm#internet-cache
 
 
         :param additional_egress_rules: The additional_egress_rules of this FusionEnvironment.

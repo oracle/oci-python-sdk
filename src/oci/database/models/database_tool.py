@@ -51,6 +51,14 @@ class DatabaseTool(object):
     #: This constant has a value of "ESSBASE"
     NAME_ESSBASE = "ESSBASE"
 
+    #: A constant which can be used with the name property of a DatabaseTool.
+    #: This constant has a value of "A2A"
+    NAME_A2_A = "A2A"
+
+    #: A constant which can be used with the name property of a DatabaseTool.
+    #: This constant has a value of "MCP"
+    NAME_MCP = "MCP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseTool object with values from keyword arguments.
@@ -58,7 +66,7 @@ class DatabaseTool(object):
 
         :param name:
             The value to assign to the name property of this DatabaseTool.
-            Allowed values for this property are: "APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO", "ESSBASE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO", "ESSBASE", "A2A", "MCP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type name: str
 
@@ -74,23 +82,30 @@ class DatabaseTool(object):
             The value to assign to the max_idle_time_in_minutes property of this DatabaseTool.
         :type max_idle_time_in_minutes: int
 
+        :param estimated_concurrent_sessions:
+            The value to assign to the estimated_concurrent_sessions property of this DatabaseTool.
+        :type estimated_concurrent_sessions: int
+
         """
         self.swagger_types = {
             'name': 'str',
             'is_enabled': 'bool',
             'compute_count': 'float',
-            'max_idle_time_in_minutes': 'int'
+            'max_idle_time_in_minutes': 'int',
+            'estimated_concurrent_sessions': 'int'
         }
         self.attribute_map = {
             'name': 'name',
             'is_enabled': 'isEnabled',
             'compute_count': 'computeCount',
-            'max_idle_time_in_minutes': 'maxIdleTimeInMinutes'
+            'max_idle_time_in_minutes': 'maxIdleTimeInMinutes',
+            'estimated_concurrent_sessions': 'estimatedConcurrentSessions'
         }
         self._name = None
         self._is_enabled = None
         self._compute_count = None
         self._max_idle_time_in_minutes = None
+        self._estimated_concurrent_sessions = None
 
     @property
     def name(self):
@@ -98,7 +113,7 @@ class DatabaseTool(object):
         **[Required]** Gets the name of this DatabaseTool.
         Name of database tool.
 
-        Allowed values for this property are: "APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO", "ESSBASE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO", "ESSBASE", "A2A", "MCP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -117,7 +132,7 @@ class DatabaseTool(object):
         :param name: The name of this DatabaseTool.
         :type: str
         """
-        allowed_values = ["APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO", "ESSBASE"]
+        allowed_values = ["APEX", "DATABASE_ACTIONS", "GRAPH_STUDIO", "OML", "DATA_TRANSFORMS", "ORDS", "MONGODB_API", "SPATIAL_STUDIO", "ESSBASE", "A2A", "MCP"]
         if not value_allowed_none_or_none_sentinel(name, allowed_values):
             name = 'UNKNOWN_ENUM_VALUE'
         self._name = name
@@ -193,6 +208,30 @@ class DatabaseTool(object):
         :type: int
         """
         self._max_idle_time_in_minutes = max_idle_time_in_minutes
+
+    @property
+    def estimated_concurrent_sessions(self):
+        """
+        Gets the estimated_concurrent_sessions of this DatabaseTool.
+        Specifies the estimated number of concurrent user sessions (range 1\u201364 for Graph, 1\u2013256 for OML, default 1). applies only to OML and Graph tools\u2014not applicable to DLA, Data Transforms, or Spatial.
+
+
+        :return: The estimated_concurrent_sessions of this DatabaseTool.
+        :rtype: int
+        """
+        return self._estimated_concurrent_sessions
+
+    @estimated_concurrent_sessions.setter
+    def estimated_concurrent_sessions(self, estimated_concurrent_sessions):
+        """
+        Sets the estimated_concurrent_sessions of this DatabaseTool.
+        Specifies the estimated number of concurrent user sessions (range 1\u201364 for Graph, 1\u2013256 for OML, default 1). applies only to OML and Graph tools\u2014not applicable to DLA, Data Transforms, or Spatial.
+
+
+        :param estimated_concurrent_sessions: The estimated_concurrent_sessions of this DatabaseTool.
+        :type: int
+        """
+        self._estimated_concurrent_sessions = estimated_concurrent_sessions
 
     def __repr__(self):
         return formatted_flat_dict(self)

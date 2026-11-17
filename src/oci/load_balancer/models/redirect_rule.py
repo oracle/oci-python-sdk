@@ -141,7 +141,7 @@ class RedirectRule(Rule):
     @property
     def redirect_uri(self):
         """
-        Gets the redirect_uri of this RedirectRule.
+        **[Required]** Gets the redirect_uri of this RedirectRule.
 
         :return: The redirect_uri of this RedirectRule.
         :rtype: oci.load_balancer.models.RedirectUri
