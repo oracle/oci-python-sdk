@@ -49,14 +49,6 @@ class UpdateEsxiHostDetails(object):
             The value to assign to the billing_donor_host_id property of this UpdateEsxiHostDetails.
         :type billing_donor_host_id: str
 
-        :param vmware_software_version:
-            The value to assign to the vmware_software_version property of this UpdateEsxiHostDetails.
-        :type vmware_software_version: str
-
-        :param esxi_software_version:
-            The value to assign to the esxi_software_version property of this UpdateEsxiHostDetails.
-        :type esxi_software_version: str
-
         :param vcf_byol_allocation_id:
             The value to assign to the vcf_byol_allocation_id property of this UpdateEsxiHostDetails.
         :type vcf_byol_allocation_id: str
@@ -78,8 +70,6 @@ class UpdateEsxiHostDetails(object):
             'display_name': 'str',
             'next_commitment': 'str',
             'billing_donor_host_id': 'str',
-            'vmware_software_version': 'str',
-            'esxi_software_version': 'str',
             'vcf_byol_allocation_id': 'str',
             'is_vsan_byol_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
@@ -89,8 +79,6 @@ class UpdateEsxiHostDetails(object):
             'display_name': 'displayName',
             'next_commitment': 'nextCommitment',
             'billing_donor_host_id': 'billingDonorHostId',
-            'vmware_software_version': 'vmwareSoftwareVersion',
-            'esxi_software_version': 'esxiSoftwareVersion',
             'vcf_byol_allocation_id': 'vcfByolAllocationId',
             'is_vsan_byol_enabled': 'isVsanByolEnabled',
             'freeform_tags': 'freeformTags',
@@ -99,8 +87,6 @@ class UpdateEsxiHostDetails(object):
         self._display_name = None
         self._next_commitment = None
         self._billing_donor_host_id = None
-        self._vmware_software_version = None
-        self._esxi_software_version = None
         self._vcf_byol_allocation_id = None
         self._is_vsan_byol_enabled = None
         self._freeform_tags = None
@@ -204,64 +190,6 @@ class UpdateEsxiHostDetails(object):
         :type: str
         """
         self._billing_donor_host_id = billing_donor_host_id
-
-    @property
-    def vmware_software_version(self):
-        """
-        Gets the vmware_software_version of this UpdateEsxiHostDetails.
-        The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi host. To get a list of the available versions, use
-        :func:`list_supported_vmware_software_versions`.
-        **Note:** This API will not perform VMware software version upgrade. Make sure the version provided is the actual version installed on the ESXi host.
-
-
-        :return: The vmware_software_version of this UpdateEsxiHostDetails.
-        :rtype: str
-        """
-        return self._vmware_software_version
-
-    @vmware_software_version.setter
-    def vmware_software_version(self, vmware_software_version):
-        """
-        Sets the vmware_software_version of this UpdateEsxiHostDetails.
-        The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi host. To get a list of the available versions, use
-        :func:`list_supported_vmware_software_versions`.
-        **Note:** This API will not perform VMware software version upgrade. Make sure the version provided is the actual version installed on the ESXi host.
-
-
-        :param vmware_software_version: The vmware_software_version of this UpdateEsxiHostDetails.
-        :type: str
-        """
-        self._vmware_software_version = vmware_software_version
-
-    @property
-    def esxi_software_version(self):
-        """
-        Gets the esxi_software_version of this UpdateEsxiHostDetails.
-        The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi host.
-        To get a list of the available versions, use
-        :func:`list_supported_vmware_software_versions`.
-        **Note:** This API will not perform ESXi software version upgrade. Make sure the version provided is the actual version installed on the ESXi host.
-
-
-        :return: The esxi_software_version of this UpdateEsxiHostDetails.
-        :rtype: str
-        """
-        return self._esxi_software_version
-
-    @esxi_software_version.setter
-    def esxi_software_version(self, esxi_software_version):
-        """
-        Sets the esxi_software_version of this UpdateEsxiHostDetails.
-        The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi host.
-        To get a list of the available versions, use
-        :func:`list_supported_vmware_software_versions`.
-        **Note:** This API will not perform ESXi software version upgrade. Make sure the version provided is the actual version installed on the ESXi host.
-
-
-        :param esxi_software_version: The esxi_software_version of this UpdateEsxiHostDetails.
-        :type: str
-        """
-        self._esxi_software_version = esxi_software_version
 
     @property
     def vcf_byol_allocation_id(self):

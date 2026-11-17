@@ -340,10 +340,6 @@ class ExadataInfrastructure(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type compute_model: str
 
-        :param ssl_inspection_configuration:
-            The value to assign to the ssl_inspection_configuration property of this ExadataInfrastructure.
-        :type ssl_inspection_configuration: oci.database.models.SslInspectionConfiguration
-
         """
         self.swagger_types = {
             'id': 'str',
@@ -401,8 +397,7 @@ class ExadataInfrastructure(object):
             'exascale_config': 'ExascaleConfigDetails',
             'database_server_type': 'str',
             'storage_server_type': 'str',
-            'compute_model': 'str',
-            'ssl_inspection_configuration': 'SslInspectionConfiguration'
+            'compute_model': 'str'
         }
         self.attribute_map = {
             'id': 'id',
@@ -460,8 +455,7 @@ class ExadataInfrastructure(object):
             'exascale_config': 'exascaleConfig',
             'database_server_type': 'databaseServerType',
             'storage_server_type': 'storageServerType',
-            'compute_model': 'computeModel',
-            'ssl_inspection_configuration': 'sslInspectionConfiguration'
+            'compute_model': 'computeModel'
         }
         self._id = None
         self._compartment_id = None
@@ -519,7 +513,6 @@ class ExadataInfrastructure(object):
         self._database_server_type = None
         self._storage_server_type = None
         self._compute_model = None
-        self._ssl_inspection_configuration = None
 
     @property
     def id(self):
@@ -1922,26 +1915,6 @@ class ExadataInfrastructure(object):
         if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
             compute_model = 'UNKNOWN_ENUM_VALUE'
         self._compute_model = compute_model
-
-    @property
-    def ssl_inspection_configuration(self):
-        """
-        Gets the ssl_inspection_configuration of this ExadataInfrastructure.
-
-        :return: The ssl_inspection_configuration of this ExadataInfrastructure.
-        :rtype: oci.database.models.SslInspectionConfiguration
-        """
-        return self._ssl_inspection_configuration
-
-    @ssl_inspection_configuration.setter
-    def ssl_inspection_configuration(self, ssl_inspection_configuration):
-        """
-        Sets the ssl_inspection_configuration of this ExadataInfrastructure.
-
-        :param ssl_inspection_configuration: The ssl_inspection_configuration of this ExadataInfrastructure.
-        :type: oci.database.models.SslInspectionConfiguration
-        """
-        self._ssl_inspection_configuration = ssl_inspection_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

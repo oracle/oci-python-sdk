@@ -56,10 +56,6 @@ class UpdateLustreFileSystemDetails(object):
             The value to assign to the maintenance_window property of this UpdateLustreFileSystemDetails.
         :type maintenance_window: oci.lustre_file_storage.models.MaintenanceWindow
 
-        :param tiering_configuration:
-            The value to assign to the tiering_configuration property of this UpdateLustreFileSystemDetails.
-        :type tiering_configuration: oci.lustre_file_storage.models.TieringConfigurationDetails
-
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -70,8 +66,7 @@ class UpdateLustreFileSystemDetails(object):
             'kms_key_id': 'str',
             'capacity_in_gbs': 'int',
             'root_squash_configuration': 'RootSquashConfiguration',
-            'maintenance_window': 'MaintenanceWindow',
-            'tiering_configuration': 'TieringConfigurationDetails'
+            'maintenance_window': 'MaintenanceWindow'
         }
         self.attribute_map = {
             'display_name': 'displayName',
@@ -82,8 +77,7 @@ class UpdateLustreFileSystemDetails(object):
             'kms_key_id': 'kmsKeyId',
             'capacity_in_gbs': 'capacityInGBs',
             'root_squash_configuration': 'rootSquashConfiguration',
-            'maintenance_window': 'maintenanceWindow',
-            'tiering_configuration': 'tieringConfiguration'
+            'maintenance_window': 'maintenanceWindow'
         }
         self._display_name = None
         self._file_system_description = None
@@ -94,7 +88,6 @@ class UpdateLustreFileSystemDetails(object):
         self._capacity_in_gbs = None
         self._root_squash_configuration = None
         self._maintenance_window = None
-        self._tiering_configuration = None
 
     @property
     def display_name(self):
@@ -347,26 +340,6 @@ class UpdateLustreFileSystemDetails(object):
         :type: oci.lustre_file_storage.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
-
-    @property
-    def tiering_configuration(self):
-        """
-        Gets the tiering_configuration of this UpdateLustreFileSystemDetails.
-
-        :return: The tiering_configuration of this UpdateLustreFileSystemDetails.
-        :rtype: oci.lustre_file_storage.models.TieringConfigurationDetails
-        """
-        return self._tiering_configuration
-
-    @tiering_configuration.setter
-    def tiering_configuration(self, tiering_configuration):
-        """
-        Sets the tiering_configuration of this UpdateLustreFileSystemDetails.
-
-        :param tiering_configuration: The tiering_configuration of this UpdateLustreFileSystemDetails.
-        :type: oci.lustre_file_storage.models.TieringConfigurationDetails
-        """
-        self._tiering_configuration = tiering_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

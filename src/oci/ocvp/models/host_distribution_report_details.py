@@ -51,8 +51,6 @@ class HostDistributionReportDetails(object):
     def fault_domain_host_distribution_state(self):
         """
         **[Required]** Gets the fault_domain_host_distribution_state of this HostDistributionReportDetails.
-        Current Fault Domain distribution state.
-
         Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED", "UNSUPPORTED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -66,8 +64,6 @@ class HostDistributionReportDetails(object):
     def fault_domain_host_distribution_state(self, fault_domain_host_distribution_state):
         """
         Sets the fault_domain_host_distribution_state of this HostDistributionReportDetails.
-        Current Fault Domain distribution state.
-
 
         :param fault_domain_host_distribution_state: The fault_domain_host_distribution_state of this HostDistributionReportDetails.
         :type: str

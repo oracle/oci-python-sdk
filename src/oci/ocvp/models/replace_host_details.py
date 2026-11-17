@@ -32,10 +32,6 @@ class ReplaceHostDetails(object):
             The value to assign to the esxi_software_version property of this ReplaceHostDetails.
         :type esxi_software_version: str
 
-        :param capacity_reservation_id:
-            The value to assign to the capacity_reservation_id property of this ReplaceHostDetails.
-        :type capacity_reservation_id: str
-
         :param initial_fault_domain_host_distribution:
             The value to assign to the initial_fault_domain_host_distribution property of this ReplaceHostDetails.
             Allowed values for this property are: "EVENLY_DISTRIBUTED", "UNEVENLY_DISTRIBUTED"
@@ -48,18 +44,15 @@ class ReplaceHostDetails(object):
         """
         self.swagger_types = {
             'esxi_software_version': 'str',
-            'capacity_reservation_id': 'str',
             'initial_fault_domain_host_distribution': 'str',
             'vcf_byol_allocation_id': 'str'
         }
         self.attribute_map = {
             'esxi_software_version': 'esxiSoftwareVersion',
-            'capacity_reservation_id': 'capacityReservationId',
             'initial_fault_domain_host_distribution': 'initialFaultDomainHostDistribution',
             'vcf_byol_allocation_id': 'vcfByolAllocationId'
         }
         self._esxi_software_version = None
-        self._capacity_reservation_id = None
         self._initial_fault_domain_host_distribution = None
         self._vcf_byol_allocation_id = None
 
@@ -92,34 +85,6 @@ class ReplaceHostDetails(object):
         :type: str
         """
         self._esxi_software_version = esxi_software_version
-
-    @property
-    def capacity_reservation_id(self):
-        """
-        Gets the capacity_reservation_id of this ReplaceHostDetails.
-        The `OCID`__ of the Capacity Reservation.
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :return: The capacity_reservation_id of this ReplaceHostDetails.
-        :rtype: str
-        """
-        return self._capacity_reservation_id
-
-    @capacity_reservation_id.setter
-    def capacity_reservation_id(self, capacity_reservation_id):
-        """
-        Sets the capacity_reservation_id of this ReplaceHostDetails.
-        The `OCID`__ of the Capacity Reservation.
-
-        __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-
-
-        :param capacity_reservation_id: The capacity_reservation_id of this ReplaceHostDetails.
-        :type: str
-        """
-        self._capacity_reservation_id = capacity_reservation_id
 
     @property
     def initial_fault_domain_host_distribution(self):

@@ -406,7 +406,7 @@ class ByolClient(object):
         resource_path = "/byols/{byolId}"
         method = "DELETE"
         operation_name = "delete_byol"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Byol/DeleteByol"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/BYOL/DeleteByol"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
