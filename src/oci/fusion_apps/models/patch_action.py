@@ -47,7 +47,7 @@ class PatchAction(Action):
 
         :param action_type:
             The value to assign to the action_type property of this PatchAction.
-            Allowed values for this property are: "QUARTERLY_UPGRADE", "PATCH", "VERTEX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "QUARTERLY_UPGRADE", "PATCH", "VERTEX", "APPLICATION_MIGRATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action_type: str
 

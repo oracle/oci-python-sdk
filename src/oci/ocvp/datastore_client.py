@@ -727,14 +727,15 @@ class DatastoreClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_datastores(self, compartment_id, **kwargs):
+    def list_datastores(self, **kwargs):
         """
         List the Datastores in the specified compartment. The list can be filtered
-        by compartment, datastore id, display name and lifecycle state.
+        by compartment, datastore id, display name and lifecycle state. Either
+        compartmentId or datastoreId must be provided.
 
 
-        :param str compartment_id: (required)
-            The `OCID`__ of the compartment.
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment as optional parameter.
 
             __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -815,7 +816,7 @@ class DatastoreClient(object):
         Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_datastores.py.html>`__ to see an example of how to use list_datastores API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['compartmentId']
+        required_arguments = []
         resource_path = "/datastores"
         method = "GET"
         operation_name = "list_datastores"
@@ -826,6 +827,7 @@ class DatastoreClient(object):
             "allow_control_chars",
             "enable_strict_url_encoding",
             "retry_strategy",
+            "compartment_id",
             "display_name",
             "cluster_id",
             "datastore_id",
@@ -863,7 +865,7 @@ class DatastoreClient(object):
                 )
 
         query_params = {
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
             "displayName": kwargs.get("display_name", missing),
             "clusterId": kwargs.get("cluster_id", missing),
             "datastoreId": kwargs.get("datastore_id", missing),

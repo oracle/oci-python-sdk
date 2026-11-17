@@ -31,6 +31,10 @@ from .subnet import Subnet
 from .sync_job import SyncJob
 from .sync_job_collection import SyncJobCollection
 from .sync_job_summary import SyncJobSummary
+from .tiering_configuration import TieringConfiguration
+from .tiering_configuration_details import TieringConfigurationDetails
+from .tiering_configuration_summary import TieringConfigurationSummary
+from .tiering_policy_rule import TieringPolicyRule
 from .update_lustre_file_system_details import UpdateLustreFileSystemDetails
 from .update_object_storage_link_details import UpdateObjectStorageLinkDetails
 from .work_request import WorkRequest
@@ -69,6 +73,10 @@ lustre_file_storage_type_mapping = {
     "SyncJob": SyncJob,
     "SyncJobCollection": SyncJobCollection,
     "SyncJobSummary": SyncJobSummary,
+    "TieringConfiguration": TieringConfiguration,
+    "TieringConfigurationDetails": TieringConfigurationDetails,
+    "TieringConfigurationSummary": TieringConfigurationSummary,
+    "TieringPolicyRule": TieringPolicyRule,
     "UpdateLustreFileSystemDetails": UpdateLustreFileSystemDetails,
     "UpdateObjectStorageLinkDetails": UpdateObjectStorageLinkDetails,
     "WorkRequest": WorkRequest,

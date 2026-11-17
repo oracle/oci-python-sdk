@@ -517,6 +517,7 @@ from .scheduling_window_summary import SchedulingWindowSummary
 from .self_mount_details import SelfMountDetails
 from .set_key_version_details import SetKeyVersionDetails
 from .source_database_details import SourceDatabaseDetails
+from .ssl_inspection_configuration import SslInspectionConfiguration
 from .stack_monitoring_config import StackMonitoringConfig
 from .stop_autonomous_database_details import StopAutonomousDatabaseDetails
 from .storage_performance_details import StoragePerformanceDetails
@@ -1118,6 +1119,7 @@ database_type_mapping = {
     "SelfMountDetails": SelfMountDetails,
     "SetKeyVersionDetails": SetKeyVersionDetails,
     "SourceDatabaseDetails": SourceDatabaseDetails,
+    "SslInspectionConfiguration": SslInspectionConfiguration,
     "StackMonitoringConfig": StackMonitoringConfig,
     "StopAutonomousDatabaseDetails": StopAutonomousDatabaseDetails,
     "StoragePerformanceDetails": StoragePerformanceDetails,
