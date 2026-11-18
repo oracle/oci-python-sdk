@@ -147,7 +147,8 @@ class OauthExchangeTokenSigner(SecurityTokenSigner):
     def _setup_logging(self, log_requests):
         self._log_requests_enabled = bool(log_requests)
         self.logger = logging.getLogger(f"{__name__}.{id(self)}")
-        self.logger.addHandler(logging.NullHandler())
+        if not self.logger.handlers:
+            self.logger.addHandler(logging.NullHandler())
         if self._log_requests_enabled:
             self.logger.setLevel(logging.DEBUG)
 

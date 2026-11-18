@@ -23,7 +23,8 @@ class TokenExchangeSigner(SecurityTokenSigner):
     def __init__(self, jwt_or_func, oci_domain_url, client_id, client_secret, region=None, **kwargs):
         # Initialize per-instance logger
         self.logger = logging.getLogger(f"{__name__}.{id(self)}")
-        self.logger.addHandler(logging.NullHandler())
+        if not self.logger.handlers:
+            self.logger.addHandler(logging.NullHandler())
 
         # Enable or disable logging based on argument
         if kwargs.get('log_requests'):

@@ -552,7 +552,8 @@ class BaseClient(object):
         self.user_agent = build_user_agent(get_config_value_or_default(config, "additional_user_agent"))
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
-        self.logger.addHandler(logging.NullHandler())
+        if not self.logger.handlers:
+            self.logger.addHandler(logging.NullHandler())
         if get_config_value_or_default(config, "log_requests"):
             self.logger.disabled = False
             self.logger.setLevel(logging.DEBUG)

@@ -250,7 +250,8 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
 
     def __init__(self, **kwargs):
         self.logger = logging.getLogger(f"{__name__}.{id(self)}")
-        self.logger.addHandler(logging.NullHandler())
+        if not self.logger.handlers:
+            self.logger.addHandler(logging.NullHandler())
         if kwargs.get('log_requests'):
             self.logger.disabled = False
             self.logger.setLevel(logging.DEBUG)
