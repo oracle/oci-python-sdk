@@ -115,7 +115,8 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         self.retry_strategy = kwargs.get('retry_strategy')
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
-        self.logger.addHandler(logging.NullHandler())
+        if not self.logger.handlers:
+            self.logger.addHandler(logging.NullHandler())
 
         if kwargs.get('log_requests'):
             self.logger.disabled = False
