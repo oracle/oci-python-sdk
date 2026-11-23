@@ -23,6 +23,10 @@ class ApprovalActivitySummary(PullRequestActivitySummary):
     #: This constant has a value of "UNAPPROVED"
     STATUS_UNAPPROVED = "UNAPPROVED"
 
+    #: A constant which can be used with the status property of a ApprovalActivitySummary.
+    #: This constant has a value of "AUTO_UNAPPROVED"
+    STATUS_AUTO_UNAPPROVED = "AUTO_UNAPPROVED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ApprovalActivitySummary object with values from keyword arguments. The default value of the :py:attr:`~oci.devops.models.ApprovalActivitySummary.activity_type` attribute
@@ -53,7 +57,7 @@ class ApprovalActivitySummary(PullRequestActivitySummary):
 
         :param status:
             The value to assign to the status property of this ApprovalActivitySummary.
-            Allowed values for this property are: "APPROVED", "UNAPPROVED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "APPROVED", "UNAPPROVED", "AUTO_UNAPPROVED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -88,7 +92,7 @@ class ApprovalActivitySummary(PullRequestActivitySummary):
         **[Required]** Gets the status of this ApprovalActivitySummary.
         The approval status of a reviewer
 
-        Allowed values for this property are: "APPROVED", "UNAPPROVED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "APPROVED", "UNAPPROVED", "AUTO_UNAPPROVED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -107,7 +111,7 @@ class ApprovalActivitySummary(PullRequestActivitySummary):
         :param status: The status of this ApprovalActivitySummary.
         :type: str
         """
-        allowed_values = ["APPROVED", "UNAPPROVED"]
+        allowed_values = ["APPROVED", "UNAPPROVED", "AUTO_UNAPPROVED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

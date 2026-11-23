@@ -35,6 +35,10 @@ class PullRequestActivitySummary(object):
     #: This constant has a value of "COMMENT"
     ACTIVITY_TYPE_COMMENT = "COMMENT"
 
+    #: A constant which can be used with the activity_type property of a PullRequestActivitySummary.
+    #: This constant has a value of "REVIEW_STATUS"
+    ACTIVITY_TYPE_REVIEW_STATUS = "REVIEW_STATUS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PullRequestActivitySummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -45,6 +49,7 @@ class PullRequestActivitySummary(object):
         * :class:`~oci.devops.models.ApprovalActivitySummary`
         * :class:`~oci.devops.models.ReviewerActivitySummary`
         * :class:`~oci.devops.models.PullRequestLifecycleActivitySummary`
+        * :class:`~oci.devops.models.ReviewStatusActivitySummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -66,7 +71,7 @@ class PullRequestActivitySummary(object):
 
         :param activity_type:
             The value to assign to the activity_type property of this PullRequestActivitySummary.
-            Allowed values for this property are: "LIFECYCLE", "APPROVAL", "COMMIT", "REVIEWER", "COMMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LIFECYCLE", "APPROVAL", "COMMIT", "REVIEWER", "COMMENT", "REVIEW_STATUS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type activity_type: str
 
@@ -113,6 +118,9 @@ class PullRequestActivitySummary(object):
 
         if type == 'LIFECYCLE':
             return 'PullRequestLifecycleActivitySummary'
+
+        if type == 'REVIEW_STATUS':
+            return 'ReviewStatusActivitySummary'
         else:
             return 'PullRequestActivitySummary'
 
@@ -214,7 +222,7 @@ class PullRequestActivitySummary(object):
         **[Required]** Gets the activity_type of this PullRequestActivitySummary.
         The type of activity performed
 
-        Allowed values for this property are: "LIFECYCLE", "APPROVAL", "COMMIT", "REVIEWER", "COMMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LIFECYCLE", "APPROVAL", "COMMIT", "REVIEWER", "COMMENT", "REVIEW_STATUS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -233,7 +241,7 @@ class PullRequestActivitySummary(object):
         :param activity_type: The activity_type of this PullRequestActivitySummary.
         :type: str
         """
-        allowed_values = ["LIFECYCLE", "APPROVAL", "COMMIT", "REVIEWER", "COMMENT"]
+        allowed_values = ["LIFECYCLE", "APPROVAL", "COMMIT", "REVIEWER", "COMMENT", "REVIEW_STATUS"]
         if not value_allowed_none_or_none_sentinel(activity_type, allowed_values):
             activity_type = 'UNKNOWN_ENUM_VALUE'
         self._activity_type = activity_type
