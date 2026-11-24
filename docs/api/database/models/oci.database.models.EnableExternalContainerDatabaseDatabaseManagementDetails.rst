@@ -1,4 +1,4 @@
-EnableExternalContainerDatabaseDatabaseManagementDetails
+﻿EnableExternalContainerDatabaseDatabaseManagementDetails
 ========================================================
 
 .. currentmodule:: oci.database.models

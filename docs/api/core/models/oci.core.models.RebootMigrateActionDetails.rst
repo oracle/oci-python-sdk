@@ -1,4 +1,4 @@
-RebootMigrateActionDetails
+﻿RebootMigrateActionDetails
 ==========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-TunnelCpeDeviceConfig
+﻿TunnelCpeDeviceConfig
 =====================
 
 .. currentmodule:: oci.core.models

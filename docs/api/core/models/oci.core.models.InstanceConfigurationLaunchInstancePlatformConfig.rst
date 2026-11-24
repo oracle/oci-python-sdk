@@ -1,4 +1,4 @@
-InstanceConfigurationLaunchInstancePlatformConfig
+﻿InstanceConfigurationLaunchInstancePlatformConfig
 =================================================
 
 .. currentmodule:: oci.core.models

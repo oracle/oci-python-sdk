@@ -1,4 +1,4 @@
-AffectedObjectsCollection
+﻿AffectedObjectsCollection
 =========================
 
 .. currentmodule:: oci.database_migration.models

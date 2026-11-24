@@ -1,4 +1,4 @@
-SupportedCommitmentSummaryCollection
+﻿SupportedCommitmentSummaryCollection
 ====================================
 
 .. currentmodule:: oci.ocvp.models

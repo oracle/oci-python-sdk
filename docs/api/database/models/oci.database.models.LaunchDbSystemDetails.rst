@@ -1,4 +1,4 @@
-LaunchDbSystemDetails
+﻿LaunchDbSystemDetails
 =====================
 
 .. currentmodule:: oci.database.models

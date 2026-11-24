@@ -1,4 +1,4 @@
-InstancePoolSummary
+﻿InstancePoolSummary
 ===================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-ConnectLocalPeeringGatewaysDetails
+﻿ConnectLocalPeeringGatewaysDetails
 ==================================
 
 .. currentmodule:: oci.core.models

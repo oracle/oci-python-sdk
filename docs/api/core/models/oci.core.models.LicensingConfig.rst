@@ -1,4 +1,4 @@
-LicensingConfig
+﻿LicensingConfig
 ===============
 
 .. currentmodule:: oci.core.models

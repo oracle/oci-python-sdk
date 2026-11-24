@@ -1,4 +1,4 @@
-IpInventorySubnetResourceSummary
+﻿IpInventorySubnetResourceSummary
 ================================
 
 .. currentmodule:: oci.core.models

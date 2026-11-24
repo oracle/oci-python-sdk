@@ -1,4 +1,4 @@
-PatchOptions
+﻿PatchOptions
 ============
 
 .. currentmodule:: oci.database.models

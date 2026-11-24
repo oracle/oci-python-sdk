@@ -1,4 +1,4 @@
-CloneMigrationDetails
+﻿CloneMigrationDetails
 =====================
 
 .. currentmodule:: oci.database_migration.models

@@ -1,4 +1,4 @@
-ChangeCpeCompartmentDetails
+﻿ChangeCpeCompartmentDetails
 ===========================
 
 .. currentmodule:: oci.core.models

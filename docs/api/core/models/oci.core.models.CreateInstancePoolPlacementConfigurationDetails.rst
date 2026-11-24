@@ -1,4 +1,4 @@
-CreateInstancePoolPlacementConfigurationDetails
+﻿CreateInstancePoolPlacementConfigurationDetails
 ===============================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-GroupTaskSummary
+﻿GroupTaskSummary
 ================
 
 .. currentmodule:: oci.batch.models

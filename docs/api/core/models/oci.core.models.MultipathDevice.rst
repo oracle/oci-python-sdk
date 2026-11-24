@@ -1,4 +1,4 @@
-MultipathDevice
+﻿MultipathDevice
 ===============
 
 .. currentmodule:: oci.core.models

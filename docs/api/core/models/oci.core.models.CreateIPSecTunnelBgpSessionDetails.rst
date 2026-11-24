@@ -1,4 +1,4 @@
-CreateIPSecTunnelBgpSessionDetails
+﻿CreateIPSecTunnelBgpSessionDetails
 ==================================
 
 .. currentmodule:: oci.core.models

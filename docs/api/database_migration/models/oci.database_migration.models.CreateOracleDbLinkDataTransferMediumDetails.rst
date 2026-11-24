@@ -1,4 +1,4 @@
-CreateOracleDbLinkDataTransferMediumDetails
+﻿CreateOracleDbLinkDataTransferMediumDetails
 ===========================================
 
 .. currentmodule:: oci.database_migration.models

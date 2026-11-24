@@ -1,4 +1,4 @@
-PluggableDatabaseSnapshotSummary
+﻿PluggableDatabaseSnapshotSummary
 ================================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-DetachComputeHostGroupHostDetails
+﻿DetachComputeHostGroupHostDetails
 =================================
 
 .. currentmodule:: oci.core.models

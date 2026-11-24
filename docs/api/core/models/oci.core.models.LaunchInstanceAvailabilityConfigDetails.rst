@@ -1,4 +1,4 @@
-LaunchInstanceAvailabilityConfigDetails
+﻿LaunchInstanceAvailabilityConfigDetails
 =======================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-DbServerHistorySummary
+﻿DbServerHistorySummary
 ======================
 
 .. currentmodule:: oci.database.models

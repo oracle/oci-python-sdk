@@ -1,4 +1,4 @@
-ByoipRangeSummary
+﻿ByoipRangeSummary
 =================
 
 .. currentmodule:: oci.core.models

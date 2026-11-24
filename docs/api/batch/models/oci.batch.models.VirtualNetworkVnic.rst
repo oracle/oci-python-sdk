@@ -1,4 +1,4 @@
-VirtualNetworkVnic
+﻿VirtualNetworkVnic
 ==================
 
 .. currentmodule:: oci.batch.models

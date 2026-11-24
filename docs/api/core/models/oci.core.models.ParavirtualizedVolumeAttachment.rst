@@ -1,4 +1,4 @@
-ParavirtualizedVolumeAttachment
+﻿ParavirtualizedVolumeAttachment
 ===============================
 
 .. currentmodule:: oci.core.models

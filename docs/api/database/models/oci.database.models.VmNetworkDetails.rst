@@ -1,4 +1,4 @@
-VmNetworkDetails
+﻿VmNetworkDetails
 ================
 
 .. currentmodule:: oci.database.models

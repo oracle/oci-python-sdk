@@ -1,4 +1,4 @@
-MysqlConnectionSummary
+﻿MysqlConnectionSummary
 ======================
 
 .. currentmodule:: oci.database_migration.models

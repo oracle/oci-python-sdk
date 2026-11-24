@@ -1,4 +1,4 @@
-CreateUcVolumeDatabricksEngineArtifactLocationDetails
+﻿CreateUcVolumeDatabricksEngineArtifactLocationDetails
 =====================================================
 
 .. currentmodule:: oci.golden_gate.models

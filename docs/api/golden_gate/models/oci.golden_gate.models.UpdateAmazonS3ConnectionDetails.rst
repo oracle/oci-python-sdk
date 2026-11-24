@@ -1,4 +1,4 @@
-UpdateAmazonS3ConnectionDetails
+﻿UpdateAmazonS3ConnectionDetails
 ===============================
 
 .. currentmodule:: oci.golden_gate.models

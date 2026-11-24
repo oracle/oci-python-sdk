@@ -1,4 +1,4 @@
-DbSystemShapeSummary
+﻿DbSystemShapeSummary
 ====================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-CrossConnectPortSpeedShape
+﻿CrossConnectPortSpeedShape
 ==========================
 
 .. currentmodule:: oci.core.models

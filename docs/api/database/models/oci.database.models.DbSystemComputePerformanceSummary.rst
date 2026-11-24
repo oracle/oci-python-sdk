@@ -1,4 +1,4 @@
-DbSystemComputePerformanceSummary
+﻿DbSystemComputePerformanceSummary
 =================================
 
 .. currentmodule:: oci.database.models

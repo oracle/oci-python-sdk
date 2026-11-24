@@ -1,4 +1,4 @@
-AssessmentObjectTypeSummary
+﻿AssessmentObjectTypeSummary
 ===========================
 
 .. currentmodule:: oci.database_migration.models

@@ -1,4 +1,4 @@
-ChangeCloudVmClusterCompartmentDetails
+﻿ChangeCloudVmClusterCompartmentDetails
 ======================================
 
 .. currentmodule:: oci.database.models

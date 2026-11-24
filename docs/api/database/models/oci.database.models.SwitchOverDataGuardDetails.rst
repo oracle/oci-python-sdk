@@ -1,4 +1,4 @@
-SwitchOverDataGuardDetails
+﻿SwitchOverDataGuardDetails
 ==========================
 
 .. currentmodule:: oci.database.models

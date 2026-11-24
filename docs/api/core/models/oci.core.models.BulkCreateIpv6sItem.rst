@@ -1,4 +1,4 @@
-BulkCreateIpv6sItem
+﻿BulkCreateIpv6sItem
 ===================
 
 .. currentmodule:: oci.core.models

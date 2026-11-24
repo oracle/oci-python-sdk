@@ -1,4 +1,4 @@
-ChangeExadbVmClusterSubscriptionDetails
+﻿ChangeExadbVmClusterSubscriptionDetails
 =======================================
 
 .. currentmodule:: oci.database.models

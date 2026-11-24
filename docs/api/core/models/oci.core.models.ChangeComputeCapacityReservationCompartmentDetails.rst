@@ -1,4 +1,4 @@
-ChangeComputeCapacityReservationCompartmentDetails
+﻿ChangeComputeCapacityReservationCompartmentDetails
 ==================================================
 
 .. currentmodule:: oci.core.models

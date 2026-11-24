@@ -1,4 +1,4 @@
-ShapeMaxVnicAttachmentOptions
+﻿ShapeMaxVnicAttachmentOptions
 =============================
 
 .. currentmodule:: oci.core.models

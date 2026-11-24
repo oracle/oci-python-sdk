@@ -1,4 +1,4 @@
-ComputeCapacityReservationInstanceShapeSummary
+﻿ComputeCapacityReservationInstanceShapeSummary
 ==============================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-ComputeImageCapabilitySchema
+﻿ComputeImageCapabilitySchema
 ============================
 
 .. currentmodule:: oci.core.models

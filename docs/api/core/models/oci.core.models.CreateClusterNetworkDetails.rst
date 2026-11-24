@@ -1,4 +1,4 @@
-CreateClusterNetworkDetails
+﻿CreateClusterNetworkDetails
 ===========================
 
 .. currentmodule:: oci.core.models

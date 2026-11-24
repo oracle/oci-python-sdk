@@ -1,4 +1,4 @@
-ManagementApplianceSummary
+﻿ManagementApplianceSummary
 ==========================
 
 .. currentmodule:: oci.ocvp.models

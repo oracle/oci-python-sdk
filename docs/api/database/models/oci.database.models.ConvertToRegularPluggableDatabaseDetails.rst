@@ -1,4 +1,4 @@
-ConvertToRegularPluggableDatabaseDetails
+﻿ConvertToRegularPluggableDatabaseDetails
 ========================================
 
 .. currentmodule:: oci.database.models

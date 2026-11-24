@@ -1,4 +1,4 @@
-CreateIPSecConnectionDetails
+﻿CreateIPSecConnectionDetails
 ============================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-UpdateOciLoggingConfiguration
+﻿UpdateOciLoggingConfiguration
 =============================
 
 .. currentmodule:: oci.batch.models

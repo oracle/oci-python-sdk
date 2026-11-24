@@ -23,6 +23,7 @@ Fusion Apps
     oci.fusion_apps.models.AdminUserCollection
     oci.fusion_apps.models.AdminUserSummary
     oci.fusion_apps.models.AllowRule
+    oci.fusion_apps.models.ApplicationMigrationAction
     oci.fusion_apps.models.Capabilities
     oci.fusion_apps.models.CertificateInfo
     oci.fusion_apps.models.ChangeFusionEnvironmentCompartmentDetails

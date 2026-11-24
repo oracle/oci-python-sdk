@@ -1,4 +1,4 @@
-DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria
+﻿DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria
 ======================================================
 
 .. currentmodule:: oci.core.models

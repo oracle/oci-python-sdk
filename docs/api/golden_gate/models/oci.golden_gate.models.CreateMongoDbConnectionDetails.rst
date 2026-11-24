@@ -1,4 +1,4 @@
-CreateMongoDbConnectionDetails
+﻿CreateMongoDbConnectionDetails
 ==============================
 
 .. currentmodule:: oci.golden_gate.models

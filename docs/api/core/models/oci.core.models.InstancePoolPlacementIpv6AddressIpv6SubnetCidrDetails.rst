@@ -1,4 +1,4 @@
-InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails
+﻿InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails
 =====================================================
 
 .. currentmodule:: oci.core.models

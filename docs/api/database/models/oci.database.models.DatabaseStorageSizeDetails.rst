@@ -1,4 +1,4 @@
-DatabaseStorageSizeDetails
+﻿DatabaseStorageSizeDetails
 ==========================
 
 .. currentmodule:: oci.database.models

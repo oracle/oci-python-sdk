@@ -1,4 +1,4 @@
-GenerateLibraryUrlDetails
+﻿GenerateLibraryUrlDetails
 =========================
 
 .. currentmodule:: oci.golden_gate.models

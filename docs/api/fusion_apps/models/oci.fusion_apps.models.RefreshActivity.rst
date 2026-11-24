@@ -1,4 +1,4 @@
-RefreshActivity
+﻿RefreshActivity
 ===============
 
 .. currentmodule:: oci.fusion_apps.models

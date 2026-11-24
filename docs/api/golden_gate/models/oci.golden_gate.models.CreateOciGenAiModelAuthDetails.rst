@@ -1,4 +1,4 @@
-CreateOciGenAiModelAuthDetails
+﻿CreateOciGenAiModelAuthDetails
 ==============================
 
 .. currentmodule:: oci.golden_gate.models

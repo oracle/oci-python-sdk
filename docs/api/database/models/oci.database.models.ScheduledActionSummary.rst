@@ -1,4 +1,4 @@
-ScheduledActionSummary
+﻿ScheduledActionSummary
 ======================
 
 .. currentmodule:: oci.database.models

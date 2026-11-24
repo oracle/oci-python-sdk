@@ -1,4 +1,4 @@
-QuickRecycleSettings
+﻿QuickRecycleSettings
 ====================
 
 .. currentmodule:: oci.core.models

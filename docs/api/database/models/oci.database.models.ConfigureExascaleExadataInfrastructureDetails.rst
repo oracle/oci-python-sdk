@@ -1,4 +1,4 @@
-ConfigureExascaleExadataInfrastructureDetails
+﻿ConfigureExascaleExadataInfrastructureDetails
 =============================================
 
 .. currentmodule:: oci.database.models

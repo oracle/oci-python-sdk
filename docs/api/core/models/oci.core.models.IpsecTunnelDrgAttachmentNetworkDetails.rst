@@ -1,4 +1,4 @@
-IpsecTunnelDrgAttachmentNetworkDetails
+﻿IpsecTunnelDrgAttachmentNetworkDetails
 ======================================
 
 .. currentmodule:: oci.core.models

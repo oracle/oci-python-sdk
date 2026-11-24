@@ -1,4 +1,4 @@
-HdfsConnection
+﻿HdfsConnection
 ==============
 
 .. currentmodule:: oci.golden_gate.models

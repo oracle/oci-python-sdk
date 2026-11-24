@@ -1,4 +1,4 @@
-VanityDomain
+﻿VanityDomain
 ============
 
 .. currentmodule:: oci.fusion_apps.models

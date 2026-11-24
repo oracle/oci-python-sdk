@@ -1,4 +1,4 @@
-InstanceConfigurationAmdVmLaunchInstancePlatformConfig
+﻿InstanceConfigurationAmdVmLaunchInstancePlatformConfig
 ======================================================
 
 .. currentmodule:: oci.core.models

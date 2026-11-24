@@ -1,4 +1,4 @@
-StopDeploymentDetails
+﻿StopDeploymentDetails
 =====================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-PipelineDiagnosticData
+﻿PipelineDiagnosticData
 ======================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-AutonomousVmClusterSummary
+﻿AutonomousVmClusterSummary
 ==========================
 
 .. currentmodule:: oci.database.models

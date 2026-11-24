@@ -1,4 +1,4 @@
-VirtualCircuit
+﻿VirtualCircuit
 ==============
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-CreateOracleAssessmentDetails
+﻿CreateOracleAssessmentDetails
 =============================
 
 .. currentmodule:: oci.database_migration.models

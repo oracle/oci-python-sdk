@@ -1,4 +1,4 @@
-PlacementConstraintDetails
+﻿PlacementConstraintDetails
 ==========================
 
 .. currentmodule:: oci.core.models

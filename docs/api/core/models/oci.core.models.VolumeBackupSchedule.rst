@@ -1,4 +1,4 @@
-VolumeBackupSchedule
+﻿VolumeBackupSchedule
 ====================
 
 .. currentmodule:: oci.core.models

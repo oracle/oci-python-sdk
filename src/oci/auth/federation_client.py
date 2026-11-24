@@ -13,6 +13,7 @@ import oci.retry
 import oci.signer
 import threading
 import logging
+from oci._logging import NULL_HANDLER
 import pprint
 
 from oci.circuit_breaker import CircuitBreakerStrategy, NoCircuitBreakerStrategy
@@ -125,7 +126,7 @@ class X509FederationClient(object):
             self.purpose = kwargs['purpose']
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
-        self.logger.addHandler(logging.NullHandler())
+        self.logger.addHandler(NULL_HANDLER)
         if kwargs.get('log_requests'):
             self.logger.disabled = False
             self.logger.setLevel(logging.DEBUG)

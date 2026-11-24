@@ -1,4 +1,4 @@
-MappingRule
+﻿MappingRule
 ===========
 
 .. currentmodule:: oci.golden_gate.models

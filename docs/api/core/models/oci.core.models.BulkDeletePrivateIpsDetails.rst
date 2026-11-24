@@ -1,4 +1,4 @@
-BulkDeletePrivateIpsDetails
+﻿BulkDeletePrivateIpsDetails
 ===========================
 
 .. currentmodule:: oci.core.models

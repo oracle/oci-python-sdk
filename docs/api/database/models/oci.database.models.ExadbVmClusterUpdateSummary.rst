@@ -1,4 +1,4 @@
-ExadbVmClusterUpdateSummary
+﻿ExadbVmClusterUpdateSummary
 ===========================
 
 .. currentmodule:: oci.database.models

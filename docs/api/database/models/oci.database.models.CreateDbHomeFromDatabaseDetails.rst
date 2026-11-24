@@ -1,4 +1,4 @@
-CreateDbHomeFromDatabaseDetails
+﻿CreateDbHomeFromDatabaseDetails
 ===============================
 
 .. currentmodule:: oci.database.models

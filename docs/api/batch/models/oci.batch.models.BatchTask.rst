@@ -1,4 +1,4 @@
-BatchTask
+﻿BatchTask
 =========
 
 .. currentmodule:: oci.batch.models

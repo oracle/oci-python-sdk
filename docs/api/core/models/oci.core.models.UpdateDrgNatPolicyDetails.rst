@@ -1,4 +1,4 @@
-UpdateDrgNatPolicyDetails
+﻿UpdateDrgNatPolicyDetails
 =========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-AttachInstancePoolInstanceDetails
+﻿AttachInstancePoolInstanceDetails
 =================================
 
 .. currentmodule:: oci.core.models

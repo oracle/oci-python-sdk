@@ -1,4 +1,4 @@
-ShapeMeasuredBootOptions
+﻿ShapeMeasuredBootOptions
 ========================
 
 .. currentmodule:: oci.core.models

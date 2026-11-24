@@ -1,4 +1,4 @@
-DataGuardAssociation
+﻿DataGuardAssociation
 ====================
 
 .. currentmodule:: oci.database.models

@@ -16,6 +16,7 @@ from oci._vendor.requests.exceptions import Timeout as RequestsTimeout
 import oci.regions
 import os
 import logging
+from oci._logging import NULL_HANDLER
 import socket
 
 
@@ -250,7 +251,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
 
     def __init__(self, **kwargs):
         self.logger = logging.getLogger(f"{__name__}.{id(self)}")
-        self.logger.addHandler(logging.NullHandler())
+        self.logger.addHandler(NULL_HANDLER)
         if kwargs.get('log_requests'):
             self.logger.disabled = False
             self.logger.setLevel(logging.DEBUG)

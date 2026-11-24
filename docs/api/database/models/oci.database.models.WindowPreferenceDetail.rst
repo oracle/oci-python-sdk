@@ -1,4 +1,4 @@
-WindowPreferenceDetail
+﻿WindowPreferenceDetail
 ======================
 
 .. currentmodule:: oci.database.models

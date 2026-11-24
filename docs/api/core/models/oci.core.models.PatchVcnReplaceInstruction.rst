@@ -1,4 +1,4 @@
-PatchVcnReplaceInstruction
+﻿PatchVcnReplaceInstruction
 ==========================
 
 .. currentmodule:: oci.core.models

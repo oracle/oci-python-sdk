@@ -1,4 +1,4 @@
-LogLocationBucketDetails
+﻿LogLocationBucketDetails
 ========================
 
 .. currentmodule:: oci.database_migration.models

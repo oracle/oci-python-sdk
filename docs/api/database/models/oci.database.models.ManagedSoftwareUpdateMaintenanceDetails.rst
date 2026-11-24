@@ -1,4 +1,4 @@
-ManagedSoftwareUpdateMaintenanceDetails
+﻿ManagedSoftwareUpdateMaintenanceDetails
 =======================================
 
 .. currentmodule:: oci.database.models

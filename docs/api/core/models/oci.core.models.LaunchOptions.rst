@@ -1,4 +1,4 @@
-LaunchOptions
+﻿LaunchOptions
 =============
 
 .. currentmodule:: oci.core.models

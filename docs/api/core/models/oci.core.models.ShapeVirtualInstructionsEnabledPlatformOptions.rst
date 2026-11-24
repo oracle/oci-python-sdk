@@ -1,4 +1,4 @@
-ShapeVirtualInstructionsEnabledPlatformOptions
+﻿ShapeVirtualInstructionsEnabledPlatformOptions
 ==============================================
 
 .. currentmodule:: oci.core.models

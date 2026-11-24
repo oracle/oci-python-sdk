@@ -1,4 +1,4 @@
-ShapeNetworkingBandwidthOptions
+﻿ShapeNetworkingBandwidthOptions
 ===============================
 
 .. currentmodule:: oci.core.models

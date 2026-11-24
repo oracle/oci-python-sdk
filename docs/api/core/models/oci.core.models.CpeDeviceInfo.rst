@@ -1,4 +1,4 @@
-CpeDeviceInfo
+﻿CpeDeviceInfo
 =============
 
 .. currentmodule:: oci.core.models

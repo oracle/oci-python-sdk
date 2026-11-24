@@ -1,4 +1,4 @@
-PhaseTwoConfigDetails
+﻿PhaseTwoConfigDetails
 =====================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-AddResourceLockDetails
+﻿AddResourceLockDetails
 ======================
 
 .. currentmodule:: oci.golden_gate.models

@@ -16,6 +16,8 @@ Loggers for the Python SDK are ordered hierarchically, with the top level being 
 
 Logger names are of the form ``<hierarchy>.<id>`` where the ``<hierarchy>`` is similar to ``oci.base_client`` and ``<id>`` is the result of Python's built-in ``id()`` function. The implication of this is that different instances of the same class have different loggers.
 
+Clients, signers, and FIPS helpers reuse a shared ``NullHandler``. Repeated or concurrent initialization does not add duplicate copies of this handler to a logger, and application handlers continue to receive propagated messages as configured. Python retains named loggers for the lifetime of the process, so distinct per-instance logger names can still accumulate even after the corresponding clients or signers are garbage-collected.
+
 The following code snippet is an example for configuring debug level logging for the oci package:
 
 .. code-block:: python

@@ -1,4 +1,4 @@
-LaunchStandbyDbSystemDetails
+﻿LaunchStandbyDbSystemDetails
 ============================
 
 .. currentmodule:: oci.database.models

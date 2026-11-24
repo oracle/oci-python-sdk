@@ -1,4 +1,4 @@
-ChangeCompartmentDetails
+﻿ChangeCompartmentDetails
 ========================
 
 .. currentmodule:: oci.database.models

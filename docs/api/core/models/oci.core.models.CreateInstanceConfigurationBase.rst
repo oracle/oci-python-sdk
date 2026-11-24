@@ -1,4 +1,4 @@
-CreateInstanceConfigurationBase
+﻿CreateInstanceConfigurationBase
 ===============================
 
 .. currentmodule:: oci.core.models

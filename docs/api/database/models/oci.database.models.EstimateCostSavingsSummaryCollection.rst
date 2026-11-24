@@ -1,4 +1,4 @@
-EstimateCostSavingsSummaryCollection
+﻿EstimateCostSavingsSummaryCollection
 ====================================
 
 .. currentmodule:: oci.database.models

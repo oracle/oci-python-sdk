@@ -218,7 +218,6 @@ class CreateBatchJobDetails(object):
         """
         **[Required]** Gets the tasks of this CreateBatchJobDetails.
         A list of tasks to be executed within this job.
-        Maximum number of tasks a job can have in total, across all nested levels, is 1000.
 
 
         :return: The tasks of this CreateBatchJobDetails.
@@ -231,7 +230,6 @@ class CreateBatchJobDetails(object):
         """
         Sets the tasks of this CreateBatchJobDetails.
         A list of tasks to be executed within this job.
-        Maximum number of tasks a job can have in total, across all nested levels, is 1000.
 
 
         :param tasks: The tasks of this CreateBatchJobDetails.

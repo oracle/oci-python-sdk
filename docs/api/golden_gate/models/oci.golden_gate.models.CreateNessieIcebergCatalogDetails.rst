@@ -1,4 +1,4 @@
-CreateNessieIcebergCatalogDetails
+﻿CreateNessieIcebergCatalogDetails
 =================================
 
 .. currentmodule:: oci.golden_gate.models

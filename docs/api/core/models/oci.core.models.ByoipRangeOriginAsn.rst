@@ -1,4 +1,4 @@
-ByoipRangeOriginAsn
+﻿ByoipRangeOriginAsn
 ===================
 
 .. currentmodule:: oci.core.models

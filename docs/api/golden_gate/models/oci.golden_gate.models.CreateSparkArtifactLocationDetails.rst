@@ -1,4 +1,4 @@
-CreateSparkArtifactLocationDetails
+﻿CreateSparkArtifactLocationDetails
 ==================================
 
 .. currentmodule:: oci.golden_gate.models

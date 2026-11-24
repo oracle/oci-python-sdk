@@ -1,4 +1,4 @@
-CreateCpuShapeTaskProfileExtendedInformationDetails
+﻿CreateCpuShapeTaskProfileExtendedInformationDetails
 ===================================================
 
 .. currentmodule:: oci.batch.models

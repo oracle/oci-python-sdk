@@ -1,4 +1,4 @@
-CreateIcebergStorageDetails
+﻿CreateIcebergStorageDetails
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

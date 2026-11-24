@@ -1,4 +1,4 @@
-GroupToRolesMappingDetails
+﻿GroupToRolesMappingDetails
 ==========================
 
 .. currentmodule:: oci.golden_gate.models

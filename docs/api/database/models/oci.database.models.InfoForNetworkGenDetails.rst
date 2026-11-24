@@ -1,4 +1,4 @@
-InfoForNetworkGenDetails
+﻿InfoForNetworkGenDetails
 ========================
 
 .. currentmodule:: oci.database.models

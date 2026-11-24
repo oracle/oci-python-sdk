@@ -1,4 +1,4 @@
-BulkDetachPrivateIpsDetails
+﻿BulkDetachPrivateIpsDetails
 ===========================
 
 .. currentmodule:: oci.core.models

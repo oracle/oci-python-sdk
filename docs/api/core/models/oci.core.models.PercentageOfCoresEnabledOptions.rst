@@ -1,4 +1,4 @@
-PercentageOfCoresEnabledOptions
+﻿PercentageOfCoresEnabledOptions
 ===============================
 
 .. currentmodule:: oci.core.models

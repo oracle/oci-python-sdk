@@ -1,4 +1,4 @@
-MongoDbConnectionSummary
+﻿MongoDbConnectionSummary
 ========================
 
 .. currentmodule:: oci.golden_gate.models

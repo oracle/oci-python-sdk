@@ -1,4 +1,4 @@
-ChangeExadataInfrastructureCompartmentDetails
+﻿ChangeExadataInfrastructureCompartmentDetails
 =============================================
 
 .. currentmodule:: oci.database.models

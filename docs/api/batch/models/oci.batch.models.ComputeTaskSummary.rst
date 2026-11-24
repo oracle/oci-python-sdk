@@ -1,4 +1,4 @@
-ComputeTaskSummary
+﻿ComputeTaskSummary
 ==================
 
 .. currentmodule:: oci.batch.models

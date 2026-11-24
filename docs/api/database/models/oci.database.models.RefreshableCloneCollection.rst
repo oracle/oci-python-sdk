@@ -1,4 +1,4 @@
-RefreshableCloneCollection
+﻿RefreshableCloneCollection
 ==========================
 
 .. currentmodule:: oci.database.models

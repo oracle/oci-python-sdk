@@ -1,4 +1,4 @@
-MySqlCloneAssessmentDetails
+﻿MySqlCloneAssessmentDetails
 ===========================
 
 .. currentmodule:: oci.database_migration.models

@@ -1,4 +1,4 @@
-DeploymentWalletExistsDetails
+﻿DeploymentWalletExistsDetails
 =============================
 
 .. currentmodule:: oci.golden_gate.models

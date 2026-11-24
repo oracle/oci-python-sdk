@@ -34,6 +34,10 @@ from .azure_data_lake_storage_databricks_engine_artifact_location import AzureDa
 from .azure_data_lake_storage_databricks_engine_artifact_location_summary import AzureDataLakeStorageDatabricksEngineArtifactLocationSummary
 from .azure_data_lake_storage_iceberg_storage import AzureDataLakeStorageIcebergStorage
 from .azure_data_lake_storage_iceberg_storage_summary import AzureDataLakeStorageIcebergStorageSummary
+from .azure_storage_iceberg_storage import AzureStorageIcebergStorage
+from .azure_storage_iceberg_storage_summary import AzureStorageIcebergStorageSummary
+from .azure_storage_warehouse_storage import AzureStorageWarehouseStorage
+from .azure_storage_warehouse_storage_summary import AzureStorageWarehouseStorageSummary
 from .azure_synapse_connection import AzureSynapseConnection
 from .azure_synapse_connection_summary import AzureSynapseConnectionSummary
 from .backup_schedule import BackupSchedule
@@ -72,6 +76,8 @@ from .create_api_key_ai_model_auth_details import CreateApiKeyAiModelAuthDetails
 from .create_azure_data_lake_storage_connection_details import CreateAzureDataLakeStorageConnectionDetails
 from .create_azure_data_lake_storage_databricks_engine_artifact_location_details import CreateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails
 from .create_azure_data_lake_storage_iceberg_storage_details import CreateAzureDataLakeStorageIcebergStorageDetails
+from .create_azure_storage_iceberg_storage_details import CreateAzureStorageIcebergStorageDetails
+from .create_azure_storage_warehouse_storage_details import CreateAzureStorageWarehouseStorageDetails
 from .create_azure_synapse_connection_details import CreateAzureSynapseConnectionDetails
 from .create_backup_schedule_details import CreateBackupScheduleDetails
 from .create_certificate_details import CreateCertificateDetails
@@ -87,6 +93,7 @@ from .create_databricks_engine_resource_principal_oci_object_storage_config_deta
 from .create_databricks_engine_secret_key_oci_object_storage_config_details import CreateDatabricksEngineSecretKeyOciObjectStorageConfigDetails
 from .create_databricks_engine_user_principal_oci_object_storage_config_details import CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
 from .create_db2_connection_details import CreateDb2ConnectionDetails
+from .create_db_credentials_oracle_ai_data_catalog_iceberg_catalog_config_details import CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails
 from .create_deployment_backup_details import CreateDeploymentBackupDetails
 from .create_deployment_details import CreateDeploymentDetails
 from .create_elasticsearch_connection_details import CreateElasticsearchConnectionDetails
@@ -115,11 +122,17 @@ from .create_mysql_connection_details import CreateMysqlConnectionDetails
 from .create_nessie_iceberg_catalog_details import CreateNessieIcebergCatalogDetails
 from .create_no_iceberg_storage_details import CreateNoIcebergStorageDetails
 from .create_oci_gen_ai_model_auth_details import CreateOciGenAiModelAuthDetails
+from .create_oci_golden_gate_oracle_ai_data_catalog_iceberg_catalog_config_details import CreateOciGoldenGateOracleAiDataCatalogIcebergCatalogConfigDetails
+from .create_oci_object_storage_access_key_iceberg_storage_details import CreateOciObjectStorageAccessKeyIcebergStorageDetails
+from .create_oci_object_storage_access_key_warehouse_storage_details import CreateOciObjectStorageAccessKeyWarehouseStorageDetails
 from .create_oci_object_storage_connection_details import CreateOciObjectStorageConnectionDetails
 from .create_oci_object_storage_databricks_engine_artifact_location_details import CreateOciObjectStorageDatabricksEngineArtifactLocationDetails
 from .create_oci_object_storage_s3_api_iceberg_storage_details import CreateOciObjectStorageS3ApiIcebergStorageDetails
 from .create_oci_object_storage_spark_artifact_location_details import CreateOciObjectStorageSparkArtifactLocationDetails
 from .create_ogg_deployment_details import CreateOggDeploymentDetails
+from .create_oracle_ai_data_catalog_iceberg_catalog_config_details import CreateOracleAiDataCatalogIcebergCatalogConfigDetails
+from .create_oracle_ai_data_catalog_iceberg_catalog_details import CreateOracleAiDataCatalogIcebergCatalogDetails
+from .create_oracle_ai_data_catalog_storage_connection_details import CreateOracleAiDataCatalogStorageConnectionDetails
 from .create_oracle_ai_data_platform_connection_details import CreateOracleAiDataPlatformConnectionDetails
 from .create_oracle_ai_data_platform_engine_connection_details import CreateOracleAiDataPlatformEngineConnectionDetails
 from .create_oracle_connection_details import CreateOracleConnectionDetails
@@ -138,7 +151,10 @@ from .create_spark_resource_principal_oci_object_storage_config_details import C
 from .create_spark_secret_key_oci_object_storage_config_details import CreateSparkSecretKeyOciObjectStorageConfigDetails
 from .create_spark_user_principal_oci_object_storage_config_details import CreateSparkUserPrincipalOciObjectStorageConfigDetails
 from .create_uc_volume_databricks_engine_artifact_location_details import CreateUcVolumeDatabricksEngineArtifactLocationDetails
+from .create_warehouse_storage_details import CreateWarehouseStorageDetails
 from .create_zero_etl_pipeline_details import CreateZeroEtlPipelineDetails
+from .create_zfs_iceberg_storage_details import CreateZfsIcebergStorageDetails
+from .create_zfs_warehouse_storage_details import CreateZfsWarehouseStorageDetails
 from .database_registration import DatabaseRegistration
 from .database_registration_collection import DatabaseRegistrationCollection
 from .database_registration_summary import DatabaseRegistrationSummary
@@ -155,6 +171,8 @@ from .databricks_engine_secret_key_oci_object_storage_config import DatabricksEn
 from .databricks_engine_user_principal_oci_object_storage_config import DatabricksEngineUserPrincipalOciObjectStorageConfig
 from .db2_connection import Db2Connection
 from .db2_connection_summary import Db2ConnectionSummary
+from .db_credentials_oracle_ai_data_catalog_iceberg_catalog_config import DbCredentialsOracleAiDataCatalogIcebergCatalogConfig
+from .db_credentials_oracle_ai_data_catalog_iceberg_catalog_config_summary import DbCredentialsOracleAiDataCatalogIcebergCatalogConfigSummary
 from .default_cancel_deployment_backup_details import DefaultCancelDeploymentBackupDetails
 from .default_cancel_deployment_upgrade_details import DefaultCancelDeploymentUpgradeDetails
 from .default_cancel_snooze_deployment_upgrade_details import DefaultCancelSnoozeDeploymentUpgradeDetails
@@ -261,6 +279,12 @@ from .no_iceberg_storage import NoIcebergStorage
 from .no_iceberg_storage_summary import NoIcebergStorageSummary
 from .oci_gen_ai_model_auth_details import OciGenAiModelAuthDetails
 from .oci_gen_ai_model_auth_details_summary import OciGenAiModelAuthDetailsSummary
+from .oci_golden_gate_oracle_ai_data_catalog_iceberg_catalog_config import OciGoldenGateOracleAiDataCatalogIcebergCatalogConfig
+from .oci_golden_gate_oracle_ai_data_catalog_iceberg_catalog_config_summary import OciGoldenGateOracleAiDataCatalogIcebergCatalogConfigSummary
+from .oci_object_storage_access_key_iceberg_storage import OciObjectStorageAccessKeyIcebergStorage
+from .oci_object_storage_access_key_iceberg_storage_summary import OciObjectStorageAccessKeyIcebergStorageSummary
+from .oci_object_storage_access_key_warehouse_storage import OciObjectStorageAccessKeyWarehouseStorage
+from .oci_object_storage_access_key_warehouse_storage_summary import OciObjectStorageAccessKeyWarehouseStorageSummary
 from .oci_object_storage_connection import OciObjectStorageConnection
 from .oci_object_storage_connection_summary import OciObjectStorageConnectionSummary
 from .oci_object_storage_databricks_engine_artifact_location import OciObjectStorageDatabricksEngineArtifactLocation
@@ -270,6 +294,12 @@ from .oci_object_storage_s3_api_iceberg_storage_summary import OciObjectStorageS
 from .oci_object_storage_spark_artifact_location import OciObjectStorageSparkArtifactLocation
 from .oci_object_storage_spark_artifact_location_summary import OciObjectStorageSparkArtifactLocationSummary
 from .ogg_deployment import OggDeployment
+from .oracle_ai_data_catalog_iceberg_catalog import OracleAiDataCatalogIcebergCatalog
+from .oracle_ai_data_catalog_iceberg_catalog_config import OracleAiDataCatalogIcebergCatalogConfig
+from .oracle_ai_data_catalog_iceberg_catalog_config_summary import OracleAiDataCatalogIcebergCatalogConfigSummary
+from .oracle_ai_data_catalog_iceberg_catalog_summary import OracleAiDataCatalogIcebergCatalogSummary
+from .oracle_ai_data_catalog_storage_connection import OracleAiDataCatalogStorageConnection
+from .oracle_ai_data_catalog_storage_connection_summary import OracleAiDataCatalogStorageConnectionSummary
 from .oracle_ai_data_platform_connection import OracleAiDataPlatformConnection
 from .oracle_ai_data_platform_connection_summary import OracleAiDataPlatformConnectionSummary
 from .oracle_ai_data_platform_engine_connection import OracleAiDataPlatformEngineConnection
@@ -355,6 +385,8 @@ from .update_api_key_ai_model_auth_details import UpdateApiKeyAiModelAuthDetails
 from .update_azure_data_lake_storage_connection_details import UpdateAzureDataLakeStorageConnectionDetails
 from .update_azure_data_lake_storage_databricks_engine_artifact_location_details import UpdateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails
 from .update_azure_data_lake_storage_iceberg_storage_details import UpdateAzureDataLakeStorageIcebergStorageDetails
+from .update_azure_storage_iceberg_storage_details import UpdateAzureStorageIcebergStorageDetails
+from .update_azure_storage_warehouse_storage_details import UpdateAzureStorageWarehouseStorageDetails
 from .update_azure_synapse_connection_details import UpdateAzureSynapseConnectionDetails
 from .update_backup_schedule_details import UpdateBackupScheduleDetails
 from .update_connection_details import UpdateConnectionDetails
@@ -368,6 +400,7 @@ from .update_databricks_engine_resource_principal_oci_object_storage_config_deta
 from .update_databricks_engine_secret_key_oci_object_storage_config_details import UpdateDatabricksEngineSecretKeyOciObjectStorageConfigDetails
 from .update_databricks_engine_user_principal_oci_object_storage_config_details import UpdateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
 from .update_db2_connection_details import UpdateDb2ConnectionDetails
+from .update_db_credentials_oracle_ai_data_catalog_iceberg_catalog_config_details import UpdateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails
 from .update_deployment_backup_details import UpdateDeploymentBackupDetails
 from .update_deployment_details import UpdateDeploymentDetails
 from .update_elasticsearch_connection_details import UpdateElasticsearchConnectionDetails
@@ -396,11 +429,17 @@ from .update_mysql_connection_details import UpdateMysqlConnectionDetails
 from .update_nessie_iceberg_catalog_details import UpdateNessieIcebergCatalogDetails
 from .update_no_iceberg_storage_details import UpdateNoIcebergStorageDetails
 from .update_oci_gen_ai_model_auth_details import UpdateOciGenAiModelAuthDetails
+from .update_oci_golden_gate_oracle_ai_data_catalog_iceberg_catalog_config_details import UpdateOciGoldenGateOracleAiDataCatalogIcebergCatalogConfigDetails
+from .update_oci_object_storage_access_key_iceberg_storage_details import UpdateOciObjectStorageAccessKeyIcebergStorageDetails
+from .update_oci_object_storage_access_key_warehouse_storage_details import UpdateOciObjectStorageAccessKeyWarehouseStorageDetails
 from .update_oci_object_storage_connection_details import UpdateOciObjectStorageConnectionDetails
 from .update_oci_object_storage_databricks_engine_artifact_location_details import UpdateOciObjectStorageDatabricksEngineArtifactLocationDetails
 from .update_oci_object_storage_s3_api_iceberg_storage_details import UpdateOciObjectStorageS3ApiIcebergStorageDetails
 from .update_oci_object_storage_spark_artifact_location_details import UpdateOciObjectStorageSparkArtifactLocationDetails
 from .update_ogg_deployment_details import UpdateOggDeploymentDetails
+from .update_oracle_ai_data_catalog_iceberg_catalog_config_details import UpdateOracleAiDataCatalogIcebergCatalogConfigDetails
+from .update_oracle_ai_data_catalog_iceberg_catalog_details import UpdateOracleAiDataCatalogIcebergCatalogDetails
+from .update_oracle_ai_data_catalog_storage_connection_details import UpdateOracleAiDataCatalogStorageConnectionDetails
 from .update_oracle_ai_data_platform_connection_details import UpdateOracleAiDataPlatformConnectionDetails
 from .update_oracle_ai_data_platform_engine_connection_details import UpdateOracleAiDataPlatformEngineConnectionDetails
 from .update_oracle_connection_details import UpdateOracleConnectionDetails
@@ -419,17 +458,26 @@ from .update_spark_resource_principal_oci_object_storage_config_details import U
 from .update_spark_secret_key_oci_object_storage_config_details import UpdateSparkSecretKeyOciObjectStorageConfigDetails
 from .update_spark_user_principal_oci_object_storage_config_details import UpdateSparkUserPrincipalOciObjectStorageConfigDetails
 from .update_uc_volume_databricks_engine_artifact_location_details import UpdateUcVolumeDatabricksEngineArtifactLocationDetails
+from .update_warehouse_storage_details import UpdateWarehouseStorageDetails
 from .update_zero_etl_pipeline_details import UpdateZeroEtlPipelineDetails
+from .update_zfs_iceberg_storage_details import UpdateZfsIcebergStorageDetails
+from .update_zfs_warehouse_storage_details import UpdateZfsWarehouseStorageDetails
 from .upgrade_deployment_current_release_details import UpgradeDeploymentCurrentReleaseDetails
 from .upgrade_deployment_details import UpgradeDeploymentDetails
 from .upgrade_deployment_specific_release_details import UpgradeDeploymentSpecificReleaseDetails
 from .upgrade_deployment_upgrade_details import UpgradeDeploymentUpgradeDetails
+from .warehouse_storage import WarehouseStorage
+from .warehouse_storage_summary import WarehouseStorageSummary
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
 from .work_request_resource import WorkRequestResource
 from .zero_etl_pipeline import ZeroEtlPipeline
 from .zero_etl_pipeline_summary import ZeroEtlPipelineSummary
+from .zfs_iceberg_storage import ZfsIcebergStorage
+from .zfs_iceberg_storage_summary import ZfsIcebergStorageSummary
+from .zfs_warehouse_storage import ZfsWarehouseStorage
+from .zfs_warehouse_storage_summary import ZfsWarehouseStorageSummary
 
 # Maps type names to classes for golden_gate services.
 golden_gate_type_mapping = {
@@ -461,6 +509,10 @@ golden_gate_type_mapping = {
     "AzureDataLakeStorageDatabricksEngineArtifactLocationSummary": AzureDataLakeStorageDatabricksEngineArtifactLocationSummary,
     "AzureDataLakeStorageIcebergStorage": AzureDataLakeStorageIcebergStorage,
     "AzureDataLakeStorageIcebergStorageSummary": AzureDataLakeStorageIcebergStorageSummary,
+    "AzureStorageIcebergStorage": AzureStorageIcebergStorage,
+    "AzureStorageIcebergStorageSummary": AzureStorageIcebergStorageSummary,
+    "AzureStorageWarehouseStorage": AzureStorageWarehouseStorage,
+    "AzureStorageWarehouseStorageSummary": AzureStorageWarehouseStorageSummary,
     "AzureSynapseConnection": AzureSynapseConnection,
     "AzureSynapseConnectionSummary": AzureSynapseConnectionSummary,
     "BackupSchedule": BackupSchedule,
@@ -499,6 +551,8 @@ golden_gate_type_mapping = {
     "CreateAzureDataLakeStorageConnectionDetails": CreateAzureDataLakeStorageConnectionDetails,
     "CreateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails": CreateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails,
     "CreateAzureDataLakeStorageIcebergStorageDetails": CreateAzureDataLakeStorageIcebergStorageDetails,
+    "CreateAzureStorageIcebergStorageDetails": CreateAzureStorageIcebergStorageDetails,
+    "CreateAzureStorageWarehouseStorageDetails": CreateAzureStorageWarehouseStorageDetails,
     "CreateAzureSynapseConnectionDetails": CreateAzureSynapseConnectionDetails,
     "CreateBackupScheduleDetails": CreateBackupScheduleDetails,
     "CreateCertificateDetails": CreateCertificateDetails,
@@ -514,6 +568,7 @@ golden_gate_type_mapping = {
     "CreateDatabricksEngineSecretKeyOciObjectStorageConfigDetails": CreateDatabricksEngineSecretKeyOciObjectStorageConfigDetails,
     "CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails": CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails,
     "CreateDb2ConnectionDetails": CreateDb2ConnectionDetails,
+    "CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails": CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails,
     "CreateDeploymentBackupDetails": CreateDeploymentBackupDetails,
     "CreateDeploymentDetails": CreateDeploymentDetails,
     "CreateElasticsearchConnectionDetails": CreateElasticsearchConnectionDetails,
@@ -542,11 +597,17 @@ golden_gate_type_mapping = {
     "CreateNessieIcebergCatalogDetails": CreateNessieIcebergCatalogDetails,
     "CreateNoIcebergStorageDetails": CreateNoIcebergStorageDetails,
     "CreateOciGenAiModelAuthDetails": CreateOciGenAiModelAuthDetails,
+    "CreateOciGoldenGateOracleAiDataCatalogIcebergCatalogConfigDetails": CreateOciGoldenGateOracleAiDataCatalogIcebergCatalogConfigDetails,
+    "CreateOciObjectStorageAccessKeyIcebergStorageDetails": CreateOciObjectStorageAccessKeyIcebergStorageDetails,
+    "CreateOciObjectStorageAccessKeyWarehouseStorageDetails": CreateOciObjectStorageAccessKeyWarehouseStorageDetails,
     "CreateOciObjectStorageConnectionDetails": CreateOciObjectStorageConnectionDetails,
     "CreateOciObjectStorageDatabricksEngineArtifactLocationDetails": CreateOciObjectStorageDatabricksEngineArtifactLocationDetails,
     "CreateOciObjectStorageS3ApiIcebergStorageDetails": CreateOciObjectStorageS3ApiIcebergStorageDetails,
     "CreateOciObjectStorageSparkArtifactLocationDetails": CreateOciObjectStorageSparkArtifactLocationDetails,
     "CreateOggDeploymentDetails": CreateOggDeploymentDetails,
+    "CreateOracleAiDataCatalogIcebergCatalogConfigDetails": CreateOracleAiDataCatalogIcebergCatalogConfigDetails,
+    "CreateOracleAiDataCatalogIcebergCatalogDetails": CreateOracleAiDataCatalogIcebergCatalogDetails,
+    "CreateOracleAiDataCatalogStorageConnectionDetails": CreateOracleAiDataCatalogStorageConnectionDetails,
     "CreateOracleAiDataPlatformConnectionDetails": CreateOracleAiDataPlatformConnectionDetails,
     "CreateOracleAiDataPlatformEngineConnectionDetails": CreateOracleAiDataPlatformEngineConnectionDetails,
     "CreateOracleConnectionDetails": CreateOracleConnectionDetails,
@@ -565,7 +626,10 @@ golden_gate_type_mapping = {
     "CreateSparkSecretKeyOciObjectStorageConfigDetails": CreateSparkSecretKeyOciObjectStorageConfigDetails,
     "CreateSparkUserPrincipalOciObjectStorageConfigDetails": CreateSparkUserPrincipalOciObjectStorageConfigDetails,
     "CreateUcVolumeDatabricksEngineArtifactLocationDetails": CreateUcVolumeDatabricksEngineArtifactLocationDetails,
+    "CreateWarehouseStorageDetails": CreateWarehouseStorageDetails,
     "CreateZeroEtlPipelineDetails": CreateZeroEtlPipelineDetails,
+    "CreateZfsIcebergStorageDetails": CreateZfsIcebergStorageDetails,
+    "CreateZfsWarehouseStorageDetails": CreateZfsWarehouseStorageDetails,
     "DatabaseRegistration": DatabaseRegistration,
     "DatabaseRegistrationCollection": DatabaseRegistrationCollection,
     "DatabaseRegistrationSummary": DatabaseRegistrationSummary,
@@ -582,6 +646,8 @@ golden_gate_type_mapping = {
     "DatabricksEngineUserPrincipalOciObjectStorageConfig": DatabricksEngineUserPrincipalOciObjectStorageConfig,
     "Db2Connection": Db2Connection,
     "Db2ConnectionSummary": Db2ConnectionSummary,
+    "DbCredentialsOracleAiDataCatalogIcebergCatalogConfig": DbCredentialsOracleAiDataCatalogIcebergCatalogConfig,
+    "DbCredentialsOracleAiDataCatalogIcebergCatalogConfigSummary": DbCredentialsOracleAiDataCatalogIcebergCatalogConfigSummary,
     "DefaultCancelDeploymentBackupDetails": DefaultCancelDeploymentBackupDetails,
     "DefaultCancelDeploymentUpgradeDetails": DefaultCancelDeploymentUpgradeDetails,
     "DefaultCancelSnoozeDeploymentUpgradeDetails": DefaultCancelSnoozeDeploymentUpgradeDetails,
@@ -688,6 +754,12 @@ golden_gate_type_mapping = {
     "NoIcebergStorageSummary": NoIcebergStorageSummary,
     "OciGenAiModelAuthDetails": OciGenAiModelAuthDetails,
     "OciGenAiModelAuthDetailsSummary": OciGenAiModelAuthDetailsSummary,
+    "OciGoldenGateOracleAiDataCatalogIcebergCatalogConfig": OciGoldenGateOracleAiDataCatalogIcebergCatalogConfig,
+    "OciGoldenGateOracleAiDataCatalogIcebergCatalogConfigSummary": OciGoldenGateOracleAiDataCatalogIcebergCatalogConfigSummary,
+    "OciObjectStorageAccessKeyIcebergStorage": OciObjectStorageAccessKeyIcebergStorage,
+    "OciObjectStorageAccessKeyIcebergStorageSummary": OciObjectStorageAccessKeyIcebergStorageSummary,
+    "OciObjectStorageAccessKeyWarehouseStorage": OciObjectStorageAccessKeyWarehouseStorage,
+    "OciObjectStorageAccessKeyWarehouseStorageSummary": OciObjectStorageAccessKeyWarehouseStorageSummary,
     "OciObjectStorageConnection": OciObjectStorageConnection,
     "OciObjectStorageConnectionSummary": OciObjectStorageConnectionSummary,
     "OciObjectStorageDatabricksEngineArtifactLocation": OciObjectStorageDatabricksEngineArtifactLocation,
@@ -697,6 +769,12 @@ golden_gate_type_mapping = {
     "OciObjectStorageSparkArtifactLocation": OciObjectStorageSparkArtifactLocation,
     "OciObjectStorageSparkArtifactLocationSummary": OciObjectStorageSparkArtifactLocationSummary,
     "OggDeployment": OggDeployment,
+    "OracleAiDataCatalogIcebergCatalog": OracleAiDataCatalogIcebergCatalog,
+    "OracleAiDataCatalogIcebergCatalogConfig": OracleAiDataCatalogIcebergCatalogConfig,
+    "OracleAiDataCatalogIcebergCatalogConfigSummary": OracleAiDataCatalogIcebergCatalogConfigSummary,
+    "OracleAiDataCatalogIcebergCatalogSummary": OracleAiDataCatalogIcebergCatalogSummary,
+    "OracleAiDataCatalogStorageConnection": OracleAiDataCatalogStorageConnection,
+    "OracleAiDataCatalogStorageConnectionSummary": OracleAiDataCatalogStorageConnectionSummary,
     "OracleAiDataPlatformConnection": OracleAiDataPlatformConnection,
     "OracleAiDataPlatformConnectionSummary": OracleAiDataPlatformConnectionSummary,
     "OracleAiDataPlatformEngineConnection": OracleAiDataPlatformEngineConnection,
@@ -782,6 +860,8 @@ golden_gate_type_mapping = {
     "UpdateAzureDataLakeStorageConnectionDetails": UpdateAzureDataLakeStorageConnectionDetails,
     "UpdateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails": UpdateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails,
     "UpdateAzureDataLakeStorageIcebergStorageDetails": UpdateAzureDataLakeStorageIcebergStorageDetails,
+    "UpdateAzureStorageIcebergStorageDetails": UpdateAzureStorageIcebergStorageDetails,
+    "UpdateAzureStorageWarehouseStorageDetails": UpdateAzureStorageWarehouseStorageDetails,
     "UpdateAzureSynapseConnectionDetails": UpdateAzureSynapseConnectionDetails,
     "UpdateBackupScheduleDetails": UpdateBackupScheduleDetails,
     "UpdateConnectionDetails": UpdateConnectionDetails,
@@ -795,6 +875,7 @@ golden_gate_type_mapping = {
     "UpdateDatabricksEngineSecretKeyOciObjectStorageConfigDetails": UpdateDatabricksEngineSecretKeyOciObjectStorageConfigDetails,
     "UpdateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails": UpdateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails,
     "UpdateDb2ConnectionDetails": UpdateDb2ConnectionDetails,
+    "UpdateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails": UpdateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails,
     "UpdateDeploymentBackupDetails": UpdateDeploymentBackupDetails,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
     "UpdateElasticsearchConnectionDetails": UpdateElasticsearchConnectionDetails,
@@ -823,11 +904,17 @@ golden_gate_type_mapping = {
     "UpdateNessieIcebergCatalogDetails": UpdateNessieIcebergCatalogDetails,
     "UpdateNoIcebergStorageDetails": UpdateNoIcebergStorageDetails,
     "UpdateOciGenAiModelAuthDetails": UpdateOciGenAiModelAuthDetails,
+    "UpdateOciGoldenGateOracleAiDataCatalogIcebergCatalogConfigDetails": UpdateOciGoldenGateOracleAiDataCatalogIcebergCatalogConfigDetails,
+    "UpdateOciObjectStorageAccessKeyIcebergStorageDetails": UpdateOciObjectStorageAccessKeyIcebergStorageDetails,
+    "UpdateOciObjectStorageAccessKeyWarehouseStorageDetails": UpdateOciObjectStorageAccessKeyWarehouseStorageDetails,
     "UpdateOciObjectStorageConnectionDetails": UpdateOciObjectStorageConnectionDetails,
     "UpdateOciObjectStorageDatabricksEngineArtifactLocationDetails": UpdateOciObjectStorageDatabricksEngineArtifactLocationDetails,
     "UpdateOciObjectStorageS3ApiIcebergStorageDetails": UpdateOciObjectStorageS3ApiIcebergStorageDetails,
     "UpdateOciObjectStorageSparkArtifactLocationDetails": UpdateOciObjectStorageSparkArtifactLocationDetails,
     "UpdateOggDeploymentDetails": UpdateOggDeploymentDetails,
+    "UpdateOracleAiDataCatalogIcebergCatalogConfigDetails": UpdateOracleAiDataCatalogIcebergCatalogConfigDetails,
+    "UpdateOracleAiDataCatalogIcebergCatalogDetails": UpdateOracleAiDataCatalogIcebergCatalogDetails,
+    "UpdateOracleAiDataCatalogStorageConnectionDetails": UpdateOracleAiDataCatalogStorageConnectionDetails,
     "UpdateOracleAiDataPlatformConnectionDetails": UpdateOracleAiDataPlatformConnectionDetails,
     "UpdateOracleAiDataPlatformEngineConnectionDetails": UpdateOracleAiDataPlatformEngineConnectionDetails,
     "UpdateOracleConnectionDetails": UpdateOracleConnectionDetails,
@@ -846,15 +933,24 @@ golden_gate_type_mapping = {
     "UpdateSparkSecretKeyOciObjectStorageConfigDetails": UpdateSparkSecretKeyOciObjectStorageConfigDetails,
     "UpdateSparkUserPrincipalOciObjectStorageConfigDetails": UpdateSparkUserPrincipalOciObjectStorageConfigDetails,
     "UpdateUcVolumeDatabricksEngineArtifactLocationDetails": UpdateUcVolumeDatabricksEngineArtifactLocationDetails,
+    "UpdateWarehouseStorageDetails": UpdateWarehouseStorageDetails,
     "UpdateZeroEtlPipelineDetails": UpdateZeroEtlPipelineDetails,
+    "UpdateZfsIcebergStorageDetails": UpdateZfsIcebergStorageDetails,
+    "UpdateZfsWarehouseStorageDetails": UpdateZfsWarehouseStorageDetails,
     "UpgradeDeploymentCurrentReleaseDetails": UpgradeDeploymentCurrentReleaseDetails,
     "UpgradeDeploymentDetails": UpgradeDeploymentDetails,
     "UpgradeDeploymentSpecificReleaseDetails": UpgradeDeploymentSpecificReleaseDetails,
     "UpgradeDeploymentUpgradeDetails": UpgradeDeploymentUpgradeDetails,
+    "WarehouseStorage": WarehouseStorage,
+    "WarehouseStorageSummary": WarehouseStorageSummary,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,
     "WorkRequestResource": WorkRequestResource,
     "ZeroEtlPipeline": ZeroEtlPipeline,
-    "ZeroEtlPipelineSummary": ZeroEtlPipelineSummary
+    "ZeroEtlPipelineSummary": ZeroEtlPipelineSummary,
+    "ZfsIcebergStorage": ZfsIcebergStorage,
+    "ZfsIcebergStorageSummary": ZfsIcebergStorageSummary,
+    "ZfsWarehouseStorage": ZfsWarehouseStorage,
+    "ZfsWarehouseStorageSummary": ZfsWarehouseStorageSummary
 }

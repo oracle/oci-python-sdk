@@ -13,6 +13,7 @@ import os.path
 from oci._vendor import six
 import threading
 import logging
+from oci._logging import NULL_HANDLER
 import pprint
 
 # A retry strategy for use when calling the metadata endpoint on an instance to retrieve certificates.
@@ -115,7 +116,7 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         self.retry_strategy = kwargs.get('retry_strategy')
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
-        self.logger.addHandler(logging.NullHandler())
+        self.logger.addHandler(NULL_HANDLER)
 
         if kwargs.get('log_requests'):
             self.logger.disabled = False

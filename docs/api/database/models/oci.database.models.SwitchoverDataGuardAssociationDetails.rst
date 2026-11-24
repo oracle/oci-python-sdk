@@ -1,4 +1,4 @@
-SwitchoverDataGuardAssociationDetails
+﻿SwitchoverDataGuardAssociationDetails
 =====================================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-CreateParameterFileVersionDetails
+﻿CreateParameterFileVersionDetails
 =================================
 
 .. currentmodule:: oci.database_migration.models

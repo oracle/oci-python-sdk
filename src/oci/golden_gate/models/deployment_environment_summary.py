@@ -39,6 +39,10 @@ class DeploymentEnvironmentSummary(object):
     #: This constant has a value of "DATA_VERIFICATION"
     CATEGORY_DATA_VERIFICATION = "DATA_VERIFICATION"
 
+    #: A constant which can be used with the category property of a DeploymentEnvironmentSummary.
+    #: This constant has a value of "DATA_CATALOG"
+    CATEGORY_DATA_CATALOG = "DATA_CATALOG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DeploymentEnvironmentSummary object with values from keyword arguments.
@@ -52,7 +56,7 @@ class DeploymentEnvironmentSummary(object):
 
         :param category:
             The value to assign to the category property of this DeploymentEnvironmentSummary.
-            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", "DATA_CATALOG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type category: str
 
@@ -158,10 +162,10 @@ class DeploymentEnvironmentSummary(object):
     def category(self):
         """
         **[Required]** Gets the category of this DeploymentEnvironmentSummary.
-        The deployment category defines the broad separation of the deployment type into four categories.
-        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+        The deployment category defines the broad separation of the deployment type into five categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
 
-        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", "DATA_CATALOG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -174,14 +178,14 @@ class DeploymentEnvironmentSummary(object):
     def category(self, category):
         """
         Sets the category of this DeploymentEnvironmentSummary.
-        The deployment category defines the broad separation of the deployment type into four categories.
-        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+        The deployment category defines the broad separation of the deployment type into five categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
 
 
         :param category: The category of this DeploymentEnvironmentSummary.
         :type: str
         """
-        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION"]
+        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", "DATA_CATALOG"]
         if not value_allowed_none_or_none_sentinel(category, allowed_values):
             category = 'UNKNOWN_ENUM_VALUE'
         self._category = category

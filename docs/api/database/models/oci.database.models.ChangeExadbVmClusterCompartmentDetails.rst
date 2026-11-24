@@ -1,4 +1,4 @@
-ChangeExadbVmClusterCompartmentDetails
+﻿ChangeExadbVmClusterCompartmentDetails
 ======================================
 
 .. currentmodule:: oci.database.models

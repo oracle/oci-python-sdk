@@ -1,4 +1,4 @@
-AutonomousVmResourceUsage
+﻿AutonomousVmResourceUsage
 =========================
 
 .. currentmodule:: oci.database.models

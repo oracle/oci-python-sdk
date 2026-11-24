@@ -1,4 +1,4 @@
-ChangeCloudAutonomousVmClusterCompartmentDetails
+﻿ChangeCloudAutonomousVmClusterCompartmentDetails
 ================================================
 
 .. currentmodule:: oci.database.models

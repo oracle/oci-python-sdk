@@ -1,4 +1,4 @@
-RemoveDrgRouteRulesDetails
+﻿RemoveDrgRouteRulesDetails
 ==========================
 
 .. currentmodule:: oci.core.models

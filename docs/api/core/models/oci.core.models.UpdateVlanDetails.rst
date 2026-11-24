@@ -1,4 +1,4 @@
-UpdateVlanDetails
+﻿UpdateVlanDetails
 =================
 
 .. currentmodule:: oci.core.models

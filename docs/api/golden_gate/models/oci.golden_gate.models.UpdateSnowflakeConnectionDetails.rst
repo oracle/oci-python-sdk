@@ -1,4 +1,4 @@
-UpdateSnowflakeConnectionDetails
+﻿UpdateSnowflakeConnectionDetails
 ================================
 
 .. currentmodule:: oci.golden_gate.models

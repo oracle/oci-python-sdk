@@ -1,4 +1,4 @@
-DatabaseUpgradeWithDbHomeDetails
+﻿DatabaseUpgradeWithDbHomeDetails
 ================================
 
 .. currentmodule:: oci.database.models

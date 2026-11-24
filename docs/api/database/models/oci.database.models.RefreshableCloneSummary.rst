@@ -1,4 +1,4 @@
-RefreshableCloneSummary
+﻿RefreshableCloneSummary
 =======================
 
 .. currentmodule:: oci.database.models

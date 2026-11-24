@@ -1,4 +1,4 @@
-ChangeDhcpOptionsCompartmentDetails
+﻿ChangeDhcpOptionsCompartmentDetails
 ===================================
 
 .. currentmodule:: oci.core.models

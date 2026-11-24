@@ -1,4 +1,4 @@
-CapacityBinPreview
+﻿CapacityBinPreview
 ==================
 
 .. currentmodule:: oci.core.models

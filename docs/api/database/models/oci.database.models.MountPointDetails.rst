@@ -1,4 +1,4 @@
-MountPointDetails
+﻿MountPointDetails
 =================
 
 .. currentmodule:: oci.database.models

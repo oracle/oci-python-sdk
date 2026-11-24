@@ -1,4 +1,4 @@
-CaptureFilter
+﻿CaptureFilter
 =============
 
 .. currentmodule:: oci.core.models

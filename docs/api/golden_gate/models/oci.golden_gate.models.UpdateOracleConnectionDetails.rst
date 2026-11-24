@@ -1,4 +1,4 @@
-UpdateOracleConnectionDetails
+﻿UpdateOracleConnectionDetails
 =============================
 
 .. currentmodule:: oci.golden_gate.models

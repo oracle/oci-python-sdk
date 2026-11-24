@@ -1,4 +1,4 @@
-AzureKeyDetails
+﻿AzureKeyDetails
 ===============
 
 .. currentmodule:: oci.database.models

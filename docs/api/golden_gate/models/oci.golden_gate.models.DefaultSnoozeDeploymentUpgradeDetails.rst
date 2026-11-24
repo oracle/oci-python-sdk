@@ -1,4 +1,4 @@
-DefaultSnoozeDeploymentUpgradeDetails
+﻿DefaultSnoozeDeploymentUpgradeDetails
 =====================================
 
 .. currentmodule:: oci.golden_gate.models

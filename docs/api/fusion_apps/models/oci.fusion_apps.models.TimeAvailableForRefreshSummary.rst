@@ -1,4 +1,4 @@
-TimeAvailableForRefreshSummary
+﻿TimeAvailableForRefreshSummary
 ==============================
 
 .. currentmodule:: oci.fusion_apps.models

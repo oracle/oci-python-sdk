@@ -1,4 +1,4 @@
-AzureSynapseConnectionSummary
+﻿AzureSynapseConnectionSummary
 =============================
 
 .. currentmodule:: oci.golden_gate.models

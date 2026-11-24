@@ -1,4 +1,4 @@
-InventorySubnetSummary
+﻿InventorySubnetSummary
 ======================
 
 .. currentmodule:: oci.core.models

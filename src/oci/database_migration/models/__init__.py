@@ -44,10 +44,6 @@ from .change_connection_compartment_details import ChangeConnectionCompartmentDe
 from .change_migration_compartment_details import ChangeMigrationCompartmentDetails
 from .clone_assessment_details import CloneAssessmentDetails
 from .clone_migration_details import CloneMigrationDetails
-from .clone_oracle_migration_settings import CloneOracleMigrationSettings
-from .clone_oracle_offline_logical_migration_settings import CloneOracleOfflineLogicalMigrationSettings
-from .clone_oracle_online_logical_migration_settings import CloneOracleOnlineLogicalMigrationSettings
-from .clone_oracle_online_standby_migration_settings import CloneOracleOnlineStandbyMigrationSettings
 from .collect_traces_data import CollectTracesData
 from .collect_traces_details import CollectTracesDetails
 from .connection import Connection
@@ -81,18 +77,16 @@ from .create_oci_cli_dump_transfer_details import CreateOciCliDumpTransferDetail
 from .create_oracle_advisor_settings import CreateOracleAdvisorSettings
 from .create_oracle_assessment_details import CreateOracleAssessmentDetails
 from .create_oracle_aws_s3_data_transfer_medium_details import CreateOracleAwsS3DataTransferMediumDetails
+from .create_oracle_azure_blob_data_transfer_medium_details import CreateOracleAzureBlobDataTransferMediumDetails
 from .create_oracle_connection_details import CreateOracleConnectionDetails
 from .create_oracle_data_transfer_medium_details import CreateOracleDataTransferMediumDetails
 from .create_oracle_db_link_data_transfer_medium_details import CreateOracleDbLinkDataTransferMediumDetails
+from .create_oracle_gcs_data_transfer_medium_details import CreateOracleGcsDataTransferMediumDetails
 from .create_oracle_ggs_deployment_details import CreateOracleGgsDeploymentDetails
 from .create_oracle_initial_load_settings import CreateOracleInitialLoadSettings
 from .create_oracle_migration_details import CreateOracleMigrationDetails
-from .create_oracle_migration_settings import CreateOracleMigrationSettings
 from .create_oracle_nfs_data_transfer_medium_details import CreateOracleNfsDataTransferMediumDetails
 from .create_oracle_object_storage_data_transfer_medium_details import CreateOracleObjectStorageDataTransferMediumDetails
-from .create_oracle_offline_logical_migration_settings import CreateOracleOfflineLogicalMigrationSettings
-from .create_oracle_online_logical_migration_settings import CreateOracleOnlineLogicalMigrationSettings
-from .create_oracle_online_standby_migration_settings import CreateOracleOnlineStandbyMigrationSettings
 from .create_parameter_file_version_details import CreateParameterFileVersionDetails
 from .create_replicat import CreateReplicat
 from .create_target_type_tablespace_details import CreateTargetTypeTablespaceDetails
@@ -175,6 +169,7 @@ from .oracle_assessment import OracleAssessment
 from .oracle_assessment_object_collection import OracleAssessmentObjectCollection
 from .oracle_assessment_summary import OracleAssessmentSummary
 from .oracle_aws_s3_data_transfer_medium_details import OracleAwsS3DataTransferMediumDetails
+from .oracle_azure_blob_data_transfer_medium_details import OracleAzureBlobDataTransferMediumDetails
 from .oracle_clone_assessment_details import OracleCloneAssessmentDetails
 from .oracle_clone_migration_details import OracleCloneMigrationDetails
 from .oracle_connection import OracleConnection
@@ -186,21 +181,14 @@ from .oracle_data_verification_table_row_count_summary import OracleDataVerifica
 from .oracle_database_object import OracleDatabaseObject
 from .oracle_database_object_summary import OracleDatabaseObjectSummary
 from .oracle_db_link_data_transfer_medium_details import OracleDbLinkDataTransferMediumDetails
+from .oracle_gcs_data_transfer_medium_details import OracleGcsDataTransferMediumDetails
 from .oracle_ggs_deployment_details import OracleGgsDeploymentDetails
 from .oracle_initial_load_settings import OracleInitialLoadSettings
 from .oracle_migration import OracleMigration
 from .oracle_migration_object_collection import OracleMigrationObjectCollection
-from .oracle_migration_settings import OracleMigrationSettings
-from .oracle_migration_settings_summary import OracleMigrationSettingsSummary
 from .oracle_migration_summary import OracleMigrationSummary
 from .oracle_nfs_data_transfer_medium_details import OracleNfsDataTransferMediumDetails
 from .oracle_object_storage_data_transfer_medium_details import OracleObjectStorageDataTransferMediumDetails
-from .oracle_offline_logical_migration_settings import OracleOfflineLogicalMigrationSettings
-from .oracle_offline_logical_migration_settings_summary import OracleOfflineLogicalMigrationSettingsSummary
-from .oracle_online_logical_migration_settings import OracleOnlineLogicalMigrationSettings
-from .oracle_online_logical_migration_settings_summary import OracleOnlineLogicalMigrationSettingsSummary
-from .oracle_online_standby_migration_settings import OracleOnlineStandbyMigrationSettings
-from .oracle_online_standby_migration_settings_summary import OracleOnlineStandbyMigrationSettingsSummary
 from .parameter_file_version import ParameterFileVersion
 from .parameter_file_version_collection import ParameterFileVersionCollection
 from .parameter_file_version_summary import ParameterFileVersionSummary
@@ -249,18 +237,16 @@ from .update_oci_cli_dump_transfer_details import UpdateOciCliDumpTransferDetail
 from .update_oracle_advisor_settings import UpdateOracleAdvisorSettings
 from .update_oracle_assessment_details import UpdateOracleAssessmentDetails
 from .update_oracle_aws_s3_data_transfer_medium_details import UpdateOracleAwsS3DataTransferMediumDetails
+from .update_oracle_azure_blob_data_transfer_medium_details import UpdateOracleAzureBlobDataTransferMediumDetails
 from .update_oracle_connection_details import UpdateOracleConnectionDetails
 from .update_oracle_data_transfer_medium_details import UpdateOracleDataTransferMediumDetails
 from .update_oracle_db_link_data_transfer_medium_details import UpdateOracleDbLinkDataTransferMediumDetails
+from .update_oracle_gcs_data_transfer_medium_details import UpdateOracleGcsDataTransferMediumDetails
 from .update_oracle_ggs_deployment_details import UpdateOracleGgsDeploymentDetails
 from .update_oracle_initial_load_settings import UpdateOracleInitialLoadSettings
 from .update_oracle_migration_details import UpdateOracleMigrationDetails
-from .update_oracle_migration_settings import UpdateOracleMigrationSettings
 from .update_oracle_nfs_data_transfer_medium_details import UpdateOracleNfsDataTransferMediumDetails
 from .update_oracle_object_storage_data_transfer_medium_details import UpdateOracleObjectStorageDataTransferMediumDetails
-from .update_oracle_offline_logical_migration_settings import UpdateOracleOfflineLogicalMigrationSettings
-from .update_oracle_online_logical_migration_settings import UpdateOracleOnlineLogicalMigrationSettings
-from .update_oracle_online_standby_migration_settings import UpdateOracleOnlineStandbyMigrationSettings
 from .update_replicat import UpdateReplicat
 from .update_target_defaults_auto_create_tablespace_details import UpdateTargetDefaultsAutoCreateTablespaceDetails
 from .update_target_defaults_remap_tablespace_details import UpdateTargetDefaultsRemapTablespaceDetails
@@ -317,10 +303,6 @@ database_migration_type_mapping = {
     "ChangeMigrationCompartmentDetails": ChangeMigrationCompartmentDetails,
     "CloneAssessmentDetails": CloneAssessmentDetails,
     "CloneMigrationDetails": CloneMigrationDetails,
-    "CloneOracleMigrationSettings": CloneOracleMigrationSettings,
-    "CloneOracleOfflineLogicalMigrationSettings": CloneOracleOfflineLogicalMigrationSettings,
-    "CloneOracleOnlineLogicalMigrationSettings": CloneOracleOnlineLogicalMigrationSettings,
-    "CloneOracleOnlineStandbyMigrationSettings": CloneOracleOnlineStandbyMigrationSettings,
     "CollectTracesData": CollectTracesData,
     "CollectTracesDetails": CollectTracesDetails,
     "Connection": Connection,
@@ -354,18 +336,16 @@ database_migration_type_mapping = {
     "CreateOracleAdvisorSettings": CreateOracleAdvisorSettings,
     "CreateOracleAssessmentDetails": CreateOracleAssessmentDetails,
     "CreateOracleAwsS3DataTransferMediumDetails": CreateOracleAwsS3DataTransferMediumDetails,
+    "CreateOracleAzureBlobDataTransferMediumDetails": CreateOracleAzureBlobDataTransferMediumDetails,
     "CreateOracleConnectionDetails": CreateOracleConnectionDetails,
     "CreateOracleDataTransferMediumDetails": CreateOracleDataTransferMediumDetails,
     "CreateOracleDbLinkDataTransferMediumDetails": CreateOracleDbLinkDataTransferMediumDetails,
+    "CreateOracleGcsDataTransferMediumDetails": CreateOracleGcsDataTransferMediumDetails,
     "CreateOracleGgsDeploymentDetails": CreateOracleGgsDeploymentDetails,
     "CreateOracleInitialLoadSettings": CreateOracleInitialLoadSettings,
     "CreateOracleMigrationDetails": CreateOracleMigrationDetails,
-    "CreateOracleMigrationSettings": CreateOracleMigrationSettings,
     "CreateOracleNfsDataTransferMediumDetails": CreateOracleNfsDataTransferMediumDetails,
     "CreateOracleObjectStorageDataTransferMediumDetails": CreateOracleObjectStorageDataTransferMediumDetails,
-    "CreateOracleOfflineLogicalMigrationSettings": CreateOracleOfflineLogicalMigrationSettings,
-    "CreateOracleOnlineLogicalMigrationSettings": CreateOracleOnlineLogicalMigrationSettings,
-    "CreateOracleOnlineStandbyMigrationSettings": CreateOracleOnlineStandbyMigrationSettings,
     "CreateParameterFileVersionDetails": CreateParameterFileVersionDetails,
     "CreateReplicat": CreateReplicat,
     "CreateTargetTypeTablespaceDetails": CreateTargetTypeTablespaceDetails,
@@ -448,6 +428,7 @@ database_migration_type_mapping = {
     "OracleAssessmentObjectCollection": OracleAssessmentObjectCollection,
     "OracleAssessmentSummary": OracleAssessmentSummary,
     "OracleAwsS3DataTransferMediumDetails": OracleAwsS3DataTransferMediumDetails,
+    "OracleAzureBlobDataTransferMediumDetails": OracleAzureBlobDataTransferMediumDetails,
     "OracleCloneAssessmentDetails": OracleCloneAssessmentDetails,
     "OracleCloneMigrationDetails": OracleCloneMigrationDetails,
     "OracleConnection": OracleConnection,
@@ -459,21 +440,14 @@ database_migration_type_mapping = {
     "OracleDatabaseObject": OracleDatabaseObject,
     "OracleDatabaseObjectSummary": OracleDatabaseObjectSummary,
     "OracleDbLinkDataTransferMediumDetails": OracleDbLinkDataTransferMediumDetails,
+    "OracleGcsDataTransferMediumDetails": OracleGcsDataTransferMediumDetails,
     "OracleGgsDeploymentDetails": OracleGgsDeploymentDetails,
     "OracleInitialLoadSettings": OracleInitialLoadSettings,
     "OracleMigration": OracleMigration,
     "OracleMigrationObjectCollection": OracleMigrationObjectCollection,
-    "OracleMigrationSettings": OracleMigrationSettings,
-    "OracleMigrationSettingsSummary": OracleMigrationSettingsSummary,
     "OracleMigrationSummary": OracleMigrationSummary,
     "OracleNfsDataTransferMediumDetails": OracleNfsDataTransferMediumDetails,
     "OracleObjectStorageDataTransferMediumDetails": OracleObjectStorageDataTransferMediumDetails,
-    "OracleOfflineLogicalMigrationSettings": OracleOfflineLogicalMigrationSettings,
-    "OracleOfflineLogicalMigrationSettingsSummary": OracleOfflineLogicalMigrationSettingsSummary,
-    "OracleOnlineLogicalMigrationSettings": OracleOnlineLogicalMigrationSettings,
-    "OracleOnlineLogicalMigrationSettingsSummary": OracleOnlineLogicalMigrationSettingsSummary,
-    "OracleOnlineStandbyMigrationSettings": OracleOnlineStandbyMigrationSettings,
-    "OracleOnlineStandbyMigrationSettingsSummary": OracleOnlineStandbyMigrationSettingsSummary,
     "ParameterFileVersion": ParameterFileVersion,
     "ParameterFileVersionCollection": ParameterFileVersionCollection,
     "ParameterFileVersionSummary": ParameterFileVersionSummary,
@@ -522,18 +496,16 @@ database_migration_type_mapping = {
     "UpdateOracleAdvisorSettings": UpdateOracleAdvisorSettings,
     "UpdateOracleAssessmentDetails": UpdateOracleAssessmentDetails,
     "UpdateOracleAwsS3DataTransferMediumDetails": UpdateOracleAwsS3DataTransferMediumDetails,
+    "UpdateOracleAzureBlobDataTransferMediumDetails": UpdateOracleAzureBlobDataTransferMediumDetails,
     "UpdateOracleConnectionDetails": UpdateOracleConnectionDetails,
     "UpdateOracleDataTransferMediumDetails": UpdateOracleDataTransferMediumDetails,
     "UpdateOracleDbLinkDataTransferMediumDetails": UpdateOracleDbLinkDataTransferMediumDetails,
+    "UpdateOracleGcsDataTransferMediumDetails": UpdateOracleGcsDataTransferMediumDetails,
     "UpdateOracleGgsDeploymentDetails": UpdateOracleGgsDeploymentDetails,
     "UpdateOracleInitialLoadSettings": UpdateOracleInitialLoadSettings,
     "UpdateOracleMigrationDetails": UpdateOracleMigrationDetails,
-    "UpdateOracleMigrationSettings": UpdateOracleMigrationSettings,
     "UpdateOracleNfsDataTransferMediumDetails": UpdateOracleNfsDataTransferMediumDetails,
     "UpdateOracleObjectStorageDataTransferMediumDetails": UpdateOracleObjectStorageDataTransferMediumDetails,
-    "UpdateOracleOfflineLogicalMigrationSettings": UpdateOracleOfflineLogicalMigrationSettings,
-    "UpdateOracleOnlineLogicalMigrationSettings": UpdateOracleOnlineLogicalMigrationSettings,
-    "UpdateOracleOnlineStandbyMigrationSettings": UpdateOracleOnlineStandbyMigrationSettings,
     "UpdateReplicat": UpdateReplicat,
     "UpdateTargetDefaultsAutoCreateTablespaceDetails": UpdateTargetDefaultsAutoCreateTablespaceDetails,
     "UpdateTargetDefaultsRemapTablespaceDetails": UpdateTargetDefaultsRemapTablespaceDetails,

@@ -1,4 +1,4 @@
-InstanceAgentPluginConfigDetails
+﻿InstanceAgentPluginConfigDetails
 ================================
 
 .. currentmodule:: oci.core.models

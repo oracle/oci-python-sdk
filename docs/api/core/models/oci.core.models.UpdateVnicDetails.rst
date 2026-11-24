@@ -1,4 +1,4 @@
-UpdateVnicDetails
+﻿UpdateVnicDetails
 =================
 
 .. currentmodule:: oci.core.models

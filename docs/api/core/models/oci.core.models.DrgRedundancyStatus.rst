@@ -1,4 +1,4 @@
-DrgRedundancyStatus
+﻿DrgRedundancyStatus
 ===================
 
 .. currentmodule:: oci.core.models

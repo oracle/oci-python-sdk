@@ -1,4 +1,4 @@
-ServiceManagedGpuFleet
+﻿ServiceManagedGpuFleet
 ======================
 
 .. currentmodule:: oci.batch.models

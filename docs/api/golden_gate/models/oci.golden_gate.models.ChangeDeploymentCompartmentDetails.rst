@@ -1,4 +1,4 @@
-ChangeDeploymentCompartmentDetails
+﻿ChangeDeploymentCompartmentDetails
 ==================================
 
 .. currentmodule:: oci.golden_gate.models

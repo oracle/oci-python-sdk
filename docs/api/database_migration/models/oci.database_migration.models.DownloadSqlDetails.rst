@@ -1,4 +1,4 @@
-DownloadSqlDetails
+﻿DownloadSqlDetails
 ==================
 
 .. currentmodule:: oci.database_migration.models

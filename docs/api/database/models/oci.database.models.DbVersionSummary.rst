@@ -1,4 +1,4 @@
-DbVersionSummary
+﻿DbVersionSummary
 ================
 
 .. currentmodule:: oci.database.models

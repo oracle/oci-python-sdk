@@ -1,4 +1,4 @@
-WorkloadType
+﻿WorkloadType
 ============
 
 .. currentmodule:: oci.database.models

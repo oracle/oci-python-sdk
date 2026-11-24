@@ -1,4 +1,4 @@
-ChangeComputeClusterCompartmentDetails
+﻿ChangeComputeClusterCompartmentDetails
 ======================================
 
 .. currentmodule:: oci.core.models

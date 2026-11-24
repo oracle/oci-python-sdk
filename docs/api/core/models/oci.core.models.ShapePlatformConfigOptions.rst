@@ -1,4 +1,4 @@
-ShapePlatformConfigOptions
+﻿ShapePlatformConfigOptions
 ==========================
 
 .. currentmodule:: oci.core.models

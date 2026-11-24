@@ -1,4 +1,4 @@
-UpdateDatabaseRegistrationDetails
+﻿UpdateDatabaseRegistrationDetails
 =================================
 
 .. currentmodule:: oci.golden_gate.models

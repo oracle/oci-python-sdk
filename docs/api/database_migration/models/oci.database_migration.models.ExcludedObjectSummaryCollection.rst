@@ -1,4 +1,4 @@
-ExcludedObjectSummaryCollection
+﻿ExcludedObjectSummaryCollection
 ===============================
 
 .. currentmodule:: oci.database_migration.models

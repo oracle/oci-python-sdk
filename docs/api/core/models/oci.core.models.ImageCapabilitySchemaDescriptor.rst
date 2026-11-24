@@ -1,4 +1,4 @@
-ImageCapabilitySchemaDescriptor
+﻿ImageCapabilitySchemaDescriptor
 ===============================
 
 .. currentmodule:: oci.core.models

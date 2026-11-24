@@ -1,4 +1,4 @@
-FileSystemConfigurationDetail
+﻿FileSystemConfigurationDetail
 =============================
 
 .. currentmodule:: oci.database.models

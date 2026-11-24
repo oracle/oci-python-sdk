@@ -1,4 +1,4 @@
-ManagedSoftwareUpdateInputDetails
+﻿ManagedSoftwareUpdateInputDetails
 =================================
 
 .. currentmodule:: oci.database.models

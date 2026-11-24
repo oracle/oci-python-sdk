@@ -1,4 +1,4 @@
-CloudDbServerDetails
+﻿CloudDbServerDetails
 ====================
 
 .. currentmodule:: oci.database.models

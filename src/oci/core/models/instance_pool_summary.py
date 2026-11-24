@@ -86,6 +86,10 @@ class InstancePoolSummary(object):
             The value to assign to the override_policy property of this InstancePoolSummary.
         :type override_policy: oci.core.models.InstancePoolLaunchOverridePolicy
 
+        :param instance_maintenance_policy:
+            The value to assign to the instance_maintenance_policy property of this InstancePoolSummary.
+        :type instance_maintenance_policy: oci.core.models.InstancePoolMaintenancePolicyDetails
+
         :param size:
             The value to assign to the size property of this InstancePoolSummary.
         :type size: int
@@ -116,6 +120,7 @@ class InstancePoolSummary(object):
             'lifecycle_state': 'str',
             'availability_domains': 'list[str]',
             'override_policy': 'InstancePoolLaunchOverridePolicy',
+            'instance_maintenance_policy': 'InstancePoolMaintenancePolicyDetails',
             'size': 'int',
             'time_created': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -131,6 +136,7 @@ class InstancePoolSummary(object):
             'lifecycle_state': 'lifecycleState',
             'availability_domains': 'availabilityDomains',
             'override_policy': 'overridePolicy',
+            'instance_maintenance_policy': 'instanceMaintenancePolicy',
             'size': 'size',
             'time_created': 'timeCreated',
             'defined_tags': 'definedTags',
@@ -145,6 +151,7 @@ class InstancePoolSummary(object):
         self._lifecycle_state = None
         self._availability_domains = None
         self._override_policy = None
+        self._instance_maintenance_policy = None
         self._size = None
         self._time_created = None
         self._defined_tags = None
@@ -346,6 +353,26 @@ class InstancePoolSummary(object):
         :type: oci.core.models.InstancePoolLaunchOverridePolicy
         """
         self._override_policy = override_policy
+
+    @property
+    def instance_maintenance_policy(self):
+        """
+        Gets the instance_maintenance_policy of this InstancePoolSummary.
+
+        :return: The instance_maintenance_policy of this InstancePoolSummary.
+        :rtype: oci.core.models.InstancePoolMaintenancePolicyDetails
+        """
+        return self._instance_maintenance_policy
+
+    @instance_maintenance_policy.setter
+    def instance_maintenance_policy(self, instance_maintenance_policy):
+        """
+        Sets the instance_maintenance_policy of this InstancePoolSummary.
+
+        :param instance_maintenance_policy: The instance_maintenance_policy of this InstancePoolSummary.
+        :type: oci.core.models.InstancePoolMaintenancePolicyDetails
+        """
+        self._instance_maintenance_policy = instance_maintenance_policy
 
     @property
     def size(self):

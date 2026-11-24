@@ -1,4 +1,4 @@
-CreateSnowflakeConnectionDetails
+﻿CreateSnowflakeConnectionDetails
 ================================
 
 .. currentmodule:: oci.golden_gate.models

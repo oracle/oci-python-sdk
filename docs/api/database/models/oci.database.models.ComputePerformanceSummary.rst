@@ -1,4 +1,4 @@
-ComputePerformanceSummary
+﻿ComputePerformanceSummary
 =========================
 
 .. currentmodule:: oci.database.models

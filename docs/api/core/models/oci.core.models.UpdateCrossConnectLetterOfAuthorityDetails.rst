@@ -1,4 +1,4 @@
-UpdateCrossConnectLetterOfAuthorityDetails
+﻿UpdateCrossConnectLetterOfAuthorityDetails
 ==========================================
 
 .. currentmodule:: oci.core.models

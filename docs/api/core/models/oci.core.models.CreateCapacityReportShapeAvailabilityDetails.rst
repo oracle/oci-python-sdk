@@ -1,4 +1,4 @@
-CreateCapacityReportShapeAvailabilityDetails
+﻿CreateCapacityReportShapeAvailabilityDetails
 ============================================
 
 .. currentmodule:: oci.core.models

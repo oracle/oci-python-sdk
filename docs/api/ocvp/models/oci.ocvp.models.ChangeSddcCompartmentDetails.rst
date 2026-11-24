@@ -1,4 +1,4 @@
-ChangeSddcCompartmentDetails
+﻿ChangeSddcCompartmentDetails
 ============================
 
 .. currentmodule:: oci.ocvp.models

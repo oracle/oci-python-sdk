@@ -6,6 +6,7 @@ from __future__ import absolute_import
 import ctypes.util
 import ctypes
 import logging
+from oci._logging import NULL_HANDLER
 import os
 import re
 import ssl
@@ -35,7 +36,7 @@ def override_libcrypto(fips_libcrypto_path):
     Override libcrypto and add FIPS_mode function to ssl if it is not there
     """
     logger = logging.getLogger("{}.{}".format(__name__, id(override_libcrypto)))
-    logger.addHandler(logging.NullHandler())
+    logger.addHandler(NULL_HANDLER)
     openssl_version = get_openssl_version()
     if openssl_version.startswith("1") and fips_libcrypto_path is not None:
         # Handle Openssl 1
@@ -78,7 +79,7 @@ def is_fips_mode():
     exception
     """
     logger = logging.getLogger("{}.{}".format(__name__, id(is_fips_mode)))
-    logger.addHandler(logging.NullHandler())
+    logger.addHandler(NULL_HANDLER)
     openssl_version = get_openssl_version()
     if openssl_version.startswith("1"):
         import ssl
@@ -104,7 +105,7 @@ def enable_fips_mode(fips_libcrypto_path=None):
     """
     openssl_version = get_openssl_version()
     logger = logging.getLogger("{}.{}".format(__name__, id(enable_fips_mode)))
-    logger.addHandler(logging.NullHandler())
+    logger.addHandler(NULL_HANDLER)
 
     if not fips_libcrypto_path:
         if 'FIPS_LIBCRYPTO_PATH' in os.environ:

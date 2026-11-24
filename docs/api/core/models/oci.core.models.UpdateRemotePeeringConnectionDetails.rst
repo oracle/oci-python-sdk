@@ -1,4 +1,4 @@
-UpdateRemotePeeringConnectionDetails
+﻿UpdateRemotePeeringConnectionDetails
 ====================================
 
 .. currentmodule:: oci.core.models

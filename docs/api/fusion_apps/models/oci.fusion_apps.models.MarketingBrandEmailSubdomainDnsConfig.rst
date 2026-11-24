@@ -1,4 +1,4 @@
-MarketingBrandEmailSubdomainDnsConfig
+﻿MarketingBrandEmailSubdomainDnsConfig
 =====================================
 
 .. currentmodule:: oci.fusion_apps.models

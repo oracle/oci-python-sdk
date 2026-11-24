@@ -1,4 +1,4 @@
-DownloadDbConnectionBundleDetails
+﻿DownloadDbConnectionBundleDetails
 =================================
 
 .. currentmodule:: oci.database.models

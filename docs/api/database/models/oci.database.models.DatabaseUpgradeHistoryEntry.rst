@@ -1,4 +1,4 @@
-DatabaseUpgradeHistoryEntry
+﻿DatabaseUpgradeHistoryEntry
 ===========================
 
 .. currentmodule:: oci.database.models

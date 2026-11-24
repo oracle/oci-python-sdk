@@ -1,4 +1,4 @@
-SecretMigrateConnectionDetails
+﻿SecretMigrateConnectionDetails
 ==============================
 
 .. currentmodule:: oci.golden_gate.models

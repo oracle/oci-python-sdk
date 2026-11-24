@@ -1,4 +1,4 @@
-InstancePoolLaunchOverrideShapeConfigDetails
+﻿InstancePoolLaunchOverrideShapeConfigDetails
 ============================================
 
 .. currentmodule:: oci.core.models

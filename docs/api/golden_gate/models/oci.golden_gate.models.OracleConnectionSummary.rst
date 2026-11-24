@@ -1,4 +1,4 @@
-OracleConnectionSummary
+﻿OracleConnectionSummary
 =======================
 
 .. currentmodule:: oci.golden_gate.models

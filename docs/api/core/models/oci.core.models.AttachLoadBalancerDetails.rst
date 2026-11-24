@@ -1,4 +1,4 @@
-AttachLoadBalancerDetails
+﻿AttachLoadBalancerDetails
 =========================
 
 .. currentmodule:: oci.core.models

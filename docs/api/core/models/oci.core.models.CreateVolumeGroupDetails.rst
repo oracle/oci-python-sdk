@@ -1,4 +1,4 @@
-CreateVolumeGroupDetails
+﻿CreateVolumeGroupDetails
 ========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-ComputeInstanceOptions
+﻿ComputeInstanceOptions
 ======================
 
 .. currentmodule:: oci.core.models

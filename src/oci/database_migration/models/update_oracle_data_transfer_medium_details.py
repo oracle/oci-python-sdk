@@ -28,6 +28,14 @@ class UpdateOracleDataTransferMediumDetails(object):
     TYPE_AWS_S3 = "AWS_S3"
 
     #: A constant which can be used with the type property of a UpdateOracleDataTransferMediumDetails.
+    #: This constant has a value of "AZURE_BLOB"
+    TYPE_AZURE_BLOB = "AZURE_BLOB"
+
+    #: A constant which can be used with the type property of a UpdateOracleDataTransferMediumDetails.
+    #: This constant has a value of "GCS"
+    TYPE_GCS = "GCS"
+
+    #: A constant which can be used with the type property of a UpdateOracleDataTransferMediumDetails.
     #: This constant has a value of "NFS"
     TYPE_NFS = "NFS"
 
@@ -36,16 +44,18 @@ class UpdateOracleDataTransferMediumDetails(object):
         Initializes a new UpdateOracleDataTransferMediumDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.database_migration.models.UpdateOracleGcsDataTransferMediumDetails`
         * :class:`~oci.database_migration.models.UpdateOracleAwsS3DataTransferMediumDetails`
         * :class:`~oci.database_migration.models.UpdateOracleNfsDataTransferMediumDetails`
         * :class:`~oci.database_migration.models.UpdateOracleObjectStorageDataTransferMediumDetails`
+        * :class:`~oci.database_migration.models.UpdateOracleAzureBlobDataTransferMediumDetails`
         * :class:`~oci.database_migration.models.UpdateOracleDbLinkDataTransferMediumDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this UpdateOracleDataTransferMediumDetails.
-            Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "NFS"
+            Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "AZURE_BLOB", "GCS", "NFS"
         :type type: str
 
         """
@@ -65,6 +75,9 @@ class UpdateOracleDataTransferMediumDetails(object):
         """
         type = object_dictionary['type']
 
+        if type == 'GCS':
+            return 'UpdateOracleGcsDataTransferMediumDetails'
+
         if type == 'AWS_S3':
             return 'UpdateOracleAwsS3DataTransferMediumDetails'
 
@@ -73,6 +86,9 @@ class UpdateOracleDataTransferMediumDetails(object):
 
         if type == 'OBJECT_STORAGE':
             return 'UpdateOracleObjectStorageDataTransferMediumDetails'
+
+        if type == 'AZURE_BLOB':
+            return 'UpdateOracleAzureBlobDataTransferMediumDetails'
 
         if type == 'DBLINK':
             return 'UpdateOracleDbLinkDataTransferMediumDetails'
@@ -85,7 +101,7 @@ class UpdateOracleDataTransferMediumDetails(object):
         **[Required]** Gets the type of this UpdateOracleDataTransferMediumDetails.
         Type of the data transfer medium to use.
 
-        Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "NFS"
+        Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "AZURE_BLOB", "GCS", "NFS"
 
 
         :return: The type of this UpdateOracleDataTransferMediumDetails.
@@ -103,7 +119,7 @@ class UpdateOracleDataTransferMediumDetails(object):
         :param type: The type of this UpdateOracleDataTransferMediumDetails.
         :type: str
         """
-        allowed_values = ["DBLINK", "OBJECT_STORAGE", "AWS_S3", "NFS"]
+        allowed_values = ["DBLINK", "OBJECT_STORAGE", "AWS_S3", "AZURE_BLOB", "GCS", "NFS"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

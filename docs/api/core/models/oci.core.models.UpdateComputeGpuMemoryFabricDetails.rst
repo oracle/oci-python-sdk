@@ -1,4 +1,4 @@
-UpdateComputeGpuMemoryFabricDetails
+﻿UpdateComputeGpuMemoryFabricDetails
 ===================================
 
 .. currentmodule:: oci.core.models

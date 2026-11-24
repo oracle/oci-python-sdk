@@ -1,4 +1,4 @@
-CreateDrgDetails
+﻿CreateDrgDetails
 ================
 
 .. currentmodule:: oci.core.models

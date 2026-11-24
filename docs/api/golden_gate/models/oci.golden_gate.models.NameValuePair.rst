@@ -1,4 +1,4 @@
-NameValuePair
+﻿NameValuePair
 =============
 
 .. currentmodule:: oci.golden_gate.models

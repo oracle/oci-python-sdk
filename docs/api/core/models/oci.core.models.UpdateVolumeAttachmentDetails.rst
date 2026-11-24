@@ -1,4 +1,4 @@
-UpdateVolumeAttachmentDetails
+﻿UpdateVolumeAttachmentDetails
 =============================
 
 .. currentmodule:: oci.core.models

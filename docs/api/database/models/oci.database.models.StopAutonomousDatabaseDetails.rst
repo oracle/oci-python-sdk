@@ -1,4 +1,4 @@
-StopAutonomousDatabaseDetails
+﻿StopAutonomousDatabaseDetails
 =============================
 
 .. currentmodule:: oci.database.models

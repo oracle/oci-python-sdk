@@ -1,4 +1,4 @@
-CreateSubnetDetails
+﻿CreateSubnetDetails
 ===================
 
 .. currentmodule:: oci.core.models

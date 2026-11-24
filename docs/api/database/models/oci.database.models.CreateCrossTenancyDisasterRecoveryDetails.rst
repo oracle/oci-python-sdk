@@ -1,4 +1,4 @@
-CreateCrossTenancyDisasterRecoveryDetails
+﻿CreateCrossTenancyDisasterRecoveryDetails
 =========================================
 
 .. currentmodule:: oci.database.models

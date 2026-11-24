@@ -1,4 +1,4 @@
-StopBatchJobPoolDetails
+﻿StopBatchJobPoolDetails
 =======================
 
 .. currentmodule:: oci.batch.models

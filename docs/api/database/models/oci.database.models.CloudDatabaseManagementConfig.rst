@@ -1,4 +1,4 @@
-CloudDatabaseManagementConfig
+﻿CloudDatabaseManagementConfig
 =============================
 
 .. currentmodule:: oci.database.models

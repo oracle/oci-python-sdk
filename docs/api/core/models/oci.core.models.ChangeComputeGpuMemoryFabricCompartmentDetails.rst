@@ -1,4 +1,4 @@
-ChangeComputeGpuMemoryFabricCompartmentDetails
+﻿ChangeComputeGpuMemoryFabricCompartmentDetails
 ==============================================
 
 .. currentmodule:: oci.core.models

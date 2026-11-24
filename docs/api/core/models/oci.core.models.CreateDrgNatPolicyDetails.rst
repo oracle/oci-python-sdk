@@ -1,4 +1,4 @@
-CreateDrgNatPolicyDetails
+﻿CreateDrgNatPolicyDetails
 =========================
 
 .. currentmodule:: oci.core.models

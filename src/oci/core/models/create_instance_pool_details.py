@@ -72,6 +72,10 @@ class CreateInstancePoolDetails(object):
             The value to assign to the lifecycle_management property of this CreateInstancePoolDetails.
         :type lifecycle_management: oci.core.models.InstancePoolLifecycleManagementDetails
 
+        :param instance_maintenance_policy:
+            The value to assign to the instance_maintenance_policy property of this CreateInstancePoolDetails.
+        :type instance_maintenance_policy: oci.core.models.InstancePoolMaintenancePolicyDetails
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -85,7 +89,8 @@ class CreateInstancePoolDetails(object):
             'override_policy': 'InstancePoolLaunchOverridePolicy',
             'instance_display_name_formatter': 'str',
             'instance_hostname_formatter': 'str',
-            'lifecycle_management': 'InstancePoolLifecycleManagementDetails'
+            'lifecycle_management': 'InstancePoolLifecycleManagementDetails',
+            'instance_maintenance_policy': 'InstancePoolMaintenancePolicyDetails'
         }
         self.attribute_map = {
             'compartment_id': 'compartmentId',
@@ -99,7 +104,8 @@ class CreateInstancePoolDetails(object):
             'override_policy': 'overridePolicy',
             'instance_display_name_formatter': 'instanceDisplayNameFormatter',
             'instance_hostname_formatter': 'instanceHostnameFormatter',
-            'lifecycle_management': 'lifecycleManagement'
+            'lifecycle_management': 'lifecycleManagement',
+            'instance_maintenance_policy': 'instanceMaintenancePolicy'
         }
         self._compartment_id = None
         self._defined_tags = None
@@ -113,6 +119,7 @@ class CreateInstancePoolDetails(object):
         self._instance_display_name_formatter = None
         self._instance_hostname_formatter = None
         self._lifecycle_management = None
+        self._instance_maintenance_policy = None
 
     @property
     def compartment_id(self):
@@ -443,6 +450,26 @@ class CreateInstancePoolDetails(object):
         :type: oci.core.models.InstancePoolLifecycleManagementDetails
         """
         self._lifecycle_management = lifecycle_management
+
+    @property
+    def instance_maintenance_policy(self):
+        """
+        Gets the instance_maintenance_policy of this CreateInstancePoolDetails.
+
+        :return: The instance_maintenance_policy of this CreateInstancePoolDetails.
+        :rtype: oci.core.models.InstancePoolMaintenancePolicyDetails
+        """
+        return self._instance_maintenance_policy
+
+    @instance_maintenance_policy.setter
+    def instance_maintenance_policy(self, instance_maintenance_policy):
+        """
+        Sets the instance_maintenance_policy of this CreateInstancePoolDetails.
+
+        :param instance_maintenance_policy: The instance_maintenance_policy of this CreateInstancePoolDetails.
+        :type: oci.core.models.InstancePoolMaintenancePolicyDetails
+        """
+        self._instance_maintenance_policy = instance_maintenance_policy
 
     def __repr__(self):
         return formatted_flat_dict(self)

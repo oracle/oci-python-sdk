@@ -1,4 +1,4 @@
-AmdRomeBmLaunchInstancePlatformConfig
+﻿AmdRomeBmLaunchInstancePlatformConfig
 =====================================
 
 .. currentmodule:: oci.core.models

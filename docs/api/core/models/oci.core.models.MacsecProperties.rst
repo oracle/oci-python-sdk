@@ -1,4 +1,4 @@
-MacsecProperties
+﻿MacsecProperties
 ================
 
 .. currentmodule:: oci.core.models

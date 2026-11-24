@@ -1,4 +1,4 @@
-CreateAmazonS3ConnectionDetails
+﻿CreateAmazonS3ConnectionDetails
 ===============================
 
 .. currentmodule:: oci.golden_gate.models

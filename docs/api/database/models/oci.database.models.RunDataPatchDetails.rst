@@ -1,4 +1,4 @@
-RunDataPatchDetails
+﻿RunDataPatchDetails
 ===================
 
 .. currentmodule:: oci.database.models

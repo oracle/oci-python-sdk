@@ -74,6 +74,14 @@ class KeyStoreSummary(object):
             The value to assign to the associated_long_term_backup_count property of this KeyStoreSummary.
         :type associated_long_term_backup_count: int
 
+        :param associated_autonomous_vm_clusters:
+            The value to assign to the associated_autonomous_vm_clusters property of this KeyStoreSummary.
+        :type associated_autonomous_vm_clusters: list[oci.database.models.KeyStoreAssociatedAutonomousVmClusterDetails]
+
+        :param associated_cloud_autonomous_vm_clusters:
+            The value to assign to the associated_cloud_autonomous_vm_clusters property of this KeyStoreSummary.
+        :type associated_cloud_autonomous_vm_clusters: list[oci.database.models.KeyStoreAssociatedCloudAutonomousVmClusterDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this KeyStoreSummary.
         :type freeform_tags: dict(str, str)
@@ -98,6 +106,8 @@ class KeyStoreSummary(object):
             'associated_databases': 'list[KeyStoreAssociatedDatabaseDetails]',
             'associated_long_term_backups': 'list[AssociatedLongTermBackup]',
             'associated_long_term_backup_count': 'int',
+            'associated_autonomous_vm_clusters': 'list[KeyStoreAssociatedAutonomousVmClusterDetails]',
+            'associated_cloud_autonomous_vm_clusters': 'list[KeyStoreAssociatedCloudAutonomousVmClusterDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -113,6 +123,8 @@ class KeyStoreSummary(object):
             'associated_databases': 'associatedDatabases',
             'associated_long_term_backups': 'associatedLongTermBackups',
             'associated_long_term_backup_count': 'associatedLongTermBackupCount',
+            'associated_autonomous_vm_clusters': 'associatedAutonomousVmClusters',
+            'associated_cloud_autonomous_vm_clusters': 'associatedCloudAutonomousVmClusters',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -127,6 +139,8 @@ class KeyStoreSummary(object):
         self._associated_databases = None
         self._associated_long_term_backups = None
         self._associated_long_term_backup_count = None
+        self._associated_autonomous_vm_clusters = None
+        self._associated_cloud_autonomous_vm_clusters = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -380,6 +394,54 @@ class KeyStoreSummary(object):
         :type: int
         """
         self._associated_long_term_backup_count = associated_long_term_backup_count
+
+    @property
+    def associated_autonomous_vm_clusters(self):
+        """
+        Gets the associated_autonomous_vm_clusters of this KeyStoreSummary.
+        List of Autonomous VM Clusters associated with the key store.
+
+
+        :return: The associated_autonomous_vm_clusters of this KeyStoreSummary.
+        :rtype: list[oci.database.models.KeyStoreAssociatedAutonomousVmClusterDetails]
+        """
+        return self._associated_autonomous_vm_clusters
+
+    @associated_autonomous_vm_clusters.setter
+    def associated_autonomous_vm_clusters(self, associated_autonomous_vm_clusters):
+        """
+        Sets the associated_autonomous_vm_clusters of this KeyStoreSummary.
+        List of Autonomous VM Clusters associated with the key store.
+
+
+        :param associated_autonomous_vm_clusters: The associated_autonomous_vm_clusters of this KeyStoreSummary.
+        :type: list[oci.database.models.KeyStoreAssociatedAutonomousVmClusterDetails]
+        """
+        self._associated_autonomous_vm_clusters = associated_autonomous_vm_clusters
+
+    @property
+    def associated_cloud_autonomous_vm_clusters(self):
+        """
+        Gets the associated_cloud_autonomous_vm_clusters of this KeyStoreSummary.
+        List of Cloud Autonomous VM Clusters associated with the key store.
+
+
+        :return: The associated_cloud_autonomous_vm_clusters of this KeyStoreSummary.
+        :rtype: list[oci.database.models.KeyStoreAssociatedCloudAutonomousVmClusterDetails]
+        """
+        return self._associated_cloud_autonomous_vm_clusters
+
+    @associated_cloud_autonomous_vm_clusters.setter
+    def associated_cloud_autonomous_vm_clusters(self, associated_cloud_autonomous_vm_clusters):
+        """
+        Sets the associated_cloud_autonomous_vm_clusters of this KeyStoreSummary.
+        List of Cloud Autonomous VM Clusters associated with the key store.
+
+
+        :param associated_cloud_autonomous_vm_clusters: The associated_cloud_autonomous_vm_clusters of this KeyStoreSummary.
+        :type: list[oci.database.models.KeyStoreAssociatedCloudAutonomousVmClusterDetails]
+        """
+        self._associated_cloud_autonomous_vm_clusters = associated_cloud_autonomous_vm_clusters
 
     @property
     def freeform_tags(self):

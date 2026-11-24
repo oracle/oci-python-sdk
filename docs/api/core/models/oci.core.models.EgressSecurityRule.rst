@@ -1,4 +1,4 @@
-EgressSecurityRule
+﻿EgressSecurityRule
 ==================
 
 .. currentmodule:: oci.core.models

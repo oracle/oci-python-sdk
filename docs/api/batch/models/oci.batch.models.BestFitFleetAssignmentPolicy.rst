@@ -1,4 +1,4 @@
-BestFitFleetAssignmentPolicy
+﻿BestFitFleetAssignmentPolicy
 ============================
 
 .. currentmodule:: oci.batch.models

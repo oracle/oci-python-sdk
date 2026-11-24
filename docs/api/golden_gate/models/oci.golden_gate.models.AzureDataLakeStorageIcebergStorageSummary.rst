@@ -1,4 +1,4 @@
-AzureDataLakeStorageIcebergStorageSummary
+﻿AzureDataLakeStorageIcebergStorageSummary
 =========================================
 
 .. currentmodule:: oci.golden_gate.models

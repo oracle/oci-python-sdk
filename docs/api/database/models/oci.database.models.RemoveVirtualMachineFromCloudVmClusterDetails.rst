@@ -1,4 +1,4 @@
-RemoveVirtualMachineFromCloudVmClusterDetails
+﻿RemoveVirtualMachineFromCloudVmClusterDetails
 =============================================
 
 .. currentmodule:: oci.database.models

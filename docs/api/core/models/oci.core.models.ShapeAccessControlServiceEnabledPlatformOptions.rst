@@ -1,4 +1,4 @@
-ShapeAccessControlServiceEnabledPlatformOptions
+﻿ShapeAccessControlServiceEnabledPlatformOptions
 ===============================================
 
 .. currentmodule:: oci.core.models

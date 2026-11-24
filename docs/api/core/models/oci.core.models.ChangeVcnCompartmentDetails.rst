@@ -1,4 +1,4 @@
-ChangeVcnCompartmentDetails
+﻿ChangeVcnCompartmentDetails
 ===========================
 
 .. currentmodule:: oci.core.models

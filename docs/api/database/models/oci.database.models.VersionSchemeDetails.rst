@@ -1,4 +1,4 @@
-VersionSchemeDetails
+﻿VersionSchemeDetails
 ====================
 
 .. currentmodule:: oci.database.models

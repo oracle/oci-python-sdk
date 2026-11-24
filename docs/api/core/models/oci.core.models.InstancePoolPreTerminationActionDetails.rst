@@ -1,4 +1,4 @@
-InstancePoolPreTerminationActionDetails
+﻿InstancePoolPreTerminationActionDetails
 =======================================
 
 .. currentmodule:: oci.core.models

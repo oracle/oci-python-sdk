@@ -1,4 +1,4 @@
-TrailSequenceSummary
+﻿TrailSequenceSummary
 ====================
 
 .. currentmodule:: oci.golden_gate.models

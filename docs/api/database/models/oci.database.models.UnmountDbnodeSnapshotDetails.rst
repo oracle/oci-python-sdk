@@ -1,4 +1,4 @@
-UnmountDbnodeSnapshotDetails
+﻿UnmountDbnodeSnapshotDetails
 ============================
 
 .. currentmodule:: oci.database.models

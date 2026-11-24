@@ -1,4 +1,4 @@
-VnicAttachment
+﻿VnicAttachment
 ==============
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-UpdateComputeHostGroupDetails
+﻿UpdateComputeHostGroupDetails
 =============================
 
 .. currentmodule:: oci.core.models

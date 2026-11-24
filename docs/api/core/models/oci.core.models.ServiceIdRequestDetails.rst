@@ -1,4 +1,4 @@
-ServiceIdRequestDetails
+﻿ServiceIdRequestDetails
 =======================
 
 .. currentmodule:: oci.core.models

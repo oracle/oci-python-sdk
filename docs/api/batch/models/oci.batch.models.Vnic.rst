@@ -1,4 +1,4 @@
-Vnic
+﻿Vnic
 ====
 
 .. currentmodule:: oci.batch.models

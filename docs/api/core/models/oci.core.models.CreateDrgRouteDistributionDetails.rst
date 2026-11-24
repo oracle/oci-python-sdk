@@ -1,4 +1,4 @@
-CreateDrgRouteDistributionDetails
+﻿CreateDrgRouteDistributionDetails
 =================================
 
 .. currentmodule:: oci.core.models

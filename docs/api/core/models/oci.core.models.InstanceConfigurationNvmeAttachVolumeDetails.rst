@@ -1,4 +1,4 @@
-InstanceConfigurationNvmeAttachVolumeDetails
+﻿InstanceConfigurationNvmeAttachVolumeDetails
 ============================================
 
 .. currentmodule:: oci.core.models

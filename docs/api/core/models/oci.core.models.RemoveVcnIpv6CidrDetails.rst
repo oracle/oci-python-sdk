@@ -1,4 +1,4 @@
-RemoveVcnIpv6CidrDetails
+﻿RemoveVcnIpv6CidrDetails
 ========================
 
 .. currentmodule:: oci.core.models

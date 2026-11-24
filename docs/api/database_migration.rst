@@ -56,10 +56,6 @@ Database Migration
     oci.database_migration.models.ChangeMigrationCompartmentDetails
     oci.database_migration.models.CloneAssessmentDetails
     oci.database_migration.models.CloneMigrationDetails
-    oci.database_migration.models.CloneOracleMigrationSettings
-    oci.database_migration.models.CloneOracleOfflineLogicalMigrationSettings
-    oci.database_migration.models.CloneOracleOnlineLogicalMigrationSettings
-    oci.database_migration.models.CloneOracleOnlineStandbyMigrationSettings
     oci.database_migration.models.CollectTracesData
     oci.database_migration.models.CollectTracesDetails
     oci.database_migration.models.Connection
@@ -93,18 +89,16 @@ Database Migration
     oci.database_migration.models.CreateOracleAdvisorSettings
     oci.database_migration.models.CreateOracleAssessmentDetails
     oci.database_migration.models.CreateOracleAwsS3DataTransferMediumDetails
+    oci.database_migration.models.CreateOracleAzureBlobDataTransferMediumDetails
     oci.database_migration.models.CreateOracleConnectionDetails
     oci.database_migration.models.CreateOracleDataTransferMediumDetails
     oci.database_migration.models.CreateOracleDbLinkDataTransferMediumDetails
+    oci.database_migration.models.CreateOracleGcsDataTransferMediumDetails
     oci.database_migration.models.CreateOracleGgsDeploymentDetails
     oci.database_migration.models.CreateOracleInitialLoadSettings
     oci.database_migration.models.CreateOracleMigrationDetails
-    oci.database_migration.models.CreateOracleMigrationSettings
     oci.database_migration.models.CreateOracleNfsDataTransferMediumDetails
     oci.database_migration.models.CreateOracleObjectStorageDataTransferMediumDetails
-    oci.database_migration.models.CreateOracleOfflineLogicalMigrationSettings
-    oci.database_migration.models.CreateOracleOnlineLogicalMigrationSettings
-    oci.database_migration.models.CreateOracleOnlineStandbyMigrationSettings
     oci.database_migration.models.CreateParameterFileVersionDetails
     oci.database_migration.models.CreateReplicat
     oci.database_migration.models.CreateTargetTypeTablespaceDetails
@@ -187,6 +181,7 @@ Database Migration
     oci.database_migration.models.OracleAssessmentObjectCollection
     oci.database_migration.models.OracleAssessmentSummary
     oci.database_migration.models.OracleAwsS3DataTransferMediumDetails
+    oci.database_migration.models.OracleAzureBlobDataTransferMediumDetails
     oci.database_migration.models.OracleCloneAssessmentDetails
     oci.database_migration.models.OracleCloneMigrationDetails
     oci.database_migration.models.OracleConnection
@@ -198,21 +193,14 @@ Database Migration
     oci.database_migration.models.OracleDatabaseObject
     oci.database_migration.models.OracleDatabaseObjectSummary
     oci.database_migration.models.OracleDbLinkDataTransferMediumDetails
+    oci.database_migration.models.OracleGcsDataTransferMediumDetails
     oci.database_migration.models.OracleGgsDeploymentDetails
     oci.database_migration.models.OracleInitialLoadSettings
     oci.database_migration.models.OracleMigration
     oci.database_migration.models.OracleMigrationObjectCollection
-    oci.database_migration.models.OracleMigrationSettings
-    oci.database_migration.models.OracleMigrationSettingsSummary
     oci.database_migration.models.OracleMigrationSummary
     oci.database_migration.models.OracleNfsDataTransferMediumDetails
     oci.database_migration.models.OracleObjectStorageDataTransferMediumDetails
-    oci.database_migration.models.OracleOfflineLogicalMigrationSettings
-    oci.database_migration.models.OracleOfflineLogicalMigrationSettingsSummary
-    oci.database_migration.models.OracleOnlineLogicalMigrationSettings
-    oci.database_migration.models.OracleOnlineLogicalMigrationSettingsSummary
-    oci.database_migration.models.OracleOnlineStandbyMigrationSettings
-    oci.database_migration.models.OracleOnlineStandbyMigrationSettingsSummary
     oci.database_migration.models.ParameterFileVersion
     oci.database_migration.models.ParameterFileVersionCollection
     oci.database_migration.models.ParameterFileVersionSummary
@@ -261,18 +249,16 @@ Database Migration
     oci.database_migration.models.UpdateOracleAdvisorSettings
     oci.database_migration.models.UpdateOracleAssessmentDetails
     oci.database_migration.models.UpdateOracleAwsS3DataTransferMediumDetails
+    oci.database_migration.models.UpdateOracleAzureBlobDataTransferMediumDetails
     oci.database_migration.models.UpdateOracleConnectionDetails
     oci.database_migration.models.UpdateOracleDataTransferMediumDetails
     oci.database_migration.models.UpdateOracleDbLinkDataTransferMediumDetails
+    oci.database_migration.models.UpdateOracleGcsDataTransferMediumDetails
     oci.database_migration.models.UpdateOracleGgsDeploymentDetails
     oci.database_migration.models.UpdateOracleInitialLoadSettings
     oci.database_migration.models.UpdateOracleMigrationDetails
-    oci.database_migration.models.UpdateOracleMigrationSettings
     oci.database_migration.models.UpdateOracleNfsDataTransferMediumDetails
     oci.database_migration.models.UpdateOracleObjectStorageDataTransferMediumDetails
-    oci.database_migration.models.UpdateOracleOfflineLogicalMigrationSettings
-    oci.database_migration.models.UpdateOracleOnlineLogicalMigrationSettings
-    oci.database_migration.models.UpdateOracleOnlineStandbyMigrationSettings
     oci.database_migration.models.UpdateReplicat
     oci.database_migration.models.UpdateTargetDefaultsAutoCreateTablespaceDetails
     oci.database_migration.models.UpdateTargetDefaultsRemapTablespaceDetails

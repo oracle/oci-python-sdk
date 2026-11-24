@@ -1,4 +1,4 @@
-VcnDnsResolverAssociation
+﻿VcnDnsResolverAssociation
 =========================
 
 .. currentmodule:: oci.core.models

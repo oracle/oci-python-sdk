@@ -1,4 +1,4 @@
-InstancePoolPlacementConfiguration
+﻿InstancePoolPlacementConfiguration
 ==================================
 
 .. currentmodule:: oci.core.models

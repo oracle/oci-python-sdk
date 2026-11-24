@@ -1,4 +1,4 @@
-CreateFusionEnvironmentDetails
+﻿CreateFusionEnvironmentDetails
 ==============================
 
 .. currentmodule:: oci.fusion_apps.models

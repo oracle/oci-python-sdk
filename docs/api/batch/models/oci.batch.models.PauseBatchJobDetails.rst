@@ -1,4 +1,4 @@
-PauseBatchJobDetails
+﻿PauseBatchJobDetails
 ====================
 
 .. currentmodule:: oci.batch.models

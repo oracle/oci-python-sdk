@@ -1,4 +1,4 @@
-DbIormConfigUpdateDetail
+﻿DbIormConfigUpdateDetail
 ========================
 
 .. currentmodule:: oci.database.models

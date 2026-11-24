@@ -23,7 +23,7 @@ class CreateOracleDbLinkDataTransferMediumDetails(CreateOracleDataTransferMedium
 
         :param type:
             The value to assign to the type property of this CreateOracleDbLinkDataTransferMediumDetails.
-            Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "NFS"
+            Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "AZURE_BLOB", "GCS", "NFS"
         :type type: str
 
         :param object_storage_bucket:

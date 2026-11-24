@@ -1,4 +1,4 @@
-IcebergCatalogSummary
+﻿IcebergCatalogSummary
 =====================
 
 .. currentmodule:: oci.golden_gate.models

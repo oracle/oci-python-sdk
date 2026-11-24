@@ -1,0 +1,11 @@
+﻿OciVaultKeyManagementSystemDetails
+==================================
+
+.. currentmodule:: oci.database.models
+
+.. autoclass:: OciVaultKeyManagementSystemDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -1,4 +1,4 @@
-UpdateMySqlGgsDeploymentDetails
+﻿UpdateMySqlGgsDeploymentDetails
 ===============================
 
 .. currentmodule:: oci.database_migration.models

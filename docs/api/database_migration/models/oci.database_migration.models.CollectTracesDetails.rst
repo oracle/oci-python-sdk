@@ -1,4 +1,4 @@
-CollectTracesDetails
+﻿CollectTracesDetails
 ====================
 
 .. currentmodule:: oci.database_migration.models

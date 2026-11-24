@@ -1,4 +1,4 @@
-VolumeGroupSourceFromVolumeGroupBackupDetails
+﻿VolumeGroupSourceFromVolumeGroupBackupDetails
 =============================================
 
 .. currentmodule:: oci.core.models

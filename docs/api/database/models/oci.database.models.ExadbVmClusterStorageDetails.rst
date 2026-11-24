@@ -1,4 +1,4 @@
-ExadbVmClusterStorageDetails
+﻿ExadbVmClusterStorageDetails
 ============================
 
 .. currentmodule:: oci.database.models

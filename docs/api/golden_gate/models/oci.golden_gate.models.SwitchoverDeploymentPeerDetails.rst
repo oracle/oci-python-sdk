@@ -1,4 +1,4 @@
-SwitchoverDeploymentPeerDetails
+﻿SwitchoverDeploymentPeerDetails
 ===============================
 
 .. currentmodule:: oci.golden_gate.models

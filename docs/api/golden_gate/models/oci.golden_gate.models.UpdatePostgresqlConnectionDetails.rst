@@ -1,4 +1,4 @@
-UpdatePostgresqlConnectionDetails
+﻿UpdatePostgresqlConnectionDetails
 =================================
 
 .. currentmodule:: oci.golden_gate.models

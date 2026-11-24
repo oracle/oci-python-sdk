@@ -1,4 +1,4 @@
-EnumIntegerImageCapabilityDescriptor
+﻿EnumIntegerImageCapabilityDescriptor
 ====================================
 
 .. currentmodule:: oci.core.models

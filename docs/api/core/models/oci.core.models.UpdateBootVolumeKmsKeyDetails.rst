@@ -1,4 +1,4 @@
-UpdateBootVolumeKmsKeyDetails
+﻿UpdateBootVolumeKmsKeyDetails
 =============================
 
 .. currentmodule:: oci.core.models

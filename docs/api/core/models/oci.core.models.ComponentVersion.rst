@@ -1,4 +1,4 @@
-ComponentVersion
+﻿ComponentVersion
 ================
 
 .. currentmodule:: oci.core.models

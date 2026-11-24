@@ -1,4 +1,4 @@
-UpdateZeroEtlPipelineDetails
+﻿UpdateZeroEtlPipelineDetails
 ============================
 
 .. currentmodule:: oci.golden_gate.models

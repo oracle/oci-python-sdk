@@ -1,4 +1,4 @@
-UpdateDatabaseDetails
+﻿UpdateDatabaseDetails
 =====================
 
 .. currentmodule:: oci.database.models

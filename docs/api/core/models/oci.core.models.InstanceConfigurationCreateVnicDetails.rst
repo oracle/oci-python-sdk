@@ -1,4 +1,4 @@
-InstanceConfigurationCreateVnicDetails
+﻿InstanceConfigurationCreateVnicDetails
 ======================================
 
 .. currentmodule:: oci.core.models

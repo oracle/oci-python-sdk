@@ -1,4 +1,4 @@
-UpdateByoasnDetails
+﻿UpdateByoasnDetails
 ===================
 
 .. currentmodule:: oci.core.models

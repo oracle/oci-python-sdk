@@ -1,4 +1,4 @@
-AutonomousDatabaseCharacterSets
+﻿AutonomousDatabaseCharacterSets
 ===============================
 
 .. currentmodule:: oci.database.models

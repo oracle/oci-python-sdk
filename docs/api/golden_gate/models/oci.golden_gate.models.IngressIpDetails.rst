@@ -1,4 +1,4 @@
-IngressIpDetails
+﻿IngressIpDetails
 ================
 
 .. currentmodule:: oci.golden_gate.models

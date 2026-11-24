@@ -1,4 +1,4 @@
-UpdateIPSecConnectionDetails
+﻿UpdateIPSecConnectionDetails
 ============================
 
 .. currentmodule:: oci.core.models

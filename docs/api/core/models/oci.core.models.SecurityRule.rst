@@ -1,4 +1,4 @@
-SecurityRule
+﻿SecurityRule
 ============
 
 .. currentmodule:: oci.core.models

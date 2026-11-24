@@ -417,11 +417,15 @@ Database
     oci.database.models.InfoForNetworkGenDetails
     oci.database.models.InfrastructureTargetVersion
     oci.database.models.InfrastructureTargetVersionSummary
+    oci.database.models.KeyManagementSystemDetails
     oci.database.models.KeyStore
+    oci.database.models.KeyStoreAssociatedAutonomousVmClusterDetails
+    oci.database.models.KeyStoreAssociatedCloudAutonomousVmClusterDetails
     oci.database.models.KeyStoreAssociatedDatabaseDetails
     oci.database.models.KeyStoreSummary
     oci.database.models.KeyStoreTypeDetails
     oci.database.models.KeyStoreTypeFromOracleKeyVaultDetails
+    oci.database.models.KeyStoreTypeFromThalesDetails
     oci.database.models.LaunchAutonomousExadataInfrastructureDetails
     oci.database.models.LaunchDbSystemBase
     oci.database.models.LaunchDbSystemDetails
@@ -455,11 +459,14 @@ Database
     oci.database.models.OCPUs
     oci.database.models.OciKeyDetails
     oci.database.models.OciProviderSetKeyVersionDetails
+    oci.database.models.OciVaultKeyManagementSystemDetails
     oci.database.models.OkvKeyDetails
     oci.database.models.OneoffPatch
     oci.database.models.OneoffPatchSummary
     oci.database.models.OperationsInsightsConfig
+    oci.database.models.OracleKeyVaultKeyManagementSystemDetails
     oci.database.models.OracleManagedKeyDetails
+    oci.database.models.OracleManagedKeyManagementSystemDetails
     oci.database.models.Patch
     oci.database.models.PatchDetails
     oci.database.models.PatchHistoryEntry
@@ -529,6 +536,7 @@ Database
     oci.database.models.SelfMountDetails
     oci.database.models.SetKeyVersionDetails
     oci.database.models.SourceDatabaseDetails
+    oci.database.models.SslInspectionConfiguration
     oci.database.models.StackMonitoringConfig
     oci.database.models.StopAutonomousDatabaseDetails
     oci.database.models.StoragePerformanceDetails
@@ -539,6 +547,7 @@ Database
     oci.database.models.SystemVersionMinorVersionSummary
     oci.database.models.SystemVersionSummary
     oci.database.models.TdeWalletBackupDestination
+    oci.database.models.ThalesKeyManagementSystemDetails
     oci.database.models.UndeleteAutonomousDatabaseDetails
     oci.database.models.UnmountDbnodeSnapshotDetails
     oci.database.models.UnregisterCloudAutonomousVmClusterPkcsDetails

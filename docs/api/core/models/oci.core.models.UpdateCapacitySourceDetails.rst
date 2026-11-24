@@ -1,4 +1,4 @@
-UpdateCapacitySourceDetails
+﻿UpdateCapacitySourceDetails
 ===========================
 
 .. currentmodule:: oci.core.models

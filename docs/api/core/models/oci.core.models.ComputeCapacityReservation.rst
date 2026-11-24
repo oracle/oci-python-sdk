@@ -1,4 +1,4 @@
-ComputeCapacityReservation
+﻿ComputeCapacityReservation
 ==========================
 
 .. currentmodule:: oci.core.models

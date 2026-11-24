@@ -1,4 +1,4 @@
-CreateExecutionWindowDetails
+﻿CreateExecutionWindowDetails
 ============================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-WorkRequest
+﻿WorkRequest
 ===========
 
 .. currentmodule:: oci.golden_gate.models

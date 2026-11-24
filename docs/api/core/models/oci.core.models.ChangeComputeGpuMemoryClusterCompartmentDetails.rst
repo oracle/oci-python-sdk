@@ -1,4 +1,4 @@
-ChangeComputeGpuMemoryClusterCompartmentDetails
+﻿ChangeComputeGpuMemoryClusterCompartmentDetails
 ===============================================
 
 .. currentmodule:: oci.core.models

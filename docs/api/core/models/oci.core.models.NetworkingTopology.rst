@@ -1,4 +1,4 @@
-NetworkingTopology
+﻿NetworkingTopology
 ==================
 
 .. currentmodule:: oci.core.models

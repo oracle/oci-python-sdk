@@ -1,4 +1,4 @@
-AutonomousContainerDatabaseSummary
+﻿AutonomousContainerDatabaseSummary
 ==================================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-MysqlConnectionSummary
+﻿MysqlConnectionSummary
 ======================
 
 .. currentmodule:: oci.golden_gate.models

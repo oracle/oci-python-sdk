@@ -1,4 +1,4 @@
-CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
+﻿CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
 ================================================================
 
 .. currentmodule:: oci.golden_gate.models

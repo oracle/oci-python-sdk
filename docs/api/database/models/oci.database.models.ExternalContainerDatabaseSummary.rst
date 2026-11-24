@@ -1,4 +1,4 @@
-ExternalContainerDatabaseSummary
+﻿ExternalContainerDatabaseSummary
 ================================
 
 .. currentmodule:: oci.database.models

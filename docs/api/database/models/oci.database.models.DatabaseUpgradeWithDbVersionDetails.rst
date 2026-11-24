@@ -1,4 +1,4 @@
-DatabaseUpgradeWithDbVersionDetails
+﻿DatabaseUpgradeWithDbVersionDetails
 ===================================
 
 .. currentmodule:: oci.database.models

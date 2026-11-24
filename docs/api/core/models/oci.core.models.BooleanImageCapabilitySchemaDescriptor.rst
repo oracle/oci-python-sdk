@@ -1,4 +1,4 @@
-BooleanImageCapabilitySchemaDescriptor
+﻿BooleanImageCapabilitySchemaDescriptor
 ======================================
 
 .. currentmodule:: oci.core.models

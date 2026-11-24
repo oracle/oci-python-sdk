@@ -1,4 +1,4 @@
-InstanceConfigurationLaunchOptions
+﻿InstanceConfigurationLaunchOptions
 ==================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-PolarisIcebergCatalog
+﻿PolarisIcebergCatalog
 =====================
 
 .. currentmodule:: oci.golden_gate.models

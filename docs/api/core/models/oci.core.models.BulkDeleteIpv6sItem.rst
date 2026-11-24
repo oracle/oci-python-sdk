@@ -1,4 +1,4 @@
-BulkDeleteIpv6sItem
+﻿BulkDeleteIpv6sItem
 ===================
 
 .. currentmodule:: oci.core.models

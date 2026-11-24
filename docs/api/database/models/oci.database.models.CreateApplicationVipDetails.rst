@@ -1,4 +1,4 @@
-CreateApplicationVipDetails
+﻿CreateApplicationVipDetails
 ===========================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-ChangeDataguardRoleDetails
+﻿ChangeDataguardRoleDetails
 ==========================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-InstanceConfigurationInstanceSourceImageFilterDetails
+﻿InstanceConfigurationInstanceSourceImageFilterDetails
 =====================================================
 
 .. currentmodule:: oci.core.models

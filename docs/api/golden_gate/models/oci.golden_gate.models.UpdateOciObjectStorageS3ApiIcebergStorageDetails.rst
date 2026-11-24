@@ -1,4 +1,4 @@
-UpdateOciObjectStorageS3ApiIcebergStorageDetails
+﻿UpdateOciObjectStorageS3ApiIcebergStorageDetails
 ================================================
 
 .. currentmodule:: oci.golden_gate.models

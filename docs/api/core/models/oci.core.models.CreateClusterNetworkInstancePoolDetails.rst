@@ -1,4 +1,4 @@
-CreateClusterNetworkInstancePoolDetails
+﻿CreateClusterNetworkInstancePoolDetails
 =======================================
 
 .. currentmodule:: oci.core.models

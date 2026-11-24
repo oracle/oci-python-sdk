@@ -1,4 +1,4 @@
-EnableExternalNonContainerDatabaseOperationsInsightsDetails
+﻿EnableExternalNonContainerDatabaseOperationsInsightsDetails
 ===========================================================
 
 .. currentmodule:: oci.database.models

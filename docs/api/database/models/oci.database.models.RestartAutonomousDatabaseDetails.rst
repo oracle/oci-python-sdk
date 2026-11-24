@@ -1,4 +1,4 @@
-RestartAutonomousDatabaseDetails
+﻿RestartAutonomousDatabaseDetails
 ================================
 
 .. currentmodule:: oci.database.models

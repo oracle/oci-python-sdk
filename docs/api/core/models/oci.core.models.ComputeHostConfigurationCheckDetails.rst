@@ -1,4 +1,4 @@
-ComputeHostConfigurationCheckDetails
+﻿ComputeHostConfigurationCheckDetails
 ====================================
 
 .. currentmodule:: oci.core.models

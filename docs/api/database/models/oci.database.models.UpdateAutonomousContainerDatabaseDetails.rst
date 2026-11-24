@@ -1,4 +1,4 @@
-UpdateAutonomousContainerDatabaseDetails
+﻿UpdateAutonomousContainerDatabaseDetails
 ========================================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
+﻿ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
 ==========================================================
 
 .. currentmodule:: oci.core.models

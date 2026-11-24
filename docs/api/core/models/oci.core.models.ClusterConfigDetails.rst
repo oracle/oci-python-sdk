@@ -1,4 +1,4 @@
-ClusterConfigDetails
+﻿ClusterConfigDetails
 ====================
 
 .. currentmodule:: oci.core.models

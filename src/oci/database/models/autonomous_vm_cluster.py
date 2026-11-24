@@ -296,6 +296,10 @@ class AutonomousVmCluster(object):
             The value to assign to the max_acds_lowest_scaled_value property of this AutonomousVmCluster.
         :type max_acds_lowest_scaled_value: int
 
+        :param key_management_system_details:
+            The value to assign to the key_management_system_details property of this AutonomousVmCluster.
+        :type key_management_system_details: oci.database.models.KeyManagementSystemDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -351,7 +355,8 @@ class AutonomousVmCluster(object):
             'time_ords_certificate_expires': 'datetime',
             'exadata_storage_in_tbs_lowest_scaled_value': 'float',
             'cpus_lowest_scaled_value': 'int',
-            'max_acds_lowest_scaled_value': 'int'
+            'max_acds_lowest_scaled_value': 'int',
+            'key_management_system_details': 'KeyManagementSystemDetails'
         }
         self.attribute_map = {
             'id': 'id',
@@ -407,7 +412,8 @@ class AutonomousVmCluster(object):
             'time_ords_certificate_expires': 'timeOrdsCertificateExpires',
             'exadata_storage_in_tbs_lowest_scaled_value': 'exadataStorageInTBsLowestScaledValue',
             'cpus_lowest_scaled_value': 'cpusLowestScaledValue',
-            'max_acds_lowest_scaled_value': 'maxAcdsLowestScaledValue'
+            'max_acds_lowest_scaled_value': 'maxAcdsLowestScaledValue',
+            'key_management_system_details': 'keyManagementSystemDetails'
         }
         self._id = None
         self._compartment_id = None
@@ -463,6 +469,7 @@ class AutonomousVmCluster(object):
         self._exadata_storage_in_tbs_lowest_scaled_value = None
         self._cpus_lowest_scaled_value = None
         self._max_acds_lowest_scaled_value = None
+        self._key_management_system_details = None
 
     @property
     def id(self):
@@ -1837,6 +1844,26 @@ class AutonomousVmCluster(object):
         :type: int
         """
         self._max_acds_lowest_scaled_value = max_acds_lowest_scaled_value
+
+    @property
+    def key_management_system_details(self):
+        """
+        Gets the key_management_system_details of this AutonomousVmCluster.
+
+        :return: The key_management_system_details of this AutonomousVmCluster.
+        :rtype: oci.database.models.KeyManagementSystemDetails
+        """
+        return self._key_management_system_details
+
+    @key_management_system_details.setter
+    def key_management_system_details(self, key_management_system_details):
+        """
+        Sets the key_management_system_details of this AutonomousVmCluster.
+
+        :param key_management_system_details: The key_management_system_details of this AutonomousVmCluster.
+        :type: oci.database.models.KeyManagementSystemDetails
+        """
+        self._key_management_system_details = key_management_system_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

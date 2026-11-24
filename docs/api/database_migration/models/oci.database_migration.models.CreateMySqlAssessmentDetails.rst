@@ -1,4 +1,4 @@
-CreateMySqlAssessmentDetails
+﻿CreateMySqlAssessmentDetails
 ============================
 
 .. currentmodule:: oci.database_migration.models

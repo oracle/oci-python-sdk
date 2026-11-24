@@ -1,4 +1,4 @@
-DbSystemOsPatchDetailsSummary
+﻿DbSystemOsPatchDetailsSummary
 =============================
 
 .. currentmodule:: oci.database.models

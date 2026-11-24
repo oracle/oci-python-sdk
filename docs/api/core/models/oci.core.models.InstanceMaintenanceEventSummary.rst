@@ -1,4 +1,4 @@
-InstanceMaintenanceEventSummary
+﻿InstanceMaintenanceEventSummary
 ===============================
 
 .. currentmodule:: oci.core.models

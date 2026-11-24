@@ -1,4 +1,4 @@
-DefaultClonePipelineDetails
+﻿DefaultClonePipelineDetails
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

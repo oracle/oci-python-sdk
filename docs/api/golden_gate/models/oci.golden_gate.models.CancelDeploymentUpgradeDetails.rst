@@ -1,4 +1,4 @@
-CancelDeploymentUpgradeDetails
+﻿CancelDeploymentUpgradeDetails
 ==============================
 
 .. currentmodule:: oci.golden_gate.models

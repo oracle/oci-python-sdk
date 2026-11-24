@@ -1,4 +1,4 @@
-RemoveVcnCidrDetails
+﻿RemoveVcnCidrDetails
 ====================
 
 .. currentmodule:: oci.core.models

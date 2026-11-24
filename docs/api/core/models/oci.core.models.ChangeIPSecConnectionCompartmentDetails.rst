@@ -1,4 +1,4 @@
-ChangeIPSecConnectionCompartmentDetails
+﻿ChangeIPSecConnectionCompartmentDetails
 =======================================
 
 .. currentmodule:: oci.core.models

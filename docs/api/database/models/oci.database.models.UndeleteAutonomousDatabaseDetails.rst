@@ -1,4 +1,4 @@
-UndeleteAutonomousDatabaseDetails
+﻿UndeleteAutonomousDatabaseDetails
 =================================
 
 .. currentmodule:: oci.database.models

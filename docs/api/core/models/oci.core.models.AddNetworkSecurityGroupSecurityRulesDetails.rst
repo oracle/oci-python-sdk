@@ -1,4 +1,4 @@
-AddNetworkSecurityGroupSecurityRulesDetails
+﻿AddNetworkSecurityGroupSecurityRulesDetails
 ===========================================
 
 .. currentmodule:: oci.core.models

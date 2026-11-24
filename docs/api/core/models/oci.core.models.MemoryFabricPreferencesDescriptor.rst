@@ -1,4 +1,4 @@
-MemoryFabricPreferencesDescriptor
+﻿MemoryFabricPreferencesDescriptor
 =================================
 
 .. currentmodule:: oci.core.models

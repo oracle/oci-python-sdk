@@ -1,4 +1,4 @@
-IpInventoryCollection
+﻿IpInventoryCollection
 =====================
 
 .. currentmodule:: oci.core.models

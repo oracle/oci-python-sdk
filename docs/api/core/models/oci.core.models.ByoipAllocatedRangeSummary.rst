@@ -1,4 +1,4 @@
-ByoipAllocatedRangeSummary
+﻿ByoipAllocatedRangeSummary
 ==========================
 
 .. currentmodule:: oci.core.models

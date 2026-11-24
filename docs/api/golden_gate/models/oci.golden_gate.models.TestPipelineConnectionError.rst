@@ -1,4 +1,4 @@
-TestPipelineConnectionError
+﻿TestPipelineConnectionError
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

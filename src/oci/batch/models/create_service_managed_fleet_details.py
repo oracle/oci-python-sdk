@@ -26,6 +26,10 @@ class CreateServiceManagedFleetDetails(CreateFleetDetails):
             Allowed values for this property are: "SERVICE_MANAGED_FLEET", "SERVICE_MANAGED_GPU_FLEET"
         :type type: str
 
+        :param reservation:
+            The value to assign to the reservation property of this CreateServiceManagedFleetDetails.
+        :type reservation: oci.batch.models.CreateReservationDetails
+
         :param name:
             The value to assign to the name property of this CreateServiceManagedFleetDetails.
         :type name: str
@@ -41,21 +45,44 @@ class CreateServiceManagedFleetDetails(CreateFleetDetails):
         """
         self.swagger_types = {
             'type': 'str',
+            'reservation': 'CreateReservationDetails',
             'name': 'str',
             'shape': 'FleetShape',
             'max_concurrent_tasks': 'int'
         }
         self.attribute_map = {
             'type': 'type',
+            'reservation': 'reservation',
             'name': 'name',
             'shape': 'shape',
             'max_concurrent_tasks': 'maxConcurrentTasks'
         }
         self._type = None
+        self._reservation = None
         self._name = None
         self._shape = None
         self._max_concurrent_tasks = None
         self._type = 'SERVICE_MANAGED_FLEET'
+
+    @property
+    def reservation(self):
+        """
+        Gets the reservation of this CreateServiceManagedFleetDetails.
+
+        :return: The reservation of this CreateServiceManagedFleetDetails.
+        :rtype: oci.batch.models.CreateReservationDetails
+        """
+        return self._reservation
+
+    @reservation.setter
+    def reservation(self, reservation):
+        """
+        Sets the reservation of this CreateServiceManagedFleetDetails.
+
+        :param reservation: The reservation of this CreateServiceManagedFleetDetails.
+        :type: oci.batch.models.CreateReservationDetails
+        """
+        self._reservation = reservation
 
     @property
     def name(self):

@@ -1,4 +1,4 @@
-WorkRequestError
+﻿WorkRequestError
 ================
 
 .. currentmodule:: oci.fusion_apps.models

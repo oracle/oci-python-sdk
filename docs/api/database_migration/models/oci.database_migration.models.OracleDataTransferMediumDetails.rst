@@ -1,4 +1,4 @@
-OracleDataTransferMediumDetails
+﻿OracleDataTransferMediumDetails
 ===============================
 
 .. currentmodule:: oci.database_migration.models

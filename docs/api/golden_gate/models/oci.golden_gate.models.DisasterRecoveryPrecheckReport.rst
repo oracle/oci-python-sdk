@@ -1,4 +1,4 @@
-DisasterRecoveryPrecheckReport
+﻿DisasterRecoveryPrecheckReport
 ==============================
 
 .. currentmodule:: oci.golden_gate.models

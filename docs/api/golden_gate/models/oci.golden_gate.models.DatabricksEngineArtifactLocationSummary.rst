@@ -1,4 +1,4 @@
-DatabricksEngineArtifactLocationSummary
+﻿DatabricksEngineArtifactLocationSummary
 =======================================
 
 .. currentmodule:: oci.golden_gate.models

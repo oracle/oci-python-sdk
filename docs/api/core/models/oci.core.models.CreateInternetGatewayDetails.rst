@@ -1,4 +1,4 @@
-CreateInternetGatewayDetails
+﻿CreateInternetGatewayDetails
 ============================
 
 .. currentmodule:: oci.core.models

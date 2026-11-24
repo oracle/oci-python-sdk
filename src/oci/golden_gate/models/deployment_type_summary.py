@@ -34,6 +34,10 @@ class DeploymentTypeSummary(object):
     #: This constant has a value of "DATA_VERIFICATION"
     CATEGORY_DATA_VERIFICATION = "DATA_VERIFICATION"
 
+    #: A constant which can be used with the category property of a DeploymentTypeSummary.
+    #: This constant has a value of "DATA_CATALOG"
+    CATEGORY_DATA_CATALOG = "DATA_CATALOG"
+
     #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
     #: This constant has a value of "OGG"
     DEPLOYMENT_TYPE_OGG = "OGG"
@@ -81,6 +85,10 @@ class DeploymentTypeSummary(object):
     #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
     #: This constant has a value of "VERIDATA_AGENT"
     DEPLOYMENT_TYPE_VERIDATA_AGENT = "VERIDATA_AGENT"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
+    #: This constant has a value of "AI_DATA_CATALOG"
+    DEPLOYMENT_TYPE_AI_DATA_CATALOG = "AI_DATA_CATALOG"
 
     #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
     #: This constant has a value of "GOLDENGATE"
@@ -145,6 +153,10 @@ class DeploymentTypeSummary(object):
     #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
     #: This constant has a value of "ORACLE_AI_DATA_PLATFORM_ENGINE"
     CONNECTION_TYPES_ORACLE_AI_DATA_PLATFORM_ENGINE = "ORACLE_AI_DATA_PLATFORM_ENGINE"
+
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "ORACLE_AI_DATA_CATALOG_STORAGE"
+    CONNECTION_TYPES_ORACLE_AI_DATA_CATALOG_STORAGE = "ORACLE_AI_DATA_CATALOG_STORAGE"
 
     #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
     #: This constant has a value of "ORACLE_NOSQL"
@@ -223,6 +235,10 @@ class DeploymentTypeSummary(object):
     SUPPORTED_CAPABILITIES_GROUP_TO_ROLE = "GROUP_TO_ROLE"
 
     #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
+    #: This constant has a value of "GROUP_TO_ROLE_REQUIRED"
+    SUPPORTED_CAPABILITIES_GROUP_TO_ROLE_REQUIRED = "GROUP_TO_ROLE_REQUIRED"
+
+    #: A constant which can be used with the supported_capabilities property of a DeploymentTypeSummary.
     #: This constant has a value of "BACKUP_RESTORE"
     SUPPORTED_CAPABILITIES_BACKUP_RESTORE = "BACKUP_RESTORE"
 
@@ -285,7 +301,7 @@ class DeploymentTypeSummary(object):
 
         :param category:
             The value to assign to the category property of this DeploymentTypeSummary.
-            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", "DATA_CATALOG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type category: str
 
@@ -295,13 +311,13 @@ class DeploymentTypeSummary(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this DeploymentTypeSummary.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", "AI_DATA_CATALOG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
         :param connection_types:
             The value to assign to the connection_types property of this DeploymentTypeSummary.
-            Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_AI_DATA_CATALOG_STORAGE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_types: list[str]
 
@@ -327,9 +343,13 @@ class DeploymentTypeSummary(object):
 
         :param supported_capabilities:
             The value to assign to the supported_capabilities property of this DeploymentTypeSummary.
-            Allowed values for items in this list are: "GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD", "TRAIL_FILES", "MASTER_KEY_OPERATIONS", "TRUSTSTORE_CERTIFICATES", "DEPLOYMENT_DIAGNOSTICS", "CREDENTIALS", "CONSOLE_ACCESS", "NETWORK_CONFIGURATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "GROUP_TO_ROLE", "GROUP_TO_ROLE_REQUIRED", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD", "TRAIL_FILES", "MASTER_KEY_OPERATIONS", "TRUSTSTORE_CERTIFICATES", "DEPLOYMENT_DIAGNOSTICS", "CREDENTIALS", "CONSOLE_ACCESS", "NETWORK_CONFIGURATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type supported_capabilities: list[str]
+
+        :param supported_credential_stores:
+            The value to assign to the supported_credential_stores property of this DeploymentTypeSummary.
+        :type supported_credential_stores: list[oci.golden_gate.models.CredentialStore]
 
         :param supported_license_types:
             The value to assign to the supported_license_types property of this DeploymentTypeSummary.
@@ -347,6 +367,7 @@ class DeploymentTypeSummary(object):
             'supported_technologies_url': 'str',
             'default_username': 'str',
             'supported_capabilities': 'list[str]',
+            'supported_credential_stores': 'list[CredentialStore]',
             'supported_license_types': 'list[LicenseModel]'
         }
         self.attribute_map = {
@@ -360,6 +381,7 @@ class DeploymentTypeSummary(object):
             'supported_technologies_url': 'supportedTechnologiesUrl',
             'default_username': 'defaultUsername',
             'supported_capabilities': 'supportedCapabilities',
+            'supported_credential_stores': 'supportedCredentialStores',
             'supported_license_types': 'supportedLicenseTypes'
         }
         self._category = None
@@ -372,16 +394,17 @@ class DeploymentTypeSummary(object):
         self._supported_technologies_url = None
         self._default_username = None
         self._supported_capabilities = None
+        self._supported_credential_stores = None
         self._supported_license_types = None
 
     @property
     def category(self):
         """
         **[Required]** Gets the category of this DeploymentTypeSummary.
-        The deployment category defines the broad separation of the deployment type into four categories.
-        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+        The deployment category defines the broad separation of the deployment type into five categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
 
-        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", "DATA_CATALOG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -394,14 +417,14 @@ class DeploymentTypeSummary(object):
     def category(self, category):
         """
         Sets the category of this DeploymentTypeSummary.
-        The deployment category defines the broad separation of the deployment type into four categories.
-        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS' and 'DATA_VERIFICATION'.
+        The deployment category defines the broad separation of the deployment type into five categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS', 'DATA_TRANSFORMS', 'DATA_VERIFICATION' and 'DATA_CATALOG'.
 
 
         :param category: The category of this DeploymentTypeSummary.
         :type: str
         """
-        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION"]
+        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", "DATA_VERIFICATION", "DATA_CATALOG"]
         if not value_allowed_none_or_none_sentinel(category, allowed_values):
             category = 'UNKNOWN_ENUM_VALUE'
         self._category = category
@@ -438,7 +461,7 @@ class DeploymentTypeSummary(object):
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
             Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", "AI_DATA_CATALOG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -459,7 +482,7 @@ class DeploymentTypeSummary(object):
         :param deployment_type: The deployment_type of this DeploymentTypeSummary.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", "AI_DATA_CATALOG"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type
@@ -470,7 +493,7 @@ class DeploymentTypeSummary(object):
         Gets the connection_types of this DeploymentTypeSummary.
         An array of connectionTypes.
 
-        Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_AI_DATA_CATALOG_STORAGE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -489,7 +512,7 @@ class DeploymentTypeSummary(object):
         :param connection_types: The connection_types of this DeploymentTypeSummary.
         :type: list[str]
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_AI_DATA_CATALOG_STORAGE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL"]
         if connection_types:
             connection_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in connection_types]
         self._connection_types = connection_types
@@ -628,7 +651,7 @@ class DeploymentTypeSummary(object):
         Gets the supported_capabilities of this DeploymentTypeSummary.
         Specifies supported capabilities or features by a deployment type .
 
-        Allowed values for items in this list are: "GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD", "TRAIL_FILES", "MASTER_KEY_OPERATIONS", "TRUSTSTORE_CERTIFICATES", "DEPLOYMENT_DIAGNOSTICS", "CREDENTIALS", "CONSOLE_ACCESS", "NETWORK_CONFIGURATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "GROUP_TO_ROLE", "GROUP_TO_ROLE_REQUIRED", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD", "TRAIL_FILES", "MASTER_KEY_OPERATIONS", "TRUSTSTORE_CERTIFICATES", "DEPLOYMENT_DIAGNOSTICS", "CREDENTIALS", "CONSOLE_ACCESS", "NETWORK_CONFIGURATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -647,10 +670,34 @@ class DeploymentTypeSummary(object):
         :param supported_capabilities: The supported_capabilities of this DeploymentTypeSummary.
         :type: list[str]
         """
-        allowed_values = ["GROUP_TO_ROLE", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD", "TRAIL_FILES", "MASTER_KEY_OPERATIONS", "TRUSTSTORE_CERTIFICATES", "DEPLOYMENT_DIAGNOSTICS", "CREDENTIALS", "CONSOLE_ACCESS", "NETWORK_CONFIGURATION"]
+        allowed_values = ["GROUP_TO_ROLE", "GROUP_TO_ROLE_REQUIRED", "BACKUP_RESTORE", "COPY_BACKUP", "MANUAL_BACKUP", "PLACEMENT", "DISASTER_RECOVERY", "SCHEDULE_MANUAL_BACKUP", "MULTICLOUD", "TRAIL_FILES", "MASTER_KEY_OPERATIONS", "TRUSTSTORE_CERTIFICATES", "DEPLOYMENT_DIAGNOSTICS", "CREDENTIALS", "CONSOLE_ACCESS", "NETWORK_CONFIGURATION"]
         if supported_capabilities:
             supported_capabilities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_capabilities]
         self._supported_capabilities = supported_capabilities
+
+    @property
+    def supported_credential_stores(self):
+        """
+        Gets the supported_credential_stores of this DeploymentTypeSummary.
+        The list of credential stores supported by the deployment type.
+
+
+        :return: The supported_credential_stores of this DeploymentTypeSummary.
+        :rtype: list[oci.golden_gate.models.CredentialStore]
+        """
+        return self._supported_credential_stores
+
+    @supported_credential_stores.setter
+    def supported_credential_stores(self, supported_credential_stores):
+        """
+        Sets the supported_credential_stores of this DeploymentTypeSummary.
+        The list of credential stores supported by the deployment type.
+
+
+        :param supported_credential_stores: The supported_credential_stores of this DeploymentTypeSummary.
+        :type: list[oci.golden_gate.models.CredentialStore]
+        """
+        self._supported_credential_stores = supported_credential_stores
 
     @property
     def supported_license_types(self):

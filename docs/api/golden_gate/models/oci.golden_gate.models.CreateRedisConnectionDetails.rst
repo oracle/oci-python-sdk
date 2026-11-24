@@ -1,4 +1,4 @@
-CreateRedisConnectionDetails
+﻿CreateRedisConnectionDetails
 ============================
 
 .. currentmodule:: oci.golden_gate.models

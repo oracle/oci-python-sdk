@@ -1,4 +1,4 @@
-InstanceConfigurationGmcConfigDetail
+﻿InstanceConfigurationGmcConfigDetail
 ====================================
 
 .. currentmodule:: oci.core.models

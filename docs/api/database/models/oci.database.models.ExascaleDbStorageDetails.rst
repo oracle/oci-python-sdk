@@ -1,4 +1,4 @@
-ExascaleDbStorageDetails
+﻿ExascaleDbStorageDetails
 ========================
 
 .. currentmodule:: oci.database.models

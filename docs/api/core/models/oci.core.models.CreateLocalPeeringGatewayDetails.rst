@@ -1,4 +1,4 @@
-CreateLocalPeeringGatewayDetails
+﻿CreateLocalPeeringGatewayDetails
 ================================
 
 .. currentmodule:: oci.core.models

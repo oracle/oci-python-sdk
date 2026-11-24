@@ -1,4 +1,4 @@
-SubscriptionSku
+﻿SubscriptionSku
 ===============
 
 .. currentmodule:: oci.fusion_apps.models

@@ -1,4 +1,4 @@
-CreatePrivateIpDetails
+﻿CreatePrivateIpDetails
 ======================
 
 .. currentmodule:: oci.core.models

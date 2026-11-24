@@ -1,4 +1,4 @@
-StopBatchContextDetails
+﻿StopBatchContextDetails
 =======================
 
 .. currentmodule:: oci.batch.models

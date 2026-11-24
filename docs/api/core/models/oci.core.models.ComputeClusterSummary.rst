@@ -1,4 +1,4 @@
-ComputeClusterSummary
+﻿ComputeClusterSummary
 =====================
 
 .. currentmodule:: oci.core.models

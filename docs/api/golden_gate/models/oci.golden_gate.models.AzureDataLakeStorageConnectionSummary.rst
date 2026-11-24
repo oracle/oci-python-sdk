@@ -1,4 +1,4 @@
-AzureDataLakeStorageConnectionSummary
+﻿AzureDataLakeStorageConnectionSummary
 =====================================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-UpdateDataGuardAssociationDetails
+﻿UpdateDataGuardAssociationDetails
 =================================
 
 .. currentmodule:: oci.database.models

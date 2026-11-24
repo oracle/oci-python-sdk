@@ -1,4 +1,4 @@
-CreateBatchTaskProfileDetails
+﻿CreateBatchTaskProfileDetails
 =============================
 
 .. currentmodule:: oci.batch.models

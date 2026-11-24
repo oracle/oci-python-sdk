@@ -1,4 +1,4 @@
-DeploymentWalletsOperationSummary
+﻿DeploymentWalletsOperationSummary
 =================================
 
 .. currentmodule:: oci.golden_gate.models

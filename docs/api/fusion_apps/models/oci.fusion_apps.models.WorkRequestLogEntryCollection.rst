@@ -1,4 +1,4 @@
-WorkRequestLogEntryCollection
+﻿WorkRequestLogEntryCollection
 =============================
 
 .. currentmodule:: oci.fusion_apps.models

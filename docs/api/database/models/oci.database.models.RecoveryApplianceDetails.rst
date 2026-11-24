@@ -1,4 +1,4 @@
-RecoveryApplianceDetails
+﻿RecoveryApplianceDetails
 ========================
 
 .. currentmodule:: oci.database.models

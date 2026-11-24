@@ -1,4 +1,4 @@
-EnableDatabaseManagementDetails
+﻿EnableDatabaseManagementDetails
 ===============================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-EnableExternalDatabaseStackMonitoringDetailsBase
+﻿EnableExternalDatabaseStackMonitoringDetailsBase
 ================================================
 
 .. currentmodule:: oci.database.models

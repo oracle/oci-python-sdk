@@ -1,4 +1,4 @@
-UpdateSecurityListDetails
+﻿UpdateSecurityListDetails
 =========================
 
 .. currentmodule:: oci.core.models

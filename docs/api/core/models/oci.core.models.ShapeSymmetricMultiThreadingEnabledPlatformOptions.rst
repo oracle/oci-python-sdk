@@ -1,4 +1,4 @@
-ShapeSymmetricMultiThreadingEnabledPlatformOptions
+﻿ShapeSymmetricMultiThreadingEnabledPlatformOptions
 ==================================================
 
 .. currentmodule:: oci.core.models

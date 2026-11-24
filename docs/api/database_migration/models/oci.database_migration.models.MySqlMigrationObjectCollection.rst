@@ -1,4 +1,4 @@
-MySqlMigrationObjectCollection
+﻿MySqlMigrationObjectCollection
 ==============================
 
 .. currentmodule:: oci.database_migration.models

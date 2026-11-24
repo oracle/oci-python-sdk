@@ -1,4 +1,4 @@
-ConvertToStandaloneDetails
+﻿ConvertToStandaloneDetails
 ==========================
 
 .. currentmodule:: oci.database.models

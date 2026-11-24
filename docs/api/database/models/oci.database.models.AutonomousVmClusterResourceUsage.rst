@@ -1,4 +1,4 @@
-AutonomousVmClusterResourceUsage
+﻿AutonomousVmClusterResourceUsage
 ================================
 
 .. currentmodule:: oci.database.models

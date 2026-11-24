@@ -1,4 +1,4 @@
-ChangeServiceGatewayCompartmentDetails
+﻿ChangeServiceGatewayCompartmentDetails
 ======================================
 
 .. currentmodule:: oci.core.models

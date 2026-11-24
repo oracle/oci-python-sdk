@@ -1,4 +1,4 @@
-CreateOracleObjectStorageDataTransferMediumDetails
+﻿CreateOracleObjectStorageDataTransferMediumDetails
 ==================================================
 
 .. currentmodule:: oci.database_migration.models

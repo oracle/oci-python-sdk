@@ -1,4 +1,4 @@
-AttachEmulatedVolumeDetails
+﻿AttachEmulatedVolumeDetails
 ===========================
 
 .. currentmodule:: oci.core.models

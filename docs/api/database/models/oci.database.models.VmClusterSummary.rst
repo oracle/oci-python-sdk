@@ -1,4 +1,4 @@
-VmClusterSummary
+﻿VmClusterSummary
 ================
 
 .. currentmodule:: oci.database.models

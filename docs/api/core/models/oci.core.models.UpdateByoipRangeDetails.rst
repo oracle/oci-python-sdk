@@ -1,4 +1,4 @@
-UpdateByoipRangeDetails
+﻿UpdateByoipRangeDetails
 =======================
 
 .. currentmodule:: oci.core.models

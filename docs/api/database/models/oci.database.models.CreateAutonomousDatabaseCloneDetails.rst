@@ -1,4 +1,4 @@
-CreateAutonomousDatabaseCloneDetails
+﻿CreateAutonomousDatabaseCloneDetails
 ====================================
 
 .. currentmodule:: oci.database.models

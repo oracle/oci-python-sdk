@@ -1,4 +1,4 @@
-ChangeCaptureFilterCompartmentDetails
+﻿ChangeCaptureFilterCompartmentDetails
 =====================================
 
 .. currentmodule:: oci.core.models

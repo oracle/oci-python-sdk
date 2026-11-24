@@ -1,4 +1,4 @@
-RotateAutonomousContainerDatabaseEncryptionKeyDetails
+﻿RotateAutonomousContainerDatabaseEncryptionKeyDetails
 =====================================================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-CreateIPSecTunnelEncryptionDomainDetails
+﻿CreateIPSecTunnelEncryptionDomainDetails
 ========================================
 
 .. currentmodule:: oci.core.models

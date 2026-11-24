@@ -1,4 +1,4 @@
-DbConnectionBundle
+﻿DbConnectionBundle
 ==================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-ChangeComputeImageCapabilitySchemaCompartmentDetails
+﻿ChangeComputeImageCapabilitySchemaCompartmentDetails
 ====================================================
 
 .. currentmodule:: oci.core.models

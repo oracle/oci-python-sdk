@@ -1,4 +1,4 @@
-CreateGroupTaskDetails
+﻿CreateGroupTaskDetails
 ======================
 
 .. currentmodule:: oci.batch.models

@@ -1,4 +1,4 @@
-CreateVlanDetails
+﻿CreateVlanDetails
 =================
 
 .. currentmodule:: oci.core.models

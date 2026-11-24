@@ -1,4 +1,4 @@
-DetachLoadBalancerDetails
+﻿DetachLoadBalancerDetails
 =========================
 
 .. currentmodule:: oci.core.models

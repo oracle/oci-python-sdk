@@ -1,4 +1,4 @@
-DrScanDetails
+﻿DrScanDetails
 =============
 
 .. currentmodule:: oci.database.models

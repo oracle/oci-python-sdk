@@ -1,4 +1,4 @@
-CreateDatabaseRegistrationDetails
+﻿CreateDatabaseRegistrationDetails
 =================================
 
 .. currentmodule:: oci.golden_gate.models

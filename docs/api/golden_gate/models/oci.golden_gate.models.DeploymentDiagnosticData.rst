@@ -1,4 +1,4 @@
-DeploymentDiagnosticData
+﻿DeploymentDiagnosticData
 ========================
 
 .. currentmodule:: oci.golden_gate.models

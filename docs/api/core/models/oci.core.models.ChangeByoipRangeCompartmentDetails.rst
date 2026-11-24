@@ -1,4 +1,4 @@
-ChangeByoipRangeCompartmentDetails
+﻿ChangeByoipRangeCompartmentDetails
 ==================================
 
 .. currentmodule:: oci.core.models

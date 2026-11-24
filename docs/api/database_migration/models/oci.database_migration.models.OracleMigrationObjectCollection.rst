@@ -1,4 +1,4 @@
-OracleMigrationObjectCollection
+﻿OracleMigrationObjectCollection
 ===============================
 
 .. currentmodule:: oci.database_migration.models

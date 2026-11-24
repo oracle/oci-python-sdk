@@ -1,4 +1,4 @@
-UpdateBackupScheduleDetails
+﻿UpdateBackupScheduleDetails
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

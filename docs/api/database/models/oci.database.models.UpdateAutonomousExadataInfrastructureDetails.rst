@@ -1,4 +1,4 @@
-UpdateAutonomousExadataInfrastructureDetails
+﻿UpdateAutonomousExadataInfrastructureDetails
 ============================================
 
 .. currentmodule:: oci.database.models

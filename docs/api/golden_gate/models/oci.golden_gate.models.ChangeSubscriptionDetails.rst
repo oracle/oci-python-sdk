@@ -1,4 +1,4 @@
-ChangeSubscriptionDetails
+﻿ChangeSubscriptionDetails
 =========================
 
 .. currentmodule:: oci.golden_gate.models

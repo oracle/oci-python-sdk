@@ -1,4 +1,4 @@
-ChangeVolumeGroupCompartmentDetails
+﻿ChangeVolumeGroupCompartmentDetails
 ===================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-GetPublicIpByPrivateIpIdDetails
+﻿GetPublicIpByPrivateIpIdDetails
 ===============================
 
 .. currentmodule:: oci.core.models

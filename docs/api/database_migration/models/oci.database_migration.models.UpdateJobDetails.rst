@@ -1,4 +1,4 @@
-UpdateJobDetails
+﻿UpdateJobDetails
 ================
 
 .. currentmodule:: oci.database_migration.models

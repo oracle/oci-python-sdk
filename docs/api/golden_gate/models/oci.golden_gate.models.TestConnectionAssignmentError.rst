@@ -1,4 +1,4 @@
-TestConnectionAssignmentError
+﻿TestConnectionAssignmentError
 =============================
 
 .. currentmodule:: oci.golden_gate.models

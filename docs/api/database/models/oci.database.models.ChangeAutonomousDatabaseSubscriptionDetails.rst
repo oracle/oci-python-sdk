@@ -1,4 +1,4 @@
-ChangeAutonomousDatabaseSubscriptionDetails
+﻿ChangeAutonomousDatabaseSubscriptionDetails
 ===========================================
 
 .. currentmodule:: oci.database.models

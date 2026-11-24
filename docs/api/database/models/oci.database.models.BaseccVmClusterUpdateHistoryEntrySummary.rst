@@ -1,4 +1,4 @@
-BaseccVmClusterUpdateHistoryEntrySummary
+﻿BaseccVmClusterUpdateHistoryEntrySummary
 ========================================
 
 .. currentmodule:: oci.database.models

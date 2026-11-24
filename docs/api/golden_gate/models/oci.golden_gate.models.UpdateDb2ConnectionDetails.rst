@@ -1,4 +1,4 @@
-UpdateDb2ConnectionDetails
+﻿UpdateDb2ConnectionDetails
 ==========================
 
 .. currentmodule:: oci.golden_gate.models

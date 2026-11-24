@@ -1,4 +1,4 @@
-BatchContextShapeCollection
+﻿BatchContextShapeCollection
 ===========================
 
 .. currentmodule:: oci.batch.models

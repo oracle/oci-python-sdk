@@ -4,6 +4,7 @@
 
 import threading
 import logging
+from oci._logging import NULL_HANDLER
 import pprint
 from cryptography.hazmat.primitives.serialization import Encoding, PublicFormat
 
@@ -32,7 +33,7 @@ class OkeWorkloadIdentityResourcePrincipalSigner(SecurityTokenSigner):
         self._reset_signers_lock = threading.Lock()
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
-        self.logger.addHandler(logging.NullHandler())
+        self.logger.addHandler(NULL_HANDLER)
         if kwargs.get('log_requests'):
             self.logger.disabled = False
             self.logger.setLevel(logging.DEBUG)

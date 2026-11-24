@@ -35,14 +35,29 @@ class CreateIcebergStorageDetails(object):
     #: This constant has a value of "OCI_OBJECT_STORAGE_S3_API"
     STORAGE_TYPE_OCI_OBJECT_STORAGE_S3_API = "OCI_OBJECT_STORAGE_S3_API"
 
+    #: A constant which can be used with the storage_type property of a CreateIcebergStorageDetails.
+    #: This constant has a value of "OCI_OBJECT_STORAGE_ACCESS_KEY"
+    STORAGE_TYPE_OCI_OBJECT_STORAGE_ACCESS_KEY = "OCI_OBJECT_STORAGE_ACCESS_KEY"
+
+    #: A constant which can be used with the storage_type property of a CreateIcebergStorageDetails.
+    #: This constant has a value of "AZURE_STORAGE"
+    STORAGE_TYPE_AZURE_STORAGE = "AZURE_STORAGE"
+
+    #: A constant which can be used with the storage_type property of a CreateIcebergStorageDetails.
+    #: This constant has a value of "ZFS"
+    STORAGE_TYPE_ZFS = "ZFS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateIcebergStorageDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.golden_gate.models.CreateZfsIcebergStorageDetails`
         * :class:`~oci.golden_gate.models.CreateAzureDataLakeStorageIcebergStorageDetails`
         * :class:`~oci.golden_gate.models.CreateNoIcebergStorageDetails`
+        * :class:`~oci.golden_gate.models.CreateAzureStorageIcebergStorageDetails`
         * :class:`~oci.golden_gate.models.CreateGoogleCloudStorageIcebergStorageDetails`
+        * :class:`~oci.golden_gate.models.CreateOciObjectStorageAccessKeyIcebergStorageDetails`
         * :class:`~oci.golden_gate.models.CreateAmazonS3IcebergStorageDetails`
         * :class:`~oci.golden_gate.models.CreateOciObjectStorageS3ApiIcebergStorageDetails`
 
@@ -50,7 +65,7 @@ class CreateIcebergStorageDetails(object):
 
         :param storage_type:
             The value to assign to the storage_type property of this CreateIcebergStorageDetails.
-            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"
+            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", "OCI_OBJECT_STORAGE_ACCESS_KEY", "AZURE_STORAGE", "ZFS"
         :type storage_type: str
 
         """
@@ -70,14 +85,23 @@ class CreateIcebergStorageDetails(object):
         """
         type = object_dictionary['storageType']
 
+        if type == 'ZFS':
+            return 'CreateZfsIcebergStorageDetails'
+
         if type == 'AZURE_DATA_LAKE_STORAGE':
             return 'CreateAzureDataLakeStorageIcebergStorageDetails'
 
         if type == 'NONE':
             return 'CreateNoIcebergStorageDetails'
 
+        if type == 'AZURE_STORAGE':
+            return 'CreateAzureStorageIcebergStorageDetails'
+
         if type == 'GOOGLE_CLOUD_STORAGE':
             return 'CreateGoogleCloudStorageIcebergStorageDetails'
+
+        if type == 'OCI_OBJECT_STORAGE_ACCESS_KEY':
+            return 'CreateOciObjectStorageAccessKeyIcebergStorageDetails'
 
         if type == 'AMAZON_S3':
             return 'CreateAmazonS3IcebergStorageDetails'
@@ -99,8 +123,9 @@ class CreateIcebergStorageDetails(object):
         * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
         * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
         * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
+        * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
 
-        Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"
+        Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", "OCI_OBJECT_STORAGE_ACCESS_KEY", "AZURE_STORAGE", "ZFS"
 
 
         :return: The storage_type of this CreateIcebergStorageDetails.
@@ -120,12 +145,13 @@ class CreateIcebergStorageDetails(object):
         * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
         * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
         * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
+        * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
 
 
         :param storage_type: The storage_type of this CreateIcebergStorageDetails.
         :type: str
         """
-        allowed_values = ["AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"]
+        allowed_values = ["AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", "OCI_OBJECT_STORAGE_ACCESS_KEY", "AZURE_STORAGE", "ZFS"]
         if not value_allowed_none_or_none_sentinel(storage_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `storage_type`, must be None or one of {allowed_values}"

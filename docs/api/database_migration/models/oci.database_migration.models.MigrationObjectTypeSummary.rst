@@ -1,4 +1,4 @@
-MigrationObjectTypeSummary
+﻿MigrationObjectTypeSummary
 ==========================
 
 .. currentmodule:: oci.database_migration.models

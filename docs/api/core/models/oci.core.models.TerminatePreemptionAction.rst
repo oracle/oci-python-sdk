@@ -1,4 +1,4 @@
-TerminatePreemptionAction
+﻿TerminatePreemptionAction
 =========================
 
 .. currentmodule:: oci.core.models

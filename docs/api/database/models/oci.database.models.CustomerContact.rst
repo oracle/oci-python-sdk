@@ -1,4 +1,4 @@
-CustomerContact
+﻿CustomerContact
 ===============
 
 .. currentmodule:: oci.database.models

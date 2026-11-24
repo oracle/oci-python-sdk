@@ -1,4 +1,4 @@
-VolumeGroupReplica
+﻿VolumeGroupReplica
 ==================
 
 .. currentmodule:: oci.core.models

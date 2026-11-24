@@ -1,4 +1,4 @@
-InstanceConfigurationCreateVolumeDetails
+﻿InstanceConfigurationCreateVolumeDetails
 ========================================
 
 .. currentmodule:: oci.core.models

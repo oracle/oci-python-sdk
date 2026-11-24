@@ -1,4 +1,4 @@
-VersionSchemeFromVersionSeriesDetails
+﻿VersionSchemeFromVersionSeriesDetails
 =====================================
 
 .. currentmodule:: oci.database.models

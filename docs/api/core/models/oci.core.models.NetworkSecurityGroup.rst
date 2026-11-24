@@ -1,4 +1,4 @@
-NetworkSecurityGroup
+﻿NetworkSecurityGroup
 ====================
 
 .. currentmodule:: oci.core.models

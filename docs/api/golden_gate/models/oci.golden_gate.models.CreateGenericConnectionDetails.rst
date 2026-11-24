@@ -1,4 +1,4 @@
-CreateGenericConnectionDetails
+﻿CreateGenericConnectionDetails
 ==============================
 
 .. currentmodule:: oci.golden_gate.models

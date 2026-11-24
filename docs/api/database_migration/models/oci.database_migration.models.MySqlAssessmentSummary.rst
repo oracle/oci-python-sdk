@@ -1,4 +1,4 @@
-MySqlAssessmentSummary
+﻿MySqlAssessmentSummary
 ======================
 
 .. currentmodule:: oci.database_migration.models

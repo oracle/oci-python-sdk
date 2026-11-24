@@ -1,4 +1,4 @@
-UpdateIPSecConnectionTunnelSharedSecretDetails
+﻿UpdateIPSecConnectionTunnelSharedSecretDetails
 ==============================================
 
 .. currentmodule:: oci.core.models

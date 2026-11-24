@@ -1,4 +1,4 @@
-RemotePeeringConnectionDrgAttachmentNetworkDetails
+﻿RemotePeeringConnectionDrgAttachmentNetworkDetails
 ==================================================
 
 .. currentmodule:: oci.core.models

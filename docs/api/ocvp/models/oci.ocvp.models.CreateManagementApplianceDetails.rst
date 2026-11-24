@@ -1,4 +1,4 @@
-CreateManagementApplianceDetails
+﻿CreateManagementApplianceDetails
 ================================
 
 .. currentmodule:: oci.ocvp.models

@@ -1,4 +1,4 @@
-UpdateOracleAiDataPlatformConnectionDetails
+﻿UpdateOracleAiDataPlatformConnectionDetails
 ===========================================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-CreateGoogleCloudStorageConnectionDetails
+﻿CreateGoogleCloudStorageConnectionDetails
 =========================================
 
 .. currentmodule:: oci.golden_gate.models

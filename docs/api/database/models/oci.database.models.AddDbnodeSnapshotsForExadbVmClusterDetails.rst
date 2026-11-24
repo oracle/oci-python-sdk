@@ -1,4 +1,4 @@
-AddDbnodeSnapshotsForExadbVmClusterDetails
+﻿AddDbnodeSnapshotsForExadbVmClusterDetails
 ==========================================
 
 .. currentmodule:: oci.database.models

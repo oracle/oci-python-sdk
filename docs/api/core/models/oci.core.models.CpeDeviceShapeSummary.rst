@@ -1,4 +1,4 @@
-CpeDeviceShapeSummary
+﻿CpeDeviceShapeSummary
 =====================
 
 .. currentmodule:: oci.core.models

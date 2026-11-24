@@ -1,4 +1,4 @@
-ApiKeyAiModelAuthDetailsSummary
+﻿ApiKeyAiModelAuthDetailsSummary
 ===============================
 
 .. currentmodule:: oci.golden_gate.models

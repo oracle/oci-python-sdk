@@ -1,4 +1,4 @@
-UpdateDedicatedVmHostDetails
+﻿UpdateDedicatedVmHostDetails
 ============================
 
 .. currentmodule:: oci.core.models

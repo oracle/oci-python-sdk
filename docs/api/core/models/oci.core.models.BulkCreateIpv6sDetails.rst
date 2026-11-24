@@ -1,4 +1,4 @@
-BulkCreateIpv6sDetails
+﻿BulkCreateIpv6sDetails
 ======================
 
 .. currentmodule:: oci.core.models

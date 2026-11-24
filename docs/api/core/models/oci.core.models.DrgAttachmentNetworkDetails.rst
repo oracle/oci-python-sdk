@@ -1,4 +1,4 @@
-DrgAttachmentNetworkDetails
+﻿DrgAttachmentNetworkDetails
 ===========================
 
 .. currentmodule:: oci.core.models

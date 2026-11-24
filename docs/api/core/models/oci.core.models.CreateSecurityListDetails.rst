@@ -1,4 +1,4 @@
-CreateSecurityListDetails
+﻿CreateSecurityListDetails
 =========================
 
 .. currentmodule:: oci.core.models

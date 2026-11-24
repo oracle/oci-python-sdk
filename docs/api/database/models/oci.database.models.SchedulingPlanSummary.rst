@@ -1,4 +1,4 @@
-SchedulingPlanSummary
+﻿SchedulingPlanSummary
 =====================
 
 .. currentmodule:: oci.database.models

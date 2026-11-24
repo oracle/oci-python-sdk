@@ -1,4 +1,4 @@
-CreateDhcpDetails
+﻿CreateDhcpDetails
 =================
 
 .. currentmodule:: oci.core.models

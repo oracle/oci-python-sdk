@@ -1,4 +1,4 @@
-ChangeClusterNetworkCompartmentDetails
+﻿ChangeClusterNetworkCompartmentDetails
 ======================================
 
 .. currentmodule:: oci.core.models

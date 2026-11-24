@@ -1,4 +1,4 @@
-CreateDedicatedCapacitySourceDetails
+﻿CreateDedicatedCapacitySourceDetails
 ====================================
 
 .. currentmodule:: oci.core.models

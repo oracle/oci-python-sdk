@@ -1,4 +1,4 @@
-InstanceConfigurationDetachedVolumeAutotunePolicy
+﻿InstanceConfigurationDetachedVolumeAutotunePolicy
 =================================================
 
 .. currentmodule:: oci.core.models

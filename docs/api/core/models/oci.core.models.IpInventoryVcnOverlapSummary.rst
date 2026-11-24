@@ -1,4 +1,4 @@
-IpInventoryVcnOverlapSummary
+﻿IpInventoryVcnOverlapSummary
 ============================
 
 .. currentmodule:: oci.core.models

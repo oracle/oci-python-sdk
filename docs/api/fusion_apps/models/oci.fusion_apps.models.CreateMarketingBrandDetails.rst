@@ -1,4 +1,4 @@
-CreateMarketingBrandDetails
+﻿CreateMarketingBrandDetails
 ===========================
 
 .. currentmodule:: oci.fusion_apps.models

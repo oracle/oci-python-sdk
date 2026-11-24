@@ -1,4 +1,4 @@
-FlexComponentSummary
+﻿FlexComponentSummary
 ====================
 
 .. currentmodule:: oci.database.models

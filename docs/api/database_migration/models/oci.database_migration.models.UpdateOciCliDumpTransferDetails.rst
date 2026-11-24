@@ -1,4 +1,4 @@
-UpdateOciCliDumpTransferDetails
+﻿UpdateOciCliDumpTransferDetails
 ===============================
 
 .. currentmodule:: oci.database_migration.models

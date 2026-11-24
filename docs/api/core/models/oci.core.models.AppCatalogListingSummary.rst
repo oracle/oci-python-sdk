@@ -1,4 +1,4 @@
-AppCatalogListingSummary
+﻿AppCatalogListingSummary
 ========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-CreateGpuShapeTaskProfileExtendedInformationDetails
+﻿CreateGpuShapeTaskProfileExtendedInformationDetails
 ===================================================
 
 .. currentmodule:: oci.batch.models

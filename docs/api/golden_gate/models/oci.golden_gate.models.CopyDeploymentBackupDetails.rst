@@ -1,4 +1,4 @@
-CopyDeploymentBackupDetails
+﻿CopyDeploymentBackupDetails
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

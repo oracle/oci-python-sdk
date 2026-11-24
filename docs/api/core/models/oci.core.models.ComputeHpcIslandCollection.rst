@@ -1,4 +1,4 @@
-ComputeHpcIslandCollection
+﻿ComputeHpcIslandCollection
 ==========================
 
 .. currentmodule:: oci.core.models

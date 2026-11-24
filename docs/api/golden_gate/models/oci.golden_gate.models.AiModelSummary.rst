@@ -1,4 +1,4 @@
-AiModelSummary
+﻿AiModelSummary
 ==============
 
 .. currentmodule:: oci.golden_gate.models

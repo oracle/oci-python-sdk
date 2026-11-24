@@ -1,4 +1,4 @@
-CreatePluggableDatabaseRefreshableCloneDetails
+﻿CreatePluggableDatabaseRefreshableCloneDetails
 ==============================================
 
 .. currentmodule:: oci.database.models

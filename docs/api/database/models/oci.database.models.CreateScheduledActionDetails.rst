@@ -1,4 +1,4 @@
-CreateScheduledActionDetails
+﻿CreateScheduledActionDetails
 ============================
 
 .. currentmodule:: oci.database.models

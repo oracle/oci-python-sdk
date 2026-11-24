@@ -1,4 +1,4 @@
-DefaultRestoreDeploymentDetails
+﻿DefaultRestoreDeploymentDetails
 ===============================
 
 .. currentmodule:: oci.golden_gate.models

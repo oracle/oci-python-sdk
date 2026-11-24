@@ -1,4 +1,4 @@
-UpdateGlueIcebergCatalogDetails
+﻿UpdateGlueIcebergCatalogDetails
 ===============================
 
 .. currentmodule:: oci.golden_gate.models

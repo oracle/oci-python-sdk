@@ -1,4 +1,4 @@
-NessieIcebergCatalogSummary
+﻿NessieIcebergCatalogSummary
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

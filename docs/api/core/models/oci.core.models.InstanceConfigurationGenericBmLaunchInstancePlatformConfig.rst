@@ -1,4 +1,4 @@
-InstanceConfigurationGenericBmLaunchInstancePlatformConfig
+﻿InstanceConfigurationGenericBmLaunchInstancePlatformConfig
 ==========================================================
 
 .. currentmodule:: oci.core.models

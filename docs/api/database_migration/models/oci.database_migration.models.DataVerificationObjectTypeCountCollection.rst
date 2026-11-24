@@ -1,4 +1,4 @@
-DataVerificationObjectTypeCountCollection
+﻿DataVerificationObjectTypeCountCollection
 =========================================
 
 .. currentmodule:: oci.database_migration.models

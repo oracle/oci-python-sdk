@@ -1,4 +1,4 @@
-InstancePoolLifecycleActionsDetails
+﻿InstancePoolLifecycleActionsDetails
 ===================================
 
 .. currentmodule:: oci.core.models

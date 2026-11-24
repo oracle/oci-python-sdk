@@ -1,4 +1,4 @@
-InstanceConfigurationVolumeSourceFromVolumeBackupDetails
+﻿InstanceConfigurationVolumeSourceFromVolumeBackupDetails
 ========================================================
 
 .. currentmodule:: oci.core.models

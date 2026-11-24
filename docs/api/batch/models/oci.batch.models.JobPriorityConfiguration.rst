@@ -1,4 +1,4 @@
-JobPriorityConfiguration
+﻿JobPriorityConfiguration
 ========================
 
 .. currentmodule:: oci.batch.models

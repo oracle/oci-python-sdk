@@ -1,4 +1,4 @@
-UpdateIcebergConnectionDetails
+﻿UpdateIcebergConnectionDetails
 ==============================
 
 .. currentmodule:: oci.golden_gate.models

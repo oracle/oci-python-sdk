@@ -1,4 +1,4 @@
-AttachBootVolumeDetails
+﻿AttachBootVolumeDetails
 =======================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-NetworkConfiguration
+﻿NetworkConfiguration
 ====================
 
 .. currentmodule:: oci.ocvp.models

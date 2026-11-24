@@ -1,4 +1,4 @@
-VmClusterUpdateHistoryEntrySummary
+﻿VmClusterUpdateHistoryEntrySummary
 ==================================
 
 .. currentmodule:: oci.database.models

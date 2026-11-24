@@ -1,4 +1,4 @@
-WindowTypeDescription
+﻿WindowTypeDescription
 =====================
 
 .. currentmodule:: oci.database.models

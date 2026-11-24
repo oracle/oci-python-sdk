@@ -1,4 +1,4 @@
-UpdateDataGuardDetails
+﻿UpdateDataGuardDetails
 ======================
 
 .. currentmodule:: oci.database.models

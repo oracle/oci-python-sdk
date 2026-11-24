@@ -1,4 +1,4 @@
-KafkaSchemaRegistryConnection
+﻿KafkaSchemaRegistryConnection
 =============================
 
 .. currentmodule:: oci.golden_gate.models

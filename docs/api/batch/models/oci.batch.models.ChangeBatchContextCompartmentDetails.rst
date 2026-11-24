@@ -1,4 +1,4 @@
-ChangeBatchContextCompartmentDetails
+﻿ChangeBatchContextCompartmentDetails
 ====================================
 
 .. currentmodule:: oci.batch.models

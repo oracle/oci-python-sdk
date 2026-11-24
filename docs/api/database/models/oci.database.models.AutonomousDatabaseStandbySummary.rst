@@ -1,4 +1,4 @@
-AutonomousDatabaseStandbySummary
+﻿AutonomousDatabaseStandbySummary
 ================================
 
 .. currentmodule:: oci.database.models

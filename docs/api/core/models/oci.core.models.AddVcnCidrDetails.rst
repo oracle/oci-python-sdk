@@ -1,4 +1,4 @@
-AddVcnCidrDetails
+﻿AddVcnCidrDetails
 =================
 
 .. currentmodule:: oci.core.models

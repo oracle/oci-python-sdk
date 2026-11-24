@@ -1,4 +1,4 @@
-ExportImageDetails
+﻿ExportImageDetails
 ==================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-RemoveResourceLockDetails
+﻿RemoveResourceLockDetails
 =========================
 
 .. currentmodule:: oci.golden_gate.models

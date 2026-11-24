@@ -1,4 +1,4 @@
-UpdateVolumeKmsKeyDetails
+﻿UpdateVolumeKmsKeyDetails
 =========================
 
 .. currentmodule:: oci.core.models

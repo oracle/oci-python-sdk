@@ -1,4 +1,4 @@
-ComputeBareMetalHostPlacementConstraintDetails
+﻿ComputeBareMetalHostPlacementConstraintDetails
 ==============================================
 
 .. currentmodule:: oci.core.models

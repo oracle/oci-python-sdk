@@ -1,4 +1,4 @@
-DrgCustomerResource
+﻿DrgCustomerResource
 ===================
 
 .. currentmodule:: oci.core.models

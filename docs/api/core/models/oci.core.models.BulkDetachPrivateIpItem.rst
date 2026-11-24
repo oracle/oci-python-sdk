@@ -1,4 +1,4 @@
-BulkDetachPrivateIpItem
+﻿BulkDetachPrivateIpItem
 =======================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-UpdateHistoryEntrySummary
+﻿UpdateHistoryEntrySummary
 =========================
 
 .. currentmodule:: oci.database.models

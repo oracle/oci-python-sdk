@@ -1,4 +1,4 @@
-VirtualCircuitBandwidthShape
+﻿VirtualCircuitBandwidthShape
 ============================
 
 .. currentmodule:: oci.core.models

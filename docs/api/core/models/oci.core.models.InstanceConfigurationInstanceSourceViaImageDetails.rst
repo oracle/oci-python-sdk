@@ -1,4 +1,4 @@
-InstanceConfigurationInstanceSourceViaImageDetails
+﻿InstanceConfigurationInstanceSourceViaImageDetails
 ==================================================
 
 .. currentmodule:: oci.core.models

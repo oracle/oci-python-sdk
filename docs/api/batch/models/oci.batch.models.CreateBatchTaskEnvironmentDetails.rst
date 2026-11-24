@@ -1,4 +1,4 @@
-CreateBatchTaskEnvironmentDetails
+﻿CreateBatchTaskEnvironmentDetails
 =================================
 
 .. currentmodule:: oci.batch.models

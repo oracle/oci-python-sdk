@@ -1,4 +1,4 @@
-UpdateCloudExadataInfrastructureDetails
+﻿UpdateCloudExadataInfrastructureDetails
 =======================================
 
 .. currentmodule:: oci.database.models

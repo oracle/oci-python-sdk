@@ -1,4 +1,4 @@
-UpdateComputeGpuMemoryClusterDetails
+﻿UpdateComputeGpuMemoryClusterDetails
 ====================================
 
 .. currentmodule:: oci.core.models

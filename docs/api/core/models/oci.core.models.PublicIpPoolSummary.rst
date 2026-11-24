@@ -1,4 +1,4 @@
-PublicIpPoolSummary
+﻿PublicIpPoolSummary
 ===================
 
 .. currentmodule:: oci.core.models

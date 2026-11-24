@@ -1,4 +1,4 @@
-ShapeSecureBootOptions
+﻿ShapeSecureBootOptions
 ======================
 
 .. currentmodule:: oci.core.models

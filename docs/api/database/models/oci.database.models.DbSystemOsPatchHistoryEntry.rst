@@ -1,4 +1,4 @@
-DbSystemOsPatchHistoryEntry
+﻿DbSystemOsPatchHistoryEntry
 ===========================
 
 .. currentmodule:: oci.database.models

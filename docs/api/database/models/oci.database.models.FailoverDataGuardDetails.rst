@@ -1,4 +1,4 @@
-FailoverDataGuardDetails
+﻿FailoverDataGuardDetails
 ========================
 
 .. currentmodule:: oci.database.models

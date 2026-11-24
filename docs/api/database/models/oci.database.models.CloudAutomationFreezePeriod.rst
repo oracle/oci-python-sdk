@@ -1,4 +1,4 @@
-CloudAutomationFreezePeriod
+﻿CloudAutomationFreezePeriod
 ===========================
 
 .. currentmodule:: oci.database.models

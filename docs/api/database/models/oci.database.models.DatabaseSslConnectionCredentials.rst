@@ -1,4 +1,4 @@
-DatabaseSslConnectionCredentials
+﻿DatabaseSslConnectionCredentials
 ================================
 
 .. currentmodule:: oci.database.models

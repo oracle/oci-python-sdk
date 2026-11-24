@@ -1,4 +1,4 @@
-InstancePoolLaunchOverrideDetails
+﻿InstancePoolLaunchOverrideDetails
 =================================
 
 .. currentmodule:: oci.core.models

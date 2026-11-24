@@ -1,4 +1,4 @@
-CreateConsoleHistoryDetails
+﻿CreateConsoleHistoryDetails
 ===========================
 
 .. currentmodule:: oci.database.models

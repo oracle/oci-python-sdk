@@ -1,4 +1,4 @@
-BootVolumeReplicaInfo
+﻿BootVolumeReplicaInfo
 =====================
 
 .. currentmodule:: oci.core.models

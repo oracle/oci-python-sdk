@@ -1,4 +1,4 @@
-CreateFixedGpuFleetShapeDetails
+﻿CreateFixedGpuFleetShapeDetails
 ===============================
 
 .. currentmodule:: oci.batch.models

@@ -1,4 +1,4 @@
-AssociatedDatabaseDetails
+﻿AssociatedDatabaseDetails
 =========================
 
 .. currentmodule:: oci.database.models

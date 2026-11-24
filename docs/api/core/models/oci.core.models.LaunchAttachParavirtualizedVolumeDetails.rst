@@ -1,4 +1,4 @@
-LaunchAttachParavirtualizedVolumeDetails
+﻿LaunchAttachParavirtualizedVolumeDetails
 ========================================
 
 .. currentmodule:: oci.core.models

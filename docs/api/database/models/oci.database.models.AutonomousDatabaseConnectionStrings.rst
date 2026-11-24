@@ -1,4 +1,4 @@
-AutonomousDatabaseConnectionStrings
+﻿AutonomousDatabaseConnectionStrings
 ===================================
 
 .. currentmodule:: oci.database.models

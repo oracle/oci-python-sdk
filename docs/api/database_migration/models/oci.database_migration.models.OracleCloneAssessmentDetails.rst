@@ -1,4 +1,4 @@
-OracleCloneAssessmentDetails
+﻿OracleCloneAssessmentDetails
 ============================
 
 .. currentmodule:: oci.database_migration.models

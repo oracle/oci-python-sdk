@@ -1,4 +1,4 @@
-InstanceSourceDetails
+﻿InstanceSourceDetails
 =====================
 
 .. currentmodule:: oci.core.models

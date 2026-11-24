@@ -1,4 +1,4 @@
-UpdateMarketingBrandDetails
+﻿UpdateMarketingBrandDetails
 ===========================
 
 .. currentmodule:: oci.fusion_apps.models

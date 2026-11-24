@@ -1,4 +1,4 @@
-RemoveDeploymentLocalPeerDetails
+﻿RemoveDeploymentLocalPeerDetails
 ================================
 
 .. currentmodule:: oci.golden_gate.models

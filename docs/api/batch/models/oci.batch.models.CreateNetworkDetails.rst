@@ -1,4 +1,4 @@
-CreateNetworkDetails
+﻿CreateNetworkDetails
 ====================
 
 .. currentmodule:: oci.batch.models

@@ -1,4 +1,4 @@
-UpdateInstancePlatformConfig
+﻿UpdateInstancePlatformConfig
 ============================
 
 .. currentmodule:: oci.core.models

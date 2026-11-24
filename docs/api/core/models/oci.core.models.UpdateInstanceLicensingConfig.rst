@@ -1,4 +1,4 @@
-UpdateInstanceLicensingConfig
+﻿UpdateInstanceLicensingConfig
 =============================
 
 .. currentmodule:: oci.core.models

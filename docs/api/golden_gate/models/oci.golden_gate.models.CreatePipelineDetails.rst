@@ -1,4 +1,4 @@
-CreatePipelineDetails
+﻿CreatePipelineDetails
 =====================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-InstanceConfigurationAttachVnicDetails
+﻿InstanceConfigurationAttachVnicDetails
 ======================================
 
 .. currentmodule:: oci.core.models

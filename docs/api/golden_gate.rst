@@ -46,6 +46,10 @@ Golden Gate
     oci.golden_gate.models.AzureDataLakeStorageDatabricksEngineArtifactLocationSummary
     oci.golden_gate.models.AzureDataLakeStorageIcebergStorage
     oci.golden_gate.models.AzureDataLakeStorageIcebergStorageSummary
+    oci.golden_gate.models.AzureStorageIcebergStorage
+    oci.golden_gate.models.AzureStorageIcebergStorageSummary
+    oci.golden_gate.models.AzureStorageWarehouseStorage
+    oci.golden_gate.models.AzureStorageWarehouseStorageSummary
     oci.golden_gate.models.AzureSynapseConnection
     oci.golden_gate.models.AzureSynapseConnectionSummary
     oci.golden_gate.models.BackupSchedule
@@ -84,6 +88,8 @@ Golden Gate
     oci.golden_gate.models.CreateAzureDataLakeStorageConnectionDetails
     oci.golden_gate.models.CreateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails
     oci.golden_gate.models.CreateAzureDataLakeStorageIcebergStorageDetails
+    oci.golden_gate.models.CreateAzureStorageIcebergStorageDetails
+    oci.golden_gate.models.CreateAzureStorageWarehouseStorageDetails
     oci.golden_gate.models.CreateAzureSynapseConnectionDetails
     oci.golden_gate.models.CreateBackupScheduleDetails
     oci.golden_gate.models.CreateCertificateDetails
@@ -99,6 +105,7 @@ Golden Gate
     oci.golden_gate.models.CreateDatabricksEngineSecretKeyOciObjectStorageConfigDetails
     oci.golden_gate.models.CreateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
     oci.golden_gate.models.CreateDb2ConnectionDetails
+    oci.golden_gate.models.CreateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails
     oci.golden_gate.models.CreateDeploymentBackupDetails
     oci.golden_gate.models.CreateDeploymentDetails
     oci.golden_gate.models.CreateElasticsearchConnectionDetails
@@ -127,11 +134,17 @@ Golden Gate
     oci.golden_gate.models.CreateNessieIcebergCatalogDetails
     oci.golden_gate.models.CreateNoIcebergStorageDetails
     oci.golden_gate.models.CreateOciGenAiModelAuthDetails
+    oci.golden_gate.models.CreateOciGoldenGateOracleAiDataCatalogIcebergCatalogConfigDetails
+    oci.golden_gate.models.CreateOciObjectStorageAccessKeyIcebergStorageDetails
+    oci.golden_gate.models.CreateOciObjectStorageAccessKeyWarehouseStorageDetails
     oci.golden_gate.models.CreateOciObjectStorageConnectionDetails
     oci.golden_gate.models.CreateOciObjectStorageDatabricksEngineArtifactLocationDetails
     oci.golden_gate.models.CreateOciObjectStorageS3ApiIcebergStorageDetails
     oci.golden_gate.models.CreateOciObjectStorageSparkArtifactLocationDetails
     oci.golden_gate.models.CreateOggDeploymentDetails
+    oci.golden_gate.models.CreateOracleAiDataCatalogIcebergCatalogConfigDetails
+    oci.golden_gate.models.CreateOracleAiDataCatalogIcebergCatalogDetails
+    oci.golden_gate.models.CreateOracleAiDataCatalogStorageConnectionDetails
     oci.golden_gate.models.CreateOracleAiDataPlatformConnectionDetails
     oci.golden_gate.models.CreateOracleAiDataPlatformEngineConnectionDetails
     oci.golden_gate.models.CreateOracleConnectionDetails
@@ -150,7 +163,10 @@ Golden Gate
     oci.golden_gate.models.CreateSparkSecretKeyOciObjectStorageConfigDetails
     oci.golden_gate.models.CreateSparkUserPrincipalOciObjectStorageConfigDetails
     oci.golden_gate.models.CreateUcVolumeDatabricksEngineArtifactLocationDetails
+    oci.golden_gate.models.CreateWarehouseStorageDetails
     oci.golden_gate.models.CreateZeroEtlPipelineDetails
+    oci.golden_gate.models.CreateZfsIcebergStorageDetails
+    oci.golden_gate.models.CreateZfsWarehouseStorageDetails
     oci.golden_gate.models.DatabaseRegistration
     oci.golden_gate.models.DatabaseRegistrationCollection
     oci.golden_gate.models.DatabaseRegistrationSummary
@@ -167,6 +183,8 @@ Golden Gate
     oci.golden_gate.models.DatabricksEngineUserPrincipalOciObjectStorageConfig
     oci.golden_gate.models.Db2Connection
     oci.golden_gate.models.Db2ConnectionSummary
+    oci.golden_gate.models.DbCredentialsOracleAiDataCatalogIcebergCatalogConfig
+    oci.golden_gate.models.DbCredentialsOracleAiDataCatalogIcebergCatalogConfigSummary
     oci.golden_gate.models.DefaultCancelDeploymentBackupDetails
     oci.golden_gate.models.DefaultCancelDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultCancelSnoozeDeploymentUpgradeDetails
@@ -273,6 +291,12 @@ Golden Gate
     oci.golden_gate.models.NoIcebergStorageSummary
     oci.golden_gate.models.OciGenAiModelAuthDetails
     oci.golden_gate.models.OciGenAiModelAuthDetailsSummary
+    oci.golden_gate.models.OciGoldenGateOracleAiDataCatalogIcebergCatalogConfig
+    oci.golden_gate.models.OciGoldenGateOracleAiDataCatalogIcebergCatalogConfigSummary
+    oci.golden_gate.models.OciObjectStorageAccessKeyIcebergStorage
+    oci.golden_gate.models.OciObjectStorageAccessKeyIcebergStorageSummary
+    oci.golden_gate.models.OciObjectStorageAccessKeyWarehouseStorage
+    oci.golden_gate.models.OciObjectStorageAccessKeyWarehouseStorageSummary
     oci.golden_gate.models.OciObjectStorageConnection
     oci.golden_gate.models.OciObjectStorageConnectionSummary
     oci.golden_gate.models.OciObjectStorageDatabricksEngineArtifactLocation
@@ -282,6 +306,12 @@ Golden Gate
     oci.golden_gate.models.OciObjectStorageSparkArtifactLocation
     oci.golden_gate.models.OciObjectStorageSparkArtifactLocationSummary
     oci.golden_gate.models.OggDeployment
+    oci.golden_gate.models.OracleAiDataCatalogIcebergCatalog
+    oci.golden_gate.models.OracleAiDataCatalogIcebergCatalogConfig
+    oci.golden_gate.models.OracleAiDataCatalogIcebergCatalogConfigSummary
+    oci.golden_gate.models.OracleAiDataCatalogIcebergCatalogSummary
+    oci.golden_gate.models.OracleAiDataCatalogStorageConnection
+    oci.golden_gate.models.OracleAiDataCatalogStorageConnectionSummary
     oci.golden_gate.models.OracleAiDataPlatformConnection
     oci.golden_gate.models.OracleAiDataPlatformConnectionSummary
     oci.golden_gate.models.OracleAiDataPlatformEngineConnection
@@ -367,6 +397,8 @@ Golden Gate
     oci.golden_gate.models.UpdateAzureDataLakeStorageConnectionDetails
     oci.golden_gate.models.UpdateAzureDataLakeStorageDatabricksEngineArtifactLocationDetails
     oci.golden_gate.models.UpdateAzureDataLakeStorageIcebergStorageDetails
+    oci.golden_gate.models.UpdateAzureStorageIcebergStorageDetails
+    oci.golden_gate.models.UpdateAzureStorageWarehouseStorageDetails
     oci.golden_gate.models.UpdateAzureSynapseConnectionDetails
     oci.golden_gate.models.UpdateBackupScheduleDetails
     oci.golden_gate.models.UpdateConnectionDetails
@@ -380,6 +412,7 @@ Golden Gate
     oci.golden_gate.models.UpdateDatabricksEngineSecretKeyOciObjectStorageConfigDetails
     oci.golden_gate.models.UpdateDatabricksEngineUserPrincipalOciObjectStorageConfigDetails
     oci.golden_gate.models.UpdateDb2ConnectionDetails
+    oci.golden_gate.models.UpdateDbCredentialsOracleAiDataCatalogIcebergCatalogConfigDetails
     oci.golden_gate.models.UpdateDeploymentBackupDetails
     oci.golden_gate.models.UpdateDeploymentDetails
     oci.golden_gate.models.UpdateElasticsearchConnectionDetails
@@ -408,11 +441,17 @@ Golden Gate
     oci.golden_gate.models.UpdateNessieIcebergCatalogDetails
     oci.golden_gate.models.UpdateNoIcebergStorageDetails
     oci.golden_gate.models.UpdateOciGenAiModelAuthDetails
+    oci.golden_gate.models.UpdateOciGoldenGateOracleAiDataCatalogIcebergCatalogConfigDetails
+    oci.golden_gate.models.UpdateOciObjectStorageAccessKeyIcebergStorageDetails
+    oci.golden_gate.models.UpdateOciObjectStorageAccessKeyWarehouseStorageDetails
     oci.golden_gate.models.UpdateOciObjectStorageConnectionDetails
     oci.golden_gate.models.UpdateOciObjectStorageDatabricksEngineArtifactLocationDetails
     oci.golden_gate.models.UpdateOciObjectStorageS3ApiIcebergStorageDetails
     oci.golden_gate.models.UpdateOciObjectStorageSparkArtifactLocationDetails
     oci.golden_gate.models.UpdateOggDeploymentDetails
+    oci.golden_gate.models.UpdateOracleAiDataCatalogIcebergCatalogConfigDetails
+    oci.golden_gate.models.UpdateOracleAiDataCatalogIcebergCatalogDetails
+    oci.golden_gate.models.UpdateOracleAiDataCatalogStorageConnectionDetails
     oci.golden_gate.models.UpdateOracleAiDataPlatformConnectionDetails
     oci.golden_gate.models.UpdateOracleAiDataPlatformEngineConnectionDetails
     oci.golden_gate.models.UpdateOracleConnectionDetails
@@ -431,14 +470,23 @@ Golden Gate
     oci.golden_gate.models.UpdateSparkSecretKeyOciObjectStorageConfigDetails
     oci.golden_gate.models.UpdateSparkUserPrincipalOciObjectStorageConfigDetails
     oci.golden_gate.models.UpdateUcVolumeDatabricksEngineArtifactLocationDetails
+    oci.golden_gate.models.UpdateWarehouseStorageDetails
     oci.golden_gate.models.UpdateZeroEtlPipelineDetails
+    oci.golden_gate.models.UpdateZfsIcebergStorageDetails
+    oci.golden_gate.models.UpdateZfsWarehouseStorageDetails
     oci.golden_gate.models.UpgradeDeploymentCurrentReleaseDetails
     oci.golden_gate.models.UpgradeDeploymentDetails
     oci.golden_gate.models.UpgradeDeploymentSpecificReleaseDetails
     oci.golden_gate.models.UpgradeDeploymentUpgradeDetails
+    oci.golden_gate.models.WarehouseStorage
+    oci.golden_gate.models.WarehouseStorageSummary
     oci.golden_gate.models.WorkRequest
     oci.golden_gate.models.WorkRequestError
     oci.golden_gate.models.WorkRequestLogEntry
     oci.golden_gate.models.WorkRequestResource
     oci.golden_gate.models.ZeroEtlPipeline
     oci.golden_gate.models.ZeroEtlPipelineSummary
+    oci.golden_gate.models.ZfsIcebergStorage
+    oci.golden_gate.models.ZfsIcebergStorageSummary
+    oci.golden_gate.models.ZfsWarehouseStorage
+    oci.golden_gate.models.ZfsWarehouseStorageSummary

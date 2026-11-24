@@ -1,4 +1,4 @@
-CreateAzureDataLakeStorageIcebergStorageDetails
+﻿CreateAzureDataLakeStorageIcebergStorageDetails
 ===============================================
 
 .. currentmodule:: oci.golden_gate.models

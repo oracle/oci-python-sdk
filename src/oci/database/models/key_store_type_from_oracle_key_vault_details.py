@@ -23,7 +23,7 @@ class KeyStoreTypeFromOracleKeyVaultDetails(KeyStoreTypeDetails):
 
         :param type:
             The value to assign to the type property of this KeyStoreTypeFromOracleKeyVaultDetails.
-            Allowed values for this property are: "ORACLE_KEY_VAULT"
+            Allowed values for this property are: "ORACLE_KEY_VAULT", "THALES"
         :type type: str
 
         :param connection_ips:

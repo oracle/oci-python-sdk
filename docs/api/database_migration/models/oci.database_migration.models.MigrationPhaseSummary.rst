@@ -1,4 +1,4 @@
-MigrationPhaseSummary
+﻿MigrationPhaseSummary
 =====================
 
 .. currentmodule:: oci.database_migration.models

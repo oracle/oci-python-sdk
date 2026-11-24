@@ -1,4 +1,4 @@
-ChangeVtapCompartmentDetails
+﻿ChangeVtapCompartmentDetails
 ============================
 
 .. currentmodule:: oci.core.models

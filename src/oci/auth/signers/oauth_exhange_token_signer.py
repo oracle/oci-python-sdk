@@ -42,6 +42,7 @@ The signer automatically handles token lifecycle including refresh and expiratio
 
 import json
 import logging
+from oci._logging import NULL_HANDLER
 import pprint
 import threading
 import time
@@ -147,7 +148,7 @@ class OauthExchangeTokenSigner(SecurityTokenSigner):
     def _setup_logging(self, log_requests):
         self._log_requests_enabled = bool(log_requests)
         self.logger = logging.getLogger(f"{__name__}.{id(self)}")
-        self.logger.addHandler(logging.NullHandler())
+        self.logger.addHandler(NULL_HANDLER)
         if self._log_requests_enabled:
             self.logger.setLevel(logging.DEBUG)
 

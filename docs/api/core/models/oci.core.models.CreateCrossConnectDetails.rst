@@ -1,4 +1,4 @@
-CreateCrossConnectDetails
+﻿CreateCrossConnectDetails
 =========================
 
 .. currentmodule:: oci.core.models

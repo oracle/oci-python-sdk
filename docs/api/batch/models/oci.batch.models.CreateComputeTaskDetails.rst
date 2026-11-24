@@ -1,4 +1,4 @@
-CreateComputeTaskDetails
+﻿CreateComputeTaskDetails
 ========================
 
 .. currentmodule:: oci.batch.models

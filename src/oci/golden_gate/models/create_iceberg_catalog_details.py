@@ -35,11 +35,16 @@ class CreateIcebergCatalogDetails(object):
     #: This constant has a value of "REST"
     CATALOG_TYPE_REST = "REST"
 
+    #: A constant which can be used with the catalog_type property of a CreateIcebergCatalogDetails.
+    #: This constant has a value of "OADC"
+    CATALOG_TYPE_OADC = "OADC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateIcebergCatalogDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.golden_gate.models.CreateOracleAiDataCatalogIcebergCatalogDetails`
         * :class:`~oci.golden_gate.models.CreatePolarisIcebergCatalogDetails`
         * :class:`~oci.golden_gate.models.CreateGlueIcebergCatalogDetails`
         * :class:`~oci.golden_gate.models.CreateRestIcebergCatalogDetails`
@@ -50,7 +55,7 @@ class CreateIcebergCatalogDetails(object):
 
         :param catalog_type:
             The value to assign to the catalog_type property of this CreateIcebergCatalogDetails.
-            Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST"
+            Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", "OADC"
         :type catalog_type: str
 
         """
@@ -69,6 +74,9 @@ class CreateIcebergCatalogDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['catalogType']
+
+        if type == 'OADC':
+            return 'CreateOracleAiDataCatalogIcebergCatalogDetails'
 
         if type == 'POLARIS':
             return 'CreatePolarisIcebergCatalogDetails'
@@ -93,7 +101,7 @@ class CreateIcebergCatalogDetails(object):
         **[Required]** Gets the catalog_type of this CreateIcebergCatalogDetails.
         The catalog type.
 
-        Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST"
+        Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", "OADC"
 
 
         :return: The catalog_type of this CreateIcebergCatalogDetails.
@@ -111,7 +119,7 @@ class CreateIcebergCatalogDetails(object):
         :param catalog_type: The catalog_type of this CreateIcebergCatalogDetails.
         :type: str
         """
-        allowed_values = ["GLUE", "HADOOP", "NESSIE", "POLARIS", "REST"]
+        allowed_values = ["GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", "OADC"]
         if not value_allowed_none_or_none_sentinel(catalog_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `catalog_type`, must be None or one of {allowed_values}"

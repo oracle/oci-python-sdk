@@ -1,4 +1,4 @@
-DefaultStartDeploymentDetails
+﻿DefaultStartDeploymentDetails
 =============================
 
 .. currentmodule:: oci.golden_gate.models

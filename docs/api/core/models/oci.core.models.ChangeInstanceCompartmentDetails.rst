@@ -1,4 +1,4 @@
-ChangeInstanceCompartmentDetails
+﻿ChangeInstanceCompartmentDetails
 ================================
 
 .. currentmodule:: oci.core.models

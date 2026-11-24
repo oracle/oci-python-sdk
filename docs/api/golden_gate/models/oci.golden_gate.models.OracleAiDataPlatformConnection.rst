@@ -1,4 +1,4 @@
-OracleAiDataPlatformConnection
+﻿OracleAiDataPlatformConnection
 ==============================
 
 .. currentmodule:: oci.golden_gate.models

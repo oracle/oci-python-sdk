@@ -1,4 +1,4 @@
-InstanceConfigurationLaunchInstanceShapeConfigDetails
+﻿InstanceConfigurationLaunchInstanceShapeConfigDetails
 =====================================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-UpdateIPSecConnectionTunnelDetails
+﻿UpdateIPSecConnectionTunnelDetails
 ==================================
 
 .. currentmodule:: oci.core.models

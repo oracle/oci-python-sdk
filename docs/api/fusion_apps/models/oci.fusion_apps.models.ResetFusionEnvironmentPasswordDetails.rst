@@ -1,4 +1,4 @@
-ResetFusionEnvironmentPasswordDetails
+﻿ResetFusionEnvironmentPasswordDetails
 =====================================
 
 .. currentmodule:: oci.fusion_apps.models

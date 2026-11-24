@@ -1,4 +1,4 @@
-UpdateNoIcebergStorageDetails
+﻿UpdateNoIcebergStorageDetails
 =============================
 
 .. currentmodule:: oci.golden_gate.models

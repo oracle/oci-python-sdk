@@ -1,4 +1,4 @@
-ShapeMemoryEncryptionOptions
+﻿ShapeMemoryEncryptionOptions
 ============================
 
 .. currentmodule:: oci.core.models

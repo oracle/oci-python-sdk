@@ -1,4 +1,4 @@
-ImageSourceViaObjectStorageUriDetails
+﻿ImageSourceViaObjectStorageUriDetails
 =====================================
 
 .. currentmodule:: oci.core.models

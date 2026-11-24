@@ -1,4 +1,4 @@
-ComputeBareMetalHostSummary
+﻿ComputeBareMetalHostSummary
 ===========================
 
 .. currentmodule:: oci.core.models

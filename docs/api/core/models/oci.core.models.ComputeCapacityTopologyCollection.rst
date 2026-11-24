@@ -1,4 +1,4 @@
-ComputeCapacityTopologyCollection
+﻿ComputeCapacityTopologyCollection
 =================================
 
 .. currentmodule:: oci.core.models

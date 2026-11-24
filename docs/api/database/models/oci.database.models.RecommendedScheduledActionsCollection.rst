@@ -1,4 +1,4 @@
-RecommendedScheduledActionsCollection
+﻿RecommendedScheduledActionsCollection
 =====================================
 
 .. currentmodule:: oci.database.models

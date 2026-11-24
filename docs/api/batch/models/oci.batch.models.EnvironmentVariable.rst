@@ -1,4 +1,4 @@
-EnvironmentVariable
+﻿EnvironmentVariable
 ===================
 
 .. currentmodule:: oci.batch.models

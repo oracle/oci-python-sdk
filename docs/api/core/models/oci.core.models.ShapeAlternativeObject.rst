@@ -1,4 +1,4 @@
-ShapeAlternativeObject
+﻿ShapeAlternativeObject
 ======================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-QuarterlyUpgradeBeginTimes
+﻿QuarterlyUpgradeBeginTimes
 ==========================
 
 .. currentmodule:: oci.fusion_apps.models

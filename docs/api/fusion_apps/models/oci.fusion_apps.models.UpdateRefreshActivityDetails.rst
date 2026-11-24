@@ -1,4 +1,4 @@
-UpdateRefreshActivityDetails
+﻿UpdateRefreshActivityDetails
 ============================
 
 .. currentmodule:: oci.fusion_apps.models

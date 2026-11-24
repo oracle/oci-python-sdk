@@ -1,4 +1,4 @@
-BulkDeleteVirtualCircuitPublicPrefixesDetails
+﻿BulkDeleteVirtualCircuitPublicPrefixesDetails
 =============================================
 
 .. currentmodule:: oci.core.models

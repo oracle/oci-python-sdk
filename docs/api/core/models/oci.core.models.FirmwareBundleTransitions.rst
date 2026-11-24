@@ -1,4 +1,4 @@
-FirmwareBundleTransitions
+﻿FirmwareBundleTransitions
 =========================
 
 .. currentmodule:: oci.core.models

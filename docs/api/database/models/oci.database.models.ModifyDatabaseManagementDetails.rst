@@ -1,4 +1,4 @@
-ModifyDatabaseManagementDetails
+﻿ModifyDatabaseManagementDetails
 ===============================
 
 .. currentmodule:: oci.database.models

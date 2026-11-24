@@ -1,4 +1,4 @@
-TestPipelineConnectionResult
+﻿TestPipelineConnectionResult
 ============================
 
 .. currentmodule:: oci.golden_gate.models

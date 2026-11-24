@@ -1,4 +1,4 @@
-TrailFileCollection
+﻿TrailFileCollection
 ===================
 
 .. currentmodule:: oci.golden_gate.models

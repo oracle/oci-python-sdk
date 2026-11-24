@@ -1,4 +1,4 @@
-CreateConsoleConnectionDetails
+﻿CreateConsoleConnectionDetails
 ==============================
 
 .. currentmodule:: oci.database.models

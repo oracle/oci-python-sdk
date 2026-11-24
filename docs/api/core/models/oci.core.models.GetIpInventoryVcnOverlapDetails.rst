@@ -1,4 +1,4 @@
-GetIpInventoryVcnOverlapDetails
+﻿GetIpInventoryVcnOverlapDetails
 ===============================
 
 .. currentmodule:: oci.core.models

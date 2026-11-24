@@ -1,4 +1,4 @@
-UpdateVolumeGroupDetails
+﻿UpdateVolumeGroupDetails
 ========================
 
 .. currentmodule:: oci.core.models

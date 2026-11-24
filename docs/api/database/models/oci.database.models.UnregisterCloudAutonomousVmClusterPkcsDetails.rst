@@ -1,4 +1,4 @@
-UnregisterCloudAutonomousVmClusterPkcsDetails
+﻿UnregisterCloudAutonomousVmClusterPkcsDetails
 =============================================
 
 .. currentmodule:: oci.database.models

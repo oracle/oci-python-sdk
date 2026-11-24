@@ -1,4 +1,4 @@
-CreateDataGuardAssociationToExistingVmClusterDetails
+﻿CreateDataGuardAssociationToExistingVmClusterDetails
 ====================================================
 
 .. currentmodule:: oci.database.models

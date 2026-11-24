@@ -1,4 +1,4 @@
-UpdateBootVolumeDetails
+﻿UpdateBootVolumeDetails
 =======================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-DowngradeHcxDetails
+﻿DowngradeHcxDetails
 ===================
 
 .. currentmodule:: oci.ocvp.models

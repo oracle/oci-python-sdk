@@ -1,4 +1,4 @@
-CreateOracleAiDataPlatformEngineConnectionDetails
+﻿CreateOracleAiDataPlatformEngineConnectionDetails
 =================================================
 
 .. currentmodule:: oci.golden_gate.models

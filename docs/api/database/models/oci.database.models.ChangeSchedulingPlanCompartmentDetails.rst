@@ -1,4 +1,4 @@
-ChangeSchedulingPlanCompartmentDetails
+﻿ChangeSchedulingPlanCompartmentDetails
 ======================================
 
 .. currentmodule:: oci.database.models

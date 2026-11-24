@@ -1,4 +1,4 @@
-CreateVtapDetails
+﻿CreateVtapDetails
 =================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-GoogleBigQueryConnectionSummary
+﻿GoogleBigQueryConnectionSummary
 ===============================
 
 .. currentmodule:: oci.golden_gate.models

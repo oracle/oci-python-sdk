@@ -1,4 +1,4 @@
-PipelineSchemaCollection
+﻿PipelineSchemaCollection
 ========================
 
 .. currentmodule:: oci.golden_gate.models

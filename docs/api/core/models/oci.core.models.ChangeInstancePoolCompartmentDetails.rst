@@ -1,4 +1,4 @@
-ChangeInstancePoolCompartmentDetails
+﻿ChangeInstancePoolCompartmentDetails
 ====================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-CreateAutonomousVmClusterDetails
+﻿CreateAutonomousVmClusterDetails
 ================================
 
 .. currentmodule:: oci.database.models

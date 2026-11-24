@@ -1,4 +1,4 @@
-BulkCreatePrivateIpsDetails
+﻿BulkCreatePrivateIpsDetails
 ===========================
 
 .. currentmodule:: oci.core.models

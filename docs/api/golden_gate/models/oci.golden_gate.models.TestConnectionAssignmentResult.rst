@@ -1,4 +1,4 @@
-TestConnectionAssignmentResult
+﻿TestConnectionAssignmentResult
 ==============================
 
 .. currentmodule:: oci.golden_gate.models

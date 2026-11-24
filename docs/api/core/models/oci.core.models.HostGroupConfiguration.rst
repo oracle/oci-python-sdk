@@ -1,4 +1,4 @@
-HostGroupConfiguration
+﻿HostGroupConfiguration
 ======================
 
 .. currentmodule:: oci.core.models

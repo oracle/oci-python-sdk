@@ -1,4 +1,4 @@
-AppCatalogListingResourceVersion
+﻿AppCatalogListingResourceVersion
 ================================
 
 .. currentmodule:: oci.core.models

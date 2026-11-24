@@ -1,4 +1,4 @@
-VirtualCircuitPublicPrefix
+﻿VirtualCircuitPublicPrefix
 ==========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-ListIpInventoryDetails
+﻿ListIpInventoryDetails
 ======================
 
 .. currentmodule:: oci.core.models

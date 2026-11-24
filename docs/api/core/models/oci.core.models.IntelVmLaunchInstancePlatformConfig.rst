@@ -1,4 +1,4 @@
-IntelVmLaunchInstancePlatformConfig
+﻿IntelVmLaunchInstancePlatformConfig
 ===================================
 
 .. currentmodule:: oci.core.models

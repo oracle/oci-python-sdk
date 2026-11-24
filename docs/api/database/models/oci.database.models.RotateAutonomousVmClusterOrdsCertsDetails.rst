@@ -1,4 +1,4 @@
-RotateAutonomousVmClusterOrdsCertsDetails
+﻿RotateAutonomousVmClusterOrdsCertsDetails
 =========================================
 
 .. currentmodule:: oci.database.models

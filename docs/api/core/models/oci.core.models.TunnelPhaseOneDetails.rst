@@ -1,4 +1,4 @@
-TunnelPhaseOneDetails
+﻿TunnelPhaseOneDetails
 =====================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-ShapeMemoryOptions
+﻿ShapeMemoryOptions
 ==================
 
 .. currentmodule:: oci.core.models

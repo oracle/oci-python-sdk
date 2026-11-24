@@ -1,4 +1,4 @@
-AddStandbyAutonomousContainerDatabaseDetails
+﻿AddStandbyAutonomousContainerDatabaseDetails
 ============================================
 
 .. currentmodule:: oci.database.models

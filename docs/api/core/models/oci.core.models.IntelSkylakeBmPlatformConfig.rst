@@ -1,4 +1,4 @@
-IntelSkylakeBmPlatformConfig
+﻿IntelSkylakeBmPlatformConfig
 ============================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-ImageShapeCompatibilityEntry
+﻿ImageShapeCompatibilityEntry
 ============================
 
 .. currentmodule:: oci.core.models

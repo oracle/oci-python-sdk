@@ -1,4 +1,4 @@
-CreateVirtualCircuitDetails
+﻿CreateVirtualCircuitDetails
 ===========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-ImageSourceViaObjectStorageTupleDetails
+﻿ImageSourceViaObjectStorageTupleDetails
 =======================================
 
 .. currentmodule:: oci.core.models

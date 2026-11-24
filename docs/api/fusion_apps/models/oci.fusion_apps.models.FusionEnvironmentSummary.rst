@@ -1,4 +1,4 @@
-FusionEnvironmentSummary
+﻿FusionEnvironmentSummary
 ========================
 
 .. currentmodule:: oci.fusion_apps.models

@@ -1,4 +1,4 @@
-DhcpSearchDomainOption
+﻿DhcpSearchDomainOption
 ======================
 
 .. currentmodule:: oci.core.models

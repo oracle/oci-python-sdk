@@ -1,4 +1,4 @@
-InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig
+﻿InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig
 ==============================================================
 
 .. currentmodule:: oci.core.models

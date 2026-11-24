@@ -26,6 +26,10 @@ class ServiceManagedGpuFleet(Fleet):
             Allowed values for this property are: "SERVICE_MANAGED_FLEET", "SERVICE_MANAGED_GPU_FLEET"
         :type type: str
 
+        :param reservation:
+            The value to assign to the reservation property of this ServiceManagedGpuFleet.
+        :type reservation: oci.batch.models.Reservation
+
         :param name:
             The value to assign to the name property of this ServiceManagedGpuFleet.
         :type name: str
@@ -49,6 +53,7 @@ class ServiceManagedGpuFleet(Fleet):
         """
         self.swagger_types = {
             'type': 'str',
+            'reservation': 'Reservation',
             'name': 'str',
             'shape': 'GpuFleetShape',
             'max_concurrent_tasks': 'int',
@@ -57,6 +62,7 @@ class ServiceManagedGpuFleet(Fleet):
         }
         self.attribute_map = {
             'type': 'type',
+            'reservation': 'reservation',
             'name': 'name',
             'shape': 'shape',
             'max_concurrent_tasks': 'maxConcurrentTasks',
@@ -64,12 +70,33 @@ class ServiceManagedGpuFleet(Fleet):
             'details': 'details'
         }
         self._type = None
+        self._reservation = None
         self._name = None
         self._shape = None
         self._max_concurrent_tasks = None
         self._state = None
         self._details = None
         self._type = 'SERVICE_MANAGED_GPU_FLEET'
+
+    @property
+    def reservation(self):
+        """
+        Gets the reservation of this ServiceManagedGpuFleet.
+
+        :return: The reservation of this ServiceManagedGpuFleet.
+        :rtype: oci.batch.models.Reservation
+        """
+        return self._reservation
+
+    @reservation.setter
+    def reservation(self, reservation):
+        """
+        Sets the reservation of this ServiceManagedGpuFleet.
+
+        :param reservation: The reservation of this ServiceManagedGpuFleet.
+        :type: oci.batch.models.Reservation
+        """
+        self._reservation = reservation
 
     @property
     def name(self):

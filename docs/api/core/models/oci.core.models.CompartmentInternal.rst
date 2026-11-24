@@ -1,4 +1,4 @@
-CompartmentInternal
+﻿CompartmentInternal
 ===================
 
 .. currentmodule:: oci.core.models

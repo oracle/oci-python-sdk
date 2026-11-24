@@ -1,4 +1,4 @@
-CurlTransferDetails
+﻿CurlTransferDetails
 ===================
 
 .. currentmodule:: oci.database_migration.models

@@ -1,4 +1,4 @@
-EnableExternalPluggableDatabaseStackMonitoringDetails
+﻿EnableExternalPluggableDatabaseStackMonitoringDetails
 =====================================================
 
 .. currentmodule:: oci.database.models

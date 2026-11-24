@@ -1,4 +1,4 @@
-ChangeImageCompartmentDetails
+﻿ChangeImageCompartmentDetails
 =============================
 
 .. currentmodule:: oci.core.models

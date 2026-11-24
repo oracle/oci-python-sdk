@@ -1,4 +1,4 @@
-EmailSubdomainSummary
+﻿EmailSubdomainSummary
 =====================
 
 .. currentmodule:: oci.fusion_apps.models

@@ -1,4 +1,4 @@
-ReorderScheduledActionsDetails
+﻿ReorderScheduledActionsDetails
 ==============================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-RedisConnectionSummary
+﻿RedisConnectionSummary
 ======================
 
 .. currentmodule:: oci.golden_gate.models

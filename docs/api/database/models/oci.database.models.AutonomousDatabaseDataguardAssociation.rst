@@ -1,4 +1,4 @@
-AutonomousDatabaseDataguardAssociation
+﻿AutonomousDatabaseDataguardAssociation
 ======================================
 
 .. currentmodule:: oci.database.models

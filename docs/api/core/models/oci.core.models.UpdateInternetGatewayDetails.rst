@@ -1,4 +1,4 @@
-UpdateInternetGatewayDetails
+﻿UpdateInternetGatewayDetails
 ============================
 
 .. currentmodule:: oci.core.models

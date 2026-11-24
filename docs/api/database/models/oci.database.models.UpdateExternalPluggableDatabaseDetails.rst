@@ -1,4 +1,4 @@
-UpdateExternalPluggableDatabaseDetails
+﻿UpdateExternalPluggableDatabaseDetails
 ======================================
 
 .. currentmodule:: oci.database.models

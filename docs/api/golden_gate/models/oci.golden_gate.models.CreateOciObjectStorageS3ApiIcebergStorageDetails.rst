@@ -1,4 +1,4 @@
-CreateOciObjectStorageS3ApiIcebergStorageDetails
+﻿CreateOciObjectStorageS3ApiIcebergStorageDetails
 ================================================
 
 .. currentmodule:: oci.golden_gate.models

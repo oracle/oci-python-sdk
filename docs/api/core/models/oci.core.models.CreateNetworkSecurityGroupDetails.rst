@@ -1,4 +1,4 @@
-CreateNetworkSecurityGroupDetails
+﻿CreateNetworkSecurityGroupDetails
 =================================
 
 .. currentmodule:: oci.core.models

@@ -1,0 +1,11 @@
+﻿CreateReservationDetails
+========================
+
+.. currentmodule:: oci.batch.models
+
+.. autoclass:: CreateReservationDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

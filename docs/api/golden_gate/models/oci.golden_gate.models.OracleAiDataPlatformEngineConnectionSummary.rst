@@ -1,4 +1,4 @@
-OracleAiDataPlatformEngineConnectionSummary
+﻿OracleAiDataPlatformEngineConnectionSummary
 ===========================================
 
 .. currentmodule:: oci.golden_gate.models

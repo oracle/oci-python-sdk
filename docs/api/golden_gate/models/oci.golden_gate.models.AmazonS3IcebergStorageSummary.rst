@@ -1,4 +1,4 @@
-AmazonS3IcebergStorageSummary
+﻿AmazonS3IcebergStorageSummary
 =============================
 
 .. currentmodule:: oci.golden_gate.models

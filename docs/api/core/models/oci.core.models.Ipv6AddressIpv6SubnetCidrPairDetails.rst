@@ -1,4 +1,4 @@
-Ipv6AddressIpv6SubnetCidrPairDetails
+﻿Ipv6AddressIpv6SubnetCidrPairDetails
 ====================================
 
 .. currentmodule:: oci.core.models

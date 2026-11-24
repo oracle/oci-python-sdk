@@ -1,4 +1,4 @@
-UpdateAmazonS3IcebergStorageDetails
+﻿UpdateAmazonS3IcebergStorageDetails
 ===================================
 
 .. currentmodule:: oci.golden_gate.models

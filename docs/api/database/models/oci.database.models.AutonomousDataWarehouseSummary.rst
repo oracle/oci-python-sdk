@@ -1,4 +1,4 @@
-AutonomousDataWarehouseSummary
+﻿AutonomousDataWarehouseSummary
 ==============================
 
 .. currentmodule:: oci.database.models

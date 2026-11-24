@@ -1,4 +1,4 @@
-CreatePluggableDatabaseFromLocalCloneDetails
+﻿CreatePluggableDatabaseFromLocalCloneDetails
 ============================================
 
 .. currentmodule:: oci.database.models

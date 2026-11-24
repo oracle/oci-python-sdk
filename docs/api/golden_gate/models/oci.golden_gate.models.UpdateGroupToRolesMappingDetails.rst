@@ -1,4 +1,4 @@
-UpdateGroupToRolesMappingDetails
+﻿UpdateGroupToRolesMappingDetails
 ================================
 
 .. currentmodule:: oci.golden_gate.models

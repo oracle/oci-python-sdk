@@ -1,4 +1,4 @@
-PipelineRunningProcessSummary
+﻿PipelineRunningProcessSummary
 =============================
 
 .. currentmodule:: oci.golden_gate.models

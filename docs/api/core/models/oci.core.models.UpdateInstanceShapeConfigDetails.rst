@@ -1,4 +1,4 @@
-UpdateInstanceShapeConfigDetails
+﻿UpdateInstanceShapeConfigDetails
 ================================
 
 .. currentmodule:: oci.core.models

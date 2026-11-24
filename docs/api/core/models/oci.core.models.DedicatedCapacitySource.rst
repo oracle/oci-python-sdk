@@ -1,4 +1,4 @@
-DedicatedCapacitySource
+﻿DedicatedCapacitySource
 =======================
 
 .. currentmodule:: oci.core.models

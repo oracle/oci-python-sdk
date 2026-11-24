@@ -1,4 +1,4 @@
-DatabaseManagementConfig
+﻿DatabaseManagementConfig
 ========================
 
 .. currentmodule:: oci.database.models

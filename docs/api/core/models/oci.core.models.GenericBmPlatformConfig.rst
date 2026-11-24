@@ -1,4 +1,4 @@
-GenericBmPlatformConfig
+﻿GenericBmPlatformConfig
 =======================
 
 .. currentmodule:: oci.core.models

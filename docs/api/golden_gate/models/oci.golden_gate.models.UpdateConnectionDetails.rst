@@ -1,4 +1,4 @@
-UpdateConnectionDetails
+﻿UpdateConnectionDetails
 =======================
 
 .. currentmodule:: oci.golden_gate.models

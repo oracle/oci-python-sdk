@@ -1,4 +1,4 @@
-CreateConnectionDetails
+﻿CreateConnectionDetails
 =======================
 
 .. currentmodule:: oci.database_migration.models

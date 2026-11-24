@@ -1,4 +1,4 @@
-PluggableDatabaseManagementConfig
+﻿PluggableDatabaseManagementConfig
 =================================
 
 .. currentmodule:: oci.database.models

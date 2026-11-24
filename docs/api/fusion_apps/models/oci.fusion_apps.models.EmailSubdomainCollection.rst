@@ -1,4 +1,4 @@
-EmailSubdomainCollection
+﻿EmailSubdomainCollection
 ========================
 
 .. currentmodule:: oci.fusion_apps.models

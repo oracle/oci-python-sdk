@@ -1,4 +1,4 @@
-ClusterNetworkPlacementConfigurationDetails
+﻿ClusterNetworkPlacementConfigurationDetails
 ===========================================
 
 .. currentmodule:: oci.core.models

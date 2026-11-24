@@ -1,4 +1,4 @@
-WorkRequestErrorCollection
+﻿WorkRequestErrorCollection
 ==========================
 
 .. currentmodule:: oci.database_migration.models

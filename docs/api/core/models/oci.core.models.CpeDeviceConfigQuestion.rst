@@ -1,4 +1,4 @@
-CpeDeviceConfigQuestion
+﻿CpeDeviceConfigQuestion
 =======================
 
 .. currentmodule:: oci.core.models

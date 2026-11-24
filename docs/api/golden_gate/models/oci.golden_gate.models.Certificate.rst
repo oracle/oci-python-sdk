@@ -1,4 +1,4 @@
-Certificate
+﻿Certificate
 ===========
 
 .. currentmodule:: oci.golden_gate.models

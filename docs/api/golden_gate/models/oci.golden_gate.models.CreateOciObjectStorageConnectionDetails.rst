@@ -1,4 +1,4 @@
-CreateOciObjectStorageConnectionDetails
+﻿CreateOciObjectStorageConnectionDetails
 =======================================
 
 .. currentmodule:: oci.golden_gate.models

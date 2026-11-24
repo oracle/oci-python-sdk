@@ -1,4 +1,4 @@
-CreateServiceManagedFleetDetails
+﻿CreateServiceManagedFleetDetails
 ================================
 
 .. currentmodule:: oci.batch.models

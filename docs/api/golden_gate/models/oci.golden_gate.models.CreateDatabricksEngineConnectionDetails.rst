@@ -1,4 +1,4 @@
-CreateDatabricksEngineConnectionDetails
+﻿CreateDatabricksEngineConnectionDetails
 =======================================
 
 .. currentmodule:: oci.golden_gate.models

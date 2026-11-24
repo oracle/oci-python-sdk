@@ -1,4 +1,4 @@
-RemovePublicIpPoolCapacityDetails
+﻿RemovePublicIpPoolCapacityDetails
 =================================
 
 .. currentmodule:: oci.core.models

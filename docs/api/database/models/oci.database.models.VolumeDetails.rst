@@ -1,4 +1,4 @@
-VolumeDetails
+﻿VolumeDetails
 =============
 
 .. currentmodule:: oci.database.models

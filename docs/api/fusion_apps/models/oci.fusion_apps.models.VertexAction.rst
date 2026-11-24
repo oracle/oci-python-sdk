@@ -1,4 +1,4 @@
-VertexAction
+﻿VertexAction
 ============
 
 .. currentmodule:: oci.fusion_apps.models

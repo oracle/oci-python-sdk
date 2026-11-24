@@ -1,4 +1,4 @@
-ExternalHsmEncryptionDetails
+﻿ExternalHsmEncryptionDetails
 ============================
 
 .. currentmodule:: oci.database.models

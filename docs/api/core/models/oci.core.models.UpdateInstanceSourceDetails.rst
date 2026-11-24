@@ -1,4 +1,4 @@
-UpdateInstanceSourceDetails
+﻿UpdateInstanceSourceDetails
 ===========================
 
 .. currentmodule:: oci.core.models

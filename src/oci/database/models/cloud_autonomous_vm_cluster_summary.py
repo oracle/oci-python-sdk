@@ -358,6 +358,10 @@ class CloudAutonomousVmClusterSummary(object):
             The value to assign to the sga_percentage property of this CloudAutonomousVmClusterSummary.
         :type sga_percentage: float
 
+        :param key_management_system_details:
+            The value to assign to the key_management_system_details property of this CloudAutonomousVmClusterSummary.
+        :type key_management_system_details: oci.database.models.KeyManagementSystemDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -424,7 +428,8 @@ class CloudAutonomousVmClusterSummary(object):
             'multi_cloud_identity_connector_configs': 'list[IdentityConnectorDetails]',
             'tde_key_store_type': 'str',
             'distribution_algorithm': 'str',
-            'sga_percentage': 'float'
+            'sga_percentage': 'float',
+            'key_management_system_details': 'KeyManagementSystemDetails'
         }
         self.attribute_map = {
             'id': 'id',
@@ -491,7 +496,8 @@ class CloudAutonomousVmClusterSummary(object):
             'multi_cloud_identity_connector_configs': 'multiCloudIdentityConnectorConfigs',
             'tde_key_store_type': 'tdeKeyStoreType',
             'distribution_algorithm': 'distributionAlgorithm',
-            'sga_percentage': 'sgaPercentage'
+            'sga_percentage': 'sgaPercentage',
+            'key_management_system_details': 'keyManagementSystemDetails'
         }
         self._id = None
         self._compartment_id = None
@@ -558,6 +564,7 @@ class CloudAutonomousVmClusterSummary(object):
         self._tde_key_store_type = None
         self._distribution_algorithm = None
         self._sga_percentage = None
+        self._key_management_system_details = None
 
     @property
     def id(self):
@@ -2254,6 +2261,26 @@ class CloudAutonomousVmClusterSummary(object):
         :type: float
         """
         self._sga_percentage = sga_percentage
+
+    @property
+    def key_management_system_details(self):
+        """
+        Gets the key_management_system_details of this CloudAutonomousVmClusterSummary.
+
+        :return: The key_management_system_details of this CloudAutonomousVmClusterSummary.
+        :rtype: oci.database.models.KeyManagementSystemDetails
+        """
+        return self._key_management_system_details
+
+    @key_management_system_details.setter
+    def key_management_system_details(self, key_management_system_details):
+        """
+        Sets the key_management_system_details of this CloudAutonomousVmClusterSummary.
+
+        :param key_management_system_details: The key_management_system_details of this CloudAutonomousVmClusterSummary.
+        :type: oci.database.models.KeyManagementSystemDetails
+        """
+        self._key_management_system_details = key_management_system_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

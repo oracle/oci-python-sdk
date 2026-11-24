@@ -1,4 +1,4 @@
-UpdateInstancePoolPlacementConfigurationDetails
+﻿UpdateInstancePoolPlacementConfigurationDetails
 ===============================================
 
 .. currentmodule:: oci.core.models

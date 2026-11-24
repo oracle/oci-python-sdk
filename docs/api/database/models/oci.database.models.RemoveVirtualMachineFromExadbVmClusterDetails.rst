@@ -1,4 +1,4 @@
-RemoveVirtualMachineFromExadbVmClusterDetails
+﻿RemoveVirtualMachineFromExadbVmClusterDetails
 =============================================
 
 .. currentmodule:: oci.database.models

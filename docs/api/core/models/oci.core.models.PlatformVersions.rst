@@ -1,4 +1,4 @@
-PlatformVersions
+﻿PlatformVersions
 ================
 
 .. currentmodule:: oci.core.models

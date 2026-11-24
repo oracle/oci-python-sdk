@@ -1,4 +1,4 @@
-ChangeInternetGatewayCompartmentDetails
+﻿ChangeInternetGatewayCompartmentDetails
 =======================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-ConfigureAutonomousDatabaseVaultKeyDetails
+﻿ConfigureAutonomousDatabaseVaultKeyDetails
 ==========================================
 
 .. currentmodule:: oci.database.models

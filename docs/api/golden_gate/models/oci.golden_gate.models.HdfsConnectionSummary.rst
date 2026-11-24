@@ -1,4 +1,4 @@
-HdfsConnectionSummary
+﻿HdfsConnectionSummary
 =====================
 
 .. currentmodule:: oci.golden_gate.models

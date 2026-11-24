@@ -1,4 +1,4 @@
-FleetShapeExecutionDetails
+﻿FleetShapeExecutionDetails
 ==========================
 
 .. currentmodule:: oci.batch.models

@@ -1,4 +1,4 @@
-Vnic
+﻿Vnic
 ====
 
 .. currentmodule:: oci.core.models

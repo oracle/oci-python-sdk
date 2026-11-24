@@ -1,4 +1,4 @@
-CreateCloudExadataInfrastructureDetails
+﻿CreateCloudExadataInfrastructureDetails
 =======================================
 
 .. currentmodule:: oci.database.models

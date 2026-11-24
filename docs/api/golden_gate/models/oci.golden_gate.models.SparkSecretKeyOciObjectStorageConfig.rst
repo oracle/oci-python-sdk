@@ -1,4 +1,4 @@
-SparkSecretKeyOciObjectStorageConfig
+﻿SparkSecretKeyOciObjectStorageConfig
 ====================================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-HostDistributionReportDetails
+﻿HostDistributionReportDetails
 =============================
 
 .. currentmodule:: oci.ocvp.models

@@ -1,4 +1,4 @@
-UpdateImageDetails
+﻿UpdateImageDetails
 ==================
 
 .. currentmodule:: oci.core.models

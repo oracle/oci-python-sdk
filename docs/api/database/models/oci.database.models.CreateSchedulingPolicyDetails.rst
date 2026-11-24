@@ -1,4 +1,4 @@
-CreateSchedulingPolicyDetails
+﻿CreateSchedulingPolicyDetails
 =============================
 
 .. currentmodule:: oci.database.models

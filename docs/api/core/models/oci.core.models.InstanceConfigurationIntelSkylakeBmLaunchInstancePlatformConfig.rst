@@ -1,4 +1,4 @@
-InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig
+﻿InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig
 ===============================================================
 
 .. currentmodule:: oci.core.models

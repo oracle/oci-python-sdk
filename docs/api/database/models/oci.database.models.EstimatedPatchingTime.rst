@@ -1,4 +1,4 @@
-EstimatedPatchingTime
+﻿EstimatedPatchingTime
 =====================
 
 .. currentmodule:: oci.database.models

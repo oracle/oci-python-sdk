@@ -1,4 +1,4 @@
-ConfigureSaasAdminUserDetails
+﻿ConfigureSaasAdminUserDetails
 =============================
 
 .. currentmodule:: oci.database.models

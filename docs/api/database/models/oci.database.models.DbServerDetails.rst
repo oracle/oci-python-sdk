@@ -1,4 +1,4 @@
-DbServerDetails
+﻿DbServerDetails
 ===============
 
 .. currentmodule:: oci.database.models

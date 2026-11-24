@@ -23,7 +23,7 @@ class GoogleCloudStorageIcebergStorageSummary(IcebergStorageSummary):
 
         :param storage_type:
             The value to assign to the storage_type property of this GoogleCloudStorageIcebergStorageSummary.
-            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"
+            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", "OCI_OBJECT_STORAGE_ACCESS_KEY", "AZURE_STORAGE", "ZFS"
         :type storage_type: str
 
         :param bucket:

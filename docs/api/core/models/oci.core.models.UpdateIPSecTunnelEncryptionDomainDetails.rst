@@ -1,4 +1,4 @@
-UpdateIPSecTunnelEncryptionDomainDetails
+﻿UpdateIPSecTunnelEncryptionDomainDetails
 ========================================
 
 .. currentmodule:: oci.core.models

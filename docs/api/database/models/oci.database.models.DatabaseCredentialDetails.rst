@@ -1,4 +1,4 @@
-DatabaseCredentialDetails
+﻿DatabaseCredentialDetails
 =========================
 
 .. currentmodule:: oci.database.models
