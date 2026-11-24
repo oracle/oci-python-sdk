@@ -386,6 +386,7 @@ from .pull_request_comment_collection import PullRequestCommentCollection
 from .pull_request_comment_like_collection import PullRequestCommentLikeCollection
 from .pull_request_comment_summary import PullRequestCommentSummary
 from .pull_request_lifecycle_activity_summary import PullRequestLifecycleActivitySummary
+from .review_status_activity_summary import ReviewStatusActivitySummary
 from .pull_request_notification_preference import PullRequestNotificationPreference
 from .pull_request_summary import PullRequestSummary
 from .put_repository_branch_details import PutRepositoryBranchDetails
@@ -931,6 +932,7 @@ devops_type_mapping = {
     "PullRequestCommentLikeCollection": PullRequestCommentLikeCollection,
     "PullRequestCommentSummary": PullRequestCommentSummary,
     "PullRequestLifecycleActivitySummary": PullRequestLifecycleActivitySummary,
+    "ReviewStatusActivitySummary": ReviewStatusActivitySummary,
     "PullRequestNotificationPreference": PullRequestNotificationPreference,
     "PullRequestSummary": PullRequestSummary,
     "PutRepositoryBranchDetails": PutRepositoryBranchDetails,
