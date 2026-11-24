@@ -1,4 +1,4 @@
-UpdateInstanceAvailabilityConfigDetails
+﻿UpdateInstanceAvailabilityConfigDetails
 =======================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-CreateSchedulingWindowDetails
+﻿CreateSchedulingWindowDetails
 =============================
 
 .. currentmodule:: oci.database.models

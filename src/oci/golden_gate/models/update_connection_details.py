@@ -80,6 +80,10 @@ class UpdateConnectionDetails(object):
     CONNECTION_TYPE_ORACLE_AI_DATA_PLATFORM_ENGINE = "ORACLE_AI_DATA_PLATFORM_ENGINE"
 
     #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "ORACLE_AI_DATA_CATALOG_STORAGE"
+    CONNECTION_TYPE_ORACLE_AI_DATA_CATALOG_STORAGE = "ORACLE_AI_DATA_CATALOG_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
     #: This constant has a value of "ORACLE_NOSQL"
     CONNECTION_TYPE_ORACLE_NOSQL = "ORACLE_NOSQL"
 
@@ -183,6 +187,7 @@ class UpdateConnectionDetails(object):
         * :class:`~oci.golden_gate.models.UpdatePostgresqlConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateMicrosoftSqlserverConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateSnowflakeConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateOracleAiDataCatalogStorageConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateHdfsConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateDatabricksConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateKafkaConnectionDetails`
@@ -207,7 +212,7 @@ class UpdateConnectionDetails(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_AI_DATA_CATALOG_STORAGE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL"
         :type connection_type: str
 
         :param display_name:
@@ -350,6 +355,9 @@ class UpdateConnectionDetails(object):
         if type == 'SNOWFLAKE':
             return 'UpdateSnowflakeConnectionDetails'
 
+        if type == 'ORACLE_AI_DATA_CATALOG_STORAGE':
+            return 'UpdateOracleAiDataCatalogStorageConnectionDetails'
+
         if type == 'HDFS':
             return 'UpdateHdfsConnectionDetails'
 
@@ -415,7 +423,7 @@ class UpdateConnectionDetails(object):
         Gets the connection_type of this UpdateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_AI_DATA_CATALOG_STORAGE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL"
 
 
         :return: The connection_type of this UpdateConnectionDetails.
@@ -433,7 +441,7 @@ class UpdateConnectionDetails(object):
         :param connection_type: The connection_type of this UpdateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_AI_DATA_PLATFORM", "ORACLE_AI_DATA_PLATFORM_ENGINE", "ORACLE_AI_DATA_CATALOG_STORAGE", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", "DATABRICKS", "DATABRICKS_ENGINE", "GOOGLE_PUBSUB", "MICROSOFT_FABRIC", "SPARK", "ICEBERG", "AI_PROVIDER", "AI_MODEL"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `connection_type`, must be None or one of {allowed_values}"

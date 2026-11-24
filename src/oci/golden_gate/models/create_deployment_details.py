@@ -79,6 +79,10 @@ class CreateDeploymentDetails(object):
     #: This constant has a value of "VERIDATA_AGENT"
     DEPLOYMENT_TYPE_VERIDATA_AGENT = "VERIDATA_AGENT"
 
+    #: A constant which can be used with the deployment_type property of a CreateDeploymentDetails.
+    #: This constant has a value of "AI_DATA_CATALOG"
+    DEPLOYMENT_TYPE_AI_DATA_CATALOG = "AI_DATA_CATALOG"
+
     #: A constant which can be used with the disaster_recovery_status property of a CreateDeploymentDetails.
     #: This constant has a value of "ENABLED"
     DISASTER_RECOVERY_STATUS_ENABLED = "ENABLED"
@@ -184,7 +188,7 @@ class CreateDeploymentDetails(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this CreateDeploymentDetails.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT"
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", "AI_DATA_CATALOG"
         :type deployment_type: str
 
         :param subscription_id:
@@ -933,7 +937,7 @@ class CreateDeploymentDetails(object):
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
             Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT"
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", "AI_DATA_CATALOG"
 
 
         :return: The deployment_type of this CreateDeploymentDetails.
@@ -953,7 +957,7 @@ class CreateDeploymentDetails(object):
         :param deployment_type: The deployment_type of this CreateDeploymentDetails.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATABASE_DB2I", "GGSA", "DATA_TRANSFORMS", "VERIDATA_SERVER", "VERIDATA_AGENT", "AI_DATA_CATALOG"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `deployment_type`, must be None or one of {allowed_values}"

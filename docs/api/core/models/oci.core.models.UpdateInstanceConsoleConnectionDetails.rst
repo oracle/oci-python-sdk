@@ -1,4 +1,4 @@
-UpdateInstanceConsoleConnectionDetails
+﻿UpdateInstanceConsoleConnectionDetails
 ======================================
 
 .. currentmodule:: oci.core.models

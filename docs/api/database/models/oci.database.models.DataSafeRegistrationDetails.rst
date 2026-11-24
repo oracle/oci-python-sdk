@@ -1,4 +1,4 @@
-DataSafeRegistrationDetails
+﻿DataSafeRegistrationDetails
 ===========================
 
 .. currentmodule:: oci.database.models

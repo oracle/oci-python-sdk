@@ -1,4 +1,4 @@
-ImageMemoryConstraints
+﻿ImageMemoryConstraints
 ======================
 
 .. currentmodule:: oci.core.models

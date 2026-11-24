@@ -1,4 +1,4 @@
-ChangePipelineCompartmentDetails
+﻿ChangePipelineCompartmentDetails
 ================================
 
 .. currentmodule:: oci.golden_gate.models

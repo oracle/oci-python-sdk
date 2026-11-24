@@ -1,4 +1,4 @@
-InstanceOptions
+﻿InstanceOptions
 ===============
 
 .. currentmodule:: oci.core.models

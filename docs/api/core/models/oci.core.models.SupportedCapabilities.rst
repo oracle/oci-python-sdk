@@ -1,4 +1,4 @@
-SupportedCapabilities
+﻿SupportedCapabilities
 =====================
 
 .. currentmodule:: oci.core.models

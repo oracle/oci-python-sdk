@@ -1,4 +1,4 @@
-PlatformConfig
+﻿PlatformConfig
 ==============
 
 .. currentmodule:: oci.core.models

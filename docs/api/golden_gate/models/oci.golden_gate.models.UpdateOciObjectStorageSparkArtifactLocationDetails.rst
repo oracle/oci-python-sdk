@@ -1,4 +1,4 @@
-UpdateOciObjectStorageSparkArtifactLocationDetails
+﻿UpdateOciObjectStorageSparkArtifactLocationDetails
 ==================================================
 
 .. currentmodule:: oci.golden_gate.models

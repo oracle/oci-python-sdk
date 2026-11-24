@@ -1,4 +1,4 @@
-OggDeployment
+﻿OggDeployment
 =============
 
 .. currentmodule:: oci.golden_gate.models

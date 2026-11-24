@@ -1,4 +1,4 @@
-CreateFusionEnvironmentAdminUserDetails
+﻿CreateFusionEnvironmentAdminUserDetails
 =======================================
 
 .. currentmodule:: oci.fusion_apps.models

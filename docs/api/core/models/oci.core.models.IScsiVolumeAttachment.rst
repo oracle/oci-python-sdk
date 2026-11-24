@@ -1,4 +1,4 @@
-IScsiVolumeAttachment
+﻿IScsiVolumeAttachment
 =====================
 
 .. currentmodule:: oci.core.models

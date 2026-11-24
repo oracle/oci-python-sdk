@@ -1,4 +1,4 @@
-ScheduledActivity
+﻿ScheduledActivity
 =================
 
 .. currentmodule:: oci.fusion_apps.models

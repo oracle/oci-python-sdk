@@ -1,4 +1,4 @@
-UpdateMacsecProperties
+﻿UpdateMacsecProperties
 ======================
 
 .. currentmodule:: oci.core.models

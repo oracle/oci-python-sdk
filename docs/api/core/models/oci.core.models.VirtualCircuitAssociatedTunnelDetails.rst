@@ -1,4 +1,4 @@
-VirtualCircuitAssociatedTunnelDetails
+﻿VirtualCircuitAssociatedTunnelDetails
 =====================================
 
 .. currentmodule:: oci.core.models

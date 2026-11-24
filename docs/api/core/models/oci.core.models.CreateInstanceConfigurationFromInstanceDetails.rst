@@ -1,4 +1,4 @@
-CreateInstanceConfigurationFromInstanceDetails
+﻿CreateInstanceConfigurationFromInstanceDetails
 ==============================================
 
 .. currentmodule:: oci.core.models

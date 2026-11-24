@@ -1,4 +1,4 @@
-AutonomousDatabaseEncryptionKeyDetails
+﻿AutonomousDatabaseEncryptionKeyDetails
 ======================================
 
 .. currentmodule:: oci.database.models

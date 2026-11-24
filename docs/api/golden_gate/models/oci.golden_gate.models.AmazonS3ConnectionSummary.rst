@@ -1,4 +1,4 @@
-AmazonS3ConnectionSummary
+﻿AmazonS3ConnectionSummary
 =========================
 
 .. currentmodule:: oci.golden_gate.models

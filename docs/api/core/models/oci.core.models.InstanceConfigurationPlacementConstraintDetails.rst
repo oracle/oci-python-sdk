@@ -1,4 +1,4 @@
-InstanceConfigurationPlacementConstraintDetails
+﻿InstanceConfigurationPlacementConstraintDetails
 ===============================================
 
 .. currentmodule:: oci.core.models

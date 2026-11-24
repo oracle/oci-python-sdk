@@ -1,4 +1,4 @@
-DatabaseConnectionString
+﻿DatabaseConnectionString
 ========================
 
 .. currentmodule:: oci.database.models

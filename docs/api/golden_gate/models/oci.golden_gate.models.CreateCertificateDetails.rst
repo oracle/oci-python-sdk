@@ -1,4 +1,4 @@
-CreateCertificateDetails
+﻿CreateCertificateDetails
 ========================
 
 .. currentmodule:: oci.golden_gate.models

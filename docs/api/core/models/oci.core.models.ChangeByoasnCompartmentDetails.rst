@@ -1,4 +1,4 @@
-ChangeByoasnCompartmentDetails
+﻿ChangeByoasnCompartmentDetails
 ==============================
 
 .. currentmodule:: oci.core.models

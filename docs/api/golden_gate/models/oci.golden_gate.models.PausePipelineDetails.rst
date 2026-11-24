@@ -1,4 +1,4 @@
-PausePipelineDetails
+﻿PausePipelineDetails
 ====================
 
 .. currentmodule:: oci.golden_gate.models

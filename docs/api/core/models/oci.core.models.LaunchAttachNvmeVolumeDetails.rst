@@ -1,4 +1,4 @@
-LaunchAttachNvmeVolumeDetails
+﻿LaunchAttachNvmeVolumeDetails
 =============================
 
 .. currentmodule:: oci.core.models

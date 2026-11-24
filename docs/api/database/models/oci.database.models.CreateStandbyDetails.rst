@@ -1,4 +1,4 @@
-CreateStandbyDetails
+﻿CreateStandbyDetails
 ====================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-EnableExternalPluggableDatabaseOperationsInsightsDetails
+﻿EnableExternalPluggableDatabaseOperationsInsightsDetails
 ========================================================
 
 .. currentmodule:: oci.database.models

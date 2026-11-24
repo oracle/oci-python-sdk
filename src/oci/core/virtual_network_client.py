@@ -29,6 +29,10 @@ class VirtualNetworkClient(object):
     [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services.
     The required permissions are documented in the
     [Details for the Core Services](/iaas/Content/Identity/Reference/corepolicyreference.htm) article.
+
+    The Core Services API provides both IPv4-only and dual-stack (IPv4 and IPv6) endpoints. By default, OCI-published SDKs and the CLI use IPv4-only endpoints.
+    Use a dual-stack endpoint to connect over IPv6 while retaining IPv4 compatibility.
+    Dual-stack endpoints use the following format: https://{service}.{region}.ds.oci.{secondLevelDomain}.
     """
 
     def __init__(self, config, **kwargs):

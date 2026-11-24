@@ -1,4 +1,4 @@
-ShapeOcpuOptions
+﻿ShapeOcpuOptions
 ================
 
 .. currentmodule:: oci.batch.models

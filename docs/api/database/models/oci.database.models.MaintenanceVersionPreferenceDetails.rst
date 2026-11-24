@@ -1,4 +1,4 @@
-MaintenanceVersionPreferenceDetails
+﻿MaintenanceVersionPreferenceDetails
 ===================================
 
 .. currentmodule:: oci.database.models

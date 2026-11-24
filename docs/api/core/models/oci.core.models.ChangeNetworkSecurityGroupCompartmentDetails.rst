@@ -1,4 +1,4 @@
-ChangeNetworkSecurityGroupCompartmentDetails
+﻿ChangeNetworkSecurityGroupCompartmentDetails
 ============================================
 
 .. currentmodule:: oci.core.models

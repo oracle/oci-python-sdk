@@ -1,4 +1,4 @@
-AddDrgNatRulesDetails
+﻿AddDrgNatRulesDetails
 =====================
 
 .. currentmodule:: oci.core.models

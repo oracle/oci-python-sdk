@@ -1,4 +1,4 @@
-WorkRequestLogEntry
+﻿WorkRequestLogEntry
 ===================
 
 .. currentmodule:: oci.batch.models

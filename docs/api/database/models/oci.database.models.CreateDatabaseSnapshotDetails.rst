@@ -1,4 +1,4 @@
-CreateDatabaseSnapshotDetails
+﻿CreateDatabaseSnapshotDetails
 =============================
 
 .. currentmodule:: oci.database.models

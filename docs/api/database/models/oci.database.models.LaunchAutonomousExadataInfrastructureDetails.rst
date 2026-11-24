@@ -1,4 +1,4 @@
-LaunchAutonomousExadataInfrastructureDetails
+﻿LaunchAutonomousExadataInfrastructureDetails
 ============================================
 
 .. currentmodule:: oci.database.models

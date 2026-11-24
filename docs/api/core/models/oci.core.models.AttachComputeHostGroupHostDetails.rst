@@ -1,4 +1,4 @@
-AttachComputeHostGroupHostDetails
+﻿AttachComputeHostGroupHostDetails
 =================================
 
 .. currentmodule:: oci.core.models

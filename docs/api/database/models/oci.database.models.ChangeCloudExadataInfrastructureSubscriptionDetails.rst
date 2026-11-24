@@ -1,4 +1,4 @@
-ChangeCloudExadataInfrastructureSubscriptionDetails
+﻿ChangeCloudExadataInfrastructureSubscriptionDetails
 ===================================================
 
 .. currentmodule:: oci.database.models

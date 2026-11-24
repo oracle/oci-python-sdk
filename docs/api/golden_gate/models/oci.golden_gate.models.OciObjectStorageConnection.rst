@@ -1,4 +1,4 @@
-OciObjectStorageConnection
+﻿OciObjectStorageConnection
 ==========================
 
 .. currentmodule:: oci.golden_gate.models

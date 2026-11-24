@@ -13,8 +13,6 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateOracleMigrationDetails(CreateMigrationDetails):
     """
     Create Migration resource parameters.
-    Deprecated: The parent-level Oracle migration configuration properties on this model are deprecated.
-    Use `migrationSettings` instead.
     """
 
     def __init__(self, **kwargs):
@@ -64,10 +62,6 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
         :param assessment_id:
             The value to assign to the assessment_id property of this CreateOracleMigrationDetails.
         :type assessment_id: str
-
-        :param migration_settings:
-            The value to assign to the migration_settings property of this CreateOracleMigrationDetails.
-        :type migration_settings: oci.database_migration.models.CreateOracleMigrationSettings
 
         :param data_transfer_medium_details:
             The value to assign to the data_transfer_medium_details property of this CreateOracleMigrationDetails.
@@ -125,7 +119,6 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'assessment_id': 'str',
-            'migration_settings': 'CreateOracleMigrationSettings',
             'data_transfer_medium_details': 'CreateOracleDataTransferMediumDetails',
             'initial_load_settings': 'CreateOracleInitialLoadSettings',
             'advisor_settings': 'CreateOracleAdvisorSettings',
@@ -149,7 +142,6 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'assessment_id': 'assessmentId',
-            'migration_settings': 'migrationSettings',
             'data_transfer_medium_details': 'dataTransferMediumDetails',
             'initial_load_settings': 'initialLoadSettings',
             'advisor_settings': 'advisorSettings',
@@ -175,7 +167,6 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
         self._freeform_tags = None
         self._defined_tags = None
         self._assessment_id = None
-        self._migration_settings = None
         self._data_transfer_medium_details = None
         self._initial_load_settings = None
         self._advisor_settings = None
@@ -188,26 +179,6 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
         self._include_objects = None
         self._bulk_include_exclude_data = None
         self._database_combination = 'ORACLE'
-
-    @property
-    def migration_settings(self):
-        """
-        Gets the migration_settings of this CreateOracleMigrationDetails.
-
-        :return: The migration_settings of this CreateOracleMigrationDetails.
-        :rtype: oci.database_migration.models.CreateOracleMigrationSettings
-        """
-        return self._migration_settings
-
-    @migration_settings.setter
-    def migration_settings(self, migration_settings):
-        """
-        Sets the migration_settings of this CreateOracleMigrationDetails.
-
-        :param migration_settings: The migration_settings of this CreateOracleMigrationDetails.
-        :type: oci.database_migration.models.CreateOracleMigrationSettings
-        """
-        self._migration_settings = migration_settings
 
     @property
     def data_transfer_medium_details(self):

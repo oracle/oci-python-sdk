@@ -1,4 +1,4 @@
-LaunchAttachVolumeDetails
+﻿LaunchAttachVolumeDetails
 =========================
 
 .. currentmodule:: oci.core.models

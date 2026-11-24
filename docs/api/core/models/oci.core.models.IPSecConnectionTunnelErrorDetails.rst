@@ -1,4 +1,4 @@
-IPSecConnectionTunnelErrorDetails
+﻿IPSecConnectionTunnelErrorDetails
 =================================
 
 .. currentmodule:: oci.core.models

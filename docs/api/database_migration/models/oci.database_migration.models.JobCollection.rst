@@ -1,4 +1,4 @@
-JobCollection
+﻿JobCollection
 =============
 
 .. currentmodule:: oci.database_migration.models

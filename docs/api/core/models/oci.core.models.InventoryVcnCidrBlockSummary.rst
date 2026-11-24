@@ -1,4 +1,4 @@
-InventoryVcnCidrBlockSummary
+﻿InventoryVcnCidrBlockSummary
 ============================
 
 .. currentmodule:: oci.core.models

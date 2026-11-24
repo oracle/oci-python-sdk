@@ -1,4 +1,4 @@
-NetworkBondingModeDetails
+﻿NetworkBondingModeDetails
 =========================
 
 .. currentmodule:: oci.database.models

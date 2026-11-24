@@ -1,4 +1,4 @@
-UpdateDbConnectionBundleDetails
+﻿UpdateDbConnectionBundleDetails
 ===============================
 
 .. currentmodule:: oci.database.models

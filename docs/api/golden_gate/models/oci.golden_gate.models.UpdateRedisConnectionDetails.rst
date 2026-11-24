@@ -1,4 +1,4 @@
-UpdateRedisConnectionDetails
+﻿UpdateRedisConnectionDetails
 ============================
 
 .. currentmodule:: oci.golden_gate.models

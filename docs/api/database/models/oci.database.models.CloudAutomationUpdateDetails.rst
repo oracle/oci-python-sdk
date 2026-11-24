@@ -1,4 +1,4 @@
-CloudAutomationUpdateDetails
+﻿CloudAutomationUpdateDetails
 ============================
 
 .. currentmodule:: oci.database.models

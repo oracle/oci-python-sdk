@@ -1,4 +1,4 @@
-VtapCaptureFilterRuleDetails
+﻿VtapCaptureFilterRuleDetails
 ============================
 
 .. currentmodule:: oci.core.models

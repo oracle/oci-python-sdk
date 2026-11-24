@@ -13,6 +13,9 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateInstancePoolDetails(object):
     """
     The data to update an instance pool.
+    If `instanceMaintenancePolicy` is omitted, the stored maintenance policy remains unchanged.
+    A non-null `instanceMaintenancePolicy` replaces the stored policy as a whole, and `null`
+    clears it.
     If `overridePolicy` is omitted, the stored launch override policy remains unchanged.
     A non-null `overridePolicy` replaces the stored policy as a whole, and `null`
     clears it for future launches.
@@ -63,6 +66,10 @@ class UpdateInstancePoolDetails(object):
             The value to assign to the lifecycle_management property of this UpdateInstancePoolDetails.
         :type lifecycle_management: oci.core.models.InstancePoolLifecycleManagementDetails
 
+        :param instance_maintenance_policy:
+            The value to assign to the instance_maintenance_policy property of this UpdateInstancePoolDetails.
+        :type instance_maintenance_policy: oci.core.models.InstancePoolMaintenancePolicyDetails
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -74,7 +81,8 @@ class UpdateInstancePoolDetails(object):
             'override_policy': 'InstancePoolLaunchOverridePolicy',
             'instance_display_name_formatter': 'str',
             'instance_hostname_formatter': 'str',
-            'lifecycle_management': 'InstancePoolLifecycleManagementDetails'
+            'lifecycle_management': 'InstancePoolLifecycleManagementDetails',
+            'instance_maintenance_policy': 'InstancePoolMaintenancePolicyDetails'
         }
         self.attribute_map = {
             'defined_tags': 'definedTags',
@@ -86,7 +94,8 @@ class UpdateInstancePoolDetails(object):
             'override_policy': 'overridePolicy',
             'instance_display_name_formatter': 'instanceDisplayNameFormatter',
             'instance_hostname_formatter': 'instanceHostnameFormatter',
-            'lifecycle_management': 'lifecycleManagement'
+            'lifecycle_management': 'lifecycleManagement',
+            'instance_maintenance_policy': 'instanceMaintenancePolicy'
         }
         self._defined_tags = None
         self._display_name = None
@@ -98,6 +107,7 @@ class UpdateInstancePoolDetails(object):
         self._instance_display_name_formatter = None
         self._instance_hostname_formatter = None
         self._lifecycle_management = None
+        self._instance_maintenance_policy = None
 
     @property
     def defined_tags(self):
@@ -382,6 +392,26 @@ class UpdateInstancePoolDetails(object):
         :type: oci.core.models.InstancePoolLifecycleManagementDetails
         """
         self._lifecycle_management = lifecycle_management
+
+    @property
+    def instance_maintenance_policy(self):
+        """
+        Gets the instance_maintenance_policy of this UpdateInstancePoolDetails.
+
+        :return: The instance_maintenance_policy of this UpdateInstancePoolDetails.
+        :rtype: oci.core.models.InstancePoolMaintenancePolicyDetails
+        """
+        return self._instance_maintenance_policy
+
+    @instance_maintenance_policy.setter
+    def instance_maintenance_policy(self, instance_maintenance_policy):
+        """
+        Sets the instance_maintenance_policy of this UpdateInstancePoolDetails.
+
+        :param instance_maintenance_policy: The instance_maintenance_policy of this UpdateInstancePoolDetails.
+        :type: oci.core.models.InstancePoolMaintenancePolicyDetails
+        """
+        self._instance_maintenance_policy = instance_maintenance_policy
 
     def __repr__(self):
         return formatted_flat_dict(self)

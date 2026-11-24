@@ -1,4 +1,4 @@
-FastConnectProviderServiceKey
+﻿FastConnectProviderServiceKey
 =============================
 
 .. currentmodule:: oci.core.models

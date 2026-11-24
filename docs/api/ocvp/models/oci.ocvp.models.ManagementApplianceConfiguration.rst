@@ -1,4 +1,4 @@
-ManagementApplianceConfiguration
+﻿ManagementApplianceConfiguration
 ================================
 
 .. currentmodule:: oci.ocvp.models

@@ -1,4 +1,4 @@
-GoogleCloudProviderEncryptionKeyDetails
+﻿GoogleCloudProviderEncryptionKeyDetails
 =======================================
 
 .. currentmodule:: oci.database.models

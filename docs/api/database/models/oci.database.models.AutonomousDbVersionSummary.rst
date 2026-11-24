@@ -1,4 +1,4 @@
-AutonomousDbVersionSummary
+﻿AutonomousDbVersionSummary
 ==========================
 
 .. currentmodule:: oci.database.models

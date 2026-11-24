@@ -1,4 +1,4 @@
-CapacityConfig
+﻿CapacityConfig
 ==============
 
 .. currentmodule:: oci.core.models

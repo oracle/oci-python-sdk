@@ -1,4 +1,4 @@
-BulkUpdatePrivateIpItem
+﻿BulkUpdatePrivateIpItem
 =======================
 
 .. currentmodule:: oci.core.models

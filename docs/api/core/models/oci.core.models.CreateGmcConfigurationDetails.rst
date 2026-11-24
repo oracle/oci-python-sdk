@@ -1,4 +1,4 @@
-CreateGmcConfigurationDetails
+﻿CreateGmcConfigurationDetails
 =============================
 
 .. currentmodule:: oci.core.models

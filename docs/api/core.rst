@@ -120,6 +120,7 @@ Core Services
     oci.core.models.ByoipRangeSummary
     oci.core.models.ByoipRangeVcnIpv6AllocationSummary
     oci.core.models.Byoipv6CidrDetails
+    oci.core.models.CancelInstancePoolRefreshDetails
     oci.core.models.CapacityBin
     oci.core.models.CapacityBinPreview
     oci.core.models.CapacityConfig
@@ -399,6 +400,7 @@ Core Services
     oci.core.models.InstanceAgentConfig
     oci.core.models.InstanceAgentFeatures
     oci.core.models.InstanceAgentPluginConfigDetails
+    oci.core.models.InstanceAuthz
     oci.core.models.InstanceAvailabilityConfig
     oci.core.models.InstanceConfiguration
     oci.core.models.InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig
@@ -452,6 +454,7 @@ Core Services
     oci.core.models.InstancePool
     oci.core.models.InstancePoolInstance
     oci.core.models.InstancePoolInstanceLoadBalancerBackend
+    oci.core.models.InstancePoolLaunchBeforeTerminatingDetails
     oci.core.models.InstancePoolLaunchOverrideDetails
     oci.core.models.InstancePoolLaunchOverrideOption
     oci.core.models.InstancePoolLaunchOverridePolicy
@@ -461,6 +464,7 @@ Core Services
     oci.core.models.InstancePoolLifecycleActionsDetails
     oci.core.models.InstancePoolLifecycleManagementDetails
     oci.core.models.InstancePoolLoadBalancerAttachment
+    oci.core.models.InstancePoolMaintenancePolicyDetails
     oci.core.models.InstancePoolPlacementConfiguration
     oci.core.models.InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails
     oci.core.models.InstancePoolPlacementPrimarySubnet
@@ -468,6 +472,9 @@ Core Services
     oci.core.models.InstancePoolPlacementSubnetDetails
     oci.core.models.InstancePoolPreTerminationActionDetails
     oci.core.models.InstancePoolPreTerminationActionHandleTimeoutDetails
+    oci.core.models.InstancePoolRefresh
+    oci.core.models.InstancePoolRefreshCollection
+    oci.core.models.InstancePoolRefreshSummary
     oci.core.models.InstancePoolSummary
     oci.core.models.InstancePowerActionDetails
     oci.core.models.InstanceReservationConfig
@@ -566,6 +573,7 @@ Core Services
     oci.core.models.QuickRecycleSettings
     oci.core.models.RebootMigrateActionDetails
     oci.core.models.RecycleDetails
+    oci.core.models.RefreshInstancePoolDetails
     oci.core.models.RemotePeeringConnection
     oci.core.models.RemotePeeringConnectionDrgAttachmentNetworkDetails
     oci.core.models.RemoveDrgNatRulesDetails

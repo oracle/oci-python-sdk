@@ -1,4 +1,4 @@
-ComputeGlobalImageCapabilitySchemaVersionSummary
+﻿ComputeGlobalImageCapabilitySchemaVersionSummary
 ================================================
 
 .. currentmodule:: oci.core.models

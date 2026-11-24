@@ -1,4 +1,4 @@
-GenerateRecommendedNetworkDetails
+﻿GenerateRecommendedNetworkDetails
 =================================
 
 .. currentmodule:: oci.database.models

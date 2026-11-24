@@ -1,4 +1,4 @@
-IpInventoryCidrUtilizationSummary
+﻿IpInventoryCidrUtilizationSummary
 =================================
 
 .. currentmodule:: oci.core.models

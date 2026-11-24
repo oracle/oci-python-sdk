@@ -1,4 +1,4 @@
-VanityUrlDetails
+﻿VanityUrlDetails
 ================
 
 .. currentmodule:: oci.database.models

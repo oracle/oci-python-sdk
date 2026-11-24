@@ -1,4 +1,4 @@
-InstanceConfigurationPerformanceBasedAutotunePolicy
+﻿InstanceConfigurationPerformanceBasedAutotunePolicy
 ===================================================
 
 .. currentmodule:: oci.core.models

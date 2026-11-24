@@ -1,4 +1,4 @@
-InplaceUpgradeDetails
+﻿InplaceUpgradeDetails
 =====================
 
 .. currentmodule:: oci.ocvp.models

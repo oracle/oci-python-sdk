@@ -1,4 +1,4 @@
-CreateADBDedicatedAutoCreateTablespaceDetails
+﻿CreateADBDedicatedAutoCreateTablespaceDetails
 =============================================
 
 .. currentmodule:: oci.database_migration.models

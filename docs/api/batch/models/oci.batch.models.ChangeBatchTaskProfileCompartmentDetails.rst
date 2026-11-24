@@ -1,4 +1,4 @@
-ChangeBatchTaskProfileCompartmentDetails
+﻿ChangeBatchTaskProfileCompartmentDetails
 ========================================
 
 .. currentmodule:: oci.batch.models

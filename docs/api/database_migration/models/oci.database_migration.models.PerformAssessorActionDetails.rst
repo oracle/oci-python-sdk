@@ -1,4 +1,4 @@
-PerformAssessorActionDetails
+﻿PerformAssessorActionDetails
 ============================
 
 .. currentmodule:: oci.database_migration.models

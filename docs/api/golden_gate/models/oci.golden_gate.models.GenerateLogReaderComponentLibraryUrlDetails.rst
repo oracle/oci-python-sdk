@@ -1,4 +1,4 @@
-GenerateLogReaderComponentLibraryUrlDetails
+﻿GenerateLogReaderComponentLibraryUrlDetails
 ===========================================
 
 .. currentmodule:: oci.golden_gate.models

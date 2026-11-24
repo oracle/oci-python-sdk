@@ -1,4 +1,4 @@
-AzureEncryptionKeyDetails
+﻿AzureEncryptionKeyDetails
 =========================
 
 .. currentmodule:: oci.database.models

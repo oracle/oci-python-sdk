@@ -1,4 +1,4 @@
-UpdateConsoleHistoryDetails
+﻿UpdateConsoleHistoryDetails
 ===========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-UpdateJavaMessageServiceConnectionDetails
+﻿UpdateJavaMessageServiceConnectionDetails
 =========================================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-UpdateVtapDetails
+﻿UpdateVtapDetails
 =================
 
 .. currentmodule:: oci.core.models

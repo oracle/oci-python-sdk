@@ -1,4 +1,4 @@
-AmdVmUpdateInstancePlatformConfig
+﻿AmdVmUpdateInstancePlatformConfig
 =================================
 
 .. currentmodule:: oci.core.models

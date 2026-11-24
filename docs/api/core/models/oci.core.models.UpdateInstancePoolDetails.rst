@@ -1,4 +1,4 @@
-UpdateInstancePoolDetails
+﻿UpdateInstancePoolDetails
 =========================
 
 .. currentmodule:: oci.core.models

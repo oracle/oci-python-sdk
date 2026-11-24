@@ -1,4 +1,4 @@
-UpdateDhcpDetails
+﻿UpdateDhcpDetails
 =================
 
 .. currentmodule:: oci.core.models

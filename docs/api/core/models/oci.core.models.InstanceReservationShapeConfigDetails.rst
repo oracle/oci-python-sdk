@@ -1,4 +1,4 @@
-InstanceReservationShapeConfigDetails
+﻿InstanceReservationShapeConfigDetails
 =====================================
 
 .. currentmodule:: oci.core.models

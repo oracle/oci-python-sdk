@@ -12,9 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleCloneMigrationDetails(CloneMigrationDetails):
     """
-    Oracle Clone Migration details.
-    Deprecated: The parent-level Oracle clone configuration properties on this model are deprecated.
-    Use `migrationSettings` instead.
+    Oracle Clone Migration Summary
     """
 
     def __init__(self, **kwargs):
@@ -56,10 +54,6 @@ class OracleCloneMigrationDetails(CloneMigrationDetails):
             The value to assign to the defined_tags property of this OracleCloneMigrationDetails.
         :type defined_tags: dict(str, dict(str, object))
 
-        :param migration_settings:
-            The value to assign to the migration_settings property of this OracleCloneMigrationDetails.
-        :type migration_settings: oci.database_migration.models.CloneOracleMigrationSettings
-
         :param source_container_database_connection_id:
             The value to assign to the source_container_database_connection_id property of this OracleCloneMigrationDetails.
         :type source_container_database_connection_id: str
@@ -78,7 +72,6 @@ class OracleCloneMigrationDetails(CloneMigrationDetails):
             'assessment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'migration_settings': 'CloneOracleMigrationSettings',
             'source_container_database_connection_id': 'str',
             'source_standby_database_connection_id': 'str'
         }
@@ -91,7 +84,6 @@ class OracleCloneMigrationDetails(CloneMigrationDetails):
             'assessment_id': 'assessmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'migration_settings': 'migrationSettings',
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId',
             'source_standby_database_connection_id': 'sourceStandbyDatabaseConnectionId'
         }
@@ -103,30 +95,9 @@ class OracleCloneMigrationDetails(CloneMigrationDetails):
         self._assessment_id = None
         self._freeform_tags = None
         self._defined_tags = None
-        self._migration_settings = None
         self._source_container_database_connection_id = None
         self._source_standby_database_connection_id = None
         self._database_combination = 'ORACLE'
-
-    @property
-    def migration_settings(self):
-        """
-        Gets the migration_settings of this OracleCloneMigrationDetails.
-
-        :return: The migration_settings of this OracleCloneMigrationDetails.
-        :rtype: oci.database_migration.models.CloneOracleMigrationSettings
-        """
-        return self._migration_settings
-
-    @migration_settings.setter
-    def migration_settings(self, migration_settings):
-        """
-        Sets the migration_settings of this OracleCloneMigrationDetails.
-
-        :param migration_settings: The migration_settings of this OracleCloneMigrationDetails.
-        :type: oci.database_migration.models.CloneOracleMigrationSettings
-        """
-        self._migration_settings = migration_settings
 
     @property
     def source_container_database_connection_id(self):

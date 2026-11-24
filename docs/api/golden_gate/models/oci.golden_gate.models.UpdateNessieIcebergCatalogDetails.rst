@@ -1,4 +1,4 @@
-UpdateNessieIcebergCatalogDetails
+﻿UpdateNessieIcebergCatalogDetails
 =================================
 
 .. currentmodule:: oci.golden_gate.models

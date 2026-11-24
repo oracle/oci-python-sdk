@@ -1,4 +1,4 @@
-VolumeSourceFromVolumeBackupDeltaDetails
+﻿VolumeSourceFromVolumeBackupDeltaDetails
 ========================================
 
 .. currentmodule:: oci.core.models

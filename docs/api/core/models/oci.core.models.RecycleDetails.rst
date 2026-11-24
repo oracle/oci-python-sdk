@@ -1,4 +1,4 @@
-RecycleDetails
+﻿RecycleDetails
 ==============
 
 .. currentmodule:: oci.core.models

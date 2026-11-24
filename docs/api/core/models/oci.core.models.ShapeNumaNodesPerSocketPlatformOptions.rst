@@ -1,4 +1,4 @@
-ShapeNumaNodesPerSocketPlatformOptions
+﻿ShapeNumaNodesPerSocketPlatformOptions
 ======================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-AdminUserCollection
+﻿AdminUserCollection
 ===================
 
 .. currentmodule:: oci.fusion_apps.models

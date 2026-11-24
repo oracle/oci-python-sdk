@@ -1,4 +1,4 @@
-CreatePostgresqlConnectionDetails
+﻿CreatePostgresqlConnectionDetails
 =================================
 
 .. currentmodule:: oci.golden_gate.models

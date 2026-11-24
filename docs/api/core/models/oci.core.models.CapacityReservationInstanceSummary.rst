@@ -1,4 +1,4 @@
-CapacityReservationInstanceSummary
+﻿CapacityReservationInstanceSummary
 ==================================
 
 .. currentmodule:: oci.core.models

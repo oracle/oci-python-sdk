@@ -1,4 +1,4 @@
-InternetGateway
+﻿InternetGateway
 ===============
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-UpdateOciObjectStorageConnectionDetails
+﻿UpdateOciObjectStorageConnectionDetails
 =======================================
 
 .. currentmodule:: oci.golden_gate.models

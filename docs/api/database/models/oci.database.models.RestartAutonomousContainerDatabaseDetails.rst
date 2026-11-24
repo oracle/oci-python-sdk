@@ -1,4 +1,4 @@
-RestartAutonomousContainerDatabaseDetails
+﻿RestartAutonomousContainerDatabaseDetails
 =========================================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-AwsKeyDetails
+﻿AwsKeyDetails
 =============
 
 .. currentmodule:: oci.database.models

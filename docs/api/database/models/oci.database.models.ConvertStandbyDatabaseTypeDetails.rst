@@ -1,4 +1,4 @@
-ConvertStandbyDatabaseTypeDetails
+﻿ConvertStandbyDatabaseTypeDetails
 =================================
 
 .. currentmodule:: oci.database.models

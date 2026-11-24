@@ -1,4 +1,4 @@
-CreateComputeCapacityReportDetails
+﻿CreateComputeCapacityReportDetails
 ==================================
 
 .. currentmodule:: oci.core.models

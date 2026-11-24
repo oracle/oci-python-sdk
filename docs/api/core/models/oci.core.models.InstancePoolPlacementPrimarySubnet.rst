@@ -1,4 +1,4 @@
-InstancePoolPlacementPrimarySubnet
+﻿InstancePoolPlacementPrimarySubnet
 ==================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-PostgresqlConnectionSummary
+﻿PostgresqlConnectionSummary
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-AddDeploymentLocalPeerDetails
+﻿AddDeploymentLocalPeerDetails
 =============================
 
 .. currentmodule:: oci.golden_gate.models

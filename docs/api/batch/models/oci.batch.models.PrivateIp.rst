@@ -1,4 +1,4 @@
-PrivateIp
+﻿PrivateIp
 =========
 
 .. currentmodule:: oci.batch.models

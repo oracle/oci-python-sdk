@@ -1,4 +1,4 @@
-PatchSubnetInstruction
+﻿PatchSubnetInstruction
 ======================
 
 .. currentmodule:: oci.core.models

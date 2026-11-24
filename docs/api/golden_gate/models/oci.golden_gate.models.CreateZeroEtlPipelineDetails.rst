@@ -1,4 +1,4 @@
-CreateZeroEtlPipelineDetails
+﻿CreateZeroEtlPipelineDetails
 ============================
 
 .. currentmodule:: oci.golden_gate.models

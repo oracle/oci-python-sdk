@@ -1,4 +1,4 @@
-ShapeTrustedPlatformModuleOptions
+﻿ShapeTrustedPlatformModuleOptions
 =================================
 
 .. currentmodule:: oci.core.models

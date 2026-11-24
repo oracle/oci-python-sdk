@@ -1,4 +1,4 @@
-ChangeDbConnectionBundleCompartmentDetails
+﻿ChangeDbConnectionBundleCompartmentDetails
 ==========================================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-MigrationCollection
+﻿MigrationCollection
 ===================
 
 .. currentmodule:: oci.database_migration.models

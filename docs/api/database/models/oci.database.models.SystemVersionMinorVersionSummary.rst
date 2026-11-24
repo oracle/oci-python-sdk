@@ -1,4 +1,4 @@
-SystemVersionMinorVersionSummary
+﻿SystemVersionMinorVersionSummary
 ================================
 
 .. currentmodule:: oci.database.models

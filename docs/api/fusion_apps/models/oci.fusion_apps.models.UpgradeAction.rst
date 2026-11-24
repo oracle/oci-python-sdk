@@ -1,4 +1,4 @@
-UpgradeAction
+﻿UpgradeAction
 =============
 
 .. currentmodule:: oci.fusion_apps.models

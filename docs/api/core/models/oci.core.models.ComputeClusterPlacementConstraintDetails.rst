@@ -1,4 +1,4 @@
-ComputeClusterPlacementConstraintDetails
+﻿ComputeClusterPlacementConstraintDetails
 ========================================
 
 .. currentmodule:: oci.core.models

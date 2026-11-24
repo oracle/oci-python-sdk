@@ -1,4 +1,4 @@
-UpdateVirtualCircuitDetails
+﻿UpdateVirtualCircuitDetails
 ===========================
 
 .. currentmodule:: oci.core.models

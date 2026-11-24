@@ -1,4 +1,4 @@
-UpdateNatGatewayDetails
+﻿UpdateNatGatewayDetails
 =======================
 
 .. currentmodule:: oci.core.models

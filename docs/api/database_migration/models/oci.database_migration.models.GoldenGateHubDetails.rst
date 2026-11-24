@@ -1,4 +1,4 @@
-GoldenGateHubDetails
+﻿GoldenGateHubDetails
 ====================
 
 .. currentmodule:: oci.database_migration.models

@@ -1,4 +1,4 @@
-UpdatePolarisIcebergCatalogDetails
+﻿UpdatePolarisIcebergCatalogDetails
 ==================================
 
 .. currentmodule:: oci.golden_gate.models

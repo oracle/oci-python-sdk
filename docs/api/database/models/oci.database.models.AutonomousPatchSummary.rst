@@ -1,4 +1,4 @@
-AutonomousPatchSummary
+﻿AutonomousPatchSummary
 ======================
 
 .. currentmodule:: oci.database.models

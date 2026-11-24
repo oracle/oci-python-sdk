@@ -1,4 +1,4 @@
-UpdateEmailSubdomainDetails
+﻿UpdateEmailSubdomainDetails
 ===========================
 
 .. currentmodule:: oci.fusion_apps.models

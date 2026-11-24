@@ -1,4 +1,4 @@
-LaunchInstanceLicensingConfig
+﻿LaunchInstanceLicensingConfig
 =============================
 
 .. currentmodule:: oci.core.models

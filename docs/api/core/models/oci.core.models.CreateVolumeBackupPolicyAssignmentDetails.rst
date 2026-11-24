@@ -1,4 +1,4 @@
-CreateVolumeBackupPolicyAssignmentDetails
+﻿CreateVolumeBackupPolicyAssignmentDetails
 =========================================
 
 .. currentmodule:: oci.core.models

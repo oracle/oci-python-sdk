@@ -1,4 +1,4 @@
-DiskPerformanceDetails
+﻿DiskPerformanceDetails
 ======================
 
 .. currentmodule:: oci.database.models

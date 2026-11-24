@@ -1,4 +1,4 @@
-CreateBootVolumeBackupDetails
+﻿CreateBootVolumeBackupDetails
 =============================
 
 .. currentmodule:: oci.core.models

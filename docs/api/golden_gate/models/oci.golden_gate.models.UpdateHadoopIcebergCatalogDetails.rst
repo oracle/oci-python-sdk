@@ -1,4 +1,4 @@
-UpdateHadoopIcebergCatalogDetails
+﻿UpdateHadoopIcebergCatalogDetails
 =================================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-CreateClusterDetails
+﻿CreateClusterDetails
 ====================
 
 .. currentmodule:: oci.ocvp.models

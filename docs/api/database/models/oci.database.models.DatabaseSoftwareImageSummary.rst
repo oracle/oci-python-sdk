@@ -1,4 +1,4 @@
-DatabaseSoftwareImageSummary
+﻿DatabaseSoftwareImageSummary
 ============================
 
 .. currentmodule:: oci.database.models

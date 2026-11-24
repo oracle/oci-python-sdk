@@ -1,4 +1,4 @@
-CreateOracleAwsS3DataTransferMediumDetails
+﻿CreateOracleAwsS3DataTransferMediumDetails
 ==========================================
 
 .. currentmodule:: oci.database_migration.models

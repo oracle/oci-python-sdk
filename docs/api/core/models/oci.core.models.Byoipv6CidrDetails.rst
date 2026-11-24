@@ -1,4 +1,4 @@
-Byoipv6CidrDetails
+﻿Byoipv6CidrDetails
 ==================
 
 .. currentmodule:: oci.core.models

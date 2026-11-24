@@ -1,4 +1,4 @@
-ChangeConnectionCompartmentDetails
+﻿ChangeConnectionCompartmentDetails
 ==================================
 
 .. currentmodule:: oci.golden_gate.models

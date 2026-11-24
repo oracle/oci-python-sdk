@@ -1,4 +1,4 @@
-CreateNatGatewayDetails
+﻿CreateNatGatewayDetails
 =======================
 
 .. currentmodule:: oci.core.models

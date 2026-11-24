@@ -1,4 +1,4 @@
-CreateDataMaskingActivityDetails
+﻿CreateDataMaskingActivityDetails
 ================================
 
 .. currentmodule:: oci.fusion_apps.models

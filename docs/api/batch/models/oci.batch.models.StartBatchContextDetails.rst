@@ -1,4 +1,4 @@
-StartBatchContextDetails
+﻿StartBatchContextDetails
 ========================
 
 .. currentmodule:: oci.batch.models

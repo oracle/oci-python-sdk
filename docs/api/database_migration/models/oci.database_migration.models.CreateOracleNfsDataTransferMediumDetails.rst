@@ -1,4 +1,4 @@
-CreateOracleNfsDataTransferMediumDetails
+﻿CreateOracleNfsDataTransferMediumDetails
 ========================================
 
 .. currentmodule:: oci.database_migration.models

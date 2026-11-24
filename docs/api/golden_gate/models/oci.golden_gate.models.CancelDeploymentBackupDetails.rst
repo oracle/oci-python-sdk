@@ -1,4 +1,4 @@
-CancelDeploymentBackupDetails
+﻿CancelDeploymentBackupDetails
 =============================
 
 .. currentmodule:: oci.golden_gate.models

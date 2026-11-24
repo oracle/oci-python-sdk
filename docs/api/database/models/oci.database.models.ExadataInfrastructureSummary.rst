@@ -1,4 +1,4 @@
-ExadataInfrastructureSummary
+﻿ExadataInfrastructureSummary
 ============================
 
 .. currentmodule:: oci.database.models

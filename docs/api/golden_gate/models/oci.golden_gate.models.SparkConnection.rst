@@ -1,4 +1,4 @@
-SparkConnection
+﻿SparkConnection
 ===============
 
 .. currentmodule:: oci.golden_gate.models

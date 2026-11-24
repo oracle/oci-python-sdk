@@ -1,4 +1,4 @@
-AddVirtualMachineToVmClusterDetails
+﻿AddVirtualMachineToVmClusterDetails
 ===================================
 
 .. currentmodule:: oci.database.models

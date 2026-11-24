@@ -1,4 +1,4 @@
-CreateDataGuardAssociationWithNewDbSystemDetails
+﻿CreateDataGuardAssociationWithNewDbSystemDetails
 ================================================
 
 .. currentmodule:: oci.database.models

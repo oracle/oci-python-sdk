@@ -1,4 +1,4 @@
-CreateOciObjectStorageSparkArtifactLocationDetails
+﻿CreateOciObjectStorageSparkArtifactLocationDetails
 ==================================================
 
 .. currentmodule:: oci.golden_gate.models

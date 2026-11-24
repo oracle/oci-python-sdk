@@ -1,4 +1,4 @@
-NatGateway
+﻿NatGateway
 ==========
 
 .. currentmodule:: oci.core.models

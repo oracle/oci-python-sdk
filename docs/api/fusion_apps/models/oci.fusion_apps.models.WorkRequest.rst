@@ -1,4 +1,4 @@
-WorkRequest
+﻿WorkRequest
 ===========
 
 .. currentmodule:: oci.fusion_apps.models

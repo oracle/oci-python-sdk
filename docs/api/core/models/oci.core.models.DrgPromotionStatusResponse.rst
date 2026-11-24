@@ -1,4 +1,4 @@
-DrgPromotionStatusResponse
+﻿DrgPromotionStatusResponse
 ==========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-AmdMilanBmGpuPlatformConfig
+﻿AmdMilanBmGpuPlatformConfig
 ===========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-BlockVolumeDetails
+﻿BlockVolumeDetails
 ==================
 
 .. currentmodule:: oci.ocvp.models

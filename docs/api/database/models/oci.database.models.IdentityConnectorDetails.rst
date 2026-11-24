@@ -1,4 +1,4 @@
-IdentityConnectorDetails
+﻿IdentityConnectorDetails
 ========================
 
 .. currentmodule:: oci.database.models

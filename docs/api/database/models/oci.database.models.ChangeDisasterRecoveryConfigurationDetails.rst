@@ -1,4 +1,4 @@
-ChangeDisasterRecoveryConfigurationDetails
+﻿ChangeDisasterRecoveryConfigurationDetails
 ==========================================
 
 .. currentmodule:: oci.database.models

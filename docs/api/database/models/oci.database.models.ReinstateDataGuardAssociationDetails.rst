@@ -1,4 +1,4 @@
-ReinstateDataGuardAssociationDetails
+﻿ReinstateDataGuardAssociationDetails
 ====================================
 
 .. currentmodule:: oci.database.models

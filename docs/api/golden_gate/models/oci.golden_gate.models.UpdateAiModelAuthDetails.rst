@@ -1,4 +1,4 @@
-UpdateAiModelAuthDetails
+﻿UpdateAiModelAuthDetails
 ========================
 
 .. currentmodule:: oci.golden_gate.models

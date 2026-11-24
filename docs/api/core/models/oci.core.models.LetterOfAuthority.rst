@@ -1,4 +1,4 @@
-LetterOfAuthority
+﻿LetterOfAuthority
 =================
 
 .. currentmodule:: oci.core.models

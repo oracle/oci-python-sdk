@@ -1,4 +1,4 @@
-UpdateOneoffPatchDetails
+﻿UpdateOneoffPatchDetails
 ========================
 
 .. currentmodule:: oci.database.models

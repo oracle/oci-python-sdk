@@ -1,4 +1,4 @@
-FirmwareBundleSummary
+﻿FirmwareBundleSummary
 =====================
 
 .. currentmodule:: oci.core.models

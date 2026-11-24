@@ -1,4 +1,4 @@
-UpdateNetworkSecurityGroupSecurityRulesDetails
+﻿UpdateNetworkSecurityGroupSecurityRulesDetails
 ==============================================
 
 .. currentmodule:: oci.core.models

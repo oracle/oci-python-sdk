@@ -1,4 +1,4 @@
-AssociatedResourceDetails
+﻿AssociatedResourceDetails
 =========================
 
 .. currentmodule:: oci.database.models

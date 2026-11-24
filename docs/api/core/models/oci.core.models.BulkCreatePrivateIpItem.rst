@@ -1,4 +1,4 @@
-BulkCreatePrivateIpItem
+﻿BulkCreatePrivateIpItem
 =======================
 
 .. currentmodule:: oci.core.models

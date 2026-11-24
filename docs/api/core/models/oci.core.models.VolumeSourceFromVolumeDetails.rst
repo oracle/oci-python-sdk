@@ -1,4 +1,4 @@
-VolumeSourceFromVolumeDetails
+﻿VolumeSourceFromVolumeDetails
 =============================
 
 .. currentmodule:: oci.core.models

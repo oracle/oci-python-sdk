@@ -1,4 +1,4 @@
-UpdateDrgDetails
+﻿UpdateDrgDetails
 ================
 
 .. currentmodule:: oci.core.models

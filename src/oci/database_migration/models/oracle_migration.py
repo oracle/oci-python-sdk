@@ -12,9 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleMigration(Migration):
     """
-    Oracle Migration resource.
-    Deprecated: The parent-level Oracle migration configuration properties on this model are deprecated.
-    Use `migrationSettings` instead.
+    Oracle Migration resource
     """
 
     def __init__(self, **kwargs):
@@ -104,10 +102,6 @@ class OracleMigration(Migration):
             The value to assign to the system_tags property of this OracleMigration.
         :type system_tags: dict(str, dict(str, object))
 
-        :param migration_settings:
-            The value to assign to the migration_settings property of this OracleMigration.
-        :type migration_settings: oci.database_migration.models.OracleMigrationSettings
-
         :param data_transfer_medium_details:
             The value to assign to the data_transfer_medium_details property of this OracleMigration.
         :type data_transfer_medium_details: oci.database_migration.models.OracleDataTransferMediumDetails
@@ -161,7 +155,6 @@ class OracleMigration(Migration):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
-            'migration_settings': 'OracleMigrationSettings',
             'data_transfer_medium_details': 'OracleDataTransferMediumDetails',
             'initial_load_settings': 'OracleInitialLoadSettings',
             'advisor_settings': 'OracleAdvisorSettings',
@@ -191,7 +184,6 @@ class OracleMigration(Migration):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
-            'migration_settings': 'migrationSettings',
             'data_transfer_medium_details': 'dataTransferMediumDetails',
             'initial_load_settings': 'initialLoadSettings',
             'advisor_settings': 'advisorSettings',
@@ -220,7 +212,6 @@ class OracleMigration(Migration):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
-        self._migration_settings = None
         self._data_transfer_medium_details = None
         self._initial_load_settings = None
         self._advisor_settings = None
@@ -230,26 +221,6 @@ class OracleMigration(Migration):
         self._source_standby_database_connection_id = None
         self._advanced_parameters = None
         self._database_combination = 'ORACLE'
-
-    @property
-    def migration_settings(self):
-        """
-        Gets the migration_settings of this OracleMigration.
-
-        :return: The migration_settings of this OracleMigration.
-        :rtype: oci.database_migration.models.OracleMigrationSettings
-        """
-        return self._migration_settings
-
-    @migration_settings.setter
-    def migration_settings(self, migration_settings):
-        """
-        Sets the migration_settings of this OracleMigration.
-
-        :param migration_settings: The migration_settings of this OracleMigration.
-        :type: oci.database_migration.models.OracleMigrationSettings
-        """
-        self._migration_settings = migration_settings
 
     @property
     def data_transfer_medium_details(self):

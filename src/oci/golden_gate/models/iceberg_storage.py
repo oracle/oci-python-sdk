@@ -35,14 +35,29 @@ class IcebergStorage(object):
     #: This constant has a value of "OCI_OBJECT_STORAGE_S3_API"
     STORAGE_TYPE_OCI_OBJECT_STORAGE_S3_API = "OCI_OBJECT_STORAGE_S3_API"
 
+    #: A constant which can be used with the storage_type property of a IcebergStorage.
+    #: This constant has a value of "OCI_OBJECT_STORAGE_ACCESS_KEY"
+    STORAGE_TYPE_OCI_OBJECT_STORAGE_ACCESS_KEY = "OCI_OBJECT_STORAGE_ACCESS_KEY"
+
+    #: A constant which can be used with the storage_type property of a IcebergStorage.
+    #: This constant has a value of "AZURE_STORAGE"
+    STORAGE_TYPE_AZURE_STORAGE = "AZURE_STORAGE"
+
+    #: A constant which can be used with the storage_type property of a IcebergStorage.
+    #: This constant has a value of "ZFS"
+    STORAGE_TYPE_ZFS = "ZFS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IcebergStorage object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.golden_gate.models.OciObjectStorageS3ApiIcebergStorage`
+        * :class:`~oci.golden_gate.models.AzureStorageIcebergStorage`
         * :class:`~oci.golden_gate.models.AmazonS3IcebergStorage`
+        * :class:`~oci.golden_gate.models.ZfsIcebergStorage`
         * :class:`~oci.golden_gate.models.AzureDataLakeStorageIcebergStorage`
+        * :class:`~oci.golden_gate.models.OciObjectStorageAccessKeyIcebergStorage`
         * :class:`~oci.golden_gate.models.NoIcebergStorage`
         * :class:`~oci.golden_gate.models.GoogleCloudStorageIcebergStorage`
 
@@ -50,7 +65,7 @@ class IcebergStorage(object):
 
         :param storage_type:
             The value to assign to the storage_type property of this IcebergStorage.
-            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", "OCI_OBJECT_STORAGE_ACCESS_KEY", "AZURE_STORAGE", "ZFS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type storage_type: str
 
@@ -74,11 +89,20 @@ class IcebergStorage(object):
         if type == 'OCI_OBJECT_STORAGE_S3_API':
             return 'OciObjectStorageS3ApiIcebergStorage'
 
+        if type == 'AZURE_STORAGE':
+            return 'AzureStorageIcebergStorage'
+
         if type == 'AMAZON_S3':
             return 'AmazonS3IcebergStorage'
 
+        if type == 'ZFS':
+            return 'ZfsIcebergStorage'
+
         if type == 'AZURE_DATA_LAKE_STORAGE':
             return 'AzureDataLakeStorageIcebergStorage'
+
+        if type == 'OCI_OBJECT_STORAGE_ACCESS_KEY':
+            return 'OciObjectStorageAccessKeyIcebergStorage'
 
         if type == 'NONE':
             return 'NoIcebergStorage'
@@ -100,8 +124,9 @@ class IcebergStorage(object):
         * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
         * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
         * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
+        * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
 
-        Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", "OCI_OBJECT_STORAGE_ACCESS_KEY", "AZURE_STORAGE", "ZFS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -122,12 +147,13 @@ class IcebergStorage(object):
         * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
         * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
         * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
+        * OADC: OCI_OBJECT_STORAGE_ACCESS_KEY, AZURE_STORAGE, or ZFS.
 
 
         :param storage_type: The storage_type of this IcebergStorage.
         :type: str
         """
-        allowed_values = ["AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API"]
+        allowed_values = ["AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", "OCI_OBJECT_STORAGE_ACCESS_KEY", "AZURE_STORAGE", "ZFS"]
         if not value_allowed_none_or_none_sentinel(storage_type, allowed_values):
             storage_type = 'UNKNOWN_ENUM_VALUE'
         self._storage_type = storage_type

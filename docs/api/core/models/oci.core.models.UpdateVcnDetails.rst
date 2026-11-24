@@ -1,4 +1,4 @@
-UpdateVcnDetails
+﻿UpdateVcnDetails
 ================
 
 .. currentmodule:: oci.core.models

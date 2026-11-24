@@ -1,4 +1,4 @@
-CreateSparkUserPrincipalOciObjectStorageConfigDetails
+﻿CreateSparkUserPrincipalOciObjectStorageConfigDetails
 =====================================================
 
 .. currentmodule:: oci.golden_gate.models

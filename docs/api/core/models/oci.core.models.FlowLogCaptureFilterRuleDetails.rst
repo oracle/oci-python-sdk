@@ -1,4 +1,4 @@
-FlowLogCaptureFilterRuleDetails
+﻿FlowLogCaptureFilterRuleDetails
 ===============================
 
 .. currentmodule:: oci.core.models

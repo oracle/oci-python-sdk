@@ -1,4 +1,4 @@
-MarketingBrandSummary
+﻿MarketingBrandSummary
 =====================
 
 .. currentmodule:: oci.fusion_apps.models

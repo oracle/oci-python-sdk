@@ -1,4 +1,4 @@
-DatabaseConnectionCredentials
+﻿DatabaseConnectionCredentials
 =============================
 
 .. currentmodule:: oci.database.models

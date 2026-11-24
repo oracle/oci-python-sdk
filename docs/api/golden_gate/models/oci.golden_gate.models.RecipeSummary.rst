@@ -1,4 +1,4 @@
-RecipeSummary
+﻿RecipeSummary
 =============
 
 .. currentmodule:: oci.golden_gate.models

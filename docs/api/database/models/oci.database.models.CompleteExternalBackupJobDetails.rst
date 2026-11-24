@@ -1,4 +1,4 @@
-CompleteExternalBackupJobDetails
+﻿CompleteExternalBackupJobDetails
 ================================
 
 .. currentmodule:: oci.database.models

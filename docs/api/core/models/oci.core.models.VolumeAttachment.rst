@@ -1,4 +1,4 @@
-VolumeAttachment
+﻿VolumeAttachment
 ================
 
 .. currentmodule:: oci.core.models

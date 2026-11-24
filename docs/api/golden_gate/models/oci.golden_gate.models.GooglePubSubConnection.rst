@@ -1,4 +1,4 @@
-GooglePubSubConnection
+﻿GooglePubSubConnection
 ======================
 
 .. currentmodule:: oci.golden_gate.models

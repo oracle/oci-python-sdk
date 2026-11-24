@@ -1,4 +1,4 @@
-CreateMaintenanceWindowDetails
+﻿CreateMaintenanceWindowDetails
 ==============================
 
 .. currentmodule:: oci.golden_gate.models

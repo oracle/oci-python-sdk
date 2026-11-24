@@ -1,4 +1,4 @@
-InstanceConfigurationGpuMemoryClusterScaleConfig
+﻿InstanceConfigurationGpuMemoryClusterScaleConfig
 ================================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-TunnelSecurityAssociationSummary
+﻿TunnelSecurityAssociationSummary
 ================================
 
 .. currentmodule:: oci.core.models

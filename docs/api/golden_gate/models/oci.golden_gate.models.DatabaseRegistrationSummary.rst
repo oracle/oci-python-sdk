@@ -1,4 +1,4 @@
-DatabaseRegistrationSummary
+﻿DatabaseRegistrationSummary
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

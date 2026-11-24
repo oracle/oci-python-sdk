@@ -1,4 +1,4 @@
-DeploymentPlacementDetails
+﻿DeploymentPlacementDetails
 ==========================
 
 .. currentmodule:: oci.golden_gate.models

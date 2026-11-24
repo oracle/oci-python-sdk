@@ -1,4 +1,4 @@
-ComputeGpuMemoryFabric
+﻿ComputeGpuMemoryFabric
 ======================
 
 .. currentmodule:: oci.core.models

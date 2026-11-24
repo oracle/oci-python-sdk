@@ -1,4 +1,4 @@
-HadoopIcebergCatalog
+﻿HadoopIcebergCatalog
 ====================
 
 .. currentmodule:: oci.golden_gate.models

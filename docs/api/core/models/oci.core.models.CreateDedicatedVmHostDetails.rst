@@ -1,4 +1,4 @@
-CreateDedicatedVmHostDetails
+﻿CreateDedicatedVmHostDetails
 ============================
 
 .. currentmodule:: oci.core.models

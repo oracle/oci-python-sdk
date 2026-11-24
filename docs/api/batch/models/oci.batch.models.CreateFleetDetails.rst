@@ -1,4 +1,4 @@
-CreateFleetDetails
+﻿CreateFleetDetails
 ==================
 
 .. currentmodule:: oci.batch.models

@@ -1,4 +1,4 @@
-PatchHistoryEntry
+﻿PatchHistoryEntry
 =================
 
 .. currentmodule:: oci.database.models

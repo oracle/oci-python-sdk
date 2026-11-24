@@ -1,4 +1,4 @@
-ComputeGpuMemoryClusterScaleConfig
+﻿ComputeGpuMemoryClusterScaleConfig
 ==================================
 
 .. currentmodule:: oci.core.models

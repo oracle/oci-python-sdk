@@ -1,4 +1,4 @@
-CreateExternalMacsConnectorDetails
+﻿CreateExternalMacsConnectorDetails
 ==================================
 
 .. currentmodule:: oci.database.models

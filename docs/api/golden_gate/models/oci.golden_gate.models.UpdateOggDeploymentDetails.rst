@@ -1,4 +1,4 @@
-UpdateOggDeploymentDetails
+﻿UpdateOggDeploymentDetails
 ==========================
 
 .. currentmodule:: oci.golden_gate.models

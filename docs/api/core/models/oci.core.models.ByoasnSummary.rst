@@ -1,4 +1,4 @@
-ByoasnSummary
+﻿ByoasnSummary
 =============
 
 .. currentmodule:: oci.core.models

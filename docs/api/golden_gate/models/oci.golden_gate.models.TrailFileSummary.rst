@@ -1,4 +1,4 @@
-TrailFileSummary
+﻿TrailFileSummary
 ================
 
 .. currentmodule:: oci.golden_gate.models

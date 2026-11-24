@@ -1,4 +1,4 @@
-DbServerPatchingDetails
+﻿DbServerPatchingDetails
 =======================
 
 .. currentmodule:: oci.database.models

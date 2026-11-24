@@ -1,4 +1,4 @@
-Rule
+﻿Rule
 ====
 
 .. currentmodule:: oci.fusion_apps.models

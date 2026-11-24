@@ -1,4 +1,4 @@
-ChangeFusionEnvironmentFamilyCompartmentDetails
+﻿ChangeFusionEnvironmentFamilyCompartmentDetails
 ===============================================
 
 .. currentmodule:: oci.fusion_apps.models

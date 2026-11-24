@@ -1,4 +1,4 @@
-MicrosoftSqlserverConnection
+﻿MicrosoftSqlserverConnection
 ============================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-BulkDetachIpv6sDetails
+﻿BulkDetachIpv6sDetails
 ======================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-AllowedIkeIPSecParameters
+﻿AllowedIkeIPSecParameters
 =========================
 
 .. currentmodule:: oci.core.models

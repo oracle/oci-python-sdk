@@ -1,4 +1,4 @@
-ResizeVmClusterNetworkDetails
+﻿ResizeVmClusterNetworkDetails
 =============================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-DeploymentPeerSummary
+﻿DeploymentPeerSummary
 =====================
 
 .. currentmodule:: oci.golden_gate.models

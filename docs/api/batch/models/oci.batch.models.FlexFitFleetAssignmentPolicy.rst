@@ -1,4 +1,4 @@
-FlexFitFleetAssignmentPolicy
+﻿FlexFitFleetAssignmentPolicy
 ============================
 
 .. currentmodule:: oci.batch.models

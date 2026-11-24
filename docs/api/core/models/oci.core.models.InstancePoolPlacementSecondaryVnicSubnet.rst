@@ -1,4 +1,4 @@
-InstancePoolPlacementSecondaryVnicSubnet
+﻿InstancePoolPlacementSecondaryVnicSubnet
 ========================================
 
 .. currentmodule:: oci.core.models

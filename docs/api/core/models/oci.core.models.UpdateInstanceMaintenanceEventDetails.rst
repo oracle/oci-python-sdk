@@ -1,4 +1,4 @@
-UpdateInstanceMaintenanceEventDetails
+﻿UpdateInstanceMaintenanceEventDetails
 =====================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-CreateByoasnDetails
+﻿CreateByoasnDetails
 ===================
 
 .. currentmodule:: oci.core.models

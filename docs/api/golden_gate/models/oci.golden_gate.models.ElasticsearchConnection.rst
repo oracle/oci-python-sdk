@@ -1,4 +1,4 @@
-ElasticsearchConnection
+﻿ElasticsearchConnection
 =======================
 
 .. currentmodule:: oci.golden_gate.models

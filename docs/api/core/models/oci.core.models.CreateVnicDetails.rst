@@ -1,4 +1,4 @@
-CreateVnicDetails
+﻿CreateVnicDetails
 =================
 
 .. currentmodule:: oci.core.models

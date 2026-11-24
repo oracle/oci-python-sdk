@@ -1,4 +1,4 @@
-ChangeComputeHostGroupCompartmentDetails
+﻿ChangeComputeHostGroupCompartmentDetails
 ========================================
 
 .. currentmodule:: oci.core.models

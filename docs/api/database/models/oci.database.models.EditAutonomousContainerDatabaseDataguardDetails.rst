@@ -1,4 +1,4 @@
-EditAutonomousContainerDatabaseDataguardDetails
+﻿EditAutonomousContainerDatabaseDataguardDetails
 ===============================================
 
 .. currentmodule:: oci.database.models

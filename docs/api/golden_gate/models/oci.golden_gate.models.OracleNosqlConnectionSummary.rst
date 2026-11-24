@@ -1,4 +1,4 @@
-OracleNosqlConnectionSummary
+﻿OracleNosqlConnectionSummary
 ============================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-SoftResetActionDetails
+﻿SoftResetActionDetails
 ======================
 
 .. currentmodule:: oci.core.models

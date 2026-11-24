@@ -1,4 +1,4 @@
-ChangeSubnetCompartmentDetails
+﻿ChangeSubnetCompartmentDetails
 ==============================
 
 .. currentmodule:: oci.core.models

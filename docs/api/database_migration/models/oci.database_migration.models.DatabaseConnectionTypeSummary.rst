@@ -1,4 +1,4 @@
-DatabaseConnectionTypeSummary
+﻿DatabaseConnectionTypeSummary
 =============================
 
 .. currentmodule:: oci.database_migration.models

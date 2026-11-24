@@ -1,4 +1,4 @@
-UpdateAutonomousDatabaseSoftwareImageDetails
+﻿UpdateAutonomousDatabaseSoftwareImageDetails
 ============================================
 
 .. currentmodule:: oci.database.models

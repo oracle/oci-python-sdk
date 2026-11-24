@@ -1,4 +1,4 @@
-LongTermBackUpScheduleDetails
+﻿LongTermBackUpScheduleDetails
 =============================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-AutonomousDatabaseConsoleTokenDetails
+﻿AutonomousDatabaseConsoleTokenDetails
 =====================================
 
 .. currentmodule:: oci.database.models

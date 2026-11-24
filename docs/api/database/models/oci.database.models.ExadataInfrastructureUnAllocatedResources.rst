@@ -1,4 +1,4 @@
-ExadataInfrastructureUnAllocatedResources
+﻿ExadataInfrastructureUnAllocatedResources
 =========================================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-WorkRequestErrorCollection
+﻿WorkRequestErrorCollection
 ==========================
 
 .. currentmodule:: oci.batch.models

@@ -1,4 +1,4 @@
-UpdateEsxiHostDetails
+﻿UpdateEsxiHostDetails
 =====================
 
 .. currentmodule:: oci.ocvp.models

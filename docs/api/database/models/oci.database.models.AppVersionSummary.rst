@@ -1,4 +1,4 @@
-AppVersionSummary
+﻿AppVersionSummary
 =================
 
 .. currentmodule:: oci.database.models

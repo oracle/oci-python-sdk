@@ -1,4 +1,4 @@
-ComputeGpuMemoryClusterSummary
+﻿ComputeGpuMemoryClusterSummary
 ==============================
 
 .. currentmodule:: oci.core.models

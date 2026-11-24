@@ -1,4 +1,4 @@
-ChangeCloudAutonomousVmClusterSubscriptionDetails
+﻿ChangeCloudAutonomousVmClusterSubscriptionDetails
 =================================================
 
 .. currentmodule:: oci.database.models

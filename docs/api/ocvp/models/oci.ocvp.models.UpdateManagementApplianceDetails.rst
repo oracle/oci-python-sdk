@@ -1,4 +1,4 @@
-UpdateManagementApplianceDetails
+﻿UpdateManagementApplianceDetails
 ================================
 
 .. currentmodule:: oci.ocvp.models

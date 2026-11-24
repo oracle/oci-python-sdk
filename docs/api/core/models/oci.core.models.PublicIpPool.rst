@@ -1,4 +1,4 @@
-PublicIpPool
+﻿PublicIpPool
 ============
 
 .. currentmodule:: oci.core.models

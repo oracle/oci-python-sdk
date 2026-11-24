@@ -1,4 +1,4 @@
-AttachVnicDetails
+﻿AttachVnicDetails
 =================
 
 .. currentmodule:: oci.core.models

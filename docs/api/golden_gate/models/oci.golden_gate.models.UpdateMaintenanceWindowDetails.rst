@@ -1,4 +1,4 @@
-UpdateMaintenanceWindowDetails
+﻿UpdateMaintenanceWindowDetails
 ==============================
 
 .. currentmodule:: oci.golden_gate.models

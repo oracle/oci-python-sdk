@@ -1,4 +1,4 @@
-Subscription
+﻿Subscription
 ============
 
 .. currentmodule:: oci.fusion_apps.models

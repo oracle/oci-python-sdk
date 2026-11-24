@@ -1,4 +1,4 @@
-DbnodeSnapshots
+﻿DbnodeSnapshots
 ===============
 
 .. currentmodule:: oci.database.models

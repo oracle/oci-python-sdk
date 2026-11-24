@@ -1,4 +1,4 @@
-ImageSourceDetails
+﻿ImageSourceDetails
 ==================
 
 .. currentmodule:: oci.core.models

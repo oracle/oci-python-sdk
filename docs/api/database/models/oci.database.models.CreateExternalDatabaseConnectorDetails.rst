@@ -1,4 +1,4 @@
-CreateExternalDatabaseConnectorDetails
+﻿CreateExternalDatabaseConnectorDetails
 ======================================
 
 .. currentmodule:: oci.database.models

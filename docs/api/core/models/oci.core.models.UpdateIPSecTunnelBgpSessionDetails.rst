@@ -1,4 +1,4 @@
-UpdateIPSecTunnelBgpSessionDetails
+﻿UpdateIPSecTunnelBgpSessionDetails
 ==================================
 
 .. currentmodule:: oci.core.models

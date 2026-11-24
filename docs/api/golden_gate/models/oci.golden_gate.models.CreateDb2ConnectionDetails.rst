@@ -1,4 +1,4 @@
-CreateDb2ConnectionDetails
+﻿CreateDb2ConnectionDetails
 ==========================
 
 .. currentmodule:: oci.golden_gate.models

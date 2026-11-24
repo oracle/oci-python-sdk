@@ -1,4 +1,4 @@
-MarketingBrandMicrositeDnsConfig
+﻿MarketingBrandMicrositeDnsConfig
 ================================
 
 .. currentmodule:: oci.fusion_apps.models

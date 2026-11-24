@@ -1,4 +1,4 @@
-CreateGooglePubSubConnectionDetails
+﻿CreateGooglePubSubConnectionDetails
 ===================================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-AllowRule
+﻿AllowRule
 =========
 
 .. currentmodule:: oci.fusion_apps.models

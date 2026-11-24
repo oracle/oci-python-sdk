@@ -1,4 +1,4 @@
-ComputeInstanceDetails
+﻿ComputeInstanceDetails
 ======================
 
 .. currentmodule:: oci.core.models

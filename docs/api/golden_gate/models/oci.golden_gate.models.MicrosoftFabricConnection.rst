@@ -1,4 +1,4 @@
-MicrosoftFabricConnection
+﻿MicrosoftFabricConnection
 =========================
 
 .. currentmodule:: oci.golden_gate.models

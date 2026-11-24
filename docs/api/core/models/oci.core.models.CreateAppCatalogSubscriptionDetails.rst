@@ -1,4 +1,4 @@
-CreateAppCatalogSubscriptionDetails
+﻿CreateAppCatalogSubscriptionDetails
 ===================================
 
 .. currentmodule:: oci.core.models

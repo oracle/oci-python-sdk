@@ -1,4 +1,4 @@
-TopologyAssociatedWithRelationshipDetails
+﻿TopologyAssociatedWithRelationshipDetails
 =========================================
 
 .. currentmodule:: oci.core.models

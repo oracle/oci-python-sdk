@@ -1,4 +1,4 @@
-DedicatedVmHostInstanceShapeSummary
+﻿DedicatedVmHostInstanceShapeSummary
 ===================================
 
 .. currentmodule:: oci.core.models

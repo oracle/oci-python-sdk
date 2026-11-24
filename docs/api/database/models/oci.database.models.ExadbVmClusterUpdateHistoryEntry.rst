@@ -1,4 +1,4 @@
-ExadbVmClusterUpdateHistoryEntry
+﻿ExadbVmClusterUpdateHistoryEntry
 ================================
 
 .. currentmodule:: oci.database.models

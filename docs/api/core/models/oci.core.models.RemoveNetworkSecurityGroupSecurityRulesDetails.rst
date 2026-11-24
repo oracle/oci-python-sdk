@@ -1,4 +1,4 @@
-RemoveNetworkSecurityGroupSecurityRulesDetails
+﻿RemoveNetworkSecurityGroupSecurityRulesDetails
 ==============================================
 
 .. currentmodule:: oci.core.models

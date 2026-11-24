@@ -1,4 +1,4 @@
-BsNvmeAttachmentsConfig
+﻿BsNvmeAttachmentsConfig
 =======================
 
 .. currentmodule:: oci.core.models

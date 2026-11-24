@@ -1,4 +1,4 @@
-BootVolumeSourceFromBootVolumeBackupDeltaDetails
+﻿BootVolumeSourceFromBootVolumeBackupDeltaDetails
 ================================================
 
 .. currentmodule:: oci.core.models

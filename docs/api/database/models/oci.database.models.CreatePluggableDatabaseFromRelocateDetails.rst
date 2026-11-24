@@ -1,4 +1,4 @@
-CreatePluggableDatabaseFromRelocateDetails
+﻿CreatePluggableDatabaseFromRelocateDetails
 ==========================================
 
 .. currentmodule:: oci.database.models

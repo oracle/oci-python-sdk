@@ -1,4 +1,4 @@
-MysqlConnection
+﻿MysqlConnection
 ===============
 
 .. currentmodule:: oci.golden_gate.models

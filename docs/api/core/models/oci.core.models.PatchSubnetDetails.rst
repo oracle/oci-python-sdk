@@ -1,4 +1,4 @@
-PatchSubnetDetails
+﻿PatchSubnetDetails
 ==================
 
 .. currentmodule:: oci.core.models

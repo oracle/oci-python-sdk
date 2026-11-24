@@ -1,4 +1,4 @@
-EnableExternalDatabaseManagementDetailsBase
+﻿EnableExternalDatabaseManagementDetailsBase
 ===========================================
 
 .. currentmodule:: oci.database.models

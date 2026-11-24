@@ -1,4 +1,4 @@
-StackMonitoringConfig
+﻿StackMonitoringConfig
 =====================
 
 .. currentmodule:: oci.database.models

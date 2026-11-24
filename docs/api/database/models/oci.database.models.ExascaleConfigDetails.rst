@@ -1,4 +1,4 @@
-ExascaleConfigDetails
+﻿ExascaleConfigDetails
 =====================
 
 .. currentmodule:: oci.database.models

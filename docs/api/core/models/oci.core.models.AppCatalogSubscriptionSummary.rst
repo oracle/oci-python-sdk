@@ -1,4 +1,4 @@
-AppCatalogSubscriptionSummary
+﻿AppCatalogSubscriptionSummary
 =============================
 
 .. currentmodule:: oci.core.models

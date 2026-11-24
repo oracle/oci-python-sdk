@@ -1,4 +1,4 @@
-AzureDataLakeStorageDatabricksEngineArtifactLocationSummary
+﻿AzureDataLakeStorageDatabricksEngineArtifactLocationSummary
 ===========================================================
 
 .. currentmodule:: oci.golden_gate.models

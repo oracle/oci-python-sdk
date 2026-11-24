@@ -1,4 +1,4 @@
-CreateAmazonS3IcebergStorageDetails
+﻿CreateAmazonS3IcebergStorageDetails
 ===================================
 
 .. currentmodule:: oci.golden_gate.models

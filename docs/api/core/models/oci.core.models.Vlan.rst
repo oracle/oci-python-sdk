@@ -1,4 +1,4 @@
-Vlan
+﻿Vlan
 ====
 
 .. currentmodule:: oci.core.models

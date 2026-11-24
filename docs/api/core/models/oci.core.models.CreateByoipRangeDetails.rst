@@ -1,4 +1,4 @@
-CreateByoipRangeDetails
+﻿CreateByoipRangeDetails
 =======================
 
 .. currentmodule:: oci.core.models

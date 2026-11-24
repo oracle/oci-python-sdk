@@ -1,4 +1,4 @@
-WorkRequestCollection
+﻿WorkRequestCollection
 =====================
 
 .. currentmodule:: oci.database_migration.models

@@ -1,4 +1,4 @@
-ExecutionWindowSummary
+﻿ExecutionWindowSummary
 ======================
 
 .. currentmodule:: oci.database.models

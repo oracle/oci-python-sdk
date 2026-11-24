@@ -1,4 +1,4 @@
-InstanceConfigurationSummary
+﻿InstanceConfigurationSummary
 ============================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-RescheduleDeploymentUpgradeToDateDetails
+﻿RescheduleDeploymentUpgradeToDateDetails
 ========================================
 
 .. currentmodule:: oci.golden_gate.models

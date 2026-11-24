@@ -1,4 +1,4 @@
-ManagedSoftwareUpdateDayOfWeek
+﻿ManagedSoftwareUpdateDayOfWeek
 ==============================
 
 .. currentmodule:: oci.database.models

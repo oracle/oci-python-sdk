@@ -1,4 +1,4 @@
-AllowedPhaseTwoParameters
+﻿AllowedPhaseTwoParameters
 =========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-GenerateAutonomousDatabaseWalletDetails
+﻿GenerateAutonomousDatabaseWalletDetails
 =======================================
 
 .. currentmodule:: oci.database.models

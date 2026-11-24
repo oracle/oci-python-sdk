@@ -1,4 +1,4 @@
-ResetActionDetails
+﻿ResetActionDetails
 ==================
 
 .. currentmodule:: oci.core.models

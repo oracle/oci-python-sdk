@@ -35,6 +35,7 @@ from .change_batch_job_compartment_details import ChangeBatchJobCompartmentDetai
 from .change_batch_job_pool_compartment_details import ChangeBatchJobPoolCompartmentDetails
 from .change_batch_task_environment_compartment_details import ChangeBatchTaskEnvironmentCompartmentDetails
 from .change_batch_task_profile_compartment_details import ChangeBatchTaskProfileCompartmentDetails
+from .compute_capacity_reservation import ComputeCapacityReservation
 from .compute_task import ComputeTask
 from .compute_task_execution_details import ComputeTaskExecutionDetails
 from .compute_task_summary import ComputeTaskSummary
@@ -48,6 +49,7 @@ from .create_batch_task_details import CreateBatchTaskDetails
 from .create_batch_task_environment_details import CreateBatchTaskEnvironmentDetails
 from .create_batch_task_profile_details import CreateBatchTaskProfileDetails
 from .create_batch_task_profile_extended_information_details import CreateBatchTaskProfileExtendedInformationDetails
+from .create_compute_capacity_reservation_details import CreateComputeCapacityReservationDetails
 from .create_compute_task_details import CreateComputeTaskDetails
 from .create_cpu_architecture_task_profile_extended_information_details import CreateCpuArchitectureTaskProfileExtendedInformationDetails
 from .create_cpu_shape_task_profile_extended_information_details import CreateCpuShapeTaskProfileExtendedInformationDetails
@@ -57,6 +59,7 @@ from .create_gpu_fleet_shape_details import CreateGpuFleetShapeDetails
 from .create_gpu_shape_task_profile_extended_information_details import CreateGpuShapeTaskProfileExtendedInformationDetails
 from .create_group_task_details import CreateGroupTaskDetails
 from .create_network_details import CreateNetworkDetails
+from .create_reservation_details import CreateReservationDetails
 from .create_service_managed_fleet_details import CreateServiceManagedFleetDetails
 from .create_service_managed_gpu_fleet_details import CreateServiceManagedGpuFleetDetails
 from .environment_variable import EnvironmentVariable
@@ -79,6 +82,7 @@ from .nfs_volume import NfsVolume
 from .oci_logging_configuration import OciLoggingConfiguration
 from .pause_batch_job_details import PauseBatchJobDetails
 from .private_ip import PrivateIp
+from .reservation import Reservation
 from .security_context import SecurityContext
 from .service_managed_fleet import ServiceManagedFleet
 from .service_managed_gpu_fleet import ServiceManagedGpuFleet
@@ -140,6 +144,7 @@ batch_type_mapping = {
     "ChangeBatchJobPoolCompartmentDetails": ChangeBatchJobPoolCompartmentDetails,
     "ChangeBatchTaskEnvironmentCompartmentDetails": ChangeBatchTaskEnvironmentCompartmentDetails,
     "ChangeBatchTaskProfileCompartmentDetails": ChangeBatchTaskProfileCompartmentDetails,
+    "ComputeCapacityReservation": ComputeCapacityReservation,
     "ComputeTask": ComputeTask,
     "ComputeTaskExecutionDetails": ComputeTaskExecutionDetails,
     "ComputeTaskSummary": ComputeTaskSummary,
@@ -153,6 +158,7 @@ batch_type_mapping = {
     "CreateBatchTaskEnvironmentDetails": CreateBatchTaskEnvironmentDetails,
     "CreateBatchTaskProfileDetails": CreateBatchTaskProfileDetails,
     "CreateBatchTaskProfileExtendedInformationDetails": CreateBatchTaskProfileExtendedInformationDetails,
+    "CreateComputeCapacityReservationDetails": CreateComputeCapacityReservationDetails,
     "CreateComputeTaskDetails": CreateComputeTaskDetails,
     "CreateCpuArchitectureTaskProfileExtendedInformationDetails": CreateCpuArchitectureTaskProfileExtendedInformationDetails,
     "CreateCpuShapeTaskProfileExtendedInformationDetails": CreateCpuShapeTaskProfileExtendedInformationDetails,
@@ -162,6 +168,7 @@ batch_type_mapping = {
     "CreateGpuShapeTaskProfileExtendedInformationDetails": CreateGpuShapeTaskProfileExtendedInformationDetails,
     "CreateGroupTaskDetails": CreateGroupTaskDetails,
     "CreateNetworkDetails": CreateNetworkDetails,
+    "CreateReservationDetails": CreateReservationDetails,
     "CreateServiceManagedFleetDetails": CreateServiceManagedFleetDetails,
     "CreateServiceManagedGpuFleetDetails": CreateServiceManagedGpuFleetDetails,
     "EnvironmentVariable": EnvironmentVariable,
@@ -184,6 +191,7 @@ batch_type_mapping = {
     "OciLoggingConfiguration": OciLoggingConfiguration,
     "PauseBatchJobDetails": PauseBatchJobDetails,
     "PrivateIp": PrivateIp,
+    "Reservation": Reservation,
     "SecurityContext": SecurityContext,
     "ServiceManagedFleet": ServiceManagedFleet,
     "ServiceManagedGpuFleet": ServiceManagedGpuFleet,

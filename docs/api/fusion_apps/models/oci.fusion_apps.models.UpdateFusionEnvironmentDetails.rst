@@ -1,4 +1,4 @@
-UpdateFusionEnvironmentDetails
+﻿UpdateFusionEnvironmentDetails
 ==============================
 
 .. currentmodule:: oci.fusion_apps.models

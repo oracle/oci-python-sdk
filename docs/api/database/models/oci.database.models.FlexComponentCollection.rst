@@ -1,4 +1,4 @@
-FlexComponentCollection
+﻿FlexComponentCollection
 =======================
 
 .. currentmodule:: oci.database.models

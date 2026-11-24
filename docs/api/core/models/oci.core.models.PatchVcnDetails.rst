@@ -1,4 +1,4 @@
-PatchVcnDetails
+﻿PatchVcnDetails
 ===============
 
 .. currentmodule:: oci.core.models

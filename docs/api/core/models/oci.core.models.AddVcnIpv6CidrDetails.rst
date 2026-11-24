@@ -1,4 +1,4 @@
-AddVcnIpv6CidrDetails
+﻿AddVcnIpv6CidrDetails
 =====================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-WorkRequestResource
+﻿WorkRequestResource
 ===================
 
 .. currentmodule:: oci.ocvp.models

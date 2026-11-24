@@ -1,4 +1,4 @@
-ChangeCloudDbSystemSubscriptionDetails
+﻿ChangeCloudDbSystemSubscriptionDetails
 ======================================
 
 .. currentmodule:: oci.database.models

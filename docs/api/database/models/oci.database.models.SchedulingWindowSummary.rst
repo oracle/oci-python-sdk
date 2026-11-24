@@ -1,4 +1,4 @@
-SchedulingWindowSummary
+﻿SchedulingWindowSummary
 =======================
 
 .. currentmodule:: oci.database.models

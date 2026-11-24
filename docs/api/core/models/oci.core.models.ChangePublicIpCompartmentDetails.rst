@@ -1,4 +1,4 @@
-ChangePublicIpCompartmentDetails
+﻿ChangePublicIpCompartmentDetails
 ================================
 
 .. currentmodule:: oci.core.models

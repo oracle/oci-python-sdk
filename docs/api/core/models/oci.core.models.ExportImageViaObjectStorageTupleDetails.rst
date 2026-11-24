@@ -1,4 +1,4 @@
-ExportImageViaObjectStorageTupleDetails
+﻿ExportImageViaObjectStorageTupleDetails
 =======================================
 
 .. currentmodule:: oci.core.models

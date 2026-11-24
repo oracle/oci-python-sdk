@@ -1,4 +1,4 @@
-UserDefinedProperties
+﻿UserDefinedProperties
 =====================
 
 .. currentmodule:: oci.database_migration.models

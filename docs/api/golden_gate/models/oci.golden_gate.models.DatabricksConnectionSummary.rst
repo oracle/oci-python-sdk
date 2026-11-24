@@ -1,4 +1,4 @@
-DatabricksConnectionSummary
+﻿DatabricksConnectionSummary
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

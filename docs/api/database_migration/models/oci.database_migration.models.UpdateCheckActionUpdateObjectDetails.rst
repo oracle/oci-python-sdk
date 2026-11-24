@@ -1,4 +1,4 @@
-UpdateCheckActionUpdateObjectDetails
+﻿UpdateCheckActionUpdateObjectDetails
 ====================================
 
 .. currentmodule:: oci.database_migration.models

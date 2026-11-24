@@ -132,6 +132,10 @@ class InstancePool(object):
             The value to assign to the lifecycle_management property of this InstancePool.
         :type lifecycle_management: oci.core.models.InstancePoolLifecycleManagementDetails
 
+        :param instance_maintenance_policy:
+            The value to assign to the instance_maintenance_policy property of this InstancePool.
+        :type instance_maintenance_policy: oci.core.models.InstancePoolMaintenancePolicyDetails
+
         :param current_size:
             The value to assign to the current_size property of this InstancePool.
         :type current_size: int
@@ -154,6 +158,7 @@ class InstancePool(object):
             'instance_display_name_formatter': 'str',
             'instance_hostname_formatter': 'str',
             'lifecycle_management': 'InstancePoolLifecycleManagementDetails',
+            'instance_maintenance_policy': 'InstancePoolMaintenancePolicyDetails',
             'current_size': 'int'
         }
         self.attribute_map = {
@@ -173,6 +178,7 @@ class InstancePool(object):
             'instance_display_name_formatter': 'instanceDisplayNameFormatter',
             'instance_hostname_formatter': 'instanceHostnameFormatter',
             'lifecycle_management': 'lifecycleManagement',
+            'instance_maintenance_policy': 'instanceMaintenancePolicy',
             'current_size': 'currentSize'
         }
         self._id = None
@@ -191,6 +197,7 @@ class InstancePool(object):
         self._instance_display_name_formatter = None
         self._instance_hostname_formatter = None
         self._lifecycle_management = None
+        self._instance_maintenance_policy = None
         self._current_size = None
 
     @property
@@ -628,6 +635,26 @@ class InstancePool(object):
         :type: oci.core.models.InstancePoolLifecycleManagementDetails
         """
         self._lifecycle_management = lifecycle_management
+
+    @property
+    def instance_maintenance_policy(self):
+        """
+        Gets the instance_maintenance_policy of this InstancePool.
+
+        :return: The instance_maintenance_policy of this InstancePool.
+        :rtype: oci.core.models.InstancePoolMaintenancePolicyDetails
+        """
+        return self._instance_maintenance_policy
+
+    @instance_maintenance_policy.setter
+    def instance_maintenance_policy(self, instance_maintenance_policy):
+        """
+        Sets the instance_maintenance_policy of this InstancePool.
+
+        :param instance_maintenance_policy: The instance_maintenance_policy of this InstancePool.
+        :type: oci.core.models.InstancePoolMaintenancePolicyDetails
+        """
+        self._instance_maintenance_policy = instance_maintenance_policy
 
     @property
     def current_size(self):

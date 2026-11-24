@@ -1,4 +1,4 @@
-IcebergConnection
+﻿IcebergConnection
 =================
 
 .. currentmodule:: oci.golden_gate.models

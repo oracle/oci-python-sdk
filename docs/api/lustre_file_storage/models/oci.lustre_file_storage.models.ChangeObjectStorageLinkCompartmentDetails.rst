@@ -1,4 +1,4 @@
-ChangeObjectStorageLinkCompartmentDetails
+﻿ChangeObjectStorageLinkCompartmentDetails
 =========================================
 
 .. currentmodule:: oci.lustre_file_storage.models

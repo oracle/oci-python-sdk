@@ -1,4 +1,4 @@
-ApplicationVipSummary
+﻿ApplicationVipSummary
 =====================
 
 .. currentmodule:: oci.database.models

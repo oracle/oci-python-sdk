@@ -1,4 +1,4 @@
-BatchTaskEnvironmentCollection
+﻿BatchTaskEnvironmentCollection
 ==============================
 
 .. currentmodule:: oci.batch.models

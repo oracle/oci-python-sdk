@@ -1,4 +1,4 @@
-ExtractDetailsSummary
+﻿ExtractDetailsSummary
 =====================
 
 .. currentmodule:: oci.fusion_apps.models

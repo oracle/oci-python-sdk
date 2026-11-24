@@ -1,4 +1,4 @@
-ChangeVirtualCircuitCompartmentDetails
+﻿ChangeVirtualCircuitCompartmentDetails
 ======================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-MeasuredBootReportMeasurements
+﻿MeasuredBootReportMeasurements
 ==============================
 
 .. currentmodule:: oci.core.models

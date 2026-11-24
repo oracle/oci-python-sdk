@@ -1,4 +1,4 @@
-AutonomousVirtualMachineSummary
+﻿AutonomousVirtualMachineSummary
 ===============================
 
 .. currentmodule:: oci.database.models

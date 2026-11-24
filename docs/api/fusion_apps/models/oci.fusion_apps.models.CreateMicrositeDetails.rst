@@ -1,4 +1,4 @@
-CreateMicrositeDetails
+﻿CreateMicrositeDetails
 ======================
 
 .. currentmodule:: oci.fusion_apps.models

@@ -1,4 +1,4 @@
-UpdateOracleNosqlConnectionDetails
+﻿UpdateOracleNosqlConnectionDetails
 ==================================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-ActivateExadataInfrastructureDetails
+﻿ActivateExadataInfrastructureDetails
 ====================================
 
 .. currentmodule:: oci.database.models

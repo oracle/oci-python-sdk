@@ -1,4 +1,4 @@
-UnpauseBatchJobDetails
+﻿UnpauseBatchJobDetails
 ======================
 
 .. currentmodule:: oci.batch.models

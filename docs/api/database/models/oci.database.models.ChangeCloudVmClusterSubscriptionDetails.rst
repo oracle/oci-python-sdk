@@ -1,4 +1,4 @@
-ChangeCloudVmClusterSubscriptionDetails
+﻿ChangeCloudVmClusterSubscriptionDetails
 =======================================
 
 .. currentmodule:: oci.database.models

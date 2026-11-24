@@ -1,4 +1,4 @@
-PluggableDatabaseNodeLevelDetails
+﻿PluggableDatabaseNodeLevelDetails
 =================================
 
 .. currentmodule:: oci.database.models

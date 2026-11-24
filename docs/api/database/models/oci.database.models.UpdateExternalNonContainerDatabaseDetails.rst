@@ -1,4 +1,4 @@
-UpdateExternalNonContainerDatabaseDetails
+﻿UpdateExternalNonContainerDatabaseDetails
 =========================================
 
 .. currentmodule:: oci.database.models

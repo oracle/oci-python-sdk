@@ -1,4 +1,4 @@
-UpdateSchedulingWindowDetails
+﻿UpdateSchedulingWindowDetails
 =============================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-Patch
+﻿Patch
 =====
 
 .. currentmodule:: oci.database.models

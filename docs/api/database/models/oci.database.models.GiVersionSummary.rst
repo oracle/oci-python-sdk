@@ -1,4 +1,4 @@
-GiVersionSummary
+﻿GiVersionSummary
 ================
 
 .. currentmodule:: oci.database.models

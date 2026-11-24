@@ -1,4 +1,4 @@
-UpdateVolumeBackupDetails
+﻿UpdateVolumeBackupDetails
 =========================
 
 .. currentmodule:: oci.core.models

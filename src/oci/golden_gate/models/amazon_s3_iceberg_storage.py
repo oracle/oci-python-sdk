@@ -31,7 +31,7 @@ class AmazonS3IcebergStorage(IcebergStorage):
 
         :param storage_type:
             The value to assign to the storage_type property of this AmazonS3IcebergStorage.
-            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMAZON_S3", "GOOGLE_CLOUD_STORAGE", "AZURE_DATA_LAKE_STORAGE", "NONE", "OCI_OBJECT_STORAGE_S3_API", "OCI_OBJECT_STORAGE_ACCESS_KEY", "AZURE_STORAGE", "ZFS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type storage_type: str
 

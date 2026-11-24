@@ -1,4 +1,4 @@
-InventoryIpAddressSummary
+﻿InventoryIpAddressSummary
 =========================
 
 .. currentmodule:: oci.core.models

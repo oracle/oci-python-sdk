@@ -1,4 +1,4 @@
-GetMaintenancePolicyDetails
+﻿GetMaintenancePolicyDetails
 ===========================
 
 .. currentmodule:: oci.fusion_apps.models

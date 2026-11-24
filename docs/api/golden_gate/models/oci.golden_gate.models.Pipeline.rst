@@ -1,4 +1,4 @@
-Pipeline
+﻿Pipeline
 ========
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-EnableExternalPluggableDatabaseDatabaseManagementDetails
+﻿EnableExternalPluggableDatabaseDatabaseManagementDetails
 ========================================================
 
 .. currentmodule:: oci.database.models

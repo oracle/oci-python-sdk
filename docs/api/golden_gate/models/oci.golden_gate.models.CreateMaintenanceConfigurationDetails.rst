@@ -1,4 +1,4 @@
-CreateMaintenanceConfigurationDetails
+﻿CreateMaintenanceConfigurationDetails
 =====================================
 
 .. currentmodule:: oci.golden_gate.models

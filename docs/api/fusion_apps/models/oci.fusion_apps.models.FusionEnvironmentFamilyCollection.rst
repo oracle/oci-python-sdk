@@ -1,4 +1,4 @@
-FusionEnvironmentFamilyCollection
+﻿FusionEnvironmentFamilyCollection
 =================================
 
 .. currentmodule:: oci.fusion_apps.models

@@ -1,4 +1,4 @@
-CreateDatabricksEngineArtifactLocationDetails
+﻿CreateDatabricksEngineArtifactLocationDetails
 =============================================
 
 .. currentmodule:: oci.golden_gate.models

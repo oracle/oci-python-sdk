@@ -35,6 +35,10 @@ class IcebergCatalogSummary(object):
     #: This constant has a value of "REST"
     CATALOG_TYPE_REST = "REST"
 
+    #: A constant which can be used with the catalog_type property of a IcebergCatalogSummary.
+    #: This constant has a value of "OADC"
+    CATALOG_TYPE_OADC = "OADC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IcebergCatalogSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -45,12 +49,13 @@ class IcebergCatalogSummary(object):
         * :class:`~oci.golden_gate.models.PolarisIcebergCatalogSummary`
         * :class:`~oci.golden_gate.models.RestIcebergCatalogSummary`
         * :class:`~oci.golden_gate.models.HadoopIcebergCatalogSummary`
+        * :class:`~oci.golden_gate.models.OracleAiDataCatalogIcebergCatalogSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param catalog_type:
             The value to assign to the catalog_type property of this IcebergCatalogSummary.
-            Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", "OADC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type catalog_type: str
 
@@ -85,6 +90,9 @@ class IcebergCatalogSummary(object):
 
         if type == 'HADOOP':
             return 'HadoopIcebergCatalogSummary'
+
+        if type == 'OADC':
+            return 'OracleAiDataCatalogIcebergCatalogSummary'
         else:
             return 'IcebergCatalogSummary'
 
@@ -94,7 +102,7 @@ class IcebergCatalogSummary(object):
         **[Required]** Gets the catalog_type of this IcebergCatalogSummary.
         The catalog type.
 
-        Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", "OADC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -113,7 +121,7 @@ class IcebergCatalogSummary(object):
         :param catalog_type: The catalog_type of this IcebergCatalogSummary.
         :type: str
         """
-        allowed_values = ["GLUE", "HADOOP", "NESSIE", "POLARIS", "REST"]
+        allowed_values = ["GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", "OADC"]
         if not value_allowed_none_or_none_sentinel(catalog_type, allowed_values):
             catalog_type = 'UNKNOWN_ENUM_VALUE'
         self._catalog_type = catalog_type

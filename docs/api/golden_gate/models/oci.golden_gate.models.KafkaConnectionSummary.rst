@@ -1,4 +1,4 @@
-KafkaConnectionSummary
+﻿KafkaConnectionSummary
 ======================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-MarketingBrandEmailSubdomainCsr
+﻿MarketingBrandEmailSubdomainCsr
 ===============================
 
 .. currentmodule:: oci.fusion_apps.models

@@ -1,4 +1,4 @@
-ResourcePoolShapeCollection
+﻿ResourcePoolShapeCollection
 ===========================
 
 .. currentmodule:: oci.database.models

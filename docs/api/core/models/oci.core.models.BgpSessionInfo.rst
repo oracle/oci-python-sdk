@@ -1,4 +1,4 @@
-BgpSessionInfo
+﻿BgpSessionInfo
 ==============
 
 .. currentmodule:: oci.core.models

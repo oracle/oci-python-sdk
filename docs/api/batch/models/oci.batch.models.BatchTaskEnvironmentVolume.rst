@@ -1,4 +1,4 @@
-BatchTaskEnvironmentVolume
+﻿BatchTaskEnvironmentVolume
 ==========================
 
 .. currentmodule:: oci.batch.models

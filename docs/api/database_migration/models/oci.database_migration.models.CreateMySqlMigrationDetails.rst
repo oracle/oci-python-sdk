@@ -1,4 +1,4 @@
-CreateMySqlMigrationDetails
+﻿CreateMySqlMigrationDetails
 ===========================
 
 .. currentmodule:: oci.database_migration.models

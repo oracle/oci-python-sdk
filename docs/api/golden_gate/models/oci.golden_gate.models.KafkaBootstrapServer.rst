@@ -1,4 +1,4 @@
-KafkaBootstrapServer
+﻿KafkaBootstrapServer
 ====================
 
 .. currentmodule:: oci.golden_gate.models

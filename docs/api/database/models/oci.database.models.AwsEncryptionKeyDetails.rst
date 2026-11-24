@@ -1,4 +1,4 @@
-AwsEncryptionKeyDetails
+﻿AwsEncryptionKeyDetails
 =======================
 
 .. currentmodule:: oci.database.models

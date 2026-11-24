@@ -1,4 +1,4 @@
-IntelVmPlatformConfig
+﻿IntelVmPlatformConfig
 =====================
 
 .. currentmodule:: oci.core.models

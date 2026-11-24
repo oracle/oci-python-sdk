@@ -1,4 +1,4 @@
-SddcByolAllocationDetails
+﻿SddcByolAllocationDetails
 =========================
 
 .. currentmodule:: oci.ocvp.models

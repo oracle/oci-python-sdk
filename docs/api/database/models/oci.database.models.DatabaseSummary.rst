@@ -1,4 +1,4 @@
-DatabaseSummary
+﻿DatabaseSummary
 ===============
 
 .. currentmodule:: oci.database.models

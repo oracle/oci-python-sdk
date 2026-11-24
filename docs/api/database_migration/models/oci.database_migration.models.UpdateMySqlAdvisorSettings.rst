@@ -1,4 +1,4 @@
-UpdateMySqlAdvisorSettings
+﻿UpdateMySqlAdvisorSettings
 ==========================
 
 .. currentmodule:: oci.database_migration.models

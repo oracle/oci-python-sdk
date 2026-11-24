@@ -1,4 +1,4 @@
-TerminationProceedInstancePoolInstanceDetails
+﻿TerminationProceedInstancePoolInstanceDetails
 =============================================
 
 .. currentmodule:: oci.core.models

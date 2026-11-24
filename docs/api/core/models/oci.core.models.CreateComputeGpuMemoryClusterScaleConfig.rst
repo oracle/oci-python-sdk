@@ -1,4 +1,4 @@
-CreateComputeGpuMemoryClusterScaleConfig
+﻿CreateComputeGpuMemoryClusterScaleConfig
 ========================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-AmazonRedshiftConnection
+﻿AmazonRedshiftConnection
 ========================
 
 .. currentmodule:: oci.golden_gate.models

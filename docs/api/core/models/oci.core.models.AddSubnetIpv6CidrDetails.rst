@@ -1,4 +1,4 @@
-AddSubnetIpv6CidrDetails
+﻿AddSubnetIpv6CidrDetails
 ========================
 
 .. currentmodule:: oci.core.models

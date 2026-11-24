@@ -1,4 +1,4 @@
-LoopBackDrgAttachmentNetworkDetails
+﻿LoopBackDrgAttachmentNetworkDetails
 ===================================
 
 .. currentmodule:: oci.core.models

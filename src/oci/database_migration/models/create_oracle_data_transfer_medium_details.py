@@ -28,6 +28,14 @@ class CreateOracleDataTransferMediumDetails(object):
     TYPE_AWS_S3 = "AWS_S3"
 
     #: A constant which can be used with the type property of a CreateOracleDataTransferMediumDetails.
+    #: This constant has a value of "AZURE_BLOB"
+    TYPE_AZURE_BLOB = "AZURE_BLOB"
+
+    #: A constant which can be used with the type property of a CreateOracleDataTransferMediumDetails.
+    #: This constant has a value of "GCS"
+    TYPE_GCS = "GCS"
+
+    #: A constant which can be used with the type property of a CreateOracleDataTransferMediumDetails.
     #: This constant has a value of "NFS"
     TYPE_NFS = "NFS"
 
@@ -37,7 +45,9 @@ class CreateOracleDataTransferMediumDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database_migration.models.CreateOracleDbLinkDataTransferMediumDetails`
+        * :class:`~oci.database_migration.models.CreateOracleGcsDataTransferMediumDetails`
         * :class:`~oci.database_migration.models.CreateOracleNfsDataTransferMediumDetails`
+        * :class:`~oci.database_migration.models.CreateOracleAzureBlobDataTransferMediumDetails`
         * :class:`~oci.database_migration.models.CreateOracleObjectStorageDataTransferMediumDetails`
         * :class:`~oci.database_migration.models.CreateOracleAwsS3DataTransferMediumDetails`
 
@@ -45,7 +55,7 @@ class CreateOracleDataTransferMediumDetails(object):
 
         :param type:
             The value to assign to the type property of this CreateOracleDataTransferMediumDetails.
-            Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "NFS"
+            Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "AZURE_BLOB", "GCS", "NFS"
         :type type: str
 
         """
@@ -68,8 +78,14 @@ class CreateOracleDataTransferMediumDetails(object):
         if type == 'DBLINK':
             return 'CreateOracleDbLinkDataTransferMediumDetails'
 
+        if type == 'GCS':
+            return 'CreateOracleGcsDataTransferMediumDetails'
+
         if type == 'NFS':
             return 'CreateOracleNfsDataTransferMediumDetails'
+
+        if type == 'AZURE_BLOB':
+            return 'CreateOracleAzureBlobDataTransferMediumDetails'
 
         if type == 'OBJECT_STORAGE':
             return 'CreateOracleObjectStorageDataTransferMediumDetails'
@@ -85,7 +101,7 @@ class CreateOracleDataTransferMediumDetails(object):
         **[Required]** Gets the type of this CreateOracleDataTransferMediumDetails.
         Type of the data transfer medium to use.
 
-        Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "NFS"
+        Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "AZURE_BLOB", "GCS", "NFS"
 
 
         :return: The type of this CreateOracleDataTransferMediumDetails.
@@ -103,7 +119,7 @@ class CreateOracleDataTransferMediumDetails(object):
         :param type: The type of this CreateOracleDataTransferMediumDetails.
         :type: str
         """
-        allowed_values = ["DBLINK", "OBJECT_STORAGE", "AWS_S3", "NFS"]
+        allowed_values = ["DBLINK", "OBJECT_STORAGE", "AWS_S3", "AZURE_BLOB", "GCS", "NFS"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

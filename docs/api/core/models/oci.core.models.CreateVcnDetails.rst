@@ -1,4 +1,4 @@
-CreateVcnDetails
+﻿CreateVcnDetails
 ================
 
 .. currentmodule:: oci.core.models

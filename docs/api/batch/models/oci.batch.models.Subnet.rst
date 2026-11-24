@@ -1,4 +1,4 @@
-Subnet
+﻿Subnet
 ======
 
 .. currentmodule:: oci.batch.models

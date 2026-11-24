@@ -1,4 +1,4 @@
-UpdatePublicIpPoolDetails
+﻿UpdatePublicIpPoolDetails
 =========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-LaunchInstanceAgentConfigDetails
+﻿LaunchInstanceAgentConfigDetails
 ================================
 
 .. currentmodule:: oci.core.models

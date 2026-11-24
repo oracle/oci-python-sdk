@@ -1,4 +1,4 @@
-RemoveIpv4SubnetCidrDetails
+﻿RemoveIpv4SubnetCidrDetails
 ===========================
 
 .. currentmodule:: oci.core.models

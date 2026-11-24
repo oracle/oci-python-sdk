@@ -1,4 +1,4 @@
-ServiceAttachmentSummary
+﻿ServiceAttachmentSummary
 ========================
 
 .. currentmodule:: oci.fusion_apps.models

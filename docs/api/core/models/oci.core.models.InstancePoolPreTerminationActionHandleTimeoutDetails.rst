@@ -1,4 +1,4 @@
-InstancePoolPreTerminationActionHandleTimeoutDetails
+﻿InstancePoolPreTerminationActionHandleTimeoutDetails
 ====================================================
 
 .. currentmodule:: oci.core.models

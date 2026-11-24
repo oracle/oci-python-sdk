@@ -1,4 +1,4 @@
-AutonomousDatabaseManualRefreshDetails
+﻿AutonomousDatabaseManualRefreshDetails
 ======================================
 
 .. currentmodule:: oci.database.models

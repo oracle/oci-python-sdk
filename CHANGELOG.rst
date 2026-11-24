@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.193.0 - 2026-11-24
+====================
+
+Added 
+----- - Support for keystore configuration on Autonomous VM clusters on Exadata Cloud@Customer and Cloud Exadata Infrastructure in the Database service - Support for Thales external keystores for Autonomous Container Databases in the Database service - Support for Oracle AI Data Catalog in the GoldenGate service - Support for global service manager scaling work requests in the Globally Distributed Database service - Support for instance pool refreshes, including progress tracking, cancellation, and launch-before-termination maintenance policies in the Compute service - Support for Azure Blob Storage and Google Cloud Storage as dump-transfer media during Oracle logical migrations in the Database Migration service - Support for compute capacity reservations in service-managed fleets in the Batch service  
+
+Breaking 
+-------- 
+* Removed the Oracle migration settings models, including the create, update, clone, and summary variants, in the Database Migration service 
+* Removed the ``migration_settings`` property from ``CreateOracleMigrationDetails``, ``UpdateOracleMigrationDetails``, ``OracleCloneMigrationDetails``, ``OracleMigration``, and ``OracleMigrationSummary`` in the Database Migration service  
+
+====================
 2.192.0 - 2026-11-17
 ====================
 

@@ -94,6 +94,7 @@ Ocvp
     oci.ocvp.models.NetworkConfiguration
     oci.ocvp.models.RemoveDatastoreFromDatastoreClusterDetails
     oci.ocvp.models.ReplaceHostDetails
+    oci.ocvp.models.ResourceOperation
     oci.ocvp.models.Sddc
     oci.ocvp.models.SddcByolAllocationDetails
     oci.ocvp.models.SddcCollection

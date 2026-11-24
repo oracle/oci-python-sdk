@@ -1,4 +1,4 @@
-UpdateExternalDatabaseDetailsBase
+﻿UpdateExternalDatabaseDetailsBase
 =================================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-UpdateDrgRouteRuleDetails
+﻿UpdateDrgRouteRuleDetails
 =========================
 
 .. currentmodule:: oci.core.models

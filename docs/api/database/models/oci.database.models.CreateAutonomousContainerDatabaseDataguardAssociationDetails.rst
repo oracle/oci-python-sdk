@@ -1,4 +1,4 @@
-CreateAutonomousContainerDatabaseDataguardAssociationDetails
+﻿CreateAutonomousContainerDatabaseDataguardAssociationDetails
 ============================================================
 
 .. currentmodule:: oci.database.models

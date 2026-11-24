@@ -43,6 +43,10 @@ Lustre File Storage
     oci.lustre_file_storage.models.SyncJob
     oci.lustre_file_storage.models.SyncJobCollection
     oci.lustre_file_storage.models.SyncJobSummary
+    oci.lustre_file_storage.models.TieringConfiguration
+    oci.lustre_file_storage.models.TieringConfigurationDetails
+    oci.lustre_file_storage.models.TieringConfigurationSummary
+    oci.lustre_file_storage.models.TieringPolicyRule
     oci.lustre_file_storage.models.UpdateLustreFileSystemDetails
     oci.lustre_file_storage.models.UpdateObjectStorageLinkDetails
     oci.lustre_file_storage.models.WorkRequest

@@ -1,4 +1,4 @@
-UpdateAutonomousVmClusterDetails
+﻿UpdateAutonomousVmClusterDetails
 ================================
 
 .. currentmodule:: oci.database.models

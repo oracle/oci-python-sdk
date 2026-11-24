@@ -1,4 +1,4 @@
-NetworkSecurityGroupVnic
+﻿NetworkSecurityGroupVnic
 ========================
 
 .. currentmodule:: oci.core.models

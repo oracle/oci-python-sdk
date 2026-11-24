@@ -1,4 +1,4 @@
-CancelExecutionWindowDetails
+﻿CancelExecutionWindowDetails
 ============================
 
 .. currentmodule:: oci.database.models

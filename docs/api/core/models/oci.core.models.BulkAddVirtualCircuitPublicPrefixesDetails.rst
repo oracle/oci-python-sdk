@@ -1,4 +1,4 @@
-BulkAddVirtualCircuitPublicPrefixesDetails
+﻿BulkAddVirtualCircuitPublicPrefixesDetails
 ==========================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-PluggableDatabaseSummary
+﻿PluggableDatabaseSummary
 ========================
 
 .. currentmodule:: oci.database.models

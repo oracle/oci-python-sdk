@@ -1,4 +1,4 @@
-NodeDetails
+﻿NodeDetails
 ===========
 
 .. currentmodule:: oci.database.models

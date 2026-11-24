@@ -1,4 +1,4 @@
-ChangeDedicatedVmHostCompartmentDetails
+﻿ChangeDedicatedVmHostCompartmentDetails
 =======================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-UpdateBatchTaskEnvironmentDetails
+﻿UpdateBatchTaskEnvironmentDetails
 =================================
 
 .. currentmodule:: oci.batch.models

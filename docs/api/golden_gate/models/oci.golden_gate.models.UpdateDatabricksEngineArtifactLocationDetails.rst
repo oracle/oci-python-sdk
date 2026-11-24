@@ -1,4 +1,4 @@
-UpdateDatabricksEngineArtifactLocationDetails
+﻿UpdateDatabricksEngineArtifactLocationDetails
 =============================================
 
 .. currentmodule:: oci.golden_gate.models

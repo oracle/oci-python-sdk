@@ -1,4 +1,4 @@
-DeploymentSummary
+﻿DeploymentSummary
 =================
 
 .. currentmodule:: oci.golden_gate.models

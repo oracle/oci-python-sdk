@@ -1,4 +1,4 @@
-CreateOracleNosqlConnectionDetails
+﻿CreateOracleNosqlConnectionDetails
 ==================================
 
 .. currentmodule:: oci.golden_gate.models

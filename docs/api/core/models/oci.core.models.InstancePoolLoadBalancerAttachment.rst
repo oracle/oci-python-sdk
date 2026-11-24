@@ -1,4 +1,4 @@
-InstancePoolLoadBalancerAttachment
+﻿InstancePoolLoadBalancerAttachment
 ==================================
 
 .. currentmodule:: oci.core.models

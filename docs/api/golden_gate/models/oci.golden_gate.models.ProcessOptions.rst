@@ -1,4 +1,4 @@
-ProcessOptions
+﻿ProcessOptions
 ==============
 
 .. currentmodule:: oci.golden_gate.models

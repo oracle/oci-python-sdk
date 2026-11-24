@@ -1,4 +1,4 @@
-CreateInstancePoolDetails
+﻿CreateInstancePoolDetails
 =========================
 
 .. currentmodule:: oci.core.models

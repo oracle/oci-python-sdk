@@ -1,4 +1,4 @@
-InstanceAvailabilityConfig
+﻿InstanceAvailabilityConfig
 ==========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-CreatePluggableDatabaseCreationTypeDetails
+﻿CreatePluggableDatabaseCreationTypeDetails
 ==========================================
 
 .. currentmodule:: oci.database.models

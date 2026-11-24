@@ -1,4 +1,4 @@
-CapacityBin
+﻿CapacityBin
 ===========
 
 .. currentmodule:: oci.core.models

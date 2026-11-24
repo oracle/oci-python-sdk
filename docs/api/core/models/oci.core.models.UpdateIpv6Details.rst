@@ -1,4 +1,4 @@
-UpdateIpv6Details
+﻿UpdateIpv6Details
 =================
 
 .. currentmodule:: oci.core.models

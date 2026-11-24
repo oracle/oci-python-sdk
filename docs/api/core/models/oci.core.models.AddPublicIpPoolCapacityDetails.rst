@@ -1,4 +1,4 @@
-AddPublicIpPoolCapacityDetails
+﻿AddPublicIpPoolCapacityDetails
 ==============================
 
 .. currentmodule:: oci.core.models

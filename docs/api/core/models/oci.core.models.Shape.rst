@@ -1,4 +1,4 @@
-Shape
+﻿Shape
 =====
 
 .. currentmodule:: oci.core.models

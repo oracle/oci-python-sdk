@@ -405,11 +405,15 @@ from .import_transportable_tablespace_details import ImportTransportableTablespa
 from .info_for_network_gen_details import InfoForNetworkGenDetails
 from .infrastructure_target_version import InfrastructureTargetVersion
 from .infrastructure_target_version_summary import InfrastructureTargetVersionSummary
+from .key_management_system_details import KeyManagementSystemDetails
 from .key_store import KeyStore
+from .key_store_associated_autonomous_vm_cluster_details import KeyStoreAssociatedAutonomousVmClusterDetails
+from .key_store_associated_cloud_autonomous_vm_cluster_details import KeyStoreAssociatedCloudAutonomousVmClusterDetails
 from .key_store_associated_database_details import KeyStoreAssociatedDatabaseDetails
 from .key_store_summary import KeyStoreSummary
 from .key_store_type_details import KeyStoreTypeDetails
 from .key_store_type_from_oracle_key_vault_details import KeyStoreTypeFromOracleKeyVaultDetails
+from .key_store_type_from_thales_details import KeyStoreTypeFromThalesDetails
 from .launch_autonomous_exadata_infrastructure_details import LaunchAutonomousExadataInfrastructureDetails
 from .launch_db_system_base import LaunchDbSystemBase
 from .launch_db_system_details import LaunchDbSystemDetails
@@ -443,11 +447,14 @@ from .node_details import NodeDetails
 from .ocp_us import OCPUs
 from .oci_key_details import OciKeyDetails
 from .oci_provider_set_key_version_details import OciProviderSetKeyVersionDetails
+from .oci_vault_key_management_system_details import OciVaultKeyManagementSystemDetails
 from .okv_key_details import OkvKeyDetails
 from .oneoff_patch import OneoffPatch
 from .oneoff_patch_summary import OneoffPatchSummary
 from .operations_insights_config import OperationsInsightsConfig
+from .oracle_key_vault_key_management_system_details import OracleKeyVaultKeyManagementSystemDetails
 from .oracle_managed_key_details import OracleManagedKeyDetails
+from .oracle_managed_key_management_system_details import OracleManagedKeyManagementSystemDetails
 from .patch import Patch
 from .patch_details import PatchDetails
 from .patch_history_entry import PatchHistoryEntry
@@ -528,6 +535,7 @@ from .system_version_minor_version_collection import SystemVersionMinorVersionCo
 from .system_version_minor_version_summary import SystemVersionMinorVersionSummary
 from .system_version_summary import SystemVersionSummary
 from .tde_wallet_backup_destination import TdeWalletBackupDestination
+from .thales_key_management_system_details import ThalesKeyManagementSystemDetails
 from .undelete_autonomous_database_details import UndeleteAutonomousDatabaseDetails
 from .unmount_dbnode_snapshot_details import UnmountDbnodeSnapshotDetails
 from .unregister_cloud_autonomous_vm_cluster_pkcs_details import UnregisterCloudAutonomousVmClusterPkcsDetails
@@ -1007,11 +1015,15 @@ database_type_mapping = {
     "InfoForNetworkGenDetails": InfoForNetworkGenDetails,
     "InfrastructureTargetVersion": InfrastructureTargetVersion,
     "InfrastructureTargetVersionSummary": InfrastructureTargetVersionSummary,
+    "KeyManagementSystemDetails": KeyManagementSystemDetails,
     "KeyStore": KeyStore,
+    "KeyStoreAssociatedAutonomousVmClusterDetails": KeyStoreAssociatedAutonomousVmClusterDetails,
+    "KeyStoreAssociatedCloudAutonomousVmClusterDetails": KeyStoreAssociatedCloudAutonomousVmClusterDetails,
     "KeyStoreAssociatedDatabaseDetails": KeyStoreAssociatedDatabaseDetails,
     "KeyStoreSummary": KeyStoreSummary,
     "KeyStoreTypeDetails": KeyStoreTypeDetails,
     "KeyStoreTypeFromOracleKeyVaultDetails": KeyStoreTypeFromOracleKeyVaultDetails,
+    "KeyStoreTypeFromThalesDetails": KeyStoreTypeFromThalesDetails,
     "LaunchAutonomousExadataInfrastructureDetails": LaunchAutonomousExadataInfrastructureDetails,
     "LaunchDbSystemBase": LaunchDbSystemBase,
     "LaunchDbSystemDetails": LaunchDbSystemDetails,
@@ -1045,11 +1057,14 @@ database_type_mapping = {
     "OCPUs": OCPUs,
     "OciKeyDetails": OciKeyDetails,
     "OciProviderSetKeyVersionDetails": OciProviderSetKeyVersionDetails,
+    "OciVaultKeyManagementSystemDetails": OciVaultKeyManagementSystemDetails,
     "OkvKeyDetails": OkvKeyDetails,
     "OneoffPatch": OneoffPatch,
     "OneoffPatchSummary": OneoffPatchSummary,
     "OperationsInsightsConfig": OperationsInsightsConfig,
+    "OracleKeyVaultKeyManagementSystemDetails": OracleKeyVaultKeyManagementSystemDetails,
     "OracleManagedKeyDetails": OracleManagedKeyDetails,
+    "OracleManagedKeyManagementSystemDetails": OracleManagedKeyManagementSystemDetails,
     "Patch": Patch,
     "PatchDetails": PatchDetails,
     "PatchHistoryEntry": PatchHistoryEntry,
@@ -1130,6 +1145,7 @@ database_type_mapping = {
     "SystemVersionMinorVersionSummary": SystemVersionMinorVersionSummary,
     "SystemVersionSummary": SystemVersionSummary,
     "TdeWalletBackupDestination": TdeWalletBackupDestination,
+    "ThalesKeyManagementSystemDetails": ThalesKeyManagementSystemDetails,
     "UndeleteAutonomousDatabaseDetails": UndeleteAutonomousDatabaseDetails,
     "UnmountDbnodeSnapshotDetails": UnmountDbnodeSnapshotDetails,
     "UnregisterCloudAutonomousVmClusterPkcsDetails": UnregisterCloudAutonomousVmClusterPkcsDetails,

@@ -1,4 +1,4 @@
-OkvKeyDetails
+﻿OkvKeyDetails
 =============
 
 .. currentmodule:: oci.database.models

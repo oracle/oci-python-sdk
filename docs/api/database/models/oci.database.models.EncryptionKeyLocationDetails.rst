@@ -1,4 +1,4 @@
-EncryptionKeyLocationDetails
+﻿EncryptionKeyLocationDetails
 ============================
 
 .. currentmodule:: oci.database.models

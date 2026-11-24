@@ -1,4 +1,4 @@
-UpdateCpeDetails
+﻿UpdateCpeDetails
 ================
 
 .. currentmodule:: oci.core.models

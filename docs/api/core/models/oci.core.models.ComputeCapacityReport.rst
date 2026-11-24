@@ -1,4 +1,4 @@
-ComputeCapacityReport
+﻿ComputeCapacityReport
 =====================
 
 .. currentmodule:: oci.core.models

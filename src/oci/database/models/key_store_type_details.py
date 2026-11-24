@@ -19,18 +19,23 @@ class KeyStoreTypeDetails(object):
     #: This constant has a value of "ORACLE_KEY_VAULT"
     TYPE_ORACLE_KEY_VAULT = "ORACLE_KEY_VAULT"
 
+    #: A constant which can be used with the type property of a KeyStoreTypeDetails.
+    #: This constant has a value of "THALES"
+    TYPE_THALES = "THALES"
+
     def __init__(self, **kwargs):
         """
         Initializes a new KeyStoreTypeDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.KeyStoreTypeFromOracleKeyVaultDetails`
+        * :class:`~oci.database.models.KeyStoreTypeFromThalesDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this KeyStoreTypeDetails.
-            Allowed values for this property are: "ORACLE_KEY_VAULT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_KEY_VAULT", "THALES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -53,6 +58,9 @@ class KeyStoreTypeDetails(object):
 
         if type == 'ORACLE_KEY_VAULT':
             return 'KeyStoreTypeFromOracleKeyVaultDetails'
+
+        if type == 'THALES':
+            return 'KeyStoreTypeFromThalesDetails'
         else:
             return 'KeyStoreTypeDetails'
 
@@ -62,7 +70,7 @@ class KeyStoreTypeDetails(object):
         **[Required]** Gets the type of this KeyStoreTypeDetails.
         The type of key store.
 
-        Allowed values for this property are: "ORACLE_KEY_VAULT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_KEY_VAULT", "THALES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -81,7 +89,7 @@ class KeyStoreTypeDetails(object):
         :param type: The type of this KeyStoreTypeDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_KEY_VAULT"]
+        allowed_values = ["ORACLE_KEY_VAULT", "THALES"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

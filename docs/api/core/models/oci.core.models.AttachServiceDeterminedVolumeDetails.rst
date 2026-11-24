@@ -1,4 +1,4 @@
-AttachServiceDeterminedVolumeDetails
+﻿AttachServiceDeterminedVolumeDetails
 ====================================
 
 .. currentmodule:: oci.core.models

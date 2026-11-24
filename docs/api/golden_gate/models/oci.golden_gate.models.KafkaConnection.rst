@@ -1,4 +1,4 @@
-KafkaConnection
+﻿KafkaConnection
 ===============
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-InventoryVcnSummary
+﻿InventoryVcnSummary
 ===================
 
 .. currentmodule:: oci.core.models

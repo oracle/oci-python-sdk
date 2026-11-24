@@ -1,4 +1,4 @@
-DataMaskingActivity
+﻿DataMaskingActivity
 ===================
 
 .. currentmodule:: oci.fusion_apps.models

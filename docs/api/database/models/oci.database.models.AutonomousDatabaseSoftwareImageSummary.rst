@@ -1,4 +1,4 @@
-AutonomousDatabaseSoftwareImageSummary
+﻿AutonomousDatabaseSoftwareImageSummary
 ======================================
 
 .. currentmodule:: oci.database.models

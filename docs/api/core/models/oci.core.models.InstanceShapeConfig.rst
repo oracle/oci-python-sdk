@@ -1,4 +1,4 @@
-InstanceShapeConfig
+﻿InstanceShapeConfig
 ===================
 
 .. currentmodule:: oci.core.models

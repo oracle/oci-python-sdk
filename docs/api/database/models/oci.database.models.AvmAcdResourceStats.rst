@@ -1,4 +1,4 @@
-AvmAcdResourceStats
+﻿AvmAcdResourceStats
 ===================
 
 .. currentmodule:: oci.database.models

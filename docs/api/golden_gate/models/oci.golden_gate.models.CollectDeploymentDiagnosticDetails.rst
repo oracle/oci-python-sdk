@@ -1,4 +1,4 @@
-CollectDeploymentDiagnosticDetails
+﻿CollectDeploymentDiagnosticDetails
 ==================================
 
 .. currentmodule:: oci.golden_gate.models

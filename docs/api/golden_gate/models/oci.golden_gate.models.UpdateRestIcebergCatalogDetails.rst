@@ -1,4 +1,4 @@
-UpdateRestIcebergCatalogDetails
+﻿UpdateRestIcebergCatalogDetails
 ===============================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-ChangeComputeCapacityTopologyCompartmentDetails
+﻿ChangeComputeCapacityTopologyCompartmentDetails
 ===============================================
 
 .. currentmodule:: oci.core.models

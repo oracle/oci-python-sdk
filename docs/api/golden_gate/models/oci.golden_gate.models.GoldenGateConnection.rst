@@ -1,4 +1,4 @@
-GoldenGateConnection
+﻿GoldenGateConnection
 ====================
 
 .. currentmodule:: oci.golden_gate.models

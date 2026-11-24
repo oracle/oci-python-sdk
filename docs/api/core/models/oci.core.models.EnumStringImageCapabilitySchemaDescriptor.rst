@@ -1,4 +1,4 @@
-EnumStringImageCapabilitySchemaDescriptor
+﻿EnumStringImageCapabilitySchemaDescriptor
 =========================================
 
 .. currentmodule:: oci.core.models

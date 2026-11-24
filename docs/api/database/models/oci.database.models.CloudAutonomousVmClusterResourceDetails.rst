@@ -1,4 +1,4 @@
-CloudAutonomousVmClusterResourceDetails
+﻿CloudAutonomousVmClusterResourceDetails
 =======================================
 
 .. currentmodule:: oci.database.models

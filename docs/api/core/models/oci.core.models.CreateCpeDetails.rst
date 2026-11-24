@@ -1,4 +1,4 @@
-CreateCpeDetails
+﻿CreateCpeDetails
 ================
 
 .. currentmodule:: oci.core.models

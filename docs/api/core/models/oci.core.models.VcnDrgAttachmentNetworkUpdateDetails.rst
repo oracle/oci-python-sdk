@@ -1,4 +1,4 @@
-VcnDrgAttachmentNetworkUpdateDetails
+﻿VcnDrgAttachmentNetworkUpdateDetails
 ====================================
 
 .. currentmodule:: oci.core.models

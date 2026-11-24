@@ -1,4 +1,4 @@
-UpdateDatabricksEngineParOciObjectStorageConfigDetails
+﻿UpdateDatabricksEngineParOciObjectStorageConfigDetails
 ======================================================
 
 .. currentmodule:: oci.golden_gate.models

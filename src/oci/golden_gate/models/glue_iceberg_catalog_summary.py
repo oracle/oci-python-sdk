@@ -23,7 +23,7 @@ class GlueIcebergCatalogSummary(IcebergCatalogSummary):
 
         :param catalog_type:
             The value to assign to the catalog_type property of this GlueIcebergCatalogSummary.
-            Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST"
+            Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", "OADC"
         :type catalog_type: str
 
         :param glue_id:

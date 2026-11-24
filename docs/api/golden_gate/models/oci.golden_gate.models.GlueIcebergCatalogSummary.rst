@@ -1,4 +1,4 @@
-GlueIcebergCatalogSummary
+﻿GlueIcebergCatalogSummary
 =========================
 
 .. currentmodule:: oci.golden_gate.models

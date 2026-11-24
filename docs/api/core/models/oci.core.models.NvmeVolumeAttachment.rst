@@ -1,4 +1,4 @@
-NvmeVolumeAttachment
+﻿NvmeVolumeAttachment
 ====================
 
 .. currentmodule:: oci.core.models

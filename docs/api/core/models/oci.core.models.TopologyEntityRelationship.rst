@@ -1,4 +1,4 @@
-TopologyEntityRelationship
+﻿TopologyEntityRelationship
 ==========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-DefaultStopPipelineDetails
+﻿DefaultStopPipelineDetails
 ==========================
 
 .. currentmodule:: oci.golden_gate.models

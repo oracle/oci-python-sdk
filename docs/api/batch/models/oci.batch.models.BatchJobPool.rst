@@ -1,4 +1,4 @@
-BatchJobPool
+﻿BatchJobPool
 ============
 
 .. currentmodule:: oci.batch.models

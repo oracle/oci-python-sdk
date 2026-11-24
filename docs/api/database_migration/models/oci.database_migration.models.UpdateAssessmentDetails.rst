@@ -1,4 +1,4 @@
-UpdateAssessmentDetails
+﻿UpdateAssessmentDetails
 =======================
 
 .. currentmodule:: oci.database_migration.models

@@ -1,4 +1,4 @@
-ChangeDrgNatPolicyCompartmentDetails
+﻿ChangeDrgNatPolicyCompartmentDetails
 ====================================
 
 .. currentmodule:: oci.core.models

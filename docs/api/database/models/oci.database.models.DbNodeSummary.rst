@@ -1,4 +1,4 @@
-DbNodeSummary
+﻿DbNodeSummary
 =============
 
 .. currentmodule:: oci.database.models

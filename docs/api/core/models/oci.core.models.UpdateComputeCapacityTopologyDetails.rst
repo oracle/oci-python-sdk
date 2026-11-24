@@ -1,4 +1,4 @@
-UpdateComputeCapacityTopologyDetails
+﻿UpdateComputeCapacityTopologyDetails
 ====================================
 
 .. currentmodule:: oci.core.models

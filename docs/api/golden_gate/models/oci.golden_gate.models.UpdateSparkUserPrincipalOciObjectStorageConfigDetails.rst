@@ -1,4 +1,4 @@
-UpdateSparkUserPrincipalOciObjectStorageConfigDetails
+﻿UpdateSparkUserPrincipalOciObjectStorageConfigDetails
 =====================================================
 
 .. currentmodule:: oci.golden_gate.models

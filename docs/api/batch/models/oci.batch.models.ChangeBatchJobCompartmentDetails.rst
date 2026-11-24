@@ -1,4 +1,4 @@
-ChangeBatchJobCompartmentDetails
+﻿ChangeBatchJobCompartmentDetails
 ================================
 
 .. currentmodule:: oci.batch.models

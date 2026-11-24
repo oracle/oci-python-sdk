@@ -1,4 +1,4 @@
-ImportDeploymentWalletDetails
+﻿ImportDeploymentWalletDetails
 =============================
 
 .. currentmodule:: oci.golden_gate.models

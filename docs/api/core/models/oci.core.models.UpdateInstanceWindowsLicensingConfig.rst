@@ -1,4 +1,4 @@
-UpdateInstanceWindowsLicensingConfig
+﻿UpdateInstanceWindowsLicensingConfig
 ====================================
 
 .. currentmodule:: oci.core.models

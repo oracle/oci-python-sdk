@@ -1,4 +1,4 @@
-EncryptionDomainConfig
+﻿EncryptionDomainConfig
 ======================
 
 .. currentmodule:: oci.core.models

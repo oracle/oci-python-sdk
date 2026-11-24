@@ -1,4 +1,4 @@
-GpuFleetShape
+﻿GpuFleetShape
 =============
 
 .. currentmodule:: oci.batch.models

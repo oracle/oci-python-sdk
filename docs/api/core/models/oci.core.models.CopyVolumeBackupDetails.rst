@@ -1,4 +1,4 @@
-CopyVolumeBackupDetails
+﻿CopyVolumeBackupDetails
 =======================
 
 .. currentmodule:: oci.core.models

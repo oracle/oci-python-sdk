@@ -1,4 +1,4 @@
-ComputeHostGroupSummary
+﻿ComputeHostGroupSummary
 =======================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-CreateStandByDatabaseDetails
+﻿CreateStandByDatabaseDetails
 ============================
 
 .. currentmodule:: oci.database.models

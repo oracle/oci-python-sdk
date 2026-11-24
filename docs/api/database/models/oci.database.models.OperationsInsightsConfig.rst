@@ -1,4 +1,4 @@
-OperationsInsightsConfig
+﻿OperationsInsightsConfig
 ========================
 
 .. currentmodule:: oci.database.models

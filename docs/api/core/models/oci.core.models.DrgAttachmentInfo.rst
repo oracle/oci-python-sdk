@@ -1,4 +1,4 @@
-DrgAttachmentInfo
+﻿DrgAttachmentInfo
 =================
 
 .. currentmodule:: oci.core.models

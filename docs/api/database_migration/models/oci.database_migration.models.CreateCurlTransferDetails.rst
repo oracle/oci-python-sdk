@@ -1,4 +1,4 @@
-CreateCurlTransferDetails
+﻿CreateCurlTransferDetails
 =========================
 
 .. currentmodule:: oci.database_migration.models

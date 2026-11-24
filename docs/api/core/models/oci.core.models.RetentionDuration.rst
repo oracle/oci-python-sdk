@@ -1,4 +1,4 @@
-RetentionDuration
+﻿RetentionDuration
 =================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-CreateComputeGpuMemoryClusterDetails
+﻿CreateComputeGpuMemoryClusterDetails
 ====================================
 
 .. currentmodule:: oci.core.models

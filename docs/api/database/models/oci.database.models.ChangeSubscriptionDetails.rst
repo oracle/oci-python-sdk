@@ -1,4 +1,4 @@
-ChangeSubscriptionDetails
+﻿ChangeSubscriptionDetails
 =========================
 
 .. currentmodule:: oci.database.models

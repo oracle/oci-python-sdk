@@ -1,4 +1,4 @@
-UpgradeStatus
+﻿UpgradeStatus
 =============
 
 .. currentmodule:: oci.core.models

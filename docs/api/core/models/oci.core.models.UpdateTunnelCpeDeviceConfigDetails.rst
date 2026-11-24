@@ -1,4 +1,4 @@
-UpdateTunnelCpeDeviceConfigDetails
+﻿UpdateTunnelCpeDeviceConfigDetails
 ==================================
 
 .. currentmodule:: oci.core.models

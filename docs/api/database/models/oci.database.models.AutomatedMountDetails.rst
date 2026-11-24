@@ -1,4 +1,4 @@
-AutomatedMountDetails
+﻿AutomatedMountDetails
 =====================
 
 .. currentmodule:: oci.database.models

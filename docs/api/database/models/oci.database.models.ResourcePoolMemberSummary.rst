@@ -1,4 +1,4 @@
-ResourcePoolMemberSummary
+﻿ResourcePoolMemberSummary
 =========================
 
 .. currentmodule:: oci.database.models

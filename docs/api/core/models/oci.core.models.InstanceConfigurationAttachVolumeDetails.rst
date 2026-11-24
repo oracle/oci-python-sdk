@@ -1,4 +1,4 @@
-InstanceConfigurationAttachVolumeDetails
+﻿InstanceConfigurationAttachVolumeDetails
 ========================================
 
 .. currentmodule:: oci.core.models

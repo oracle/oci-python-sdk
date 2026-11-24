@@ -1,4 +1,4 @@
-DatabaseUpgradeSourceBase
+﻿DatabaseUpgradeSourceBase
 =========================
 
 .. currentmodule:: oci.database.models

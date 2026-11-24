@@ -1,4 +1,4 @@
-BulkDeletePrivateIpItem
+﻿BulkDeletePrivateIpItem
 =======================
 
 .. currentmodule:: oci.core.models

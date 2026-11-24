@@ -1,4 +1,4 @@
-MaintenanceWindow
+﻿MaintenanceWindow
 =================
 
 .. currentmodule:: oci.golden_gate.models

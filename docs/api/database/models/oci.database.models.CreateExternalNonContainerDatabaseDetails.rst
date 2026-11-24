@@ -1,4 +1,4 @@
-CreateExternalNonContainerDatabaseDetails
+﻿CreateExternalNonContainerDatabaseDetails
 =========================================
 
 .. currentmodule:: oci.database.models

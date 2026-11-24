@@ -1,4 +1,4 @@
-InstanceConfigurationParavirtualizedAttachVolumeDetails
+﻿InstanceConfigurationParavirtualizedAttachVolumeDetails
 =======================================================
 
 .. currentmodule:: oci.core.models

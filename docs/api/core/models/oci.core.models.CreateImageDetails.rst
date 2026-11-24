@@ -1,4 +1,4 @@
-CreateImageDetails
+﻿CreateImageDetails
 ==================
 
 .. currentmodule:: oci.core.models

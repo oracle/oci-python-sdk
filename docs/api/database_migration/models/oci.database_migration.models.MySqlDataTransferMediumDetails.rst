@@ -1,4 +1,4 @@
-MySqlDataTransferMediumDetails
+﻿MySqlDataTransferMediumDetails
 ==============================
 
 .. currentmodule:: oci.database_migration.models

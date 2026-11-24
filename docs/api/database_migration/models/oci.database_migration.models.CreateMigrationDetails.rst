@@ -1,4 +1,4 @@
-CreateMigrationDetails
+﻿CreateMigrationDetails
 ======================
 
 .. currentmodule:: oci.database_migration.models

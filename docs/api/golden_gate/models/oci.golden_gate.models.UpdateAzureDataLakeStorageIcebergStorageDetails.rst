@@ -1,4 +1,4 @@
-UpdateAzureDataLakeStorageIcebergStorageDetails
+﻿UpdateAzureDataLakeStorageIcebergStorageDetails
 ===============================================
 
 .. currentmodule:: oci.golden_gate.models

@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateOracleAwsS3DataTransferMediumDetails(UpdateOracleDataTransferMediumDetails):
     """
-    AWS S3 bucket details used for source Connection resources with RDS_ORACLE type.
-    Only supported for source Connection resources with RDS_ORACLE type.
+    AWS S3 bucket details used to transfer Data Pump dump files for Oracle migrations.
+    Supported for source Connection resources with ORACLE_DATABASE, ORACLE_EXADATA, or AMAZON_RDS_ORACLE type.
     """
 
     def __init__(self, **kwargs):
@@ -24,7 +24,7 @@ class UpdateOracleAwsS3DataTransferMediumDetails(UpdateOracleDataTransferMediumD
 
         :param type:
             The value to assign to the type property of this UpdateOracleAwsS3DataTransferMediumDetails.
-            Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "NFS"
+            Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "AZURE_BLOB", "GCS", "NFS"
         :type type: str
 
         :param name:

@@ -1,4 +1,4 @@
-CrossConnectStatus
+﻿CrossConnectStatus
 ==================
 
 .. currentmodule:: oci.core.models

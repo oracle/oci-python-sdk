@@ -1,4 +1,4 @@
-CreateMicrosoftSqlserverConnectionDetails
+﻿CreateMicrosoftSqlserverConnectionDetails
 =========================================
 
 .. currentmodule:: oci.golden_gate.models

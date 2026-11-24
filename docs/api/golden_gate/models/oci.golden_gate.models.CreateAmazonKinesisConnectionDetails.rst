@@ -1,4 +1,4 @@
-CreateAmazonKinesisConnectionDetails
+﻿CreateAmazonKinesisConnectionDetails
 ====================================
 
 .. currentmodule:: oci.golden_gate.models

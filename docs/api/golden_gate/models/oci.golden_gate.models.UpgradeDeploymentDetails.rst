@@ -1,4 +1,4 @@
-UpgradeDeploymentDetails
+﻿UpgradeDeploymentDetails
 ========================
 
 .. currentmodule:: oci.golden_gate.models

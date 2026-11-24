@@ -1,4 +1,4 @@
-ComputeBareMetalHostCollection
+﻿ComputeBareMetalHostCollection
 ==============================
 
 .. currentmodule:: oci.core.models

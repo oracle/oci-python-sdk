@@ -1,4 +1,4 @@
-ChangeVlanCompartmentDetails
+﻿ChangeVlanCompartmentDetails
 ============================
 
 .. currentmodule:: oci.core.models

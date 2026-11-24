@@ -1,4 +1,4 @@
-ModifyPluggableDatabaseManagementDetails
+﻿ModifyPluggableDatabaseManagementDetails
 ========================================
 
 .. currentmodule:: oci.database.models

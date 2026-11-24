@@ -1,4 +1,4 @@
-ExternalMacsConnectorSummary
+﻿ExternalMacsConnectorSummary
 ============================
 
 .. currentmodule:: oci.database.models

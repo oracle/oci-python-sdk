@@ -1,4 +1,4 @@
-SourceDatabaseDetails
+﻿SourceDatabaseDetails
 =====================
 
 .. currentmodule:: oci.database.models

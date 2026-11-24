@@ -1,4 +1,4 @@
-DeregisterAutonomousDatabaseDataSafeDetails
+﻿DeregisterAutonomousDatabaseDataSafeDetails
 ===========================================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-AutonomousDatabaseMaintenanceWindowSummary
+﻿AutonomousDatabaseMaintenanceWindowSummary
 ==========================================
 
 .. currentmodule:: oci.database.models

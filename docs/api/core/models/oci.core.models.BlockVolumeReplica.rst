@@ -1,4 +1,4 @@
-BlockVolumeReplica
+﻿BlockVolumeReplica
 ==================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-CreateJavaMessageServiceConnectionDetails
+﻿CreateJavaMessageServiceConnectionDetails
 =========================================
 
 .. currentmodule:: oci.golden_gate.models

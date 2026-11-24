@@ -1,4 +1,4 @@
-OracleManagedKeyDetails
+﻿OracleManagedKeyDetails
 =======================
 
 .. currentmodule:: oci.database.models

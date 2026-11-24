@@ -1,4 +1,4 @@
-ExternalDatabaseConnectorSummary
+﻿ExternalDatabaseConnectorSummary
 ================================
 
 .. currentmodule:: oci.database.models

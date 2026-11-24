@@ -1,4 +1,4 @@
-ByolAllocationSummary
+﻿ByolAllocationSummary
 =====================
 
 .. currentmodule:: oci.ocvp.models

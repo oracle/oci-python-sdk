@@ -1,4 +1,4 @@
-WorkRequestResource
+﻿WorkRequestResource
 ===================
 
 .. currentmodule:: oci.database_migration.models

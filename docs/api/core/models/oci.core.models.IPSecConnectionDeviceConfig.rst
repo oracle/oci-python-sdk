@@ -1,4 +1,4 @@
-IPSecConnectionDeviceConfig
+﻿IPSecConnectionDeviceConfig
 ===========================
 
 .. currentmodule:: oci.core.models

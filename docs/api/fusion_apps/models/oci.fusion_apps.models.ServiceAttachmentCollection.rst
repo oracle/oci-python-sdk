@@ -1,4 +1,4 @@
-ServiceAttachmentCollection
+﻿ServiceAttachmentCollection
 ===========================
 
 .. currentmodule:: oci.fusion_apps.models

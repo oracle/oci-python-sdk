@@ -1,4 +1,4 @@
-DayOfWeek
+﻿DayOfWeek
 =========
 
 .. currentmodule:: oci.database.models

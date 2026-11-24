@@ -1,4 +1,4 @@
-CapacityReportInstanceShapeConfig
+﻿CapacityReportInstanceShapeConfig
 =================================
 
 .. currentmodule:: oci.core.models

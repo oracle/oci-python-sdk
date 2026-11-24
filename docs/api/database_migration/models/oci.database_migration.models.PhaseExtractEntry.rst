@@ -1,4 +1,4 @@
-PhaseExtractEntry
+﻿PhaseExtractEntry
 =================
 
 .. currentmodule:: oci.database_migration.models

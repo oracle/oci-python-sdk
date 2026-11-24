@@ -1,4 +1,4 @@
-VmClusterUpdateDetails
+﻿VmClusterUpdateDetails
 ======================
 
 .. currentmodule:: oci.database.models

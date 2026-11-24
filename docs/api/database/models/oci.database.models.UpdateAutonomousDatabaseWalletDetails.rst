@@ -1,4 +1,4 @@
-UpdateAutonomousDatabaseWalletDetails
+﻿UpdateAutonomousDatabaseWalletDetails
 =====================================
 
 .. currentmodule:: oci.database.models

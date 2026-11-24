@@ -1,4 +1,4 @@
-BatchTaskProfileExtendedInformation
+﻿BatchTaskProfileExtendedInformation
 ===================================
 
 .. currentmodule:: oci.batch.models

@@ -1,4 +1,4 @@
-DrgNatRule
+﻿DrgNatRule
 ==========
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-CrossConnectMappingDetails
+﻿CrossConnectMappingDetails
 ==========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-UpdateCrossConnectDetails
+﻿UpdateCrossConnectDetails
 =========================
 
 .. currentmodule:: oci.core.models

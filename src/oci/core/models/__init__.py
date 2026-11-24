@@ -102,6 +102,7 @@ from .byoip_range_origin_asn import ByoipRangeOriginAsn
 from .byoip_range_summary import ByoipRangeSummary
 from .byoip_range_vcn_ipv6_allocation_summary import ByoipRangeVcnIpv6AllocationSummary
 from .byoipv6_cidr_details import Byoipv6CidrDetails
+from .cancel_instance_pool_refresh_details import CancelInstancePoolRefreshDetails
 from .capacity_bin import CapacityBin
 from .capacity_bin_preview import CapacityBinPreview
 from .capacity_config import CapacityConfig
@@ -381,6 +382,7 @@ from .instance import Instance
 from .instance_agent_config import InstanceAgentConfig
 from .instance_agent_features import InstanceAgentFeatures
 from .instance_agent_plugin_config_details import InstanceAgentPluginConfigDetails
+from .instance_authz import InstanceAuthz
 from .instance_availability_config import InstanceAvailabilityConfig
 from .instance_configuration import InstanceConfiguration
 from .instance_configuration_amd_milan_bm_gpu_launch_instance_platform_config import InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig
@@ -434,6 +436,7 @@ from .instance_options import InstanceOptions
 from .instance_pool import InstancePool
 from .instance_pool_instance import InstancePoolInstance
 from .instance_pool_instance_load_balancer_backend import InstancePoolInstanceLoadBalancerBackend
+from .instance_pool_launch_before_terminating_details import InstancePoolLaunchBeforeTerminatingDetails
 from .instance_pool_launch_override_details import InstancePoolLaunchOverrideDetails
 from .instance_pool_launch_override_option import InstancePoolLaunchOverrideOption
 from .instance_pool_launch_override_policy import InstancePoolLaunchOverridePolicy
@@ -443,6 +446,7 @@ from .instance_pool_launch_override_statement import InstancePoolLaunchOverrideS
 from .instance_pool_lifecycle_actions_details import InstancePoolLifecycleActionsDetails
 from .instance_pool_lifecycle_management_details import InstancePoolLifecycleManagementDetails
 from .instance_pool_load_balancer_attachment import InstancePoolLoadBalancerAttachment
+from .instance_pool_maintenance_policy_details import InstancePoolMaintenancePolicyDetails
 from .instance_pool_placement_configuration import InstancePoolPlacementConfiguration
 from .instance_pool_placement_ipv6_address_ipv6_subnet_cidr_details import InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails
 from .instance_pool_placement_primary_subnet import InstancePoolPlacementPrimarySubnet
@@ -450,6 +454,9 @@ from .instance_pool_placement_secondary_vnic_subnet import InstancePoolPlacement
 from .instance_pool_placement_subnet_details import InstancePoolPlacementSubnetDetails
 from .instance_pool_pre_termination_action_details import InstancePoolPreTerminationActionDetails
 from .instance_pool_pre_termination_action_handle_timeout_details import InstancePoolPreTerminationActionHandleTimeoutDetails
+from .instance_pool_refresh import InstancePoolRefresh
+from .instance_pool_refresh_collection import InstancePoolRefreshCollection
+from .instance_pool_refresh_summary import InstancePoolRefreshSummary
 from .instance_pool_summary import InstancePoolSummary
 from .instance_power_action_details import InstancePowerActionDetails
 from .instance_reservation_config import InstanceReservationConfig
@@ -548,6 +555,7 @@ from .public_ip_pool_summary import PublicIpPoolSummary
 from .quick_recycle_settings import QuickRecycleSettings
 from .reboot_migrate_action_details import RebootMigrateActionDetails
 from .recycle_details import RecycleDetails
+from .refresh_instance_pool_details import RefreshInstancePoolDetails
 from .remote_peering_connection import RemotePeeringConnection
 from .remote_peering_connection_drg_attachment_network_details import RemotePeeringConnectionDrgAttachmentNetworkDetails
 from .remove_drg_nat_rules_details import RemoveDrgNatRulesDetails
@@ -837,6 +845,7 @@ core_type_mapping = {
     "ByoipRangeSummary": ByoipRangeSummary,
     "ByoipRangeVcnIpv6AllocationSummary": ByoipRangeVcnIpv6AllocationSummary,
     "Byoipv6CidrDetails": Byoipv6CidrDetails,
+    "CancelInstancePoolRefreshDetails": CancelInstancePoolRefreshDetails,
     "CapacityBin": CapacityBin,
     "CapacityBinPreview": CapacityBinPreview,
     "CapacityConfig": CapacityConfig,
@@ -1116,6 +1125,7 @@ core_type_mapping = {
     "InstanceAgentConfig": InstanceAgentConfig,
     "InstanceAgentFeatures": InstanceAgentFeatures,
     "InstanceAgentPluginConfigDetails": InstanceAgentPluginConfigDetails,
+    "InstanceAuthz": InstanceAuthz,
     "InstanceAvailabilityConfig": InstanceAvailabilityConfig,
     "InstanceConfiguration": InstanceConfiguration,
     "InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig": InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig,
@@ -1169,6 +1179,7 @@ core_type_mapping = {
     "InstancePool": InstancePool,
     "InstancePoolInstance": InstancePoolInstance,
     "InstancePoolInstanceLoadBalancerBackend": InstancePoolInstanceLoadBalancerBackend,
+    "InstancePoolLaunchBeforeTerminatingDetails": InstancePoolLaunchBeforeTerminatingDetails,
     "InstancePoolLaunchOverrideDetails": InstancePoolLaunchOverrideDetails,
     "InstancePoolLaunchOverrideOption": InstancePoolLaunchOverrideOption,
     "InstancePoolLaunchOverridePolicy": InstancePoolLaunchOverridePolicy,
@@ -1178,6 +1189,7 @@ core_type_mapping = {
     "InstancePoolLifecycleActionsDetails": InstancePoolLifecycleActionsDetails,
     "InstancePoolLifecycleManagementDetails": InstancePoolLifecycleManagementDetails,
     "InstancePoolLoadBalancerAttachment": InstancePoolLoadBalancerAttachment,
+    "InstancePoolMaintenancePolicyDetails": InstancePoolMaintenancePolicyDetails,
     "InstancePoolPlacementConfiguration": InstancePoolPlacementConfiguration,
     "InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails": InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails,
     "InstancePoolPlacementPrimarySubnet": InstancePoolPlacementPrimarySubnet,
@@ -1185,6 +1197,9 @@ core_type_mapping = {
     "InstancePoolPlacementSubnetDetails": InstancePoolPlacementSubnetDetails,
     "InstancePoolPreTerminationActionDetails": InstancePoolPreTerminationActionDetails,
     "InstancePoolPreTerminationActionHandleTimeoutDetails": InstancePoolPreTerminationActionHandleTimeoutDetails,
+    "InstancePoolRefresh": InstancePoolRefresh,
+    "InstancePoolRefreshCollection": InstancePoolRefreshCollection,
+    "InstancePoolRefreshSummary": InstancePoolRefreshSummary,
     "InstancePoolSummary": InstancePoolSummary,
     "InstancePowerActionDetails": InstancePowerActionDetails,
     "InstanceReservationConfig": InstanceReservationConfig,
@@ -1283,6 +1298,7 @@ core_type_mapping = {
     "QuickRecycleSettings": QuickRecycleSettings,
     "RebootMigrateActionDetails": RebootMigrateActionDetails,
     "RecycleDetails": RecycleDetails,
+    "RefreshInstancePoolDetails": RefreshInstancePoolDetails,
     "RemotePeeringConnection": RemotePeeringConnection,
     "RemotePeeringConnectionDrgAttachmentNetworkDetails": RemotePeeringConnectionDrgAttachmentNetworkDetails,
     "RemoveDrgNatRulesDetails": RemoveDrgNatRulesDetails,

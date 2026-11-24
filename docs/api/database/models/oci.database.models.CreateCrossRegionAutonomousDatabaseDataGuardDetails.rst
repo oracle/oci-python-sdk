@@ -1,4 +1,4 @@
-CreateCrossRegionAutonomousDatabaseDataGuardDetails
+﻿CreateCrossRegionAutonomousDatabaseDataGuardDetails
 ===================================================
 
 .. currentmodule:: oci.database.models

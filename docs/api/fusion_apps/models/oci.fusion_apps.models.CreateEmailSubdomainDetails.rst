@@ -1,4 +1,4 @@
-CreateEmailSubdomainDetails
+﻿CreateEmailSubdomainDetails
 ===========================
 
 .. currentmodule:: oci.fusion_apps.models

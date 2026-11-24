@@ -1,4 +1,4 @@
-ComputeHostConfigurationData
+﻿ComputeHostConfigurationData
 ============================
 
 .. currentmodule:: oci.core.models

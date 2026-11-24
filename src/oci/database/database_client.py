@@ -2275,6 +2275,131 @@ class DatabaseClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def change_avm_key_management_system(self, change_avm_key_management_system_details, autonomous_vm_cluster_id, **kwargs):
+        """
+        Update the Autonomous VM Cluster's key management system details where TDE keys of this cluster's ACDs will be stored.
+
+
+        :param oci.database.models.KeyManagementSystemDetails change_avm_key_management_system_details: (required)
+            Details of Key Management System to be used by Autonomous VM Cluster.
+
+        :param str autonomous_vm_cluster_id: (required)
+            The autonomous VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_avm_key_management_system.py.html>`__ to see an example of how to use change_avm_key_management_system API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousVmClusterId']
+        resource_path = "/autonomousVmClusters/{autonomousVmClusterId}/actions/changeKeyManagementSystem"
+        method = "POST"
+        operation_name = "change_avm_key_management_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ChangeAvmKeyManagementSystem"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"change_avm_key_management_system got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "autonomousVmClusterId": autonomous_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_avm_key_management_system_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_avm_key_management_system_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def change_backup_destination_compartment(self, change_compartment_details, backup_destination_id, **kwargs):
         """
         Move the backup destination and its dependent resources to the specified compartment.
@@ -2523,6 +2648,131 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_basecc_vm_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def change_cavm_key_management_system(self, change_cavm_key_management_system_details, cloud_autonomous_vm_cluster_id, **kwargs):
+        """
+        Update the Cloud Autonomous VM Cluster's key management system details where TDE keys of this cluster's ACDs will be stored.
+
+
+        :param oci.database.models.KeyManagementSystemDetails change_cavm_key_management_system_details: (required)
+            Details of Key Management System to be used by Cloud Autonomous VM Cluster.
+
+        :param str cloud_autonomous_vm_cluster_id: (required)
+            The Cloud VM cluster `OCID`__.
+
+            __ https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :param bool enable_strict_url_encoding: (optional)
+            enable_strict_url_encoding is a boolean to indicate whether or not this request should enable strict url encoding for path params.
+            By default, strict url encoding for path params is disabled
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_cavm_key_management_system.py.html>`__ to see an example of how to use change_cavm_key_management_system API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudAutonomousVmClusterId']
+        resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}/actions/changeKeyManagementSystem"
+        method = "POST"
+        operation_name = "change_cavm_key_management_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ChangeCavmKeyManagementSystem"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "enable_strict_url_encoding",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"change_cavm_key_management_system got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "cloudAutonomousVmClusterId": cloud_autonomous_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_cavm_key_management_system_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_cavm_key_management_system_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 enable_strict_url_encoding=kwargs.get('enable_strict_url_encoding'),
                 operation_name=operation_name,
@@ -33542,6 +33792,11 @@ class DatabaseClient(object):
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"
 
+        :param str kms_type: (optional)
+            A filter to return only resources that match the given kms exactly.
+
+            Allowed values are: "ORACLE_KEY_VAULT", "THALES"
+
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
@@ -33588,6 +33843,7 @@ class DatabaseClient(object):
             "sort_by",
             "sort_order",
             "lifecycle_state",
+            "kms_type",
             "display_name",
             "opc_request_id"
         ]
@@ -33617,6 +33873,13 @@ class DatabaseClient(object):
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
+        if 'kms_type' in kwargs:
+            kms_type_allowed_values = ["ORACLE_KEY_VAULT", "THALES"]
+            if kwargs['kms_type'] not in kms_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `kms_type`, must be one of { kms_type_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "exadataInfrastructureId": kwargs.get("exadata_infrastructure_id", missing),
@@ -33625,6 +33888,7 @@ class DatabaseClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "kmsType": kwargs.get("kms_type", missing),
             "displayName": kwargs.get("display_name", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -34713,6 +34977,11 @@ class DatabaseClient(object):
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"
 
+        :param str kms_type: (optional)
+            A filter to return only resources that match the given kms exactly.
+
+            Allowed values are: "ORACLE_KEY_VAULT", "THALES", "OCI_VAULT"
+
         :param str availability_domain: (optional)
             A filter to return only resources that match the given availability domain exactly.
 
@@ -34762,6 +35031,7 @@ class DatabaseClient(object):
             "sort_by",
             "sort_order",
             "lifecycle_state",
+            "kms_type",
             "availability_domain",
             "display_name",
             "opc_request_id"
@@ -34792,6 +35062,13 @@ class DatabaseClient(object):
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
+        if 'kms_type' in kwargs:
+            kms_type_allowed_values = ["ORACLE_KEY_VAULT", "THALES", "OCI_VAULT"]
+            if kwargs['kms_type'] not in kms_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `kms_type`, must be one of { kms_type_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "cloudExadataInfrastructureId": kwargs.get("cloud_exadata_infrastructure_id", missing),
@@ -34800,6 +35077,7 @@ class DatabaseClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "kmsType": kwargs.get("kms_type", missing),
             "availabilityDomain": kwargs.get("availability_domain", missing),
             "displayName": kwargs.get("display_name", missing)
         }
@@ -41716,6 +41994,11 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param str key_store_type: (optional)
+            A filter to return only resources that match the key store type given. The match is not case sensitive.
+
+            Allowed values are: "ORACLE_KEY_VAULT", "THALES"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -41752,17 +42035,26 @@ class DatabaseClient(object):
             "retry_strategy",
             "limit",
             "page",
-            "opc_request_id"
+            "opc_request_id",
+            "key_store_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_key_stores got unknown kwargs: {extra_kwargs!r}")
 
+        if 'key_store_type' in kwargs:
+            key_store_type_allowed_values = ["ORACLE_KEY_VAULT", "THALES"]
+            if kwargs['key_store_type'] not in key_store_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `key_store_type`, must be one of { key_store_type_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "keyStoreType": kwargs.get("key_store_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

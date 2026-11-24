@@ -1,4 +1,4 @@
-CaptureConsoleHistoryDetails
+﻿CaptureConsoleHistoryDetails
 ============================
 
 .. currentmodule:: oci.core.models

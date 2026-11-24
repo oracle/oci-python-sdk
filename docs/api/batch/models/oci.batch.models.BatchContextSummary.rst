@@ -1,4 +1,4 @@
-BatchContextSummary
+﻿BatchContextSummary
 ===================
 
 .. currentmodule:: oci.batch.models

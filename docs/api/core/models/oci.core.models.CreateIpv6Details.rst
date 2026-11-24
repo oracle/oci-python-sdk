@@ -1,4 +1,4 @@
-CreateIpv6Details
+﻿CreateIpv6Details
 =================
 
 .. currentmodule:: oci.core.models

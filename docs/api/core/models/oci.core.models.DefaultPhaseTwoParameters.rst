@@ -1,4 +1,4 @@
-DefaultPhaseTwoParameters
+﻿DefaultPhaseTwoParameters
 =========================
 
 .. currentmodule:: oci.core.models

@@ -5,6 +5,7 @@
 from __future__ import absolute_import
 import json
 import logging
+from oci._logging import NULL_HANDLER
 import platform
 
 import circuitbreaker
@@ -552,7 +553,7 @@ class BaseClient(object):
         self.user_agent = build_user_agent(get_config_value_or_default(config, "additional_user_agent"))
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
-        self.logger.addHandler(logging.NullHandler())
+        self.logger.addHandler(NULL_HANDLER)
         if get_config_value_or_default(config, "log_requests"):
             self.logger.disabled = False
             self.logger.setLevel(logging.DEBUG)

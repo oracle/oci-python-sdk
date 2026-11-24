@@ -1,4 +1,4 @@
-InstanceConfigurationInstanceSourceViaBootVolumeDetails
+﻿InstanceConfigurationInstanceSourceViaBootVolumeDetails
 =======================================================
 
 .. currentmodule:: oci.core.models

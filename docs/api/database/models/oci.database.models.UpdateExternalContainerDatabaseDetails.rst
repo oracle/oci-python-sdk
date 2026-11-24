@@ -1,4 +1,4 @@
-UpdateExternalContainerDatabaseDetails
+﻿UpdateExternalContainerDatabaseDetails
 ======================================
 
 .. currentmodule:: oci.database.models

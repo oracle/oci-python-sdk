@@ -1,4 +1,4 @@
-InstanceConfigurationHostGroupPlacementConstraintDetails
+﻿InstanceConfigurationHostGroupPlacementConstraintDetails
 ========================================================
 
 .. currentmodule:: oci.core.models

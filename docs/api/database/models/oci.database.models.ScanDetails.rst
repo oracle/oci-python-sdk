@@ -1,4 +1,4 @@
-ScanDetails
+﻿ScanDetails
 ===========
 
 .. currentmodule:: oci.database.models

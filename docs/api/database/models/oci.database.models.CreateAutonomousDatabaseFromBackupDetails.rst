@@ -1,4 +1,4 @@
-CreateAutonomousDatabaseFromBackupDetails
+﻿CreateAutonomousDatabaseFromBackupDetails
 =========================================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-UpdateComputeImageCapabilitySchemaDetails
+﻿UpdateComputeImageCapabilitySchemaDetails
 =========================================
 
 .. currentmodule:: oci.core.models

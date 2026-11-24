@@ -1,4 +1,4 @@
-WorkRequestSummaryCollection
+﻿WorkRequestSummaryCollection
 ============================
 
 .. currentmodule:: oci.fusion_apps.models

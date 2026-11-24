@@ -1,4 +1,4 @@
-LaunchInstanceWindowsLicensingConfig
+﻿LaunchInstanceWindowsLicensingConfig
 ====================================
 
 .. currentmodule:: oci.core.models

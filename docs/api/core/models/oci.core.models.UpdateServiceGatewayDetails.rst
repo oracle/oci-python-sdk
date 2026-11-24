@@ -1,4 +1,4 @@
-UpdateServiceGatewayDetails
+﻿UpdateServiceGatewayDetails
 ===========================
 
 .. currentmodule:: oci.core.models

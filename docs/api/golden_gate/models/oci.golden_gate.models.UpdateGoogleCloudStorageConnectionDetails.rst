@@ -1,4 +1,4 @@
-UpdateGoogleCloudStorageConnectionDetails
+﻿UpdateGoogleCloudStorageConnectionDetails
 =========================================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-RemoveDrgNatRulesDetails
+﻿RemoveDrgNatRulesDetails
 ========================
 
 .. currentmodule:: oci.core.models

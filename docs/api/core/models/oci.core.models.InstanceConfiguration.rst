@@ -1,4 +1,4 @@
-InstanceConfiguration
+﻿InstanceConfiguration
 =====================
 
 .. currentmodule:: oci.core.models

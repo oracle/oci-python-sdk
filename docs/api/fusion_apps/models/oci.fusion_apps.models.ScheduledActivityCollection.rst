@@ -1,4 +1,4 @@
-ScheduledActivityCollection
+﻿ScheduledActivityCollection
 ===========================
 
 .. currentmodule:: oci.fusion_apps.models

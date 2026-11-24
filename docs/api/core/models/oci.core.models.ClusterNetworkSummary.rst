@@ -1,4 +1,4 @@
-ClusterNetworkSummary
+﻿ClusterNetworkSummary
 =====================
 
 .. currentmodule:: oci.core.models

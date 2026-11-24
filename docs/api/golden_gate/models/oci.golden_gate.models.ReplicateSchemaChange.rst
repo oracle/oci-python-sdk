@@ -1,4 +1,4 @@
-ReplicateSchemaChange
+﻿ReplicateSchemaChange
 =====================
 
 .. currentmodule:: oci.golden_gate.models

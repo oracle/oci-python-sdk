@@ -1,4 +1,4 @@
-RollbackDeploymentUpgradeDetails
+﻿RollbackDeploymentUpgradeDetails
 ================================
 
 .. currentmodule:: oci.golden_gate.models

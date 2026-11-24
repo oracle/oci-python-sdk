@@ -1,4 +1,4 @@
-CreateNewDatabaseDetails
+﻿CreateNewDatabaseDetails
 ========================
 
 .. currentmodule:: oci.database.models

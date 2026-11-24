@@ -1,4 +1,4 @@
-UpdateComputeClusterDetails
+﻿UpdateComputeClusterDetails
 ===========================
 
 .. currentmodule:: oci.core.models

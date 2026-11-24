@@ -1,4 +1,4 @@
-DeploymentMessageCollection
+﻿DeploymentMessageCollection
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

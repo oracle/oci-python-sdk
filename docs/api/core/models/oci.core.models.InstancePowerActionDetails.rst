@@ -1,4 +1,4 @@
-InstancePowerActionDetails
+﻿InstancePowerActionDetails
 ==========================
 
 .. currentmodule:: oci.core.models

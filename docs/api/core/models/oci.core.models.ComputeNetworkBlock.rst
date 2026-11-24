@@ -1,4 +1,4 @@
-ComputeNetworkBlock
+﻿ComputeNetworkBlock
 ===================
 
 .. currentmodule:: oci.core.models

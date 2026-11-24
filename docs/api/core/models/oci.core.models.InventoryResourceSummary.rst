@@ -1,4 +1,4 @@
-InventoryResourceSummary
+﻿InventoryResourceSummary
 ========================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-InventorySubnetCidrBlockSummary
+﻿InventorySubnetCidrBlockSummary
 ===============================
 
 .. currentmodule:: oci.core.models

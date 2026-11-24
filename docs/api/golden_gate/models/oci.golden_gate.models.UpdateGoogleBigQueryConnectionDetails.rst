@@ -1,4 +1,4 @@
-UpdateGoogleBigQueryConnectionDetails
+﻿UpdateGoogleBigQueryConnectionDetails
 =====================================
 
 .. currentmodule:: oci.golden_gate.models

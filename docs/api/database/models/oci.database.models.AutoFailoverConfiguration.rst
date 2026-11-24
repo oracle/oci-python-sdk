@@ -1,4 +1,4 @@
-AutoFailoverConfiguration
+﻿AutoFailoverConfiguration
 =========================
 
 .. currentmodule:: oci.database.models

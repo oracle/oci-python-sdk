@@ -1,4 +1,4 @@
-ImageShapeCompatibilitySummary
+﻿ImageShapeCompatibilitySummary
 ==============================
 
 .. currentmodule:: oci.core.models

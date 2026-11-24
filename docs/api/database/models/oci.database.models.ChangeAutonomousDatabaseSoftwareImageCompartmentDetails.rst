@@ -1,4 +1,4 @@
-ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
+﻿ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
 =======================================================
 
 .. currentmodule:: oci.database.models

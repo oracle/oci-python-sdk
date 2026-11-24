@@ -1,4 +1,4 @@
-AutonomousDatabaseEncryptionKeyHistoryEntry
+﻿AutonomousDatabaseEncryptionKeyHistoryEntry
 ===========================================
 
 .. currentmodule:: oci.database.models

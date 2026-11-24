@@ -47,6 +47,7 @@ Batch
     oci.batch.models.ChangeBatchJobPoolCompartmentDetails
     oci.batch.models.ChangeBatchTaskEnvironmentCompartmentDetails
     oci.batch.models.ChangeBatchTaskProfileCompartmentDetails
+    oci.batch.models.ComputeCapacityReservation
     oci.batch.models.ComputeTask
     oci.batch.models.ComputeTaskExecutionDetails
     oci.batch.models.ComputeTaskSummary
@@ -60,6 +61,7 @@ Batch
     oci.batch.models.CreateBatchTaskEnvironmentDetails
     oci.batch.models.CreateBatchTaskProfileDetails
     oci.batch.models.CreateBatchTaskProfileExtendedInformationDetails
+    oci.batch.models.CreateComputeCapacityReservationDetails
     oci.batch.models.CreateComputeTaskDetails
     oci.batch.models.CreateCpuArchitectureTaskProfileExtendedInformationDetails
     oci.batch.models.CreateCpuShapeTaskProfileExtendedInformationDetails
@@ -69,6 +71,7 @@ Batch
     oci.batch.models.CreateGpuShapeTaskProfileExtendedInformationDetails
     oci.batch.models.CreateGroupTaskDetails
     oci.batch.models.CreateNetworkDetails
+    oci.batch.models.CreateReservationDetails
     oci.batch.models.CreateServiceManagedFleetDetails
     oci.batch.models.CreateServiceManagedGpuFleetDetails
     oci.batch.models.EnvironmentVariable
@@ -91,6 +94,7 @@ Batch
     oci.batch.models.OciLoggingConfiguration
     oci.batch.models.PauseBatchJobDetails
     oci.batch.models.PrivateIp
+    oci.batch.models.Reservation
     oci.batch.models.SecurityContext
     oci.batch.models.ServiceManagedFleet
     oci.batch.models.ServiceManagedGpuFleet

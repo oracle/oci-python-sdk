@@ -1,4 +1,4 @@
-BaseccVmClusterSummary
+﻿BaseccVmClusterSummary
 ======================
 
 .. currentmodule:: oci.database.models

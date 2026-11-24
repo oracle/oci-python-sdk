@@ -1,4 +1,4 @@
-IPSecConnectionTunnelSharedSecret
+﻿IPSecConnectionTunnelSharedSecret
 =================================
 
 .. currentmodule:: oci.core.models

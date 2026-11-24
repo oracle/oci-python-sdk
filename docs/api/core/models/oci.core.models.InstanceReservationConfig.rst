@@ -1,4 +1,4 @@
-InstanceReservationConfig
+﻿InstanceReservationConfig
 =========================
 
 .. currentmodule:: oci.core.models

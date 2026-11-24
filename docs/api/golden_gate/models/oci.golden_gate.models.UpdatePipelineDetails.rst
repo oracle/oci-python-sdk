@@ -1,4 +1,4 @@
-UpdatePipelineDetails
+﻿UpdatePipelineDetails
 =====================
 
 .. currentmodule:: oci.golden_gate.models

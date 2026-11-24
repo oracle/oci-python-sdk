@@ -1,4 +1,4 @@
-CreateServiceManagedGpuFleetDetails
+﻿CreateServiceManagedGpuFleetDetails
 ===================================
 
 .. currentmodule:: oci.batch.models

@@ -1,4 +1,4 @@
-ChangeLocalPeeringGatewayCompartmentDetails
+﻿ChangeLocalPeeringGatewayCompartmentDetails
 ===========================================
 
 .. currentmodule:: oci.core.models

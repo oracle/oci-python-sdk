@@ -1,4 +1,4 @@
-CreateGoogleCloudStorageIcebergStorageDetails
+﻿CreateGoogleCloudStorageIcebergStorageDetails
 =============================================
 
 .. currentmodule:: oci.golden_gate.models

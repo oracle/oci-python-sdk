@@ -1,4 +1,4 @@
-UpdateInstanceAgentConfigDetails
+﻿UpdateInstanceAgentConfigDetails
 ================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-CreatePolarisIcebergCatalogDetails
+﻿CreatePolarisIcebergCatalogDetails
 ==================================
 
 .. currentmodule:: oci.golden_gate.models

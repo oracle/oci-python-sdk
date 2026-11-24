@@ -1,4 +1,4 @@
-DeploymentEnvironmentCollection
+﻿DeploymentEnvironmentCollection
 ===============================
 
 .. currentmodule:: oci.golden_gate.models

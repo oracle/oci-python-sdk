@@ -1,4 +1,4 @@
-UpdateComputeCapacityReservationDetails
+﻿UpdateComputeCapacityReservationDetails
 =======================================
 
 .. currentmodule:: oci.core.models

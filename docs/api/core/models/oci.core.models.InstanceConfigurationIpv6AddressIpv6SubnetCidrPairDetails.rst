@@ -1,4 +1,4 @@
-InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails
+﻿InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails
 =========================================================
 
 .. currentmodule:: oci.core.models

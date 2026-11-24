@@ -1,4 +1,4 @@
-ObjectMetadata
+﻿ObjectMetadata
 ==============
 
 .. currentmodule:: oci.database_migration.models

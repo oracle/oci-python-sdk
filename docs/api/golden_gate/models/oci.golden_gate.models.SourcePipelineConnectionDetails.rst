@@ -1,4 +1,4 @@
-SourcePipelineConnectionDetails
+﻿SourcePipelineConnectionDetails
 ===============================
 
 .. currentmodule:: oci.golden_gate.models

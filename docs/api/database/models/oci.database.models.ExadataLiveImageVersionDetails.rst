@@ -1,4 +1,4 @@
-ExadataLiveImageVersionDetails
+﻿ExadataLiveImageVersionDetails
 ==============================
 
 .. currentmodule:: oci.database.models

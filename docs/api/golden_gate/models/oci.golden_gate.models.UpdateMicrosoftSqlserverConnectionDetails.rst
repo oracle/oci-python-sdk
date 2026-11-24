@@ -1,4 +1,4 @@
-UpdateMicrosoftSqlserverConnectionDetails
+﻿UpdateMicrosoftSqlserverConnectionDetails
 =========================================
 
 .. currentmodule:: oci.golden_gate.models

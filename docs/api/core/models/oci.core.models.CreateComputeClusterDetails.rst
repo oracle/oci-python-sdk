@@ -1,4 +1,4 @@
-CreateComputeClusterDetails
+﻿CreateComputeClusterDetails
 ===========================
 
 .. currentmodule:: oci.core.models

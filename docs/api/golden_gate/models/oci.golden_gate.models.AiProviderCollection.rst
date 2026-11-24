@@ -1,4 +1,4 @@
-AiProviderCollection
+﻿AiProviderCollection
 ====================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-DataVerificationTableRowCountSummary
+﻿DataVerificationTableRowCountSummary
 ====================================
 
 .. currentmodule:: oci.database_migration.models

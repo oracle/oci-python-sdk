@@ -1,4 +1,4 @@
-Ipv6
+﻿Ipv6
 ====
 
 .. currentmodule:: oci.core.models

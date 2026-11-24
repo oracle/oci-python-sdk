@@ -1,4 +1,4 @@
-UpdateSparkSecretKeyOciObjectStorageConfigDetails
+﻿UpdateSparkSecretKeyOciObjectStorageConfigDetails
 =================================================
 
 .. currentmodule:: oci.golden_gate.models

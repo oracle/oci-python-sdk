@@ -1,4 +1,4 @@
-CpuArchitectureTaskProfileExtendedInformation
+﻿CpuArchitectureTaskProfileExtendedInformation
 =============================================
 
 .. currentmodule:: oci.batch.models

@@ -1,4 +1,4 @@
-LaunchAttachIScsiVolumeDetails
+﻿LaunchAttachIScsiVolumeDetails
 ==============================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-UpdateClusterNetworkDetails
+﻿UpdateClusterNetworkDetails
 ===========================
 
 .. currentmodule:: oci.core.models

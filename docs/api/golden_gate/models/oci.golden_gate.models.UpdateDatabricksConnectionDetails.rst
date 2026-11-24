@@ -1,4 +1,4 @@
-UpdateDatabricksConnectionDetails
+﻿UpdateDatabricksConnectionDetails
 =================================
 
 .. currentmodule:: oci.golden_gate.models

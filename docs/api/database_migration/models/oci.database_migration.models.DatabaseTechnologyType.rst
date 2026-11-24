@@ -1,4 +1,4 @@
-DatabaseTechnologyType
+﻿DatabaseTechnologyType
 ======================
 
 .. currentmodule:: oci.database_migration.models

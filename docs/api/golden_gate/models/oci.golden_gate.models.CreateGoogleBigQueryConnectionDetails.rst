@@ -1,4 +1,4 @@
-CreateGoogleBigQueryConnectionDetails
+﻿CreateGoogleBigQueryConnectionDetails
 =====================================
 
 .. currentmodule:: oci.golden_gate.models

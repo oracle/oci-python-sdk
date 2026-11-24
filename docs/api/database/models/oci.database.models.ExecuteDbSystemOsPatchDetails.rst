@@ -1,4 +1,4 @@
-ExecuteDbSystemOsPatchDetails
+﻿ExecuteDbSystemOsPatchDetails
 =============================
 
 .. currentmodule:: oci.database.models

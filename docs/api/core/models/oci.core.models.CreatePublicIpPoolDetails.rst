@@ -1,4 +1,4 @@
-CreatePublicIpPoolDetails
+﻿CreatePublicIpPoolDetails
 =========================
 
 .. currentmodule:: oci.core.models

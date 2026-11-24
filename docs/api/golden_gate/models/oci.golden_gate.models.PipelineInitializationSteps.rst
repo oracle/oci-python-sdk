@@ -1,4 +1,4 @@
-PipelineInitializationSteps
+﻿PipelineInitializationSteps
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

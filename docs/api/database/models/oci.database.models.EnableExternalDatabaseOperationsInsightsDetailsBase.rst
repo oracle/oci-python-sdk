@@ -1,4 +1,4 @@
-EnableExternalDatabaseOperationsInsightsDetailsBase
+﻿EnableExternalDatabaseOperationsInsightsDetailsBase
 ===================================================
 
 .. currentmodule:: oci.database.models

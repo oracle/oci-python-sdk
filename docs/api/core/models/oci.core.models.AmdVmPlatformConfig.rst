@@ -1,4 +1,4 @@
-AmdVmPlatformConfig
+﻿AmdVmPlatformConfig
 ===================
 
 .. currentmodule:: oci.core.models

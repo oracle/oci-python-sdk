@@ -1,4 +1,4 @@
-UpdateDrgAttachmentDetails
+﻿UpdateDrgAttachmentDetails
 ==========================
 
 .. currentmodule:: oci.core.models

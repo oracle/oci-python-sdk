@@ -1,4 +1,4 @@
-Device
+﻿Device
 ======
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-ChangeSecurityListCompartmentDetails
+﻿ChangeSecurityListCompartmentDetails
 ====================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-OracleAdvisorSettings
+﻿OracleAdvisorSettings
 =====================
 
 .. currentmodule:: oci.database_migration.models

@@ -1,4 +1,4 @@
-UpdateLocalPeeringGatewayDetails
+﻿UpdateLocalPeeringGatewayDetails
 ================================
 
 .. currentmodule:: oci.core.models

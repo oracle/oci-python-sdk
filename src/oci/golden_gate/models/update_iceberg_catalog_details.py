@@ -35,6 +35,10 @@ class UpdateIcebergCatalogDetails(object):
     #: This constant has a value of "REST"
     CATALOG_TYPE_REST = "REST"
 
+    #: A constant which can be used with the catalog_type property of a UpdateIcebergCatalogDetails.
+    #: This constant has a value of "OADC"
+    CATALOG_TYPE_OADC = "OADC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateIcebergCatalogDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -44,13 +48,14 @@ class UpdateIcebergCatalogDetails(object):
         * :class:`~oci.golden_gate.models.UpdatePolarisIcebergCatalogDetails`
         * :class:`~oci.golden_gate.models.UpdateNessieIcebergCatalogDetails`
         * :class:`~oci.golden_gate.models.UpdateHadoopIcebergCatalogDetails`
+        * :class:`~oci.golden_gate.models.UpdateOracleAiDataCatalogIcebergCatalogDetails`
         * :class:`~oci.golden_gate.models.UpdateGlueIcebergCatalogDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param catalog_type:
             The value to assign to the catalog_type property of this UpdateIcebergCatalogDetails.
-            Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST"
+            Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", "OADC"
         :type catalog_type: str
 
         """
@@ -82,6 +87,9 @@ class UpdateIcebergCatalogDetails(object):
         if type == 'HADOOP':
             return 'UpdateHadoopIcebergCatalogDetails'
 
+        if type == 'OADC':
+            return 'UpdateOracleAiDataCatalogIcebergCatalogDetails'
+
         if type == 'GLUE':
             return 'UpdateGlueIcebergCatalogDetails'
         else:
@@ -93,7 +101,7 @@ class UpdateIcebergCatalogDetails(object):
         **[Required]** Gets the catalog_type of this UpdateIcebergCatalogDetails.
         The catalog type.
 
-        Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST"
+        Allowed values for this property are: "GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", "OADC"
 
 
         :return: The catalog_type of this UpdateIcebergCatalogDetails.
@@ -111,7 +119,7 @@ class UpdateIcebergCatalogDetails(object):
         :param catalog_type: The catalog_type of this UpdateIcebergCatalogDetails.
         :type: str
         """
-        allowed_values = ["GLUE", "HADOOP", "NESSIE", "POLARIS", "REST"]
+        allowed_values = ["GLUE", "HADOOP", "NESSIE", "POLARIS", "REST", "OADC"]
         if not value_allowed_none_or_none_sentinel(catalog_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `catalog_type`, must be None or one of {allowed_values}"

@@ -1,4 +1,4 @@
-PreemptibleInstanceConfigDetails
+﻿PreemptibleInstanceConfigDetails
 ================================
 
 .. currentmodule:: oci.core.models

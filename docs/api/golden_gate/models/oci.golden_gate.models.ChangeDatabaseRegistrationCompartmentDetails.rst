@@ -1,4 +1,4 @@
-ChangeDatabaseRegistrationCompartmentDetails
+﻿ChangeDatabaseRegistrationCompartmentDetails
 ============================================
 
 .. currentmodule:: oci.golden_gate.models

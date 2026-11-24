@@ -1,4 +1,4 @@
-CreateVanityDomainActivityDetails
+﻿CreateVanityDomainActivityDetails
 =================================
 
 .. currentmodule:: oci.fusion_apps.models

@@ -1,4 +1,4 @@
-VirtualCircuitDrgAttachmentNetworkDetails
+﻿VirtualCircuitDrgAttachmentNetworkDetails
 =========================================
 
 .. currentmodule:: oci.core.models

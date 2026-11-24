@@ -1,4 +1,4 @@
-GcpKeyDetails
+﻿GcpKeyDetails
 =============
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-UpdateAzureDataLakeStorageConnectionDetails
+﻿UpdateAzureDataLakeStorageConnectionDetails
 ===========================================
 
 .. currentmodule:: oci.golden_gate.models

@@ -1,4 +1,4 @@
-PublicIp
+﻿PublicIp
 ========
 
 .. currentmodule:: oci.core.models

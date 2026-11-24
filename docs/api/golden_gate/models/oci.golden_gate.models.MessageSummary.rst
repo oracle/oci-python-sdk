@@ -1,4 +1,4 @@
-MessageSummary
+﻿MessageSummary
 ==============
 
 .. currentmodule:: oci.golden_gate.models

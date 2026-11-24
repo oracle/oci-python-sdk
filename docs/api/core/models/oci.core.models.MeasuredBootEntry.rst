@@ -1,4 +1,4 @@
-MeasuredBootEntry
+﻿MeasuredBootEntry
 =================
 
 .. currentmodule:: oci.core.models

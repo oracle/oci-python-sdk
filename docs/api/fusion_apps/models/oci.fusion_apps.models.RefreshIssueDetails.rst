@@ -1,4 +1,4 @@
-RefreshIssueDetails
+﻿RefreshIssueDetails
 ===================
 
 .. currentmodule:: oci.fusion_apps.models

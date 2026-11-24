@@ -1,4 +1,4 @@
-CreateElasticsearchConnectionDetails
+﻿CreateElasticsearchConnectionDetails
 ====================================
 
 .. currentmodule:: oci.golden_gate.models

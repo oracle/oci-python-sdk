@@ -1,4 +1,4 @@
-BulkUpdatePrivateIpsDetails
+﻿BulkUpdatePrivateIpsDetails
 ===========================
 
 .. currentmodule:: oci.core.models

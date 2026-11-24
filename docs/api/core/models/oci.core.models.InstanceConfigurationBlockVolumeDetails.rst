@@ -1,4 +1,4 @@
-InstanceConfigurationBlockVolumeDetails
+﻿InstanceConfigurationBlockVolumeDetails
 =======================================
 
 .. currentmodule:: oci.core.models

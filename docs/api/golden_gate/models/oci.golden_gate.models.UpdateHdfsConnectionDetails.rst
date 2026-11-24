@@ -1,4 +1,4 @@
-UpdateHdfsConnectionDetails
+﻿UpdateHdfsConnectionDetails
 ===========================
 
 .. currentmodule:: oci.golden_gate.models

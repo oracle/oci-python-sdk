@@ -1,4 +1,4 @@
-ReinstateDataGuardDetails
+﻿ReinstateDataGuardDetails
 =========================
 
 .. currentmodule:: oci.database.models

@@ -1,4 +1,4 @@
-DataPatchOptions
+﻿DataPatchOptions
 ================
 
 .. currentmodule:: oci.database.models

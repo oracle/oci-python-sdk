@@ -1,4 +1,4 @@
-GranularMaintenanceHistoryDetails
+﻿GranularMaintenanceHistoryDetails
 =================================
 
 .. currentmodule:: oci.database.models

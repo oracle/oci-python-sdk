@@ -1,4 +1,4 @@
-ComputeTaskExecutionDetails
+﻿ComputeTaskExecutionDetails
 ===========================
 
 .. currentmodule:: oci.batch.models

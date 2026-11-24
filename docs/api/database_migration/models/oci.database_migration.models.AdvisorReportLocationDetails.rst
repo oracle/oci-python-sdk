@@ -1,4 +1,4 @@
-AdvisorReportLocationDetails
+﻿AdvisorReportLocationDetails
 ============================
 
 .. currentmodule:: oci.database_migration.models

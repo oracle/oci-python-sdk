@@ -1,4 +1,4 @@
-ConvertToPdbDetails
+﻿ConvertToPdbDetails
 ===================
 
 .. currentmodule:: oci.database.models

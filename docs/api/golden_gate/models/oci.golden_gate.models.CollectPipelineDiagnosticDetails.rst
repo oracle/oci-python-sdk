@@ -1,4 +1,4 @@
-CollectPipelineDiagnosticDetails
+﻿CollectPipelineDiagnosticDetails
 ================================
 
 .. currentmodule:: oci.golden_gate.models

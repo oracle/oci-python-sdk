@@ -1,4 +1,4 @@
-CreateComputeHostGroupDetails
+﻿CreateComputeHostGroupDetails
 =============================
 
 .. currentmodule:: oci.core.models

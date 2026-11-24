@@ -1,4 +1,4 @@
-Network
+﻿Network
 =======
 
 .. currentmodule:: oci.batch.models

@@ -1,4 +1,4 @@
-VolumeSourceFromBlockVolumeReplicaDetails
+﻿VolumeSourceFromBlockVolumeReplicaDetails
 =========================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-ByoasnCollection
+﻿ByoasnCollection
 ================
 
 .. currentmodule:: oci.core.models

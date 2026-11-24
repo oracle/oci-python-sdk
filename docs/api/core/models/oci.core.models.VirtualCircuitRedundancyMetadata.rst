@@ -1,4 +1,4 @@
-VirtualCircuitRedundancyMetadata
+﻿VirtualCircuitRedundancyMetadata
 ================================
 
 .. currentmodule:: oci.core.models

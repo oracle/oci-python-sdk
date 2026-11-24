@@ -1,4 +1,4 @@
-ChangeDrgCompartmentDetails
+﻿ChangeDrgCompartmentDetails
 ===========================
 
 .. currentmodule:: oci.core.models

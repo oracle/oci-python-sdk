@@ -1,4 +1,4 @@
-LaunchInstanceDetails
+﻿LaunchInstanceDetails
 =====================
 
 .. currentmodule:: oci.core.models

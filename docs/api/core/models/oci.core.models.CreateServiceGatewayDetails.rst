@@ -1,4 +1,4 @@
-CreateServiceGatewayDetails
+﻿CreateServiceGatewayDetails
 ===========================
 
 .. currentmodule:: oci.core.models

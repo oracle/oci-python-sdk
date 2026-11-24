@@ -1,4 +1,4 @@
-DatabaseStorageSizeResponseDetails
+﻿DatabaseStorageSizeResponseDetails
 ==================================
 
 .. currentmodule:: oci.database.models

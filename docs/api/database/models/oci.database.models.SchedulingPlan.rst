@@ -1,4 +1,4 @@
-SchedulingPlan
+﻿SchedulingPlan
 ==============
 
 .. currentmodule:: oci.database.models

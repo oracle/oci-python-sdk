@@ -1,4 +1,4 @@
-DetachInstancePoolInstanceDetails
+﻿DetachInstancePoolInstanceDetails
 =================================
 
 .. currentmodule:: oci.core.models

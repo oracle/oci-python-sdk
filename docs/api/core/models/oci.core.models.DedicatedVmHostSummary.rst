@@ -1,4 +1,4 @@
-DedicatedVmHostSummary
+﻿DedicatedVmHostSummary
 ======================
 
 .. currentmodule:: oci.core.models

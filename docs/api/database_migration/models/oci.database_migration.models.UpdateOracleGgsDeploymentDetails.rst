@@ -1,4 +1,4 @@
-UpdateOracleGgsDeploymentDetails
+﻿UpdateOracleGgsDeploymentDetails
 ================================
 
 .. currentmodule:: oci.database_migration.models

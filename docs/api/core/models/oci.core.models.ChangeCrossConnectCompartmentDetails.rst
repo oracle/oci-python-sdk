@@ -1,4 +1,4 @@
-ChangeCrossConnectCompartmentDetails
+﻿ChangeCrossConnectCompartmentDetails
 ====================================
 
 .. currentmodule:: oci.core.models

@@ -1,4 +1,4 @@
-OciKeyDetails
+﻿OciKeyDetails
 =============
 
 .. currentmodule:: oci.database.models

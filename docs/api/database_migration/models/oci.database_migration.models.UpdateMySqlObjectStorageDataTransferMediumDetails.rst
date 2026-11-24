@@ -1,4 +1,4 @@
-UpdateMySqlObjectStorageDataTransferMediumDetails
+﻿UpdateMySqlObjectStorageDataTransferMediumDetails
 =================================================
 
 .. currentmodule:: oci.database_migration.models

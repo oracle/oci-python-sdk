@@ -1,4 +1,4 @@
-ChangeNatGatewayCompartmentDetails
+﻿ChangeNatGatewayCompartmentDetails
 ==================================
 
 .. currentmodule:: oci.core.models
