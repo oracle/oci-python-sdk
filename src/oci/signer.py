@@ -246,13 +246,15 @@ class Signer(AbstractBaseSigner):
 
     """
 
-    def __init__(self, tenancy, user, fingerprint, private_key_file_location, pass_phrase=None, private_key_content=None):
+    def __init__(self, tenancy, user, fingerprint, private_key_file_location=None, pass_phrase=None, private_key_content=None):
         self.api_key = tenancy + "/" + user + "/" + fingerprint
 
         if private_key_content:
             self.private_key = load_private_key(private_key_content, pass_phrase)
-        else:
+        elif private_key_file_location:
             self.private_key = load_private_key_from_file(private_key_file_location, pass_phrase)
+        else:
+            raise ValueError("Must supply either a private key content or a private key file path.")
 
         generic_headers = ["date", "(request-target)", "host"]
         body_headers = ["content-length", "content-type", "x-content-sha256"]
