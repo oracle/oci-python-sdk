@@ -268,7 +268,6 @@ class Agent:
                 next_user_message = "null"
                 # next_user_message = None
 
-                time.sleep(2)  # to avoid throttle by GenAI service
                 response = self._handle_chat(
                     user_message=next_user_message,
                     session_id=session_id,
